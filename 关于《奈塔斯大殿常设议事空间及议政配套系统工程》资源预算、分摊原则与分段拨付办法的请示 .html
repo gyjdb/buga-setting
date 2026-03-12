@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>奈塔斯大殿专项工程预算呈审件</title>
+    <style>
+        :root {
+            --paper: #fbfaf5;
+            --paper-2: #f2ecdf;
+            --ink: #191919;
+            --text: #222;
+            --muted: #555;
+            --soft: #777;
+            --line: #cdbfa7;
+            --line-deep: #9c896a;
+            --accent: #7c1d1d;
+            --accent-2: #5d1111;
+            --accent-soft: #ece2cf;
+            --wash: rgba(124, 29, 29, .05);
+            --shadow: 0 18px 44px rgba(0, 0, 0, .16);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(180deg, #ebe3d4 0%, #e2d8c7 100%);
+            color: var(--text);
+            font-family: "Palatino Linotype", "Book Antiqua", "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
+            line-height: 1.85;
+            padding: 28px 16px 40px;
+        }
+
+        .wrap {
+            max-width: 1020px;
+            margin: 0 auto;
+        }
+
+        .page {
+            position: relative;
+            background:
+                radial-gradient(circle at top center, rgba(255, 255, 255, .65), transparent 32%),
+                repeating-linear-gradient(0deg, rgba(120, 94, 54, .015) 0, rgba(120, 94, 54, .015) 1px, transparent 1px, transparent 9px),
+                var(--paper);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            padding: 34px 50px 42px;
+            overflow: hidden;
+        }
+
+        .page::before {
+            content: "公开审议本";
+            position: absolute;
+            inset: auto 0 130px 0;
+            text-align: center;
+            font-size: 118px;
+            letter-spacing: 14px;
+            color: rgba(124, 29, 29, .04);
+            font-family: "SimHei", "Microsoft YaHei", sans-serif;
+            font-weight: 700;
+            transform: rotate(-12deg);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .page::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(124, 29, 29, .07);
+            pointer-events: none;
+        }
+
+        .top-rule {
+            border-top: 4px double var(--accent);
+            margin-bottom: 14px;
+        }
+
+        .topbar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 700;
+            line-height: 1.7;
+        }
+
+        .topbar .right {
+            text-align: right;
+        }
+
+        .class-line {
+            color: var(--accent);
+            font-size: 14px;
+            letter-spacing: .4px;
+        }
+
+        .titlebox {
+            text-align: center;
+            padding: 10px 16px 18px;
+            margin-bottom: 24px;
+            border-bottom: 4px double var(--accent);
+            position: relative;
+        }
+
+        .titlebox::before,
+        .titlebox::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .titlebox::before {
+            left: 0;
+        }
+
+        .titlebox::after {
+            right: 0;
+        }
+
+        .kicker {
+            color: var(--accent);
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--accent);
+            font-size: 34px;
+            line-height: 1.35;
+            letter-spacing: 8px;
+            font-family: "SimHei", "Microsoft YaHei", serif;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, .08);
+        }
+
+        .subtitle {
+            margin: 10px 0 0;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2.6px;
+        }
+
+        .meta {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 22px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            font-size: 13px;
+        }
+
+        .meta td {
+            padding: 7px 6px;
+            vertical-align: top;
+            border-bottom: 1px dashed rgba(156, 137, 106, .28);
+        }
+
+        .meta tr:last-child td {
+            border-bottom: none;
+        }
+
+        .meta .label {
+            width: 13%;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .meta .value {
+            width: 37%;
+        }
+
+        .meta .emph {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .main-title h2 {
+            margin: 0;
+            font-size: 22px;
+            line-height: 1.75;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: 1.2fr 1.1fr .9fr .9fr;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .card {
+            padding: 12px 13px;
+            border: 1px solid rgba(156, 137, 106, .45);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .5), rgba(236, 226, 207, .28));
+            min-height: 98px;
+        }
+
+        .card .k {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: .5px;
+        }
+
+        .card .v {
+            font-size: 15px;
+            line-height: 1.7;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .card strong {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .lead,
+        .section-body {
+            font-size: 15px;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+
+        .lead p,
+        .section-body p {
+            margin: 0 0 12px;
+            text-indent: 2em;
+        }
+
+        .lead .no-indent,
+        .section-body .no-indent {
+            text-indent: 0;
+        }
+
+        .salutation {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 26px 0 12px;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .section-no {
+            min-width: 34px;
+            height: 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: linear-gradient(180deg, var(--accent), var(--accent-2));
+            border: 1px solid var(--accent);
+            font-family: "SimHei", "Microsoft YaHei", sans-serif;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, .08);
+        }
+
+        .section-text {
+            padding-left: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .note-box {
+            margin: 0 0 12px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--muted);
+            border: 1px dashed rgba(156, 137, 106, .6);
+            background: rgba(236, 226, 207, .26);
+        }
+
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 13px;
+            margin: 12px 0 8px;
+            border: 1px solid var(--ink);
+        }
+
+        .detail-table caption {
+            caption-side: top;
+            text-align: left;
+            padding: 0 0 8px;
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 700;
+            letter-spacing: .4px;
+        }
+
+        .detail-table th,
+        .detail-table td {
+            border: 1px solid var(--ink);
+            padding: 9px 10px;
+            vertical-align: top;
+            line-height: 1.65;
+        }
+
+        .detail-table thead th {
+            background: var(--accent-soft);
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .detail-table tbody tr:nth-child(even) {
+            background: rgba(124, 29, 29, .025);
+        }
+
+        .detail-table .num {
+            text-align: center;
+            vertical-align: middle;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .detail-table .item {
+            font-weight: 700;
+            vertical-align: middle;
+        }
+
+        .small {
+            font-size: 12px;
+            color: var(--soft);
+            line-height: 1.75;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .mini-panel {
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .38);
+            padding: 12px 14px;
+        }
+
+        .mini-panel h4 {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: var(--accent);
+            letter-spacing: .6px;
+        }
+
+        ol,
+        ul {
+            margin: 8px 0 0 1.6em;
+            padding: 0;
+        }
+
+        li {
+            margin: 0 0 8px;
+        }
+
+        .milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 13px;
+            border: 1px solid var(--ink);
+        }
+
+        .milestone-table th,
+        .milestone-table td {
+            border: 1px solid var(--ink);
+            padding: 9px 10px;
+            vertical-align: top;
+            line-height: 1.65;
+        }
+
+        .milestone-table th {
+            background: var(--accent-soft);
+            text-align: left;
+        }
+
+        .decision-box {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border: 1px solid var(--line-deep);
+            background: linear-gradient(180deg, rgba(124, 29, 29, .05), rgba(255, 255, 255, .35));
+        }
+
+        .decision-box p {
+            margin: 0 0 8px;
+            font-size: 15px;
+        }
+
+        .decision-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 26px;
+            margin-top: 48px;
+        }
+
+        .sign-card {
+            flex: 1 1 0;
+            min-width: 260px;
+            text-align: center;
+        }
+
+        .sign-title {
+            margin: 0 0 10px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .sign-line {
+            width: 180px;
+            height: 24px;
+            border-bottom: 1px solid var(--line-deep);
+            margin: 0 auto 8px;
+        }
+
+        .seal-round,
+        .seal-square {
+            margin: 10px auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: "SimHei", "Microsoft YaHei", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.45;
+            opacity: .9;
+            background: rgba(255, 255, 255, .24);
+        }
+
+        .seal-round {
+            width: 128px;
+            height: 128px;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            color: var(--accent);
+            transform: rotate(-14deg);
+            box-shadow: inset 0 0 0 2px rgba(124, 29, 29, .13);
+        }
+
+        .seal-square {
+            width: 128px;
+            height: 128px;
+            border: 3px double var(--ink);
+            color: var(--ink);
+            transform: rotate(5deg);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08);
+        }
+
+        .seal-note,
+        .sign-date {
+            margin: 0;
+            color: var(--soft);
+            font-size: 12px;
+        }
+
+        .sign-date {
+            margin-top: 8px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(156, 137, 106, .5);
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: var(--soft);
+            line-height: 1.8;
+        }
+
+        .footer .right {
+            text-align: right;
+            margin-left: auto;
+        }
+
+        @media (max-width: 900px) {
+            .page {
+                padding: 24px 18px 30px;
+            }
+
+            .topbar,
+            .summary,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar .right,
+            .footer .right {
+                text-align: left;
+                margin-left: 0;
+            }
+
+            h1 {
+                font-size: 28px;
+                letter-spacing: 5px;
+            }
+
+            .meta,
+            .meta tbody,
+            .meta tr,
+            .meta td {
+                display: block;
+                width: 100% !important;
+            }
+
+            .meta td {
+                padding: 4px 0;
+            }
+
+            .detail-table,
+            .milestone-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .signatures {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 16mm 14mm 16mm;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                border: 1px solid #b8ab95;
+                padding: 16mm 16mm 14mm;
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <article class="page">
+            <div class="top-rule"></div>
+
+            <section class="topbar">
+                <div>
+                    <div class="class-line">件类：紧要工程呈审件（公开审议本）</div>
+                    公开级：议会审定后归档开放查阅<br />
+                    议程要求：请列入本会期审议次序
+                </div>
+                <div class="right">
+                    办理编号：银执共工呈〔冬琴之月〕第 017 号<br />
+                    归档签号：NAT-BUDGET-302<br />
+                    卷属：奈塔斯大殿常设议事工程卷
+                </div>
+            </section>
+
+            <header class="titlebox">
+                <div class="kicker">白银执政院 · 预算与共同工程部 · 呈审公文</div>
+                <h1>奈 塔 斯 大 殿 专 项 工 程 呈 审 件</h1>
+                <p class="subtitle">【 常设议事空间、议政设施与配套记录系统预算暨资源分摊请示 】</p>
+            </header>
+
+            <table class="meta">
+                <tr>
+                    <td class="label">呈报机关：</td>
+                    <td class="value">白银执政院（预算与共同工程部 代章）</td>
+                    <td class="label">提请审议：</td>
+                    <td class="value emph">白银议会 · 城邦院</td>
+                </tr>
+                <tr>
+                    <td class="label">协审机关：</td>
+                    <td class="value">白银议会 · 公议院</td>
+                    <td class="label">抄送机关：</td>
+                    <td class="value">银章文枢署、盟约监察院、联盟工匠行会制图局</td>
+                </tr>
+                <tr>
+                    <td class="label">所据图纸：</td>
+                    <td class="value">NAT-SET-302 Rev.Final、NAT-PLAN-302、NAT-SEC-302、NAT-MEMO-302</td>
+                    <td class="label">文件性质：</td>
+                    <td class="value">重大共同工程立项预算与资源调拨审议件</td>
+                </tr>
+            </table>
+
+            <section class="main-title">
+                <h2>
+                    关于《奈塔斯大殿常设议事空间及议政配套系统工程》<br />
+                    资源预算、分摊原则与分段拨付办法的请示
+                </h2>
+            </section>
+
+            <section class="summary">
+                <div class="card">
+                    <div class="k">图纸基准</div>
+                    <div class="v">依工匠行会法定工程定本及其平面、剖面、复核书三件附图执行</div>
+                </div>
+                <div class="card">
+                    <div class="k">工程范围</div>
+                    <div class="v">主体壳体、三门净空、双环议席、元老台、真理之庭、记录席及星冠层步廊</div>
+                </div>
+                <div class="card">
+                    <div class="k">白银结构材总额</div>
+                    <div class="v"><strong>255.0 吨</strong></div>
+                </div>
+                <div class="card">
+                    <div class="k">魔法水晶总额</div>
+                    <div class="v"><strong>5,820 枚</strong></div>
+                </div>
+            </section>
+
+            <section class="lead">
+                <p class="salutation no-indent">城邦院首席、公议院列席诸位及执卷官：</p>
+                <p>奈塔斯大殿并非通常意义上的礼仪性建筑，而是白银议会常设议事空间、公开记述空间与议政秩序的实体承载物。其建成与否，直接关系联盟重大议案能否在统一、可见、可核、可归档的制度框架中持续运转。</p>
+                <p>现经联盟工匠行会制图局完成法定工程定本，图纸口径、席位拓扑、通道净空、文字排布与剖面标高均已收束为可施工状态。依该定本，应尽速完成主体构筑与配套资源统筹，以免后续会期仍长期借用临时议场，致使审议、留卷、公开旁听与跨机关协同持续分离。
+                </p>
+                <p>为使本案既符合联盟公开审议原则，又具备可执行之资源路径，现依定本参数、施工边界、构件分项及驻场工时，重列预算与分摊办法如下，请予审议。</p>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <span class="section-no">一</span>
+                    <span class="section-text">立项依据与工程边界</span>
+                </div>
+                <div class="note-box">
+                    本件所列资源预算，不使用市井价目口径；一律采用联盟共同工程常用的“结构材、储能晶、工时、回用件”四类口径列支、核定与拨付。
+                </div>
+                <div class="section-body">
+                    <p>根据法定工程定本，奈塔斯大殿主体外墙外径界限为 84.00m，室内穹顶净跨为 78.00m；中心真理之庭直径 12m，城邦环席划界为 R 9.00m—18.00m，公议环席划界为 R
+                        21.00m—31.00m。三处主要净空通道分别对应南门、西北门、东北门，其中南门净宽 6.0m，北侧双门净宽各 4.5m。剖面口径同时确定：真理之庭基础标高 +0.90m，元老台
+                        +3.20m，星冠层步廊 +18.00m，穹顶内顶
+                        +28.00m。</p>
+                    <p>此外，复核书已明确三项施工硬约束：其一，城邦院与公议院席位矩阵必须避让三门通道净空，不得有任何固定席位、铭文或结构支撑侵入；其二，环形文字与席位标识须满足正交可读性，不得出现倒置与逆向读写；其三，元老台后方之传讯密室仅作为制度性通联后场，不构成对常规议程的直接干预。故本次预算不仅涵盖主体建造，也包含为落实上述法定约束所必须发生的校核、放样与联调成本。
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <span class="section-no">二</span>
+                    <span class="section-text">预算总额与分项资源明细</span>
+                </div>
+                <div class="note-box">
+                    下表总额已包含构件加工损耗、运输损耗、现场二次调平、三轮阵列联调及公开试议前之应急余量；未包含会后增建、礼制性装饰加码及非定本新增设施。
+                </div>
+
+                <table class="detail-table">
+                    <caption>表一：奈塔斯大殿专项工程资源预算总表</caption>
+                    <colgroup>
+                        <col style="width:18%" />
+                        <col style="width:44%" />
+                        <col style="width:12%" />
+                        <col style="width:12%" />
+                        <col style="width:14%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>分项工程</th>
+                            <th>工程内容与核算口径</th>
+                            <th class="num">白银结构材 (t)</th>
+                            <th class="num">魔法水晶 (枚)</th>
+                            <th class="num">工匠工时 (h)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item">01 外环基座与主体承重墙</td>
+                            <td>含环形基座、外墙主壳体、门洞边框、穹顶起拱前承压段及基准环校正；按外墙外径 84.00m 与室内净跨 78.00m 的定本口径核算。</td>
+                            <td class="num">58.0</td>
+                            <td class="num">360</td>
+                            <td class="num">4,200</td>
+                        </tr>
+                        <tr>
+                            <td class="item">02 三门净空与银烛廊</td>
+                            <td>含南门、西北门、东北门门套、净空边界、导行铭线、银烛廊地面与边护构件；重点保障通道不被席位或支撑侵入。</td>
+                            <td class="num">16.0</td>
+                            <td class="num">240</td>
+                            <td class="num">1,600</td>
+                        </tr>
+                        <tr>
+                            <td class="item">03 穹顶壳体与星冠层步廊</td>
+                            <td>含穹顶内壳、外壳、步廊、帷幕挂点、检修踏段与顶层调谐节点；以星冠层步廊 +18.00m、穹顶内顶 +28.00m 为标高控制基准。</td>
+                            <td class="num">72.0</td>
+                            <td class="num">1,280</td>
+                            <td class="num">6,300</td>
+                        </tr>
+                        <tr>
+                            <td class="item">04 真理之庭与真理之柱</td>
+                            <td>含中央平台、柱体显影结构、与穹顶之导接槽位、近旁防拥堵边界与表面防磨处理；以真理之庭 +0.90m 与中心直径 12m 为准。</td>
+                            <td class="num">26.0</td>
+                            <td class="num">940</td>
+                            <td class="num">2,100</td>
+                        </tr>
+                        <tr>
+                            <td class="item">05 城邦环席</td>
+                            <td>含内环席台、阶梯席板、导名铭牌、靠沿与上下席分隔件；按 R 9.00m—18.00m 划界并留出完整通道缺口。</td>
+                            <td class="num">21.5</td>
+                            <td class="num">680</td>
+                            <td class="num">2,800</td>
+                        </tr>
+                        <tr>
+                            <td class="item">06 公议环席</td>
+                            <td>含外环席台、列席阶面、连通踏步、旁听边界与各组区段标识；按 R 21.00m—31.00m 划界并执行正交可读排布。</td>
+                            <td class="num">28.0</td>
+                            <td class="num">860</td>
+                            <td class="num">3,400</td>
+                        </tr>
+                        <tr>
+                            <td class="item">07 元老台、主席之座与后场传讯室</td>
+                            <td>含元老台台体、主席之座、两侧辅助位、台后传讯密室与独立通路；严格依剖面标高与后场隔离要求施工。</td>
+                            <td class="num">11.5</td>
+                            <td class="num">420</td>
+                            <td class="num">1,450</td>
+                        </tr>
+                        <tr>
+                            <td class="item">08 文枢署记录席与留卷系统</td>
+                            <td>含双侧记录席、卷宗安放槽、现场抄录照明、记录台面及归卷界面；确保议事与留卷在同一空间完成。</td>
+                            <td class="num">8.0</td>
+                            <td class="num">520</td>
+                            <td class="num">1,200</td>
+                        </tr>
+                        <tr>
+                            <td class="item">09 放样校核、监理与试运行</td>
+                            <td>含图纸校核、现场放样、席位编号复核、三轮联调、公开试议保障与工程监察配套；此项为重大公共工程常设支出。</td>
+                            <td class="num">6.0</td>
+                            <td class="num">300</td>
+                            <td class="num">1,950</td>
+                        </tr>
+                        <tr>
+                            <td class="item">10 应急冗余与更换储备</td>
+                            <td>用于施工期间构件损耗、运抵破损、试运行中个别调谐件替换，不得挪作礼制性增饰或席位增设。</td>
+                            <td class="num">8.0</td>
+                            <td class="num">220</td>
+                            <td class="num">650</td>
+                        </tr>
+                        <tr>
+                            <td class="item">合计</td>
+                            <td>以上资源合计后形成本期审议口径；凡超出定本新增部分，应另行立案，不得在本件中夹带列支。</td>
+                            <td class="num"><strong>255.0</strong></td>
+                            <td class="num"><strong>5,820</strong></td>
+                            <td class="num"><strong>25,650</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="small">
+                    说明：本总表系资源预算表；其中“魔法水晶”仅指储能、调谐与稳定用途，不含礼制陈设用晶。工时以工匠行会正式记工口径为准，驻场学徒、搬运与临时协役工时另列工程日志，不单列为审议总额。
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <span class="section-no">三</span>
+                    <span class="section-text">资源筹措、折抵方式与分摊原则</span>
+                </div>
+                <div class="section-body">
+                    <p>鉴于奈塔斯大殿属于联盟共同工程，其资源筹措不得依附单一城邦，也不宜全数由执政院长期垫付。经比对既有共同工程惯例，拟采取“联盟统筹、城邦分摊、行会折抵、旧件回用”并行之方式，以分散一次性调拨压力，并保留对后续公共工程的库藏弹性。
+                    </p>
+                </div>
+
+                <table class="detail-table">
+                    <caption>表二：资源筹措与分摊口径表</caption>
+                    <colgroup>
+                        <col style="width:22%" />
+                        <col style="width:34%" />
+                        <col style="width:14%" />
+                        <col style="width:14%" />
+                        <col style="width:16%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>资源来源</th>
+                            <th>筹措说明</th>
+                            <th class="num">白银结构材 (t)</th>
+                            <th class="num">魔法水晶 (枚)</th>
+                            <th class="num">折抵/附记</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item">联盟统筹直接拨付</td>
+                            <td>由共同工程储备库先行拨付主体壳体、真理之庭与星冠层所需关键构件，保障主体先开工。</td>
+                            <td class="num">118.0</td>
+                            <td class="num">2,300</td>
+                            <td class="num">优先用于 01、03、04 项</td>
+                        </tr>
+                        <tr>
+                            <td class="item">城邦院义务分摊</td>
+                            <td>由列席城邦按“席位受益、法则区使用、会期承担”三项加权分摊，不作平均摊派。</td>
+                            <td class="num">97.0</td>
+                            <td class="num">2,420</td>
+                            <td class="num">以材料、运输与定制件拨入</td>
+                        </tr>
+                        <tr>
+                            <td class="item">工匠行会与学派折抵</td>
+                            <td>以制图、调谐、现场校核、定序装配与试运行工时折抵部分资源占用，折抵口径入卷公示。</td>
+                            <td class="num">24.0</td>
+                            <td class="num">0</td>
+                            <td class="num">折抵工时 12,600 h</td>
+                        </tr>
+                        <tr>
+                            <td class="item">旧构件回收回用</td>
+                            <td>将临时议场可拆卸白银件、边栏件与可复用调谐水晶回收入本案，但须经监察院复检后方得计入。</td>
+                            <td class="num">16.0</td>
+                            <td class="num">1,100</td>
+                            <td class="num">只可用于 02、08、10 项</td>
+                        </tr>
+                        <tr>
+                            <td class="item">合计</td>
+                            <td>以上四项合计与表一总额一一对平；任何来源不足部分，须另提补拨，不得擅自挪改图纸口径。</td>
+                            <td class="num"><strong>255.0</strong></td>
+                            <td class="num"><strong>5,820</strong></td>
+                            <td class="num">折抵日志另卷附后</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="two-col">
+                    <div class="mini-panel">
+                        <h4>分摊原则</h4>
+                        <ul>
+                            <li>不采取均贫式平均摊派，以免低度使用城邦与高度使用城邦责任失衡。</li>
+                            <li>以席位规模、会期频度、法则区共同受益程度为三项主权重。</li>
+                            <li>跨城邦运抵之大型构件，原则上由受益侧负责路段保障与入城转运。</li>
+                        </ul>
+                    </div>
+                    <div class="mini-panel">
+                        <h4>折抵边界</h4>
+                        <ul>
+                            <li>技术折抵只承认制图、定序、调谐、监理、试运等可留痕工项。</li>
+                            <li>口头承诺、未入卷工时、未验收样件，不得折抵公共工程份额。</li>
+                            <li>旧件回用必须经复检，不得把磨损或失序构件包装为节约成果。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <span class="section-no">四</span>
+                    <span class="section-text">施工顺序、会期衔接与拨付节点</span>
+                </div>
+                <div class="section-body">
+                    <p>为避免重大公共工程长期占道、反复返工或于会期前夕集中压工，本案宜按“先主体、后席位；先结构、后调谐；先定线、后开放”的顺序推进，并将拨付节点与验收节点绑定，而不与单纯的开工声明绑定。</p>
+                </div>
+
+                <table class="milestone-table">
+                    <thead>
+                        <tr>
+                            <th style="width:18%">阶段</th>
+                            <th style="width:30%">完成标志</th>
+                            <th style="width:30%">允许拨付范围</th>
+                            <th style="width:22%">监督与留痕要求</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item">第一阶段：放样与基础定线</td>
+                            <td>完成环形基准线、三门净空边界、中心庭院定位及外墙起点复核。</td>
+                            <td>拨付表一第 01、02 项的 40%，第 09 项的 25%。</td>
+                            <td>须附工地基准图、门洞净空图、监察院现场见证页。</td>
+                        </tr>
+                        <tr>
+                            <td class="item">第二阶段：主体壳体与穹顶合拢前</td>
+                            <td>完成外墙承压段、穹顶起拱、星冠层步廊承托段与真理之庭底座。</td>
+                            <td>拨付表一第 01、03、04 项累计至 75%。</td>
+                            <td>须附结构复核书、吊装日志、调谐节点校验页。</td>
+                        </tr>
+                        <tr>
+                            <td class="item">第三阶段：议席与元老台安装</td>
+                            <td>完成城邦环席、公议环席、元老台、主席之座及后场传讯室。</td>
+                            <td>拨付表一第 05、06、07 项的 85%。</td>
+                            <td>须附席位编号卷、可读性复核页、通道净空复验页。</td>
+                        </tr>
+                        <tr>
+                            <td class="item">第四阶段：记录系统与公开试议</td>
+                            <td>双侧记录席、留卷系统、通联流程、公开试议动线全部通过联调。</td>
+                            <td>拨付表一第 08、09、10 项的 100%，其余项结至 92%。</td>
+                            <td>须附试议纪要、文枢署留卷样页、公众旁听秩序记录。</td>
+                        </tr>
+                        <tr>
+                            <td class="item">第五阶段：总验收与归档开放</td>
+                            <td>整体工程通过会期前最终复核，可在常态议事状态下稳定运行。</td>
+                            <td>结清剩余 8% 保留量。</td>
+                            <td>须附终验报告、归档签号、公开查阅版本。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <span class="section-no">五</span>
+                    <span class="section-text">公开监督、审计边界与变更控制</span>
+                </div>
+                <div class="section-body">
+                    <p>奈塔斯大殿为联盟共同议事空间，其预算与施工不应封闭运作。故本件一经审定，即应形成“审议本、施工本、归档本、查阅本”四套文本：审议本供议会表决，施工本供现场执行，归档本供文枢署永久存卷，查阅本供联盟公民依规查阅。除具体仓储调运路线、值守时序与个别安全节点外，不得任意缩减公开内容。
+                    </p>
+                    <p>凡涉及工程变更者，区分为三类：不改变图纸口径的细部优化，由预算与共同工程部会同制图局留痕后执行；涉及预算项目间移转者，须报监察院备案；涉及外径、净跨、席位划界、三门净空、主要标高等定本核心参数者，必须另行呈请城邦院重审，不得以“现场便利”为由自行变动。上述核心参数均已在法定定本中固化。
+                    </p>
+                </div>
+            </section>
+
+            <section class="decision-box">
+                <p><strong>请示事项一：</strong> 请准予按表一所列总额，立案核定奈塔斯大殿专项工程本期资源预算。</p>
+                <p><strong>请示事项二：</strong> 请准予按表二所列口径，在联盟统筹、城邦义务、行会折抵与旧件回用之间分配资源责任。</p>
+                <p><strong>请示事项三：</strong> 请准予按分段拨付办法执行工程放款，并以公开试议通过作为结清尾量之前提。</p>
+                <p><strong>请示事项四：</strong> 请责成银章文枢署与盟约监察院同步列卷监督，确保本工程自立项至开放查阅全过程可核、可验、可追。</p>
+            </section>
+
+            <section class="signatures">
+                <div class="sign-card">
+                    <p class="sign-title">白银执政院 预算与共同工程部 长官</p>
+                    <div class="sign-line"></div>
+                    <div class="seal-round">预算核定<br />执政院印</div>
+                    <p class="seal-note">（审议通过后转入资源拨付链）</p>
+                    <p class="sign-date">具呈日期：冬琴之月　第　　日</p>
+                </div>
+
+                <div class="sign-card">
+                    <p class="sign-title">联盟工匠行会制图局 总务处</p>
+                    <div class="sign-line"></div>
+                    <div class="seal-square">定本核验<br />制图局印</div>
+                    <p class="seal-note">（图纸口径与预算口径已对平）</p>
+                    <p class="sign-date">会签日期：冬琴之月　第　　日</p>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div>
+                    白银执政院预算与共同工程部制呈 · 银章文枢署备案存卷 · 公开审议本<br />
+                    附图：NAT-SET-302 Rev.Final / NAT-PLAN-302 / NAT-SEC-302 / NAT-MEMO-302
+                </div>
+                <div class="right">
+                    归档签号：NAT-BUDGET-302<br />
+                    第 1 页 / 共 1 页
+                </div>
+            </footer>
+        </article>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>奈塔斯大殿——法定工程定本</title>
+    <style>
+        :root {
+            --paper: #f7f4eb;
+            --paper-2: #ece7d7;
+            --ink: #171717;
+            --ink-2: #474747;
+            --ink-3: #777066;
+            --accent: #6f1e1e;
+            --line: #2c2c2c;
+            --line-soft: #7e786f;
+            --fill-1: #e6e0d0;
+            --fill-2: #d9d2bf;
+            --fill-3: #efeada;
+            --fill-4: #d7d1c4;
+            --shadow: rgba(0, 0, 0, .22);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: #161618;
+            color: var(--ink);
+            font-family: "Palatino Linotype", "Book Antiqua", "Noto Serif SC", "Songti SC", "SimSun", serif;
+            padding: 24px;
+        }
+
+        .sheet {
+            max-width: 1280px;
+            margin: 0 auto;
+            background:
+                radial-gradient(circle at 50% 35%, rgba(255, 255, 255, .48), rgba(255, 255, 255, 0) 36%),
+                radial-gradient(circle at 50% 60%, var(--paper) 0%, #efe9d9 72%, #ddd4bf 100%);
+            box-shadow: 0 24px 56px rgba(0, 0, 0, .48), inset 0 0 56px rgba(109, 95, 62, .12);
+            border: 1px solid #706752;
+            overflow: hidden;
+        }
+
+        .masthead {
+            padding: 20px 26px 18px;
+            border-bottom: 3px solid var(--accent);
+            background: linear-gradient(180deg, #111214, #16181b);
+            color: #f4efe2;
+        }
+
+        .masthead h1 {
+            margin: 0;
+            font-size: 30px;
+            letter-spacing: .26em;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .masthead p {
+            margin: 8px 0 0;
+            text-align: center;
+            color: #c8c0b0;
+            font-size: 13px;
+            letter-spacing: .18em;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 14px;
+            background: #121214;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .tab {
+            appearance: none;
+            border: 1px solid #4a4336;
+            background: transparent;
+            color: #a59c89;
+            padding: 10px 18px;
+            letter-spacing: .12em;
+            font-size: 13px;
+            cursor: pointer;
+            transition: .2s ease;
+            text-transform: uppercase;
+            font-family: inherit;
+        }
+
+        .tab:hover {
+            color: #ece5d4;
+            border-color: #7c7059;
+        }
+
+        .tab.active {
+            background: var(--accent);
+            color: #fff8ee;
+            border-color: var(--accent);
+            box-shadow: 0 0 18px rgba(111, 30, 30, .42);
+        }
+
+        .panel {
+            display: none;
+            padding: 18px 18px 26px;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        .frame {
+            background: rgba(255, 255, 255, .18);
+            border: 1px solid rgba(63, 56, 46, .35);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25);
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .memo {
+            padding: 28px 28px 18px;
+            line-height: 1.72;
+            color: #241f19;
+        }
+
+        .memo h2 {
+            margin: 0 0 14px;
+            font-size: 24px;
+            letter-spacing: .16em;
+            border-bottom: 2px solid #8f846a;
+            padding-bottom: 10px;
+        }
+
+        .memo h3 {
+            margin: 22px 0 8px;
+            font-size: 17px;
+            letter-spacing: .08em;
+            color: #3b352b;
+        }
+
+        .memo p {
+            margin: 0 0 10px;
+            text-align: justify;
+        }
+
+        .memo .grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 24px;
+        }
+
+        .memo .card {
+            padding: 22px 24px 18px;
+            border: 1px solid #8f846a;
+            background: rgba(255, 255, 255, .35);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .45);
+        }
+
+        .spec {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .spec th,
+        .spec td {
+            border: 1px solid #8f846a;
+            padding: 10px 12px;
+            vertical-align: top;
+        }
+
+        .spec th {
+            text-align: left;
+            background: rgba(217, 210, 191, .65);
+            width: 38%;
+            font-weight: bold;
+        }
+
+        .note {
+            color: #60584b;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        .footer {
+            padding: 12px 24px 24px;
+            color: #7a7263;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 920px) {
+            .memo .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .masthead h1 {
+                font-size: 22px;
+                letter-spacing: .16em;
+            }
+
+            .masthead p {
+                font-size: 11px;
+                letter-spacing: .10em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sheet">
+        <div class="masthead">
+            <h1>奈 塔 斯 大 殿</h1>
+            <p>白银议会常设议事空间 · 法定工程定本 · PLAN / SECTION / ENGINEERING MEMO</p>
+        </div>
+
+        <div class="toolbar">
+            <button class="tab active" data-panel="plan">平面总图</button>
+            <button class="tab" data-panel="section">A-A纵剖面</button>
+            <button class="tab" data-panel="memo">工程与礼制复核书</button>
+        </div>
+
+        <div id="plan" class="panel active">
+            <div class="frame">
+                <svg id="planSvg" viewBox="0 0 1280 1380" aria-label="奈塔斯大殿平面总图"></svg>
+            </div>
+        </div>
+
+        <div id="section" class="panel">
+            <div class="frame">
+                <svg id="sectionSvg" viewBox="0 0 1280 940" aria-label="奈塔斯大殿A-A纵剖面"></svg>
+            </div>
+        </div>
+
+        <div id="memo" class="panel">
+            <div class="memo">
+                <h2>建筑工程及礼制规范复核书 (NAT-MEMO-302)</h2>
+                <p>致 银章文枢署 及 执政院：本件为卡奈奇银色联盟工匠行会呈递之《奈塔斯大殿》最终法定施工与排席定图。本版已彻底清理概念阶段之拓扑冲突与铭文排版失误，确立了绝对的物理约束与视觉秩序。</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3>I. 拓扑约束与通道隔离基准</h3>
+                        <p><strong>红线避让原则：</strong>
+                            本图严格界定了南门（正门）、东北门与西北门之主通道净空区。城邦院与公议院之环形席位矩阵采用<strong>分段生成阵列法</strong>，彻底规避了通道区。任何常设席位、铭文标识与结构支撑均不得侵入上述通道空间，确保动线畅通及“真理之庭”不被凡俗路径直接切割。
+                        </p>
+                        <p><strong>铭文正交可读性准则（Orthogonal Readability）：</strong> 修正了全图环状文字之排版向量。引入坐标域翻转补偿，确保处于第 III、IV
+                            象限之席位文字自动执行 180° 翻转定型。摒弃一切逆向或倒置字位，保障图面查阅之绝对严肃性。</p>
+                        <p><strong>图框标准矩阵规范：</strong> 启用了 SAG-D-01
+                            级图纸网格。坐标信息栏所有分割线均实施绝对对中处理，消除图框压字、越界等低级干涉现象，确保文案信息完整独立。</p>
+                    </div>
+                    <div class="card">
+                        <h3>II. 核心空间参数与定级</h3>
+                        <table class="spec">
+                            <tr>
+                                <th>外墙外径界限</th>
+                                <td>84.00m</td>
+                            </tr>
+                            <tr>
+                                <th>室内穹顶净跨</th>
+                                <td>78.00m</td>
+                            </tr>
+                            <tr>
+                                <th>通道避让夹角</th>
+                                <td>南 8.5° / 北双门各 6.2°</td>
+                            </tr>
+                            <tr>
+                                <th>城邦环席划界</th>
+                                <td>R 9.00m ～ 18.00m</td>
+                            </tr>
+                            <tr>
+                                <th>公议环席划界</th>
+                                <td>R 21.00m ～ 31.00m</td>
+                            </tr>
+                            <tr>
+                                <th>真理之庭基础标高</th>
+                                <td>+0.90m (基准面±0.00)</td>
+                            </tr>
+                            <tr>
+                                <th>内环席顶层标高</th>
+                                <td>+2.80m</td>
+                            </tr>
+                            <tr>
+                                <th>元老台甲板标高</th>
+                                <td>+3.20m</td>
+                            </tr>
+                            <tr>
+                                <th>外环席顶层标高</th>
+                                <td>+3.60m</td>
+                            </tr>
+                            <tr>
+                                <th>星冠层平台标高</th>
+                                <td>+18.00m</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:24px;">
+                    <h3>III. 总设计师签署结语</h3>
+                    <p>作为布加文明的物质载体，大殿的每一根线条必须经得起数学与法理的双重拷问。原图纸中过道切碎席位与文字倒置之情形，系本人前序检核之重大失察。今以工程之严谨彻底重塑全案。从此图交付之刻起，布加的匠人们即可进场划线奠基。知识与力量之誓约，将借由这无可挑剔的几何秩序，屹立于卡奈奇的苍穹之下。
+                    </p>
+                    <p class="note">签发机关：卡奈奇·银色联盟工匠行会制图局总务处</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">卡奈奇工匠行会内部印发 · 法定施工与排席定本 · NAT-SET-302 Rev.Final</div>
+    </div>
+
+    <script>
+        (() => {
+            const tabs = document.querySelectorAll('.tab');
+            const panels = document.querySelectorAll('.panel');
+            tabs.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabs.forEach(b => b.classList.remove('active'));
+                    panels.forEach(p => p.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById(btn.dataset.panel).classList.add('active');
+                });
+            });
+
+            const DIM = {
+                outerRadius: 42,
+                innerRadius: 39,
+                truthRadius: 6,
+                cityIn: 9,
+                cityOut: 18,
+                galleryIn: 18,
+                galleryOut: 21,
+                publicIn: 21,
+                publicOut: 31,
+                crownIn: 34,
+                crownOut: 39,
+                truthLevel: 0.9,
+                cityTop: 2.8,
+                elderTop: 3.2,
+                publicTop: 3.6,
+                crownLevel: 18.0,
+                domeApex: 28.0,
+                wallSpring: 14.0
+            };
+
+            function polar(cx, cy, r, deg) {
+                const rad = (deg - 90) * Math.PI / 180;
+                return { x: cx + Math.cos(rad) * r, y: cy + Math.sin(rad) * r };
+            }
+            function arcPath(cx, cy, r1, r2, a0, a1) {
+                const p1 = polar(cx, cy, r2, a0);
+                const p2 = polar(cx, cy, r2, a1);
+                const p3 = polar(cx, cy, r1, a1);
+                const p4 = polar(cx, cy, r1, a0);
+                const large = ((a1 - a0 + 360) % 360) > 180 ? 1 : 0;
+                return [
+                    `M ${p1.x.toFixed(2)} ${p1.y.toFixed(2)}`,
+                    `A ${r2} ${r2} 0 ${large} 1 ${p2.x.toFixed(2)} ${p2.y.toFixed(2)}`,
+                    `L ${p3.x.toFixed(2)} ${p3.y.toFixed(2)}`,
+                    `A ${r1} ${r1} 0 ${large} 0 ${p4.x.toFixed(2)} ${p4.y.toFixed(2)}`,
+                    'Z'
+                ].join(' ');
+            }
+            function line(parent, x1, y1, x2, y2, attrs = {}) {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+                el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+                Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+                parent.appendChild(el);
+                return el;
+            }
+            function text(parent, x, y, str, attrs = {}) {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                el.setAttribute('x', x); el.setAttribute('y', y);
+                Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+                el.textContent = str;
+                parent.appendChild(el);
+                return el;
+            }
+            function rect(parent, x, y, w, h, attrs = {}) {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                el.setAttribute('x', x); el.setAttribute('y', y);
+                el.setAttribute('width', w); el.setAttribute('height', h);
+                Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+                parent.appendChild(el);
+                return el;
+            }
+            function circle(parent, cx, cy, r, attrs = {}) {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                el.setAttribute('cx', cx); el.setAttribute('cy', cy); el.setAttribute('r', r);
+                Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+                parent.appendChild(el);
+                return el;
+            }
+            function ellipse(parent, cx, cy, rx, ry, attrs = {}) {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+                el.setAttribute('cx', cx); el.setAttribute('cy', cy);
+                el.setAttribute('rx', rx); el.setAttribute('ry', ry);
+                Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+                parent.appendChild(el);
+                return el;
+            }
+            function path(parent, d, attrs = {}) {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                el.setAttribute('d', d);
+                Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+                parent.appendChild(el);
+                return el;
+            }
+            function polygon(parent, points, attrs = {}) {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+                el.setAttribute('points', points);
+                Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+                parent.appendChild(el);
+                return el;
+            }
+            function addDimension(parent, x1, y1, x2, y2, label, vertical = false) {
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                parent.appendChild(g);
+                line(g, x1, y1, x2, y2, { stroke: '#6f1e1e', 'stroke-width': 1.2 });
+                if (vertical) {
+                    polygon(g, `${x1},${y1} ${x1 - 5},${y1 + 11} ${x1 + 5},${y1 + 11}`, { fill: '#6f1e1e' });
+                    polygon(g, `${x2},${y2} ${x2 - 5},${y2 - 11} ${x2 + 5},${y2 - 11}`, { fill: '#6f1e1e' });
+                    text(g, x1 + 10, (y1 + y2) / 2 + 4, label, { fill: '#6f1e1e', 'font-size': 13, 'writing-mode': 'tb' });
+                } else {
+                    polygon(g, `${x1},${y1} ${x1 + 11},${y1 - 5} ${x1 + 11},${y1 + 5}`, { fill: '#6f1e1e' });
+                    polygon(g, `${x2},${y2} ${x2 - 11},${y2 - 5} ${x2 - 11},${y2 + 5}`, { fill: '#6f1e1e' });
+                    text(g, (x1 + x2) / 2, y1 - 8, label, { fill: '#6f1e1e', 'font-size': 13, 'text-anchor': 'middle', 'letter-spacing': '1' });
+                }
+            }
+
+            function drawPlan() {
+                const svg = document.getElementById('planSvg');
+                const NS = 'http://www.w3.org/2000/svg';
+                const px = 11;
+                const cx = 640, cy = 670;
+
+                const defs = document.createElementNS(NS, 'defs');
+                svg.appendChild(defs);
+
+                const grid = document.createElementNS(NS, 'pattern');
+                grid.setAttribute('id', 'grid');
+                grid.setAttribute('width', '32'); grid.setAttribute('height', '32');
+                grid.setAttribute('patternUnits', 'userSpaceOnUse');
+                defs.appendChild(grid);
+                path(grid, 'M 32 0 L 0 0 0 32', { fill: 'none', stroke: '#000', 'stroke-width': 0.25, opacity: 0.18 });
+
+                const hatch = document.createElementNS(NS, 'pattern');
+                hatch.setAttribute('id', 'wallHatch');
+                hatch.setAttribute('width', '8'); hatch.setAttribute('height', '8');
+                hatch.setAttribute('patternUnits', 'userSpaceOnUse');
+                hatch.setAttribute('patternTransform', 'rotate(45)');
+                defs.appendChild(hatch);
+                line(hatch, 0, 0, 0, 8, { stroke: '#7e786f', 'stroke-width': 1 });
+
+                const softShadow = document.createElementNS(NS, 'filter');
+                softShadow.setAttribute('id', 'shadow');
+                softShadow.innerHTML = '<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.18"/>';
+                defs.appendChild(softShadow);
+
+                rect(svg, 0, 0, 1280, 1380, { fill: 'url(#grid)' });
+                rect(svg, 38, 38, 1204, 1304, { fill: 'none', stroke: '#1a1a1a', 'stroke-width': 2.4 });
+                rect(svg, 44, 44, 1192, 1292, { fill: 'none', stroke: '#1a1a1a', 'stroke-width': 0.8 });
+
+                rect(svg, 38, 38, 1204, 84, { fill: 'none', stroke: '#1a1a1a', 'stroke-width': 2.2 });
+                text(svg, 640, 77, '奈塔斯大殿', { fill: '#111', 'font-size': 30, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '16' });
+                text(svg, 640, 102, 'NATAS GRAND HALL — GENERAL PLAN', { fill: '#444', 'font-size': 12, 'text-anchor': 'middle', 'letter-spacing': '5', 'font-family': 'sans-serif' });
+
+                const gPlan = document.createElementNS(NS, 'g');
+                svg.appendChild(gPlan);
+
+                // 背景基础圆环
+                circle(gPlan, cx, cy, DIM.outerRadius * px, { fill: 'url(#wallHatch)', stroke: '#1a1a1a', 'stroke-width': 3 });
+                circle(gPlan, cx, cy, DIM.innerRadius * px, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 2 });
+                circle(gPlan, cx, cy, DIM.publicOut * px, { fill: '#efeada', stroke: '#555', 'stroke-width': 1.3 });
+                circle(gPlan, cx, cy, DIM.publicIn * px, { fill: '#f7f4eb', stroke: '#555', 'stroke-width': 1.1 });
+                circle(gPlan, cx, cy, DIM.galleryIn * px, { fill: '#f7f4eb', stroke: '#7e786f', 'stroke-width': 0.8, 'stroke-dasharray': '12 9' });
+                circle(gPlan, cx, cy, DIM.cityOut * px, { fill: '#e6e0d0', stroke: '#555', 'stroke-width': 1.3 });
+                circle(gPlan, cx, cy, DIM.cityIn * px, { fill: '#f7f4eb', stroke: '#555', 'stroke-width': 1.1 });
+
+                // 先画白色的通道遮罩，将底部圆环切开断（形成物理通道净空）
+                const aisles = [
+                    { ang: 180, spread: 8.5, label: '南门（正门）', width: '6.0m' },
+                    { ang: 300, spread: 6.2, label: '东北门', width: '4.5m' },
+                    { ang: 60, spread: 6.2, label: '西北门', width: '4.5m' }
+                ];
+                aisles.forEach(a => {
+                    path(gPlan, arcPath(cx, cy, DIM.truthRadius * px + 18, DIM.outerRadius * px + 10, a.ang - a.spread / 2, a.ang + a.spread / 2), {
+                        fill: '#f7f4eb', stroke: 'none'
+                    });
+                    const outer = polar(cx, cy, DIM.outerRadius * px, a.ang);
+                    const doorDepth = 14;
+                    const doorW = a.ang === 180 ? 22 : 18;
+                    rect(gPlan, outer.x - doorW / 2, outer.y - doorDepth / 2, doorW, doorDepth, {
+                        fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.8,
+                        transform: `rotate(${a.ang} ${outer.x} ${outer.y})`
+                    });
+                    text(gPlan, outer.x + (a.ang === 180 ? 0 : (a.ang === 300 ? 78 : -78)), outer.y + (a.ang === 180 ? 38 : -12), `${a.label} · 净宽${a.width}`, {
+                        fill: '#444', 'font-size': 11, 'text-anchor': a.ang === 180 ? 'middle' : (a.ang === 300 ? 'start' : 'end')
+                    });
+                });
+
+                // 银烛廊文本 (避开通道区间，取左侧与右侧特定角度)
+                text(gPlan, cx + 220, cy + 155, '银烛廊 3m', { fill: '#4a443a', 'font-size': 12, transform: `rotate(35 ${cx + 220} ${cy + 155})` });
+                text(gPlan, cx - 220, cy + 155, '银烛廊 3m', { fill: '#4a443a', 'font-size': 12, transform: `rotate(-35 ${cx - 220} ${cy + 155})` });
+
+
+                // ============================================
+                // 智能阵列系统：严格避开通道区间进行渲染
+                // 区间 1: 东北门(300) 到 西北门(60=420)  => [304, 416] 跨顶区间
+                // 区间 2: 西北门(60)  到 南门(180)     => [64, 176] 右下区间
+                // 区间 3: 南门(180)   到 东北门(300)   => [184, 296] 左下区间
+                // ============================================
+
+                const safeRanges = [
+                    { start: 64, end: 176 },  // 跨度 112 (右下)
+                    { start: 184, end: 296 }, // 跨度 112 (左下)
+                    { start: 304, end: 416 }  // 跨度 112 (上)
+                ];
+
+                // --- 1. 城邦院席位渲染 ---
+                let cityIdx = 1;
+                safeRanges.forEach(range => {
+                    // 每块扇形区域均分给 10 个城邦，共 30 个
+                    const count = 10;
+                    const step = (range.end - range.start) / count;
+
+                    for (let i = 0; i < count; i++) {
+                        let a0 = range.start + i * step;
+                        let a1 = a0 + step;
+
+                        // 分隔线
+                        path(gPlan, arcPath(cx, cy, DIM.cityIn * px, DIM.cityOut * px, a0 + 0.5, a1 - 0.5), {
+                            fill: (cityIdx % 2 === 0) ? '#e2dbc8' : '#ddd5c1',
+                            stroke: '#8b8273', 'stroke-width': 0.6
+                        });
+
+                        // 文字渲染及正交校正
+                        const mid = (a0 + a1) / 2;
+                        const pLab = polar(cx, cy, (DIM.cityOut + 0.85) * px, mid);
+                        let rot = mid % 360;
+                        if (rot < 0) rot += 360;
+                        // 如果处于 90 到 270 之间，文字倒转180度保持正立
+                        if (rot > 90 && rot < 270) rot -= 180;
+
+                        if (cityIdx % 2 !== 0) { // 间隔显示名字
+                            text(gPlan, pLab.x, pLab.y, `城邦${String(cityIdx).padStart(2, '0')}`, {
+                                fill: '#3e392f', 'font-size': 8.4, 'text-anchor': 'middle',
+                                transform: `rotate(${rot} ${pLab.x} ${pLab.y})`
+                            });
+                        }
+
+                        // 座位方块
+                        for (let row = 0; row < 3; row++) {
+                            const r = (DIM.cityIn + 1.2 + row * 2.5) * px;
+                            const seatCount = 5;
+                            for (let s = 0; s < seatCount; s++) {
+                                const ang = a0 + 1.2 + ((a1 - a0) - 2.4) * (s + 0.5) / seatCount;
+                                const p = polar(cx, cy, r, ang);
+                                rect(gPlan, p.x - 3.1, p.y - 1.65, 6.2, 3.3, {
+                                    fill: '#d1c9b7', stroke: '#5d564c', 'stroke-width': 0.5,
+                                    transform: `rotate(${ang} ${p.x} ${p.y})`
+                                });
+                            }
+                        }
+                        cityIdx++;
+                    }
+                });
+
+                // --- 2. 公议院席位渲染 ---
+                const pubGroupsList = [
+                    '学术席 (白银学会)', '学派席 (各术式学派)', '行会席 (工匠与炼金)',
+                    '行会席 (附魔与阵法)', '军务席 (银色舰队)', '典藏席 (大图书馆)',
+                    '公共席 (民政与工务)', '公共席 (妖精与教育)'
+                ];
+                // 八大席位：右下分配3个，左下分配3个，上方跨顶分配2个
+                const pubDist = [
+                    { start: 64, end: 176, count: 3 },
+                    { start: 184, end: 296, count: 3 },
+                    { start: 304, end: 416, count: 2 }
+                ];
+
+                let pubIdx = 0;
+                pubDist.forEach(dist => {
+                    const step = (dist.end - dist.start) / dist.count;
+                    for (let i = 0; i < dist.count; i++) {
+                        let a0 = dist.start + i * step;
+                        let a1 = a0 + step;
+
+                        path(gPlan, arcPath(cx, cy, DIM.publicIn * px, DIM.publicOut * px, a0 + 0.4, a1 - 0.4), {
+                            fill: (pubIdx % 2 === 0) ? '#efe8d8' : '#e8e0cf',
+                            stroke: '#8b8273', 'stroke-width': 0.7
+                        });
+
+                        // 文字渲染及正交校正
+                        const mid = (a0 + a1) / 2;
+                        const pLab = polar(cx, cy, (DIM.publicIn + 4.5) * px, mid);
+                        let rot = mid % 360;
+                        if (rot < 0) rot += 360;
+                        if (rot > 90 && rot < 270) rot -= 180;
+
+                        text(gPlan, pLab.x, pLab.y, pubGroupsList[pubIdx], {
+                            fill: '#484134', 'font-size': 10, 'text-anchor': 'middle',
+                            transform: `rotate(${rot} ${pLab.x} ${pLab.y})`
+                        });
+
+                        // 座位方块
+                        for (let row = 0; row < 4; row++) {
+                            const r = (DIM.publicIn + 1.25 + row * 2.15) * px;
+                            const seatCount = 12;
+                            for (let s = 0; s < seatCount; s++) {
+                                const ang = a0 + 1.8 + ((a1 - a0) - 3.6) * (s + 0.5) / seatCount;
+                                const p = polar(cx, cy, r, ang);
+                                rect(gPlan, p.x - 3.0, p.y - 1.55, 6.0, 3.1, {
+                                    fill: '#d7d0c2', stroke: '#5d564c', 'stroke-width': 0.42,
+                                    transform: `rotate(${ang} ${p.x} ${p.y})`
+                                });
+                            }
+                        }
+                        pubIdx++;
+                    }
+                });
+
+
+                // --- 核心结构绘制 ---
+                const gCourt = document.createElementNS(NS, 'g');
+                gCourt.setAttribute('filter', 'url(#shadow)');
+                gPlan.appendChild(gCourt);
+                circle(gCourt, cx, cy, DIM.truthRadius * px, { fill: '#e9e2d1', stroke: '#1a1a1a', 'stroke-width': 1.7 });
+                circle(gCourt, cx, cy, (DIM.truthRadius - 0.45) * px, { fill: 'none', stroke: '#8b8273', 'stroke-width': 0.8 });
+
+                // 真理之柱显影，修正为银色材质表达
+                circle(gCourt, cx, cy, 9, { fill: '#dcd9ce', stroke: '#1a1a1a', 'stroke-width': 1.2 });
+                circle(gCourt, cx, cy, 5, { fill: 'none', stroke: '#fff', 'stroke-width': 0.8 });
+
+                circle(gCourt, cx, cy, 15, { fill: 'none', stroke: '#555', 'stroke-width': 0.8 });
+                line(gCourt, cx + 12, cy, cx + 82, cy - 20, { stroke: '#777066', 'stroke-width': 0.7 });
+                text(gCourt, cx + 88, cy - 22, '真理之柱', { fill: '#151515', 'font-size': 11 });
+                text(gCourt, cx, cy - 28, '真理之庭', { fill: '#151515', 'font-size': 16, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '4' });
+                text(gCourt, cx, cy - 13, 'COURT OF TRUTH', { fill: '#555', 'font-size': 8.8, 'text-anchor': 'middle', 'letter-spacing': '1.5' });
+
+                rect(gCourt, cx - 54, cy + 31, 24, 18, { fill: '#f7f4eb', stroke: '#666', 'stroke-width': 1 });
+                rect(gCourt, cx + 30, cy + 31, 24, 18, { fill: '#f7f4eb', stroke: '#666', 'stroke-width': 1 });
+                text(gCourt, cx - 42, cy + 42, '文枢署', { fill: '#555', 'font-size': 7, 'text-anchor': 'middle' });
+                text(gCourt, cx - 42, cy + 51, '记录席', { fill: '#555', 'font-size': 8, 'text-anchor': 'middle', 'font-weight': '700' });
+                text(gCourt, cx + 42, cy + 42, '文枢署', { fill: '#555', 'font-size': 7, 'text-anchor': 'middle' });
+                text(gCourt, cx + 42, cy + 51, '记录席', { fill: '#555', 'font-size': 8, 'text-anchor': 'middle', 'font-weight': '700' });
+
+                const elderCy = cy - 24.0 * px;
+                const gElder = document.createElementNS(NS, 'g');
+                gElder.setAttribute('filter', 'url(#shadow)');
+                gPlan.appendChild(gElder);
+                ellipse(gElder, cx, elderCy, 124, 52, { fill: '#d9d2bf', stroke: '#1a1a1a', 'stroke-width': 1.6 });
+                ellipse(gElder, cx, elderCy, 116, 45, { fill: 'none', stroke: '#7e786f', 'stroke-width': 0.8 });
+                rect(gElder, cx - 35, elderCy - 12, 70, 24, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.6 });
+                text(gElder, cx, elderCy + 3, '元老台', { fill: '#151515', 'font-size': 15, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '4' });
+                text(gElder, cx, elderCy + 17, 'ELDER PLATFORM', { fill: '#555', 'font-size': 8.6, 'text-anchor': 'middle', 'letter-spacing': '1.5' });
+
+                rect(gElder, cx - 87, elderCy - 7, 16, 16, { fill: '#f7f4eb', stroke: '#666', 'stroke-width': 1 });
+                rect(gElder, cx + 71, elderCy - 7, 16, 16, { fill: '#f7f4eb', stroke: '#666', 'stroke-width': 1 });
+                rect(gElder, cx - 8, elderCy - 30, 16, 16, { fill: '#f7f4eb', stroke: '#666', 'stroke-width': 1 });
+                text(gElder, cx, elderCy - 40, '主席之座', { fill: '#333', 'font-size': 8.5, 'text-anchor': 'middle' });
+                text(gElder, cx - 79, elderCy + 28, '城邦院首席', { fill: '#555', 'font-size': 7.8, 'text-anchor': 'middle' });
+                text(gElder, cx + 79, elderCy + 28, '公议院首席', { fill: '#555', 'font-size': 7.8, 'text-anchor': 'middle' });
+
+                rect(gElder, cx - 40, elderCy - 83, 80, 22, { fill: 'none', stroke: '#666', 'stroke-width': 1, 'stroke-dasharray': '5 4' });
+                text(gElder, cx, elderCy - 68, '传讯密室', { fill: '#444', 'font-size': 9, 'text-anchor': 'middle' });
+
+                line(svg, 1115, 190, 1115, 128, { stroke: '#1a1a1a', 'stroke-width': 1.7 });
+                polygon(svg, '1115,114 1108,130 1115,126 1122,130', { fill: '#1a1a1a' });
+                text(svg, 1115, 108, 'N', { fill: '#111', 'font-size': 18, 'font-weight': '700', 'text-anchor': 'middle' });
+
+                circle(gPlan, cx, cy, DIM.crownIn * px, { fill: 'none', stroke: '#7e786f', 'stroke-width': 0.8 });
+                circle(gPlan, cx, cy, DIM.crownOut * px, { fill: 'none', stroke: '#7e786f', 'stroke-width': 0.8 });
+                text(gPlan, cx, cy - DIM.crownOut * px + 42, '星冠层（常态银幕闭合）', {
+                    fill: '#151515', 'font-size': 12, 'text-anchor': 'middle', 'letter-spacing': '3'
+                });
+                text(gPlan, cx, cy - DIM.crownOut * px + 58, 'STAR CROWN LEVEL · CURTAINS CLOSED IN ORDINARY SESSION', {
+                    fill: '#666', 'font-size': 7.7, 'text-anchor': 'middle', 'letter-spacing': '1.3'
+                });
+
+                for (let i = 0; i < 12; i++) {
+                    const ang = -75 + i * 30;
+                    const p = polar(cx, cy, 36.55 * px, ang);
+                    const throne = document.createElementNS(NS, 'g');
+                    throne.setAttribute('transform', `translate(${p.x},${p.y}) rotate(${ang})`);
+                    gPlan.appendChild(throne);
+                    rect(throne, -12, -10, 24, 20, { fill: '#efeada', stroke: '#1a1a1a', 'stroke-width': 1.3 });
+                    rect(throne, -7, -6, 14, 12, { fill: 'none', stroke: '#666', 'stroke-width': 0.7 });
+                }
+
+                line(gPlan, cx, cy - DIM.outerRadius * px - 16, cx, cy + DIM.outerRadius * px + 16, {
+                    stroke: '#6f1e1e', 'stroke-width': 1.1, 'stroke-dasharray': '16 7 4 7', opacity: 0.78
+                });
+                polygon(gPlan, `${cx},${cy - DIM.outerRadius * px - 34} ${cx - 6},${cy - DIM.outerRadius * px - 18} ${cx + 6},${cy - DIM.outerRadius * px - 18}`, { fill: '#6f1e1e' });
+                polygon(gPlan, `${cx},${cy + DIM.outerRadius * px + 34} ${cx - 6},${cy + DIM.outerRadius * px + 18} ${cx + 6},${cy + DIM.outerRadius * px + 18}`, { fill: '#6f1e1e' });
+                text(gPlan, cx + 16, cy - DIM.outerRadius * px - 20, 'A', { fill: '#6f1e1e', 'font-size': 15, 'font-weight': '700' });
+                text(gPlan, cx + 16, cy + DIM.outerRadius * px + 27, 'A', { fill: '#6f1e1e', 'font-size': 15, 'font-weight': '700' });
+
+                addDimension(svg, cx - DIM.outerRadius * px, 1090, cx + DIM.outerRadius * px, 1090, '外墙外径 84m');
+                addDimension(svg, cx - DIM.innerRadius * px, 1120, cx + DIM.innerRadius * px, 1120, '室内净径 78m');
+                addDimension(svg, cx - DIM.truthRadius * px, 1150, cx + DIM.truthRadius * px, 1150, '真理之庭直径 12m');
+                line(svg, cx - DIM.outerRadius * px, 1078, cx - DIM.outerRadius * px, cy + DIM.outerRadius * px, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, cx + DIM.outerRadius * px, 1078, cx + DIM.outerRadius * px, cy + DIM.outerRadius * px, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, cx - DIM.innerRadius * px, 1108, cx - DIM.innerRadius * px, cy + DIM.innerRadius * px, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, cx + DIM.innerRadius * px, 1108, cx + DIM.innerRadius * px, cy + DIM.innerRadius * px, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, cx - DIM.truthRadius * px, 1138, cx - DIM.truthRadius * px, cy + DIM.truthRadius * px, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, cx + DIM.truthRadius * px, 1138, cx + DIM.truthRadius * px, cy + DIM.truthRadius * px, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+
+                const sx = 78, sy = 1288;
+                line(svg, sx, sy, sx + 220, sy, { stroke: '#1a1a1a', 'stroke-width': 1.8 });
+                line(svg, sx, sy - 7, sx, sy + 7, { stroke: '#1a1a1a', 'stroke-width': 1.8 });
+                line(svg, sx + 110, sy - 5, sx + 110, sy + 5, { stroke: '#1a1a1a', 'stroke-width': 1.2 });
+                line(svg, sx + 220, sy - 7, sx + 220, sy + 7, { stroke: '#1a1a1a', 'stroke-width': 1.8 });
+                text(svg, sx, sy + 22, '0', { fill: '#444', 'font-size': 10, 'text-anchor': 'middle' });
+                text(svg, sx + 110, sy + 22, '10m', { fill: '#444', 'font-size': 10, 'text-anchor': 'middle' });
+                text(svg, sx + 220, sy + 22, '20m', { fill: '#444', 'font-size': 10, 'text-anchor': 'middle' });
+
+                // ==========================================
+                // 精确的图框布局矩阵 (解决线条压字问题)
+                // ==========================================
+                const lx = 800, ly = 1180;
+                rect(svg, lx, ly, 410, 130, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.8 });
+
+                // 水平分割线
+                line(svg, lx, ly + 36, lx + 410, ly + 36, { stroke: '#1a1a1a', 'stroke-width': 1 });
+                line(svg, lx, ly + 72, lx + 410, ly + 72, { stroke: '#1a1a1a', 'stroke-width': 1 });
+                line(svg, lx, ly + 104, lx + 410, ly + 104, { stroke: '#1a1a1a', 'stroke-width': 1 });
+
+                // 垂直中心分割线 (仅划分中间两行区域)
+                line(svg, lx + 205, ly + 36, lx + 205, ly + 104, { stroke: '#1a1a1a', 'stroke-width': 1 });
+
+                // 第1行: 总标题
+                text(svg, lx + 205, ly + 24, '白银议会 · 奈塔斯大殿 · 平面总图', { fill: '#111', 'font-size': 15, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '3' });
+
+                // 第2行: 图号 / 版本
+                text(svg, lx + 102.5, ly + 59, '图号 NAT-PLAN-302', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+                text(svg, lx + 307.5, ly + 59, '修订版本 Rev.Final', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+
+                // 第3行: 比例 / 状态
+                text(svg, lx + 102.5, ly + 92, '比例 1 : 250', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+                text(svg, lx + 307.5, ly + 92, '制图 联盟工匠行会', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+
+                // 第4行: 底部签批信息
+                text(svg, lx + 205, ly + 121, '批准：银章文枢署 / 状态：法定工程发布定本', { fill: '#444', 'font-size': 10, 'text-anchor': 'middle', 'letter-spacing': '1.2' });
+
+
+                const nx = 74, ny = 1185;
+                rect(svg, nx, ny, 648, 125, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.6 });
+                text(svg, nx + 18, ny + 20, '总注：', { fill: '#111', 'font-size': 13.4, 'font-weight': '700' });
+                const notes = [
+                    '1. 本图按法定常态议事状态绘制：星冠层帷幕闭合、星灯熄灭。',
+                    '2. 所有席位区块严格采用避让净空算法，绝不存在通道切割坐席的结构矛盾。',
+                    '3. 图面文字应用正交可读补偿（Orthogonal Readability），彻底消除倒置字位现象。',
+                    '4. 元老台后之传讯密室与独立后场通路仅作制度性通联，不构成对常规议程之干预。'
+                ];
+                notes.forEach((n, i) => text(svg, nx + 22, ny + 45 + i * 18, n, { fill: '#444', 'font-size': 10.7 }));
+            }
+
+            function drawSection() {
+                const svg = document.getElementById('sectionSvg');
+                const NS = 'http://www.w3.org/2000/svg';
+                const s = 12.8;
+                const ox = 640, gy = 665;
+
+                const defs = document.createElementNS(NS, 'defs');
+                svg.appendChild(defs);
+                const grid = document.createElementNS(NS, 'pattern');
+                grid.setAttribute('id', 'gridSec');
+                grid.setAttribute('width', '32'); grid.setAttribute('height', '32');
+                grid.setAttribute('patternUnits', 'userSpaceOnUse');
+                defs.appendChild(grid);
+                path(grid, 'M 32 0 L 0 0 0 32', { fill: 'none', stroke: '#000', 'stroke-width': 0.25, opacity: 0.18 });
+
+                const hatch = document.createElementNS(NS, 'pattern');
+                hatch.setAttribute('id', 'groundHatch');
+                hatch.setAttribute('width', '8'); hatch.setAttribute('height', '8');
+                hatch.setAttribute('patternUnits', 'userSpaceOnUse');
+                hatch.setAttribute('patternTransform', 'rotate(45)');
+                defs.appendChild(hatch);
+                line(hatch, 0, 0, 0, 8, { stroke: '#7e786f', 'stroke-width': 0.9 });
+
+                const softShadow = document.createElementNS(NS, 'filter');
+                softShadow.setAttribute('id', 'shadowSec');
+                softShadow.innerHTML = '<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.18"/>';
+                defs.appendChild(softShadow);
+
+                rect(svg, 0, 0, 1280, 940, { fill: 'url(#gridSec)' });
+                rect(svg, 38, 38, 1204, 864, { fill: 'none', stroke: '#1a1a1a', 'stroke-width': 2.4 });
+                rect(svg, 44, 44, 1192, 852, { fill: 'none', stroke: '#1a1a1a', 'stroke-width': 0.8 });
+
+                rect(svg, 38, 38, 1204, 84, { fill: 'none', stroke: '#1a1a1a', 'stroke-width': 2.2 });
+                text(svg, 640, 77, '奈塔斯大殿', { fill: '#111', 'font-size': 30, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '16' });
+                text(svg, 640, 102, 'A-A LONGITUDINAL SECTION', { fill: '#444', 'font-size': 12, 'text-anchor': 'middle', 'letter-spacing': '5', 'font-family': 'sans-serif' });
+
+                rect(svg, 84, gy, 1112, 32, { fill: 'url(#groundHatch)', stroke: '#1a1a1a', 'stroke-width': 2 });
+                line(svg, 44, gy, 1236, gy, { stroke: '#1a1a1a', 'stroke-width': 2.2 });
+
+                line(svg, ox, 136, ox, 715, { stroke: '#6f1e1e', 'stroke-width': 1.1, 'stroke-dasharray': '16 7 4 7', opacity: 0.7 });
+
+                const x = m => ox + m * s;
+                const y = m => gy - m * s;
+
+                const innerWallX = 39;
+                const outerWallX = 42;
+                const spring = DIM.wallSpring;
+                const apex = DIM.domeApex;
+
+                const outerD = [
+                    `M ${x(-outerWallX)} ${y(0)}`,
+                    `L ${x(-outerWallX)} ${y(spring)}`,
+                    `Q ${x(-34)} ${y(24)} ${x(0)} ${y(apex + 1.2)}`,
+                    `Q ${x(34)} ${y(24)} ${x(outerWallX)} ${y(spring)}`,
+                    `L ${x(outerWallX)} ${y(0)} Z`
+                ].join(' ');
+                path(svg, outerD, { fill: '#ddd6c6', stroke: '#1a1a1a', 'stroke-width': 1.6, filter: 'url(#shadowSec)' });
+
+                const innerD = [
+                    `M ${x(-innerWallX)} ${y(0)}`,
+                    `L ${x(-innerWallX)} ${y(spring - 0.8)}`,
+                    `Q ${x(-31.5)} ${y(22.2)} ${x(0)} ${y(apex)}`,
+                    `Q ${x(31.5)} ${y(22.2)} ${x(innerWallX)} ${y(spring - 0.8)}`,
+                    `L ${x(innerWallX)} ${y(0)} Z`
+                ].join(' ');
+                path(svg, innerD, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 2.2 });
+
+                rect(svg, x(-42) - 1, y(4.5), 26, 78, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.6 });
+                text(svg, x(-37.5), y(6.2), '南门', { fill: '#444', 'font-size': 10, 'text-anchor': 'middle' });
+
+                function steppedSide(side = 'left', ring = 'public') {
+                    const rows = ring === 'public' ? 4 : 3;
+                    const start = ring === 'public' ? DIM.publicIn : DIM.cityIn;
+                    const end = ring === 'public' ? DIM.publicOut : DIM.cityOut;
+                    const top = ring === 'public' ? DIM.publicTop : DIM.cityTop;
+                    const stepW = (end - start) / rows;
+                    const stepH = top / rows;
+                    const sign = side === 'left' ? -1 : 1;
+                    let d = `M ${x(sign * end)} ${y(0)} `;
+                    for (let i = 0; i < rows; i++) {
+                        const xOuter = sign * (end - i * stepW);
+                        const xInner = sign * (end - (i + 1) * stepW);
+                        const h = (i + 1) * stepH;
+                        d += `L ${x(xOuter)} ${y(h - stepH)} L ${x(xOuter)} ${y(h)} L ${x(xInner)} ${y(h)} `;
+                    }
+                    d += `L ${x(sign * start)} ${y(0)} Z`;
+                    path(svg, d, { fill: ring === 'public' ? '#efeada' : '#e2dbc8', stroke: '#1a1a1a', 'stroke-width': 1.5 });
+                }
+
+                steppedSide('left', 'public');
+                steppedSide('left', 'city');
+                steppedSide('right', 'city');
+
+                const rightPublicD = [
+                    `M ${x(DIM.publicOut)} ${y(0)}`,
+                    `L ${x(DIM.publicOut)} ${y(0.9)}`,
+                    `L ${x(28)} ${y(0.9)}`,
+                    `L ${x(28)} ${y(2.0)}`,
+                    `L ${x(25.5)} ${y(2.0)}`,
+                    `L ${x(25.5)} ${y(3.6)}`,
+                    `L ${x(21)} ${y(3.6)}`,
+                    `L ${x(21)} ${y(0)} Z`
+                ].join(' ');
+                path(svg, rightPublicD, { fill: '#efeada', stroke: '#1a1a1a', 'stroke-width': 1.5 });
+
+                const elderD = [
+                    `M ${x(19.0)} ${y(0)}`,
+                    `L ${x(19.0)} ${y(2.1)}`,
+                    `Q ${x(23.0)} ${y(3.8)} ${x(29.0)} ${y(3.2)}`,
+                    `L ${x(29.0)} ${y(0)} Z`
+                ].join(' ');
+                path(svg, elderD, { fill: '#d9d2bf', stroke: '#1a1a1a', 'stroke-width': 1.6, filter: 'url(#shadowSec)' });
+                rect(svg, x(22.3), y(3.55), 42, 12, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.2 });
+                text(svg, x(25.0), y(3.08), '元老台', { fill: '#111', 'font-size': 14, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '3' });
+                text(svg, x(25.0), y(2.48), '主席之座', { fill: '#444', 'font-size': 8.8, 'text-anchor': 'middle' });
+
+                rect(svg, x(22.0), y(6.4), 82, 20, { fill: 'none', stroke: '#666', 'stroke-width': 1, 'stroke-dasharray': '5 4' });
+                text(svg, x(25.3), y(5.82), '传讯密室', { fill: '#444', 'font-size': 9.2, 'text-anchor': 'middle' });
+                line(svg, x(25.3), y(6.4), x(25.3), y(4.0), { stroke: '#777066', 'stroke-width': 0.9, 'stroke-dasharray': '5 4' });
+
+                rect(svg, x(-DIM.truthRadius), y(DIM.truthLevel), DIM.truthRadius * 2 * s, DIM.truthLevel * s, {
+                    fill: '#e9e2d1', stroke: '#1a1a1a', 'stroke-width': 1.5
+                });
+                // 真理之柱显影，银色柱体
+                rect(svg, x(-0.3), y(6.1), 7.6, (6.1 - DIM.truthLevel) * s, { fill: '#dcd9ce', stroke: '#1a1a1a', 'stroke-width': 1 });
+                rect(svg, x(-0.1), y(6.1), 3.8, (6.1 - DIM.truthLevel) * s, { fill: 'none', stroke: '#fff', 'stroke-width': 0.8 });
+
+                text(svg, x(0), y(1.65), '真理之庭', { fill: '#111', 'font-size': 15, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '3' });
+                text(svg, x(0), y(2.25), '真理之柱', { fill: '#111', 'font-size': 9.5, 'text-anchor': 'middle' });
+
+                rect(svg, x(-5.4), y(1.05), 24, 9, { fill: '#f7f4eb', stroke: '#666', 'stroke-width': 1 });
+                rect(svg, x(3.5), y(1.05), 24, 9, { fill: '#f7f4eb', stroke: '#666', 'stroke-width': 1 });
+                text(svg, x(-4.5), y(0.55), '文枢署', { fill: '#555', 'font-size': 6, 'text-anchor': 'middle' });
+                text(svg, x(-4.5), y(0.15), '记录席', { fill: '#555', 'font-size': 7, 'text-anchor': 'middle', 'font-weight': '700' });
+                text(svg, x(4.5), y(0.55), '文枢署', { fill: '#555', 'font-size': 6, 'text-anchor': 'middle' });
+                text(svg, x(4.5), y(0.15), '记录席', { fill: '#555', 'font-size': 7, 'text-anchor': 'middle', 'font-weight': '700' });
+
+                line(svg, x(1.4), y(DIM.truthLevel), x(1.4), y(DIM.truthLevel + 1.7), { stroke: '#666', 'stroke-width': 1.5 });
+                circle(svg, x(1.4), y(DIM.truthLevel + 1.9), 3.2, { fill: '#666' });
+
+                rect(svg, x(-35.2), y(DIM.crownLevel), 44, 10, { fill: '#1a1a1a' });
+                rect(svg, x(31.8), y(DIM.crownLevel), 44, 10, { fill: '#1a1a1a' });
+                path(svg, `M ${x(-35.2)} ${y(DIM.crownLevel)} L ${x(-31.8)} ${y(DIM.crownLevel + 3.4)} L ${x(-28.2)} ${y(DIM.crownLevel)} Z`, {
+                    fill: '#ddd6c6', stroke: '#1a1a1a', 'stroke-width': 1.4
+                });
+                path(svg, `M ${x(35.2)} ${y(DIM.crownLevel)} L ${x(31.8)} ${y(DIM.crownLevel + 3.4)} L ${x(28.2)} ${y(DIM.crownLevel)} Z`, {
+                    fill: '#ddd6c6', stroke: '#1a1a1a', 'stroke-width': 1.4
+                });
+                rect(svg, x(-33.9), y(DIM.crownLevel + 0.8), 10, 28, { fill: '#ddd6c6', stroke: '#1a1a1a', 'stroke-width': 1.4 });
+                rect(svg, x(30.1), y(DIM.crownLevel + 0.8), 10, 28, { fill: '#ddd6c6', stroke: '#1a1a1a', 'stroke-width': 1.4 });
+                text(svg, x(0), y(21.8), '星冠层步廊（常态帷幕闭合）', { fill: '#555', 'font-size': 12, 'text-anchor': 'middle', 'letter-spacing': '4' });
+
+                function levelMark(xm, level, label, right = false) {
+                    const px0 = x(xm), py0 = y(level);
+                    polygon(svg, right ? `${px0},${py0} ${px0 + 10},${py0 - 5} ${px0 + 10},${py0 + 5}` : `${px0},${py0} ${px0 - 10},${py0 - 5} ${px0 - 10},${py0 + 5}`, {
+                        fill: 'none', stroke: '#6f1e1e', 'stroke-width': 1
+                    });
+                    line(svg, right ? px0 + 10 : px0 - 10, py0, right ? px0 + 56 : px0 - 56, py0, { stroke: '#6f1e1e', 'stroke-width': 1 });
+                    text(svg, right ? px0 + 16 : px0 - 16, py0 - 5, level === 0 ? '±0.00' : `+${level.toFixed(2)}`, {
+                        fill: '#6f1e1e', 'font-size': 10.5, 'text-anchor': right ? 'start' : 'end'
+                    });
+                    text(svg, right ? px0 + 16 : px0 - 16, py0 + 9, label, {
+                        fill: '#666', 'font-size': 8.2, 'text-anchor': right ? 'start' : 'end'
+                    });
+                }
+                levelMark(-8.0, 0.0, '基准面');
+                levelMark(-8.0, DIM.truthLevel, '真理之庭');
+                levelMark(-23.0, DIM.cityTop, '城邦环席最高排');
+                levelMark(-35.0, DIM.publicTop, '公议环席最高排');
+                levelMark(31.5, DIM.elderTop, '元老台', true);
+                levelMark(34.5, DIM.crownLevel, '星冠层步廊', true);
+                levelMark(0.0, DIM.domeApex, '穹顶内顶', true);
+
+                addDimension(svg, x(-42), 800, x(42), 800, '外墙外径 84m');
+                addDimension(svg, x(-39), 830, x(39), 830, '室内净径 78m');
+                addDimension(svg, x(-31), 860, x(31), 860, '环席总宽 62m');
+                line(svg, x(-42), 788, x(-42), gy, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, x(42), 788, x(42), gy, { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, x(-39), 818, x(-39), y(spring - 0.8), { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+                line(svg, x(39), 818, x(39), y(spring - 0.8), { stroke: '#6f1e1e', 'stroke-width': 0.8 });
+
+                addDimension(svg, 106, gy, 106, y(DIM.truthLevel), '0.90m', true);
+                addDimension(svg, 136, gy, 136, y(DIM.publicTop), '3.60m', true);
+                addDimension(svg, 1166, gy, 1166, y(DIM.crownLevel), '18.00m', true);
+                addDimension(svg, 1196, gy, 1196, y(DIM.domeApex), '28.00m', true);
+
+                // ==========================================
+                // 精确的图框布局矩阵 (解决线条压字问题)
+                // ==========================================
+                const lx = 800, ly = 734;
+                rect(svg, lx, ly, 410, 130, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.8 });
+
+                // 水平分割线
+                line(svg, lx, ly + 36, lx + 410, ly + 36, { stroke: '#1a1a1a', 'stroke-width': 1 });
+                line(svg, lx, ly + 72, lx + 410, ly + 72, { stroke: '#1a1a1a', 'stroke-width': 1 });
+                line(svg, lx, ly + 104, lx + 410, ly + 104, { stroke: '#1a1a1a', 'stroke-width': 1 });
+
+                // 垂直中心分割线 (仅划分中间两行区域)
+                line(svg, lx + 205, ly + 36, lx + 205, ly + 104, { stroke: '#1a1a1a', 'stroke-width': 1 });
+
+                // 第1行: 总标题
+                text(svg, lx + 205, ly + 24, '白银议会 · 奈塔斯大殿 · A-A纵剖面', { fill: '#111', 'font-size': 15, 'font-weight': '700', 'text-anchor': 'middle', 'letter-spacing': '3' });
+
+                // 第2行: 图号 / 版本
+                text(svg, lx + 102.5, ly + 59, '图号 NAT-SEC-302', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+                text(svg, lx + 307.5, ly + 59, '修订版本 Rev.Final', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+
+                // 第3行: 比例 / 状态
+                text(svg, lx + 102.5, ly + 92, '比例 1 : 250', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+                text(svg, lx + 307.5, ly + 92, '剖切向：南 → 核心 → 北', { fill: '#444', 'font-size': 11.5, 'text-anchor': 'middle', 'letter-spacing': '1' });
+
+                // 第4行: 底部签批信息
+                text(svg, lx + 205, ly + 121, '批准：银章文枢署 / 状态：法定工程发布定本', { fill: '#444', 'font-size': 10, 'text-anchor': 'middle', 'letter-spacing': '1.2' });
+
+                const nx = 72, ny = 734;
+                rect(svg, nx, ny, 648, 130, { fill: '#f7f4eb', stroke: '#1a1a1a', 'stroke-width': 1.6 });
+                text(svg, nx + 18, ny + 20, '剖面说明：', { fill: '#111', 'font-size': 13.4, 'font-weight': '700' });
+                const notes = [
+                    '1. 元老台标高 +3.20m，严格控制在城邦环席最高排之上、公议环席最高排之下。',
+                    '2. 真理之庭 +0.90m，确保平视交互；真理之柱显影为银色材质，连通星冠穹顶。',
+                    '3. 星冠层步廊 +18.00m，与主议事空间分离，日常以帷幕遮蔽，通道规避正门轴线。',
+                    '4. 本图框已启用 SAG-D-01 规程校准，消除了一切非标排版干涉。'
+                ];
+                notes.forEach((n, i) => text(svg, nx + 22, ny + 46 + i * 18, n, { fill: '#444', 'font-size': 10.7 }));
+            }
+
+            drawPlan();
+            drawSection();
+        })();
+    </script>
+</body>
+
+</html>
