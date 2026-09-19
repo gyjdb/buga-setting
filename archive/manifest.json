@@ -1,0 +1,95 @@
+{
+  "originalCommit": "f25a5b0f67c4d0f37dd975b743eaf6d3d6ff677a",
+  "files": [
+    {
+      "original": "natas-blueprint.html",
+      "target": "archive/legacy-2026-03/exhibits/natas-blueprint.html",
+      "sha256": "5ec42c1b7e405ba8380b1de15505e9ccb4b859e093ab3c2feea61d618908ce8b",
+      "action": "archive"
+    },
+    {
+      "original": "关于《奈塔斯大殿常设议事空间及议政配套系统工程》资源预算、分摊原则与分段拨付办法的请示 .html",
+      "target": "archive/legacy-2026-03/exhibits/关于《奈塔斯大殿常设议事空间及议政配套系统工程》资源预算、分摊原则与分段拨付办法的请示 .html",
+      "sha256": "faace19828c50f60e4eb2928e890f1e63b5552babc238c7a0001a159a46f2e0c",
+      "action": "archive"
+    },
+    {
+      "original": "大图书馆章程（草案 v1.1).md",
+      "target": "archive/legacy-2026-03/documents/大图书馆章程（草案 v1.1).md",
+      "sha256": "5702938831dd91ab7b7bbf31a56839a2b130263e3bba6e054ab02a0c22f32a7d",
+      "action": "archive"
+    },
+    {
+      "original": "大图书馆组织架构（修订稿v1.1).md",
+      "target": "archive/legacy-2026-03/documents/大图书馆组织架构（修订稿v1.1).md",
+      "sha256": "074b47a1a93b1d01305ca74bd3f69560da2261c7b39f176e6353a294d9ed2b93",
+      "action": "archive"
+    },
+    {
+      "original": "白银执政院（修订稿 v1.2）.md",
+      "target": "archive/legacy-2026-03/documents/白银执政院（修订稿 v1.2）.md",
+      "sha256": "c46f68e50134fa2c54a295718b473bc49ee335b6ac28629c9a6633bada31e06a",
+      "action": "archive"
+    },
+    {
+      "original": "白银执政院（修订稿 v2.0）.md",
+      "target": "archive/legacy-2026-03/documents/白银执政院（修订稿 v2.0）.md",
+      "sha256": "9ccfedf3feb92d80dba6d4c048deede95a761b082bce584054457e06ac8de849",
+      "action": "archive"
+    },
+    {
+      "original": "白银议会组织法（草案 v3.1）.md",
+      "target": "archive/legacy-2026-03/documents/白银议会组织法（草案 v3.1）.md",
+      "sha256": "fa0a03e9596b659c81e2d7fd916c9b6d6985f3f80be05baf38879fab8be6ae6b",
+      "action": "archive"
+    },
+    {
+      "original": "联盟共同工程与战略拨款呈批件.html",
+      "target": "organized_project/03_UNRESOLVED/02_project_knowledge/联盟共同工程与战略拨款呈批件.html",
+      "sha256": "0496ad3446123e87adeb057d73932c4451a6f0c0e4b2aae30b50fe189d7b25a7",
+      "action": "deduplicate"
+    },
+    {
+      "original": "裁断体系组织法（草案 v1.0）.md",
+      "target": "archive/legacy-2026-03/documents/裁断体系组织法（草案 v1.0）.md",
+      "sha256": "f62f957fac8a7730a4f99f9288e8a7a7fa0e4159d2ff00287dd5ea2380a5ba19",
+      "action": "archive"
+    },
+    {
+      "original": "银烛会组织架构（修订稿 v2.1）.md",
+      "target": "archive/legacy-2026-03/documents/银烛会组织架构（修订稿 v2.1）.md",
+      "sha256": "c5badc67945315593d198be85e20cce25a056234b4236c7d84472e6b7024bb1f",
+      "action": "archive"
+    },
+    {
+      "original": "银色联盟公务职级通则（草案 v1.0）.md",
+      "target": "archive/legacy-2026-03/documents/银色联盟公务职级通则（草案 v1.0）.md",
+      "sha256": "658b64904aac7b22444a3e969c80a7d39f7c2ccebdfed5cabef3a205d48c9107",
+      "action": "archive"
+    },
+    {
+      "original": "银色联盟制度审计报告（v1.1）.md",
+      "target": "archive/legacy-2026-03/documents/银色联盟制度审计报告（v1.1）.md",
+      "sha256": "f6c66c35481e3fcd01c11199ba396b2591c580938509582097184ad4d2e492c2",
+      "action": "archive"
+    },
+    {
+      "original": "银色联盟宪章（修订稿 v0.3）.md",
+      "target": "archive/legacy-2026-03/documents/银色联盟宪章（修订稿 v0.3）.md",
+      "sha256": "a0b2334a33617347efdb95925913c68010b70c51733ece78c761b6b50eee1966",
+      "action": "archive"
+    },
+    {
+      "original": "银色联盟防务基本法（草案 v1.1）.md",
+      "target": "archive/legacy-2026-03/documents/银色联盟防务基本法（草案 v1.1）.md",
+      "sha256": "995b9518cfb17cb6484681e6c7172c5e855c3de384feeb0c307279c0d7d555a5",
+      "action": "archive"
+    },
+    {
+      "original": "银色舰队统帅部组织架构（修订稿 v2.2）.md",
+      "target": "archive/legacy-2026-03/documents/银色舰队统帅部组织架构（修订稿 v2.2）.md",
+      "sha256": "4a0540a4d94e3a34171a78cce3f5a2aa465770f692483de037abf01b17ddeeb2",
+      "action": "archive"
+    }
+  ]
+}

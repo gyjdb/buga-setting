@@ -84,6 +84,7 @@ Pull Request 只执行检查，不发布。部署产物只有生成站点，不�
 
 ```text
 organized_project/          # 公开的设定、作者依据、候选、旧版与编校材料
+archive/                    # 原根目录早期文件、历史 HTML 展示及迁移索引
 tools/library_portal/       # 只读构建器、校验与搜索测试
   web/                     # 正式前端、场景、定稿 SVG 图标与字体许可
   fetch_fonts.py           # 固定来源、SHA256 校验的字体准备
@@ -96,7 +97,7 @@ site/library_portal/       # 本地生成结果，不提交到 Git
 
 详细范围见 [PUBLICATION.md](docs/PUBLICATION.md)。数量由当前构建数据计算，不在介绍中维护容易过期的手填计数。
 
-仓库根目录原有法规与 HTML 文件原样保留，供历史链接继续访问；它们不自动成为新站现行文献。请通过站内现行清单判断版本。
+早期散落在根目录的法规与 HTML 展示已整理到 [archive/](archive/README.md)，并提供旧路径对照；与待决材料逐字节相同的副本已去重，原件继续保留。归档不改变状态或权威，也不重复加入站点索引。请通过站内现行清单判断版本。
 
 ## 视觉、字体与许可
 
