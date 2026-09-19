@@ -52,7 +52,7 @@ python tools/library_portal/verify_publication.py
 python -m http.server 8765 --bind 127.0.0.1 --directory site/library_portal
 ```
 
-打开 **http://127.0.0.1:8765/**。不要双击 `index.html`，`file://` 无法正常读取索引和启动搜索 Worker。
+打开 [本地预览：127.0.0.1:8765](http://127.0.0.1:8765/)。不要双击 `index.html`，`file://` 无法正常读取索引和启动搜索 Worker。
 
 首次准备需要联网安装依赖及获取字体。字体按固定版本下载并核验 SHA256，构建后随站点提供；访客不访问字体 CDN，也不依赖电脑已安装字体。准备完成后可离线重建和通过本地 HTTP 服务阅读，也可将整个 `site/library_portal/` 复制到另一台电脑使用。
 
@@ -74,7 +74,7 @@ node tools/library_portal/test_frontend.cjs
 
 仓库自带[发布工作流](.github/workflows/pages.yml)。仓库所有者首次在 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**；之后推送 `main` 会构建、检查并发布到：
 
-**https://gyjdb.github.io/buga-setting/**
+[白塔档案馆 · 在线阅读](https://gyjdb.github.io/buga-setting/)
 
 Pull Request 只执行检查，不发布。部署产物只有生成站点，不包含工作目录、Git 历史或本地运行脚本。页面使用 `#/…` 路由和相对资源路径，支持 GitHub 项目子目录；分享文献链接后可直接打开，也可刷新。
 
