@@ -1,0 +1,23 @@
+{
+  "SourceHanSerifSC-VF.woff2": {
+    "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/2.003R/Variable/WOFF2/OTF/SourceHanSerifSC-VF.otf.woff2",
+    "sha256": "3b9451444b4a3554ab061a43cb79dc11c72c0dbc381f148c56c542dca9c0a7e3",
+    "family": "Source Han Serif SC VF", "version": "2.003", "weight": "250–900", "license": "SourceHanSerifSC-LICENSE.txt"
+  },
+  "SourceHanSansSC-VF.woff2": {
+    "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/2.005R/Variable/WOFF2/OTF/SourceHanSansSC-VF.otf.woff2",
+    "sha256": "085cc88c530b9c434165ab926f81608a55b24e60e05719f3d41340ac45d9c62f",
+    "family": "Source Han Sans SC VF", "version": "2.005", "weight": "250–900", "license": "SourceHanSansSC-LICENSE.txt"
+  },
+  "SourceSerif4-Regular.woff2": {
+    "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/80d3f8894c09c937bebfa9011247d2e1c79fd6f4/WOFF2/OTF/SourceSerif4-Regular.otf.woff2",
+    "sha256": "42aa010dbb82d90764a28f6cc7d809a9395999b7390eb3b212028c6975e97402",
+    "family": "Source Serif 4", "version": "4.005", "weight": 400, "license": "SourceSerif4-LICENSE.txt"
+  },
+  "SourceSerif4-Semibold.woff2": {
+    "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/80d3f8894c09c937bebfa9011247d2e1c79fd6f4/WOFF2/OTF/SourceSerif4-Semibold.otf.woff2",
+    "sha256": "7eff2d2fde32c42992e723eb24dcc6dc5b640ef0da97ce373cd38e0604202e30",
+    "family": "Source Serif 4", "version": "4.005", "weight": 600, "license": "SourceSerif4-LICENSE.txt"
+  }
+}
+

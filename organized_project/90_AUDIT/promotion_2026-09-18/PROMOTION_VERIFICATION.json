@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "date": "2026-09-18",
+  "promoted_current_canon": 17,
+  "approved_rule_bodies_identical": 17,
+  "previous_bodies_unchanged": 17,
+  "new_superseded_copies_identical": 17,
+  "candidate_and_changelog_files_unchanged": 34,
+  "authorized_control_files_updated": 11,
+  "management_snapshots_byte_identical": 11,
+  "protected_preexisting_files_checked": 460,
+  "unexpected_source_changes": [],
+  "local_links_checked": 695,
+  "broken_links": [],
+  "author_only_retained": 19,
+  "future_interfaces_retained": 12,
+  "scenario_results_inherited_not_rerun": {
+    "PASS": 19,
+    "CONDITIONAL": 6
+  },
+  "scope": "All 379 original baseline files plus organized_project files; unrelated site/tools/runtime logs are outside this promotion.",
+  "note": "Source status maps are historical; CURRENT_CANON_MANIFEST is the exclusive current set. No law-body revision or new module construction."
+}

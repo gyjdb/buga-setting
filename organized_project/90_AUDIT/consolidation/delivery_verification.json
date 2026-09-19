@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "date": "2026-09-18",
+  "baseline_files_unchanged": 379,
+  "source_changes": [],
+  "all_new_files_within_organized_project": true,
+  "new_markdown_files": 40,
+  "local_links_checked": 358,
+  "broken_links": [],
+  "article_number_coverage": {
+    "K20": {
+      "original": 36,
+      "candidate": 36,
+      "missing_original_numbers": []
+    },
+    "K15": {
+      "original": 22,
+      "candidate": 22,
+      "missing_original_numbers": []
+    },
+    "K21": {
+      "original": 29,
+      "candidate": 29,
+      "missing_original_numbers": []
+    },
+    "K13": {
+      "original": 38,
+      "candidate": 38,
+      "missing_original_numbers": []
+    },
+    "K23": {
+      "original": 0,
+      "candidate": 0,
+      "missing_original_numbers": []
+    },
+    "K12": {
+      "original": 41,
+      "candidate": 41,
+      "missing_original_numbers": []
+    },
+    "K14": {
+      "original": 45,
+      "candidate": 45,
+      "missing_original_numbers": []
+    },
+    "K10": {
+      "original": 0,
+      "candidate": 0,
+      "missing_original_numbers": []
+    },
+    "K26": {
+      "original": 52,
+      "candidate": 52,
+      "missing_original_numbers": []
+    },
+    "K25": {
+      "original": 36,
+      "candidate": 36,
+      "missing_original_numbers": []
+    },
+    "K19": {
+      "original": 0,
+      "candidate": 0,
+      "missing_original_numbers": []
+    },
+    "K18": {
+      "original": 61,
+      "candidate": 61,
+      "missing_original_numbers": []
+    },
+    "K11": {
+      "original": 0,
+      "candidate": 0,
+      "missing_original_numbers": []
+    },
+    "K28": {
+      "original": 42,
+      "candidate": 42,
+      "missing_original_numbers": []
+    },
+    "K27": {
+      "original": 34,
+      "candidate": 34,
+      "missing_original_numbers": []
+    },
+    "K29": {
+      "original": 29,
+      "candidate": 29,
+      "missing_original_numbers": []
+    },
+    "K24": {
+      "original": 60,
+      "candidate": 60,
+      "missing_original_numbers": []
+    }
+  },
+  "original_author_sha256": "e343a13c03dfc945eee240927dda2dad2ffc335f5ea17dbccf6a3f6a73e70948",
+  "author_copy_preserves_original_bytes": true,
+  "scenario_count": 25,
+  "scenario_statuses": {
+    "PASS": 19,
+    "CONDITIONAL": 6
+  },
+  "limits": "Technical integrity checks only; narrative scenario results are documented textual analysis, not executable-world validation."
+}

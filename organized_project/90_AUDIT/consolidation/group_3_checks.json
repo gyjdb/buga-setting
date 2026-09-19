@@ -1,0 +1,64 @@
+{
+  "group": 3,
+  "files": [
+    "K26",
+    "K25",
+    "K19"
+  ],
+  "status": "PASS_INTERNAL",
+  "checks": [
+    {
+      "check": "K26 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K26 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K26 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K25 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K25 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K25 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K19 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K19 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K19 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "jurisdiction single source",
+      "passed": true
+    },
+    {
+      "check": "judicial permission and surveillance review",
+      "passed": true
+    },
+    {
+      "check": "noncitizen remedy and no fabricated trace certainty",
+      "passed": true
+    },
+    {
+      "check": "special privilege not universal tower immunity",
+      "passed": true
+    }
+  ],
+  "note": "组内检查通过；跨组接口须在全局审计再次核验。"
+}

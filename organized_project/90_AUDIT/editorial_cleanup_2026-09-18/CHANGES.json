@@ -1,0 +1,4118 @@
+[
+  {
+    "sequence": 1,
+    "alias": "K20",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《魔法基本法》v1.3\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K20；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/魔法基本法_v1_3_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/魔法基本法_v1_3_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/魔法体系与魔法法/魔法基本法_草案_v1_2_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《魔法基本法》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 2,
+    "alias": "K15",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《法术环级标准》v1.3\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K15；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/法术环级标准_v1_3_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/法术环级标准_v1_3_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/魔法体系与魔法法/法术环级标准_草案_v1_2_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《法术环级标准》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 3,
+    "alias": "K21",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《环级认定规程》v1.3\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K21；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/环级认定规程_v1_3_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/环级认定规程_v1_3_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/魔法体系与魔法法/环级认定规程_草案_v1_1_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《环级认定规程》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 4,
+    "alias": "K13",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《禁魔分区规程》v1.3\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K13；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/禁魔分区规程_v1_3_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/禁魔分区规程_v1_3_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/魔法体系与魔法法/禁魔分区规程_草案_v1_1_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《禁魔分区规程》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 5,
+    "alias": "K23",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《禁术管制委员会组织架构》v1.3\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K23；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/禁术管制委员会组织架构_v1_3_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/魔法体系与魔法法/禁术管制委员会组织架构_v1_3_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/魔法体系与魔法法/禁术管制委员会组织架构_草案_v1_2_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《禁术管制委员会组织架构》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 6,
+    "alias": "K12",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/银色联盟宪章_v0_5.md",
+    "source_sha256": "286fd780d91e44b41f3636778f187885e1dd6dddf7bb104804754726a20e9b64",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《银色联盟宪章》v0.5\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K12；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/宪政与治理/银色联盟宪章_v0_5_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/宪政与治理/银色联盟宪章_v0_5_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/宪政与治理/银色联盟宪章_v0_4.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《银色联盟宪章》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 7,
+    "alias": "K14",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银议会组织法_v3_6.md",
+    "source_sha256": "0ddabe1e27118cd133a61332a7fced8547cb6f638ed271a818d3636749f11110",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《白银议会组织法》v3.6\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K14；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/宪政与治理/白银议会组织法_v3_6_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/宪政与治理/白银议会组织法_v3_6_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/宪政与治理/白银议会组织法_v3_5.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《白银议会组织法》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 8,
+    "alias": "K10",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《白银执政院》v2.8\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K10；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/宪政与治理/白银执政院_v2_8_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/宪政与治理/白银执政院_v2_8_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/宪政与治理/白银执政院_修订稿_v2_7_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《白银执政院》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 9,
+    "alias": "K26",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/裁断体系组织法_v1_5.md",
+    "source_sha256": "709362fcfa0bed273161a9f7857f13fd7febb18502ef3869b5528294ce21a39d",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《裁断体系组织法》v1.5\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K26；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/司法监察与治安/裁断体系组织法_v1_5_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/司法监察与治安/裁断体系组织法_v1_5_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/司法监察与治安/裁断体系组织法_草案_v1_4_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《裁断体系组织法》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 10,
+    "alias": "K25",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/盟约监察院组织法_v1_4.md",
+    "source_sha256": "761a4d8e5402c134a1340738f1835face4b083555f3eb0f1c584434d89cecc34",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《盟约监察院组织法》v1.4\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K25；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/司法监察与治安/盟约监察院组织法_v1_4_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/司法监察与治安/盟约监察院组织法_v1_4_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/司法监察与治安/盟约监察院组织法_草案_v1_3_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《盟约监察院组织法》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 11,
+    "alias": "K19",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v2_3.md",
+    "source_sha256": "69375453dc7181d9ee5806951727dd1a1620450ba3af1df79b719a4b47a8119e",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《内务治安部组织架构》v2.3\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K19；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/司法监察与治安/内务治安部组织架构_v2_3_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/司法监察与治安/内务治安部组织架构_v2_3_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/司法监察与治安/内务治安部组织架构_草案_v2_2_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《内务治安部组织架构》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 12,
+    "alias": "K18",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银色联盟防务基本法_v2_6.md",
+    "source_sha256": "5746bdc37831624d2abf55b84d18e2231e0915db82257c6e663be53fb3e3c69e",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《银色联盟防务基本法》v2.6\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K18；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/军事与防务/银色联盟防务基本法_v2_6_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/军事与防务/银色联盟防务基本法_v2_6_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/军事与防务/银色联盟防务基本法_草案_v2_5.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《银色联盟防务基本法》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 13,
+    "alias": "K11",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《银烛会》v2.5\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K11；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/军事与防务/银烛会_v2_5_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/军事与防务/银烛会_v2_5_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/军事与防务/银烛会_v2_4.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《银烛会》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 14,
+    "alias": "K28",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《白塔章程》v2.2\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K28；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/学术与研究机构/白塔章程_v2_2_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/学术与研究机构/白塔章程_v2_2_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/学术与研究机构/白塔章程_草案_v2_1_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《白塔章程》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 15,
+    "alias": "K27",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《白银学会章程》v1.2\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K27；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/学术与研究机构/白银学会章程_v1_2_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/学术与研究机构/白银学会章程_v1_2_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/学术与研究机构/白银学会章程_草案_v1_1_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《白银学会章程》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 16,
+    "alias": "K29",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/大图书馆章程_v1_9.md",
+    "source_sha256": "b473f527c0bdb5ab94ef14f0338af6781c40d27c0147709e8550370917067385",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《大图书馆章程》v1.9\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K29；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/学术与研究机构/大图书馆章程_v1_9_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/学术与研究机构/大图书馆章程_v1_9_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/学术与研究机构/大图书馆章程_v1_8.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《大图书馆章程》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 17,
+    "alias": "K24",
+    "issues": [
+      "G01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/财政货币与经济/布加联盟储备系统章程_v1_2.md",
+    "source_sha256": "a377bcfdb068bd590121cff41c8088e9cf8672af49468e0852cef1b2b8e0b4f4",
+    "source_lines": [
+      1,
+      8
+    ],
+    "old": "# 《布加联盟储备系统章程》v1.2\n\n> status: CURRENT_CANON\n> approved_date: 2026-09-18；source: K24；approval: D53（作者整体审核后明确晋升）。\n> [获批候选快照](<../../10_WORKING_DRAFTS/canon_consolidation/财政货币与经济/布加联盟储备系统章程_v1_2_candidate.md>)；[CHANGELOG](<../../10_WORKING_DRAFTS/canon_consolidation/财政货币与经济/布加联盟储备系统章程_v1_2_candidate_CHANGELOG.md>)；[已替代前版](<../../05_SUPERSEDED/canon_consolidation_2026-09-18/财政货币与经济/布加联盟储备系统章程_草案_v1_1_.md>)。\n> 同批跨文件引用以[现行Canon索引](<../../00_PROJECT/CANON_INDEX.md>)登记版本为准；最高作者原答及未决事项的保留边界继续有效。\n> 本次仅更换晋升元数据，以下正文与获批候选逐字相同；正文中的“本候选”“经本轮整体批准后”等审核措辞，其批准条件已成就，不表示另须重复审批；世界内个案申请、表决和许可程序仍按各条执行。\n",
+    "new": "# 《布加联盟储备系统章程》\n",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "将项目版本、批准、候选及来源信息移入独立审计；正文保留文名。",
+    "evidence": [
+      "全部17份L1–8；D54；world-canon-editor的正文/审计分离原则。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 18,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      11,
+      11
+    ],
+    "old": "魔法是联盟生产、公共设施、防务与知识传承的重要基础。本法区分已经确认的能力事实与联盟制定的制度，不以行政认定创造自然能力，也不以尚未定论的本体解释剥夺依法取得的资格。",
+    "new": "魔法是联盟生产、公共设施、防务与知识传承的重要基础。行政认定记载施法能力，不产生施法能力；依法取得的资格受法律保障。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 19,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      21,
+      21
+    ],
+    "old": "本法载明已确认的魔法事实，并规定联盟对施法、认定、许可、设施和责任的管理。环级起源及一般魔力转换机理不由本法定论；制度可以采用公开、可复核的术式标准，不得把行政凭证等同自然能力。",
+    "new": "本法规定联盟对施法、认定、许可、设施和责任的管理。认定采用公开、可复核的术式标准，行政凭证不等同于自然能力。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 20,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      27,
+      27
+    ],
+    "old": "2. 环级：术式等级；总体系十五环，十四环为凡人的终点，十五环为神的力量。次级法术不计环。现行普通认定与许可覆盖一至十四环的非弦术式，不授予十五环许可；各体系十五环可达范围不据本条推定。",
+    "new": "2. 环级：术式等级；总体系十五环，十四环为凡人的终点，十五环为神的力量。次级法术不计环。现行普通认定与许可覆盖一至十四环的非弦术式，不授予十五环许可。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 21,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      45,
+      45
+    ],
+    "old": "联盟采用《法术环级标准》第四条的暂行术式目录作为认定和许可阈值的操作依据。该目录记录可复核的术式表现，不裁定环级是世界固有还是历史分类，也不确立耗魔量为唯一标尺。",
+    "new": "联盟采用《法术环级标准》第四条的暂行术式目录作为认定和许可阈值的操作依据。该目录记录可复核的术式表现；耗魔量不得作为定阶的唯一标准。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 22,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      53,
+      53
+    ],
+    "old": "十四环普通术式须经银色学派终局许可。未经授权的十四环实验依《宪章》第六条处理；合法许可不解除场所、事故预防与留痕义务。不得以“十四环以上”创设普通十五环许可，亦不得把所有十四环术式一律断言为同等毁城威力。",
+    "new": "十四环普通术式须经银色学派终局许可。未经授权的十四环实验依《宪章》第六条处理；合法许可不解除场所、事故预防与留痕义务。普通许可不包括十五环术式；十四环术式的威力与风险应逐项评估。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 23,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      67,
+      67
+    ],
+    "old": "施法所需知识、能力与能量分别核验；纯供能不足以使不会者学会相应术式，无供能节点也不等于失去个人施法能力。一般能量取得顺序不在本法确定。大地之书等已知授予术式知识的特殊器物，应如实记录其作用与核心、意志力、法力池条件，不因器物协助自动授予持有者无条件的永久个人环级。",
+    "new": "施法所需知识、能力与能量分别核验；纯供能不足以使不会者学会相应术式，无供能节点也不等于失去个人施法能力。大地之书等已知授予术式知识的特殊器物，应如实记录其作用与核心、意志力、法力池条件，不因器物协助自动授予持有者无条件的永久个人环级。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 24,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      89,
+      89
+    ],
+    "old": "普通认定适用一至十四环非弦术式，一至九环成套考核、十至十四环一术定阶。细目、首次高阶试炼许可、辅助条件记录和救济仅由《环级认定规程》规定；本法不另设第二套考核程序。",
+    "new": "普通认定适用一至十四环非弦术式，一至九环成套考核、十至十四环一术定阶。细目、首次高阶试炼许可、辅助条件记录和救济依《环级认定规程》办理。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 25,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      118,
+      118
+    ],
+    "old": "已取得的环级认定记录原则上终身有效；这不宣称实际能力永不改变，也不阻止有证据的舞弊复核或对具体危险行为限制许可。官职任期依各组织法，不因个人能力永久占有；银色十二环的特殊身份不等同术式环级。",
+    "new": "已取得的环级认定记录原则上终身有效；其效力不以实际能力始终不变为前提，不妨碍有证据的舞弊复核或对具体危险行为限制许可。官职任期依各组织法，不因个人能力永久占有；银色十二环的特殊身份不等同术式环级。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 26,
+    "alias": "K20",
+    "issues": [
+      "K20-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      136,
+      136
+    ],
+    "old": "禁魔阻止受其作用的施法行为，不是切断供能；已施出的法术不因进入禁魔区自行消失，除非受到干涉。弦魔法不能被禁魔。装置重新施法与持续运行的通用机理不作推定，设施必须依《禁魔分区规程》第三条和附件一进行行为验证与安全隔离。",
+    "new": "禁魔阻止受其作用的施法行为，不是切断供能；已施出的法术不因进入禁魔区自行消失，除非受到干涉。弦魔法不能被禁魔。设施的重新施法与持续运行行为必须依《禁魔分区规程》第三条和附件一进行行为验证与安全隔离。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "法条谈编辑者能否确定魔法本体、避免推定和重复建模。 保留既有能力、术式标准、资格保护与设备验证制度，撤去编辑权限说明。",
+    "evidence": [
+      "K20第三/六/十一/二十一/二十五条；K15第四条；K13附件一；作者原答及CC-A01/02/06/07保留边界。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 27,
+    "alias": "K20",
+    "issues": [
+      "K13-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      140,
+      140
+    ],
+    "old": "自由施法区、戒备区、限阶区、绝对禁制区的地点、阈值、部署、医疗例外和解除程序，以《禁魔分区规程》第五至十二条及第五、八章为单一规则来源。各区均受第二十五条物理边界约束；场所放行不替代个人高阶许可。",
+    "new": "自由施法区、戒备区、限阶区、绝对禁制区的地点、阈值、部署、医疗例外和解除程序，以《禁魔分区规程》第五至十二条及第五、八、九章为单一规则来源。各区均受第二十五条物理边界约束；场所放行不替代个人高阶许可。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "解除程序在禁魔规程第九章第三十六条；补齐章节引用，不改救命权限。",
+    "evidence": [
+      "K13第三十六条、附件二；K10行政第四/五条；IF03/06不因此补齐。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 28,
+    "alias": "K20",
+    "issues": [
+      "K23-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      146,
+      146
+    ],
+    "old": "### 第二十八条 弦魔法禁制与十四环许可",
+    "new": "### 第二十八条 禁术管制与十四环许可",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "禁术示例未明确存在性，时间逆转被直接列禁。 按D58移除时间类别禁制，列管死灵法术及实验研究，不宣布量产已成功。",
+    "evidence": [
+      "D58；K20第二十八条；K23第6.2节；作者所引原著片段仅作范围说明。"
+    ],
+    "authority": [
+      "D58"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 29,
+    "alias": "K20",
+    "issues": [
+      "K20-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      148,
+      148
+    ],
+    "old": "弦魔法的研究、传习或施展仍属绝对禁制，依法封存保管残篇不等于研究施法授权。本轮普通、紧急、军务及外国访客许可均不新设弦魔法例外；涉弦事件报银色学派并依法采取隔离救助，不得声称禁魔场能压制弦魔法。十四环非弦术式适用第八条。",
+    "new": "弦魔法的研究、传习或施展仍属绝对禁制，依法封存保管残篇不等于研究施法授权。普通、紧急、军务及外国访客许可均不得豁免前述禁制；涉弦事件报银色学派并依法采取隔离救助，不得声称禁魔场能压制弦魔法。十四环非弦术式适用第八条。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "“本轮”把弦魔法的禁制写成一次编辑决定。 用现行许可不得豁免绝对禁制表达原规则。",
+    "evidence": [
+      "K20第九/二十八条；K23许可第五条；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 30,
+    "alias": "K20",
+    "issues": [
+      "K23-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      148,
+      148
+    ],
+    "old": "弦魔法的研究、传习或施展仍属绝对禁制，依法封存保管残篇不等于研究施法授权。普通、紧急、军务及外国访客许可均不得豁免前述禁制；涉弦事件报银色学派并依法采取隔离救助，不得声称禁魔场能压制弦魔法。十四环非弦术式适用第八条。",
+    "new": "弦魔法的研究、传习或施展仍属绝对禁制，依法封存保管残篇不等于研究施法授权。普通、紧急、军务及外国访客许可均不得豁免前述禁制；涉弦事件报银色学派并依法采取隔离救助，不得声称禁魔场能压制弦魔法。十四环非弦术式适用第八条。\n\n死灵法术及其实验研究列入禁术管制。时间类法术不因涉及时间而列为禁术；施法仍须遵守环级许可、场所限制和其他适用于具体行为的法律。禁术名录依《禁术管制委员会组织架构》第六章管理。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "禁术示例未明确存在性，时间逆转被直接列禁。 按D58移除时间类别禁制，列管死灵法术及实验研究，不宣布量产已成功。",
+    "evidence": [
+      "D58；K20第二十八条；K23第6.2节；作者所引原著片段仅作范围说明。"
+    ],
+    "authority": [
+      "D58"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 31,
+    "alias": "K20",
+    "issues": [
+      "K12-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      150,
+      150
+    ],
+    "old": "### 第二十九条 向同胞施法的禁止",
+    "new": "### 第二十九条 攻击行为与施法证据",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "主动攻击自动触发根本红线及其上下位法重复。 按D60移除独立红线项；普通斗殴个体攻击走治安司法；其他既有红线不变。",
+    "evidence": [
+      "D60；K12第六条；K20第二十九条；K15第二十条；K19警实二。"
+    ],
+    "authority": [
+      "D60"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 32,
+    "alias": "K20",
+    "issues": [
+      "K12-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      152,
+      152
+    ],
+    "old": "对联盟公民的违法主动攻击依《宪章》第六条处理，依法执行及法定紧急救助不得仅因使用魔法自动归为主动攻击。施法留痕应依法收集保存，其真伪、完整性和层次限制允许鉴识与质证，不视为天然绝对不可伪造的证据。",
+    "new": "普通斗殴及个体主动攻击依治安与司法程序处理，不因主动攻击本身进入红线事件流程；同时符合《宪章》第六条其他红线情形的，依该情形处理。依法执行及法定紧急救助不得仅因使用魔法视为违法攻击。施法留痕应依法收集保存，其真伪、完整性和层次限制允许鉴识与质证，不视为天然绝对不可伪造的证据。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "主动攻击自动触发根本红线及其上下位法重复。 按D60移除独立红线项；普通斗殴个体攻击走治安司法；其他既有红线不变。",
+    "evidence": [
+      "D60；K12第六条；K20第二十九条；K15第二十条；K19警实二。"
+    ],
+    "authority": [
+      "D60"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 33,
+    "alias": "K20",
+    "issues": [
+      "K20-04"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      174,
+      174
+    ],
+    "old": "相关案件依《裁断体系组织法》管辖和救济。事故先救人、隔离风险并保全证据；许可合法与否、操作过错、设施缺陷和审批过错分别鉴别，技术事故不自动等同犯罪。实际施法者、组织者、运营者与审批机关分别对自己行为承担法定责任。救助和先行修复由运营责任人按批准预算先行组织，不预断最终赔偿；赔偿依据缺失的请求仍应登记、保全证据并明示未决，不虚构已生效的事故赔偿法。",
+    "new": "相关案件依《裁断体系组织法》管辖和救济。事故先救人、隔离风险并保全证据；许可合法与否、操作过错、设施缺陷和审批过错分别鉴别，技术事故不自动等同犯罪。实际施法者、组织者、运营者与审批机关分别对自己行为承担法定责任。救助和先行修复由运营责任人按批准预算先行组织，不预断最终赔偿；赔偿依据缺失的请求仍应登记、保全证据并明示未决。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "事故与配套规则出现“不虚构已生效法”的编辑告诫。 保留依法受理、记录待决请求、合法法源和证据保全；移出创作告诫。",
+    "evidence": [
+      "K20第三十三/三十四条；K26司实三；IF03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 34,
+    "alias": "K20",
+    "issues": [
+      "K20-04"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      180,
+      180
+    ],
+    "old": "本法的共同定义为魔法法规主来源；《法术环级标准》维护技术目录，《环级认定规程》规定认定，《禁魔分区规程》规定场所与节点最低运行程序，《禁术管制委员会组织架构》附件一规定许可实施。实施规程中的新权利义务须经议会程序，不由机关目录替代；未成文的隐私、事故赔偿等配套法不得作为既有法律援引。",
+    "new": "本法的共同定义为魔法法规主来源；《法术环级标准》维护技术目录，《环级认定规程》规定认定，《禁魔分区规程》规定场所与节点最低运行程序，《禁术管制委员会组织架构》附件一规定许可实施。实施规程中的新权利义务须经议会程序，不由机关目录替代；权利限制和赔偿决定应载明所依据的有效法律。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "事故与配套规则出现“不虚构已生效法”的编辑告诫。 保留依法受理、记录待决请求、合法法源和证据保全；移出创作告诫。",
+    "evidence": [
+      "K20第三十三/三十四条；K26司实三；IF03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 35,
+    "alias": "K20",
+    "issues": [
+      "K20-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      192,
+      192
+    ],
+    "old": "## 附件 已确认魔法事实的安全适用",
+    "new": "## 附件 高阶施法与公共安全",
+    "problem_types": [
+      "SOURCE_CONTAMINATION"
+    ],
+    "reason": "安全附件把“作者原答”“作者已明确”“未定不补”当世界内规则。 直接表述已确认高环代价、传送和造物事实；白银十四环未决移留OPEN_ISSUES。",
+    "evidence": [
+      "AUTHOR_FOUNDATIONS_v0.1.md L209–221、L242–249；K20第十一条；CC-A13/15。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 36,
+    "alias": "K20",
+    "issues": [
+      "K20-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      194,
+      194
+    ],
+    "old": "1. 一般凡人从十环开始的高阶施法会燃烧法力池上限，并需有限手段和时间恢复；补充法力不等于恢复该上限。白银之民至少对作者已明确的十三环实例可忽略该项惩罚，黄金之民没有这一特定限制。此为特定代价差别，不是无条件免除一切施法成本；白银十四环的该项代价仍未定，不用猜测值制定强制重复试炼。",
+    "new": "1. 一般凡人从十环开始的高阶施法会燃烧法力池上限，并需有限手段和时间恢复；补充法力不等于恢复该上限。白银之民施展十三环及以下法术时可忽略该项惩罚，黄金之民没有这一特定限制。此项差别不免除其他施法成本；高阶试炼应根据具体术式、施法者及辅助条件评估风险。",
+    "problem_types": [
+      "SOURCE_CONTAMINATION"
+    ],
+    "reason": "依据作者原答L212–214直接表达已确认范围，不补白银十四环代价。",
+    "evidence": [
+      "AUTHOR_FOUNDATIONS_v0.1.md L209–221、L242–249；K20第十一条；CC-A13/15。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 37,
+    "alias": "K20",
+    "issues": [
+      "K20-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      196,
+      196
+    ],
+    "old": "3. 第九环已有不完全传送；真正空间类术式的已知高阶路径及其代价按作者原答保留，不推定任意地点零代价运输。即时通讯可用于申请与紧急合议，但身份验证、送达回执和法定人数仍须满足。",
+    "new": "3. 第九环已有不完全传送；真正空间类术式属于十环及以上的法则魔法，需要大量魔力并承受相应身体负担。即时通讯可用于申请与紧急合议，但身份验证、送达回执和法定人数仍须满足。",
+    "problem_types": [
+      "SOURCE_CONTAMINATION"
+    ],
+    "reason": "将作者原答L209–212的已确认事实直接表达，移除对原答的空引用。",
+    "evidence": [
+      "AUTHOR_FOUNDATIONS_v0.1.md L209–221、L242–249；K20第十一条；CC-A13/15。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 38,
+    "alias": "K20",
+    "issues": [
+      "K20-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3.md",
+    "source_sha256": "f0041ef36aa1e84318ccb7dce20096db8d27d91b3d3092348cb7fc7ad77f2139",
+    "source_lines": [
+      197,
+      197
+    ],
+    "old": "4. 救回濒死者不等于复活灵魂已经离世者；水和食物可由魔法生产，造物须有输入，具体转换率、普通设备行为及农业增产率不得由本法补定。",
+    "new": "4. 救回濒死者不等于复活灵魂已经离世者；水和食物可由魔法生产，造物须有输入。",
+    "problem_types": [
+      "SOURCE_CONTAMINATION"
+    ],
+    "reason": "安全附件把“作者原答”“作者已明确”“未定不补”当世界内规则。 直接表述已确认高环代价、传送和造物事实；白银十四环未决移留OPEN_ISSUES。",
+    "evidence": [
+      "AUTHOR_FOUNDATIONS_v0.1.md L209–221、L242–249；K20第十一条；CC-A13/15。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 39,
+    "alias": "K15",
+    "issues": [
+      "K15-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      11,
+      11
+    ],
+    "old": "本标准为联盟认定与许可采用的技术规范。魔法共同定义依《魔法基本法》，本标准不裁定尚未确定的环级起源。",
+    "new": "本标准为联盟认定与许可采用的技术规范。魔法共同定义依《魔法基本法》。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "反复说明本文件不裁定起源、不另建教育及制度名单。 保留实际适用的交叉引用，移除编辑工作范围说明。",
+    "evidence": [
+      "K15第三/五/十五/十七/十九条；K20第二十二/二十四条；K13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 40,
+    "alias": "K15",
+    "issues": [
+      "K15-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      17,
+      17
+    ],
+    "old": "本标准以公开的术式目录、测试条件和记录规则支持个人认定与许可，不重复制定公民、禁魔或许可实体制度。",
+    "new": "本标准以公开的术式目录、测试条件和记录规则支持个人认定与许可。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "反复说明本文件不裁定起源、不另建教育及制度名单。 保留实际适用的交叉引用，移除编辑工作范围说明。",
+    "evidence": [
+      "K15第三/五/十五/十七/十九条；K20第二十二/二十四条；K13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 41,
+    "alias": "K15",
+    "issues": [
+      "K15-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      27,
+      27
+    ],
+    "old": "## 第二编 法术环级（世界法则的载明）",
+    "new": "## 第二编 环级技术标准",
+    "problem_types": [
+      "OVERCLAIM"
+    ],
+    "reason": "“世界法则的载明”“环级的本质”使暂行目录看似已定自然本体。 标题只指环级技术标准和术式定阶。",
+    "evidence": [
+      "K15第四条正文；K20第六条；CC-A01。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 42,
+    "alias": "K15",
+    "issues": [
+      "K15-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      29,
+      29
+    ],
+    "old": "### 第四条 环级的本质",
+    "new": "### 第四条 术式目录与定阶",
+    "problem_types": [
+      "OVERCLAIM"
+    ],
+    "reason": "“世界法则的载明”“环级的本质”使暂行目录看似已定自然本体。 标题只指环级技术标准和术式定阶。",
+    "evidence": [
+      "K15第四条正文；K20第六条；CC-A01。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 43,
+    "alias": "K15",
+    "issues": [
+      "K15-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      35,
+      35
+    ],
+    "old": "总体系十五环、十四凡人终点；低环弦存在。普通目录一至十四环的非弦术式与弦知识分别标识，后者不进入普通认定或许可。不得采用将低环弦删除或把弦全归神域的分类。",
+    "new": "总体系十五环、十四凡人终点；低环弦存在。普通目录一至十四环的非弦术式与弦知识分别标识，后者不进入普通认定或许可。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "反复说明本文件不裁定起源、不另建教育及制度名单。 保留实际适用的交叉引用，移除编辑工作范围说明。",
+    "evidence": [
+      "K15第三/五/十五/十七/十九条；K20第二十二/二十四条；K13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 44,
+    "alias": "K15",
+    "issues": [
+      "K15-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      57,
+      57
+    ],
+    "old": "个人认定的考核方式、首次试炼和高阶安全记录，统一依《环级认定规程》第五至十七条，本标准不另订申请门槛。",
+    "new": "个人认定的考核方式、首次试炼和高阶安全记录，统一依《环级认定规程》第五至十七条。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "反复说明本文件不裁定起源、不另建教育及制度名单。 保留实际适用的交叉引用，移除编辑工作范围说明。",
+    "evidence": [
+      "K15第三/五/十五/十七/十九条；K20第二十二/二十四条；K13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 45,
+    "alias": "K15",
+    "issues": [
+      "K15-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      79,
+      79
+    ],
+    "old": "知识开放及危险知识例外统一依《魔法基本法》第二十二条；本标准不另立一份例外名单。",
+    "new": "知识开放及危险知识例外统一依《魔法基本法》第二十二条。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "反复说明本文件不裁定起源、不另建教育及制度名单。 保留实际适用的交叉引用，移除编辑工作范围说明。",
+    "evidence": [
+      "K15第三/五/十五/十七/十九条；K20第二十二/二十四条；K13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 46,
+    "alias": "K15",
+    "issues": [
+      "K15-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "CROSS_FILE_ALIGNMENT"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      83,
+      83
+    ],
+    "old": "环级认定只以申请人能否施出相应术式为准，不问其出身、世系或财富。世家可以给予资源，却不能代替那一次成功的施法。",
+    "new": "环级认定依《环级认定规程》核验申请人的施法能力，不问其出身、世系或财富。不得以出身、世系或财富代替法定考核。",
+    "problem_types": [
+      "CROSS_FILE_CONFLICT"
+    ],
+    "reason": "“那一次成功的施法”可能把低环成套考核也改成单次成功。 改为依法定考核验证能力，不更改任何环段考核门槛。",
+    "evidence": [
+      "K21第五至七条；K15第十一条；D56对本次现场施法的决定。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 47,
+    "alias": "K15",
+    "issues": [
+      "K15-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      87,
+      87
+    ],
+    "old": "公共教育的原则依《魔法基本法》第二十四条；本标准不设新的学校机构、教育义务或行业执业门槛。",
+    "new": "公共教育的原则依《魔法基本法》第二十四条。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "反复说明本文件不裁定起源、不另建教育及制度名单。 保留实际适用的交叉引用，移除编辑工作范围说明。",
+    "evidence": [
+      "K15第三/五/十五/十七/十九条；K20第二十二/二十四条；K13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 48,
+    "alias": "K15",
+    "issues": [
+      "K15-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      97,
+      97
+    ],
+    "old": "分区、阈值、医馆和节点例外统一依《禁魔分区规程》，本标准不再复列第二套场所规则。",
+    "new": "分区、阈值、医馆和节点例外统一依《禁魔分区规程》。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "反复说明本文件不裁定起源、不另建教育及制度名单。 保留实际适用的交叉引用，移除编辑工作范围说明。",
+    "evidence": [
+      "K15第三/五/十五/十七/十九条；K20第二十二/二十四条；K13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 49,
+    "alias": "K15",
+    "issues": [
+      "K12-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3.md",
+    "source_sha256": "c2bb1c721168950ac98302d598682e12b45238047f945740329a338522b76040",
+    "source_lines": [
+      99,
+      99
+    ],
+    "old": "### 第二十条 向同胞施法的禁止",
+    "new": "### 第二十条 攻击行为与施法证据",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "同步上位法第二十九条标题，避免标题仍暗示向同胞施法一律禁止。",
+    "evidence": [
+      "D60；K12第六条；K20第二十九条；K15第二十条；K19警实二。"
+    ],
+    "authority": [
+      "D60"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 50,
+    "alias": "K21",
+    "issues": [
+      "K21-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      35,
+      35
+    ],
+    "old": "一至九环成套考核，十至十四环一术定阶；术式目录依《法术环级标准》第四条。考核条件和辅助条件分别记录，不使用自然本体未定的假说作为拒绝理由。",
+    "new": "一至九环成套考核，十至十四环一术定阶；术式目录依《法术环级标准》第四条。考核条件和辅助条件分别记录。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "认定条款夹入自然本体未定、装置机理不由规程决定等编辑限制。 保留记录、条件验证与安全审查，用世界内语言表达；未定物理继续留审计。",
+    "evidence": [
+      "K21第五/九/十六/十七/二十一条；K13附件一；CC-A01/05/07/13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 51,
+    "alias": "K21",
+    "issues": [
+      "K21-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      53,
+      53
+    ],
+    "old": "行政环段仍分初阶一至三、中阶四至六、高级七至九、大法师十至十三、极限十四。环段用于安排考核和许可，不由此裁定自然环级起源。",
+    "new": "行政环段仍分初阶一至三、中阶四至六、高级七至九、大法师十至十三、极限十四。环段用于安排考核和许可。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "认定条款夹入自然本体未定、装置机理不由规程决定等编辑限制。 保留记录、条件验证与安全审查，用世界内语言表达；未定物理继续留审计。",
+    "evidence": [
+      "K21第五/九/十六/十七/二十一条；K13附件一；CC-A01/05/07/13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 52,
+    "alias": "K21",
+    "issues": [
+      "K21-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      61,
+      61
+    ],
+    "old": "四环为现有执业巫师路径的能力门槛，不自动授予医疗、节点维护等专业资格。申请人应向具有既有授权的行业主管机关另行申请；尚无完整行业标准的，按《白银执政院》行政实施通则登记接口，不伪造已存在的统一职业法。",
+    "new": "四环为现有执业巫师路径的能力门槛，不自动授予医疗、节点维护等专业资格。申请人应向具有既有授权的行业主管机关另行申请，受理与救济适用《白银执政院》行政实施通则。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "职业条款要求登记未来接口并“不伪造统一职业法”。 改引现行行政受理与救济；不新设行业标准或职业法。",
+    "evidence": [
+      "K20第二十条；K10行政第一/第七条；IF02。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 53,
+    "alias": "K21",
+    "issues": [
+      "K21-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      83,
+      83
+    ],
+    "old": "试炼由认定机关组织并全程记录术式、本人动作、供能来源、知识授予或外部执行条件、风险和见证意见。纯供能不算代施；神器授予条件须随结论注明，不能把依神器完成的结果登记为脱离神器也能完成。一般装置机理不以试炼规程决定。",
+    "new": "试炼由认定机关组织并全程记录术式、本人动作、供能来源、知识授予或外部执行条件、风险和见证意见。纯供能不算代施；神器授予条件须随结论注明，不能把依神器完成的结果登记为脱离神器也能完成。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "认定条款夹入自然本体未定、装置机理不由规程决定等编辑限制。 保留记录、条件验证与安全审查，用世界内语言表达；未定物理继续留审计。",
+    "evidence": [
+      "K21第五/九/十六/十七/二十一条；K13附件一；CC-A01/05/07/13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 54,
+    "alias": "K21",
+    "issues": [
+      "K21-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      83,
+      83
+    ],
+    "old": "试炼由认定机关组织并全程记录术式、本人动作、供能来源、知识授予或外部执行条件、风险和见证意见。纯供能不算代施；神器授予条件须随结论注明，不能把依神器完成的结果登记为脱离神器也能完成。",
+    "new": "试炼由认定机关组织并全程记录术式、本人动作、供能来源、知识授予或外部执行条件、风险和见证意见。纯供能不算代施；神器授予条件须随结论注明，不能把依神器完成的结果登记为脱离神器也能完成。本次认定必须由申请人在认定机关组织的现场完成相应施法。既往施法记录可供安全审查及事实核验参考，不得替代本次现场施法。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "成功施法的要求与改用历史记录授级冲突。 按D56要求本次现场施法；历史记录仅供前置安全审查，不能安全试炼则暂缓。",
+    "evidence": [
+      "D56；K21第十六/十七条；K23许可第三条。"
+    ],
+    "authority": [
+      "D56"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 55,
+    "alias": "K21",
+    "issues": [
+      "K21-02",
+      "K21-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      87,
+      87
+    ],
+    "old": "首次十至十三环试炼由认定机关作为组织申请人申领专项试炼许可，无须申请人先持目标环级证书；以先前成绩、技术演示及安全方案替代该项前置证明。技术审查与终局签批依《禁术管制委员会组织架构》附件一，十四环仍须事先终局许可。按族类及已知神器条件评估高环代价，不把凡人法力池惩罚一律套于白银或黄金之民。白银十三环实例已明确；未知十四环具体代价不填数，不能安全验证时改用记录审查或暂缓该项试炼。",
+    "new": "首次十至十三环试炼由认定机关作为组织申请人申领专项试炼许可，无须申请人先持目标环级证书；先前成绩、技术演示及安全方案仅用于许可的前置审查，不替代本次认定的现场施法。技术审查与终局签批依《禁术管制委员会组织架构》附件一，十四环仍须事先终局许可。按族类及已知神器条件评估高环代价，适用《魔法基本法》附件，不把凡人法力池惩罚一律套于白银或黄金之民。不能安全完成现场施法时暂缓该项试炼，不得改用既往记录授予本次申请的环级。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE",
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "认定条款夹入自然本体未定、装置机理不由规程决定等编辑限制。 保留记录、条件验证与安全审查，用世界内语言表达；未定物理继续留审计。；成功施法的要求与改用历史记录授级冲突。 按D56要求本次现场施法；历史记录仅供前置安全审查，不能安全试炼则暂缓。",
+    "evidence": [
+      "K21第五/九/十六/十七/二十一条；K13附件一；CC-A01/05/07/13。",
+      "D56；K21第十六/十七条；K23许可第三条。"
+    ],
+    "authority": [
+      "D56"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 56,
+    "alias": "K21",
+    "issues": [
+      "K21-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3.md",
+    "source_sha256": "3f8c6b30141dcb98727d86b6cb30ab500a301f4c70f4c89dc2c83326fab62503",
+    "source_lines": [
+      105,
+      105
+    ],
+    "old": "合法认定记录原则上终身保存并有效，不宣称实际能力只能增长。舞弊或重大记录错误须经有理由的复核纠正；具体施法失控由许可机关依法暂停对应活动，不以此自动删除历史成绩。",
+    "new": "合法认定记录原则上终身保存并有效，其效力不以实际能力只能增长为前提。舞弊或重大记录错误须经有理由的复核纠正；具体施法失控由许可机关依法暂停对应活动，不以此自动删除历史成绩。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "认定条款夹入自然本体未定、装置机理不由规程决定等编辑限制。 保留记录、条件验证与安全审查，用世界内语言表达；未定物理继续留审计。",
+    "evidence": [
+      "K21第五/九/十六/十七/二十一条；K13附件一；CC-A01/05/07/13。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 57,
+    "alias": "K13",
+    "issues": [
+      "K13-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      21,
+      21
+    ],
+    "old": "禁魔的作用范围依《魔法基本法》第二十五条。纯供能不等于施法，既成效果不因入区自行消失；弦魔法不能被禁魔。装置启动、主动维持或重复产出是否受场压制，不作通用物理结论，依附件一逐项验证；不能只凭“设备有魔力”批准运行。",
+    "new": "禁魔的作用范围依《魔法基本法》第二十五条。纯供能不等于施法，既成效果不因入区自行消失；弦魔法不能被禁魔。装置启动、主动维持或重复产出是否受场压制，依附件一逐项验证；不能只凭“设备有魔力”批准运行。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "装置协议和容量条款提作者决定、一般物理未决和协议不能回答什么。 保留逐项验证与容量实测，用结论适用范围说明边界。",
+    "evidence": [
+      "K13第三条、附件一、附件二第二项；作者原答L114–150。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 58,
+    "alias": "K13",
+    "issues": [
+      "K13-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      23,
+      23
+    ],
+    "old": "### 第四条 两类结界",
+    "new": "### 第四条 三类结界",
+    "problem_types": [
+      "AWKWARD_WORDING"
+    ],
+    "reason": "标题写两类，正文实列戒备、禁魔、防护三类结界。 标题改三类，不增加新的结界。",
+    "evidence": [
+      "K13第四条现有三类定义。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 59,
+    "alias": "K13",
+    "issues": [
+      "K13-04"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      67,
+      67
+    ],
+    "old": "若施法者的环级超出禁魔场的强度，禁制可能被冲破。冲破或试图冲破禁魔场的，依第八章查处；运行机关应即调升强度，或召请治安力量、执行官团。",
+    "new": "禁魔场能否被突破，取决于实际施展法术的环级与场的压制强度。法术环级超出场的压制上限时，禁制可能被冲破；施法者自身能力环级较高，不使其施展的低环法术更容易突破。未施法时，不因施法者能力环级较高而冲破禁魔场。弦魔法不受禁魔压制，仍依第三条及第十一条处理。冲破或试图冲破禁魔场的，依第八章查处；运行机关应即调升强度，或召请治安力量、执行官团。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "场强按术式环级，突破却按施法者等级。 按D57改为实际所施法术环级；高能力施低环不占突破优势；弦例外保持。",
+    "evidence": [
+      "D57；K13第三/十/十一/十二条；K20第二十五条。"
+    ],
+    "authority": [
+      "D57"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 60,
+    "alias": "K13",
+    "issues": [
+      "K13-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      187,
+      187
+    ],
+    "old": "发生现实且紧迫的人命危险，场所负责人可以在完成风险评估后作最小范围、最短时间的场域调整，记录范围与恢复条件；这不是高阶许可。法庭由主审负责人、牢狱由运行负责人会同医疗负责人决定；封印库仍须有封存启闭权者，节点核心仍须核心运行负责人会同工程值守负责人决定，不能套用普通场所单方解除。无法及时取得特别权限或无法隔离更大风险时，立即转移伤者、召集救援并保持封存，不宣称该路线保证救活所有人。结束即恢复禁制，二十四小时内提交记录，主管机关七日内复核；十四环不得事后追认替代事先终局许可。",
+    "new": "发生现实且紧迫的人命危险，场所负责人可以在完成风险评估后作最小范围、最短时间的场域调整，记录范围与恢复条件；这不是高阶许可。法庭由主审负责人、牢狱由运行负责人会同医疗负责人决定；封印库仍须有封存启闭权者，节点核心仍须核心运行负责人会同工程值守负责人决定，不能套用普通场所单方解除。无法及时取得特别权限或无法隔离更大风险时，立即转移伤者、召集救援并保持封存。结束即恢复禁制，二十四小时内提交记录，主管机关七日内复核；十四环不得事后追认替代事先终局许可。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "救命条款保证结果的编辑提示、产权收费未来接口残留。 保留救援、权限、复原和依法赔补程序，删除编辑保证及未来工作列表。",
+    "evidence": [
+      "K13第三十六条、附件二；K10行政第四/五条；IF03/06不因此补齐。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 61,
+    "alias": "K13",
+    "issues": [
+      "K13-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      202,
+      202
+    ],
+    "old": "2. 验证报告只说明特定装置、条件与场域下观察到的行为，不宣称适用于全部装置的自然法则。报告记录失败模式、控制人、应急停机方法与复测触发条件。",
+    "new": "2. 验证报告只说明特定装置、条件与场域下观察到的行为，结论的适用范围限于已经验证的装置与条件。报告记录失败模式、控制人、应急停机方法与复测触发条件。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "装置协议和容量条款提作者决定、一般物理未决和协议不能回答什么。 保留逐项验证与容量实测，用结论适用范围说明边界。",
+    "evidence": [
+      "K13第三条、附件一、附件二第二项；作者原答L114–150。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 62,
+    "alias": "K13",
+    "issues": [
+      "K13-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      205,
+      205
+    ],
+    "old": "5. 该协议是运行许可和工程验收，不回答所有设备能否被禁魔。必要功能仍无法验证和隔离时，该具体设施不得宣告具备开放条件。",
+    "new": "5. 协议所载运行许可和工程验收结论仅适用于已经验证的设备及运行条件。必要功能仍无法验证和隔离时，该具体设施不得宣告具备开放条件。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "装置协议和容量条款提作者决定、一般物理未决和协议不能回答什么。 保留逐项验证与容量实测，用结论适用范围说明边界。",
+    "evidence": [
+      "K13第三条、附件一、附件二第二项；作者原答L114–150。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 63,
+    "alias": "K13",
+    "issues": [
+      "K13-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      210,
+      210
+    ],
+    "old": "2. 接入决定记录端口、设备、容量实测、安全阈值、值守责任与停运条件；不授予高阶施法许可，不裁定设施产权，也不自动产生新收费或资源配给权。作者确认的能量非稀缺不等于每个设备无限承载。",
+    "new": "2. 接入决定记录端口、设备、容量实测、安全阈值、值守责任与停运条件；不授予高阶施法许可，不裁定设施产权，也不自动产生新收费或资源配给权。设备承载能力以实测容量和安全阈值为准。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "装置协议和容量条款提作者决定、一般物理未决和协议不能回答什么。 保留逐项验证与容量实测，用结论适用范围说明边界。",
+    "evidence": [
+      "K13第三条、附件一、附件二第二项；作者原答L114–150。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 64,
+    "alias": "K13",
+    "issues": [
+      "K13-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3.md",
+    "source_sha256": "411b78eda3dfa03e7b4bd988aecd655da3966086bc01af55631195f707e6c13c",
+    "source_lines": [
+      213,
+      213
+    ],
+    "old": "5. 先行抢修和救助费用记入责任单位的已批准工程/应急预算，超额依《白银执政院》预算接口办理；最终分担与赔偿保留请求及证据，依现存适用法裁断，尚缺的产权、收费、赔偿通则另列后续接口。",
+    "new": "5. 先行抢修和救助费用记入责任单位的已批准工程/应急预算，超额依《白银执政院》预算接口办理；最终分担与赔偿保留请求及证据，依现存适用法裁断。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "救命条款保证结果的编辑提示、产权收费未来接口残留。 保留救援、权限、复原和依法赔补程序，删除编辑保证及未来工作列表。",
+    "evidence": [
+      "K13第三十六条、附件二；K10行政第四/五条；IF03/06不因此补齐。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 65,
+    "alias": "K23",
+    "issues": [
+      "K23-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      220,
+      220
+    ],
+    "old": "| 大类 | 涵盖范围 | 示例 |",
+    "new": "| 大类 | 涵盖范围 | 列管行为举例 |",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "禁术示例未明确存在性，时间逆转被直接列禁。 按D58移除时间类别禁制，列管死灵法术及实验研究，不宣布量产已成功。",
+    "evidence": [
+      "D58；K20第二十八条；K23第6.2节；作者所引原著片段仅作范围说明。"
+    ],
+    "authority": [
+      "D58"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 66,
+    "alias": "K23",
+    "issues": [
+      "K23-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      224,
+      224
+    ],
+    "old": "| **丙类·禁忌仪式** | 以特定仪式形式进行之禁止性魔法行为 | 活祭召唤、灵魂剥离仪式、时间逆转仪式 |",
+    "new": "| **丙类·禁忌仪式** | 以特定仪式形式进行之禁止性魔法行为 | 活祭召唤、灵魂剥离仪式 |",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "禁术示例未明确存在性，时间逆转被直接列禁。 按D58移除时间类别禁制，列管死灵法术及实验研究，不宣布量产已成功。",
+    "evidence": [
+      "D58；K20第二十八条；K23第6.2节；作者所引原著片段仅作范围说明。"
+    ],
+    "authority": [
+      "D58"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 67,
+    "alias": "K23",
+    "issues": [
+      "K23-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      226,
+      226
+    ],
+    "old": "| **戊类·违禁研究** | 以特定方向进行之研究活动本身即被禁止 | 混沌力量之可控化研究、Tiamat法则之人为修改实验、死灵量产实验 |",
+    "new": "| **戊类·违禁研究** | 以特定方向进行之研究活动本身即被禁止 | 混沌力量之可控化研究、Tiamat法则之人为修改实验、死灵术实验研究，包括死灵量产实验 |",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "禁术示例未明确存在性，时间逆转被直接列禁。 按D58移除时间类别禁制，列管死灵法术及实验研究，不宣布量产已成功。",
+    "evidence": [
+      "D58；K20第二十八条；K23第6.2节；作者所引原著片段仅作范围说明。"
+    ],
+    "authority": [
+      "D58"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 68,
+    "alias": "K23",
+    "issues": [
+      "K23-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      228,
+      228
+    ],
+    "old": "各大类之下设子目与具体条目，由名录编纂科维护。",
+    "new": "各大类之下设子目与具体条目，由名录编纂科维护。死灵法术及其实验研究纳入管制，按行为性质分别登记。时间类法术不因涉及时间而列入禁术名录；其施展仍受高阶许可、禁魔分区及其他适用于具体行为的法律约束。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "禁术示例未明确存在性，时间逆转被直接列禁。 按D58移除时间类别禁制，列管死灵法术及实验研究，不宣布量产已成功。",
+    "evidence": [
+      "D58；K20第二十八条；K23第6.2节；作者所引原著片段仅作范围说明。"
+    ],
+    "authority": [
+      "D58"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 69,
+    "alias": "K23",
+    "issues": [
+      "K23-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "CROSS_FILE_ALIGNMENT"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      242,
+      242
+    ],
+    "old": "九环以下普通非弦施法免专门高阶许可；十至十三环统一由委员会依第2.4节合议，副主任不得独批乙等许可；十四环由银色学派终局。具体申请、类别许可、首次试炼和救济以附件一为单一程序，不以本节另设两套许可。",
+    "new": "九环及以下普通非弦施法免专门高阶许可；十至十三环统一由委员会依第2.4节合议，副主任不得独立批准；十四环由银色学派终局许可。具体申请、类别许可、首次试炼和救济适用附件一。",
+    "problem_types": [
+      "CROSS_FILE_CONFLICT"
+    ],
+    "reason": "旧“乙等许可”残留与统一合议流程不一致。 副主任无独立批准权，十至十三环按委员会合议和附件办理。",
+    "evidence": [
+      "K23第2.4节、附件一；K20第三十一条；历史F08。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 70,
+    "alias": "K23",
+    "issues": [
+      "K23-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      352,
+      352
+    ],
+    "old": "外国施法者可凭可靠能力材料或临时能力验证申请相同术式范围的许可；无自动互认、自动入籍或外国十四环一律禁申规则。许可期间由申请人指定可送达地址，境内现场责任人只负责其受托事务，不因担保自动替代施法者责任。专业执业资格另由有权机关办理。",
+    "new": "外国施法者可凭可靠能力材料或临时能力验证申请相同术式范围的许可。外国凭证须经核验，施法许可不产生公民身份；外国施法者申请十四环非弦术式许可，适用相应终局许可程序。许可期间由申请人指定可送达地址，境内现场责任人只负责其受托事务，不因担保自动替代施法者责任。专业执业资格另由有权机关办理。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "外国申请条文用一串“无……规则”描述未设计制度。 直接表达核验、身份分离及十四环终局程序，保留送达和责任。",
+    "evidence": [
+      "K23许可第四条；K21附件一；K20第八/三十一条。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 71,
+    "alias": "K12",
+    "issues": [
+      "K12-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/银色联盟宪章_v0_5.md",
+    "source_sha256": "286fd780d91e44b41f3636778f187885e1dd6dddf7bb104804754726a20e9b64",
+    "source_lines": [
+      46,
+      46
+    ],
+    "old": "2. 联盟公民：依法取得联盟国籍并完成誓约登记者。既有合法登记与基本保障不因不会施法、环级低或本次术语整理而失效；本条不另创、扩大或收紧新的血统入籍条件，疑义按身份登记与救济程序保留审查。",
+    "new": "2. 联盟公民：依法取得联盟国籍并完成誓约登记者。既有合法登记与基本保障不因不会施法或环级低而失效；身份登记疑义依相应审查与救济程序处理。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "公民定义提“本次术语整理”，留痕定义使用编辑告诫。 保留既有身份保护与证据鉴识，移出编辑过程和未定入籍边界备注。",
+    "evidence": [
+      "K12第五条；K14第二十条公共席；CC-A10/11仍未决。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 72,
+    "alias": "K12",
+    "issues": [
+      "K12-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/银色联盟宪章_v0_5.md",
+    "source_sha256": "286fd780d91e44b41f3636778f187885e1dd6dddf7bb104804754726a20e9b64",
+    "source_lines": [
+      49,
+      49
+    ],
+    "old": "5. 留痕：施法回路、结界扰动、节点记录、出入簿、凭证、押运清单及账册等证据链；留痕能够鉴识与质证，不宣称绝对无法伪造或无条件完整回看。",
+    "new": "5. 留痕：施法回路、结界扰动、节点记录、出入簿、凭证、押运清单及账册等证据链；留痕的真伪、完整性及可回看范围须经鉴识与质证。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "把对编辑过度断言的告诫改为已有证据核验要求，不创设完美回看或不可伪造能力。",
+    "evidence": [
+      "K12第五条；K14第二十条公共席；CC-A10/11仍未决。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 73,
+    "alias": "K12",
+    "issues": [
+      "K12-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/银色联盟宪章_v0_5.md",
+    "source_sha256": "286fd780d91e44b41f3636778f187885e1dd6dddf7bb104804754726a20e9b64",
+    "source_lines": [
+      56,
+      62
+    ],
+    "old": "触犯下列红线者，进入红线事件流程：\n\n1. 对浮空城或联盟公民之主动攻击；\n2. 试图窃取、损毁、买卖或系统隐匿遗产；\n3. 非法研究、传播或交易混沌知识；\n4. 未经授权进行十四环非弦术式实验，或实施法律绝对禁止的弦魔法行为，或企图突破封印库与节点禁区；\n5. 伪造留痕、篡改节点记录、破坏封存体系以规避追溯。",
+    "new": "触犯下列红线者，进入红线事件流程：\n\n1. 试图窃取、损毁、买卖或系统隐匿遗产；\n2. 非法研究、传播或交易混沌知识；\n3. 未经授权进行十四环非弦术式实验，或实施法律绝对禁止的弦魔法行为，或企图突破封印库与节点禁区；\n4. 伪造留痕、篡改节点记录、破坏封存体系以规避追溯。\n\n主动攻击本身不构成独立的红线情形。普通斗殴及个体攻击依治安与司法程序处理；同时符合前款红线情形的，依该情形处理。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "删除以主动攻击本身触发红线的旧项；不新增武装攻击的严重程度阈值，其余红线不变。",
+    "evidence": [
+      "D60；K12第六条；K20第二十九条；K15第二十条；K19警实二。"
+    ],
+    "authority": [
+      "D60"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 74,
+    "alias": "K12",
+    "issues": [
+      "K12-02",
+      "K14-02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/银色联盟宪章_v0_5.md",
+    "source_sha256": "286fd780d91e44b41f3636778f187885e1dd6dddf7bb104804754726a20e9b64",
+    "source_lines": [
+      164,
+      164
+    ],
+    "old": "议会独享设税、预算、拨款、公共债务与总审计权。任何非常征调与军需扩权，须以议会法或紧急授权决议为基础。",
+    "new": "议会决定联盟税，成员城邦在自治范围内决定地方税。议会依法行使联盟预算、拨款、公共债务与总审计权，其资源调配权限及于联盟依法掌管、调配或支配的公共资源，不当然包括城邦依法保留的自治资源、地方财政及私人财产。对后者的征用、调用或限制，须另有法律、条约授权或符合规定的紧急程序。任何非常征调与军需扩权，须以议会法或紧急授权决议为基础。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "联盟独享设税与城邦自订地方税矛盾。 按D59分清联盟税和自治地方税；不添加联盟审批程序。；所有议会决议与所有资源的绝对措辞越过权限边界。 按D61限于合法有效决议和联盟公共资源；征调自治/私人资源另需授权。",
+    "evidence": [
+      "D59；K12第八/二十条；K14第一条。",
+      "D61；K14第一条；K12第八/二十条及紧急权条文。"
+    ],
+    "authority": [
+      "D59",
+      "D61"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 75,
+    "alias": "K14",
+    "issues": [
+      "K14-02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银议会组织法_v3_6.md",
+    "source_sha256": "0ddabe1e27118cd133a61332a7fced8547cb6f638ed271a818d3636749f11110",
+    "source_lines": [
+      19,
+      19
+    ],
+    "old": "1. **誓约之神圣**：银色联盟由巫师们手按知识之书起誓缔结，议会乃誓约之常设守护者，违抗议会决议即为背弃奈塔斯之盟誓；",
+    "new": "1. **誓约之神圣**：银色联盟由巫师们手按知识之书起誓缔结，议会乃誓约之常设守护者。背誓责任仅及于违抗议会在法定权限范围内、依合法程序作出的有效决议；越权、违法或违反银章的决议，不因议会通过而当然生效；",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "所有议会决议与所有资源的绝对措辞越过权限边界。 按D61限于合法有效决议和联盟公共资源；征调自治/私人资源另需授权。",
+    "evidence": [
+      "D61；K14第一条；K12第八/二十条及紧急权条文。"
+    ],
+    "authority": [
+      "D61"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 76,
+    "alias": "K14",
+    "issues": [
+      "K14-02",
+      "K12-02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银议会组织法_v3_6.md",
+    "source_sha256": "0ddabe1e27118cd133a61332a7fced8547cb6f638ed271a818d3636749f11110",
+    "source_lines": [
+      20,
+      20
+    ],
+    "old": "2. **财赋之命脉**：议会独掌设税、预算、拨款、公共债务与总审计权，联盟一切行政运转、舰队补给、城体维护、遗产远征之资源，皆须经议会批准方可调用；",
+    "new": "2. **财赋之命脉**：议会决定联盟税，并依法行使联盟预算、拨款、公共债务与总审计权。联盟依法掌管、调配或支配的公共资源，依议会授权调用；城邦依法保留的自治资源、地方财政及私人财产不当然纳入该权限。对后者的征用、调用或限制，须另有法律、条约授权或符合规定的紧急程序；地方税由城邦在自治范围内决定；",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "所有议会决议与所有资源的绝对措辞越过权限边界。 按D61限于合法有效决议和联盟公共资源；征调自治/私人资源另需授权。；联盟独享设税与城邦自订地方税矛盾。 按D59分清联盟税和自治地方税；不添加联盟审批程序。",
+    "evidence": [
+      "D61；K14第一条；K12第八/二十条及紧急权条文。",
+      "D59；K12第八/二十条；K14第一条。"
+    ],
+    "authority": [
+      "D61",
+      "D59"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 77,
+    "alias": "K14",
+    "issues": [
+      "K14-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银议会组织法_v3_6.md",
+    "source_sha256": "0ddabe1e27118cd133a61332a7fced8547cb6f638ed271a818d3636749f11110",
+    "source_lines": [
+      440,
+      440
+    ],
+    "old": "本条为非规范参考，不设法定党派身份。各倾向共同承认联盟知识回收、秩序存续与共同体保障的使命，分歧在于实现路径。沿历史授权采用现代简名：保守派（旧称守约派）侧重内部维护与最低接触；弗洛斯派侧重知识责任与抵御混沌的外部作用；实业派（旧称实利派）侧重生产、通商与共同工程的制度安排。旧名称保留为历史检索别名，不据此新增党派特权或变更最低接触原则。",
+    "new": "各政治倾向共同承认联盟知识回收、秩序存续与共同体保障的使命，分歧在于实现路径。保守派侧重内部维护与最低接触；弗洛斯派侧重知识责任与抵御混沌的外部作用；实业派侧重生产、通商与共同工程的制度安排。政治倾向不构成法定党派身份，不产生派系特权，各派均须遵守最低接触原则。",
+    "problem_types": [
+      "SOURCE_CONTAMINATION"
+    ],
+    "reason": "保留获批名称与思想，移除编辑检索别名及其暗示的世界内更名史。",
+    "evidence": [
+      "D53已批准DD12及K14第四十条；本次不另改政治历史。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 78,
+    "alias": "K14",
+    "issues": [
+      "K12-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银议会组织法_v3_6.md",
+    "source_sha256": "0ddabe1e27118cd133a61332a7fced8547cb6f638ed271a818d3636749f11110",
+    "source_lines": [
+      205,
+      205
+    ],
+    "old": "3. 公共席亦包括妖精等非巫师之联盟公民代表——依法取得身份的妖精等公民依银章享有相应保障，本条不另定入籍条件，公共席为其参与联盟决策之制度通道。",
+    "new": "3. 公共席亦包括妖精等非巫师之联盟公民代表——依法取得身份的妖精等公民依银章享有相应保障，公共席为其参与联盟决策之制度通道。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "公民定义提“本次术语整理”，留痕定义使用编辑告诫。 保留既有身份保护与证据鉴识，移出编辑过程和未定入籍边界备注。",
+    "evidence": [
+      "K12第五条；K14第二十条公共席；CC-A10/11仍未决。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 79,
+    "alias": "K10",
+    "issues": [
+      "K10-04"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      53,
+      53
+    ],
+    "old": "* 不掌最终裁断权；最终裁断归裁断体系与白银议会授权机关。",
+    "new": "* 不掌最终裁断权。司法裁断由裁断体系负责；《宪章》明确规定的终局事项由银色学派处理。",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "最终裁断另列未定义的议会授权机关。 按D62采用司法裁断/宪章特定银色学派终局分工，不建立第三裁判机关。",
+    "evidence": [
+      "D62；K26管辖规定；K12第三十/三十八条。"
+    ],
+    "authority": [
+      "D62"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 80,
+    "alias": "K10",
+    "issues": [
+      "K10-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      695,
+      695
+    ],
+    "old": "> 不再给每个局都加挂牌子。",
+    "new": "",
+    "problem_types": [
+      "AWKWARD_WORDING"
+    ],
+    "reason": "机关挂牌表后残留面向整理者的说明。 删除编辑注释，保留表内实际挂牌和隶属规则。",
+    "evidence": [
+      "K10挂牌机构表及前行挂牌效力限定。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 81,
+    "alias": "K10",
+    "issues": [
+      "K19-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "CROSS_FILE_ALIGNMENT"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      715,
+      715
+    ],
+    "old": "| 节点监测与边境预警 | 银烛会      | 节点结界工程部、军委        |",
+    "new": "| 外部节点监测与边境预警 | 银烛会      | 节点结界工程部、军委        |",
+    "problem_types": [
+      "CROSS_FILE_CONFLICT"
+    ],
+    "reason": "同步清除未区分外部观测与供能工程的表格简称。",
+    "evidence": [
+      "K19警实四、K11银实二、K10行政第八条；作者AD16。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 82,
+    "alias": "K10",
+    "issues": [
+      "K10-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      730,
+      732
+    ],
+    "old": "# 附：本版相对 v2.6 的主要调整\n\n旧版沿革原样保存在v2.7基准与本候选CHANGELOG；下列候选规则以机构名称引用，不以历史序号重设已撤机关。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "历史修订对照被移走后还留下候选/基准工作流说明。 将历史入口留在审计，正文不说明迁移过程。",
+    "evidence": [
+      "K10旧版沿革段；D54；旧版文件及D53日志仍保留。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 83,
+    "alias": "K10",
+    "issues": [
+      "K10-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      737,
+      737
+    ],
+    "old": "本目录列职责不等于直接创设税费、处罚、搜查、征收或执业禁令。主管机关办理已有法律依据的事项，应公布法源、申请条件、材料、责任窗口和时限；没有特别时限的五日内一次补正、齐备后三十日内决定，复杂事项可延长一次三十日并说明。无依据的新增负担不得实施；有争议的存量事项登记后依法核明，不得假称新法已经存在。",
+    "new": "本目录列职责不等于直接创设税费、处罚、搜查、征收或执业禁令。主管机关办理已有法律依据的事项，应公布法源、申请条件、材料、责任窗口和时限；没有特别时限的五日内一次补正、齐备后三十日内决定，复杂事项可延长一次三十日并说明。无依据的新增负担不得实施；有争议的存量事项登记后依法核明，不得援引尚未生效的规范作为法源。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "行政通则混入新法不可假称、未来接口、不另造地方层级等编辑提示。 保留法源、受理、预算、身份保护与救济的真实行政约束。",
+    "evidence": [
+      "K10行政第一/三/四/五/七条；K12自治和预算条；IF01/02/03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 84,
+    "alias": "K10",
+    "issues": [
+      "K10-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      743,
+      743
+    ],
+    "old": "法制部审合法性，城邦盟务部协调央地事项，财政部核预算，技术机关出意见；牵头机关不得把会签变成共同而无人负责。跨机关争议三日内移送有权协调者，十日未解决或涉及法定权限争议的，转有管辖权裁断机关；协调不暂停依法必要的最小救助，也不先行改变争议权属。城邦继续依宪章自治，不以本目录另造地方政府层级。",
+    "new": "法制部审合法性，城邦盟务部协调央地事项，财政部核预算，技术机关出意见；牵头机关不得把会签变成共同而无人负责。跨机关争议三日内移送有权协调者，十日未解决或涉及法定权限争议的，转有管辖权裁断机关；协调不暂停依法必要的最小救助，也不先行改变争议权属。城邦继续依宪章自治。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "行政通则混入新法不可假称、未来接口、不另造地方层级等编辑提示。 保留法源、受理、预算、身份保护与救济的真实行政约束。",
+    "evidence": [
+      "K10行政第一/三/四/五/七条；K12自治和预算条；IF01/02/03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 85,
+    "alias": "K10",
+    "issues": [
+      "K10-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      746,
+      746
+    ],
+    "old": "支出单位提出用途、法源、金额和所属三账，财政部核预算与拨款条件，议会决定新增或变更预算，国用工务总局等承办采购验收，联盟储备系统凭合法支付指令结算，监察院独立审计。储备院不决定拨款政策，财政部不指令超规则发行；三账间变更须取得原授权要求的预算批准。紧急支出先用已有合法应急额度，不足即提请追加，不虚构无限垫款权。争议款项分别记录，已无争议的法定救助不应被无关争议拖延。",
+    "new": "支出单位提出用途、法源、金额和所属三账，财政部核预算与拨款条件，议会决定新增或变更预算，国用工务总局等承办采购验收，联盟储备系统凭合法支付指令结算，监察院独立审计。储备院不决定拨款政策，财政部不指令超规则发行；三账间变更须取得原授权要求的预算批准。紧急支出先用已有合法应急额度，不足即提请追加。争议款项分别记录，已无争议的法定救助不应被无关争议拖延。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "行政通则混入新法不可假称、未来接口、不另造地方层级等编辑提示。 保留法源、受理、预算、身份保护与救济的真实行政约束。",
+    "evidence": [
+      "K10行政第一/三/四/五/七条；K12自治和预算条；IF01/02/03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 86,
+    "alias": "K10",
+    "issues": [
+      "K10-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      749,
+      749
+    ],
+    "old": "临时征调、封锁、疏散须记授权、事实、范围、责任、终止日和救济。现实紧迫风险依已有止险权最小先行，二十四小时内书面报告，七日内由有权机关复核，超出上位授权立即停止并纠正。紧急授权到期未依法续展即失效；危险提前消除即缩减或终止。运行机关恢复常态、返还或移交被征调财产、登记损失请求，三十日内交清册，议会的九十日审计期不因此推迟。赔偿实体标准缺口另行登记，不因缺标准拒收请求。",
+    "new": "临时征调、封锁、疏散须记授权、事实、范围、责任、终止日和救济。现实紧迫风险依已有止险权最小先行，二十四小时内书面报告，七日内由有权机关复核，超出上位授权立即停止并纠正。紧急授权到期未依法续展即失效；危险提前消除即缩减或终止。运行机关恢复常态、返还或移交被征调财产、登记损失请求，三十日内交清册，议会的九十日审计期不因此推迟。不得仅因适用的赔偿标准尚待确定而拒收请求。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "行政通则混入新法不可假称、未来接口、不另造地方层级等编辑提示。 保留法源、受理、预算、身份保护与救济的真实行政约束。",
+    "evidence": [
+      "K10行政第一/三/四/五/七条；K12自治和预算条；IF01/02/03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 87,
+    "alias": "K10",
+    "issues": [
+      "K10-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      755,
+      755
+    ],
+    "old": "民籍誓籍局保存既有合法身份，材料缺失优先核对原登记而不以不会施法取消公民保障；新的争议入籍条件不由本目录擅定，申请应有回执、理由和复核入口。职业准入依已存在的专项授权，由对应机关受理；学术、环级、施法许可和职业登记分别决定。尚缺完整行业规则的，主管机关不得仅凭职责表新设强制证种或扩张封业权，列为后续接口并维持已合法取得资格。",
+    "new": "民籍誓籍局保存既有合法身份，材料缺失优先核对原登记而不以不会施法取消公民保障；申请应有回执、理由和复核入口。职业准入依已存在的专项授权，由对应机关受理；学术、环级、施法许可和职业登记分别决定。尚缺完整行业规则的，主管机关不得仅凭职责表新设强制证种或扩张封业权，并维持已合法取得资格。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "行政通则混入新法不可假称、未来接口、不另造地方层级等编辑提示。 保留法源、受理、预算、身份保护与救济的真实行政约束。",
+    "evidence": [
+      "K10行政第一/三/四/五/七条；K12自治和预算条；IF01/02/03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 88,
+    "alias": "K10",
+    "issues": [
+      "K10-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8.md",
+    "source_sha256": "091d11689651368ff7b5c1cb65fc07a330b93c21763b93f083fe86cd70299a91",
+    "source_lines": [
+      758,
+      758
+    ],
+    "old": "供能网络为人工设施，与银烛外部监测台网分开；魔核能源局依核心设备职掌协同，不重复节点接入决定。水与食物可由魔法生产，但造物须有输入；不推定普遍能源短缺、零输入产物或无限设备容量。即时通讯可用于送达与协作，仍须核验身份及回执。医疗可救濒死，不承诺死人复生；危险术式、装置和隐私取证遵守魔法法系与裁断程序。",
+    "new": "供能网络为人工设施，与银烛外部监测台网分开；魔核能源局依核心设备职掌协同，不重复节点接入决定。水与食物可由魔法生产，但造物须有输入；设备承载能力依实测容量与安全阈值核定。即时通讯可用于送达与协作，仍须核验身份及回执。医疗可救濒死，不能使灵魂已经离世者复活；危险术式、装置和隐私取证遵守魔法法系与裁断程序。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "行政通则混入新法不可假称、未来接口、不另造地方层级等编辑提示。 保留法源、受理、预算、身份保护与救济的真实行政约束。",
+    "evidence": [
+      "K10行政第一/三/四/五/七条；K12自治和预算条；IF01/02/03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 89,
+    "alias": "K26",
+    "issues": [
+      "K26-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/裁断体系组织法_v1_5.md",
+    "source_sha256": "709362fcfa0bed273161a9f7857f13fd7febb18502ef3869b5528294ce21a39d",
+    "source_lines": [
+      478,
+      478
+    ],
+    "old": "个案执行由执行总长依据司法文书组织；执政院仅协调合法行政任务、人员设施与预算，不得改变司法执行对象、顺序或结论。行政执政令涉及超出其直接法定权限的强制措施，必须先取得裁断令。异议依第四十一条办理；合议庭可因不可恢复损害暂停争议措施并说明理由。错误措施应撤销、返还可返还财物、纠正记录并移送责任调查。赔补争议依法受理，但新损害种类、估价与赔偿标准留待实体法律，不由组织法虚构。",
+    "new": "个案执行由执行总长依据司法文书组织；执政院仅协调合法行政任务、人员设施与预算，不得改变司法执行对象、顺序或结论。行政执政令涉及超出其直接法定权限的强制措施，必须先取得裁断令。异议依第四十一条办理；合议庭可因不可恢复损害暂停争议措施并说明理由。错误措施应撤销、返还可返还财物、纠正记录并移送责任调查。赔补争议依法受理，损害认定、估价与赔偿适用相应实体法律。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "组织法以“不虚构”描述实体赔补法空白。 依法受理并适用相应实体法；既存估价空白继续登记，未新增赔偿标准。",
+    "evidence": [
+      "K26司实三；K20第三十三条；IF03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 90,
+    "alias": "K25",
+    "issues": [
+      "K25-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/盟约监察院组织法_v1_4.md",
+    "source_sha256": "761a4d8e5402c134a1340738f1835face4b083555f3eb0f1c584434d89cecc34",
+    "source_lines": [
+      283,
+      285
+    ],
+    "old": "## 附：衔接说明\n\n候选已将军备与军工账、法制部/城邦盟务部、一般紧急状态与防务动员审计期限分别对齐。历史待办及原措辞完整保留在基准与CHANGELOG；本说明不单独创设权限。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "正文保留候选对齐进度和历史待办说明。 删除项目状态段，保留军需审计等实际规则。",
+    "evidence": [
+      "K25候选说明段；D53原日志；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 91,
+    "alias": "K19",
+    "issues": [
+      "K19-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v2_3.md",
+    "source_sha256": "69375453dc7181d9ee5806951727dd1a1620450ba3af1df79b719a4b47a8119e",
+    "source_lines": [
+      13,
+      13
+    ],
+    "old": "内务治安部为联盟公共治安之主管部门。联盟之暴力合法使用分为两轨：对外御敌之武装力量（依《防务基本法》），与对内执法之治安力量（依本架构及城邦治安制度）。本部为后者之联盟层机关——不打仗，只执法；不御外敌，只治内乱。",
+    "new": "内务治安部为联盟公共治安之主管部门。联盟之暴力合法使用分为两轨：对外御敌之武装力量（依《防务基本法》），与对内执法之治安力量（依本架构及城邦治安制度）。本部为后者之联盟层机关，依法承担联盟层公共治安与执法职责。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "以“不打仗，只……”口号和聊天式力量说明替代行政表达。 按现有公共治安职责和力量递补程序表达，不扩大或缩小执法权限。",
+    "evidence": [
+      "K19第一节、第7.2节；K18军警分工。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 92,
+    "alias": "K19",
+    "issues": [
+      "K19-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v2_3.md",
+    "source_sha256": "69375453dc7181d9ee5806951727dd1a1620450ba3af1df79b719a4b47a8119e",
+    "source_lines": [
+      228,
+      228
+    ],
+    "old": "> 治安执法之根本难题在于：执法对象之施法能力可能远超执法者。本部之答案不是以环级对抗环级，而是以**器械分级 + 力量递补**应对——器械压制其力，递补机制兜底其余，留痕追责断其侥幸。",
+    "new": "执法对象的施法能力超出现有处置能力时，依器械分级和力量递补程序处置，并保全留痕证据。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "以“不打仗，只……”口号和聊天式力量说明替代行政表达。 按现有公共治安职责和力量递补程序表达，不扩大或缩小执法权限。",
+    "evidence": [
+      "K19第一节、第7.2节；K18军警分工。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 93,
+    "alias": "K19",
+    "issues": [
+      "K19-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "CROSS_FILE_ALIGNMENT"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v2_3.md",
+    "source_sha256": "69375453dc7181d9ee5806951727dd1a1620450ba3af1df79b719a4b47a8119e",
+    "source_lines": [
+      377,
+      377
+    ],
+    "old": "| 银烛会 | 情报指挥中心 + 域外追缉工作局 | 预警通报之接收、寂环塔结界之远程监测、域外情报支持 |",
+    "new": "| 银烛会 | 情报指挥中心 + 域外追缉工作局 | 预警通报之接收、寂环塔异常预警接收与外部边界监测、域外情报支持 |",
+    "problem_types": [
+      "CROSS_FILE_CONFLICT"
+    ],
+    "reason": "外部监测与供能工程的旧接口表名称仍可能混同。 同步限定外部边界/警讯接收；不将禁魔工程运行划给情报机关。",
+    "evidence": [
+      "K19警实四、K11银实二、K10行政第八条；作者AD16。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 94,
+    "alias": "K19",
+    "issues": [
+      "K19-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v2_3.md",
+    "source_sha256": "69375453dc7181d9ee5806951727dd1a1620450ba3af1df79b719a4b47a8119e",
+    "source_lines": [
+      441,
+      443
+    ],
+    "old": "## 附：衔接说明\n\n本候选已与执政院的税关刑事接口、三军军警边界和裁断体系权限争议管辖同步。历史建议原样保存在基准和CHANGELOG；未成文的地方与完整刑事实体法另列未来接口，不作已生效法源。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "正文以候选同步说明、未来地方和刑法接口作结。 将编辑状态留在外部审计，正文保留当前执法规则。",
+    "evidence": [
+      "K19末尾候选说明；IF04及原历史基线。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 95,
+    "alias": "K18",
+    "issues": [
+      "K18-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银色联盟防务基本法_v2_6.md",
+    "source_sha256": "5746bdc37831624d2abf55b84d18e2231e0915db82257c6e663be53fb3e3c69e",
+    "source_lines": [
+      544,
+      544
+    ],
+    "old": "解除或到期未续期，军委立即下达停止征召与交还命令，七日内完成指挥权和可即时移交资产的签收；运输、维修或伤员安置确需延期的，记录具体交接日并由议会复核，不得以此保留作战指挥权。三十日内汇总人员、物资、损失及费用清册，民用船坞征调补偿清算依第三十六条的一百八十日期限，审计依第四十三条及监察院规则。受影响者可提交异议、赔补请求和司法申请；未定实体估价标准作为未来财政民事接口，不以缺标准拒收请求。战时处分的上诉权不因部队解散消灭。",
+    "new": "解除或到期未续期，军委立即下达停止征召与交还命令，七日内完成指挥权和可即时移交资产的签收；运输、维修或伤员安置确需延期的，记录具体交接日并由议会复核，不得以此保留作战指挥权。三十日内汇总人员、物资、损失及费用清册，民用船坞征调补偿清算依第三十六条的一百八十日期限，审计依第四十三条及监察院规则。受影响者可提交异议、赔补请求和司法申请；不得仅因适用的估价标准尚待确定而拒收请求。战时处分的上诉权不因部队解散消灭。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "退役补偿与高环责任写未来接口、不自行规定十四环惩罚。 保留请求受理及引用魔法法附件，不填赔偿金额或十四环惩罚。",
+    "evidence": [
+      "K18防实三/四；K20附件；CC-A13及IF03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 96,
+    "alias": "K18",
+    "issues": [
+      "K18-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银色联盟防务基本法_v2_6.md",
+    "source_sha256": "5746bdc37831624d2abf55b84d18e2231e0915db82257c6e663be53fb3e3c69e",
+    "source_lines": [
+      547,
+      547
+    ],
+    "old": "军职、军衔、环级证书、法术许可各自独立；高阶代价、白银与黄金的差别、大地之书辅助条件以《魔法基本法》附件为单一事实来源，不自行制定白银十四环惩罚。节点供能不赋予法术知识，节点失效不当然取消个人施法能力；个人仍受禁魔、禁术和许可约束。外部监测警报与城内供能故障分别登记，在兼有混沌或战争风险时联动。军需采购按预算、采办、验收、国库支付与独立审计分工办理，不得以军令直接要求储备院发行货币弥补缺口。",
+    "new": "军职、军衔、环级证书、法术许可各自独立；高阶代价、白银与黄金的差别、大地之书辅助条件适用《魔法基本法》附件。节点供能不赋予法术知识，节点失效不当然取消个人施法能力；个人仍受禁魔、禁术和许可约束。外部监测警报与城内供能故障分别登记，在兼有混沌或战争风险时联动。军需采购按预算、采办、验收、国库支付与独立审计分工办理，不得以军令直接要求储备院发行货币弥补缺口。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "退役补偿与高环责任写未来接口、不自行规定十四环惩罚。 保留请求受理及引用魔法法附件，不填赔偿金额或十四环惩罚。",
+    "evidence": [
+      "K18防实三/四；K20附件；CC-A13及IF03。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 97,
+    "alias": "K11",
+    "issues": [
+      "K11-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      109,
+      109
+    ],
+    "old": "独立于防务监察局之常设评估机关。监察局管\"查违规\"（有没有人犯错），审查署管\"查战力\"（能不能打赢）——前者是纪检，后者是体检。",
+    "new": "联盟战备审查署为独立于防务监察局的常设评估机关，负责评估战备状态与作战准备；防务监察局负责调查防务违规。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "纪检/体检类比和“权限锋利”是聊天式评价。 按既有战备评估、防务违规调查及内部监督职责直述。",
+    "evidence": [
+      "K11第四节第6/7项及其职能表；不改分工。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 98,
+    "alias": "K11",
+    "issues": [
+      "K11-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      123,
+      123
+    ],
+    "old": "银烛会之自我监督机关。——\"谁来监督监督者\"的制度回答。编制精小，但权限锋利。",
+    "new": "内部合规处负责银烛会的内部监督。",
+    "problem_types": [
+      "OUT_OF_WORLD_VOICE"
+    ],
+    "reason": "纪检/体检类比和“权限锋利”是聊天式评价。 按既有战备评估、防务违规调查及内部监督职责直述。",
+    "evidence": [
+      "K11第四节第6/7项及其职能表；不改分工。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 99,
+    "alias": "K11",
+    "issues": [
+      "K11-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      9,
+      9
+    ],
+    "old": "> 拟定依据：《防务基本法》第二十七至三十一条；独立地位、总监任期与不兼任规则以该法为权威来源。",
+    "new": "银烛会依《防务基本法》第二十七至三十一条设立，其独立地位、总监任期与不兼任规则依该法执行。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "拟定依据及版本修订说明侵入正式文本。 依据改为适用关系；历史版本说明留外部日志。",
+    "evidence": [
+      "K18第二十七至三十一条；K11基线；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 100,
+    "alias": "K11",
+    "issues": [
+      "K11-03"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      184,
+      184
+    ],
+    "old": "示例堡垒：",
+    "new": "边境堡垒名录：",
+    "problem_types": [
+      "AUTHOR_DECISION_REQUIRED"
+    ],
+    "reason": "作者确认六座实体存在；名称与现表属性暂沿现行记载，未自行改名或迁址。",
+    "evidence": [
+      "D63；K11第5.2节；命名偏好留OPEN_ISSUES。"
+    ],
+    "authority": [
+      "D63"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 101,
+    "alias": "K11",
+    "issues": [
+      "K11-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      362,
+      364
+    ],
+    "old": "## 附：v1.0 → v2.0 修订对照表\n\n旧版修订对照表移出候选规范性正文，原表完整保留于基准及本文件CHANGELOG；本次没有将历史示意设施或编制估算转化为追加预算授权。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "拟定依据及版本修订说明侵入正式文本。 依据改为适用关系；历史版本说明留外部日志。",
+    "evidence": [
+      "K18第二十七至三十一条；K11基线；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 102,
+    "alias": "K28",
+    "issues": [
+      "K28-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      79,
+      79
+    ],
+    "old": "   - 塔身周边划设管制区。非白塔在编人员或者持有效准入凭证的人员不得进入管制区；管制区的划定与调整由守护法师会同城主确定；",
+    "new": "   - 塔身周边划设管制区。除白塔在编人员和持有效准入凭证者外，其他人员不得进入管制区；管制区的划定与调整由守护法师会同城主确定；",
+    "problem_types": [
+      "AWKWARD_WORDING"
+    ],
+    "reason": "非在编人员“或者持证人员不得进入”误将持证者排除。 按作者明确批准的通常含义改为除在编和有效持证者外不得入区。",
+    "evidence": [
+      "D54中的K28-02专门授权；K28第八条。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 103,
+    "alias": "K28",
+    "issues": [
+      "K28-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      376,
+      376
+    ],
+    "old": "> 较此前版本，本次编制规模因寰宇文库署之设立及各线人员之细化而有所扩增，银袍法师与塔卫两阶人数增幅最为明显。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "编制增长、候选生效和未竟公务职级草稿的说明残留。 删除项目修订说明；保留世界内生效程序和既有礼遇惯例。",
+    "evidence": [
+      "K28第三十八/四十二条及引用表后注；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 104,
+    "alias": "K28",
+    "issues": [
+      "K28-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      407,
+      407
+    ],
+    "old": "本章程经两院通过并由元老会签署后生效，经本轮整体批准后替代基准《白塔章程（草案 v2.1）》，此前明确废止版本不恢复效力。",
+    "new": "本章程经两院通过并由元老会签署后生效。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "编制增长、候选生效和未竟公务职级草稿的说明残留。 删除项目修订说明；保留世界内生效程序和既有礼遇惯例。",
+    "evidence": [
+      "K28第三十八/四十二条及引用表后注；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 105,
+    "alias": "K28",
+    "issues": [
+      "K28-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      471,
+      471
+    ],
+    "old": "> 注：原版对《银色联盟公务职级通则》之具体条款引用已删除——该通则现属未竟之稿，本章程各阶职级对等仅作惯例性描述，不系于特定法源。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "编制增长、候选生效和未竟公务职级草稿的说明残留。 删除项目修订说明；保留世界内生效程序和既有礼遇惯例。",
+    "evidence": [
+      "K28第三十八/四十二条及引用表后注；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 106,
+    "alias": "K27",
+    "issues": [
+      "K27-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      14,
+      14
+    ],
+    "old": "2. 白银学会与大图书馆造物之庭设常设学术联系；双方驻地分别依各自章程，不以存在跨城邦实体廊桥作为履职条件。",
+    "new": "2. 白银学会与大图书馆造物之庭设常设学术联系；双方驻地分别依各自章程。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "学术联络条款夹入实体廊桥位置未定的编辑说明。 保留常设联络与各自驻地，未创造或否定廊桥实体。",
+    "evidence": [
+      "K27第一/二十六条；K29第一条；CC-A19。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 107,
+    "alias": "K27",
+    "issues": [
+      "K27-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      255,
+      255
+    ],
+    "old": "4. 双方日常学术交流依第一条的常设联络和经批准的往来安排办理；不据此改变两馆所在地。",
+    "new": "4. 双方日常学术交流依第一条的常设联络和经批准的往来安排办理。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "学术联络条款夹入实体廊桥位置未定的编辑说明。 保留常设联络与各自驻地，未创造或否定廊桥实体。",
+    "evidence": [
+      "K27第一/二十六条；K29第一条；CC-A19。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 108,
+    "alias": "K27",
+    "issues": [
+      "K27-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      367,
+      367
+    ],
+    "old": "| 《大图书馆章程》 | 守护者资质审查以本会认定为据；造物之庭学术联络（实体廊桥位置未定） |",
+    "new": "| 《大图书馆章程》 | 守护者资质审查以本会认定为据；造物之庭学术联络 |",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "学术联络条款夹入实体廊桥位置未定的编辑说明。 保留常设联络与各自驻地，未创造或否定廊桥实体。",
+    "evidence": [
+      "K27第一/二十六条；K29第一条；CC-A19。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 109,
+    "alias": "K27",
+    "issues": [
+      "K27-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "CROSS_FILE_ALIGNMENT"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      368,
+      368
+    ],
+    "old": "| 《法术环级标准》第十一条 | 环级认定由本会与元素使公会共同主持 |",
+    "new": "| 《法术环级标准》 | 个人环级认定依《环级认定规程》；元素使公会主理，委员会校验，学会提供专业意见 |",
+    "problem_types": [
+      "CROSS_FILE_CONFLICT"
+    ],
+    "reason": "旧引用表仍让学会共同主持个人认定或主理全部评审。 按已获批公会主理、委员会校验、学会专业意见/联合复核规则修表。",
+    "evidence": [
+      "K21第十五/二十四条；K27第三十条；DD01与D53。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 110,
+    "alias": "K27",
+    "issues": [
+      "K27-03"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "CROSS_FILE_ALIGNMENT"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      369,
+      369
+    ],
+    "old": "| 《环级认定规程》 | 环级认定的理论及技术评审由本会主理 |",
+    "new": "| 《环级认定规程》 | 学会提供理论及技术专业意见并参与联合复核；学术资质由本会另行认定 |",
+    "problem_types": [
+      "CROSS_FILE_CONFLICT"
+    ],
+    "reason": "旧引用表仍让学会共同主持个人认定或主理全部评审。 按已获批公会主理、委员会校验、学会专业意见/联合复核规则修表。",
+    "evidence": [
+      "K21第十五/二十四条；K27第三十条；DD01与D53。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 111,
+    "alias": "K27",
+    "issues": [
+      "K27-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      373,
+      373
+    ],
+    "old": "> 注：本章程各机关首长之职级对等，仅作惯例性描述（\"礼遇比照联盟最高职级\"），不系于特定法源条款——《银色联盟公务职级通则》现属未竟之稿。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "公务职级未竟草稿的状态说明作为正文注记。 移出编辑注记；现有岗位礼遇及权力不变。",
+    "evidence": [
+      "K27引用表后注；各岗位条文的礼遇描述；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 112,
+    "alias": "K29",
+    "issues": [
+      "K29-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/大图书馆章程_v1_9.md",
+    "source_sha256": "b473f527c0bdb5ab94ef14f0338af6781c40d27c0147709e8550370917067385",
+    "source_lines": [
+      296,
+      302
+    ],
+    "old": "## 附：v1.0 → v1.1 修订对照表\n\n历史修订表完整保留于基准与本次CHANGELOG，不作为候选现行规范。\n\n## 附：v1.1 → v1.2 修订对照表\n\n历史修订表完整保留于基准与本次CHANGELOG，不作为候选现行规范。",
+    "new": "",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "两处旧修订表占位说明仍称候选规范。 移出历史编辑段，保留原版和日志。",
+    "evidence": [
+      "K29附录旧修订表说明；D54。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 113,
+    "alias": "K29",
+    "issues": [
+      "K29-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/大图书馆章程_v1_9.md",
+    "source_sha256": "b473f527c0bdb5ab94ef14f0338af6781c40d27c0147709e8550370917067385",
+    "source_lines": [
+      314,
+      314
+    ],
+    "old": "事故先隔离和救援，技术失误、职务违法、犯罪及赔补分送有权机关，预算依公共拨款程序。代理人和远征队不因回收使命取得掠夺或境外强制权。未制定的知识产权和赔补实体规则以未来接口登记，不在本章程扩大为完整民法。",
+    "new": "事故先隔离和救援，技术失误、职务违法、犯罪及赔补分送有权机关，预算依公共拨款程序。代理人和远征队不因回收使命取得掠夺或境外强制权。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "事故条款写未来民法/知识产权接口和不扩建完整民法。 移除工作计划，保留事故分送、预算和境外强制边界。",
+    "evidence": [
+      "K29馆实三；IF03/07/11继续待建。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 114,
+    "alias": "K24",
+    "issues": [
+      "K24-01"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/财政货币与经济/布加联盟储备系统章程_v1_2.md",
+    "source_sha256": "a377bcfdb068bd590121cff41c8088e9cf8672af49468e0852cef1b2b8e0b4f4",
+    "source_lines": [
+      397,
+      397
+    ],
+    "old": "魔核账户只记储能资产，不能授予施法能力、环级或许可。魔核能源局负责魔核实物及部件能级，节点结界工程部负责供能节点的接入运行，两者对出库、接入和事故明确签收。造物所需原料和消耗不在本章程另定；法定发行身份、实物成色与来源记录分别核验，不能把魔法印记称为绝对不可伪造。禁魔场中的清算或鉴伪设备须逐项验证，故障时停用受影响通道、以双人签署和独立复核维持合法的备用账务，不以故障自动撤销已完成支付。",
+    "new": "魔核账户只记储能资产，不能授予施法能力、环级或许可。魔核能源局负责魔核实物及部件能级，节点结界工程部负责供能节点的接入运行，两者对出库、接入和事故明确签收。法定发行身份、实物成色与来源记录分别核验，魔法印记须与实物及来源记录交叉核验。禁魔场中的清算或鉴伪设备须逐项验证，故障时停用受影响通道、以双人签署和独立复核维持合法的备用账务，不以故障自动撤销已完成支付。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "造物参数不另定及不可宣称完美防伪是编辑提醒。 保留实物、发行身份、来源核验与设备验证程序。",
+    "evidence": [
+      "K24储实二；K13附件一；作者原答留痕与造物范围。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 115,
+    "alias": "K24",
+    "issues": [
+      "K24-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/财政货币与经济/布加联盟储备系统章程_v1_2.md",
+    "source_sha256": "a377bcfdb068bd590121cff41c8088e9cf8672af49468e0852cef1b2b8e0b4f4",
+    "source_lines": [
+      402,
+      402
+    ],
+    "old": "### 储实四 暂留接口",
+    "new": "### 储实四 收付依据与争议登记",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "“暂留接口”及整段未来模块列表作为法条。 改为收付依据和争议登记，只删工作清单，不新增税率或债务。",
+    "evidence": [
+      "K24储实四；IF03/05/10继续保留。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 116,
+    "alias": "K24",
+    "issues": [
+      "K24-02"
+    ],
+    "class": "EDITORIAL_FIX",
+    "change_tags": [
+      "TECHNICAL_FIX"
+    ],
+    "source_path": "01_CURRENT_CANON/财政货币与经济/布加联盟储备系统章程_v1_2.md",
+    "source_sha256": "a377bcfdb068bd590121cff41c8088e9cf8672af49468e0852cef1b2b8e0b4f4",
+    "source_lines": [
+      403,
+      403
+    ],
+    "old": "税种税率、城邦摊派公式、普通民事损害估价、银行破产制度和货币资产统一估值不由本章程新建。现有合法税费、合同及拨款按其有效依据办理；没有依据的不得由库务人员自行征收、折价或创造债务。争议登记、财产保全、审计和司法受理程序仍可启动；无法据现有实体标准计算的请求明确列为待决金额。",
+    "new": "现有合法税费、合同及拨款按其有效依据办理；没有依据的不得由库务人员自行征收、折价或创造债务。争议登记、财产保全、审计和司法受理程序仍可启动；无法据现有实体标准计算的请求明确列为待决金额。",
+    "problem_types": [
+      "META_LEAK"
+    ],
+    "reason": "“暂留接口”及整段未来模块列表作为法条。 改为收付依据和争议登记，只删工作清单，不新增税率或债务。",
+    "evidence": [
+      "K24储实四；IF03/05/10继续保留。"
+    ],
+    "authority": [
+      "D54"
+    ],
+    "meaning_change": "不改变世界事实或合法权限；按现行权威条款修复表达或旧表残留"
+  },
+  {
+    "sequence": 117,
+    "alias": "K23",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3.md",
+    "source_sha256": "e41f781669eb7a9d6bbeba9375ddb9b241fda9491c664fcb98278388aea99834",
+    "source_lines": [
+      274,
+      287
+    ],
+    "old": "## 九、规模估算\n\n| 项目 | 人数（示意） |\n|------|------------|\n| 委员会层（主任委员、副主任委员、常务委员及其随员） | 约20—30人 |\n| 办公厅 | 约30—45人 |\n| 禁术名录司 | 约35—50人 |\n| 高阶许可司 | 约25—40人 |\n| 留痕稽查司 | 约40—60人 |\n| 违禁查处司 | 约50—70人 |\n| 术式鉴定室 | 约25—35人 |\n| 知识安全巡查室 | 约15—25人 |\n| 高阶施法许可局 | 约40—60人 |\n| **委员会总编制（含许可局）** | **约280—415人** |",
+    "new": "## 九、人员与机构\n\n委员会成员及内设机构依第二至第五章设置，直属许可局与委员会的关系依第八章执行。",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 118,
+    "alias": "K25",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/盟约监察院组织法_v1_4.md",
+    "source_sha256": "761a4d8e5402c134a1340738f1835face4b083555f3eb0f1c584434d89cecc34",
+    "source_lines": [
+      243,
+      243
+    ],
+    "old": "### 第三十三条 编制规模",
+    "new": "### 第三十三条 人员与机构",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 119,
+    "alias": "K25",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/盟约监察院组织法_v1_4.md",
+    "source_sha256": "761a4d8e5402c134a1340738f1835face4b083555f3eb0f1c584434d89cecc34",
+    "source_lines": [
+      245,
+      252
+    ],
+    "old": "| 项目 | 人数（示意） |\n|------|------------|\n| 监察总长与监察官（含各厅主厅监察官） | 25—37人 |\n| 审计吏（第一、二、四、六监察厅） | 约90—130人 |\n| 调查吏（第三、五、八监察厅） | 约70—100人 |\n| 巡察吏（第七监察厅轮换巡察组） | 约40—60人 |\n| 申诉受理、讼务、综合机关与直属单位人员 | 约60—90人 |\n| 监察院总编制 | 约285—420人 |",
+    "new": "监察总长、监察官及各内设机构的设置，依本法第三编、第四编执行。",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 120,
+    "alias": "K19",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v2_3.md",
+    "source_sha256": "69375453dc7181d9ee5806951727dd1a1620450ba3af1df79b719a4b47a8119e",
+    "source_lines": [
+      349,
+      349
+    ],
+    "old": "### 9.2 规模估算",
+    "new": "### 9.2 编制归属",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 121,
+    "alias": "K19",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v2_3.md",
+    "source_sha256": "69375453dc7181d9ee5806951727dd1a1620450ba3af1df79b719a4b47a8119e",
+    "source_lines": [
+      351,
+      363
+    ],
+    "old": "| 项目 | 人数（示意） |\n|------|------------|\n| 首长层、办公厅与综合机关 | 约350—500人 |\n| 各业务局机关 | 约700—1,000人 |\n| 禁区巡逻总队（含各支队） | 约1,800—2,400人 |\n| 侦查与协查外勤力量 | 约900—1,300人 |\n| 留痕鉴证与技术体系 | 约350—500人 |\n| 监所体系（含寂环塔） | 约1,200—1,800人 |\n| 要员警卫力量 | 约200—300人 |\n| 直属院校与事业单位 | 约400—600人 |\n| **内务治安部总编制** | **约5,900—8,400人** |\n\n> 上表为联盟层编制，不含各城邦治安机关——城邦治安人员属城邦编制，其总量数倍于本部。税关缉私局员额列于税关总署，不计入本表。",
+    "new": "本部与各城邦治安机关分别列编。税关缉私局员额列于税关总署。",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 122,
+    "alias": "K11",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      161,
+      171
+    ],
+    "old": "| 分区 | 覆盖范围 | 节点数（示意） | 驻站规模 |\n|------|---------|--------------|---------|\n| 核心分区 | 卡奈奇—白塔—恰恩核心城邦群 | 约200 | 大型站，30—50人 |\n| 北冰分区 | 大冰川—格雷修斯 | 约180 | 中型站 |\n| 星聚分区 | 星聚海—萨萨尔德 | 约160 | 中型站 |\n| 永黯分区 | 永黯之海—埃鲁因以南 | 约150 | 中型站 |\n| 云脊分区 | 云雾山脉—圣白草原 | 约140 | 中型站 |\n| 远北分区 | 那泽尔—远北高空域 | 约120 | 小型站 |\n| 西海分区 | 圣奥索尔外海空域 | 约130 | 小型站 |\n| 远东分区 | 大冰川东部—垂云山脉 | 约100 | 小型站 |\n| 散布节点 | 无固定分区之独立节点 | 约220 | 由最近分区兼管或设流动监测组 |",
+    "new": "| 分区 | 覆盖范围 | 驻站安排 |\n| ------ | --------- | --------- |\n| 核心分区 | 卡奈奇—白塔—恰恩核心城邦群 | 大型站 |\n| 北冰分区 | 大冰川—格雷修斯 | 中型站 |\n| 星聚分区 | 星聚海—萨萨尔德 | 中型站 |\n| 永黯分区 | 永黯之海—埃鲁因以南 | 中型站 |\n| 云脊分区 | 云雾山脉—圣白草原 | 中型站 |\n| 远北分区 | 那泽尔—远北高空域 | 小型站 |\n| 西海分区 | 圣奥索尔外海空域 | 小型站 |\n| 远东分区 | 大冰川东部—垂云山脉 | 小型站 |\n| 散布节点 | 无固定分区之独立节点 | 由最近分区兼管或设流动监测组 |",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "只移除示意节点分配与人数，保留驻站类型及散布节点兼管安排；总数1400另有独立原文来源。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 123,
+    "alias": "K11",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      177,
+      182
+    ],
+    "old": "| 等级 | 功能 | 驻防规模 | 数量（示意） |\n|------|------|---------|------------|\n| **一等堡垒**（枢纽） | 区域预警枢纽，辖数座下级堡垒，设指挥所与大型观测阵列 | 50—80人 | 6—8座 |\n| **二等堡垒**（标准） | 标准边境监视点，中型观测阵列与通讯中继 | 15—30人 | 15—20座 |\n| **三等堡垒**（前哨） | 轻型前沿哨站，小队驻守 | 5—10人 | 20—30座 |\n| **流动观测站** | 小型浮空平台巡回监测，覆盖堡垒间隙 | 3—5人 | 若干 |",
+    "new": "| 等级 | 功能 |\n| ------ | ------ |\n| **一等堡垒**（枢纽） | 区域预警枢纽，辖数座下级堡垒，设指挥所与大型观测阵列 |\n| **二等堡垒**（标准） | 标准边境监视点，中型观测阵列与通讯中继 |\n| **三等堡垒**（前哨） | 轻型前沿哨站，小队驻守 |\n| **流动观测站** | 小型浮空平台巡回监测，覆盖堡垒间隙 |",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 124,
+    "alias": "K11",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      275,
+      287
+    ],
+    "old": "## 八、规模估算\n\n| 项目 | 数量（示意） |\n|------|------------|\n| 首长层与总监办公厅 | 约60—80人 |\n| 节点台网总局（含各分区驻站） | 约1,400—1,800人 |\n| 边境警戒总局（含各堡垒驻防） | 约800—1,200人 |\n| 外域情报局（含暗哨） | 约200—300人 |\n| 防务监察局 | 约150—200人 |\n| 联盟战备审查署 | 约80—120人 |\n| 内部合规处 | 约20—30人 |\n| 直属机构与设施 | 约200—300人 |\n| **银烛会总编制** | **约2,900—4,000人** |",
+    "new": "## 八、人员构成\n\n银烛会人员分属首长层、内设部局、直属机构及设施、台网驻站、边境堡垒与驻外暗哨。",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 125,
+    "alias": "K11",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      353,
+      353
+    ],
+    "old": "              │     ├── 一等堡垒 ×6—8",
+    "new": "              │     ├── 一等堡垒",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 126,
+    "alias": "K11",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      354,
+      354
+    ],
+    "old": "              │     ├── 二等堡垒 ×15—20",
+    "new": "              │     ├── 二等堡垒",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 127,
+    "alias": "K11",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5.md",
+    "source_sha256": "41ef70c51b4fe2e3a21db4fdb3d9cb7e8564b89c18833b57a94ae925ce9acaf4",
+    "source_lines": [
+      355,
+      355
+    ],
+    "old": "              │     ├── 三等堡垒 ×20—30",
+    "new": "              │     ├── 三等堡垒",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 128,
+    "alias": "K28",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      363,
+      363
+    ],
+    "old": "### 第三十八条 白塔的编制规模",
+    "new": "### 第三十八条 人员构成",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 129,
+    "alias": "K28",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      365,
+      374
+    ],
+    "old": "| 项目 | 人数（示意） |\n|------|------------|\n| 守护法师 | 1 |\n| 持杖巫师 | 12—18 |\n| 银袍法师 | 60—90 |\n| 塔卫 | 100—150 |\n| 守护法师办公室（行政人员） | 10—15 |\n| 白塔卫队（非银袍的安保人员） | 20—30 |\n| 访客事务组（非银袍的接待人员） | 15—25 |\n| 白塔总编制 | 约220—330人 |",
+    "new": "白塔人员包括四阶银袍、守护法师办公室行政人员、白塔卫队及访客事务组人员。守护法师设一人，其余职责分工依本章程执行。",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 130,
+    "alias": "K28",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      428,
+      428
+    ],
+    "old": "              ├── 持杖巫师团（第三阶·12—18人）",
+    "new": "              ├── 持杖巫师团（第三阶）",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 131,
+    "alias": "K28",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      452,
+      452
+    ],
+    "old": "                    ├── 第三阶·持杖巫师 ×12—18",
+    "new": "                    ├── 第三阶·持杖巫师",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 132,
+    "alias": "K28",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      453,
+      453
+    ],
+    "old": "                    ├── 第二阶·银袍法师 ×60—90",
+    "new": "                    ├── 第二阶·银袍法师",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 133,
+    "alias": "K28",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2.md",
+    "source_sha256": "1cb29b321c8a48f0c1318dd52f9367a82a471523f4a3122da00983b857c153e1",
+    "source_lines": [
+      454,
+      454
+    ],
+    "old": "                    └── 第一阶·塔卫 ×100—150",
+    "new": "                    └── 第一阶·塔卫",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 134,
+    "alias": "K27",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON",
+      "STRUCTURAL_REFACTOR"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      74,
+      74
+    ],
+    "old": "2. 以联盟目前的学术人口规模，全会正式院士总数约为八十至一百二十人。",
+    "new": "",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "删除由示意院士数重复形成的人口断言，保留院士无硬性上限与名额决定程序。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 135,
+    "alias": "K27",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      280,
+      280
+    ],
+    "old": "### 第三十一条 学会的规模",
+    "new": "### 第三十一条 人员构成",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  },
+  {
+    "sequence": 136,
+    "alias": "K27",
+    "issues": [
+      "G02"
+    ],
+    "class": "AUTHOR_DECISION",
+    "change_tags": [
+      "AUTHOR_CANON"
+    ],
+    "source_path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2.md",
+    "source_sha256": "c04488f3d8045a4edfbcc97a22ca6c7b3780a30b7d7107d73601581629a23404",
+    "source_lines": [
+      282,
+      290
+    ],
+    "old": "| 项目 | 人数（示意） |\n|------|------------|\n| 正式院士 | 80—120 |\n| 各学部研究人员与学者（非院士） | 约1,200—1,800 |\n| 秘书处行政人员 | 约80—120 |\n| 资质考核与标准认定的专职人员 | 约150—250 |\n| 白银学会核心编制 | 约1,500—2,300人 |\n\n> 学部研究人员多有交叉任职于各城邦工坊、大图书馆、白塔学会者，上表为核心编制之示意，不含广泛之外围学术网络。",
+    "new": "本会人员包括正式院士、各学部研究人员、秘书处人员及资质考核与标准认定人员。各机关设置依第二至第七编执行；研究人员可依规定交叉任职。",
+    "problem_types": [
+      "EXAMPLE_CANONIZED"
+    ],
+    "reason": "示意规模及重复数值被当成人口和机构事实。 按D55撤出示意数字，保留机构职责和独立成立的职务席位；不推算替代规模。",
+    "evidence": [
+      "D55；K23第九节、K25第三十三条、K19第9.2节、K11第5/8/10节、K28第三十八条和组织图、K27第八/三十一条。"
+    ],
+    "authority": [
+      "D55"
+    ],
+    "meaning_change": "依作者决定改变或明确实体规则/事实身份"
+  }
+]

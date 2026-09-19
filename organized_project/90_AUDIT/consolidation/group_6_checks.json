@@ -1,0 +1,38 @@
+{
+  "group": 6,
+  "files": [
+    "K24"
+  ],
+  "status": "PASS_INTERNAL",
+  "checks": [
+    {
+      "check": "K24 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K24 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K24 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "correct suspension reference",
+      "passed": true
+    },
+    {
+      "check": "two houses separate legal votes",
+      "passed": true
+    },
+    {
+      "check": "emergency payment no invented authority",
+      "passed": true
+    },
+    {
+      "check": "budget vs asset accounts",
+      "passed": true
+    }
+  ],
+  "note": "组内检查通过；跨组接口须在全局审计再次核验。"
+}

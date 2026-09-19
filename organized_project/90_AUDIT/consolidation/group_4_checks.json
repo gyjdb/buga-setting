@@ -1,0 +1,47 @@
+{
+  "group": 4,
+  "files": [
+    "K18",
+    "K11"
+  ],
+  "status": "PASS_INTERNAL",
+  "checks": [
+    {
+      "check": "K18 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K18 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K18 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K11 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K11 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K11 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "warning not mobilization",
+      "passed": true
+    },
+    {
+      "check": "node types and three forces",
+      "passed": true
+    },
+    {
+      "check": "exit and judicial allocation",
+      "passed": true
+    }
+  ],
+  "note": "组内检查通过；跨组接口须在全局审计再次核验。"
+}

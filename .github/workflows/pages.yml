@@ -1,0 +1,61 @@
+name: Build and publish archive
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: archive-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install Markdown renderer
+        run: python -m pip install -r tools/library_portal/requirements.txt
+      - name: Fetch and verify bundled fonts
+        run: python tools/library_portal/fetch_fonts.py
+      - name: Build read-only archive
+        run: python tools/library_portal/build.py
+      - name: Verify source identity, links and search
+        run: |
+          python tools/library_portal/verify.py
+          python tools/library_portal/verify_publication.py
+          node tools/library_portal/test_search.cjs
+          node tools/library_portal/test_frontend.cjs
+      - name: Upload static site
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/library_portal
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
+

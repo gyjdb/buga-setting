@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="布加设定项目的文献阅读与检索门户：银色联盟现行法典、作者设定、候选整编与审计档案。"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'"
+    />
+    <title>白塔档案馆 · 银色联盟法典库</title>
+    <link rel="icon" href="assets/icons-v3/emblem-b-small.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="archive.css" />
+    <script src="baita-icons.js" defer></script>
+    <script src="archive.js" defer></script>
+    <script src="prototype.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至正文</a>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#/home"
+        ><span class="brand-mark-slot" aria-hidden="true"></span>
+        <span>白塔档案馆<small>银色联盟法典库</small></span></a
+      >
+      <div class="sidebar-scroll">
+      <div class="sidebar-label">馆藏查阅</div>
+      <nav aria-label="主导航">
+        <a href="#/home" data-nav="home"
+          >档案馆首页</a
+        >
+        <a href="#/browse?status=CURRENT_CANON" data-nav="canon">现行法典</a>
+        <a href="#/browse" data-nav="browse"
+          >全部馆藏</a
+        >
+        <a href="#/topics" data-nav="topics"
+          >主题总目</a
+        >
+        <a href="#/institutions" data-nav="institutions"
+          >机构总目</a
+        >
+        <a href="#/versions" data-nav="versions"
+          >版本与关系</a
+        >
+        <a href="#/browse?status=SUPERSEDED" data-nav="archive">历史与来源</a>
+      </nav>
+      <div class="sidebar-label maintenance-label">编校与维护</div>
+      <nav aria-label="编校与维护" class="secondary-nav">
+        <a href="#/browse?status=AUTHOR_CANON" data-nav="author">作者最高依据</a>
+        <a href="#/browse?status=CANDIDATE" data-nav="candidate">原整编候选</a>
+        <a href="#/browse?status=PROPOSAL" data-nav="proposal">提案</a>
+        <a href="#/browse?status=UNRESOLVED" data-nav="unresolved">待决材料</a>
+        <a href="#/audit" data-nav="audit">审计与测试</a>
+        <a href="#/browse?collection=00_PROJECT" data-nav="project">项目总卷</a>
+        <a href="#/browse?directory=1" data-nav="directory">公开源文件目录</a>
+      </nav>
+      </div>
+      <div class="sidebar-bottom">
+        <span class="archive-rule"></span><strong>布加设定 · 公开典藏</strong>
+        <p>保存依据，辨明版本。</p>
+        <small id="build-date">正在读取馆藏索引</small>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button
+          class="mobile-toggle"
+          id="menu-toggle"
+          aria-label="展开导航"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          目录
+        </button>
+        <span class="topbar-title">银色联盟法典库</span>
+        <form id="global-search" role="search">
+          <label class="sr-only" for="global-query">检索全部馆藏</label
+          ><span class="search-icon" aria-hidden="true"></span
+          ><input
+            id="global-query"
+            type="search"
+            placeholder="搜索全部馆藏…"
+            autocomplete="off"
+          /><kbd>/</kbd><button type="submit">检索</button>
+        </form>
+      </header>
+      <main id="main" class="prototype" tabindex="-1">
+        <div class="loading">正在读取馆藏索引…</div>
+      </main>
+      <footer>
+        <span class="footer-name">白塔档案馆</span><p>本公开版不含原始聊天导出与本地工具资料；部分原始引用仅在本地保留。<a href="https://github.com/gyjdb/buga-setting/blob/main/docs/PUBLICATION.md">公开范围与来源说明</a> · <a href="https://github.com/gyjdb/buga-setting">GitHub / MIT</a></p><nav aria-label="页脚导航"><a href="#/browse">全部馆藏</a><a href="#/versions">版本与关系</a><a href="#/browse?collection=00_PROJECT">项目总卷</a><a href="#/browse?directory=1">公开源文件目录</a></nav><p>银色联盟法典库 · 非官方衍生设定。环境与书籍插画为概念演绎，不代表已确认的建筑、徽章或历史事件。</p>
+      </footer>
+    </div>
+    <noscript>请启用 JavaScript 以检索与阅读。源码及原件也可在 GitHub 仓库查看。</noscript>
+  </body>
+</html>

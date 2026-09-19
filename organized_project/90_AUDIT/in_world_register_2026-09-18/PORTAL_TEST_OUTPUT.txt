@@ -1,0 +1,3 @@
+PASS: 21 search behavior checks against actual generated corpus (7 existing, current count, 12 old/new phrase assertions, historical retention)
+
+exit_code: 0

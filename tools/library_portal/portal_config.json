@@ -1,0 +1,124 @@
+{
+  "title": "白塔档案馆",
+  "subtitle": "银色联盟法典库",
+  "exclude_dirs": [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "node_modules",
+    ".DS_Store",
+    ".agents",
+    ".codex",
+    ".impeccable"
+  ],
+  "topics": {
+    "宪政与治理": [
+      "宪章",
+      "议会",
+      "执政院",
+      "立法",
+      "公民"
+    ],
+    "魔法体系与魔法法": [
+      "魔法",
+      "施法",
+      "禁魔",
+      "环级",
+      "节点取能"
+    ],
+    "司法监察与治安": [
+      "裁断",
+      "监察",
+      "治安",
+      "司法",
+      "警务"
+    ],
+    "军事与防务": [
+      "防务",
+      "军事",
+      "银烛",
+      "舰队",
+      "军种"
+    ],
+    "学术与研究机构": [
+      "白塔",
+      "学会",
+      "图书馆",
+      "学术",
+      "研究"
+    ],
+    "财政货币与经济": [
+      "财政",
+      "货币",
+      "经济",
+      "储备",
+      "拨款"
+    ],
+    "审计与测试": [
+      "审计",
+      "测试",
+      "冲突",
+      "校验",
+      "AUDIT",
+      "SCENARIO",
+      "CONFLICT",
+      "VERIFICATION"
+    ]
+  },
+  "institutions": {
+    "白银议会": [
+      "白银议会"
+    ],
+    "白银执政院": [
+      "白银执政院",
+      "执政院"
+    ],
+    "盟约监察院": [
+      "盟约监察院"
+    ],
+    "白塔": [
+      "白塔",
+      "奥维利亚"
+    ],
+    "白银学会": [
+      "白银学会"
+    ],
+    "银烛会": [
+      "银烛会"
+    ],
+    "裁断体系": [
+      "裁断",
+      "庭署"
+    ],
+    "内务治安体系": [
+      "内务治安",
+      "警务",
+      "治安部"
+    ]
+  },
+  "collections": {
+    "00_PROJECT": "项目总卷",
+    "01_CURRENT_CANON": "现行法典",
+    "02_PROPOSALS": "提案",
+    "03_UNRESOLVED": "待决材料",
+    "04_REFERENCE": "参考文献",
+    "05_SUPERSEDED": "旧版存档",
+    "06_HISTORY": "历史对话",
+    "10_WORKING_DRAFTS": "候选整编",
+    "90_AUDIT": "审计与测试",
+    "99_SOURCE_ARCHIVE_INDEX": "来源档案"
+  },
+  "overrides": {
+    "00_PROJECT/AUTHOR_FOUNDATIONS_v0.1.md": {
+      "title": "作者基础设定 · v0.1"
+    },
+    "00_PROJECT/DELEGATED_DECISIONS.md": {
+      "status": "DELEGATED_DESIGN",
+      "authority": "已随D53批准的制度设计；后续作者决定优先"
+    },
+    "00_PROJECT/AUTHOR_EDITORIAL_DECISIONS_2026-09-18.md": {
+      "status": "AUTHOR_CANON",
+      "authority": "作者直接决定D54–D63；逐命题保留授权、确定与未定边界"
+    }
+  }
+}

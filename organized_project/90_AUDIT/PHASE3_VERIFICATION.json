@@ -1,0 +1,364 @@
+{
+  "date": "2026-09-17",
+  "baseline_tag": "phase3-baseline-2026-09-17",
+  "baseline_commit": "9feefb57329a0cdf5d65880c049a590faf702367",
+  "result": "PASS",
+  "checks": [
+    {
+      "check": "preexisting_workspace_bytes",
+      "passed": true,
+      "detail": {
+        "checked": 369,
+        "failures": []
+      }
+    },
+    {
+      "check": "source_archive_file_set",
+      "passed": true,
+      "detail": {
+        "checked": 170,
+        "added": [],
+        "missing": []
+      }
+    },
+    {
+      "check": "author_original_and_body",
+      "passed": true,
+      "detail": {
+        "external_bytes": 20847,
+        "sha256": "e343a13c03dfc945eee240927dda2dad2ffc335f5ea17dbccf6a3f6a73e70948",
+        "metadata_prefix_bytes": 191
+      }
+    },
+    {
+      "check": "baseline_git_raw_blobs",
+      "passed": true,
+      "detail": {
+        "tag": "phase3-baseline-2026-09-17",
+        "commit": "9feefb57329a0cdf5d65880c049a590faf702367",
+        "checked": 200,
+        "failures": []
+      }
+    },
+    {
+      "check": "baseline_git_scope",
+      "passed": true,
+      "detail": {
+        "tracked_files": 200
+      }
+    },
+    {
+      "check": "baseline_tracked_unchanged",
+      "passed": true,
+      "detail": {
+        "diff": ""
+      }
+    },
+    {
+      "check": "data_matches_review_model",
+      "passed": true,
+      "detail": "Generated registers match the reviewed source model."
+    },
+    {
+      "check": "unique_issue_ids_and_states",
+      "passed": true,
+      "detail": {
+        "STILL_UNRESOLVED": 14,
+        "MERGE_CANDIDATE": 15,
+        "KEEP": 8,
+        "AUTHOR_OVERRIDE": 6,
+        "OBSOLETE": 5
+      }
+    },
+    {
+      "check": "article_coverage",
+      "passed": true,
+      "detail": {
+        "documents": 18,
+        "articles": 623,
+        "by_group": {
+          "current_articles": 125,
+          "branch_articles": 247,
+          "historical_articles": 251
+        },
+        "by_source": {
+          "K20": 36,
+          "K15": 22,
+          "K21": 29,
+          "K13": 38,
+          "H17": 25,
+          "H18": 33,
+          "H19": 43,
+          "H20": 41,
+          "H08": 51,
+          "H09": 54,
+          "H02": 29,
+          "H03": 39,
+          "H01": 23,
+          "H21": 36,
+          "A07": 28,
+          "A08": 22,
+          "A09": 38,
+          "A10": 36
+        }
+      }
+    },
+    {
+      "check": "article_workload_totals",
+      "passed": true,
+      "detail": {
+        "K20": {
+          "KEEP": 15,
+          "HOLD": 4,
+          "CHANGE": 15,
+          "OPTIONAL": 2
+        },
+        "K15": {
+          "HOLD": 5,
+          "CHANGE": 12,
+          "KEEP": 4,
+          "OPTIONAL": 1
+        },
+        "K21": {
+          "KEEP": 14,
+          "CHANGE": 11,
+          "HOLD": 3,
+          "OPTIONAL": 1
+        },
+        "K13": {
+          "KEEP": 23,
+          "CHANGE": 11,
+          "OPTIONAL": 1,
+          "HOLD": 3
+        }
+      }
+    },
+    {
+      "check": "author_queue_coverage",
+      "passed": true,
+      "detail": {
+        "BLOCKING_NOW": 2,
+        "DEFER": 18,
+        "LOCAL": 1
+      }
+    },
+    {
+      "check": "evidence_reference_bounds_and_author_roles",
+      "passed": true,
+      "detail": {
+        "references_checked": 325,
+        "conversation_roles": [
+          {
+            "issue": "M01",
+            "layer": "explicit_refs",
+            "reference": "C05:43",
+            "sender": "human"
+          },
+          {
+            "issue": "M03",
+            "layer": "explicit_refs",
+            "reference": "C06:3",
+            "sender": "human"
+          },
+          {
+            "issue": "M03",
+            "layer": "explicit_refs",
+            "reference": "C09:5",
+            "sender": "human"
+          },
+          {
+            "issue": "M04",
+            "layer": "explicit_refs",
+            "reference": "C06:3",
+            "sender": "human"
+          },
+          {
+            "issue": "M04",
+            "layer": "explicit_refs",
+            "reference": "C09:5",
+            "sender": "human"
+          },
+          {
+            "issue": "M06",
+            "layer": "explicit_refs",
+            "reference": "C09:5",
+            "sender": "human"
+          },
+          {
+            "issue": "M08",
+            "layer": "explicit_refs",
+            "reference": "C09:5",
+            "sender": "human"
+          },
+          {
+            "issue": "M09",
+            "layer": "explicit_refs",
+            "reference": "C05:39",
+            "sender": "human"
+          },
+          {
+            "issue": "M11",
+            "layer": "explicit_refs",
+            "reference": "C05:39",
+            "sender": "human"
+          },
+          {
+            "issue": "M13",
+            "layer": "explicit_refs",
+            "reference": "C05:39",
+            "sender": "human"
+          },
+          {
+            "issue": "M14",
+            "layer": "explicit_refs",
+            "reference": "C08:12",
+            "sender": "human"
+          },
+          {
+            "issue": "M14",
+            "layer": "explicit_refs",
+            "reference": "C08:14",
+            "sender": "human"
+          },
+          {
+            "issue": "M17",
+            "layer": "explicit_refs",
+            "reference": "C05:41",
+            "sender": "human"
+          },
+          {
+            "issue": "M17",
+            "layer": "explicit_refs",
+            "reference": "C05:43",
+            "sender": "human"
+          },
+          {
+            "issue": "M20",
+            "layer": "correction_refs",
+            "reference": "C06:4",
+            "sender": "assistant"
+          },
+          {
+            "issue": "M21",
+            "layer": "correction_refs",
+            "reference": "C06:4",
+            "sender": "assistant"
+          },
+          {
+            "issue": "M22",
+            "layer": "explicit_refs",
+            "reference": "C09:5",
+            "sender": "human"
+          },
+          {
+            "issue": "M23",
+            "layer": "correction_refs",
+            "reference": "C06:4",
+            "sender": "assistant"
+          },
+          {
+            "issue": "M23",
+            "layer": "correction_refs",
+            "reference": "C06:6",
+            "sender": "assistant"
+          },
+          {
+            "issue": "M24",
+            "layer": "explicit_refs",
+            "reference": "C08:16",
+            "sender": "human"
+          },
+          {
+            "issue": "M24",
+            "layer": "explicit_refs",
+            "reference": "C10:3",
+            "sender": "human"
+          },
+          {
+            "issue": "M25",
+            "layer": "explicit_refs",
+            "reference": "C05:39",
+            "sender": "human"
+          },
+          {
+            "issue": "M30",
+            "layer": "explicit_refs",
+            "reference": "C07:11",
+            "sender": "human"
+          },
+          {
+            "issue": "M32",
+            "layer": "correction_refs",
+            "reference": "C06:4",
+            "sender": "assistant"
+          },
+          {
+            "issue": "M40",
+            "layer": "correction_refs",
+            "reference": "C06:4",
+            "sender": "assistant"
+          },
+          {
+            "issue": "M41",
+            "layer": "correction_refs",
+            "reference": "C06:4",
+            "sender": "assistant"
+          },
+          {
+            "issue": "M43",
+            "layer": "explicit_refs",
+            "reference": "C09:5",
+            "sender": "human"
+          }
+        ]
+      }
+    },
+    {
+      "check": "new_markdown_local_links",
+      "passed": true,
+      "detail": {
+        "checked": 1379,
+        "errors": []
+      }
+    },
+    {
+      "check": "queue_and_six_layer_completeness",
+      "passed": true,
+      "detail": {
+        "blocking_questions": 2,
+        "six_layer_issues": 48
+      }
+    },
+    {
+      "check": "required_scenarios",
+      "passed": true,
+      "detail": {
+        "requested": 12,
+        "included": 14,
+        "kind": "paper rule walkthrough, not executed statute tests"
+      }
+    },
+    {
+      "check": "only_authorized_new_outputs",
+      "passed": true,
+      "detail": {
+        "new_paths": [
+          "00_PROJECT/AUTHOR_DECISION_QUEUE.md",
+          "90_AUDIT/MAGIC_LAW_CONVERGENCE_MATRIX.md",
+          "90_AUDIT/PHASE1_REFACTOR_PLAN.md",
+          "90_AUDIT/PHASE1_SCENARIO_TESTS.md",
+          "90_AUDIT/PHASE3_BASELINE_REPORT.md",
+          "90_AUDIT/PHASE3_CONVERGENCE_DATA.json",
+          "90_AUDIT/PHASE3_VERIFICATION.json",
+          "90_AUDIT/phase3_build.py",
+          "90_AUDIT/phase3_verify.py"
+        ],
+        "new_regulations": 0
+      }
+    }
+  ],
+  "limitations": [
+    "Mechanical checks validate preservation, coverage and reference integrity; they do not replace semantic reading or author decisions.",
+    "Scenario results describe existing rules; no new regulations were generated."
+  ]
+}

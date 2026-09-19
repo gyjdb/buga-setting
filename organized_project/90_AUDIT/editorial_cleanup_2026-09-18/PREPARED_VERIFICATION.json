@@ -1,0 +1,884 @@
+{
+  "mode": "prepared",
+  "checks": [
+    {
+      "check": "unique_current_set",
+      "status": "PASS",
+      "detail": "17 distinct aliases, no directory-highest-version inference"
+    },
+    {
+      "check": "manifest_hashes",
+      "status": "PASS",
+      "detail": "Exact complete UTF-8 world-text hashes"
+    },
+    {
+      "check": "protected_sources_unchanged",
+      "status": "PASS",
+      "detail": {
+        "preexisting_files": 773,
+        "authorized_metadata_changes": [],
+        "unexpected_changes": []
+      }
+    },
+    {
+      "check": "old_canon_and_snapshot_bytes",
+      "status": "PASS",
+      "detail": "17 former current texts retained in place and copied without byte changes"
+    },
+    {
+      "check": "audit_coverage",
+      "status": "PASS",
+      "detail": {
+        "author": 9,
+        "editorial": 37,
+        "operations": 136
+      }
+    },
+    {
+      "check": "editorial_metadata_absent",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "unadopted_estimates_removed",
+      "status": "PASS",
+      "detail": "Tables and duplicate graph/prose estimates; statutory seats not broadly deleted"
+    },
+    {
+      "check": "on_site_casting",
+      "status": "PASS",
+      "detail": "Past records remain safety evidence, never current performance replacement"
+    },
+    {
+      "check": "test_permission_vs_certification",
+      "status": "PASS",
+      "detail": "First-test permit can precede target certificate; successful on-site test still required"
+    },
+    {
+      "check": "actual_spell_ring",
+      "status": "PASS",
+      "detail": "No caster-level advantage or passive field breaking"
+    },
+    {
+      "check": "string_exception_preserved",
+      "status": "PASS",
+      "detail": "Existing physical exception unchanged"
+    },
+    {
+      "check": "time_not_category_banned",
+      "status": "PASS",
+      "detail": "Time category ban removed, behavior/permit/zone rules retained"
+    },
+    {
+      "check": "necromancy_control",
+      "status": "PASS",
+      "detail": "Experiment listed as controlled activity, not successful technology"
+    },
+    {
+      "check": "tax_scope",
+      "status": "PASS",
+      "detail": "Union/local tax split; no added local-tax approval condition"
+    },
+    {
+      "check": "ordinary_attack_not_redline",
+      "status": "PASS",
+      "detail": "Other four constitutional redlines retained"
+    },
+    {
+      "check": "valid_resolution_and_resource_scope",
+      "status": "PASS",
+      "detail": "Invalid resolutions have no automatic validity; requisition has a separate legal basis"
+    },
+    {
+      "check": "adjudication_division",
+      "status": "PASS",
+      "detail": "No invented third court or parliamentary group"
+    },
+    {
+      "check": "six_forts_exist_without_renaming",
+      "status": "PASS",
+      "detail": "Names and existing attributes retained, no claim that these are every fortress"
+    },
+    {
+      "check": "white_tower_access",
+      "status": "PASS",
+      "detail": "Both in-staff and valid-pass holders excluded from the exclusion"
+    },
+    {
+      "check": "academic_vs_ring_authority",
+      "status": "PASS",
+      "detail": "Table aligned to already-adopted operative articles"
+    },
+    {
+      "check": "nodes_and_ability",
+      "status": "PASS",
+      "detail": "Energy access does not teach magic; outage does not erase personal casting"
+    },
+    {
+      "check": "valid_author_words_not_blind_deleted",
+      "status": "PASS",
+      "detail": "Manuscript authors and appointment candidates are legitimate in-world terms"
+    },
+    {
+      "check": "article_identifiers_preserved",
+      "status": "PASS",
+      "detail": [
+        [
+          "K20",
+          true
+        ],
+        [
+          "K15",
+          true
+        ],
+        [
+          "K21",
+          true
+        ],
+        [
+          "K13",
+          true
+        ],
+        [
+          "K23",
+          true
+        ],
+        [
+          "K12",
+          true
+        ],
+        [
+          "K14",
+          true
+        ],
+        [
+          "K10",
+          true
+        ],
+        [
+          "K26",
+          true
+        ],
+        [
+          "K25",
+          true
+        ],
+        [
+          "K19",
+          true
+        ],
+        [
+          "K18",
+          true
+        ],
+        [
+          "K11",
+          true
+        ],
+        [
+          "K28",
+          true
+        ],
+        [
+          "K27",
+          true
+        ],
+        [
+          "K29",
+          true
+        ],
+        [
+          "K24",
+          true
+        ]
+      ]
+    },
+    {
+      "check": "explicit_internal_article_targets",
+      "status": "PASS",
+      "detail": {
+        "checked": 94,
+        "missing": []
+      }
+    },
+    {
+      "check": "redline_item_cross_references",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "quoted_scene_not_imported",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "body_file_links",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "passed": 27,
+  "failed": 0,
+  "scope": "Static regression and explicit citation-target checks. Semantic scenario review is separately recorded; not a complete state/legal simulation.",
+  "external_dependency_note": "Existing military subsidiary rules outside the 17-document set remain IF12 dependencies; no invented full texts.",
+  "article_reference_inventory": [
+    {
+      "from": "K20",
+      "line": 29,
+      "to": "K12",
+      "article": "第三条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 39,
+      "to": "K15",
+      "article": "第四条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 47,
+      "to": "K12",
+      "article": "第六条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 95,
+      "to": "K28",
+      "article": "第十四条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 95,
+      "to": "K28",
+      "article": "第十五条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 104,
+      "to": "K12",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 120,
+      "to": "K15",
+      "article": "第十六条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 130,
+      "to": "K13",
+      "article": "第三条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 134,
+      "to": "K13",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 134,
+      "to": "K13",
+      "article": "第十二条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 148,
+      "to": "K12",
+      "article": "第六条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 154,
+      "to": "K12",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K20",
+      "line": 162,
+      "to": "K12",
+      "article": "第三十八条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 19,
+      "to": "K20",
+      "article": "第三条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 33,
+      "to": "K20",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 37,
+      "to": "K20",
+      "article": "第十一条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 51,
+      "to": "K21",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 51,
+      "to": "K21",
+      "article": "第十七条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 61,
+      "to": "K12",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 65,
+      "to": "K20",
+      "article": "第二十条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 69,
+      "to": "K20",
+      "article": "第二十一条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 69,
+      "to": "K21",
+      "article": "第二十一条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 69,
+      "to": "K21",
+      "article": "第二十四条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 73,
+      "to": "K20",
+      "article": "第二十二条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 81,
+      "to": "K20",
+      "article": "第二十四条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 87,
+      "to": "K20",
+      "article": "第二十五条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 95,
+      "to": "K20",
+      "article": "第二十九条",
+      "exists": true
+    },
+    {
+      "from": "K15",
+      "line": 95,
+      "to": "K20",
+      "article": "第三十条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 11,
+      "to": "K20",
+      "article": "第十五条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 15,
+      "to": "K20",
+      "article": "第三条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 19,
+      "to": "K15",
+      "article": "第十六条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 29,
+      "to": "K15",
+      "article": "第四条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 41,
+      "to": "K15",
+      "article": "第四条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 59,
+      "to": "K29",
+      "article": "第七条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 63,
+      "to": "K20",
+      "article": "第三十一条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 67,
+      "to": "K20",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 67,
+      "to": "K20",
+      "article": "第三十一条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 67,
+      "to": "K12",
+      "article": "第三十八条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 93,
+      "to": "K12",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 117,
+      "to": "K12",
+      "article": "第六条",
+      "exists": true
+    },
+    {
+      "from": "K21",
+      "line": 121,
+      "to": "K12",
+      "article": "第三十条",
+      "exists": true
+    },
+    {
+      "from": "K13",
+      "line": 15,
+      "to": "K20",
+      "article": "第二十五条",
+      "exists": true
+    },
+    {
+      "from": "K13",
+      "line": 83,
+      "to": "K12",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K13",
+      "line": 139,
+      "to": "K12",
+      "article": "第三十六条",
+      "exists": true
+    },
+    {
+      "from": "K13",
+      "line": 155,
+      "to": "K12",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K13",
+      "line": 171,
+      "to": "K12",
+      "article": "第六条",
+      "exists": true
+    },
+    {
+      "from": "K13",
+      "line": 175,
+      "to": "K12",
+      "article": "第三十条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 52,
+      "to": "K12",
+      "article": "第三十八条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 312,
+      "to": "K12",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 313,
+      "to": "K12",
+      "article": "第六条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 314,
+      "to": "K12",
+      "article": "第三十八条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 316,
+      "to": "K14",
+      "article": "第十六条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 317,
+      "to": "K26",
+      "article": "第十一条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 318,
+      "to": "K26",
+      "article": "第六条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 319,
+      "to": "K29",
+      "article": "第九条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 320,
+      "to": "K18",
+      "article": "第四十六条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 338,
+      "to": "K13",
+      "article": "第三十六条",
+      "exists": true
+    },
+    {
+      "from": "K23",
+      "line": 347,
+      "to": "K20",
+      "article": "第三十三条",
+      "exists": true
+    },
+    {
+      "from": "K14",
+      "line": 265,
+      "to": "K25",
+      "article": "第十三条",
+      "exists": true
+    },
+    {
+      "from": "K25",
+      "line": 7,
+      "to": "K12",
+      "article": "第二十七条",
+      "exists": true
+    },
+    {
+      "from": "K25",
+      "line": 28,
+      "to": "K12",
+      "article": "第三十三条",
+      "exists": true
+    },
+    {
+      "from": "K25",
+      "line": 61,
+      "to": "K26",
+      "article": "第二十三条",
+      "exists": true
+    },
+    {
+      "from": "K25",
+      "line": 161,
+      "to": "K12",
+      "article": "第二十七条",
+      "exists": true
+    },
+    {
+      "from": "K25",
+      "line": 209,
+      "to": "K18",
+      "article": "第四十七条",
+      "exists": true
+    },
+    {
+      "from": "K25",
+      "line": 255,
+      "to": "K12",
+      "article": "第二十七条",
+      "exists": true
+    },
+    {
+      "from": "K25",
+      "line": 256,
+      "to": "K12",
+      "article": "第三十三条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 12,
+      "to": "K20",
+      "article": "第二十九条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 13,
+      "to": "K12",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 82,
+      "to": "K13",
+      "article": "第三十条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 123,
+      "to": "K12",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 236,
+      "to": "K13",
+      "article": "第二十七条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 253,
+      "to": "K13",
+      "article": "第三十一条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 255,
+      "to": "K12",
+      "article": "第六条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 272,
+      "to": "K12",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 291,
+      "to": "K13",
+      "article": "第三十二条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 297,
+      "to": "K26",
+      "article": "第九条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 323,
+      "to": "K25",
+      "article": "第五条",
+      "exists": true
+    },
+    {
+      "from": "K19",
+      "line": 415,
+      "to": "K20",
+      "article": "第三十条",
+      "exists": true
+    },
+    {
+      "from": "K18",
+      "line": 393,
+      "to": "K12",
+      "article": "第十四条",
+      "exists": true
+    },
+    {
+      "from": "K11",
+      "line": 3,
+      "to": "K18",
+      "article": "第二十七条",
+      "exists": true
+    },
+    {
+      "from": "K11",
+      "line": 3,
+      "to": "K18",
+      "article": "第三十一条",
+      "exists": true
+    },
+    {
+      "from": "K28",
+      "line": 57,
+      "to": "K12",
+      "article": "第一条",
+      "exists": true
+    },
+    {
+      "from": "K28",
+      "line": 63,
+      "to": "K12",
+      "article": "第八条",
+      "exists": true
+    },
+    {
+      "from": "K28",
+      "line": 110,
+      "to": "K25",
+      "article": "第三十条",
+      "exists": true
+    },
+    {
+      "from": "K28",
+      "line": 448,
+      "to": "K12",
+      "article": "第一条",
+      "exists": true
+    },
+    {
+      "from": "K28",
+      "line": 449,
+      "to": "K12",
+      "article": "第三条",
+      "exists": true
+    },
+    {
+      "from": "K27",
+      "line": 242,
+      "to": "K28",
+      "article": "第十一条",
+      "exists": true
+    },
+    {
+      "from": "K27",
+      "line": 350,
+      "to": "K12",
+      "article": "第三条",
+      "exists": true
+    },
+    {
+      "from": "K27",
+      "line": 352,
+      "to": "K28",
+      "article": "第十一条",
+      "exists": true
+    },
+    {
+      "from": "K29",
+      "line": 197,
+      "to": "K28",
+      "article": "第十七条",
+      "exists": true
+    },
+    {
+      "from": "K29",
+      "line": 204,
+      "to": "K28",
+      "article": "第二十一条",
+      "exists": true
+    },
+    {
+      "from": "K29",
+      "line": 204,
+      "to": "K28",
+      "article": "第二十一条",
+      "exists": true
+    },
+    {
+      "from": "K29",
+      "line": 246,
+      "to": "K25",
+      "article": "第十九条",
+      "exists": true
+    },
+    {
+      "from": "K29",
+      "line": 270,
+      "to": "K26",
+      "article": "第四十四条",
+      "exists": true
+    }
+  ]
+}

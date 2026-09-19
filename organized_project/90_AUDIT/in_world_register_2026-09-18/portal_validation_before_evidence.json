@@ -1,0 +1,15 @@
+{
+  "phase": "Portal verification after source/UI changes, before adding final evidence files; final rebuild must follow.",
+  "result": {
+    "status": "PASS",
+    "checks": 12748,
+    "sourceFiles": 858,
+    "sourceUnchanged": true,
+    "rawCopiesVerified": 858,
+    "resolvedLinks": 5853,
+    "versionTriplets": 17,
+    "fullTextEntries": 858,
+    "unresolvedOriginalAnchors": [],
+    "limits": "结构、字节、索引与链接检查；不判断 Canon 内容正确性。未定位原文引用保留在详情页。"
+  }
+}

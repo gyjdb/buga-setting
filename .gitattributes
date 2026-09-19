@@ -1,0 +1,6 @@
+# Keep imported documents byte-identical on every platform.
+* -text
+*.png binary
+*.jpg binary
+*.woff2 binary
+

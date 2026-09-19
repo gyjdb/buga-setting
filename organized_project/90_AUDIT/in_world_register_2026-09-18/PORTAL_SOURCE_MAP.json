@@ -1,0 +1,32 @@
+[
+  {
+    "path": "tools/library_portal/build.py",
+    "before_sha256": "87b0b38c9c65e08bf3e4563d64f47e4a5fa0051d9759c9efcbfe347fb251260d",
+    "after_sha256": "ffc3aa7acfa00fed3fd61db881122fa339a18549b186dfedb1eac59ac56391e8"
+  },
+  {
+    "path": "tools/library_portal/portal_config.json",
+    "before_sha256": "cc395ee69fc8a1a99b1aa273c917628d834a2ac582a5fa38a40c866996cfe7d0",
+    "after_sha256": "475aae2398c689bd83d741d67b08c83a4da7ec49ccc5284e2303f7e0af9723fa"
+  },
+  {
+    "path": "tools/library_portal/README.md",
+    "before_sha256": "1ba550c9c7aaafce1ac141da84c1e5365c38307157c1a3aa60c6e8b366a8d8a9",
+    "after_sha256": "4a6d100fdd07c2756216ec3953fd6f13ad64b36547e1a48d81b018376c628bca"
+  },
+  {
+    "path": "tools/library_portal/test_search.cjs",
+    "before_sha256": "900567816d694292d95493cc90178456035da4c6c68ab5f230e778a4b3d9d19e",
+    "after_sha256": "3a3b25e5d3f6d67f62dade6d1521fded26949af86837719729efa105eb07b598"
+  },
+  {
+    "path": "tools/library_portal/verify.py",
+    "before_sha256": "779134a587c311d593fbc754b64a87ba2b7bc27770ff746d67e889eaa6052e75",
+    "after_sha256": "48e4e83dfb25fe8c71884a57853c46d5ec4130bc53b3dcb306de6e6a9a41d40d"
+  },
+  {
+    "path": "tools/library_portal/web/app.js",
+    "before_sha256": "501ea48b1f55b39c269081f52cc3860a94f7956fc396810666bb68ae09bf50cc",
+    "after_sha256": "7114efc8d5e51dc1431e1e185068e754bf4071d763c87891057f783690484dc0"
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "group": 1,
+  "files": [
+    "K20",
+    "K15",
+    "K21",
+    "K13",
+    "K23"
+  ],
+  "status": "PASS_INTERNAL",
+  "checks": [
+    {
+      "check": "K20 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K20 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K20 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K15 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K15 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K15 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K21 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K21 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K21 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K13 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K13 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K13 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K23 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K23 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K23 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "no natural network/old command agency",
+      "passed": true
+    },
+    {
+      "check": "unified permit decision",
+      "passed": true
+    },
+    {
+      "check": "first high trial no circular credential",
+      "passed": true
+    },
+    {
+      "check": "string exception and device uncertainty",
+      "passed": true
+    },
+    {
+      "check": "medical field vs permit",
+      "passed": true
+    }
+  ],
+  "note": "组内检查通过；跨组接口须在全局审计再次核验。"
+}

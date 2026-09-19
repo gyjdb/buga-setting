@@ -1,0 +1,1900 @@
+{
+  "date": "2026-09-18",
+  "files": [
+    {
+      "path": "01_project_core/CLAUDE_PROJECT_INSTRUCTIONS.md",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "01_project_core/CLAUDE_PROJECT_MEMORY.md",
+      "bytes": 7353,
+      "sha256": "f5e3b3f25fc6d90f2279c8c68fb201c7f7fe1618b812321c0a8cd1243f538929"
+    },
+    {
+      "path": "01_project_core/PROJECT_METADATA.json",
+      "bytes": 289,
+      "sha256": "629a60aa1b2ab4a556afe68554d6529da06710250884149f5aa6ca314ad84b14"
+    },
+    {
+      "path": "02_project_knowledge/PROJECT_FILES_MANIFEST.csv",
+      "bytes": 8435,
+      "sha256": "0f2e45970ad673c9c7cd38d06bd8c34e9f0eb32b01a87080191dc5859c03a9d0"
+    },
+    {
+      "path": "02_project_knowledge/内务治安部组织架构_草案_v2_2_.md",
+      "bytes": 34010,
+      "sha256": "fc8d64333d2e18c0a6aad3eb764613b679f349e97cc2111a58d51262e2555c91"
+    },
+    {
+      "path": "02_project_knowledge/制度审计报告_v3_0.md",
+      "bytes": 12405,
+      "sha256": "4b36fd89cbb96a5566a043303bb0a08369a125b2e33fb8202506b80855951c14"
+    },
+    {
+      "path": "02_project_knowledge/大图书馆相关.txt",
+      "bytes": 39224,
+      "sha256": "5908ddf9361a73690b2b46bfb261bbd31b0a9892583f4cd11dee6f01102eb940"
+    },
+    {
+      "path": "02_project_knowledge/大图书馆章程_v1_8.md",
+      "bytes": 28380,
+      "sha256": "0cafca1c149a408a30ff3f8f0b5ca97a862a27f662bebe8c6a9949922712a3cd"
+    },
+    {
+      "path": "02_project_knowledge/大魔潮片段.txt",
+      "bytes": 42623,
+      "sha256": "88ac5799c40867f80d3c4f8d35212fcea6d65cce890ba0b39275d0429af88a4d"
+    },
+    {
+      "path": "02_project_knowledge/布加联盟储备系统章程_草案_v1_1_.md",
+      "bytes": 24556,
+      "sha256": "eed6cfede6ba556cc65fc5407407eec3f85ec3fb88740f436381e45231b79b50"
+    },
+    {
+      "path": "02_project_knowledge/月份相关.txt",
+      "bytes": 2851,
+      "sha256": "0c2085c7e470b46d43dcf4ad97d7633e57d521c9811ff3502c4720cb1850f12e"
+    },
+    {
+      "path": "02_project_knowledge/法术环级标准_修订稿_v1_1.md",
+      "bytes": 11013,
+      "sha256": "e8af87aa923a1227bdba5152a7cb9f5d96a3bd4c4c011a661289d3e7e8afce1c"
+    },
+    {
+      "path": "02_project_knowledge/法术环级标准_草案_v1_2_.md",
+      "bytes": 9085,
+      "sha256": "a973e1b190dd698bc75287eb98e450751e8feeb783fffd2a05f244082269a125"
+    },
+    {
+      "path": "02_project_knowledge/环级认定规程_修订稿_v1_1.md",
+      "bytes": 8280,
+      "sha256": "7fd4cff22dfc829405decfcd53e88bdb8930286b4319b0f4739ab178de04e52f"
+    },
+    {
+      "path": "02_project_knowledge/环级认定规程_草案_v1_1_.md",
+      "bytes": 7761,
+      "sha256": "890ffd46c51bb0e1aa3fb230de5cce1a9d6938501e62835960c470b40902d23b"
+    },
+    {
+      "path": "02_project_knowledge/白塔相关.txt",
+      "bytes": 16265,
+      "sha256": "d719fd308cf03623a28c57768f5d29d4591951b95411e5a4f6bb99c63aa89059"
+    },
+    {
+      "path": "02_project_knowledge/白塔章程_草案_v2_0_.md",
+      "bytes": 38230,
+      "sha256": "789c65e7568cf4b9f68591e496b945d656a3954c3595276283b8ce912dd99df8"
+    },
+    {
+      "path": "02_project_knowledge/白塔章程_草案_v2_1_.md",
+      "bytes": 36962,
+      "sha256": "4597eea2f7a2812a9a8acb636cd26f47cf173783ef7acbf97140641967a3ffb9"
+    },
+    {
+      "path": "02_project_knowledge/白银学会章程_草案_v1_0_.md",
+      "bytes": 22718,
+      "sha256": "34055c75bec46511c6377fa5739444cd1372ea1cf490135591c78b75bac122b5"
+    },
+    {
+      "path": "02_project_knowledge/白银学会章程_草案_v1_1_.md",
+      "bytes": 23018,
+      "sha256": "9b3d2dfb898328bb147ca427d50d0c44a083ee410465ed65f2f73974fd5cb733"
+    },
+    {
+      "path": "02_project_knowledge/白银执政院_修订稿_v2_7_.md",
+      "bytes": 32559,
+      "sha256": "a16e3d42cc604097e60033496187ab35e4593a3f8c653c1449475af54c99b959"
+    },
+    {
+      "path": "02_project_knowledge/白银议会组织法_v3_5.md",
+      "bytes": 33002,
+      "sha256": "87cb102b8c0fd242885577b654cd312d4809904d35c65bf7d7bc091c0aa69a92"
+    },
+    {
+      "path": "02_project_knowledge/盟约监察院组织法_草案_v1_3_.md",
+      "bytes": 22766,
+      "sha256": "81ada2da91572b62a486f2c669cd862d7483eaeed225d49a03339342c650b2b4"
+    },
+    {
+      "path": "02_project_knowledge/禁术管制委员会组织架构_草案_v1_2_.md",
+      "bytes": 24738,
+      "sha256": "6435723c1d2c3011033d1926c0d9a379db2676c101dff48d4ef012c53552a008"
+    },
+    {
+      "path": "02_project_knowledge/禁魔分区规程_修订稿_v1_1.md",
+      "bytes": 10317,
+      "sha256": "78cef86ec8a7a02bfe48d0ad5eec1c9b9ffee7fe23981267523627d930c98abb"
+    },
+    {
+      "path": "02_project_knowledge/禁魔分区规程_草案_v1_1_.md",
+      "bytes": 9622,
+      "sha256": "9b200cf15c7e74b95b9c9321dba40e89f81e796640a96ad23b2f6ee38b94d9d8"
+    },
+    {
+      "path": "02_project_knowledge/素材1.txt",
+      "bytes": 228051,
+      "sha256": "730e87e94e6bdc083f84f4d03422def6448558055fec03272262964958cf19d7"
+    },
+    {
+      "path": "02_project_knowledge/联盟共同工程与战略拨款呈批件.html",
+      "bytes": 11651,
+      "sha256": "0496ad3446123e87adeb057d73932c4451a6f0c0e4b2aae30b50fe189d7b25a7"
+    },
+    {
+      "path": "02_project_knowledge/舰队相关.txt",
+      "bytes": 265128,
+      "sha256": "debf683ccda5a613c1b926b2509234d89c945bbf056abaf6e9e4724a670b606f"
+    },
+    {
+      "path": "02_project_knowledge/裁断体系组织法_草案_v1_4_.md",
+      "bytes": 29360,
+      "sha256": "3dae687c01bc9365a66253ae7a76b147c2c760605f4c5a94162c138a41bad838"
+    },
+    {
+      "path": "02_project_knowledge/议会片段.txt",
+      "bytes": 11000,
+      "sha256": "430668fe9f846bddae1d1ffeb4beacb27f5bdfac33c710eafe78433f6f05790a"
+    },
+    {
+      "path": "02_project_knowledge/设定集.docx.extracted.txt",
+      "bytes": 30863,
+      "sha256": "4679bd109a23b5b73b7d2f6575c477fa7033687cd6bbf2966ff71049081a087d"
+    },
+    {
+      "path": "02_project_knowledge/银烛会_v2_4.md",
+      "bytes": 23658,
+      "sha256": "82912245fa346ca98cf8e9a78dd4bd81a108bed5e5dc8b5bd8060fd7bff399cf"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟宪章_v0_4.md",
+      "bytes": 15339,
+      "sha256": "ebcc0836d1c0e9dc9bed4dfada366f93f5bb0996f840aab08431f562774654ca"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/._.DS_Store",
+      "bytes": 4096,
+      "sha256": "7d08a9fcff3175f341e4ff3e2d36faefe08bac19f65ed9b49b975bb5d13ff2aa"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/._节点接入与取能许可规程_草案_v1_0.md",
+      "bytes": 4096,
+      "sha256": "23596a0b03ba6f8f7b345c6f5aabc3dcbc2a45666962b14ea7ea7e5cfc0e1ef2"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/._高阶施法许可规程_草案_v1_0.md",
+      "bytes": 4096,
+      "sha256": "dcaaf18188a1dbfda013bc45450640736fe336641b7d3f87b873060e3aab9916"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/.DS_Store",
+      "bytes": 6148,
+      "sha256": "f081b0ba3a397608e3466af19af71fae6187803c1bab4dd6d8c1ad1831a0c62d"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/节点接入与取能许可规程_草案_v1_0.md",
+      "bytes": 23086,
+      "sha256": "68c9e3570155c50a6674dbcb598d2b7fb5043a3f67605de3c0de575f13230ef8"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/高阶施法许可规程_草案_v1_0.md",
+      "bytes": 24360,
+      "sha256": "7f48ddf6e8279ff2bb9cf03626e1bf018dc2095898090cfae2ca631b6ff2f405"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟防务基本法_草案_v2_0.md",
+      "bytes": 32601,
+      "sha256": "d0d07f58454fc893c221ef5c9c31f09ef9feacba72c7796d9f99a480d53c38fe"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟防务基本法_草案_v2_1_改进版.md",
+      "bytes": 44580,
+      "sha256": "02a655ceb08e767bddaada406890ed1b6ce2fc462f1cf4a9edb0ce44ef5d8027"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟防务基本法_草案_v2_2.md",
+      "bytes": 44981,
+      "sha256": "14a314fa255f391d7ac4c45b2484fbc1c80fe664e8e65d182f6d6cf6789547cf"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟防务基本法_草案_v2_5.md",
+      "bytes": 48640,
+      "sha256": "8a1614cb21590174d97e487e93f90f7f9701f1261fb886ca1f95799b87ab47ef"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._法术环级标准_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "4184a33359d02426a0b53f7621117c50c656fde1defbf036eac93de38d9b79a0"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._环级认定规程_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "e05ae5550f27f7eb266a8ba52bd0fa497543251dd45f76a938a7c39911202f97"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._禁魔分区规程_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "9c4fbae1db7781b6acecb9ac62e2dc4de185b4db2b32bc84d1f19b07c41877c8"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._魔法基本法_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "0539ba1c9a17249841ab14098d188cf457b57854f7d2a37511b515f9f92fa941"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/法术环级标准_修订稿_v1_2_改进版.md",
+      "bytes": 11319,
+      "sha256": "d6b562b4723cdc8e9eae83011c6f34ad2f51d07ea46f152fb9328523c81fcfa5"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/环级认定规程_修订稿_v1_2_改进版.md",
+      "bytes": 11411,
+      "sha256": "5e1cbe6a2f426f35370255012be749d32443ce1d0e676a555216274d21920c83"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/禁魔分区规程_修订稿_v1_2_改进版.md",
+      "bytes": 16148,
+      "sha256": "64c8ae977e90bdf32d63d6e35109a3cd6cd0022fa9cfdbd1fb8c1dc200f8ad54"
+    },
+    {
+      "path": "02_project_knowledge/银色联盟魔法法系_v1_2_改进版/魔法基本法_修订稿_v1_2_改进版.md",
+      "bytes": 23406,
+      "sha256": "4a81bb71d9365e794a294fabc3c854e929e6aee3df30478e223833cf687d3f4f"
+    },
+    {
+      "path": "02_project_knowledge/魔法基本法_修订稿_v1_1.md",
+      "bytes": 16427,
+      "sha256": "bacad9f80760a6d3b8b0bfe220b0e4f27604336a506290c42195bbabe43e4b21"
+    },
+    {
+      "path": "02_project_knowledge/魔法基本法_草案_v1_2_.md",
+      "bytes": 15953,
+      "sha256": "ea9af7e6562aecc7263752ba345914abaded8045a7f81f61fb83b1dc708e79f9"
+    },
+    {
+      "path": "03_conversations/CONVERSATION_INDEX.csv",
+      "bytes": 3427,
+      "sha256": "1347894b384aff84f80352129a0928eb6b58eae7c6fd9c423c4190b7525fb356"
+    },
+    {
+      "path": "03_conversations/current_project/2026-03-10_材料阅读请求_07b6e36b.md",
+      "bytes": 35006,
+      "sha256": "33d3ea61f98356997ac8ccdfa49a57b0ba55ee56bf51817ec756855714fcf54a"
+    },
+    {
+      "path": "03_conversations/current_project/2026-03-12_世界观设定的准备工作_aa2fae6a.md",
+      "bytes": 49317,
+      "sha256": "63724d12f269db72b4d952d16e30e8f725dc6fae8983886a31cd2b2a9c05c65a"
+    },
+    {
+      "path": "03_conversations/current_project/2026-03-13_银烛会的下一步发展_1c1505f0.md",
+      "bytes": 5037,
+      "sha256": "479c3075c4e3342502a6eade4964489458097edf0d67d6c04f78355c77c4c957"
+    },
+    {
+      "path": "03_conversations/current_project/2026-03-16_文件整理与职级体系统一_260d1cb0.md",
+      "bytes": 45363,
+      "sha256": "396bde4bb3457d66954d8f8504171eae07417f49e6944df1f4bb2ca963c5fb3f"
+    },
+    {
+      "path": "03_conversations/current_project/2026-06-06_国家体系架构审查与优化_47637310.md",
+      "bytes": 100349,
+      "sha256": "bd1c8bc3b9dcad63a3ff251408d51cf4ed2d76a899472df9004e711e04c5a447"
+    },
+    {
+      "path": "03_conversations/current_project/2026-06-09_文件冲突检查_51a3bf13.md",
+      "bytes": 15965,
+      "sha256": "73eb6d34bc366f1c56ab0951178db0769169465b167dc58039e83bdc38874969"
+    },
+    {
+      "path": "03_conversations/current_project/2026-06-27_军事组织结构与防务法律改革_344f727e.md",
+      "bytes": 38397,
+      "sha256": "78ff6d10a042a2d96742a28c9cdf10df7c780575ffd786ca0fbab6aa35b72a61"
+    },
+    {
+      "path": "03_conversations/current_project/2026-06-29_机构设置方案评审_cf2ae9d7.md",
+      "bytes": 73958,
+      "sha256": "862fd9a717a6587737d79017e31370e64343f4b9e6264342d9897a9328114836"
+    },
+    {
+      "path": "03_conversations/current_project/2026-07-01_文件审查和后续建议_36b918b4.md",
+      "bytes": 48672,
+      "sha256": "2063a24bcfa2c38a52d94aa2f204cde84e06042a6b77e485ad2149ae618e633d"
+    },
+    {
+      "path": "03_conversations/current_project/2026-07-04_检查文件冲突并规划后续文件_96ea9939.md",
+      "bytes": 18234,
+      "sha256": "5620830bcf8f86b5ce1a3c2d30c6126f635616e4d8eb1aeb93a36ab7eac32a2a"
+    },
+    {
+      "path": "03_conversations/current_project/2026-07-06_魔潮危机下的联盟末日_f7a83f0c.md",
+      "bytes": 18278,
+      "sha256": "dee595a49e4e7e526c81b0bc5f86ac1c4e69b4266558fa455242a5acfbd5b33b"
+    },
+    {
+      "path": "03_conversations/legacy_pre_project/2024-05-20_Crafting a Compelling Novel Prologue_f1340b54.md",
+      "bytes": 141718,
+      "sha256": "99d0b171fa33e2759c9a822fed0e3912048619c24f7fc93f6c233d9b1a46f364"
+    },
+    {
+      "path": "03_conversations/legacy_pre_project/2024-05-20_Crafting a Fanfiction Inspired by _The Amber Sword__cacdf287.md",
+      "bytes": 2945,
+      "sha256": "9be29394e602b9b680f39abd599a365a241731c6c5cdd65fce213b96232879e1"
+    },
+    {
+      "path": "03_conversations/legacy_pre_project/2024-05-24_The Spark of a Conspiracy_129c0e05.md",
+      "bytes": 4762,
+      "sha256": "a4a8e61b35db0ecd21806e8f2fb7e1cc0dbbbed10c88b34418e32b9bea88a4e0"
+    },
+    {
+      "path": "03_conversations/selected_conversations_clean.json",
+      "bytes": 754860,
+      "sha256": "00796e9324b62083fa36d69625733412444d02c825fe13c00cf363bdf3c9e86c"
+    },
+    {
+      "path": "04_conversation_attachments/RECOVERED_ATTACHMENTS.csv",
+      "bytes": 5402,
+      "sha256": "3841385a33c44e8629a546cfafd1401c22fca978bd53ae5cb85c903b2ed5cc6e"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2024-05-20_cacdf287_m003_a01_《琥珀之剑》_1-238_1-119.pdf.extracted.txt",
+      "bytes": 461689,
+      "sha256": "c35e0f5dad7c4b2ff4e476a50f3b82d3f909cc9a3310bbc6b88b53463d73e02c"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2024-05-20_f1340b54_m003_a01_paste.txt",
+      "bytes": 63635,
+      "sha256": "3c0b2aecbbad2c9d1507a8d87ce55874eced87dda9deca8bf573368319f3ae9a"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2024-05-24_f1340b54_m039_a01_paste.txt",
+      "bytes": 45669,
+      "sha256": "7e96a6f8654922af547a388e13a68c54c8bb29e90c8299203f160d4b56729bc4"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2024-05-24_f1340b54_m039_a02_paste-2.txt",
+      "bytes": 19698,
+      "sha256": "fd3659e0749a67ee72827a2918e08cac57ab589521ff9ae194cbfa07a1310e55"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-03-10_07b6e36b_m003_a01_白银宪章.md",
+      "bytes": 13789,
+      "sha256": "71132e21db9116300df782602594f706223978a0f05e022ee07e5f485f5e7b56"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-03-10_07b6e36b_m005_a01_白银枢密院.md",
+      "bytes": 7142,
+      "sha256": "ab166df6a5db2e88e0b088bb3d2057c1370a52998262668149ded3a6e06084ac"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-03-10_07b6e36b_m015_a01_议会片段.txt",
+      "bytes": 11000,
+      "sha256": "430668fe9f846bddae1d1ffeb4beacb27f5bdfac33c710eafe78433f6f05790a"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-03-12_07b6e36b_m019_a01_月份相关.txt",
+      "bytes": 2851,
+      "sha256": "0c2085c7e470b46d43dcf4ad97d7633e57d521c9811ff3502c4720cb1850f12e"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-03-13_aa2fae6a_m029_a01_银烛会相关.rtf",
+      "bytes": 5388,
+      "sha256": "0ac36e0f061de26667bbd44ca6e9ca92df9a26bab9d32b545fc315ced07e2063"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-03-16_260d1cb0_m016_a01_unnamed_txt.extracted.txt",
+      "bytes": 6793,
+      "sha256": "9fbe16eaf8a9d9bd1524a579c3faac2ace2d5ad40b664c08a1d94a4701411a4b"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m001_a01_环级认定规程_草案_v1_0_.md",
+      "bytes": 6614,
+      "sha256": "f7615e4cd748e40a165786f109765c59f559a88abf29fabc9142e2fb1e90cd21"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m001_a02_法术环级标准_草案_v1_0_.md",
+      "bytes": 8025,
+      "sha256": "3cccb7a6723a44c8a5d68781fba708e7cdf8eef432b8a42740b6a3322ae4f73e"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m001_a03_禁魔分区规程_草案_v1_0_.md",
+      "bytes": 9083,
+      "sha256": "97d262a0e5240243747a1b3bbb5c4986462247a259127d72ee1885f3206e57a3"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m005_a01_魔法基本法_草案_v1_0_.md",
+      "bytes": 14403,
+      "sha256": "01b705fe185774fd8a1b65f3f2b636f4cf12df390038ba0b7d3da092dcbc27c0"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-07-06_f7a83f0c_m001_a01_unnamed_txt.extracted.txt",
+      "bytes": 9668,
+      "sha256": "10bbe546b68930fa9a8c4292afd4589f2a284031782b20e2515c5718ecd80f93"
+    },
+    {
+      "path": "04_conversation_attachments/recovered_text/2026-07-06_f7a83f0c_m009_a01_unnamed_txt.extracted.txt",
+      "bytes": 105312,
+      "sha256": "0aa795776c1472f7e31f5a1adc4a87365be2a30972f710cdc00aa3d17e3e327f"
+    },
+    {
+      "path": "04_conversation_attachments/UNRECOVERED_FILE_REFERENCES.csv",
+      "bytes": 2947,
+      "sha256": "9a604defed5299af251d74f0b4e77d8afd0849ba2f44527d648b66aa8015162f"
+    },
+    {
+      "path": "99_source_archive/claude_project_export.json",
+      "bytes": 1161504,
+      "sha256": "29a214491501e629102cc82e6864b61ed798239c548b40fc93e36c84ce7a41ec"
+    },
+    {
+      "path": "99_source_archive/claude_project_memory_entry.json",
+      "bytes": 7529,
+      "sha256": "3d17d58762e749936be5cd90b771bb01190ffa058e0d49f4250baf36b2885487"
+    },
+    {
+      "path": "99_source_archive/selected_conversation_refs.json",
+      "bytes": 2870,
+      "sha256": "370bc1dfc17c2838b831beb455f0c0011320a372e96ec4e82e7d980c563f2557"
+    },
+    {
+      "path": "chatgpt_ready/CANON_INDEX.md",
+      "bytes": 14510,
+      "sha256": "ab9cad85c213dc6319b14c8f7820ce23f3250574c7c539fc4c80aff6b791b871"
+    },
+    {
+      "path": "chatgpt_ready/CONFLICTS.md",
+      "bytes": 30602,
+      "sha256": "9278ebac8090b400e8391e248f6f2f1f90d808256179fd3a395998bcdd26e43b"
+    },
+    {
+      "path": "chatgpt_ready/conversations_index.md",
+      "bytes": 11877,
+      "sha256": "016c86974c6b4d9e23302025275b755cf5962a2fbe442e8f7ffd1ad7f62a54cb"
+    },
+    {
+      "path": "chatgpt_ready/DECISION_LOG.md",
+      "bytes": 39356,
+      "sha256": "b80b822093bb385a6b7066713976cf210f3273d4ca1b62ad9e849238b6365241"
+    },
+    {
+      "path": "chatgpt_ready/DOCUMENT_REFACTOR_PLAN.md",
+      "bytes": 69419,
+      "sha256": "b05a57de00b03d7834c785786b4622b47d4e898ff3ff3c34f7ad7922c8a990a7"
+    },
+    {
+      "path": "chatgpt_ready/MAGIC_STATE_INTEGRATION.md",
+      "bytes": 19475,
+      "sha256": "080af7ca7b9582e2aed67d655d3e1cccff1fd62ad858784f6ea2abca06e7e118"
+    },
+    {
+      "path": "chatgpt_ready/OPEN_ISSUES.md",
+      "bytes": 3990,
+      "sha256": "1083eed85351078dd964096c7a57097ed1e5652c11bebcfb23c3fe77c688be9b"
+    },
+    {
+      "path": "chatgpt_ready/PROJECT_CHARTER.md",
+      "bytes": 6844,
+      "sha256": "2ca9080cd980e499a878d0e1f80808409b39293476194c8dcb071ad57257f9cf"
+    },
+    {
+      "path": "chatgpt_ready/PROJECT_STATE.md",
+      "bytes": 5383,
+      "sha256": "c05a479b4db855819a9a8379dedbd6435feca0e5229bea87eba169051f403f18"
+    },
+    {
+      "path": "chatgpt_ready/README.md",
+      "bytes": 3010,
+      "sha256": "3d1c970cb0d7efb24e5dd666d3e0de1b259b70d0781421cfb787d3f8f2736e12"
+    },
+    {
+      "path": "chatgpt_ready/ROADMAP.md",
+      "bytes": 7168,
+      "sha256": "d3100cad6f78eb2ab790deaa0970e41fbfda8221facbc279a44fb20d64a638dc"
+    },
+    {
+      "path": "chatgpt_ready/SOURCE_INDEX.md",
+      "bytes": 33910,
+      "sha256": "17b0a5cce3d75640ed6db34177b9c405a341432b7a3a36296a6952f8a5408e1a"
+    },
+    {
+      "path": "chatgpt_ready/source_map/__pycache__/audit_tools.cpython-313.pyc",
+      "bytes": 7694,
+      "sha256": "54e6f283c1cf76d10cd415eee0c45e3c2a5b3ead4d3e0bb9eca7255469a9551d"
+    },
+    {
+      "path": "chatgpt_ready/source_map/__pycache__/write_reports.cpython-313.pyc",
+      "bytes": 77023,
+      "sha256": "2211f6859208df8319ff7d02c14be7fa1624130a6232cdbe3bfa7fbce8602307"
+    },
+    {
+      "path": "chatgpt_ready/source_map/A01_to_K12.diff",
+      "bytes": 4269,
+      "sha256": "b23f66c28f7dd4a0ed120084b9e4ae4d788e496021d02d0b075e82e15a05da07"
+    },
+    {
+      "path": "chatgpt_ready/source_map/A02_to_K10.diff",
+      "bytes": 41427,
+      "sha256": "7386fcb96d66cc238b0bf334f9c9d3614888f05397f16603e515c3571326d3fa"
+    },
+    {
+      "path": "chatgpt_ready/source_map/A07_to_K21.diff",
+      "bytes": 2189,
+      "sha256": "22a0f69ce5f0d946123b76dffc10c83e2e5cfc13c41b0f07f5cf78490940cd6f"
+    },
+    {
+      "path": "chatgpt_ready/source_map/A08_to_K15.diff",
+      "bytes": 3969,
+      "sha256": "1f756e5b6a9e5370efa375018f6fcf0e0bd89d88b23d1fc6897e8b2fa9a715e6"
+    },
+    {
+      "path": "chatgpt_ready/source_map/A09_to_K13.diff",
+      "bytes": 4191,
+      "sha256": "573fef1d886ee51905592f85c305baa6ebda7edb654545b449bffe267cc0cd75"
+    },
+    {
+      "path": "chatgpt_ready/source_map/A10_to_K20.diff",
+      "bytes": 6077,
+      "sha256": "4d6e46402146524380385afda7b1db276b9d51ad9f15ca41dbe4fd24a5bef16a"
+    },
+    {
+      "path": "chatgpt_ready/source_map/audit_findings.json",
+      "bytes": 52022,
+      "sha256": "00e1dd7d55901a289aac8c3d25689b1aa916e54cec880a11cb4cc42ba66d6967"
+    },
+    {
+      "path": "chatgpt_ready/source_map/audit_tools.py",
+      "bytes": 3203,
+      "sha256": "71732e7b7316b87c132db01e807d2d254f0d096f1cf39a96af543033addb22eb"
+    },
+    {
+      "path": "chatgpt_ready/source_map/build_map.py",
+      "bytes": 10409,
+      "sha256": "57258685430b8ad4deceb5fe697af29e505d376a8715824eaf4e7436ac4ca8a7"
+    },
+    {
+      "path": "chatgpt_ready/source_map/cross_references.json",
+      "bytes": 114414,
+      "sha256": "528806d964b5e9a3beff4434207d02466938dadc278ceae94f162b54635a6e58"
+    },
+    {
+      "path": "chatgpt_ready/source_map/duplicate_groups.json",
+      "bytes": 309,
+      "sha256": "4178aab19e0ab7b5ffa4acde534ba40625ef099e4b263b764b7fe774f7e3bb35"
+    },
+    {
+      "path": "chatgpt_ready/source_map/export_consistency.json",
+      "bytes": 11039,
+      "sha256": "775ed91f2a813830837f00437a5659907eea5a27d4813c47d2e2934559f8e4be"
+    },
+    {
+      "path": "chatgpt_ready/source_map/inspect_sources.py",
+      "bytes": 1563,
+      "sha256": "e2529e376f148f0a0f5283fd8f6f505bbd58314d4b36158bbf5290c69c484389"
+    },
+    {
+      "path": "chatgpt_ready/source_map/integrity_check.json",
+      "bytes": 252,
+      "sha256": "4b16a0ff6c9100ea272e0ff830cd1ab95b5f139692d746f6fecca4f724330eae"
+    },
+    {
+      "path": "chatgpt_ready/source_map/K16_to_K28.diff",
+      "bytes": 67665,
+      "sha256": "f32d641184f8afecd47f6bddda729aaff1412e6e9e0bed21fdef90ebc8d3001d"
+    },
+    {
+      "path": "chatgpt_ready/source_map/K17_to_K27.diff",
+      "bytes": 40313,
+      "sha256": "ff9b65316bc9c1892e6eedca68b2a431cc812e77b9e284cdbce9aef89af41bbc"
+    },
+    {
+      "path": "chatgpt_ready/source_map/message_index.json",
+      "bytes": 335933,
+      "sha256": "1f99e2445acdeba167cf80e1978d1892450fc7e83ba40b7d7c67fbf8923fb72a"
+    },
+    {
+      "path": "chatgpt_ready/source_map/missing_sources.md",
+      "bytes": 5603,
+      "sha256": "53df23b4fa8878b4f50d8d16be6cfdd71a578bf0e3eed088e0eb9d88db2beb73"
+    },
+    {
+      "path": "chatgpt_ready/source_map/paragraph_index.jsonl",
+      "bytes": 2738668,
+      "sha256": "369bcd57875b8c26de44af3b6eefd3a775ebe465664fa56a6c3ff974bc79cc27"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/CANON_INDEX.md",
+      "bytes": 11118,
+      "sha256": "1ccf4f2b3a847118df63048d56f5cd89801067590c0da11f2424400b0b20b92e"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/CONFLICTS.md",
+      "bytes": 23372,
+      "sha256": "37a92cb40ca64c6cd26a74b7c5d738d2eb6a094bec315a03ae43b26410b1cda1"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/conversations_index.md",
+      "bytes": 9702,
+      "sha256": "cdc6ec26067b5368971c96a192466d87587d04c0ad6ee5496f4a1d2dbcc1170b"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/DECISION_LOG.md",
+      "bytes": 36915,
+      "sha256": "e07a09041e92e08bc5dcaaab3475c61af433241ab8b9eb97613813b911e44d7c"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/OPEN_ISSUES.md",
+      "bytes": 3967,
+      "sha256": "d4a90e6c5e8945f645b2d163f0766b2cbb9d049e667d2eb3c1d3c7d90f5c0b52"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/PROJECT_STATE.md",
+      "bytes": 10475,
+      "sha256": "5a1c200ef61af4d36ca6e7f12ffc6fa732b2b7dbf849e3679dbe739bd1451e42"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/README.md",
+      "bytes": 3484,
+      "sha256": "2ce30cd027db53b44c0f0751924dd49c331d88491e477fb710f7aff3b22bdf73"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/SNAPSHOT_NOTE.md",
+      "bytes": 328,
+      "sha256": "567240fc87be4cdbb826548349fe3be1e4746dbb1fffbcf84dbe9482fb2a3b7c"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/SOURCE_INDEX.md",
+      "bytes": 23463,
+      "sha256": "f1422bd0ed6f11eaac67859d7d01598769f942720c285a7531a88051c967e444"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase1_snapshot/VERSION_LEDGER.md",
+      "bytes": 24270,
+      "sha256": "13fe5699de5224caf265f0408411fb57a250c1d88641cc194d37e3034cbe934f"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/architecture_data.json",
+      "bytes": 23792,
+      "sha256": "1a8897089b4215095c898002861ff744454ce9e8f1e1e75af446c5c29f737604"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/conflicts.json",
+      "bytes": 16938,
+      "sha256": "e0c4cb4ccd6e53845fa43b092b06691890b7c9ff66148bfecc4b2c011845a20c"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/generated_inventory.json",
+      "bytes": 13006,
+      "sha256": "bb87c2473ed6486d30cf54dfe24ec65c1d15b6f4e34a0fbe2d69415351b5d4b9"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/generated_inventory.md",
+      "bytes": 12926,
+      "sha256": "0958d61ed5d505f517f25c387a01cc015f0f41218e29e3f7a4d5f6d9eddf6db3"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/H02_to_K21.diff",
+      "bytes": 11104,
+      "sha256": "956045cd9e9af8314b6c75fb906335d5ea50fb4273424fd693cf5a15861321b0"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/H03_to_K13.diff",
+      "bytes": 11574,
+      "sha256": "7e81feaaddc61cecf70bb97eb12ea530309380d30e11eabeecb1f90bfc902e4e"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/H10_to_H11.diff",
+      "bytes": 32537,
+      "sha256": "22ba1ef4caf8ed148bf2a172be2c952799586821c385f1f1ed63a4aac6cb9253"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/H11_to_H12.diff",
+      "bytes": 5983,
+      "sha256": "eba12639a4fe2230c4b3afd16518a21af50f2c8b4db7452a0f7ddbff1cf2536f"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/H12_to_K18.diff",
+      "bytes": 20976,
+      "sha256": "3a18d0415670f4d1cc16318a43f324de0fcaac7e5855e70b76bce818c72b765a"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/H21_to_K20.diff",
+      "bytes": 16954,
+      "sha256": "9aeef76bc76a5dca447f002b51f267f69e514bbb2b3ad8283544cc242af6e555"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/open_issues.json",
+      "bytes": 3483,
+      "sha256": "220eabb76e537bcd3b7562779f0aed299a219d6bd77c3d12c4e609a6a9b0ddd8"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/phase1_delta.json",
+      "bytes": 2185,
+      "sha256": "021ee5128890a7d38868bd0fa509c7f61cae3a4094b472ca5776e1ef029fdda2"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/refactor_actions.json",
+      "bytes": 15786,
+      "sha256": "40a22aed88bdf766a17a6622d497cc619d7275b3707573909b393b547cd4b8ed"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/refactor_detail.json",
+      "bytes": 19685,
+      "sha256": "15cf951ab0f47fe6d8a1773a6557e4a95efa094870b13a9f89de775036415577"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/source_baseline.json",
+      "bytes": 30006,
+      "sha256": "33ec9f1f2a1621877cb751fb2ccb0f29b57c1f3d0bce60e3eca3652f01e2b66c"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/source_records.json",
+      "bytes": 68397,
+      "sha256": "a07ec50ef980149993a54ad0d7b4c05b85b82cb1f3c52f11deed1520221d7c5b"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/source_scan.json",
+      "bytes": 30006,
+      "sha256": "33ec9f1f2a1621877cb751fb2ccb0f29b57c1f3d0bce60e3eca3652f01e2b66c"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2/verification.json",
+      "bytes": 1329,
+      "sha256": "150df8131acc4bc63125982ab00f5ab786661c41f83c17b84f25dffccee2f37a"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2_architecture.py",
+      "bytes": 38310,
+      "sha256": "4128a2f2959824ae1f5a94c92305e40e83619210c47327e20764802bf82656f2"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2_finish.py",
+      "bytes": 24135,
+      "sha256": "cb254a8be93ce53be040bb404439989bb80ae6f7beb7f792418f39e1debeaa0c"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2_read.py",
+      "bytes": 822,
+      "sha256": "e6d44034a35e39ea950c9bf51c968ffe378e10e2f2d501b9cc425587411e66cc"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2_refactor.py",
+      "bytes": 20553,
+      "sha256": "9b4716c338c81b40122b9b43dff5eb7bb1768e35c132cb4c610de7ee10150721"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2_reports.py",
+      "bytes": 22369,
+      "sha256": "d125ee63df1a1c24bc1d95b8aeb8dd985c74dd8d48af4fe4b3443a6f32061f96"
+    },
+    {
+      "path": "chatgpt_ready/source_map/phase2_scan.py",
+      "bytes": 2067,
+      "sha256": "9c7d1e8b78894826cb65e81a5b67c550f079ed119024346d082b6f99efd1fe2f"
+    },
+    {
+      "path": "chatgpt_ready/source_map/README.md",
+      "bytes": 1610,
+      "sha256": "fc37e1b2d49457e465014897f36404f4f62c8797d9c5fed42c491413b69ae301"
+    },
+    {
+      "path": "chatgpt_ready/source_map/reference_guide.md",
+      "bytes": 5257,
+      "sha256": "a462390aca8ecfe45f0a43dea2634fb0f4e4fc98052c5b6dc17d79dc63e279ce"
+    },
+    {
+      "path": "chatgpt_ready/source_map/report_validation.json",
+      "bytes": 713,
+      "sha256": "4c1fec89c24c60de6b04c844f5a2599ff4a9a1d0fcf94875cec41ada3f0c1645"
+    },
+    {
+      "path": "chatgpt_ready/source_map/source_inventory.json",
+      "bytes": 17545,
+      "sha256": "a1bf25fdbffd1e5d764636287978b6c20a1c14144f4d9ee2813713c126b2564d"
+    },
+    {
+      "path": "chatgpt_ready/source_map/source_records.json",
+      "bytes": 48874,
+      "sha256": "a418f1f4ece5842711d4212cb6fdb3cbfb2b49be458e3f697d2d973e9ff45b1c"
+    },
+    {
+      "path": "chatgpt_ready/source_map/validate_reports.py",
+      "bytes": 3635,
+      "sha256": "9d93d32b2274b9f1fb389dcf60ea5c54655e719a451913ad344b15da3c6b4812"
+    },
+    {
+      "path": "chatgpt_ready/source_map/write_reports.py",
+      "bytes": 63964,
+      "sha256": "016d28fd694b23981fdff31c766c89279cc3eb2e468c72e69416f4c91ad0a140"
+    },
+    {
+      "path": "chatgpt_ready/STATE_ARCHITECTURE_AUDIT.md",
+      "bytes": 32472,
+      "sha256": "a446e920511979008f6b4d63fec1d1bc54e2f4dc5a94bd086872beac657b7325"
+    },
+    {
+      "path": "chatgpt_ready/VERSION_LEDGER.md",
+      "bytes": 29208,
+      "sha256": "99a5d9537d573ade446e71be1e824b522e2b6214ff44ea0c438ba04f40263e45"
+    },
+    {
+      "path": "CHECKSUMS.sha256",
+      "bytes": 9502,
+      "sha256": "258efc71224988c87a1d74e4acebba2f4f6109188151227005bd9a7e3d56a4a0"
+    },
+    {
+      "path": "MIGRATION_MANIFEST.csv",
+      "bytes": 9930,
+      "sha256": "2575a6333292aefecb0f1285a34eaa06473752e4b8e804b8e62eb6d27d5d41c6"
+    },
+    {
+      "path": "organized_project/00_PROJECT/AUTHOR_DECISION_QUEUE.md",
+      "bytes": 14611,
+      "sha256": "05aa3954cd3d7452ab4b839317606d299c5144dfcd33f58735f775882bebca1a"
+    },
+    {
+      "path": "organized_project/00_PROJECT/AUTHOR_DECISIONS_IMPACT_REPORT.md",
+      "bytes": 13937,
+      "sha256": "e364430263dc6067fd30ad3fb295b45396995aa3a06b02e3d60efc32e42d1ded"
+    },
+    {
+      "path": "organized_project/00_PROJECT/AUTHOR_FOUNDATIONS_v0.1.md",
+      "bytes": 21038,
+      "sha256": "5054c548f7806a651a1256e811022f51ed41e70b2b89eb8120ca1ee3fdb0a8e2"
+    },
+    {
+      "path": "organized_project/00_PROJECT/CANON_INDEX.md",
+      "bytes": 16261,
+      "sha256": "8a91a563969d74de14dbf66e7cc7b3cbcec2d6e4d87d0112651e31ab132d233e"
+    },
+    {
+      "path": "organized_project/00_PROJECT/CONFLICTS.md",
+      "bytes": 49855,
+      "sha256": "2d4495600b156a2fe993d3122bf77cc217458952246b4451e5d03be9662450b8"
+    },
+    {
+      "path": "organized_project/00_PROJECT/DECISION_LOG.md",
+      "bytes": 57386,
+      "sha256": "420402619eba079c83712eec69329085138cf13101066ed23bca1427d9b4d3fd"
+    },
+    {
+      "path": "organized_project/00_PROJECT/FILE_MAP.csv",
+      "bytes": 65316,
+      "sha256": "4b52d3b65cbe37bf6c2fdaae8b2ad8df930431b1c0421a7923bcc6c1520e14da"
+    },
+    {
+      "path": "organized_project/00_PROJECT/OPEN_ISSUES.md",
+      "bytes": 5357,
+      "sha256": "9ab33653ce6aabd94aeb752d7fb286e985f569f345646bc9ad0962e83ac9a740"
+    },
+    {
+      "path": "organized_project/00_PROJECT/ORGANIZATION_REPORT.md",
+      "bytes": 3229,
+      "sha256": "efbb03021735d943fa298d77e3a42418a478438bcf17f16b5257e4c36f017427"
+    },
+    {
+      "path": "organized_project/00_PROJECT/PROJECT_CHARTER.md",
+      "bytes": 1920,
+      "sha256": "65f2f757f23f7bfeba44fc2475cb677b500021651a682f3e38196662fab67d7b"
+    },
+    {
+      "path": "organized_project/00_PROJECT/PROJECT_INDEX.md",
+      "bytes": 2029,
+      "sha256": "08860c0da3ed6bcf93e863141630bd0e794b209b77ce6ee06559f65a846863f9"
+    },
+    {
+      "path": "organized_project/00_PROJECT/PROJECT_STATE.md",
+      "bytes": 4308,
+      "sha256": "0aa76015b2ba4290b1f6a168a1b3928e2e2681d5219c39afa9165b419e5aebe1"
+    },
+    {
+      "path": "organized_project/00_PROJECT/VERSION_LEDGER.md",
+      "bytes": 7944,
+      "sha256": "e4b2ae3f9d22f80a9a0e6d7853d7768536222d19c107895c2d661bc881b89991"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/军事与防务/银烛会_v2_4.md",
+      "bytes": 23658,
+      "sha256": "82912245fa346ca98cf8e9a78dd4bd81a108bed5e5dc8b5bd8060fd7bff399cf"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/军事与防务/银色联盟防务基本法_草案_v2_5.md",
+      "bytes": 48640,
+      "sha256": "8a1614cb21590174d97e487e93f90f7f9701f1261fb886ca1f95799b87ab47ef"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_草案_v2_2_.md",
+      "bytes": 34010,
+      "sha256": "fc8d64333d2e18c0a6aad3eb764613b679f349e97cc2111a58d51262e2555c91"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/司法监察与治安/盟约监察院组织法_草案_v1_3_.md",
+      "bytes": 22766,
+      "sha256": "81ada2da91572b62a486f2c669cd862d7483eaeed225d49a03339342c650b2b4"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/司法监察与治安/裁断体系组织法_草案_v1_4_.md",
+      "bytes": 29360,
+      "sha256": "3dae687c01bc9365a66253ae7a76b147c2c760605f4c5a94162c138a41bad838"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/学术与研究机构/大图书馆章程_v1_8.md",
+      "bytes": 28380,
+      "sha256": "0cafca1c149a408a30ff3f8f0b5ca97a862a27f662bebe8c6a9949922712a3cd"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/学术与研究机构/白塔章程_草案_v2_1_.md",
+      "bytes": 36962,
+      "sha256": "4597eea2f7a2812a9a8acb636cd26f47cf173783ef7acbf97140641967a3ffb9"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/学术与研究机构/白银学会章程_草案_v1_1_.md",
+      "bytes": 23018,
+      "sha256": "9b3d2dfb898328bb147ca427d50d0c44a083ee410465ed65f2f73974fd5cb733"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/宪政与治理/白银执政院_修订稿_v2_7_.md",
+      "bytes": 32559,
+      "sha256": "a16e3d42cc604097e60033496187ab35e4593a3f8c653c1449475af54c99b959"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/宪政与治理/白银议会组织法_v3_5.md",
+      "bytes": 33002,
+      "sha256": "87cb102b8c0fd242885577b654cd312d4809904d35c65bf7d7bc091c0aa69a92"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/宪政与治理/银色联盟宪章_v0_4.md",
+      "bytes": 15339,
+      "sha256": "ebcc0836d1c0e9dc9bed4dfada366f93f5bb0996f840aab08431f562774654ca"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/财政货币与经济/布加联盟储备系统章程_草案_v1_1_.md",
+      "bytes": 24556,
+      "sha256": "eed6cfede6ba556cc65fc5407407eec3f85ec3fb88740f436381e45231b79b50"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_草案_v1_2_.md",
+      "bytes": 9085,
+      "sha256": "a973e1b190dd698bc75287eb98e450751e8feeb783fffd2a05f244082269a125"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_草案_v1_1_.md",
+      "bytes": 7761,
+      "sha256": "890ffd46c51bb0e1aa3fb230de5cce1a9d6938501e62835960c470b40902d23b"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_草案_v1_2_.md",
+      "bytes": 24738,
+      "sha256": "6435723c1d2c3011033d1926c0d9a379db2676c101dff48d4ef012c53552a008"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_草案_v1_1_.md",
+      "bytes": 9622,
+      "sha256": "9b200cf15c7e74b95b9c9321dba40e89f81e796640a96ad23b2f6ee38b94d9d8"
+    },
+    {
+      "path": "organized_project/01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_草案_v1_2_.md",
+      "bytes": 15953,
+      "sha256": "ea9af7e6562aecc7263752ba345914abaded8045a7f81f61fb83b1dc708e79f9"
+    },
+    {
+      "path": "organized_project/02_PROPOSALS/银色联盟施法许可与节点取能规程_v1_0/节点接入与取能许可规程_草案_v1_0.md",
+      "bytes": 23086,
+      "sha256": "68c9e3570155c50a6674dbcb598d2b7fb5043a3f67605de3c0de575f13230ef8"
+    },
+    {
+      "path": "organized_project/02_PROPOSALS/银色联盟施法许可与节点取能规程_v1_0/高阶施法许可规程_草案_v1_0.md",
+      "bytes": 24360,
+      "sha256": "7f48ddf6e8279ff2bb9cf03626e1bf018dc2095898090cfae2ca631b6ff2f405"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/01_project_core/CLAUDE_PROJECT_MEMORY.md",
+      "bytes": 7353,
+      "sha256": "f5e3b3f25fc6d90f2279c8c68fb201c7f7fe1618b812321c0a8cd1243f538929"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/02_project_knowledge/环级认定规程_修订稿_v1_1.md",
+      "bytes": 8280,
+      "sha256": "7fd4cff22dfc829405decfcd53e88bdb8930286b4319b0f4739ab178de04e52f"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/02_project_knowledge/禁魔分区规程_修订稿_v1_1.md",
+      "bytes": 10317,
+      "sha256": "78cef86ec8a7a02bfe48d0ad5eec1c9b9ffee7fe23981267523627d930c98abb"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/02_project_knowledge/联盟共同工程与战略拨款呈批件.html",
+      "bytes": 11651,
+      "sha256": "0496ad3446123e87adeb057d73932c4451a6f0c0e4b2aae30b50fe189d7b25a7"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/法术环级标准_修订稿_v1_2_改进版.md",
+      "bytes": 11319,
+      "sha256": "d6b562b4723cdc8e9eae83011c6f34ad2f51d07ea46f152fb9328523c81fcfa5"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/环级认定规程_修订稿_v1_2_改进版.md",
+      "bytes": 11411,
+      "sha256": "5e1cbe6a2f426f35370255012be749d32443ce1d0e676a555216274d21920c83"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/禁魔分区规程_修订稿_v1_2_改进版.md",
+      "bytes": 16148,
+      "sha256": "64c8ae977e90bdf32d63d6e35109a3cd6cd0022fa9cfdbd1fb8c1dc200f8ad54"
+    },
+    {
+      "path": "organized_project/03_UNRESOLVED/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/魔法基本法_修订稿_v1_2_改进版.md",
+      "bytes": 23406,
+      "sha256": "4a81bb71d9365e794a294fabc3c854e929e6aee3df30478e223833cf687d3f4f"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/制度审计报告_v3_0.md",
+      "bytes": 12405,
+      "sha256": "4b36fd89cbb96a5566a043303bb0a08369a125b2e33fb8202506b80855951c14"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/大图书馆相关.txt",
+      "bytes": 39224,
+      "sha256": "5908ddf9361a73690b2b46bfb261bbd31b0a9892583f4cd11dee6f01102eb940"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/大魔潮片段.txt",
+      "bytes": 42623,
+      "sha256": "88ac5799c40867f80d3c4f8d35212fcea6d65cce890ba0b39275d0429af88a4d"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/月份相关.txt",
+      "bytes": 2851,
+      "sha256": "0c2085c7e470b46d43dcf4ad97d7633e57d521c9811ff3502c4720cb1850f12e"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/白塔相关.txt",
+      "bytes": 16265,
+      "sha256": "d719fd308cf03623a28c57768f5d29d4591951b95411e5a4f6bb99c63aa89059"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/素材1.txt",
+      "bytes": 228051,
+      "sha256": "730e87e94e6bdc083f84f4d03422def6448558055fec03272262964958cf19d7"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/舰队相关.txt",
+      "bytes": 265128,
+      "sha256": "debf683ccda5a613c1b926b2509234d89c945bbf056abaf6e9e4724a670b606f"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/议会片段.txt",
+      "bytes": 11000,
+      "sha256": "430668fe9f846bddae1d1ffeb4beacb27f5bdfac33c710eafe78433f6f05790a"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/设定集.docx.extracted.txt",
+      "bytes": 30863,
+      "sha256": "4679bd109a23b5b73b7d2f6575c477fa7033687cd6bbf2966ff71049081a087d"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/._.DS_Store",
+      "bytes": 4096,
+      "sha256": "7d08a9fcff3175f341e4ff3e2d36faefe08bac19f65ed9b49b975bb5d13ff2aa"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/._节点接入与取能许可规程_草案_v1_0.md",
+      "bytes": 4096,
+      "sha256": "23596a0b03ba6f8f7b345c6f5aabc3dcbc2a45666962b14ea7ea7e5cfc0e1ef2"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/._高阶施法许可规程_草案_v1_0.md",
+      "bytes": 4096,
+      "sha256": "dcaaf18188a1dbfda013bc45450640736fe336641b7d3f87b873060e3aab9916"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟施法许可与节点取能规程_v1_0/.DS_Store",
+      "bytes": 6148,
+      "sha256": "f081b0ba3a397608e3466af19af71fae6187803c1bab4dd6d8c1ad1831a0c62d"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._法术环级标准_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "4184a33359d02426a0b53f7621117c50c656fde1defbf036eac93de38d9b79a0"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._环级认定规程_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "e05ae5550f27f7eb266a8ba52bd0fa497543251dd45f76a938a7c39911202f97"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._禁魔分区规程_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "9c4fbae1db7781b6acecb9ac62e2dc4de185b4db2b32bc84d1f19b07c41877c8"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/02_project_knowledge/银色联盟魔法法系_v1_2_改进版/._魔法基本法_修订稿_v1_2_改进版.md",
+      "bytes": 4096,
+      "sha256": "0539ba1c9a17249841ab14098d188cf457b57854f7d2a37511b515f9f92fa941"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2024-05-20_cacdf287_m003_a01_《琥珀之剑》_1-238_1-119.pdf.extracted.txt",
+      "bytes": 461689,
+      "sha256": "c35e0f5dad7c4b2ff4e476a50f3b82d3f909cc9a3310bbc6b88b53463d73e02c"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2024-05-20_f1340b54_m003_a01_paste.txt",
+      "bytes": 63635,
+      "sha256": "3c0b2aecbbad2c9d1507a8d87ce55874eced87dda9deca8bf573368319f3ae9a"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2024-05-24_f1340b54_m039_a01_paste.txt",
+      "bytes": 45669,
+      "sha256": "7e96a6f8654922af547a388e13a68c54c8bb29e90c8299203f160d4b56729bc4"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2024-05-24_f1340b54_m039_a02_paste-2.txt",
+      "bytes": 19698,
+      "sha256": "fd3659e0749a67ee72827a2918e08cac57ab589521ff9ae194cbfa07a1310e55"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2026-03-10_07b6e36b_m015_a01_议会片段.txt",
+      "bytes": 11000,
+      "sha256": "430668fe9f846bddae1d1ffeb4beacb27f5bdfac33c710eafe78433f6f05790a"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2026-03-12_07b6e36b_m019_a01_月份相关.txt",
+      "bytes": 2851,
+      "sha256": "0c2085c7e470b46d43dcf4ad97d7633e57d521c9811ff3502c4720cb1850f12e"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2026-03-13_aa2fae6a_m029_a01_银烛会相关.rtf",
+      "bytes": 5388,
+      "sha256": "0ac36e0f061de26667bbd44ca6e9ca92df9a26bab9d32b545fc315ced07e2063"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2026-03-16_260d1cb0_m016_a01_unnamed_txt.extracted.txt",
+      "bytes": 6793,
+      "sha256": "9fbe16eaf8a9d9bd1524a579c3faac2ace2d5ad40b664c08a1d94a4701411a4b"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2026-07-06_f7a83f0c_m001_a01_unnamed_txt.extracted.txt",
+      "bytes": 9668,
+      "sha256": "10bbe546b68930fa9a8c4292afd4589f2a284031782b20e2515c5718ecd80f93"
+    },
+    {
+      "path": "organized_project/04_REFERENCE/04_conversation_attachments/recovered_text/2026-07-06_f7a83f0c_m009_a01_unnamed_txt.extracted.txt",
+      "bytes": 105312,
+      "sha256": "0aa795776c1472f7e31f5a1adc4a87365be2a30972f710cdc00aa3d17e3e327f"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/02_project_knowledge/法术环级标准_修订稿_v1_1.md",
+      "bytes": 11013,
+      "sha256": "e8af87aa923a1227bdba5152a7cb9f5d96a3bd4c4c011a661289d3e7e8afce1c"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/02_project_knowledge/白塔章程_草案_v2_0_.md",
+      "bytes": 38230,
+      "sha256": "789c65e7568cf4b9f68591e496b945d656a3954c3595276283b8ce912dd99df8"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/02_project_knowledge/白银学会章程_草案_v1_0_.md",
+      "bytes": 22718,
+      "sha256": "34055c75bec46511c6377fa5739444cd1372ea1cf490135591c78b75bac122b5"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/02_project_knowledge/银色联盟防务基本法_草案_v2_0.md",
+      "bytes": 32601,
+      "sha256": "d0d07f58454fc893c221ef5c9c31f09ef9feacba72c7796d9f99a480d53c38fe"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/02_project_knowledge/银色联盟防务基本法_草案_v2_1_改进版.md",
+      "bytes": 44580,
+      "sha256": "02a655ceb08e767bddaada406890ed1b6ce2fc462f1cf4a9edb0ce44ef5d8027"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/02_project_knowledge/银色联盟防务基本法_草案_v2_2.md",
+      "bytes": 44981,
+      "sha256": "14a314fa255f391d7ac4c45b2484fbc1c80fe664e8e65d182f6d6cf6789547cf"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/02_project_knowledge/魔法基本法_修订稿_v1_1.md",
+      "bytes": 16427,
+      "sha256": "bacad9f80760a6d3b8b0bfe220b0e4f27604336a506290c42195bbabe43e4b21"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/04_conversation_attachments/recovered_text/2026-03-10_07b6e36b_m003_a01_白银宪章.md",
+      "bytes": 13789,
+      "sha256": "71132e21db9116300df782602594f706223978a0f05e022ee07e5f485f5e7b56"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/04_conversation_attachments/recovered_text/2026-03-10_07b6e36b_m005_a01_白银枢密院.md",
+      "bytes": 7142,
+      "sha256": "ab166df6a5db2e88e0b088bb3d2057c1370a52998262668149ded3a6e06084ac"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m001_a01_环级认定规程_草案_v1_0_.md",
+      "bytes": 6614,
+      "sha256": "f7615e4cd748e40a165786f109765c59f559a88abf29fabc9142e2fb1e90cd21"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m001_a02_法术环级标准_草案_v1_0_.md",
+      "bytes": 8025,
+      "sha256": "3cccb7a6723a44c8a5d68781fba708e7cdf8eef432b8a42740b6a3322ae4f73e"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m001_a03_禁魔分区规程_草案_v1_0_.md",
+      "bytes": 9083,
+      "sha256": "97d262a0e5240243747a1b3bbb5c4986462247a259127d72ee1885f3206e57a3"
+    },
+    {
+      "path": "organized_project/05_SUPERSEDED/04_conversation_attachments/recovered_text/2026-06-09_51a3bf13_m005_a01_魔法基本法_草案_v1_0_.md",
+      "bytes": 14403,
+      "sha256": "01b705fe185774fd8a1b65f3f2b636f4cf12df390038ba0b7d3da092dcbc27c0"
+    },
+    {
+      "path": "organized_project/06_HISTORY/CONVERSATION_INDEX.csv",
+      "bytes": 3427,
+      "sha256": "1347894b384aff84f80352129a0928eb6b58eae7c6fd9c423c4190b7525fb356"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-03-10_材料阅读请求_07b6e36b.md",
+      "bytes": 35006,
+      "sha256": "33d3ea61f98356997ac8ccdfa49a57b0ba55ee56bf51817ec756855714fcf54a"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-03-12_世界观设定的准备工作_aa2fae6a.md",
+      "bytes": 49317,
+      "sha256": "63724d12f269db72b4d952d16e30e8f725dc6fae8983886a31cd2b2a9c05c65a"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-03-13_银烛会的下一步发展_1c1505f0.md",
+      "bytes": 5037,
+      "sha256": "479c3075c4e3342502a6eade4964489458097edf0d67d6c04f78355c77c4c957"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-03-16_文件整理与职级体系统一_260d1cb0.md",
+      "bytes": 45363,
+      "sha256": "396bde4bb3457d66954d8f8504171eae07417f49e6944df1f4bb2ca963c5fb3f"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-06-06_国家体系架构审查与优化_47637310.md",
+      "bytes": 100349,
+      "sha256": "bd1c8bc3b9dcad63a3ff251408d51cf4ed2d76a899472df9004e711e04c5a447"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-06-09_文件冲突检查_51a3bf13.md",
+      "bytes": 15965,
+      "sha256": "73eb6d34bc366f1c56ab0951178db0769169465b167dc58039e83bdc38874969"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-06-27_军事组织结构与防务法律改革_344f727e.md",
+      "bytes": 38397,
+      "sha256": "78ff6d10a042a2d96742a28c9cdf10df7c780575ffd786ca0fbab6aa35b72a61"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-06-29_机构设置方案评审_cf2ae9d7.md",
+      "bytes": 73958,
+      "sha256": "862fd9a717a6587737d79017e31370e64343f4b9e6264342d9897a9328114836"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-07-01_文件审查和后续建议_36b918b4.md",
+      "bytes": 48672,
+      "sha256": "2063a24bcfa2c38a52d94aa2f204cde84e06042a6b77e485ad2149ae618e633d"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-07-04_检查文件冲突并规划后续文件_96ea9939.md",
+      "bytes": 18234,
+      "sha256": "5620830bcf8f86b5ce1a3c2d30c6126f635616e4d8eb1aeb93a36ab7eac32a2a"
+    },
+    {
+      "path": "organized_project/06_HISTORY/current_project/2026-07-06_魔潮危机下的联盟末日_f7a83f0c.md",
+      "bytes": 18278,
+      "sha256": "dee595a49e4e7e526c81b0bc5f86ac1c4e69b4266558fa455242a5acfbd5b33b"
+    },
+    {
+      "path": "organized_project/06_HISTORY/legacy_pre_project/2024-05-20_Crafting a Compelling Novel Prologue_f1340b54.md",
+      "bytes": 141718,
+      "sha256": "99d0b171fa33e2759c9a822fed0e3912048619c24f7fc93f6c233d9b1a46f364"
+    },
+    {
+      "path": "organized_project/06_HISTORY/legacy_pre_project/2024-05-20_Crafting a Fanfiction Inspired by _The Amber Sword__cacdf287.md",
+      "bytes": 2945,
+      "sha256": "9be29394e602b9b680f39abd599a365a241731c6c5cdd65fce213b96232879e1"
+    },
+    {
+      "path": "organized_project/06_HISTORY/legacy_pre_project/2024-05-24_The Spark of a Conspiracy_129c0e05.md",
+      "bytes": 4762,
+      "sha256": "a4a8e61b35db0ecd21806e8f2fb7e1cc0dbbbed10c88b34418e32b9bea88a4e0"
+    },
+    {
+      "path": "organized_project/06_HISTORY/selected_conversations_clean.json",
+      "bytes": 754860,
+      "sha256": "00796e9324b62083fa36d69625733412444d02c825fe13c00cf363bdf3c9e86c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/AUTHOR_DECISION_REGISTER.md",
+      "bytes": 16585,
+      "sha256": "9c70b89d5a5779978e32ce89f2da4b10593bfa8cf08a7161e2f668bfa9620414"
+    },
+    {
+      "path": "organized_project/90_AUDIT/AUTHOR_DECISIONS.json",
+      "bytes": 11007,
+      "sha256": "8d6ce0277f3b1e8e6dcdb6ad5bcaf9db3be9884fde5e512428dc7dc869484bdb"
+    },
+    {
+      "path": "organized_project/90_AUDIT/AUTHOR_UNRESOLVED.json",
+      "bytes": 2950,
+      "sha256": "ca54ceb42f47b0dc94b2d9a481d1f592aa0671bf500e9e7120ca82fe7669f8d3"
+    },
+    {
+      "path": "organized_project/90_AUDIT/CONFLICT_REASSESSMENT.json",
+      "bytes": 29007,
+      "sha256": "f4c3485f3c6104508de1eff28bde621431a1df97adc7ced1fc0107e767e0cc03"
+    },
+    {
+      "path": "organized_project/90_AUDIT/CURRENT_CANON_IMPACT.json",
+      "bytes": 4685,
+      "sha256": "65abfd2edd1445b9333a517445cb31472f5e6186ebe3f66271aaa260388cc059"
+    },
+    {
+      "path": "organized_project/90_AUDIT/improved_review.py",
+      "bytes": 17843,
+      "sha256": "5a285da79883d50fdfe10139a7cd782533d43524224438f2126638c7a5c36804"
+    },
+    {
+      "path": "organized_project/90_AUDIT/IMPROVED_VERSION_CLAUSE_MAP.json",
+      "bytes": 61590,
+      "sha256": "d1f3108dc53844fe64881c10a2a4993e78205ad265190efdff9538de702f2ff8"
+    },
+    {
+      "path": "organized_project/90_AUDIT/IMPROVED_VERSION_CLAUSE_MAP.md",
+      "bytes": 61487,
+      "sha256": "10bb49b43758c39dcd6e944aae8f5d56d636ed5764c869f88c6084d42eab9a22"
+    },
+    {
+      "path": "organized_project/90_AUDIT/INPUT_BASELINE.json",
+      "bytes": 34234,
+      "sha256": "d567d2ad53512a578199d9b32483e5cd55ac4ef686121dd10adf603c36187c04"
+    },
+    {
+      "path": "organized_project/90_AUDIT/MAGIC_LAW_CONVERGENCE_MATRIX.md",
+      "bytes": 315675,
+      "sha256": "c506eb177a8cc8e863c775f42514d59871379679eb5a79aa368b3a6956367148"
+    },
+    {
+      "path": "organized_project/90_AUDIT/organize.py",
+      "bytes": 18627,
+      "sha256": "1c3ff6252a6303a46e09a658502cb030c66fe9a992970b35e8fdd3f7accda7ea"
+    },
+    {
+      "path": "organized_project/90_AUDIT/PHASE1_REFACTOR_PLAN.md",
+      "bytes": 18430,
+      "sha256": "8a2643c6407860d3e32670cf1c28d0a4b2e2bd06c0f973c1aac597ffbcb782ef"
+    },
+    {
+      "path": "organized_project/90_AUDIT/PHASE1_SCENARIO_TESTS.md",
+      "bytes": 21853,
+      "sha256": "eb835dcbe8043d16a9df99cd00e266f175cf0a008ac6c291e30d80fb5927d2e1"
+    },
+    {
+      "path": "organized_project/90_AUDIT/PHASE3_BASELINE.json",
+      "bytes": 79094,
+      "sha256": "145d5d8fcdc434d34b373a503fbff0f74a6635fadc6c8683f6902b6822f51674"
+    },
+    {
+      "path": "organized_project/90_AUDIT/PHASE3_BASELINE_REPORT.md",
+      "bytes": 3286,
+      "sha256": "658ac8ba4479af70e10d9191bc69aeb194a502aa5841cf89ab16893d0358f720"
+    },
+    {
+      "path": "organized_project/90_AUDIT/phase3_build.py",
+      "bytes": 90495,
+      "sha256": "df6308f5a5840e72fc33fcd8b2a8447354a8e4ad025798dbd7ea14a3a7cfe1a8"
+    },
+    {
+      "path": "organized_project/90_AUDIT/PHASE3_CONVERGENCE_DATA.json",
+      "bytes": 228108,
+      "sha256": "00cac18b64e94a345ed5b9dee38ad110201e1fa69b6441b0541d085c8f41dfcb"
+    },
+    {
+      "path": "organized_project/90_AUDIT/PHASE3_VERIFICATION.json",
+      "bytes": 9278,
+      "sha256": "1f3cfda4193e7f30035da1fcdc4677384c17721f376c08b9b21d5e789d58512c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/phase3_verify.py",
+      "bytes": 13520,
+      "sha256": "873429f49ca6fa69c6651c06996727ac7b376b1132e1de1818e1f80802ee1085"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/CANON_INDEX.md",
+      "bytes": 14510,
+      "sha256": "ab9cad85c213dc6319b14c8f7820ce23f3250574c7c539fc4c80aff6b791b871"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/CONFLICTS.md",
+      "bytes": 30602,
+      "sha256": "9278ebac8090b400e8391e248f6f2f1f90d808256179fd3a395998bcdd26e43b"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/conversations_index.md",
+      "bytes": 11877,
+      "sha256": "016c86974c6b4d9e23302025275b755cf5962a2fbe442e8f7ffd1ad7f62a54cb"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/DECISION_LOG.md",
+      "bytes": 39356,
+      "sha256": "b80b822093bb385a6b7066713976cf210f3273d4ca1b62ad9e849238b6365241"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/DOCUMENT_REFACTOR_PLAN.md",
+      "bytes": 69419,
+      "sha256": "b05a57de00b03d7834c785786b4622b47d4e898ff3ff3c34f7ad7922c8a990a7"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/MAGIC_STATE_INTEGRATION.md",
+      "bytes": 19475,
+      "sha256": "080af7ca7b9582e2aed67d655d3e1cccff1fd62ad858784f6ea2abca06e7e118"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/OPEN_ISSUES.md",
+      "bytes": 3990,
+      "sha256": "1083eed85351078dd964096c7a57097ed1e5652c11bebcfb23c3fe77c688be9b"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/PROJECT_CHARTER.md",
+      "bytes": 6844,
+      "sha256": "2ca9080cd980e499a878d0e1f80808409b39293476194c8dcb071ad57257f9cf"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/PROJECT_STATE.md",
+      "bytes": 5383,
+      "sha256": "c05a479b4db855819a9a8379dedbd6435feca0e5229bea87eba169051f403f18"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/README.md",
+      "bytes": 3010,
+      "sha256": "3d1c970cb0d7efb24e5dd666d3e0de1b259b70d0781421cfb787d3f8f2736e12"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/ROADMAP.md",
+      "bytes": 7168,
+      "sha256": "d3100cad6f78eb2ab790deaa0970e41fbfda8221facbc279a44fb20d64a638dc"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/SOURCE_INDEX.md",
+      "bytes": 33910,
+      "sha256": "17b0a5cce3d75640ed6db34177b9c405a341432b7a3a36296a6952f8a5408e1a"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/__pycache__/audit_tools.cpython-313.pyc",
+      "bytes": 7694,
+      "sha256": "54e6f283c1cf76d10cd415eee0c45e3c2a5b3ead4d3e0bb9eca7255469a9551d"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/__pycache__/write_reports.cpython-313.pyc",
+      "bytes": 77023,
+      "sha256": "2211f6859208df8319ff7d02c14be7fa1624130a6232cdbe3bfa7fbce8602307"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/A01_to_K12.diff",
+      "bytes": 4269,
+      "sha256": "b23f66c28f7dd4a0ed120084b9e4ae4d788e496021d02d0b075e82e15a05da07"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/A02_to_K10.diff",
+      "bytes": 41427,
+      "sha256": "7386fcb96d66cc238b0bf334f9c9d3614888f05397f16603e515c3571326d3fa"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/A07_to_K21.diff",
+      "bytes": 2189,
+      "sha256": "22a0f69ce5f0d946123b76dffc10c83e2e5cfc13c41b0f07f5cf78490940cd6f"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/A08_to_K15.diff",
+      "bytes": 3969,
+      "sha256": "1f756e5b6a9e5370efa375018f6fcf0e0bd89d88b23d1fc6897e8b2fa9a715e6"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/A09_to_K13.diff",
+      "bytes": 4191,
+      "sha256": "573fef1d886ee51905592f85c305baa6ebda7edb654545b449bffe267cc0cd75"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/A10_to_K20.diff",
+      "bytes": 6077,
+      "sha256": "4d6e46402146524380385afda7b1db276b9d51ad9f15ca41dbe4fd24a5bef16a"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/audit_findings.json",
+      "bytes": 52022,
+      "sha256": "00e1dd7d55901a289aac8c3d25689b1aa916e54cec880a11cb4cc42ba66d6967"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/audit_tools.py",
+      "bytes": 3203,
+      "sha256": "71732e7b7316b87c132db01e807d2d254f0d096f1cf39a96af543033addb22eb"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/build_map.py",
+      "bytes": 10409,
+      "sha256": "57258685430b8ad4deceb5fe697af29e505d376a8715824eaf4e7436ac4ca8a7"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/cross_references.json",
+      "bytes": 114414,
+      "sha256": "528806d964b5e9a3beff4434207d02466938dadc278ceae94f162b54635a6e58"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/duplicate_groups.json",
+      "bytes": 309,
+      "sha256": "4178aab19e0ab7b5ffa4acde534ba40625ef099e4b263b764b7fe774f7e3bb35"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/export_consistency.json",
+      "bytes": 11039,
+      "sha256": "775ed91f2a813830837f00437a5659907eea5a27d4813c47d2e2934559f8e4be"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/inspect_sources.py",
+      "bytes": 1563,
+      "sha256": "e2529e376f148f0a0f5283fd8f6f505bbd58314d4b36158bbf5290c69c484389"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/integrity_check.json",
+      "bytes": 252,
+      "sha256": "4b16a0ff6c9100ea272e0ff830cd1ab95b5f139692d746f6fecca4f724330eae"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/K16_to_K28.diff",
+      "bytes": 67665,
+      "sha256": "f32d641184f8afecd47f6bddda729aaff1412e6e9e0bed21fdef90ebc8d3001d"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/K17_to_K27.diff",
+      "bytes": 40313,
+      "sha256": "ff9b65316bc9c1892e6eedca68b2a431cc812e77b9e284cdbce9aef89af41bbc"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/message_index.json",
+      "bytes": 335933,
+      "sha256": "1f99e2445acdeba167cf80e1978d1892450fc7e83ba40b7d7c67fbf8923fb72a"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/missing_sources.md",
+      "bytes": 5603,
+      "sha256": "53df23b4fa8878b4f50d8d16be6cfdd71a578bf0e3eed088e0eb9d88db2beb73"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/paragraph_index.jsonl",
+      "bytes": 2738668,
+      "sha256": "369bcd57875b8c26de44af3b6eefd3a775ebe465664fa56a6c3ff974bc79cc27"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/CANON_INDEX.md",
+      "bytes": 11118,
+      "sha256": "1ccf4f2b3a847118df63048d56f5cd89801067590c0da11f2424400b0b20b92e"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/CONFLICTS.md",
+      "bytes": 23372,
+      "sha256": "37a92cb40ca64c6cd26a74b7c5d738d2eb6a094bec315a03ae43b26410b1cda1"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/conversations_index.md",
+      "bytes": 9702,
+      "sha256": "cdc6ec26067b5368971c96a192466d87587d04c0ad6ee5496f4a1d2dbcc1170b"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/DECISION_LOG.md",
+      "bytes": 36915,
+      "sha256": "e07a09041e92e08bc5dcaaab3475c61af433241ab8b9eb97613813b911e44d7c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/OPEN_ISSUES.md",
+      "bytes": 3967,
+      "sha256": "d4a90e6c5e8945f645b2d163f0766b2cbb9d049e667d2eb3c1d3c7d90f5c0b52"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/PROJECT_STATE.md",
+      "bytes": 10475,
+      "sha256": "5a1c200ef61af4d36ca6e7f12ffc6fa732b2b7dbf849e3679dbe739bd1451e42"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/README.md",
+      "bytes": 3484,
+      "sha256": "2ce30cd027db53b44c0f0751924dd49c331d88491e477fb710f7aff3b22bdf73"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/SNAPSHOT_NOTE.md",
+      "bytes": 328,
+      "sha256": "567240fc87be4cdbb826548349fe3be1e4746dbb1fffbcf84dbe9482fb2a3b7c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/SOURCE_INDEX.md",
+      "bytes": 23463,
+      "sha256": "f1422bd0ed6f11eaac67859d7d01598769f942720c285a7531a88051c967e444"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase1_snapshot/VERSION_LEDGER.md",
+      "bytes": 24270,
+      "sha256": "13fe5699de5224caf265f0408411fb57a250c1d88641cc194d37e3034cbe934f"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/architecture_data.json",
+      "bytes": 23792,
+      "sha256": "1a8897089b4215095c898002861ff744454ce9e8f1e1e75af446c5c29f737604"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/conflicts.json",
+      "bytes": 16938,
+      "sha256": "e0c4cb4ccd6e53845fa43b092b06691890b7c9ff66148bfecc4b2c011845a20c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/generated_inventory.json",
+      "bytes": 13006,
+      "sha256": "bb87c2473ed6486d30cf54dfe24ec65c1d15b6f4e34a0fbe2d69415351b5d4b9"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/generated_inventory.md",
+      "bytes": 12926,
+      "sha256": "0958d61ed5d505f517f25c387a01cc015f0f41218e29e3f7a4d5f6d9eddf6db3"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/H02_to_K21.diff",
+      "bytes": 11104,
+      "sha256": "956045cd9e9af8314b6c75fb906335d5ea50fb4273424fd693cf5a15861321b0"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/H03_to_K13.diff",
+      "bytes": 11574,
+      "sha256": "7e81feaaddc61cecf70bb97eb12ea530309380d30e11eabeecb1f90bfc902e4e"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/H10_to_H11.diff",
+      "bytes": 32537,
+      "sha256": "22ba1ef4caf8ed148bf2a172be2c952799586821c385f1f1ed63a4aac6cb9253"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/H11_to_H12.diff",
+      "bytes": 5983,
+      "sha256": "eba12639a4fe2230c4b3afd16518a21af50f2c8b4db7452a0f7ddbff1cf2536f"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/H12_to_K18.diff",
+      "bytes": 20976,
+      "sha256": "3a18d0415670f4d1cc16318a43f324de0fcaac7e5855e70b76bce818c72b765a"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/H21_to_K20.diff",
+      "bytes": 16954,
+      "sha256": "9aeef76bc76a5dca447f002b51f267f69e514bbb2b3ad8283544cc242af6e555"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/open_issues.json",
+      "bytes": 3483,
+      "sha256": "220eabb76e537bcd3b7562779f0aed299a219d6bd77c3d12c4e609a6a9b0ddd8"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/phase1_delta.json",
+      "bytes": 2185,
+      "sha256": "021ee5128890a7d38868bd0fa509c7f61cae3a4094b472ca5776e1ef029fdda2"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/refactor_actions.json",
+      "bytes": 15786,
+      "sha256": "40a22aed88bdf766a17a6622d497cc619d7275b3707573909b393b547cd4b8ed"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/refactor_detail.json",
+      "bytes": 19685,
+      "sha256": "15cf951ab0f47fe6d8a1773a6557e4a95efa094870b13a9f89de775036415577"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/source_baseline.json",
+      "bytes": 30006,
+      "sha256": "33ec9f1f2a1621877cb751fb2ccb0f29b57c1f3d0bce60e3eca3652f01e2b66c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/source_records.json",
+      "bytes": 68397,
+      "sha256": "a07ec50ef980149993a54ad0d7b4c05b85b82cb1f3c52f11deed1520221d7c5b"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/source_scan.json",
+      "bytes": 30006,
+      "sha256": "33ec9f1f2a1621877cb751fb2ccb0f29b57c1f3d0bce60e3eca3652f01e2b66c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2/verification.json",
+      "bytes": 1329,
+      "sha256": "150df8131acc4bc63125982ab00f5ab786661c41f83c17b84f25dffccee2f37a"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2_architecture.py",
+      "bytes": 38310,
+      "sha256": "4128a2f2959824ae1f5a94c92305e40e83619210c47327e20764802bf82656f2"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2_finish.py",
+      "bytes": 24135,
+      "sha256": "cb254a8be93ce53be040bb404439989bb80ae6f7beb7f792418f39e1debeaa0c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2_read.py",
+      "bytes": 822,
+      "sha256": "e6d44034a35e39ea950c9bf51c968ffe378e10e2f2d501b9cc425587411e66cc"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2_refactor.py",
+      "bytes": 20553,
+      "sha256": "9b4716c338c81b40122b9b43dff5eb7bb1768e35c132cb4c610de7ee10150721"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2_reports.py",
+      "bytes": 22369,
+      "sha256": "d125ee63df1a1c24bc1d95b8aeb8dd985c74dd8d48af4fe4b3443a6f32061f96"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/phase2_scan.py",
+      "bytes": 2067,
+      "sha256": "9c7d1e8b78894826cb65e81a5b67c550f079ed119024346d082b6f99efd1fe2f"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/README.md",
+      "bytes": 1610,
+      "sha256": "fc37e1b2d49457e465014897f36404f4f62c8797d9c5fed42c491413b69ae301"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/reference_guide.md",
+      "bytes": 5257,
+      "sha256": "a462390aca8ecfe45f0a43dea2634fb0f4e4fc98052c5b6dc17d79dc63e279ce"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/report_validation.json",
+      "bytes": 713,
+      "sha256": "4c1fec89c24c60de6b04c844f5a2599ff4a9a1d0fcf94875cec41ada3f0c1645"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/source_inventory.json",
+      "bytes": 17545,
+      "sha256": "a1bf25fdbffd1e5d764636287978b6c20a1c14144f4d9ee2813713c126b2564d"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/source_records.json",
+      "bytes": 48874,
+      "sha256": "a418f1f4ece5842711d4212cb6fdb3cbfb2b49be458e3f697d2d973e9ff45b1c"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/validate_reports.py",
+      "bytes": 3635,
+      "sha256": "9d93d32b2274b9f1fb389dcf60ea5c54655e719a451913ad344b15da3c6b4812"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/source_map/write_reports.py",
+      "bytes": 63964,
+      "sha256": "016d28fd694b23981fdff31c766c89279cc3eb2e468c72e69416f4c91ad0a140"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/STATE_ARCHITECTURE_AUDIT.md",
+      "bytes": 32472,
+      "sha256": "a446e920511979008f6b4d63fec1d1bc54e2f4dc5a94bd086872beac657b7325"
+    },
+    {
+      "path": "organized_project/90_AUDIT/previous_chatgpt_ready/VERSION_LEDGER.md",
+      "bytes": 29208,
+      "sha256": "99a5d9537d573ade446e71be1e824b522e2b6214ff44ea0c438ba04f40263e45"
+    },
+    {
+      "path": "organized_project/90_AUDIT/README.md",
+      "bytes": 829,
+      "sha256": "a939180e4a49b87772eed776780148ea871ba57833bea9df3210b32ccfc9e1f4"
+    },
+    {
+      "path": "organized_project/90_AUDIT/reports.py",
+      "bytes": 35595,
+      "sha256": "7a6a8706622c123fbb6dccb90c6db1dfb4e2dd116b8e00afbfb822634114dbbf"
+    },
+    {
+      "path": "organized_project/90_AUDIT/VERIFICATION.json",
+      "bytes": 3527,
+      "sha256": "67d199d4a302d16510e0ff24658b1cd45522cbb3dba7dd2545c53ee1face5082"
+    },
+    {
+      "path": "organized_project/90_AUDIT/verify.py",
+      "bytes": 10642,
+      "sha256": "da4af046de0def1ec1b0ce9dd95862fe34e43342b2fd626a4975debca8c89d48"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/01_project_core/CLAUDE_PROJECT_INSTRUCTIONS.md",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/01_project_core/PROJECT_METADATA.json",
+      "bytes": 289,
+      "sha256": "629a60aa1b2ab4a556afe68554d6529da06710250884149f5aa6ca314ad84b14"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/02_project_knowledge/PROJECT_FILES_MANIFEST.csv",
+      "bytes": 8435,
+      "sha256": "0f2e45970ad673c9c7cd38d06bd8c34e9f0eb32b01a87080191dc5859c03a9d0"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/04_conversation_attachments/RECOVERED_ATTACHMENTS.csv",
+      "bytes": 5402,
+      "sha256": "3841385a33c44e8629a546cfafd1401c22fca978bd53ae5cb85c903b2ed5cc6e"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/04_conversation_attachments/UNRECOVERED_FILE_REFERENCES.csv",
+      "bytes": 2947,
+      "sha256": "9a604defed5299af251d74f0b4e77d8afd0849ba2f44527d648b66aa8015162f"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/99_source_archive/claude_project_export.json",
+      "bytes": 1161504,
+      "sha256": "29a214491501e629102cc82e6864b61ed798239c548b40fc93e36c84ce7a41ec"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/99_source_archive/claude_project_memory_entry.json",
+      "bytes": 7529,
+      "sha256": "3d17d58762e749936be5cd90b771bb01190ffa058e0d49f4250baf36b2885487"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/99_source_archive/selected_conversation_refs.json",
+      "bytes": 2870,
+      "sha256": "370bc1dfc17c2838b831beb455f0c0011320a372e96ec4e82e7d980c563f2557"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/CHECKSUMS.sha256",
+      "bytes": 9502,
+      "sha256": "258efc71224988c87a1d74e4acebba2f4f6109188151227005bd9a7e3d56a4a0"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/external/回答.txt",
+      "bytes": 20847,
+      "sha256": "e343a13c03dfc945eee240927dda2dad2ffc335f5ea17dbccf6a3f6a73e70948"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/FILE_MAP.json",
+      "bytes": 102893,
+      "sha256": "c0e0b2591692d1f27cecbc3224d6a2b9c4fa93da3d62e1569a644d61dc16b3bf"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/MIGRATION_MANIFEST.csv",
+      "bytes": 9930,
+      "sha256": "2575a6333292aefecb0f1285a34eaa06473752e4b8e804b8e62eb6d27d5d41c6"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/README.md",
+      "bytes": 880,
+      "sha256": "a2ad2a8487141b006d1eca29d9a97635367cf7abb87936ce8ca0d19c69df05ba"
+    },
+    {
+      "path": "organized_project/99_SOURCE_ARCHIVE_INDEX/README_FIRST.md",
+      "bytes": 2655,
+      "sha256": "4dd2360ef6626d75406887579f5860d71753fdead46b970abcf9a5fbddcb74b5"
+    },
+    {
+      "path": "README_FIRST.md",
+      "bytes": 2655,
+      "sha256": "4dd2360ef6626d75406887579f5860d71753fdead46b970abcf9a5fbddcb74b5"
+    }
+  ]
+}

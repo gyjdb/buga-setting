@@ -1,0 +1,64 @@
+{
+  "group": 5,
+  "files": [
+    "K28",
+    "K27",
+    "K29"
+  ],
+  "status": "PASS_INTERNAL",
+  "checks": [
+    {
+      "check": "K28 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K28 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K28 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K27 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K27 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K27 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K29 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K29 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K29 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "academic vs ring vs access",
+      "passed": true
+    },
+    {
+      "check": "tower immunity and seal operations separated",
+      "passed": true
+    },
+    {
+      "check": "no false trace guarantees",
+      "passed": true
+    },
+    {
+      "check": "unknown bridge not invented",
+      "passed": true
+    }
+  ],
+  "note": "组内检查通过；跨组接口须在全局审计再次核验。"
+}

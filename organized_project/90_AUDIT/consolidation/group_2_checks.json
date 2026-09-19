@@ -1,0 +1,64 @@
+{
+  "group": 2,
+  "files": [
+    "K12",
+    "K14",
+    "K10"
+  ],
+  "status": "PASS_INTERNAL",
+  "checks": [
+    {
+      "check": "K12 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K12 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K12 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K14 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K14 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K14 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "K10 candidate and changelog",
+      "passed": true
+    },
+    {
+      "check": "K10 unique article numbers",
+      "passed": true
+    },
+    {
+      "check": "K10 no source alteration",
+      "passed": true
+    },
+    {
+      "check": "two-house law vs joint appointment",
+      "passed": true
+    },
+    {
+      "check": "executive logistics cannot change judgment",
+      "passed": true
+    },
+    {
+      "check": "budget and currency roles",
+      "passed": true
+    },
+    {
+      "check": "permit office executes no independent approval",
+      "passed": true
+    }
+  ],
+  "note": "组内检查通过；跨组接口须在全局审计再次核验。"
+}

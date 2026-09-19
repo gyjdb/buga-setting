@@ -1,0 +1,2152 @@
+[
+  {
+    "id": "H17-00",
+    "source_alias": "H17",
+    "article": "标题、元数据、修订说明与序言",
+    "line_start": 1,
+    "line_end": 25,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "B：L8–9删除低环弦、以神域代高环；C：L18环级天然本体；A：L20十四环凡人极限。",
+    "author_decisions": [
+      "AD02",
+      "AD04",
+      "AD05",
+      "AD06"
+    ]
+  },
+  {
+    "id": "H17-01",
+    "source_alias": "H17",
+    "article": "第一条 目的",
+    "line_start": 26,
+    "line_end": 29,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-02",
+    "source_alias": "H17",
+    "article": "第二条 与《魔法基本法》的关系",
+    "line_start": 30,
+    "line_end": 35,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L32把神域作为当前高环/弦法分类；C：下位技术标准的法律分工不由本次回答直接批准。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H17-03",
+    "source_alias": "H17",
+    "article": "第三条 基本术语",
+    "line_start": 36,
+    "line_end": 53,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L42凡人十四环、L45次级法术；B：L43–44神域/弦定义；C：L41天然分级、L46–48考试标尺。",
+    "author_decisions": [
+      "AD02",
+      "AD04",
+      "AD05",
+      "AD06"
+    ]
+  },
+  {
+    "id": "H17-04",
+    "source_alias": "H17",
+    "article": "第四条 环级本质",
+    "line_start": 54,
+    "line_end": 59,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：L56天然环级仍由作者重新考虑；L58功能多样可参考，不能推导每一环都有真正时空术。",
+    "author_decisions": [
+      "AD02",
+      "AD26"
+    ]
+  },
+  {
+    "id": "H17-05",
+    "source_alias": "H17",
+    "article": "第五条 十四环极限",
+    "line_start": 60,
+    "line_end": 65,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L62十四环凡人终点；B：L64将更高力量全部改称神域；C：普通技术认定范围的法律决定。",
+    "author_decisions": [
+      "AD04",
+      "AD05",
+      "AD06"
+    ]
+  },
+  {
+    "id": "H17-06",
+    "source_alias": "H17",
+    "article": "第六条 环级与危险性",
+    "line_start": 66,
+    "line_end": 83,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-07",
+    "source_alias": "H17",
+    "article": "第七条 初阶：一至三环",
+    "line_start": 84,
+    "line_end": 89,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：一至三环具体技能与职业豁免尚未逐项确认，不从普通人水平未定推导固定技能包。",
+    "author_decisions": [
+      "AD10",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H17-08",
+    "source_alias": "H17",
+    "article": "第八条 中阶：四至六环",
+    "line_start": 90,
+    "line_end": 95,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：四至六环技能与四环执业门槛不是本次作者决定；能力、许可、职业分开方向可留。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H17-09",
+    "source_alias": "H17",
+    "article": "第九条 高级：七至九环",
+    "line_start": 96,
+    "line_end": 101,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：L100不凭能力自动取得公权位；C：具体七至九环能力与任职门槛。",
+    "author_decisions": [
+      "AD23"
+    ]
+  },
+  {
+    "id": "H17-10",
+    "source_alias": "H17",
+    "article": "第十条 大法师：十至十三环",
+    "line_start": 102,
+    "line_end": 107,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：L106有能力仍需施法许可的原则；C：委员会、专项试炼及广域威力数值未重定，须容纳宽松许可与高环族类代价差异。",
+    "author_decisions": [
+      "AD25",
+      "AD27"
+    ]
+  },
+  {
+    "id": "H17-11",
+    "source_alias": "H17",
+    "article": "第十一条 极限：十四环",
+    "line_start": 108,
+    "line_end": 119,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L110凡人极限；B：L114临近神域的分类理由；C：毁城强度、终局许可的具体程序不能由物理极限自动推导。",
+    "author_decisions": [
+      "AD04",
+      "AD06",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H17-12",
+    "source_alias": "H17",
+    "article": "第十二条 功能类别",
+    "line_start": 120,
+    "line_end": 136,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：治疗/侦测/通讯/记忆/造物等功能存在可作分类参照；C：这不是作者九派的替代分类，具体官定名录仍为候选。",
+    "author_decisions": [
+      "AD01",
+      "AD29",
+      "AD31",
+      "AD32",
+      "AD33"
+    ]
+  },
+  {
+    "id": "H17-13",
+    "source_alias": "H17",
+    "article": "第十三条 危险类别",
+    "line_start": 137,
+    "line_end": 142,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：危险类别与低环精神术等具体定环/入禁条件未决定；读心为黑魔法不能自动等于列入本法禁术。",
+    "author_decisions": [
+      "AD33"
+    ]
+  },
+  {
+    "id": "H17-14",
+    "source_alias": "H17",
+    "article": "第十四条 节点取能与环级",
+    "line_start": 143,
+    "line_end": 154,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：L145供能不直接提升个人能力、区分个人与外物；C：外物效果的认定/违规规则待审，须给大地之书的真实施展留出表达空间。",
+    "author_decisions": [
+      "AD14",
+      "AD17",
+      "AD28"
+    ]
+  },
+  {
+    "id": "H17-15",
+    "source_alias": "H17",
+    "article": "第十五条 组合术式",
+    "line_start": 155,
+    "line_end": 164,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-16",
+    "source_alias": "H17",
+    "article": "第十六条 标准术式集",
+    "line_start": 165,
+    "line_end": 170,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-17",
+    "source_alias": "H17",
+    "article": "第十七条 定阶术式",
+    "line_start": 171,
+    "line_end": 176,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-18",
+    "source_alias": "H17",
+    "article": "第十八条 技术校准原则",
+    "line_start": 177,
+    "line_end": 186,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L182个人/增幅/取能/协作分开；B：L183、185“神域弦魔法/疑似神域”分类；C：L181法则深度标尺及上报/留痕义务。",
+    "author_decisions": [
+      "AD02",
+      "AD06",
+      "AD14",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H17-19",
+    "source_alias": "H17",
+    "article": "第十九条 标准修订",
+    "line_start": 187,
+    "line_end": 194,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-20",
+    "source_alias": "H17",
+    "article": "第二十条 与环级认定的接口",
+    "line_start": 195,
+    "line_end": 198,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-21",
+    "source_alias": "H17",
+    "article": "第二十一条 与施法许可的接口",
+    "line_start": 199,
+    "line_end": 204,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：能力不等于许可；C：九环豁免及委员会/学派具体程序；不得因作者强调宽松便自动废除所有场所安全义务。",
+    "author_decisions": [
+      "AD25"
+    ]
+  },
+  {
+    "id": "H17-22",
+    "source_alias": "H17",
+    "article": "第二十二条 与禁魔分区的接口",
+    "line_start": 205,
+    "line_end": 210,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L209弦魔法不能靠禁魔压制；B：同句将神域纳入当前禁魔事件；C：常规禁魔强度如何分级。",
+    "author_decisions": [
+      "AD19"
+    ]
+  },
+  {
+    "id": "H17-23",
+    "source_alias": "H17",
+    "article": "第二十三条 与职业资质的接口",
+    "line_start": 211,
+    "line_end": 218,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：环级与职业资格分立；C：责任保险/伦理审查/场所许可等具体条件不因原则一致获批。",
+    "author_decisions": [
+      "AD24",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H17-24",
+    "source_alias": "H17",
+    "article": "第二十四条 与上位法的关系",
+    "line_start": 219,
+    "line_end": 222,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H17-25",
+    "source_alias": "H17",
+    "article": "第二十五条 施行",
+    "line_start": 223,
+    "line_end": 225,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-00",
+    "source_alias": "H18",
+    "article": "标题、元数据、修订说明与序言",
+    "line_start": 1,
+    "line_end": 18,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：三分资格原则；B：L8及L5“神域处置/疑似神域”分类；C：终身效力、试炼程序、其他新增规则。",
+    "author_decisions": [
+      "AD06",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-01",
+    "source_alias": "H18",
+    "article": "第一条 目的",
+    "line_start": 19,
+    "line_end": 22,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-02",
+    "source_alias": "H18",
+    "article": "第二条 认定性质",
+    "line_start": 23,
+    "line_end": 28,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：认定是联盟确认，不创造个人实际能力；C：各机关使用该凭证的法律效力细则。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-03",
+    "source_alias": "H18",
+    "article": "第三条 认定、许可与职业资质的分别",
+    "line_start": 29,
+    "line_end": 34,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：实际能力、认定、许可、职业资格不能互代；C：按每次时间地点限定等具体许可强度须与宽松方向相容。",
+    "author_decisions": [
+      "AD24",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H18-04",
+    "source_alias": "H18",
+    "article": "第四条 只问能力",
+    "line_start": 35,
+    "line_end": 38,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：按能力认定、不以血统或政治位阶代替能力的方向；C：具体受理条件不等于已经决定国籍条件。",
+    "author_decisions": [
+      "AD12",
+      "AD23",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-05",
+    "source_alias": "H18",
+    "article": "第五条 适用范围",
+    "line_start": 39,
+    "line_end": 44,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：次级法术不计入环级；B：L43疑似神域分类；C：排除弦魔法认定属于法律范围，低环弦存在本身不自动否定该法律禁令。",
+    "author_decisions": [
+      "AD04",
+      "AD05",
+      "AD06"
+    ]
+  },
+  {
+    "id": "H18-06",
+    "source_alias": "H18",
+    "article": "第六条 未认定施法者",
+    "line_start": 45,
+    "line_end": 52,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：未获认定仍可能实际会施法；C：基础认定和行为责任规则。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-07",
+    "source_alias": "H18",
+    "article": "第七条 两种方式",
+    "line_start": 53,
+    "line_end": 59,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-08",
+    "source_alias": "H18",
+    "article": "第八条 成套考核",
+    "line_start": 60,
+    "line_end": 65,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-09",
+    "source_alias": "H18",
+    "article": "第九条 一术定阶",
+    "line_start": 66,
+    "line_end": 71,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L70神域迹象的旧分类依据；C：一术定阶与排除偶然等程序，不从作者认可最高等级推出这些考核法必然正确。",
+    "author_decisions": [
+      "AD06",
+      "AD11"
+    ]
+  },
+  {
+    "id": "H18-10",
+    "source_alias": "H18",
+    "article": "第十条 标准术式集与定阶术式",
+    "line_start": 72,
+    "line_end": 81,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-11",
+    "source_alias": "H18",
+    "article": "第十一条 初阶：一至三环",
+    "line_start": 82,
+    "line_end": 85,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-12",
+    "source_alias": "H18",
+    "article": "第十二条 中阶：四至六环",
+    "line_start": 86,
+    "line_end": 91,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：四环执业门槛未被本次采纳；能力与执业分开方向一致。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-13",
+    "source_alias": "H18",
+    "article": "第十三条 高级：七至九环",
+    "line_start": 92,
+    "line_end": 97,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-14",
+    "source_alias": "H18",
+    "article": "第十四条 高阶：十至十三环",
+    "line_start": 98,
+    "line_end": 103,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：认定不自动授施法许可；C：三机构监试、专项许可具体步骤待联审。",
+    "author_decisions": [
+      "AD24",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H18-15",
+    "source_alias": "H18",
+    "article": "第十五条 极限：十四环",
+    "line_start": 104,
+    "line_end": 113,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-16",
+    "source_alias": "H18",
+    "article": "第十六条 认定机关",
+    "line_start": 114,
+    "line_end": 119,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-17",
+    "source_alias": "H18",
+    "article": "第十七条 申请",
+    "line_start": 120,
+    "line_end": 125,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-18",
+    "source_alias": "H18",
+    "article": "第十八条 试炼场所",
+    "line_start": 126,
+    "line_end": 129,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-19",
+    "source_alias": "H18",
+    "article": "第十九条 见证与留痕",
+    "line_start": 130,
+    "line_end": 133,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：魔法可留痕和回看为技术基础；C：回路、法器、场地等强制采集字段及授权须另审。",
+    "author_decisions": [
+      "AD34"
+    ]
+  },
+  {
+    "id": "H18-20",
+    "source_alias": "H18",
+    "article": "第二十条 高阶试炼许可",
+    "line_start": 134,
+    "line_end": 139,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：首次试炼由认定机关代申请的路径有参考价值；代申请、受理门槛和十四环许可程序均不是本次作者直接批准。",
+    "author_decisions": [
+      "AD24",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H18-21",
+    "source_alias": "H18",
+    "article": "第二十一条 外部增幅与节点取能",
+    "line_start": 140,
+    "line_end": 147,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：节点纯供能不提高个人能力，外物与本人分开；C：何种借助算舞弊和凭证怎么记，需兼容大地之书案例。",
+    "author_decisions": [
+      "AD14",
+      "AD28"
+    ]
+  },
+  {
+    "id": "H18-22",
+    "source_alias": "H18",
+    "article": "第二十二条 疑似神域中止",
+    "line_start": 148,
+    "line_end": 153,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：整条“疑似神域”触发概念需替换；C：隔离、停试与禁讨论/转录的政策范围不由回答自动决定。",
+    "author_decisions": [
+      "AD06",
+      "AD33"
+    ]
+  },
+  {
+    "id": "H18-23",
+    "source_alias": "H18",
+    "article": "第二十三条 登记与凭证",
+    "line_start": 154,
+    "line_end": 161,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：认定与职任/学术/职业等概念分开；C：凭证格式、贵族身份等具体制度未新确认。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-24",
+    "source_alias": "H18",
+    "article": "第二十四条 学术资质",
+    "line_start": 162,
+    "line_end": 165,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：学术资质与能力认定并行；C：白银学会具体授予内容由既有法与后续修订处理。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-25",
+    "source_alias": "H18",
+    "article": "第二十五条 升阶",
+    "line_start": 166,
+    "line_end": 169,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：年资/年龄不能代替知识和实际能力的方向；C：申请与举证要求。",
+    "author_decisions": [
+      "AD12"
+    ]
+  },
+  {
+    "id": "H18-26",
+    "source_alias": "H18",
+    "article": "第二十六条 环级终身有效",
+    "line_start": 170,
+    "line_end": 175,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：认定终身与实际能力退化是两件事；作者对退化仍保留意见，不判本条必然被推翻，也不当作者再确认终身制。",
+    "author_decisions": [
+      "AD12",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H18-27",
+    "source_alias": "H18",
+    "article": "第二十七条 凭证暂停与风险标记",
+    "line_start": 176,
+    "line_end": 192,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：犯罪等情形从严的许可方向；C：风险标记的全部触发事由/权限未确认。",
+    "author_decisions": [
+      "AD25"
+    ]
+  },
+  {
+    "id": "H18-28",
+    "source_alias": "H18",
+    "article": "第二十八条 复核",
+    "line_start": 193,
+    "line_end": 198,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-29",
+    "source_alias": "H18",
+    "article": "第二十九条 申诉",
+    "line_start": 199,
+    "line_end": 202,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-30",
+    "source_alias": "H18",
+    "article": "第三十条 舞弊",
+    "line_start": 203,
+    "line_end": 208,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L207神域罪类的基础用语；C：舞弊、伪造及移送程序；难伪造不等于不可能伪造。",
+    "author_decisions": [
+      "AD06",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H18-31",
+    "source_alias": "H18",
+    "article": "第三十一条 裁断",
+    "line_start": 209,
+    "line_end": 216,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：留痕有技术用途；C：证据优先、隐私及程序优先级不是作者技术回答直接赋予。",
+    "author_decisions": [
+      "AD34"
+    ]
+  },
+  {
+    "id": "H18-32",
+    "source_alias": "H18",
+    "article": "第三十二条 与上位法的关系",
+    "line_start": 217,
+    "line_end": 220,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H18-33",
+    "source_alias": "H18",
+    "article": "第三十三条 施行",
+    "line_start": 221,
+    "line_end": 223,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-00",
+    "source_alias": "H19",
+    "article": "标题、元数据、修订说明与序言",
+    "line_start": 1,
+    "line_end": 19,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：弦魔法不能被禁魔的方向；B：L4–5、8、12涉神域概念；C：节点核心/外围/模拟分区、24/72时限及程序均只是候选。",
+    "author_decisions": [
+      "AD16",
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-01",
+    "source_alias": "H19",
+    "article": "第一条 目的",
+    "line_start": 20,
+    "line_end": 23,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：目的中“涉神域事件”作为当前高环分类；C：其余法律目的与权限。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H19-02",
+    "source_alias": "H19",
+    "article": "第二条 适用范围",
+    "line_start": 24,
+    "line_end": 27,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-03",
+    "source_alias": "H19",
+    "article": "第三条 禁魔原理",
+    "line_start": 28,
+    "line_end": 33,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L30禁魔针对施法、不等同断能，L32弦不受禁魔；B：L32神域标签；C：具体“搅乱回路”机制未被作者独立定稿。",
+    "author_decisions": [
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-04",
+    "source_alias": "H19",
+    "article": "第四条 两类结界",
+    "line_start": 34,
+    "line_end": 41,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：三种结界分类未被新回答逐项批准；标题“两类”列三类为原F25笔误，继续保留纠错任务。",
+    "author_decisions": [
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-05",
+    "source_alias": "H19",
+    "article": "第五条 分区",
+    "line_start": 42,
+    "line_end": 51,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-06",
+    "source_alias": "H19",
+    "article": "第六条 自由施法区",
+    "line_start": 52,
+    "line_end": 57,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-07",
+    "source_alias": "H19",
+    "article": "第七条 戒备区",
+    "line_start": 58,
+    "line_end": 63,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：街道/住宅仅戒备不常态禁魔是否符合作者风险取向，尚需场景决定，不能据4.1自动全面改为禁魔。",
+    "author_decisions": [
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-08",
+    "source_alias": "H19",
+    "article": "第八条 限阶区",
+    "line_start": 64,
+    "line_end": 69,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-09",
+    "source_alias": "H19",
+    "article": "第九条 绝对禁制区",
+    "line_start": 70,
+    "line_end": 79,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-10",
+    "source_alias": "H19",
+    "article": "第十条 强度分级",
+    "line_start": 80,
+    "line_end": 89,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：三级强度、能耗维护及误伤参数尚待决定；能量非稀缺不意味着工程无维护，也不能反推必然存在稀缺。",
+    "author_decisions": [
+      "AD18",
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-11",
+    "source_alias": "H19",
+    "article": "第十一条 配置原则",
+    "line_start": 90,
+    "line_end": 95,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-12",
+    "source_alias": "H19",
+    "article": "第十二条 越级冲破",
+    "line_start": 96,
+    "line_end": 99,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-13",
+    "source_alias": "H19",
+    "article": "第十三条 神域与弦魔法",
+    "line_start": 100,
+    "line_end": 109,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L102–104弦魔法不能靠三级禁魔防范；B：神域与弦绑定及涉神域分类；C：特别处置政策。",
+    "author_decisions": [
+      "AD05",
+      "AD06",
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-14",
+    "source_alias": "H19",
+    "article": "第十四条 界标",
+    "line_start": 110,
+    "line_end": 115,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-15",
+    "source_alias": "H19",
+    "article": "第十五条 技术标准",
+    "line_start": 116,
+    "line_end": 119,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-16",
+    "source_alias": "H19",
+    "article": "第十六条 城邦落地",
+    "line_start": 120,
+    "line_end": 123,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-17",
+    "source_alias": "H19",
+    "article": "第十七条 跨城与禁区",
+    "line_start": 124,
+    "line_end": 127,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-18",
+    "source_alias": "H19",
+    "article": "第十八条 留痕",
+    "line_start": 128,
+    "line_end": 137,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：痕迹有技术可追溯性；C：强制记录、遮蔽与授权隐私规则，不能把“回看一切”直接当无限调查权。",
+    "author_decisions": [
+      "AD34"
+    ]
+  },
+  {
+    "id": "H19-19",
+    "source_alias": "H19",
+    "article": "第十九条 议政殿堂",
+    "line_start": 138,
+    "line_end": 143,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：议事设施技能门槛、传送/心智禁用具体范围待审；传送与心智能力存在已确认。",
+    "author_decisions": [
+      "AD26",
+      "AD33"
+    ]
+  },
+  {
+    "id": "H19-20",
+    "source_alias": "H19",
+    "article": "第二十条 医馆",
+    "line_start": 144,
+    "line_end": 151,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：救治/濒死复苏可为候选，不能解释成死人复生；C：职业环级与紧急授权；需补白银高环代价区别。",
+    "author_decisions": [
+      "AD27",
+      "AD29"
+    ]
+  },
+  {
+    "id": "H19-21",
+    "source_alias": "H19",
+    "article": "第二十一条 学院与训练场",
+    "line_start": 152,
+    "line_end": 157,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-22",
+    "source_alias": "H19",
+    "article": "第二十二条 工坊与产能设施",
+    "line_start": 158,
+    "line_end": 161,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-23",
+    "source_alias": "H19",
+    "article": "第二十三条 裁断之庭",
+    "line_start": 162,
+    "line_end": 167,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：既有法术不因禁魔自行消失可帮助解释庭方设施；装置是否重新施法仍需区分，不能自动批准所有庭内法器豁免。",
+    "author_decisions": [
+      "AD17",
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-24",
+    "source_alias": "H19",
+    "article": "第二十四条 牢狱",
+    "line_start": 168,
+    "line_end": 171,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-25",
+    "source_alias": "H19",
+    "article": "第二十五条 封印库",
+    "line_start": 172,
+    "line_end": 177,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-26",
+    "source_alias": "H19",
+    "article": "第二十六条 节点区域",
+    "line_start": 178,
+    "line_end": 187,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：接入节点作为设施可保留；C：供能节点内部三区不等于监测/接入两类节点，必须先说明对象，再审取能/断接细则。",
+    "author_decisions": [
+      "AD16"
+    ]
+  },
+  {
+    "id": "H19-27",
+    "source_alias": "H19",
+    "article": "第二十七条 市集、住宅与交通枢纽",
+    "line_start": 188,
+    "line_end": 197,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：住宅隐私限制值得保留审議；技术上能读心/回看不赋予机关无条件权限。",
+    "author_decisions": [
+      "AD33",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H19-28",
+    "source_alias": "H19",
+    "article": "第二十八条 布设主体",
+    "line_start": 198,
+    "line_end": 206,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L202“涉神域者”分类；C：布设主体及授权范围。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H19-29",
+    "source_alias": "H19",
+    "article": "第二十九条 布设要件",
+    "line_start": 207,
+    "line_end": 212,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-30",
+    "source_alias": "H19",
+    "article": "第三十条 备案与复核",
+    "line_start": 213,
+    "line_end": 218,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-31",
+    "source_alias": "H19",
+    "article": "第三十一条 紧急与接管",
+    "line_start": 219,
+    "line_end": 226,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L221神域事件分类；C：紧急/接管程序是否使用尚由制度决定。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H19-32",
+    "source_alias": "H19",
+    "article": "第三十二条 启动条件",
+    "line_start": 227,
+    "line_end": 237,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：整条神域事件归类、神域遗物与当前高环等同；C：风险迹象清单、因果回溯/弦鸣不被本次逐项确认。",
+    "author_decisions": [
+      "AD06",
+      "AD33"
+    ]
+  },
+  {
+    "id": "H19-33",
+    "source_alias": "H19",
+    "article": "第三十三条 现场处置",
+    "line_start": 238,
+    "line_end": 252,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：神域处置标签；C：隔离、疏散、冻结记录等流程可再审，全面禁讨论/研究不能从危险性直接推导。",
+    "author_decisions": [
+      "AD06",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H19-34",
+    "source_alias": "H19",
+    "article": "第三十四条 禁魔场的辅助地位",
+    "line_start": 253,
+    "line_end": 260,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：禁魔不代替对弦魔法的其他处置；B：神域名义；C：具体特别权力程序。",
+    "author_decisions": [
+      "AD06",
+      "AD19"
+    ]
+  },
+  {
+    "id": "H19-35",
+    "source_alias": "H19",
+    "article": "第三十五条 戒备结界预警",
+    "line_start": 261,
+    "line_end": 269,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：侦测、即时传讯技术已有基础；C：敌意识别准确度、自动护卫及机关响应细则未定。",
+    "author_decisions": [
+      "AD31",
+      "AD33",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H19-36",
+    "source_alias": "H19",
+    "article": "第三十六条 响应分工",
+    "line_start": 270,
+    "line_end": 277,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L276涉神域重案分类；C：军警/执行官职责原有历史依据，不因本次未提而删除。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H19-37",
+    "source_alias": "H19",
+    "article": "第三十七条 合法执行与正当防卫",
+    "line_start": 278,
+    "line_end": 287,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L280神域事件概念；C：合法执行、自卫减免与限度，需独立法律决定。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H19-38",
+    "source_alias": "H19",
+    "article": "第三十八条 区内违规施法",
+    "line_start": 288,
+    "line_end": 291,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-39",
+    "source_alias": "H19",
+    "article": "第三十九条 损毁与篡改",
+    "line_start": 292,
+    "line_end": 295,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-40",
+    "source_alias": "H19",
+    "article": "第四十条 救命例外",
+    "line_start": 296,
+    "line_end": 301,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-41",
+    "source_alias": "H19",
+    "article": "第四十一条 裁断",
+    "line_start": 302,
+    "line_end": 309,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L304神域重罪分类；C：审判管辖、证据优先及隐私程序。",
+    "author_decisions": [
+      "AD06",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H19-42",
+    "source_alias": "H19",
+    "article": "第四十二条 与上位法的关系",
+    "line_start": 310,
+    "line_end": 313,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H19-43",
+    "source_alias": "H19",
+    "article": "第四十三条 施行",
+    "line_start": 314,
+    "line_end": 316,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H20-00",
+    "source_alias": "H20",
+    "article": "标题、元数据、修订说明与序言",
+    "line_start": 1,
+    "line_end": 31,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L8/24十四环凡人极限、资格分立方向；B：L8–9/22/24神域化与取消低环弦；C：天然环级本体、机关名与其他下位程序。",
+    "author_decisions": [
+      "AD02",
+      "AD04",
+      "AD05",
+      "AD06",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H20-01",
+    "source_alias": "H20",
+    "article": "第一条 目的与地位",
+    "line_start": 32,
+    "line_end": 37,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L34神域禁制作当前魔法分类；C：基石法地位是世界内法位阶，不能凌驾项目作者权威。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H20-02",
+    "source_alias": "H20",
+    "article": "第二条 载明与规定",
+    "line_start": 38,
+    "line_end": 44,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：物理能力与制度规定分开；B：L42当前神域实体化；C：环级天然本体仍未决。",
+    "author_decisions": [
+      "AD02",
+      "AD06",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H20-03",
+    "source_alias": "H20",
+    "article": "第三条 基本术语",
+    "line_start": 45,
+    "line_end": 68,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：L55十四环、L58次级法术、L62禁施法、L65–67资格原则；B：L56–57神域/弦定义、L59天然魔网；C：L54环级天然、其他定义细目与节点仅单类。",
+    "author_decisions": [
+      "AD02",
+      "AD04",
+      "AD05",
+      "AD06",
+      "AD15",
+      "AD16",
+      "AD19",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H20-04",
+    "source_alias": "H20",
+    "article": "第四条 魔法之于联盟",
+    "line_start": 69,
+    "line_end": 78,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：知识、魔法对文明重要的方向；B：L73神域图谋用语；C：公共教育/封存法律义务不因本次回答整体获批。",
+    "author_decisions": [
+      "AD06",
+      "AD09"
+    ]
+  },
+  {
+    "id": "H20-05",
+    "source_alias": "H20",
+    "article": "第五条 法则与魔力",
+    "line_start": 79,
+    "line_end": 84,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：一般魔力本性未定；九派差异不可只用常规/触法二分穷尽。保留作者法则巫师与女巫区别，不自行调和。",
+    "author_decisions": [
+      "AD01",
+      "AD02",
+      "AD03",
+      "AD13"
+    ]
+  },
+  {
+    "id": "H20-06",
+    "source_alias": "H20",
+    "article": "第六条 常规法术与环级",
+    "line_start": 85,
+    "line_end": 90,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：L89十四环凡人极限；C：L87天然环级本体、日常一至九环与许可程序，须加十五环总框架且不先定普通人环级。",
+    "author_decisions": [
+      "AD02",
+      "AD04",
+      "AD10",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H20-07",
+    "source_alias": "H20",
+    "article": "第七条 十四环",
+    "line_start": 91,
+    "line_end": 98,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：十四环为凡人极限；B：L95“临近神域”；C：毁城强度与授权/备案条件。",
+    "author_decisions": [
+      "AD04",
+      "AD06"
+    ]
+  },
+  {
+    "id": "H20-08",
+    "source_alias": "H20",
+    "article": "第八条 神域与弦魔法",
+    "line_start": 99,
+    "line_end": 106,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "B：以超过十四环或弦魔法直接等同神域；A：法则底层影响可作定义素材；C：弦研究一律禁止等法律选择未被回答废除或重新批准。",
+    "author_decisions": [
+      "AD04",
+      "AD05",
+      "AD06"
+    ]
+  },
+  {
+    "id": "H20-09",
+    "source_alias": "H20",
+    "article": "第九条 龙族、金之民与上古存在",
+    "line_start": 107,
+    "line_end": 112,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：龙族等确有特殊能力，法不能否认能力事实；B：L109“本有神域能力”分类；C：银色学派跨境同意程序/对象范围未定。",
+    "author_decisions": [
+      "AD05",
+      "AD06",
+      "AD35"
+    ]
+  },
+  {
+    "id": "H20-10",
+    "source_alias": "H20",
+    "article": "第十条 本原界线",
+    "line_start": 113,
+    "line_end": 120,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：用神域与常规二分作世界基础界线；C：许可不能凭空创造能力的原则可参照，但不得保留错误神域理由。",
+    "author_decisions": [
+      "AD01",
+      "AD06",
+      "AD14"
+    ]
+  },
+  {
+    "id": "H20-11",
+    "source_alias": "H20",
+    "article": "第十一条 施法的二要素",
+    "line_start": 121,
+    "line_end": 124,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：单纯能量不能替代个人会不会施法；C：能量先自体再魔网/修为永不外借的一般化必须与来源未决、大地之书例外分别核对。",
+    "author_decisions": [
+      "AD13",
+      "AD14",
+      "AD17",
+      "AD28"
+    ]
+  },
+  {
+    "id": "H20-12",
+    "source_alias": "H20",
+    "article": "第十二条 魔网",
+    "line_start": 125,
+    "line_end": 130,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "B：L127魔网=沃恩德弥漫天然源流；A：只供能不直接提升个人能力；C：效果放大对应什么认定记录。",
+    "author_decisions": [
+      "AD14",
+      "AD15"
+    ]
+  },
+  {
+    "id": "H20-13",
+    "source_alias": "H20",
+    "article": "第十三条 节点",
+    "line_start": 131,
+    "line_end": 136,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：接入/调度节点是设施；C：缺监测节点类型限定，不能将全部节点都推为取能站；法律资产与保卫规则待审。",
+    "author_decisions": [
+      "AD16"
+    ]
+  },
+  {
+    "id": "H20-14",
+    "source_alias": "H20",
+    "article": "第十四条 节点接入许可",
+    "line_start": 137,
+    "line_end": 148,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L143神域图谋用语；C：双许可、所有接入均审查与管理机关的细则，要先定义节点类型且兼容宽松能力许可。",
+    "author_decisions": [
+      "AD06",
+      "AD16",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H20-15",
+    "source_alias": "H20",
+    "article": "第十五条 施法者与法师",
+    "line_start": 149,
+    "line_end": 154,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：实际施法与法律登记分开；C：未登记者责任条款仍是拟议法律，不是作者直接定下的处罚。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H20-16",
+    "source_alias": "H20",
+    "article": "第十六条 认定的性质",
+    "line_start": 155,
+    "line_end": 160,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：认定不授予实际能力、不替代许可/职业资格。 C：未在上述A/B范围内的具体执行/法律细节仍未获本次作者确认。",
+    "author_decisions": [
+      "AD24"
+    ]
+  },
+  {
+    "id": "H20-17",
+    "source_alias": "H20",
+    "article": "第十七条 认定的方式",
+    "line_start": 161,
+    "line_end": 170,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L169转入神域；C：成套/一术定阶/十四环终局试炼法未由作者选定。",
+    "author_decisions": [
+      "AD06",
+      "AD11"
+    ]
+  },
+  {
+    "id": "H20-18",
+    "source_alias": "H20",
+    "article": "第十八条 认定机关",
+    "line_start": 171,
+    "line_end": 176,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：学术与实战能力分开；C：具体三机构职责/校准依据尚待和环级本体统一。",
+    "author_decisions": [
+      "AD02",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H20-19",
+    "source_alias": "H20",
+    "article": "第十九条 袍色与身份",
+    "line_start": 177,
+    "line_end": 191,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：职任与个人环级不强制相同的方向；C：白灰银黑等袍色清单不由“十二环特殊身份”自动重新批准。",
+    "author_decisions": [
+      "AD07",
+      "AD24"
+    ]
+  },
+  {
+    "id": "H20-20",
+    "source_alias": "H20",
+    "article": "第二十条 环级与公民身份",
+    "line_start": 192,
+    "line_end": 195,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：能力低甚至不会施法也可为公民；C：L194白银血脉/誓约入籍条件被作者重开为未决，不可列AUTHOR_CANON。",
+    "author_decisions": [
+      "AD22",
+      "AD23"
+    ]
+  },
+  {
+    "id": "H20-21",
+    "source_alias": "H20",
+    "article": "第二十一条 能力与权位分立",
+    "line_start": 196,
+    "line_end": 199,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：能力不自动获得政治权利；C：“伴随终身”、固定轮替与反世袭的具体法律，不由本轮未定退化或最强例外决定。",
+    "author_decisions": [
+      "AD12",
+      "AD23"
+    ]
+  },
+  {
+    "id": "H20-22",
+    "source_alias": "H20",
+    "article": "第二十二条 知识开放与危险封存",
+    "line_start": 200,
+    "line_end": 203,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "B：当前神域残篇分类；A：白塔教育优势支持教育重要性；C：知识开放权/封存内容及“白银学院”的制度仍须原决定或新授权。",
+    "author_decisions": [
+      "AD06",
+      "AD09"
+    ]
+  },
+  {
+    "id": "H20-23",
+    "source_alias": "H20",
+    "article": "第二十三条 职业施法资质",
+    "line_start": 204,
+    "line_end": 209,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：职业资格独立于个人环级；C：专业名单、加重处罚/强制条件，不能因名为商业一律严控普通施法。",
+    "author_decisions": [
+      "AD24",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H20-24",
+    "source_alias": "H20",
+    "article": "第二十四条 环级终身有效与资格限制",
+    "line_start": 210,
+    "line_end": 215,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：认定终身不等于实际能力永久不退化；犯罪限制方向有依据，全部健康/职位许可条件仍未一一采纳。",
+    "author_decisions": [
+      "AD12",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H20-25",
+    "source_alias": "H20",
+    "article": "第二十五条 学徒与未成年施法",
+    "line_start": 216,
+    "line_end": 221,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L220神域残篇；C：未成年只准低环、场所与监护过错分配未定。",
+    "author_decisions": [
+      "AD06",
+      "AD10"
+    ]
+  },
+  {
+    "id": "H20-26",
+    "source_alias": "H20",
+    "article": "第二十六条 外来施法者",
+    "line_start": 222,
+    "line_end": 231,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：外国施法者不自动成为公民；C：登记范围与敏感区许可并未由这一事实全量批准。",
+    "author_decisions": [
+      "AD23"
+    ]
+  },
+  {
+    "id": "H20-27",
+    "source_alias": "H20",
+    "article": "第二十七条 禁魔的性质",
+    "line_start": 232,
+    "line_end": 237,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：禁魔针对施法、弦不能被禁魔；B：L236神域分类；C：回路搅乱机制具体实现；需补既成法术不自然消失。",
+    "author_decisions": [
+      "AD19"
+    ]
+  },
+  {
+    "id": "H20-28",
+    "source_alias": "H20",
+    "article": "第二十八条 禁制分区",
+    "line_start": 238,
+    "line_end": 248,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：四档与节点内部分区仍为制度候选；作者要求供能/监测节点分开，不自动批准本条场所配置。",
+    "author_decisions": [
+      "AD16",
+      "AD19"
+    ]
+  },
+  {
+    "id": "H20-29",
+    "source_alias": "H20",
+    "article": "第二十九条 九环及以下施法边界",
+    "line_start": 249,
+    "line_end": 254,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：有许可/资质不等于可伤害他人的制度分工有参考价值，但不是作者本次直接确认的规则；九环阈值及具体权利限制须按许可宽松方向审议。",
+    "author_decisions": [
+      "AD24",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H20-30",
+    "source_alias": "H20",
+    "article": "第三十条 向同胞施法的禁止与例外",
+    "line_start": 255,
+    "line_end": 262,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：主动攻击红线、自卫与合法执法是制度条款；作者物理回答没有消除原有程序/权限疑点。",
+    "author_decisions": [
+      "AD23",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H20-31",
+    "source_alias": "H20",
+    "article": "第三十一条 治安响应",
+    "line_start": 263,
+    "line_end": 270,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L269涉神域强制处置；C：其余常态执法分工按既有明确决定并另审。",
+    "author_decisions": [
+      "AD06"
+    ]
+  },
+  {
+    "id": "H20-32",
+    "source_alias": "H20",
+    "article": "第三十二条 施法留痕与隐私",
+    "line_start": 271,
+    "line_end": 282,
+    "classification": [
+      "A",
+      "B",
+      "C"
+    ],
+    "assessment": "A：留痕追溯有技术基础；B：L277神域事件；C：回看能力不等于无限调取权，隐私/授权框架值得保留候选。",
+    "author_decisions": [
+      "AD06",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H20-33",
+    "source_alias": "H20",
+    "article": "第三十三条 许可层级",
+    "line_start": 283,
+    "line_end": 292,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：认定不当然授施法许可；C：许可的逐项条件、机关层级和许可期限须服从能力为主/宽松原则，不能自行废掉安全规则。",
+    "author_decisions": [
+      "AD24",
+      "AD25"
+    ]
+  },
+  {
+    "id": "H20-34",
+    "source_alias": "H20",
+    "article": "第三十四条 神域与弦魔法绝对禁制",
+    "line_start": 293,
+    "line_end": 300,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L295神域化；C：弦魔法研究/施展/传播是否绝对禁制仍属于法律选择，作者确认存在不自动合法化。",
+    "author_decisions": [
+      "AD05",
+      "AD06"
+    ]
+  },
+  {
+    "id": "H20-35",
+    "source_alias": "H20",
+    "article": "第三十五条 禁术",
+    "line_start": 301,
+    "line_end": 306,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：禁术名录、精神支配与生命禁制具体分类待审；读心是黑魔法不等于全部记忆/心智术自动禁用。",
+    "author_decisions": [
+      "AD33"
+    ]
+  },
+  {
+    "id": "H20-36",
+    "source_alias": "H20",
+    "article": "第三十六条 紧急救命与高阶医疗",
+    "line_start": 307,
+    "line_end": 318,
+    "classification": [
+      "A",
+      "C"
+    ],
+    "assessment": "A：紧急疗愈/濒死复苏方向可留，明确不能死人复生；C：紧急许可与十四环程序，须兼容高环代价差别。",
+    "author_decisions": [
+      "AD27",
+      "AD29"
+    ]
+  },
+  {
+    "id": "H20-37",
+    "source_alias": "H20",
+    "article": "第三十七条 魔法事故",
+    "line_start": 319,
+    "line_end": 324,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：事故与主观犯罪分开有制度参考价值，但事故分类、具体罪责与赔偿尚未由作者回答设立。",
+    "author_decisions": [
+      "AD25",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H20-38",
+    "source_alias": "H20",
+    "article": "第三十八条 裁断",
+    "line_start": 325,
+    "line_end": 330,
+    "classification": [
+      "B",
+      "C"
+    ],
+    "assessment": "B：L327神域图谋；C：管辖、证据优先与隐私条款仍为候选，技术可回看不能取代程序。",
+    "author_decisions": [
+      "AD06",
+      "AD34"
+    ]
+  },
+  {
+    "id": "H20-39",
+    "source_alias": "H20",
+    "article": "第三十九条 下位规程",
+    "line_start": 331,
+    "line_end": 346,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H20-40",
+    "source_alias": "H20",
+    "article": "第四十条 与上位法的关系",
+    "line_start": 347,
+    "line_end": 350,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  },
+  {
+    "id": "H20-41",
+    "source_alias": "H20",
+    "article": "第四十一条 施行",
+    "line_start": 351,
+    "line_end": 353,
+    "classification": [
+      "C"
+    ],
+    "assessment": "C：本条属具体法律组织、技术参数或实施程序；作者未就这一条作最终选择。保留UNRESOLVED，不能仅因未见抵触而自动采纳。",
+    "author_decisions": []
+  }
+]
