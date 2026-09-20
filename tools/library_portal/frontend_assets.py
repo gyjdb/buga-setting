@@ -4,7 +4,7 @@ import shutil
 
 HERE = Path(__file__).resolve().parent
 ASSETS = ("index.html", "archive.css", "app.js", "archive.js", "prototype.js",
-          "baita-icons.js", "search-worker.js")
+          "baita-icons.js", "search-worker.js", "institutions.js", "institutions.css")
 
 
 def sync_frontend():
@@ -20,4 +20,3 @@ def sync_frontend():
 
 if __name__ == "__main__":
     sync_frontend()
-

@@ -33,7 +33,9 @@
 
 作者明确依据优先于现行制度文本；世界内法律位阶与项目内作者权威是两个层面。`DELEGATED_DESIGN` 保留原有授权设计登记含义。**Archive 是馆藏展示语境，不是新增状态。**
 
-主题和机构入口用于查找文本提及，不推断机构隶属。项目日期、文件修改时间不是世界内颁布日期。没有定位到的原文引用如实标注，不用近似名称补造来源。
+主题和文献机构筛选用于查找文本提及，不推断机构隶属。[机构总目](https://gyjdb.github.io/buga-setting/#/institutions)另以结构化实体展示职责及有明确依据的组织关系，支持名称／别名搜索、下属单位展开、历史状态与设施入口。详情区分设立规范依据、历史描述与全文提及；分组不自动表示隶属。项目日期、文件修改时间不是世界内颁布日期。没有定位到的原文引用如实标注，不用近似名称补造来源。
+
+名录数据维护于 `tools/library_portal/data/institutions.json`；每个实体及关系保留文件、条款、原文与行号。构建检查唯一 ID、有效目标、来源定位、现行清单一致和上下级无环。覆盖范围及资料边界见 [机构名录说明](docs/INSTITUTIONS.md)。
 
 ## 技术与本地运行
 
@@ -64,6 +66,8 @@ python tools/library_portal/verify.py
 python tools/library_portal/verify_publication.py
 node tools/library_portal/test_search.cjs
 node tools/library_portal/test_frontend.cjs
+python -m unittest discover -s tools/library_portal -p test_institutions.py
+node tools/library_portal/test_institutions.cjs
 ```
 
 构建只写入 `site/library_portal/`，不编辑 `organized_project/`。检查覆盖原件哈希、现行清单、版本配对、索引完整性、内部链接、正文安全渲染和搜索行为；不代替世界观内容的人工审查。

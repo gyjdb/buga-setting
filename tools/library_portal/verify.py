@@ -96,6 +96,20 @@ def verify():
     check("author status is not inherited by changelogs", all(d["status"] == "REFERENCE" for d in docs if d["kind"] == "changelog"))
     check("expected browsing dimensions", len(data["topics"]) >= 7 and len(data["institutions"]) >= 8)
     check("scenario totals match rows", sum(data["audit"]["scenarios"].values()) == len(data["audit"]["scenarioRows"]))
+    orgs = read_json(OUTPUT / 'data/institutions.json')
+    org_ids = {r['id'] for r in orgs['institutions']}
+    check('unique institution IDs', len(org_ids) == len(orgs['institutions']))
+    check('institution current count', orgs['counts']['current'] == sum(r['status'] == 'current' and r['kind'] != '设施' for r in orgs['institutions']))
+    org_sources = [s for r in orgs['institutions'] for s in r['sources']]
+    for row in orgs['institutions']:
+        for edge in row['relations']:
+            check('institution relation target', edge['target'] in org_ids)
+            org_sources.extend(edge['sources'])
+        check('institution mention targets', all(id in by_id for id in row['mentions']))
+    org_sources.extend(s for note in orgs['notes'] for s in note['sources'])
+    for source in org_sources:
+        check('institution source reader target', source['docId'] in by_id)
+        check('institution source reader anchor', not source['anchor'] or 'section-' + source['anchor'] in anchors[source['docId']])
     result = {"status": "PASS", "checks": len(checks), "sourceFiles": len(docs), "sourceUnchanged": True,
               "rawCopiesVerified": len(docs), "resolvedLinks": link_count, "versionTriplets": len(data["versionSets"]),
               "fullTextEntries": len(search), "unresolvedOriginalAnchors": missing_anchors,

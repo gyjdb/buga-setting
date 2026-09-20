@@ -364,6 +364,7 @@ async function route() {
   const navByStatus = { CURRENT_CANON: "canon", SUPERSEDED: "archive", CANDIDATE: "candidate", AUTHOR_CANON: "author", PROPOSAL: "proposal", UNRESOLVED: "unresolved" };
   let activeNav = page;
   if (page === "provenance") activeNav = "archive";
+  else if (page === "institution") activeNav = "institutions";
   else if (page === "doc") activeNav = navByStatus[targetDoc?.status] || (targetDoc?.collection === "90_AUDIT" ? "audit" : targetDoc?.collection === "00_PROJECT" ? "project" : "browse");
   else if (page === "browse") activeNav = params.has("directory") || params.has("path") ? "directory" : params.get("topic") ? "topics" : params.get("institution") ? "institutions" : params.get("collection") === "00_PROJECT" ? "project" : params.get("collection") === "90_AUDIT" ? "audit" : navByStatus[params.get("status")] || "browse";
   document.querySelectorAll("[data-nav]").forEach((a) => {
@@ -386,8 +387,10 @@ async function route() {
   document.title = "白塔档案馆 · 银色联盟法典库";
   try {
     if (page === "home") await home();
-    else if (page === "browse") browse(params);
-    else if (page === "topics" || page === "institutions") catalogue(page);
+    else if (page === "browse") { browse(params); institutionLegacyBanner(params); }
+    else if (page === "topics") catalogue(page);
+    else if (page === "institutions") institutionDirectory(params);
+    else if (page === "institution") institutionDetail(parts[1], params);
     else if (page === "doc") await detail(parts[1], params, serial);
     else if (page === "provenance") {
       if (!targetDoc) throw new Error("该文件不在当前馆藏索引中，请返回全部馆藏查找。");
@@ -402,7 +405,7 @@ async function route() {
     if (serial !== routeSerial) return;
     main.innerHTML = emptyState("未能读取该页面", error.message);
   }
-  if (serial === routeSerial && page !== "browse" && !params.get("anchor") && !params.get("section")) window.scrollTo(0, 0);
+  if (serial === routeSerial && page !== "browse" && page !== "institutions" && !params.get("anchor") && !params.get("section")) window.scrollTo(0, 0);
   if (serial === routeSerial && sidebarWasOpen) main.focus({preventScroll:true});
 }
 async function start() {
@@ -415,10 +418,11 @@ async function start() {
     const responses = await Promise.all([
       fetch("data/metadata.json"),
       fetch("data/relationships.json"),
+      fetch("data/institutions.json"),
     ]);
     if (responses.some((r) => !r.ok))
       throw new Error("索引缺失，请先重新构建站点");
-    [index, relationships] = await Promise.all(responses.map((r) => r.json()));
+    [index, relationships, institutionRegistry] = await Promise.all(responses.map((r) => r.json()));
     docs = index.documents;
     byId = new Map(docs.map((d) => [d.id, d]));
     archiveStartBrowseMemory();

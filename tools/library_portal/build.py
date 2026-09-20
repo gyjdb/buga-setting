@@ -271,6 +271,10 @@ def build():
         else:
             save_json(OUTPUT / "docs" / (doc["id"] + ".json"), {"text": text, "toc": []})
 
+    from institutions import compile_registry
+    institution_registry = compile_registry(read_json(HERE / 'data/institutions.json'), by_path, texts, md, heading_slug, current_manifest)
+    save_json(OUTPUT / 'data/institutions.json', institution_registry)
+
     families = defaultdict(list)
     for doc in documents:
         if doc["status"] in {"CURRENT_CANON", "SUPERSEDED", "UNRESOLVED", "PROPOSAL", "CANDIDATE"} or doc["kind"] == "changelog":
