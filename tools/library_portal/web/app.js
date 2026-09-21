@@ -437,8 +437,8 @@ async function start() {
       const result = $("#result-count");
       if (result) result.textContent = "搜索线程启动失败，请刷新后重试。";
     };
-    $("#build-date").textContent =
-      "索引更新 " + dateOnly(index.builtAt) + " · " + docs.length + " 份文件";
+    $("#build-date").innerHTML =
+      "<span>索引更新 " + esc(dateOnly(index.builtAt)) + "</span> · <span>" + docs.length + " 份文件</span>";
     window.addEventListener("hashchange", route);
     $("#global-search").addEventListener("submit", (e) => {
       e.preventDefault();
