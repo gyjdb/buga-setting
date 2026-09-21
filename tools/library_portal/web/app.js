@@ -405,7 +405,7 @@ async function route() {
     if (serial !== routeSerial) return;
     main.innerHTML = emptyState("未能读取该页面", error.message);
   }
-  if (serial === routeSerial && page !== "browse" && page !== "institutions" && !params.get("anchor") && !params.get("section")) window.scrollTo(0, 0);
+  if (serial === routeSerial && page !== "browse" && page !== "institutions" && page !== "institution" && !params.get("anchor") && !params.get("section")) window.scrollTo(0, 0);
   if (serial === routeSerial && sidebarWasOpen) main.focus({preventScroll:true});
 }
 async function start() {
