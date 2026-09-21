@@ -2,7 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const root=path.resolve(__dirname,'../..');
 const registry=JSON.parse(fs.readFileSync(path.join(root,'site/library_portal/data/institutions.json'),'utf8'));
 const main={innerHTML:''};
-const ctx=vm.createContext({URLSearchParams,main,esc:s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;')});
+const ctx=vm.createContext({URLSearchParams,main,silverOrnament:()=>'',esc:s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;')});
 vm.runInContext(fs.readFileSync(path.join(__dirname,'web/institutions.js'),'utf8'),ctx);
 ctx.registry=registry;ctx.document={title:''};
 vm.runInContext('institutionRegistry=registry;orgRestore=()=>{}',ctx);

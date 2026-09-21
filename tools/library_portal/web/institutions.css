@@ -1,9 +1,9 @@
 /* Uses the archive's approved typography, palette and ornaments. */
 .org-directory,.org-detail{max-width:1100px;margin:0 auto;padding-bottom:48px}
-.org-heading{border-bottom:1px solid var(--line);padding:0 0 16px;margin-bottom:20px}
-.org-heading h1{font-family:var(--display);font-size:clamp(1.85rem,3vw,2.6rem);margin:4px 0 10px;line-height:1.4}
+.org-heading{padding-bottom:16px;margin-bottom:20px}
 .org-heading p{max-width:72ch;margin:6px 0}
-.org-heading .eyebrow{margin:0}
+.org-directory .org-heading>p{font-size:16px;line-height:1.8;color:var(--muted)}
+.org-heading .page-context{margin:0}
 
 /* Directory */
 .org-search{display:flex;gap:10px;margin:0 0 16px;max-width:760px}
@@ -13,7 +13,7 @@
 .org-jumps{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:.9rem;padding:4px 0 18px;border-bottom:1px solid var(--line);margin-bottom:8px}
 .org-count{color:var(--muted);font-size:.9rem;margin:12px 0 0}.org-count:empty{display:none}
 .org-group{scroll-margin-top:24px;margin:28px 0 12px}
-.org-group h2{font:600 1.3rem/1.6 var(--song);margin:0;padding-bottom:8px;border-bottom:1px solid var(--silver-edge)}
+.org-group h2{font:900 var(--title-group)/1.6 var(--display);margin:0;padding-bottom:8px;border-bottom:1px solid var(--silver-edge)}
 .org-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;align-items:start;list-style:none;padding:0!important;margin:0!important}
 .org-entry{border-bottom:1px solid color-mix(in srgb,var(--line) 55%,transparent);padding:14px 0;min-width:0}
 .org-name{font-weight:550;font-size:1rem;line-height:1.6}
@@ -37,7 +37,7 @@
 .org-intro{font-size:1.1rem;line-height:1.9;margin-top:12px!important}
 .org-note{border-left:2px solid var(--silver-edge);padding:6px 14px;color:var(--muted);font-size:.9rem;line-height:1.8}
 .org-detail section{margin:28px 0}
-.org-detail h2{font:600 1.25rem/1.7 var(--song);margin:0 0 6px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.org-detail h2{font:900 var(--title-section)/1.6 var(--display);margin:0 0 6px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 .org-relations{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
 .org-relations>li{padding:12px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 50%,transparent);min-width:0}
 .org-relation-type{display:block;color:var(--muted);font-size:.78rem;margin-bottom:2px}

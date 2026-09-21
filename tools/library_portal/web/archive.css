@@ -58,6 +58,10 @@
   --s7: 48px;
   --s8: 64px;
   --focus: #f3d6a8;
+  --panel-bg: #22342f;
+  --title-page: clamp(28px,2.5vw,36px);
+  --title-section: 24px;
+  --title-group: 20px;
   --reading: #28372f;
   --reading-head: #27372f;
   --reading-side: #26372e;
@@ -561,7 +565,7 @@ details>summary::marker {
 .disclosure,.collection-summary {
   padding: 12px 18px;
   border: 1px solid var(--line);
-  background: #1c2b29;
+  background: var(--panel-bg);
 }
 main {
   position: relative;
@@ -584,14 +588,14 @@ main[data-view=home] {
 main[data-view=home]::before {
   display: none;
 }
-.catalogue-heading {
+.catalogue-heading,.org-heading {
   position: relative;
   padding: 0 0 12px;
   margin-bottom: 16px;
   max-width: 100%;
   border-bottom: 1px solid #617468;
 }
-.catalogue-heading::after {
+.catalogue-heading::after,.org-heading::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -601,15 +605,15 @@ main[data-view=home]::before {
   transform: rotate(45deg);
   background: var(--silver);
 }
-.catalogue-heading .silver-weave {
+.catalogue-heading .silver-weave,.org-heading .silver-weave {
   float: right;
   margin: 10px 0 0 24px;
   width: 90px;
   opacity: .7;
 }
-.catalogue-heading h1 {
+.catalogue-heading h1,.org-heading h1 {
   margin-bottom: 6px;
-  font-size: clamp(28px,2.5vw,36px);
+  font-size: var(--title-page);
 }
 .catalogue-heading>p {
   max-width: 58em;
@@ -617,7 +621,7 @@ main[data-view=home]::before {
   line-height: 1.8;
   color: var(--muted);
 }
-.catalogue-heading .page-context {
+.catalogue-heading .page-context,.org-heading .page-context,.document-context {
   font: 500 14px/1.8 var(--ui);
   color: var(--warm);
   margin-bottom: 3px;
@@ -635,13 +639,14 @@ main[data-view=home]::before {
 }
 .panel {
   position: relative;
-  background: #23352f;
+  background: var(--panel-bg);
   padding: 24px;
   border: 1px solid var(--line);
   box-shadow: none;
 }
-.section>h2,.panel>h2 {
+.section>h2,.panel>h2,.source-transcript>h2,.section>.section-head>h2 {
   margin-bottom: 16px;
+  font-size: var(--title-section);
 }
 .register-heading,.section-head {
   display: flex;
@@ -1488,7 +1493,7 @@ main[data-view=home]::before {
   border: 1px solid #576f61;
 }
 .subject-entry h2 {
-  font-size: 25px;
+  font-size: var(--title-section);
   margin: 10px 0;
 }
 .subject-entry>.icon {
@@ -1544,7 +1549,7 @@ main[data-view=home]::before {
 }
 .version-entry {
   padding: 24px;
-  background: #233630;
+  background: var(--panel-bg);
   border: 1px solid var(--line);
   position: relative;
 }
@@ -1552,7 +1557,7 @@ main[data-view=home]::before {
   align-items: flex-start;
 }
 .version-entry h2 {
-  font-size: 26px;
+  font-size: var(--title-section);
 }
 .relationship-register {
   margin: 20px 0;
@@ -1603,9 +1608,9 @@ main[data-view=home]::before {
   gap: 18px;
 }
 .audit-summary-register>div {
-  padding: 22px;
-  background: #263c31;
-  border: 1px solid #607566;
+  padding: 24px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
 }
 .audit-summary-register dt {
   font-size: 15px;
@@ -1637,7 +1642,7 @@ main[data-view=home]::before {
   align-items: flex-start;
 }
 .audit-grid h2 {
-  font-size: 24px;
+  font-size: var(--title-section);
 }
 .audit-grid p {
   font-size: 16px;
@@ -1745,11 +1750,6 @@ main[data-view=home]::before {
   padding-right: 86px;
   margin-bottom: 10px;
   line-height: 1.5;
-}
-.document-context {
-  color: var(--warm);
-  font-size: 14px;
-  margin-bottom: 6px;
 }
 .document-info-row {
   display: flex;
@@ -2030,12 +2030,12 @@ main[data-view=home]::before {
 .provenance-record,.source-relations {
   position: relative;
   padding: 24px;
-  background: #22322f;
-  border: 1px solid #53695f;
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
   min-width: 0;
 }
 .provenance-record h2,.source-relations h2 {
-  font-size: 25px;
+  font-size: var(--title-section);
   margin-bottom: 14px;
 }
 .provenance-record dl {
@@ -2445,10 +2445,10 @@ main[data-view=maintenance]>.document-header {
   main {
     padding-top: 24px;
   }
-  .catalogue-heading h1 {
+  .catalogue-heading h1,.org-heading h1 {
     font-size: 32px;
   }
-  .catalogue-heading .silver-weave {
+  .catalogue-heading .silver-weave,.org-heading .silver-weave {
     width: 85px;
   }
   .catalogue-heading>p {
@@ -2657,14 +2657,14 @@ main[data-view=maintenance]>.document-header {
   .topic-portal h4 {
     font-size: 24px;
   }
-  .catalogue-heading .silver-weave {
+  .catalogue-heading .silver-weave,.org-heading .silver-weave {
     float: right;
     margin: 9px 0 0 12px;
     width: 66px;
     display: none;
     height: 18px;
   }
-  .catalogue-heading h1 {
+  .catalogue-heading h1,.org-heading h1 {
     font-size: 28px;
   }
   .catalogue-heading>p {
