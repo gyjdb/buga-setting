@@ -3,8 +3,7 @@
 // Presentation-only components. All status and relationship values come from the index.
 function silverWeave() { return silverOrnament(); }
 function prototypeStatusLabel(status) {
-  const names = { CANDIDATE: "候选材料", REFERENCE: "参考材料" };
-  return names[status] || labels[status] || status;
+  return labels[status] || status;
 }
 function pageHeading(title, description, context = "") {
   return `<header class="catalogue-heading">${silverWeave()}${context ? `<p class="page-context">${esc(context)}</p>` : ""}<h1>${esc(title)}</h1><p>${esc(description)}</p></header>`;
@@ -23,7 +22,7 @@ function historicalContext(doc) {
 }
 function browseContext(params) {
   const status = params.get("status"), topic = params.get("topic"), institution = params.get("institution"), collection = params.get("collection");
-  const names = {CURRENT_CANON:"现行法典",SUPERSEDED:"历史与来源",AUTHOR_CANON:"作者最高依据",CANDIDATE:"原整编候选",PROPOSAL:"提案",UNRESOLVED:"待决材料",REFERENCE:"参考文献",DELEGATED_DESIGN:"授权设计"};
+  const names = {CURRENT_CANON:"现行法典",SUPERSEDED:"历史与来源",AUTHOR_CANON:"作者设定",CANDIDATE:"整编底稿",PROPOSAL:"提案",UNRESOLVED:"待决材料",REFERENCE:"参考材料",DELEGATED_DESIGN:"授权设计"};
   let title = "全部馆藏", description = "按主题、机构与文件状态检索。多个关键词以空格分隔，匹配同时包含这些词的文件。", context = "", back = "";
   if (params.has("directory")) { title = "完整源文件目录"; description = "按原有路径浏览全部入藏文件，含项目资料、来源材料与工具文件。"; context = "项目资料 / 源文件索引"; }
   if (collection) { title = index.collections[collection] || collection; description = "依原目录归集，文件状态与权威仍以各自记录为准。"; context = ["00_PROJECT","90_AUDIT"].includes(collection) ? "项目编校资料" : "目录馆藏"; }
@@ -51,11 +50,11 @@ function catalogueRegister(type) {
   }).join("")}</div>`;
 }
 function versionRegister(group) {
-  return `<dl class="relationship-register">${[["现行正文",group.current],["原整编候选",group.candidate],["修订记录",group.changelog],["关系依据",group.evidence]].map(([label,id])=>`<div><dt>${label}</dt><dd>${linkDoc(id)}${byId.has(id) ? `<span class="relation-details">${archiveStatus(byId.get(id))}<span>${esc(byId.get(id).version)}</span></span>` : ""}</dd></div>`).join("")}</dl>`;
+  return `<dl class="relationship-register">${[["现行正文",group.current],["整编底稿",group.candidate],["修订记录",group.changelog],["对应依据",group.evidence]].map(([label,id])=>`<div><dt>${label}</dt><dd>${linkDoc(id)}${byId.has(id) ? `<span class="relation-details">${archiveStatus(byId.get(id))}${byId.get(id).version && byId.get(id).version !== "未标注" ? `<span>${esc(byId.get(id).version)}</span>` : ""}</span>` : ""}</dd></div>`).join("")}</dl>`;
 }
 function versionPage() {
   document.title = "版本与关系 / " + index.title;
-  main.innerHTML = pageHeading("版本与关系","依现行 Canon 清单展示现行正文、原整编候选和变更记录。保留来源关系，不据版本号或日期推断先后。") + `<nav class="record-links" aria-label="版本登记依据">${docLink("00_PROJECT/VERSION_LEDGER.md","版本沿革登记")}${docLink("00_PROJECT/CANDIDATE_CANON_INDEX.md","原候选 Canon 索引")}<a href="#/browse?status=SUPERSEDED">已替代正文</a></nav><p class="catalogue-note">共 ${index.versionSets.length} 组有清单依据的对应关系。原整编候选用于历史追溯，不表示较新的待晋升版本。</p><div class="version-register">${index.versionSets.map(group=>{const doc = byId.get(group.current); return `<section class="version-entry"><div class="register-heading"><h2>${esc(doc?.title || "未提供标题")}</h2>${doc?.alias ? `<span class="catalogue-note">来源编号 ${esc(doc.alias)}</span>` : ""}</div>${versionRegister(group)}${doc ? `<a class="version-provenance" href="#/provenance/${doc.id}">查阅同文系分支与原文引用</a>` : ""}</section>`;}).join("") || emptyState("暂无对应组","请查阅已有版本沿革登记。")}</div>`;
+  main.innerHTML = pageHeading("版本与关系","依现行文献清单列出现行正文、整编底稿和修订记录。只记录对应关系，不据版本号或日期推断先后。") + `<nav class="record-links" aria-label="版本登记依据">${docLink("00_PROJECT/VERSION_LEDGER.md","版本沿革登记")}${docLink("00_PROJECT/CANDIDATE_CANON_INDEX.md","原候选 Canon 索引")}<a href="#/browse?status=SUPERSEDED">已替代正文</a></nav><p class="catalogue-note">共 ${index.versionSets.length} 组有清单依据的对应关系。整编底稿保留供追查来源，不是较新的待定版本。</p><div class="version-register">${index.versionSets.map(group=>{const doc = byId.get(group.current); return `<section class="version-entry"><div class="register-heading"><h2>${esc(doc?.title || "未提供标题")}</h2>${doc?.alias ? `<span class="catalogue-note">馆藏编号 ${esc(doc.alias)}</span>` : ""}</div>${versionRegister(group)}${doc ? `<a class="version-provenance" href="#/provenance/${doc.id}">查阅同文系分支与原文引用</a>` : ""}</section>`;}).join("") || emptyState("暂无对应组","请查阅已有版本沿革登记。")}</div>`;
 }
 function archiveStatus(doc) {
   return `<span class="archive-status archive-status--${esc(doc.status)}" title="${esc(doc.status)}"><span class="status-mark" aria-hidden="true"></span>${esc(prototypeStatusLabel(doc.status))}</span>`;
@@ -68,7 +67,7 @@ function prototypeDocumentRow(doc, query = "", snippet = "") {
   const historical = historicalContext(doc);
   return `<article class="document-row${historical ? " document-row--archive" : ""}" data-document="${doc.id}">
     <div class="document-row-heading"><a class="document-row-title" href="#/doc/${doc.id}">${highlight(displayTitle(doc), query)}</a>${archiveStatus(doc)}</div>
-    <div class="document-row-meta"><span>${esc(doc.category)}</span><span>${esc(doc.version)}</span>${doc.alias ? `<span>来源编号 ${esc(doc.alias)}</span>` : ""}${maintenanceContext(doc) ? '<span class="context-label">项目编校资料</span>' : ""}<a class="row-provenance" href="#/provenance/${doc.id}">来源与沿革</a><details class="row-source"><summary>原始文件</summary><p>${esc(doc.path)}</p></details></div>
+    <div class="document-row-meta"><span>${esc(doc.category)}</span><span>${esc(doc.version)}</span>${doc.alias ? `<span>馆藏编号 ${esc(doc.alias)}</span>` : ""}${maintenanceContext(doc) ? '<span class="context-label">项目编校资料</span>' : ""}<a class="row-provenance" href="#/provenance/${doc.id}">来源与沿革</a><details class="row-source"><summary>原始文件</summary><p>${esc(doc.path)}</p></details></div>
     ${snippet || (doc.status === "CURRENT_CANON" && ARCHIVE_GUIDES[doc.alias]) ? `<p class="document-row-excerpt">${highlight(snippet ? snippet.replace(/(^|\s)#{1,6}\s/g, "$1") : ARCHIVE_GUIDES[doc.alias], query)}</p>` : ""}
   </article>`;
 }
@@ -81,7 +80,7 @@ function prototypeHome() {
     <section class="canon-selection" aria-labelledby="canon-heading"><div class="register-heading"><h2 id="canon-heading">现行法典</h2><a href="${browseUrl({ status: "CURRENT_CANON" })}">查阅全部 ${canon.length} 份</a></div><div class="document-register">${featured.map((d) => prototypeDocumentRow(d)).join("")}</div></section>
     <div class="home-indices"><section aria-labelledby="topic-heading"><div class="register-heading"><h2 id="topic-heading">主题总目</h2><a href="#/topics">全部主题</a></div><ul class="index-register">${worldTopics.map((t) => `<li><a href="${browseUrl({ topic: t })}">${esc(t)}</a></li>`).join("")}</ul></section>
     <section aria-labelledby="institution-heading"><div class="register-heading"><h2 id="institution-heading">机构总目</h2><a href="#/institutions">全部机构</a></div><ul class="institution-register">${index.institutions.map((t) => `<li><a href="${browseUrl({ institution: t })}">${esc(t)}</a></li>`).join("")}</ul><p class="catalogue-note">按文献提及关联，不表示机构隶属或文件授权。</p></section></div>
-    <section class="maintenance-strip" aria-labelledby="maintenance-heading"><div class="register-heading"><h2 id="maintenance-heading">编校与维护</h2><a href="#/audit">审计与测试</a></div><p>作者最高依据优先于现行正文；原整编候选与历史材料保留供追溯。</p><div class="maintenance-links">${docLink("00_PROJECT/AUTHOR_FOUNDATIONS_v0.1.md", "作者基础设定")}${docLink("00_PROJECT/CANON_INDEX.md", "权威与适用限制")}${linkDoc(index.audit.latest.id, "最新整编记录")}<a href="${browseUrl({ status: "UNRESOLVED" })}">待决材料</a></div><details class="collection-summary"><summary>馆藏统计与各状态入口</summary><p>索引更新 ${dateOnly(index.builtAt)}；共 ${docs.length} 份文件，含项目维护及来源材料。</p><ul>${index.statuses.map((s) => `<li><a href="${browseUrl({ status: s })}">${esc(prototypeStatusLabel(s))} <span>${index.counts[s] || 0}</span></a></li>`).join("")}</ul><a href="${browseUrl({ topic: "审计与测试" })}">审计与测试主题</a></details></section>`;
+    <section class="maintenance-strip" aria-labelledby="maintenance-heading"><div class="register-heading"><h2 id="maintenance-heading">编校与维护</h2><a href="#/audit">审计与测试</a></div><p>作者设定优先于现行正文；整编底稿与历史材料保留供查考。</p><div class="maintenance-links">${docLink("00_PROJECT/AUTHOR_FOUNDATIONS_v0.1.md", "作者基础设定")}${docLink("00_PROJECT/CANON_INDEX.md", "权威与适用限制")}${linkDoc(index.audit.latest.id, "最新整编记录")}<a href="${browseUrl({ status: "UNRESOLVED" })}">待决材料</a></div><details class="collection-summary"><summary>馆藏统计与各状态入口</summary><p>索引更新 ${dateOnly(index.builtAt)}；共 ${docs.length} 份文件，含项目维护及来源材料。</p><ul>${index.statuses.map((s) => `<li><a href="${browseUrl({ status: s })}">${esc(prototypeStatusLabel(s))} <span>${index.counts[s] || 0}</span></a></li>`).join("")}</ul><a href="${browseUrl({ topic: "审计与测试" })}">审计与测试主题</a></details></section>`;
 }
 function prototypeBrowseShell(params) {
   const status = params.get("status"), archive = status === "SUPERSEDED";
@@ -97,29 +96,36 @@ function prototypeBrowseShell(params) {
     ${params.get("path") ? `<input type="hidden" name="path" value="${esc(params.get("path"))}">` : ""}${params.has("directory") ? '<input type="hidden" name="directory" value="1">' : ""}</form><div class="results-toolbar"><span id="result-count" aria-live="polite">正在检索…</span>${activeFilters(params)}<label>排序 <select id="sort">${options([["current","现行优先"],["relevance","相关度"],["title","标题"],["modified","文件修改时间"]], params.get("sort") || (params.get("q") ? "relevance" : "current"), "默认")}</select></label></div><div id="results" class="document-register${archive ? " archive-register" : ""}"></div><div id="pagination"></div></section>`;
 }
 function documentHeader(doc, archival = false, provenance = false) {
-  return `<header class="document-header${archival ? " document-header--archive" : ""}">${silverWeave()}${archival ? `<p class="document-context">${provenance ? "来源与沿革" : "历史馆藏"}</p>` : ""}<h1>${esc(displayTitle(doc))}</h1><div class="document-info-row"><div class="document-edition">${archiveStatus(doc)}<span>${esc(doc.version)}</span>${doc.alias ? `<span>来源编号 ${esc(doc.alias)}</span>` : ""}</div><nav class="document-actions" aria-label="文献操作">${provenance ? `<a href="#/doc/${doc.id}">返回文献阅读</a><a href="#/provenance/${doc.id}?section=record">编目与来源</a>` : `<a href="#/provenance/${doc.id}">来源与版本</a><a href="#/doc/${doc.id}?section=record">编目与依据</a>`}<details class="more-actions"><summary>原件与目录</summary><div><a href="${esc(doc.rawUrl)}" download="${esc(doc.name)}">下载原始文件</a><a href="${browseUrl({ collection: doc.collection })}">同目录馆藏</a></div></details></nav></div></header>`;
+  return `<header class="document-header${archival ? " document-header--archive" : ""}">${silverWeave()}${archival ? `<p class="document-context">${provenance ? "来源与沿革" : "历史馆藏"}</p>` : ""}<h1>${esc(displayTitle(doc))}</h1><div class="document-info-row"><div class="document-edition">${archiveStatus(doc)}${doc.version && doc.version !== "未标注" ? `<span>${esc(doc.version)}</span>` : ""}${doc.alias ? `<span>馆藏编号 ${esc(doc.alias)}</span>` : ""}</div><nav class="document-actions" aria-label="文献操作">${provenance ? `<a href="#/doc/${doc.id}">返回文献阅读</a><a href="#/provenance/${doc.id}?section=record">文献信息</a>` : `<a href="#/provenance/${doc.id}">版本沿革</a><a href="#/doc/${doc.id}?section=record">文献信息</a>`}<details class="more-actions"><summary>原件下载</summary><div><a href="${esc(doc.rawUrl)}" download="${esc(doc.name)}">下载原始文件</a><a href="${browseUrl({ collection: doc.collection })}">同目录馆藏</a></div></details></nav></div></header>`;
 }
 function documentNotice(doc) {
-  if (doc.path.includes("previous_chatgpt_ready/")) return "历史审计副本，保留当时结论；不能覆盖项目总卷中的更新决定。";
-  if (doc.status === "CURRENT_CANON") return "现行正文以 Current Canon 清单为依据，受作者最高依据与明确决定约束。";
-  if (doc.status === "CANDIDATE") return "原整编候选，保留供追溯批准与修订过程；不表示较新的待晋升版本。";
-  if (doc.status === "SUPERSEDED") return "此正文已被替代，仅供历史查证；请核对有依据的现行版本。";
-  if (doc.status === "AUTHOR_CANON") return "作者最高依据；适用范围与保留边界以原文明确决定为准。";
-  if (doc.status === "DELEGATED_DESIGN") return "授权设计材料，受作者决定与原文明确的授权边界约束。";
-  if (doc.status === "PROPOSAL") return "提案材料；不作为已确立的现行正文使用。";
-  if (doc.status === "UNRESOLVED") return "待决材料；未决事项及适用限制保留在原文与来源记录中。";
-  return "文件状态、来源及权威按原始记录展示，关联不表示机构隶属。";
+  if (doc.path.includes("previous_chatgpt_ready/")) return "这是一份早期的审计副本，保留当时的结论；之后的决定以项目总卷为准。";
+  if (doc.status === "CURRENT_CANON") return "现行正文收入核定的现行文献清单，是当前有效的设定文本。";
+  if (doc.status === "CANDIDATE") return "这是整理成现行正文之前的原始底稿，保留下来是为了追查条文的来源。它不是更新的草案，也不会自动成为现行正文。";
+  if (doc.status === "SUPERSEDED") return "这是一份旧版正文，已由现行正文取代，保留供查考。引用时请以现行正文为准。";
+  if (doc.status === "AUTHOR_CANON") return "这是作者直接给出的设定，效力高于现行正文。适用范围以原文所写为准。";
+  if (doc.status === "DELEGATED_DESIGN") return "这是作者授权代为设计的材料，在授权范围内有效，范围以原文所写为准。";
+  if (doc.status === "PROPOSAL") return "这是一份提案，尚未采纳，不属于现行设定。";
+  if (doc.status === "UNRESOLVED") return "这份材料涉及尚未决定的问题，其中的内容暂不作为设定使用。具体待决事项见正文。";
+  if (doc.status === "REFERENCE") return "这是参考材料，用于理解背景或整理过程，本身不构成设定。";
+  return "文件状态与来源按原始记录展示。";
 }
+const readableBasis = (value) => value === "highest" ? "最高效力（作者设定）" : value && value.replace(/CURRENT_CANON_MANIFEST(\.json)?/g, "现行文献清单").replace("路径与SHA256核验", "已核对文件指纹");
 function documentMetadata(doc, side = false) {
-  const fields = [["原始文件名",doc.name],["分类",doc.category],["文件状态",doc.status],["版本",doc.version],["来源",doc.source],["权威依据",doc.authority],["状态依据",doc.statusBasis],["文档声明日期",dateOnly(doc.date)],["文件修改时间",dateOnly(doc.modified)+"（仅文件系统）"],["来源编号",[doc.sourceId,doc.alias].filter(Boolean).join(" / ") || "未标注"]];
-  return `<${side ? "aside" : "section"} class="provenance-record${side ? " provenance-sidebar" : ""}" id="source-record"><h2>编目与来源</h2><dl>${fields.map(([label,value])=>`<div><dt>${label}</dt><dd>${esc(value || "未标注")}</dd></div>`).join("")}</dl><p class="provenance-date-note">日期为项目编目记录，不作为世界内颁布日期。</p><details class="record-integrity"><summary>路径与完整性信息</summary><p>${esc(doc.path)}</p><p>SHA256：<code>${esc(doc.sha256)}</code></p><p>${doc.size.toLocaleString()} bytes；${esc(doc.encoding || "二进制 / 未识别")}</p><p>${esc(doc.note || "未提供额外来源说明。")}</p></details></${side ? "aside" : "section"}>`;
+  const current = doc.status === "CURRENT_CANON", previous = doc.source && docAt(doc.source);
+  const fields = [["原始文件名",esc(doc.name)],["分类",esc(doc.category)],["状态",esc(prototypeStatusLabel(doc.status))],["版本",esc(doc.version)],[current ? "上一版" : "来源",previous ? `${linkDoc(previous.id)} ${esc(previous.version)}` : esc(doc.source)],[current ? "修订依据" : "适用依据",esc(readableBasis(doc.authority))],["收录依据",esc(readableBasis(doc.statusBasis))],[current ? "核定日期" : "声明日期",doc.date ? esc(dateOnly(doc.date)) : ""],["馆藏编号",esc([doc.sourceId,doc.alias].filter(Boolean).join(" / "))]];
+  return `<${side ? "aside" : "section"} class="provenance-record${side ? " provenance-sidebar" : ""}" id="source-record"><h2>文献信息</h2><dl>${fields.map(([label,value])=>`<div><dt>${label}</dt><dd>${value || "未标注"}</dd></div>`).join("")}</dl><p class="provenance-date-note">日期为项目编目记录，不作为世界内颁布日期。</p><details class="record-integrity"><summary>路径与完整性信息</summary><p>${esc(doc.path)}</p><p>SHA256：<code>${esc(doc.sha256)}</code></p><p>${doc.size.toLocaleString()} bytes；${esc(doc.encoding || "二进制 / 未识别")}</p><p>文件修改时间：${esc(dateOnly(doc.modified))}（仅文件系统）</p><p>${esc(doc.note || "未提供额外来源说明。")}</p></details></${side ? "aside" : "section"}>`;
+}
+function currentNotice(doc, relation) {
+  const older = relation.family.filter((id) => byId.get(id)?.status === "SUPERSEDED").length;
+  return `这是${esc(displayTitle(doc))}的现行正文（${esc(doc.version)}）${doc.date ? `，收入 ${esc(dateOnly(doc.date))} 核定的现行文献清单` : ""}。${older ? ` <a href="#/provenance/${doc.id}">对照旧版（${older} 份）</a>` : ""}`;
 }
 function structuredRelations(doc, relation) {
   const group = relation.versionSet;
-  return `<section class="source-relations"><h2>来源与版本记录</h2>${group ? `${versionRegister(group)}<p class="catalogue-note">原候选为历史来源，变更记录为编校材料；此处不表示版本先后流程。</p>` : '<p class="catalogue-note">清单未为此文件指定现行版、原候选与变更记录的对应组。</p>'}
-    <details class="related-files"><summary>同文系文件与分支 <span>${relation.family.length}</span></summary><p class="catalogue-note">按既有文系记录展示，不据版本号、目录或修改时间推定先后与现行性。</p><ul>${relation.family.map(id=>`<li>${linkDoc(id)} ${byId.has(id) ? archiveStatus(byId.get(id)) : ""}</li>`).join("") || '<li>暂无记录</li>'}</ul></details>
-    <details class="related-files"><summary>原文链接与反向引用 <span>${relation.links.length + relation.backlinks.length}</span></summary><h3>原文链接</h3>${relationLinks(relation.links)}<h3>引用本文件</h3>${relationLinks(relation.backlinks)}</details>
-    ${relation.missing.length ? `<details class="related-files"><summary>尚未定位的原文引用 <span>${relation.missing.length}</span></summary><p>保留原始引用，不猜测链接到同名档案。</p><ul>${[...new Set(relation.missing)].map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>` : ""}</section>`;
+  return `<section class="source-relations"><h2>版本沿革</h2>${group ? `${versionRegister(group)}<p class="catalogue-note">底稿和修订记录保留供查考；这里列出的是对应关系，不代表先后顺序。</p>` : '<p class="catalogue-note">清单未为此文件指定现行版、原候选与变更记录的对应组。</p>'}
+    <details class="related-files"><summary>同一文献的其他版本 <span>${relation.family.length}</span></summary><p class="catalogue-note">按整理记录列出；版本号和修改时间不代表先后，是否现行以状态标记为准。</p><ul>${relation.family.map(id=>`<li>${linkDoc(id)} ${byId.has(id) ? archiveStatus(byId.get(id)) : ""}</li>`).join("") || '<li>暂无记录</li>'}</ul></details>
+    <details class="related-files"><summary>本文引用与被引用 <span>${relation.links.length + relation.backlinks.length}</span></summary><h3>本文引用</h3>${relationLinks(relation.links)}<h3>引用本文件</h3>${relationLinks(relation.backlinks)}</details>
+    ${relation.missing.length ? `<details class="related-files"><summary>未能找到的引用 <span>${relation.missing.length}</span></summary><p>保留原始引用，不猜测链接到同名档案。</p><ul>${[...new Set(relation.missing)].map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>` : ""}</section>`;
 }
 async function prototypeDetail(doc, params, serial, provenance = false) {
   const archival = provenance || historicalContext(doc);
@@ -131,9 +137,9 @@ async function prototypeDetail(doc, params, serial, provenance = false) {
   const toc = '<details class="reader-contents"><summary>本页目录</summary><nav id="toc" aria-label="本页目录"></nav></details>';
   const body = `<article class="article document-body" id="document-content" aria-label="文件正文"><p class="loading">正在读取正文…</p></article>`;
   main.innerHTML = `<nav class="document-breadcrumb" aria-label="面包屑">${archiveReturnToResults()}<a href="#/home">档案馆</a><span>/</span><a href="${browseUrl({status:doc.status})}">${esc(prototypeStatusLabel(doc.status))}</a><span>/</span><span>${provenance ? "来源与沿革" : "文献阅读"}</span></nav>${documentHeader(doc,archival,provenance)}
-    <div class="document-notice">${maintenanceContext(doc) ? '<span class="context-label">项目编校资料</span> ' : ""}${esc(documentNotice(doc))} ${currentLink}${doc.note ? `<p class="source-limitation"><strong>来源说明：</strong>${esc(doc.note)}</p>` : ""}${doc.authority && !["CURRENT_CANON","SUPERSEDED","REFERENCE"].includes(doc.status) ? `<p class="source-limitation"><strong>权威与适用依据：</strong>${esc(doc.authority)}</p>` : ""}</div>
+    <div class="document-notice">${maintenanceContext(doc) ? '<span class="context-label">项目编校资料</span> ' : ""}${doc.status === "CURRENT_CANON" ? currentNotice(doc, relation) : esc(documentNotice(doc))} ${currentLink}${doc.note ? `<p class="source-limitation"><strong>来源说明：</strong>${esc(doc.note)}</p>` : ""}${doc.authority && doc.authority !== "highest" && !["CURRENT_CANON","SUPERSEDED","REFERENCE"].includes(doc.status) ? `<p class="source-limitation"><strong>适用依据：</strong>${esc(readableBasis(doc.authority))}</p>` : ""}</div>
     ${provenance ? `<div class="provenance-layout">${structuredRelations(doc,relation)}${documentMetadata(doc,true)}<section class="source-transcript"><h2>原文</h2>${toc}${body}</section></div>` : `<div class="reader-layout"><div class="reader-main">${toc}${body}</div></div><div class="document-records">${documentMetadata(doc)}${structuredRelations(doc,relation)}</div>`}
-    <section class="document-associations"><h2>索引关联</h2><p>主题：${doc.topics.map(t=>`<a href="${browseUrl({topic:t})}">${esc(t)}</a>`).join("、") || "未归类"}</p><p>关联机构：${doc.institutions.map(t=>`<a href="${browseUrl({institution:t})}">${esc(t)}</a>`).join("、") || "未识别到名称提及"}</p><p class="catalogue-note">机构依据文本提及关联，不代表机构隶属或文件授权。</p></section>`;
+    <section class="document-associations"><h2>索引关联</h2><p>主题：${doc.topics.map(t=>`<a href="${browseUrl({topic:t})}">${esc(t)}</a>`).join("、") || "未归类"}</p><p>关联机构：${doc.institutions.map(t=>`<a href="${browseUrl({institution:t})}">${esc(t)}</a>`).join("、") || "未识别到名称提及"}</p><p class="catalogue-note">这里列出正文中提到的机构，不代表隶属或授权关系。</p></section>`;
   const response = await fetch("docs/" + doc.id + ".json");
   if (!response.ok) throw new Error("正文读取失败（"+response.status+"）");
   const content = await response.json();

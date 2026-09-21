@@ -6,7 +6,7 @@ const ARCHIVE_GUIDES = {
   K20:'查阅魔力取用、环级认定、施法许可与禁制，以及相关公共秩序。',
   K29:'从知识收存、分层与移交，了解典藏记录的保管与查阅。'
 };
-// 依《银色联盟宪章》第二条的规范层级编排现行文献；未列入的来源编号归入“其他现行文献”。
+// 依《银色联盟宪章》第二条的规范层级编排现行文献；未列入的馆藏编号归入“其他现行文献”。
 const CANON_LEVELS = [
   ['法律',[['基本法',['K20','K18']],['组织法',['K14','K25','K26']],['章程',['K28','K29','K27','K24']]]],
   ['实施规范',[['组织架构',['K10','K19','K23','K11']],['规程与标准',['K15','K21','K13']]]]
@@ -40,7 +40,7 @@ function displayTitle(doc){
   const names={
     'CURRENT_CANON_MANIFEST.json':'现行文献清单',
     'VERSION_LEDGER.md':'版本沿革登记',
-    'CANDIDATE_CANON_INDEX.md':'原整编候选索引',
+    'CANDIDATE_CANON_INDEX.md':'整编底稿索引',
     'PROJECT_INDEX.md':'项目总卷索引',
     'CANON_INDEX.md':'权威与适用限制',
     'AUTHOR_FOUNDATIONS_v0.1.md':'作者基础设定',
@@ -48,7 +48,8 @@ function displayTitle(doc){
   };
   if(names[doc.name])return names[doc.name];
   if(doc.kind==='changelog'){
-    const group=index.versionSets.find(g=>g.changelog===doc.id),current=byId.get(group?.current);
+    // A shared changelog (one file for a whole revision round) keeps its own title.
+    const groups=index.versionSets.filter(g=>g.changelog===doc.id),current=groups.length===1&&byId.get(groups[0].current);
     if(current)return current.title+' · 修订记录';
   }
   return doc.title;
@@ -106,7 +107,7 @@ async function archiveHome(serial){
   const parsed=new DOMParser().parseFromString(texts[0].html,'text/html');
   const second=[...parsed.querySelectorAll('h3')].find(h=>h.textContent.startsWith('第二条'));
   const excerpt=second?.nextElementSibling?.textContent.match(/^.*?[。；]/)?.[0]||'';
-  const record=d=>`<div class="item-meta">${archiveStatus(d)}<span>${esc(d.version)}</span><span>来源编号 ${esc(d.alias)}</span></div>`;
+  const record=d=>`<div class="item-meta">${archiveStatus(d)}<span>${esc(d.version)}</span><span>馆藏编号 ${esc(d.alias)}</span></div>`;
   const byAlias=new Map(canon.map(d=>[d.alias,d])),placed=new Set(['K12']);
   const levels=CANON_LEVELS.map(([level,groups])=>[level,groups.map(([name,aliases])=>[name,aliases.map(a=>byAlias.get(a)).filter(Boolean)]).filter(([,list])=>list.length)]).filter(([,groups])=>groups.length);
   levels.forEach(([,groups])=>groups.forEach(([,list])=>list.forEach(d=>placed.add(d.alias))));
@@ -120,7 +121,7 @@ async function archiveHome(serial){
     <section class="home-explore" aria-labelledby="explore-title">${homeHeading('explore-title','探索馆藏')}
     <div class="explore-group"><div class="explore-head"><h3>按主题</h3><a class="text-link" href="#/topics">主题总目${archiveIcon('arrow')}</a></div><div class="topic-portals">${index.topics.filter(t=>t!=='审计与测试').map(t=>`<article class="topic-portal">${archiveIcon(topicIcon(t))}<h4><a href="${browseUrl({topic:t,status:'CURRENT_CANON'})}">${esc(t)}</a></h4><p>${esc(TOPIC_GUIDES[t]||'按主题查阅现有文献。')}</p><small>${canon.filter(d=>d.topics.includes(t)).length} 份现行文献</small></article>`).join('')}</div></div>
     ${institutionRegistry?.institutions?`<div class="explore-group"><div class="explore-head"><h3>按机构</h3><a class="text-link" href="#/institutions">机构总目${archiveIcon('arrow')}</a></div><ul class="institution-portals">${orgSections().map(sec=>[sec,institutionRegistry.institutions.filter(r=>r.status==='current'&&r.kind!=='设施'&&orgSectionOf(r.category)===sec.id).length]).filter(([,n])=>n).map(([sec,n])=>`<li><a href="${esc(orgDirectoryUrl({group:sec.id}))}">${esc(sec.name)}</a><small>${n} 个现行机构</small></li>`).join('')}</ul></div>`:''}</section>
-    <section class="home-maintenance" aria-labelledby="maintenance-title"><h2 id="maintenance-title">来源与编校</h2><p class="catalogue-note">现行正文以清单为依据，受作者最高依据与明确决定约束；原整编候选与修订记录保留供回查。</p><nav class="maintenance-links" aria-label="来源与编校">${docLink('00_PROJECT/CANON_INDEX.md','权威与适用限制')}<a href="#/provenance/${charter.id}">宪章来源</a><a href="#/versions">版本与关系</a>${docLink('00_PROJECT/AUTHOR_FOUNDATIONS_v0.1.md','作者基础设定')}<a href="#/browse?status=CANDIDATE">原整编候选</a><a href="#/browse?status=PROPOSAL">提案</a><a href="#/browse?status=UNRESOLVED">待决材料</a><a href="#/audit">审计与测试</a></nav><details class="collection-summary"><summary>馆藏统计与索引信息</summary><p>索引更新 ${dateOnly(index.builtAt)}；共 ${docs.length} 份文件，包含项目资料与历史来源。</p><ul>${index.statuses.map(s=>`<li><a href="${browseUrl({status:s})}">${esc(prototypeStatusLabel(s))}<span>${index.counts[s]||0}</span></a></li>`).join('')}</ul></details></section></div>`;
+    <section class="home-maintenance" aria-labelledby="maintenance-title"><h2 id="maintenance-title">来源与编校</h2><p class="catalogue-note">现行正文以核定的现行文献清单为准；整编底稿与修订记录保留供查考。</p><nav class="maintenance-links" aria-label="来源与编校">${docLink('00_PROJECT/CANON_INDEX.md','权威与适用限制')}<a href="#/provenance/${charter.id}">宪章来源</a><a href="#/versions">版本与关系</a>${docLink('00_PROJECT/AUTHOR_FOUNDATIONS_v0.1.md','作者基础设定')}<a href="#/browse?status=CANDIDATE">整编底稿</a><a href="#/browse?status=PROPOSAL">提案</a><a href="#/browse?status=UNRESOLVED">待决材料</a><a href="#/audit">审计与测试</a></nav><details class="collection-summary"><summary>馆藏统计与索引信息</summary><p>索引更新 ${dateOnly(index.builtAt)}；共 ${docs.length} 份文件，包含项目资料与历史来源。</p><ul>${index.statuses.map(s=>`<li><a href="${browseUrl({status:s})}">${esc(prototypeStatusLabel(s))}<span>${index.counts[s]||0}</span></a></li>`).join('')}</ul></details></section></div>`;
   main.querySelector('.hero-search').addEventListener('submit',e=>{e.preventDefault();const q=main.querySelector('#hero-query').value.trim();if(q)location.hash='/browse?'+new URLSearchParams({q});});
 }
 function guideSection(guide,text){
