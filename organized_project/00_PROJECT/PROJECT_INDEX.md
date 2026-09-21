@@ -1,3 +1,7 @@
+# 最新阅读入口：第三版正文（D65）
+
+[现行正文索引](CANON_INDEX.md) · [D65 作者决定](AUTHOR_DECISIONS_2026-09-21.md) · [第三版修订记录](../90_AUDIT/revision_2026-09-21/V3_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
 # 最新阅读入口：D64文体修订版
 
 [当前Canon](CANON_INDEX.md) · [修订报告](IN_WORLD_REGISTER_REPORT.md) · [设定迁出队列](LORE_RELOCATION_QUEUE.md) · [当前机器清单](CURRENT_CANON_MANIFEST.json)
