@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="布加设定项目的文献阅读与检索门户：银色联盟现行法典、作者设定、候选整编与审计档案。"
+      content="布加设定项目的本地文档门户：银色联盟现行法典、作者设定、候选整编与审计档案。"
     />
     <meta
       http-equiv="Content-Security-Policy"
@@ -34,6 +34,7 @@
         <a href="#/home" data-nav="home"
           >档案馆首页</a
         >
+        <a href="#/guide" data-nav="guide">设定导读</a>
         <a href="#/browse?status=CURRENT_CANON" data-nav="canon">现行法典</a>
         <a href="#/browse" data-nav="browse"
           >全部馆藏</a
@@ -57,11 +58,11 @@
         <a href="#/browse?status=UNRESOLVED" data-nav="unresolved">待决材料</a>
         <a href="#/audit" data-nav="audit">审计与测试</a>
         <a href="#/browse?collection=00_PROJECT" data-nav="project">项目总卷</a>
-        <a href="#/browse?directory=1" data-nav="directory">公开源文件目录</a>
+        <a href="#/browse?directory=1" data-nav="directory">完整源文件目录</a>
       </nav>
       </div>
       <div class="sidebar-bottom">
-        <span class="archive-rule"></span><strong>布加设定 · 公开典藏</strong>
+        <span class="archive-rule"></span><strong>布加设定 · 本地典藏</strong>
         <p>保存依据，辨明版本。</p>
         <small id="build-date">正在读取馆藏索引</small>
       </div>
@@ -93,9 +94,9 @@
         <div class="loading">正在读取馆藏索引…</div>
       </main>
       <footer>
-        <span class="footer-name">白塔档案馆</span><p>本公开版不含原始聊天导出与本地工具资料；部分原始引用仅在本地保留。<a href="https://github.com/gyjdb/buga-setting/blob/main/docs/PUBLICATION.md">公开范围与来源说明</a> · <a href="https://github.com/gyjdb/buga-setting">GitHub / MIT</a></p><nav aria-label="页脚导航"><a href="#/browse">全部馆藏</a><a href="#/versions">版本与关系</a><a href="#/browse?collection=00_PROJECT">项目总卷</a><a href="#/browse?directory=1">公开源文件目录</a></nav><p>银色联盟法典库 · 非官方衍生设定。环境与书籍插画为概念演绎，不代表已确认的建筑、徽章或历史事件。</p>
+        <span class="footer-name">白塔档案馆</span><nav aria-label="页脚导航"><a href="#/browse">全部馆藏</a><a href="#/versions">版本与关系</a><a href="#/browse?collection=00_PROJECT">项目总卷</a><a href="#/browse?directory=1">完整源文件目录</a></nav><p>银色联盟法典库 · 本地阅读，来源可溯。环境与书籍插画为概念演绎，不代表已确认的建筑、徽章或历史事件。</p>
       </footer>
     </div>
-    <noscript>请启用 JavaScript 以检索与阅读。源码及原件也可在 GitHub 仓库查看。</noscript>
+    <noscript>请启用 JavaScript，并按 README 使用本地 HTTP 服务访问。</noscript>
   </body>
 </html>

@@ -35,6 +35,7 @@ const linkDoc = (id, text) =>
     : esc(text || "未提供");
 const docAt = (path) => docs.find((d) => d.path === path);
 const docLink = (path, label) => linkDoc(docAt(path)?.id, label);
+const GUIDE_PATH = "07_WORLD_GUIDE/布加风土志.md";
 const browseUrl = (params) => "#/browse?" + new URLSearchParams(params);
 const dateOnly = (value) => (value ? value.slice(0, 10) : "未标注");
 function heading(kicker, title, desc = "") {
@@ -356,6 +357,11 @@ async function route() {
   const page = parts[0] || "home";
   const params = new URLSearchParams(query);
   const targetDoc = byId.get(parts[1]);
+  if (page === "guide") {
+    const guide = docAt(GUIDE_PATH);
+    location.replace(guide ? "#/doc/" + guide.id : browseUrl({ collection: "07_WORLD_GUIDE" }));
+    return;
+  }
   if (archiveWithinReader(page, targetDoc, params)) return;
   archiveEnter(page);
   delete main.dataset.readerId;
@@ -365,8 +371,8 @@ async function route() {
   let activeNav = page;
   if (page === "provenance") activeNav = "archive";
   else if (page === "institution") activeNav = "institutions";
-  else if (page === "doc") activeNav = navByStatus[targetDoc?.status] || (targetDoc?.collection === "90_AUDIT" ? "audit" : targetDoc?.collection === "00_PROJECT" ? "project" : "browse");
-  else if (page === "browse") activeNav = params.has("directory") || params.has("path") ? "directory" : params.get("topic") ? "topics" : params.get("institution") ? "institutions" : params.get("collection") === "00_PROJECT" ? "project" : params.get("collection") === "90_AUDIT" ? "audit" : navByStatus[params.get("status")] || "browse";
+  else if (page === "doc") activeNav = navByStatus[targetDoc?.status] || (targetDoc?.collection === "07_WORLD_GUIDE" ? "guide" : targetDoc?.collection === "90_AUDIT" ? "audit" : targetDoc?.collection === "00_PROJECT" ? "project" : "browse");
+  else if (page === "browse") activeNav = params.has("directory") || params.has("path") ? "directory" : params.get("topic") ? "topics" : params.get("institution") ? "institutions" : params.get("collection") === "07_WORLD_GUIDE" ? "guide" : params.get("collection") === "00_PROJECT" ? "project" : params.get("collection") === "90_AUDIT" ? "audit" : navByStatus[params.get("status")] || "browse";
   document.querySelectorAll("[data-nav]").forEach((a) => {
     const active = a.dataset.nav === activeNav;
     a.classList.toggle("active", active);

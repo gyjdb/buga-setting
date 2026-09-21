@@ -2862,3 +2862,19 @@ main[data-view=maintenance]>.document-header {
 .bt-stroke-silver {
   stroke: var(--baita-silver);
 }
+.guide-chapters {
+  list-style: none;
+  padding: 0 !important;
+  margin: 18px 0 0 !important;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 32px;
+}
+.guide-chapters li {
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent);
+  padding: 10px 0;
+  font-size: 17px;
+}
+@media (max-width: 700px) {
+  .guide-chapters { grid-template-columns: 1fr; }
+}
