@@ -11,7 +11,11 @@ function orgInScope(r,status){return status==='all'||(status==='facilities'?r.ki
 function orgDirectoryUrl(params={}){return '#/institutions'+(Object.keys(params).length?'?'+new URLSearchParams(params):'');}
 function orgReturn(value){return /^#\/institutions(?:\?|$)/.test(value||'')?value:'#/institutions';}
 function orgHref(r){return '#/institution/'+r.id;}
-function orgParent(r){return r.relations.find(e=>ORG_HIERARCHY.has(e.type));}
+function orgParent(r){return r.relations.find(e=>ORG_HIERARCHY.has(e.type))||r.relations.find(e=>e.type==='dual');}
+/* Directory sections group the browsing categories (e.g. 议会 + its directly accountable bodies). */
+function orgSections(){return institutionRegistry.sections||institutionRegistry.categories.map(c=>({id:c.id,name:c.name}));}
+const ORG_MERGED_GROUPS={police:'executive',prohibition:'executive'};
+function orgSectionOf(id){id=ORG_MERGED_GROUPS[id]||id;const c=institutionRegistry.categories.find(x=>x.id===id);return c?(c.section||c.id):id;}
 function orgContext(r){const p=orgParent(r);return p?orgMap().get(p.target)?.name:'';}
 function orgStatusBadge(r){return r.kind!=='设施'&&r.status!=='current'?`<span class="org-status">${esc(ORG_STATUS[r.status])}</span>`:'';}
 
@@ -74,24 +78,25 @@ function institutionDirectory(params){
   document.title='机构总目 · 白塔档案馆';
   const state={q:params.get('q')||'',status:params.get('status')||'current',group:params.get('group')||''};
   if(!ORG_SCOPES.some(([id])=>id===state.status))state.status='current';
-  if(!institutionRegistry.categories.some(c=>c.id===state.group))state.group='';
+  state.group=orgSectionOf(state.group);if(!orgSections().some(x=>x.id===state.group))state.group='';
   main.innerHTML=`<div class="org-directory"><header class="org-heading"><h1>机构总目</h1><p>银色联盟的议会、行政、司法、军事与学术机关。点开机构名称，可查看职责、下设单位和依据条文。</p></header><form class="org-search" role="search"><label class="sr-only" for="org-query">查找机构</label><input id="org-query" type="search" autocomplete="off" placeholder="查找机构，如：白塔、反垄断局" value="${esc(state.q)}"><label class="sr-only" for="org-scope">显示范围</label><select id="org-scope">${ORG_SCOPES.map(([id,label])=>`<option value="${id}"${id===state.status?' selected':''}>${label}</option>`).join('')}</select></form><nav class="org-jumps" aria-label="机构分组"></nav><p id="org-result-count" class="org-count" role="status" aria-live="polite"></p><div id="org-results"></div></div>`;
   function params_(){const p={};if(state.q)p.q=state.q;if(state.status!=='current')p.status=state.status;return p;}
   function render(){
     const selected=institutionRegistry.institutions.filter(r=>orgInScope(r,state.status)&&orgMatches(r,state.q));
     main.querySelector('#org-result-count').textContent=state.q?`找到 ${selected.length} 个${state.status==='facilities'?'设施':'机构'}`:'';
-    const kids=new Map();
-    for(const r of selected){const p=orgParent(r);if(p){if(!kids.has(p.target))kids.set(p.target,[]);kids.get(p.target).push(r);}}
-    const groups=institutionRegistry.categories.map(c=>[c,selected.filter(r=>r.category===c.id)]).filter(([,m])=>m.length);
+    const groups=orgSections().map(sec=>[sec,institutionRegistry.categories.filter(c=>(c.section||c.id)===sec.id).map(c=>[c,selected.filter(r=>r.category===c.id)]).filter(([,m])=>m.length)]).filter(([,cats])=>cats.length);
     main.querySelector('.org-jumps').innerHTML=groups.map(([c])=>`<a href="${esc(orgDirectoryUrl({...params_(),group:c.id}))}" data-org-group="${c.id}">${esc(c.name)}</a>`).join('');
-    main.querySelector('#org-results').innerHTML=groups.length?groups.map(([c,members])=>{
-      let body;
-      if(state.q)body=`<ul class="org-list">${members.map(orgMatchRow).join('')}</ul>`;
-      else{
-        const ids=new Set(members.map(r=>r.id));
-        const roots=members.filter(r=>{const p=orgParent(r);return !p||!ids.has(p.target);});
-        body=`<ul class="org-list">${roots.map(r=>orgRow(r,kids)).join('')}</ul>`;
-      }
+    main.querySelector('#org-results').innerHTML=groups.length?groups.map(([c,cats])=>{
+      const body=cats.map(([cat,members])=>{
+        let list;
+        if(state.q)list=members.map(orgMatchRow).join('');
+        else{
+          const ids=new Set(members.map(r=>r.id)), kids=new Map();
+          for(const r of members){const p=orgParent(r);if(p&&ids.has(p.target)){if(!kids.has(p.target))kids.set(p.target,[]);kids.get(p.target).push(r);}}
+          list=members.filter(r=>{const p=orgParent(r);return !p||!ids.has(p.target);}).map(r=>orgRow(r,kids)).join('');
+        }
+        return `${cats.length>1?`<h3 class="org-subhead">${esc(cat.name)}</h3>`:''}<ul class="org-list">${list}</ul>`;
+      }).join('');
       return `<section class="org-group" id="org-group-${c.id}" aria-labelledby="org-title-${c.id}"><h2 id="org-title-${c.id}" tabindex="-1">${esc(c.name)}</h2>${body}</section>`;
     }).join(''):`<div class="empty"><h2>没有找到匹配的机构</h2><p>可以换用正式名称、简称或别名，或者把显示范围切换为“全部条目”。</p></div>`;
   }
@@ -122,8 +127,8 @@ function institutionDetail(id){
   const incoming=institutionRegistry.institutions.flatMap(x=>x.relations.filter(e=>e.target===r.id).map(e=>({row:x,edge:e,incoming:true})));
   const outgoing=r.relations.map(e=>({row:map.get(e.target),edge:e,incoming:false})).filter(e=>e.row);
   const firstParent=orgParent(r);
-  const children=incoming.filter(e=>ORG_HIERARCHY.has(e.edge.type)).map(e=>e.row);
-  const others=[...outgoing.filter(e=>e.edge!==firstParent),...incoming.filter(e=>!ORG_HIERARCHY.has(e.edge.type))];
+  const children=institutionRegistry.institutions.filter(x=>orgParent(x)?.target===r.id);
+  const others=[...outgoing.filter(e=>e.edge!==firstParent),...incoming.filter(e=>!ORG_HIERARCHY.has(e.edge.type)&&orgParent(e.row)!==e.edge)];
   const seen=new Set(), sources=r.sources.filter(s=>{const k=s.docId+':'+s.anchor;if(seen.has(k))return false;seen.add(k);return true;});
   const unitKids=new Map(institutionRegistry.institutions.map(x=>[x.id,[]]));
   for(const x of institutionRegistry.institutions){const p=orgParent(x);if(p&&unitKids.has(p.target))unitKids.get(p.target).push(x);}

@@ -25,6 +25,7 @@
 .org-sublist{list-style:none;padding:6px 0 0 14px!important;margin:0!important;border-left:2px solid var(--line);columns:2;column-gap:24px;font-size:.9rem;line-height:1.9}
 .org-sublist li{break-inside:avoid}
 .org-entry-wide{grid-column:1/-1}
+.org-subhead{font:600 1.02rem/1.6 var(--song);color:var(--silver-bright);margin:22px 0 0;padding-bottom:4px;border-bottom:1px solid color-mix(in srgb,var(--line) 55%,transparent)}
 .org-kinds{display:flex;flex-direction:column;gap:2px;margin-top:6px}
 .org-kinds .org-sublist{columns:3}
 .org-branch>summary span,.org-kind span{color:var(--muted);font-size:.8rem;margin-left:4px;font-weight:400}
