@@ -53,9 +53,17 @@ function orgRestore(fallback){
 }
 function orgReplaceUrl(url){history.replaceState(null,'',url);if(orgNav.stack.length)orgNav.stack[orgNav.stack.length-1]=location.hash;}
 
+const ORG_KIND_LABEL={'组成部门':'组成部门（部委）','专项局':'部委管理的专项局'};
+/* Only the executive council's list follows its charter's sections (部委、直属机构…); other lists stay flat. */
+function orgByKind(rows){if(!rows.some(r=>r.kind==='组成部门'))return [['',rows]];const g=new Map();for(const r of rows){if(!g.has(r.kind))g.set(r.kind,[]);g.get(r.kind).push(r);}return [...g];}
+/* Sub-units shown under a root: its direct units plus the special bureaus its departments manage. */
+function orgUnits(r,kids){const list=kids.get(r.id)||[];return list.some(c=>c.kind==='组成部门')?[...list,...list.flatMap(c=>(kids.get(c.id)||[]).filter(g=>g.kind==='专项局'))]:list;}
 function orgRow(r,kids){
-  const list=kids.get(r.id)||[];
-  return `<li class="org-entry"><a href="${esc(orgHref(r))}" class="org-name">${esc(r.name)}</a>${orgStatusBadge(r)}<p>${esc(r.summary)}</p>${list.length?`<details class="org-branch" data-branch="${r.id}"><summary>下设 ${list.length} 个单位</summary><ul class="org-sublist">${list.map(k=>`<li><a href="${esc(orgHref(k))}">${esc(k.name)}</a></li>`).join('')}</ul></details>`:''}</li>`;
+  const units=orgUnits(r,kids), groups=orgByKind(units);
+  const sub=rows=>`<ul class="org-sublist">${rows.map(k=>`<li><a href="${esc(orgHref(k))}">${esc(k.name)}</a></li>`).join('')}</ul>`;
+  const body=groups.length>1?`<div class="org-kinds">${groups.map(([kind,rows])=>`<details class="org-branch" data-branch="${r.id}:${esc(kind)}"><summary>${esc(ORG_KIND_LABEL[kind]||kind)} <span>${rows.length}</span></summary>${sub(rows)}</details>`).join('')}</div>`
+    :units.length?`<details class="org-branch" data-branch="${r.id}"><summary>下设 ${units.length} 个单位</summary>${sub(units)}</details>`:'';
+  return `<li class="org-entry${groups.length>1?' org-entry-wide':''}"><a href="${esc(orgHref(r))}" class="org-name">${esc(r.name)}</a>${orgStatusBadge(r)}<p>${esc(r.summary)}</p>${body}</li>`;
 }
 function orgMatchRow(r){
   const context=orgContext(r);
@@ -72,14 +80,15 @@ function institutionDirectory(params){
   function render(){
     const selected=institutionRegistry.institutions.filter(r=>orgInScope(r,state.status)&&orgMatches(r,state.q));
     main.querySelector('#org-result-count').textContent=state.q?`找到 ${selected.length} 个${state.status==='facilities'?'设施':'机构'}`:'';
+    const kids=new Map();
+    for(const r of selected){const p=orgParent(r);if(p){if(!kids.has(p.target))kids.set(p.target,[]);kids.get(p.target).push(r);}}
     const groups=institutionRegistry.categories.map(c=>[c,selected.filter(r=>r.category===c.id)]).filter(([,m])=>m.length);
     main.querySelector('.org-jumps').innerHTML=groups.map(([c])=>`<a href="${esc(orgDirectoryUrl({...params_(),group:c.id}))}" data-org-group="${c.id}">${esc(c.name)}</a>`).join('');
     main.querySelector('#org-results').innerHTML=groups.length?groups.map(([c,members])=>{
       let body;
       if(state.q)body=`<ul class="org-list">${members.map(orgMatchRow).join('')}</ul>`;
       else{
-        const ids=new Set(members.map(r=>r.id)), kids=new Map();
-        for(const r of members){const p=orgParent(r);if(p&&ids.has(p.target)){if(!kids.has(p.target))kids.set(p.target,[]);kids.get(p.target).push(r);}}
+        const ids=new Set(members.map(r=>r.id));
         const roots=members.filter(r=>{const p=orgParent(r);return !p||!ids.has(p.target);});
         body=`<ul class="org-list">${roots.map(r=>orgRow(r,kids)).join('')}</ul>`;
       }
@@ -101,11 +110,6 @@ function institutionDirectory(params){
   orgRestore(state.group?()=>document.getElementById('org-group-'+state.group)?.scrollIntoView():null);
 }
 
-function orgEvidence(sources){
-  const seen=new Set();
-  return sources.filter(s=>{const key=s.docId+':'+s.anchor;if(seen.has(key))return false;seen.add(key);return true;}).map(s=>`<li><a href="#/doc/${s.docId}${s.anchor?'?anchor='+encodeURIComponent(s.anchor):''}">${esc(s.title)}${s.section?' '+esc(s.section):''}</a></li>`).join('');
-}
-function orgRelationEvidence(sources){return sources.length?`<details class="org-evidence"><summary>关系依据</summary><ul class="org-sources">${orgEvidence(sources)}</ul></details>`:'';}
 
 function institutionDetail(id){
   const mapped=institutionRegistry.legacy[decodeURIComponent(id)]||id;
@@ -121,8 +125,13 @@ function institutionDetail(id){
   const children=incoming.filter(e=>ORG_HIERARCHY.has(e.edge.type)).map(e=>e.row);
   const others=[...outgoing.filter(e=>e.edge!==firstParent),...incoming.filter(e=>!ORG_HIERARCHY.has(e.edge.type))];
   const seen=new Set(), sources=r.sources.filter(s=>{const k=s.docId+':'+s.anchor;if(seen.has(k))return false;seen.add(k);return true;});
+  const unitKids=new Map(institutionRegistry.institutions.map(x=>[x.id,[]]));
+  for(const x of institutionRegistry.institutions){const p=orgParent(x);if(p&&unitKids.has(p.target))unitKids.get(p.target).push(x);}
+  unitKids.set(r.id,children);
+  const units=orgUnits(r,unitKids), unitGroups=orgByKind(units);
+  const unitList=rows=>`<ul class="org-list">${rows.map(k=>`<li class="org-entry"><a href="${esc(orgHref(k))}" class="org-name">${esc(k.name)}</a>${orgStatusBadge(k)}<p>${esc(k.summary)}</p></li>`).join('')}</ul>`;
   const backLabel=orgNav.stack.length>1?'← 返回':'← 机构总目';
-  main.innerHTML=`<article class="org-detail"><a class="org-back" href="#/institutions" data-org-back>${backLabel}</a><header class="org-heading"><p class="eyebrow">${esc(r.kind)}</p><h1>${esc(r.name)}</h1>${chain.length?`<p class="org-chain">隶属：${chain.map(x=>`<a href="${esc(orgHref(x))}">${esc(x.name)}</a>`).join(' › ')}</p>${orgRelationEvidence(firstParent.sources)}`:''}${r.aliases.length?`<p class="org-aliases">又称：${r.aliases.map(esc).join('、')}</p>`:''}<p class="org-intro">${esc(r.summary)}</p>${r.kind!=='设施'&&r.status!=='current'?`<p class="org-note">${esc(ORG_STATUS[r.status])}。${esc(r.statusNote||'')}</p>`:''}${r.note?`<p class="org-note">${esc(r.note)}</p>`:''}</header>${children.length?`<section><h2>下设单位</h2><ul class="org-list">${children.map(k=>`<li class="org-entry"><a href="${esc(orgHref(k))}" class="org-name">${esc(k.name)}</a>${orgStatusBadge(k)}<p>${esc(k.summary)}</p>${orgRelationEvidence(incoming.filter(e=>e.row.id===k.id&&ORG_HIERARCHY.has(e.edge.type)).flatMap(e=>e.edge.sources))}</li>`).join('')}</ul></section>`:''}${others.length?`<section><h2>相关机关</h2><ul class="org-relations">${others.map(({row,edge,incoming})=>`<li><span class="org-relation-type">${esc(ORG_RELATION[edge.type][incoming?1:0])}</span><a href="${esc(orgHref(row))}"><strong>${esc(row.name)}</strong></a>${edge.detail?`<p>${esc(edge.detail)}</p>`:''}${orgRelationEvidence(edge.sources)}</li>`).join('')}</ul></section>`:''}${sources.length?`<section><h2>依据条文</h2><ul class="org-sources">${sources.map(s=>`<li><a href="#/doc/${s.docId}${s.anchor?'?anchor='+encodeURIComponent(s.anchor):''}">${esc(s.title)}${s.section?` ${esc(s.section)}`:''}</a></li>`).join('')}</ul></section>`:''}</article>`;
+  main.innerHTML=`<article class="org-detail"><a class="org-back" href="#/institutions" data-org-back>${backLabel}</a><header class="org-heading"><p class="eyebrow">${esc(r.kind)}</p><h1>${esc(r.name)}</h1>${chain.length?`<p class="org-chain">隶属：${chain.map(x=>`<a href="${esc(orgHref(x))}">${esc(x.name)}</a>`).join(' › ')}</p>`:''}${r.aliases.length?`<p class="org-aliases">又称：${r.aliases.map(esc).join('、')}</p>`:''}<p class="org-intro">${esc(r.summary)}</p>${r.kind!=='设施'&&r.status!=='current'?`<p class="org-note">${esc(ORG_STATUS[r.status])}。${esc(r.statusNote||'')}</p>`:''}${r.note?`<p class="org-note">${esc(r.note)}</p>`:''}</header>${units.length?`<section><h2>下设单位</h2>${unitGroups.length>1?unitGroups.map(([kind,rows])=>`<h3 class="org-kind">${esc(ORG_KIND_LABEL[kind]||kind)} <span>${rows.length}</span></h3>${unitList(rows)}`).join(''):unitList(units)}</section>`:''}${others.length?`<section><h2>相关机关</h2><ul class="org-relations">${others.map(({row,edge,incoming})=>`<li><span class="org-relation-type">${esc(ORG_RELATION[edge.type][incoming?1:0])}</span><a href="${esc(orgHref(row))}"><strong>${esc(row.name)}</strong></a>${edge.detail?`<p>${esc(edge.detail)}</p>`:''}</li>`).join('')}</ul></section>`:''}${sources.length?`<section><h2>依据条文</h2><ul class="org-sources">${sources.map(s=>`<li><a href="#/doc/${s.docId}${s.anchor?'?anchor='+encodeURIComponent(s.anchor):''}">${esc(s.title)}${s.section?` ${esc(s.section)}`:''}</a></li>`).join('')}</ul></section>`:''}</article>`;
   orgRestore();
 }
 

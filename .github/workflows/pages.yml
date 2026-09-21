@@ -38,7 +38,7 @@ jobs:
           node tools/library_portal/test_frontend.cjs
           python -m unittest discover -s tools/library_portal -p test_institutions.py
           node tools/library_portal/test_institutions.cjs
-          node tools/library_portal/test_institution_evidence.cjs
+          node tools/library_portal/test_institution_detail.cjs
       - name: Upload static site
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
