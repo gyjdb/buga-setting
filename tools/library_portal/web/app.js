@@ -35,7 +35,7 @@ const linkDoc = (id, text) =>
     : esc(text || "未提供");
 const docAt = (path) => docs.find((d) => d.path === path);
 const docLink = (path, label) => linkDoc(docAt(path)?.id, label);
-const GUIDE_PATH = "07_WORLD_GUIDE/布加风土志.md";
+const GUIDE_PATH = "07_WORLD_GUIDE/银色联盟风土志.md";
 const browseUrl = (params) => "#/browse?" + new URLSearchParams(params);
 const dateOnly = (value) => (value ? value.slice(0, 10) : "未标注");
 function heading(kicker, title, desc = "") {
@@ -280,6 +280,7 @@ async function detail(id, params, serial) {
   const doc = byId.get(id);
   if (!doc) { main.innerHTML = emptyState("文件未入藏", "该文件不在当前索引中，请返回馆藏查找。"); return; }
   document.title = doc.title + " / " + index.title;
+  if (doc.path === GUIDE_PATH && params.get("view") !== "record") { await bookDetail(doc, params, serial); return; }
   await prototypeDetail(doc, params, serial);
 }
 function versions() { versionPage(); }
