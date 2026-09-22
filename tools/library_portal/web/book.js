@@ -114,21 +114,33 @@ function bookSummary() {
 
 // A reading location is a source block + UTF-16 offset, independent of page size.
 const BOOK_POSITION_KEY = "buga.fengtuzhi.position.v2";
-// These are page-relative type sizes; older viewport-pixel preferences stay separate.
-const BOOK_FONT_KEY = "buga.fengtuzhi.paperFont.v3";
-const BOOK_FIT_KEY = "buga.fengtuzhi.paperFit";
+// Desktop reader keeps the archive sidebar docked; readers may collapse it (open/closed).
+const BOOK_NAV_KEY = "buga.fengtuzhi.nav";
 // Supplied Terra reference pages are approximately 1380 x 1968; no physical trim size is inferred.
 const BOOK_PAPER_RATIO = 1380 / 1968;
-function bookPaperLayout(width, height, fit) {
-  const spread = width >= 880 ? 2 : 1;
-  const pageWidth = spread === 1 && width < 600 ? 380 : 690;
-  const pageHeight = pageWidth / BOOK_PAPER_RATIO;
-  const scale = fit === "page" ? Math.min(width / (pageWidth * spread), height / pageHeight) : width / (pageWidth * spread);
-  return { spread, pageWidth, pageHeight, scale, width: pageWidth * spread * scale, height: pageHeight * scale };
+// Body text is always 16 CSS px. The page is sized to the window instead of scaling the type:
+// it fills the available height up to the standard 690 x 984 page, and only a very small
+// window scales a minimum-size page down.
+const BOOK_PAGE_MAX = 690, BOOK_PAGE_MIN = 340, BOOK_SPREAD_MIN = 420;
+function bookPaperLayout(width, height) {
+  const tall = Math.min(BOOK_PAGE_MAX, height * BOOK_PAPER_RATIO);
+  const spread = width >= 2 * Math.min(tall, BOOK_SPREAD_MIN) ? 2 : 1;
+  const fits = Math.min(tall, width / spread);
+  // Whole 4 px steps keep small window changes from re-paginating the book.
+  const pageWidth = Math.max(BOOK_PAGE_MIN, Math.floor(fits / 4) * 4);
+  const pageHeight = Math.floor(pageWidth / BOOK_PAPER_RATIO);
+  const scale = Math.min(1, fits / pageWidth);
+  return { spread, pageWidth, pageHeight, scale, width: Math.floor(pageWidth * spread * scale), height: Math.floor(pageHeight * scale) };
 }
 let activeBookReader = null;
 function bookStored(key) { try { return localStorage.getItem(key); } catch { return null; } }
 function bookStore(key, value) { try { localStorage.setItem(key, value); } catch {} }
+function bookNavDocked() { return !!document.body.dataset.bookReader && !matchMedia("(max-width:780px)").matches; }
+function bookToggleNav() {
+  document.body.dataset.bookNav = document.body.dataset.bookNav === "closed" ? "open" : "closed";
+  bookStore(BOOK_NAV_KEY, document.body.dataset.bookNav);
+  archiveNavSync();
+}
 function bookPosition() { try { return JSON.parse(bookStored(BOOK_POSITION_KEY)) || null; } catch { return null; } }
 function bookElement(html) { const t = document.createElement("template"); t.innerHTML = html.trim(); return t.content.firstElementChild; }
 
@@ -250,30 +262,33 @@ async function bookDetail(doc, params, serial) {
   archiveObserver = controller;
   document.title = BOOK_TITLE + " / " + index.title;
   document.body.dataset.bookReader = "true";
+  document.body.dataset.bookNav = bookStored(BOOK_NAV_KEY) === "closed" ? "closed" : "open";
   main.dataset.view = "book";
   main.dataset.readerId = doc.id; main.dataset.readerRoute = "doc";
   const siteTitle = document.querySelector(".topbar-title"), previousTitle = siteTitle.textContent;
   const menu = document.querySelector("#menu-toggle"), previousMenu = menu.innerHTML;
-  menu.innerHTML = archiveIcon("menu") + "阅读侧栏";
+  menu.innerHTML = archiveIcon("menu");
+  menu.title = "档案馆导航";
   siteTitle.textContent = BOOK_TITLE;
   archiveNavSync();
-  const storedFont = Number(bookStored(BOOK_FONT_KEY));
-  let fontSize = storedFont >= 14 && storedFont <= 24 ? storedFont : 17;
-  let fitMode = bookStored(BOOK_FIT_KEY) === "page" ? "page" : "width";
-  let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved;
+  let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved, layout = "";
+  const icon = d => `<svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
   main.innerHTML = `<section class="reader" aria-label="${BOOK_TITLE}阅读器">
-    <div class="reader-desk"><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div></div>
+    <div class="reader-desk"><button type="button" class="reader-turn" data-turn="-1" aria-label="上一页" title="上一页（←）">${icon("M15 4l-8 8 8 8")}</button><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div><button type="button" class="reader-turn" data-turn="1" aria-label="下一页" title="下一页（→）">${icon("M9 4l8 8-8 8")}</button></div>
     <nav class="reader-controls" aria-label="翻页"><button type="button" data-turn="-1" aria-label="上一页">← <span>上一页</span></button><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" data-turn="1" aria-label="下一页"><span>下一页</span> →</button></nav>
     <dialog class="reader-dialog" aria-labelledby="reader-panel-title"><header><h2 id="reader-panel-title"></h2><button type="button" data-close aria-label="关闭面板">关闭 ×</button></header><div class="reader-panel-body"></div></dialog>
     <div class="reader-measure reader-prose" aria-hidden="true" inert></div>
   </section>`;
   const root = main.querySelector(".reader"), desk = root.querySelector(".reader-desk"), stage = root.querySelector(".reader-stage"), leaves = root.querySelector(".reader-leaves");
-  const sidebarTools = bookElement(`<section class="reader-tools" aria-label="阅读工具"><p class="reader-tools-title">${BOOK_TITLE}</p><p class="reader-chapter-label"></p><label>文字大小<select data-book-font data-book-focus aria-label="正文字号">${[14,15,16,17,18,19,20,21,22,23,24].map(n => `<option value="${n}"${n === fontSize ? " selected" : ""}>${n}</option>`).join("")}</select></label><label>纸页显示<select data-book-fit aria-label="纸页显示方式"><option value="width"${fitMode === "width" ? " selected" : ""}>适合宽度</option><option value="page"${fitMode === "page" ? " selected" : ""}>整页显示</option></select></label><button type="button" data-panel="sources">来源与编校</button><details open><summary>章节目录</summary><nav class="reader-chapter-nav" aria-label="本书目录"><a href="#/doc/${doc.id}?anchor=book-title">书名页</a>${chapters.map(c => `<a data-book-chapter="${esc(c.id.replace(/^section-/, ""))}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(c.id.replace(/^section-/, ""))}"><span>${esc(c.roman)}</span>${esc(c.name)}</a>`).join("")}<a href="#/doc/${doc.id}?anchor=book-end">终页</a></nav></details><a class="reader-library-link" href="#/home">← 返回档案馆</a></section>`);
-  document.querySelector(".sidebar-scroll").prepend(sidebarTools);
+  // Book tools sit in the top bar; the sidebar stays the archive's own navigation.
+  const entries = [["book-title", "", "书名页"], ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
+  const sectionLabel = new Map([["book-contents", "目录"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
+  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
+  siteTitle.after(bar);
   const measure = root.querySelector(".reader-measure"), loading = root.querySelector(".reader-loading");
-  const progress = root.querySelector(".reader-progress"), chapterLabel = sidebarTools.querySelector(".reader-chapter-label");
+  const progress = [...root.querySelectorAll(".reader-progress"), bar.querySelector(".reader-progress")];
+  const tocButton = bar.querySelector(".reader-toc-button"), tocMenu = bar.querySelector(".reader-toc-menu"), tocCurrent = bar.querySelector(".reader-toc-current");
   const dialog = root.querySelector("dialog"), panelBody = root.querySelector(".reader-panel-body");
-  const chapterUrl = slug => `#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}`;
   const startOf = page => {
     const item = page?.items[0];
     return item ? { section: page.section, block: item.key, offset: item.start } : null;
@@ -289,21 +304,32 @@ async function bookDetail(doc, params, serial) {
     if (!query.has("anchor")) return bookPosition();
     return { section: query.get("anchor"), block: query.get("block"), offset: Number(query.get("offset")) || 0 };
   };
+  function toc(open) {
+    tocMenu.hidden = !open;
+    tocButton.setAttribute("aria-expanded", String(open));
+    if (!open) return;
+    const target = tocMenu.querySelector("[aria-current]") || tocMenu.querySelector("a");
+    target.scrollIntoView({ block: "nearest" }); target.focus({ preventScroll: true });
+  }
   function show(n, { remember = true, exact = null } = {}) {
     if (!pages.length) return;
     current = Math.floor(Math.max(0, Math.min(pages.length - 1, n)) / spreadSize) * spreadSize;
     const focusedLeaf = document.activeElement.closest?.(".reader-leaf");
     [...leaves.children].forEach((leaf, i) => { leaf.hidden = i < current || i >= current + spreadSize; });
     if (focusedLeaf?.hidden) stage.focus({ preventScroll: true });
-    root.querySelector('[data-turn="-1"]').disabled = current === 0;
-    root.querySelector('[data-turn="1"]').disabled = current + spreadSize >= pages.length;
-    progress.textContent = `${current + 1}${spreadSize === 2 && current + 1 < pages.length ? "—" + (current + 2) : ""} / ${pages.length}`;
-    chapterLabel.textContent = [...new Set(pages.slice(current, current + spreadSize).map(p => p.title))].join(" / ");
-    sidebarTools.querySelectorAll("[data-book-chapter]").forEach(a => {
-      if (pages.slice(current, current + spreadSize).some(p => p.section === a.dataset.bookChapter)) a.setAttribute("aria-current", "location");
+    root.querySelectorAll('[data-turn="-1"]').forEach(b => { b.disabled = current === 0; });
+    root.querySelectorAll('[data-turn="1"]').forEach(b => { b.disabled = current + spreadSize >= pages.length; });
+    const visible = pages.slice(current, current + spreadSize), shown = new Set(visible.map(p => p.section));
+    const range = `${current + 1}${visible.length > 1 ? "–" + (current + visible.length) : ""}`;
+    progress.forEach(p => { p.textContent = `${range} / ${pages.length}`; });
+    // Name the chapter the spread leads into; the title spread keeps the title page.
+    const lead = visible[0].section === "book-title" ? visible[0] : visible.at(-1);
+    tocCurrent.textContent = sectionLabel.get(lead.section) || lead.title;
+    tocMenu.querySelectorAll("[data-book-section]").forEach(a => {
+      if (shown.has(a.dataset.bookSection)) a.setAttribute("aria-current", "location");
       else a.removeAttribute("aria-current");
     });
-    stage.setAttribute("aria-label", `第 ${current + 1}${spreadSize === 2 && current + 1 < pages.length ? " 至 " + (current + 2) : ""} 页`);
+    stage.setAttribute("aria-label", `第 ${range.replace("–", " 至 ")} 页`);
     cursor = exact || startOf(pages[current]);
     if (remember && cursor) rememberPosition();
   }
@@ -319,32 +345,39 @@ async function bookDetail(doc, params, serial) {
     if (stage.getAttribute("aria-busy") === "true" || dialog.open) return;
     const target = current + delta * spreadSize;
     if (target < 0 || target >= pages.length) return;
+    toc(false);
     show(target);
-    restoreScroll(null);
     if (!matchMedia("(prefers-reduced-motion:reduce)").matches) stage.animate([{ opacity: .4, transform: `translateX(${delta * 8}px)` }, { opacity: 1, transform: "none" }], { duration: 160, easing: "ease-out" });
   };
   let pending = positionFrom(params);
   async function paginate() {
-    const ticket = ++generation, locationBefore = pending || cursor;
-    stage.setAttribute("aria-busy", "true"); loading.hidden = false;
-    root.style.setProperty("--reader-font", fontSize + "px");
-    const paper = bookPaperLayout(Math.max(240, desk.clientWidth - 32), Math.max(240, desk.clientHeight - 32), fitMode);
-    spreadSize = paper.spread;
-    root.dataset.spread = String(spreadSize);
-    root.dataset.paper = paper.pageWidth === 380 ? "compact" : "standard";
+    const box = getComputedStyle(desk), gap = parseFloat(box.columnGap) || 0;
+    const side = [...desk.querySelectorAll(".reader-turn")].reduce((w, b) => w + (b.offsetWidth ? b.offsetWidth + gap : 0), 0);
+    const paper = bookPaperLayout(
+      Math.max(240, desk.clientWidth - parseFloat(box.paddingLeft) - parseFloat(box.paddingRight) - side),
+      Math.max(240, desk.clientHeight - parseFloat(box.paddingTop) - parseFloat(box.paddingBottom)));
     stage.style.width = paper.width + "px";
     stage.style.height = paper.height + "px";
+    leaves.style.transform = paper.scale < 1 ? `scale(${paper.scale})` : "";
+    // Same page size: the text flow is unchanged, only the desk around it moved.
+    const key = `${paper.spread}:${paper.pageWidth}`;
+    if (key === layout && pages.length) return;
+    const ticket = ++generation, locationBefore = pending || cursor;
+    stage.setAttribute("aria-busy", "true"); loading.hidden = false;
+    spreadSize = paper.spread;
+    root.dataset.spread = String(spreadSize);
+    root.dataset.paper = paper.pageWidth < 440 ? "compact" : "standard";
     leaves.style.width = (paper.pageWidth * spreadSize) + "px";
     leaves.style.height = paper.pageHeight + "px";
-    leaves.style.transform = `scale(${paper.scale})`;
-    const padding = paper.pageWidth === 380 ? 28 : 54;
+    const padding = Math.round(Math.min(54, Math.max(24, paper.pageWidth * 0.078)));
     root.style.setProperty("--reader-pad", padding + "px");
+    root.style.setProperty("--paper-k", (paper.pageHeight / 984).toFixed(3));
     const height = paper.pageHeight - 105; // 38 padding + 42 running head + 25 folio
     root.style.setProperty("--reader-height", height + "px");
     measure.style.width = (paper.pageWidth - padding * 2) + "px";
     const next = await bookPaginate(sections, measure, height, () => signal.aborted || ticket !== generation);
     if (!next || signal.aborted || ticket !== generation) return;
-    pages = next;
+    pages = next; layout = key;
     const fragment = document.createDocumentFragment();
     pages.forEach((page, i) => {
       const leaf = document.createElement("article"); leaf.className = "reader-leaf"; leaf.hidden = true;
@@ -363,24 +396,23 @@ async function bookDetail(doc, params, serial) {
     show(locate(restored), { exact: restored });
     pending = null;
     loading.hidden = true; stage.setAttribute("aria-busy", "false");
-    restoreScroll(restored);
   }
   function navigate(query) {
     const position = positionFrom(query) || { section: "book-title" };
     if (dialog.open) dialog.close();
+    toc(false);
     if (!pages.length || stage.getAttribute("aria-busy") === "true") { pending = position; return; }
     show(locate(position), { exact: position });
-    restoreScroll(position);
     if (matchMedia("(max-width:780px)").matches) {
       document.querySelector("#sidebar").classList.remove("open");
-      menu.setAttribute("aria-expanded", "false");
       archiveNavSync();
     }
     stage.focus({ preventScroll: true });
   }
   let panelTrigger = null;
   function openPanel(trigger) {
-    panelTrigger = trigger;
+    panelTrigger = trigger.closest(".reader-toc-menu") ? tocButton : trigger;
+    toc(false);
     const title = root.querySelector("#reader-panel-title");
     title.textContent = "来源与编校";
     const visible = pages.slice(current, current + spreadSize);
@@ -391,7 +423,8 @@ async function bookDetail(doc, params, serial) {
   }
   function handleClick(event) {
     const button = event.target.closest("button");
-    if (button?.hasAttribute("data-turn")) turn(Number(button.dataset.turn));
+    if (button === tocButton) toc(tocMenu.hidden);
+    else if (button?.hasAttribute("data-turn")) turn(Number(button.dataset.turn));
     else if (button?.dataset.panel) openPanel(button);
     else if (button?.hasAttribute("data-close")) dialog.close();
     const link = event.target.closest("a[href]");
@@ -404,14 +437,12 @@ async function bookDetail(doc, params, serial) {
     }
   }
   root.addEventListener("click", handleClick, { signal });
-  sidebarTools.addEventListener("click", handleClick, { signal });
+  bar.addEventListener("click", handleClick, { signal });
+  document.addEventListener("click", event => { if (!tocMenu.hidden && !event.target.closest(".reader-toc")) toc(false); }, { signal });
   dialog.addEventListener("close", () => panelTrigger?.focus({ preventScroll: true }), { signal });
-  sidebarTools.addEventListener("change", event => {
-    if (event.target.matches("[data-book-font]")) { fontSize = Number(event.target.value); bookStore(BOOK_FONT_KEY, String(fontSize)); schedule(); }
-    if (event.target.matches("[data-book-fit]")) { fitMode = event.target.value; bookStore(BOOK_FIT_KEY, fitMode); schedule(); }
-  }, { signal });
   document.addEventListener("keydown", event => {
-    if (dialog.open || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
+    if (event.key === "Escape" && !tocMenu.hidden) { toc(false); tocButton.focus(); return; }
+    if (dialog.open || !tocMenu.hidden || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
     if (["ArrowLeft", "ArrowRight", "PageUp", "PageDown"].includes(event.key)) {
       event.preventDefault(); turn(["ArrowLeft", "PageUp"].includes(event.key) ? -1 : 1);
     }
@@ -432,29 +463,6 @@ async function bookDetail(doc, params, serial) {
     const box = stage.getBoundingClientRect(), x = event.clientX - box.left;
     if (x < 22) turn(-1); else if (x > box.width - 22) turn(1);
   }, { signal });
-  let restoringScroll = false, scrollFrame = 0;
-  function restoreScroll(position) {
-    restoringScroll = true;
-    let top = 0;
-    if (position?.block) {
-      const first = pages[current]?.items[0];
-      const node = [...leaves.querySelectorAll(".reader-leaf:not([hidden]) [data-block]")].find(e => e.dataset.block === position.block && Number(e.dataset.start) <= position.offset && Number(e.dataset.end) > position.offset);
-      if (node && (first?.key !== position.block || first.start !== position.offset)) top = desk.scrollTop + node.getBoundingClientRect().top - desk.getBoundingClientRect().top - 16;
-    }
-    desk.scrollTop = Math.max(0, top);
-    requestAnimationFrame(() => { restoringScroll = false; });
-  }
-  desk.addEventListener("scroll", () => {
-    if (restoringScroll || stage.getAttribute("aria-busy") === "true" || scrollFrame) return;
-    scrollFrame = requestAnimationFrame(() => {
-      scrollFrame = 0;
-      if (signal.aborted || restoringScroll) return;
-      const top = desk.getBoundingClientRect().top + 16;
-      const candidates = [...leaves.querySelectorAll(".reader-leaf:not([hidden]) [data-block]")];
-      const node = candidates.find(e => e.getBoundingClientRect().bottom > top);
-      if (node) { cursor = { section: node.dataset.block.split(":")[0], block: node.dataset.block, offset: Number(node.dataset.start) }; rememberPosition(); }
-    });
-  }, { passive: true, signal });
   function schedule() { clearTimeout(timer); timer = setTimeout(() => paginate().catch(failed), 120); }
   function failed(error) {
     if (signal.aborted) return;
@@ -470,16 +478,16 @@ async function bookDetail(doc, params, serial) {
   activeBookReader = {
     docId: doc.id, navigate,
     destroy() {
-      controller.abort(); observer.disconnect(); clearTimeout(timer); cancelAnimationFrame(scrollFrame); generation++;
+      controller.abort(); observer.disconnect(); clearTimeout(timer); generation++;
       if (dialog.open) dialog.close();
-      sidebarTools.remove();
+      bar.remove();
       delete document.body.dataset.bookNav;
-      delete document.body.dataset.bookReader; siteTitle.textContent = previousTitle; menu.innerHTML = previousMenu;
+      delete document.body.dataset.bookReader; siteTitle.textContent = previousTitle; menu.innerHTML = previousMenu; menu.removeAttribute("title");
       activeBookReader = null;
     }
   };
   try {
-    await Promise.all([document.fonts.load('19px "Archive Song"'), document.fonts.load('19px "Archive Sans"'), document.fonts.load('50px "Book Latin"'), document.fonts.load('14px "Book Label"')]);
+    await Promise.all([document.fonts.load('16px "Archive Song"'), document.fonts.load('16px "Archive Sans"'), document.fonts.load('50px "Book Latin"'), document.fonts.load('14px "Book Label"')]);
     if (signal.aborted) return;
     await paginate();
     if (signal.aborted) return;

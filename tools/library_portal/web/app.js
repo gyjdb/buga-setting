@@ -447,10 +447,12 @@ async function start() {
         "/browse?" + new URLSearchParams({ q: $("#global-query").value });
     });
     $("#menu-toggle").addEventListener("click", () => {
+      // The reader docks the sidebar on desktop and only collapses it; phones use the drawer.
+      if (bookNavDocked()) { bookToggleNav(); return; }
       const open = $("#sidebar").classList.toggle("open");
       $("#menu-toggle").setAttribute("aria-expanded", String(open));
       archiveNavSync();
-      if (open) ($("#sidebar [data-book-focus]") || $("#sidebar a.active") || $("#sidebar a")).focus();
+      if (open) ($("#sidebar a.active") || $("#sidebar a")).focus();
     });
     document.addEventListener("click", event => {
       if (!event.target.closest("#sidebar, #menu-toggle, .reader-dialog") && $("#sidebar").classList.contains("open") && (!document.body.dataset.bookReader || matchMedia("(max-width:780px)").matches)) {

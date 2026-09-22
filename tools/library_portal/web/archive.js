@@ -56,11 +56,14 @@ function displayTitle(doc){
 }
 function archiveEnter(page){activeBookReader?.destroy();archiveObserver?.abort();document.body.dataset.page=page;document.body.dataset.design='archive'}
 function archiveNavSync(){
-  const sidebar=document.querySelector('#sidebar');
-  if(document.body.dataset.bookReader)document.body.dataset.bookNav=sidebar.classList.contains('open')?'open':'closed';
-  else delete document.body.dataset.bookNav;
-  document.querySelector('#menu-toggle').setAttribute('aria-label',sidebar.classList.contains('open')?'收起导航':'展开导航');
-  sidebar.inert=(!!document.body.dataset.bookReader||matchMedia('(max-width:780px)').matches)&&!sidebar.classList.contains('open');
+  const sidebar=document.querySelector('#sidebar'),toggle=document.querySelector('#menu-toggle'),mobile=matchMedia('(max-width:780px)').matches;
+  if(!document.body.dataset.bookReader)delete document.body.dataset.bookNav;
+  // Desktop reader: the archive sidebar stays docked and collapses via data-book-nav. Phones: drawer.
+  const docked=!!document.body.dataset.bookReader&&!mobile;
+  const open=docked?document.body.dataset.bookNav!=='closed':sidebar.classList.contains('open');
+  toggle.setAttribute('aria-expanded',String(open));
+  toggle.setAttribute('aria-label',open?'收起导航':'展开导航');
+  sidebar.inert=(docked||mobile)&&!open;
 }
 let archiveObserver;
 function markArchiveChapter(id){
