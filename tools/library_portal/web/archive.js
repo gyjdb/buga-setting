@@ -54,10 +54,11 @@ function displayTitle(doc){
   }
   return doc.title;
 }
-function archiveEnter(page){archiveObserver?.abort();document.body.dataset.page=page;document.body.dataset.design='archive'}
+function archiveEnter(page){activeBookReader?.destroy();archiveObserver?.abort();document.body.dataset.page=page;document.body.dataset.design='archive'}
 function archiveNavSync(){
   const sidebar=document.querySelector('#sidebar');
-  sidebar.inert=matchMedia('(max-width:780px)').matches&&!sidebar.classList.contains('open');
+  document.querySelector('#menu-toggle').setAttribute('aria-label',sidebar.classList.contains('open')?'收起导航':'展开导航');
+  sidebar.inert=(!!document.body.dataset.bookReader||matchMedia('(max-width:780px)').matches)&&!sidebar.classList.contains('open');
 }
 let archiveObserver;
 function markArchiveChapter(id){
@@ -68,6 +69,8 @@ function markArchiveChapter(id){
   main.querySelectorAll('.toc-group').forEach(g=>g.classList.toggle('toc-current',!!g.querySelector('[aria-current]')));
 }
 function archiveWithinReader(page,doc,params){
+  if(activeBookReader && page==='doc' && doc?.id===activeBookReader.docId && params.get('view')!=='record'){activeBookReader.navigate(params);return true;}
+  if(activeBookReader)return false;
   if(!['doc','provenance'].includes(page)||main.dataset.readerId!==doc?.id||main.dataset.readerRoute!==page)return false;
   const target=document.getElementById(params.get('section')==='record'?'source-record':'section-'+params.get('anchor'));
   if(!target||(!params.get('anchor')&&!params.get('section')))return false;
@@ -128,7 +131,7 @@ async function archiveHome(serial){
 function guideSection(guide,text){
   const chapters=text.toc.filter(h=>/^[一二三四五六七八九十]+、/.test(h.label));
   const resume=bookResume(chapters);
-  return `<section class="home-section home-guide" aria-labelledby="guide-title">${homeHeading('guide-title','初识布加',`<a class="text-link" href="#/doc/${guide.id}">开卷阅读${archiveIcon('arrow')}</a>`)}<div class="guide-shelf"><a class="book-cover" href="#/doc/${guide.id}" aria-label="开卷阅读《${BOOK_TITLE}》"><span class="book-cover-latin" lang="la">De<br>Foedere<br>Argenteo</span>${bookEmblem("")}<span class="book-cover-title">${BOOK_TITLE}</span></a><div class="guide-shelf-text"><p class="section-intro">馆藏读物《${BOOK_TITLE}》出自克鲁兹帝国圣埃博松学院一位学者之手，从地上人的眼光介绍这个天上国度的城邦、巫师、魔法与岁时。适合第一次接触布加的读者。</p>${chapters.length?`<ol class="guide-chapters">${chapters.map(h=>{const [,num,name]=h.label.match(/^([一二三四五六七八九十]+)、(.+)$/);return `<li><a href="#/doc/${guide.id}?anchor=${encodeURIComponent(h.slug)}"><span>${esc(BOOK_ROMAN[num]||num)}</span>${esc(name)}</a></li>`}).join('')}</ol>`:''}${resume?`<p class="guide-resume"><a href="#/doc/${guide.id}?anchor=${encodeURIComponent(resume.slug)}">上次读到 · ${esc(resume.label)}</a></p>`:''}</div></div></section>`;
+  return `<section class="home-section home-guide" aria-labelledby="guide-title">${homeHeading('guide-title','初识布加',`<a class="text-link" href="#/doc/${guide.id}">开卷阅读${archiveIcon('arrow')}</a>`)}<div class="guide-shelf"><a class="book-cover" href="#/doc/${guide.id}" aria-label="开卷阅读《${BOOK_TITLE}》"><span class="book-cover-latin" lang="la">De<br>Foedere<br>Argenteo</span>${bookEmblem("")}<span class="book-cover-title">${BOOK_TITLE}</span></a><div class="guide-shelf-text"><p class="section-intro">馆藏读物《${BOOK_TITLE}》出自克鲁兹帝国圣埃博松学院一位学者之手，从地上人的眼光介绍这个天上国度的城邦、巫师、魔法与岁时。适合第一次接触布加的读者。</p>${chapters.length?`<ol class="guide-chapters">${chapters.map(h=>{const [,num,name]=h.label.match(/^([一二三四五六七八九十]+)、(.+)$/);return `<li><a href="#/doc/${guide.id}?anchor=${encodeURIComponent(h.slug)}"><span>${esc(BOOK_ROMAN[num]||num)}</span>${esc(name)}</a></li>`}).join('')}</ol>`:''}${resume?`<p class="guide-resume"><a href="#/doc/${guide.id}?resume=1">上次读到 · ${esc(resume.label)}</a></p>`:''}</div></div></section>`;
 }
 function archiveCatalogue(type){
   const topic=type==='topics',key=topic?'topics':'institutions';
