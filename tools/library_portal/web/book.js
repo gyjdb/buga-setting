@@ -114,7 +114,18 @@ function bookSummary() {
 
 // A reading location is a source block + UTF-16 offset, independent of page size.
 const BOOK_POSITION_KEY = "buga.fengtuzhi.position.v2";
-const BOOK_FONT_KEY = "buga.fengtuzhi.fontSize";
+// These are page-relative type sizes; older viewport-pixel preferences stay separate.
+const BOOK_FONT_KEY = "buga.fengtuzhi.paperFont.v3";
+const BOOK_FIT_KEY = "buga.fengtuzhi.paperFit";
+// Supplied Terra reference pages are approximately 1380 x 1968; no physical trim size is inferred.
+const BOOK_PAPER_RATIO = 1380 / 1968;
+function bookPaperLayout(width, height, fit) {
+  const spread = width >= 880 ? 2 : 1;
+  const pageWidth = spread === 1 && width < 600 ? 380 : 690;
+  const pageHeight = pageWidth / BOOK_PAPER_RATIO;
+  const scale = fit === "page" ? Math.min(width / (pageWidth * spread), height / pageHeight) : width / (pageWidth * spread);
+  return { spread, pageWidth, pageHeight, scale, width: pageWidth * spread * scale, height: pageHeight * scale };
+}
 let activeBookReader = null;
 function bookStored(key) { try { return localStorage.getItem(key); } catch { return null; } }
 function bookStore(key, value) { try { localStorage.setItem(key, value); } catch {} }
@@ -243,22 +254,24 @@ async function bookDetail(doc, params, serial) {
   main.dataset.readerId = doc.id; main.dataset.readerRoute = "doc";
   const siteTitle = document.querySelector(".topbar-title"), previousTitle = siteTitle.textContent;
   const menu = document.querySelector("#menu-toggle"), previousMenu = menu.innerHTML;
-  menu.innerHTML = archiveIcon("menu") + "档案馆";
+  menu.innerHTML = archiveIcon("menu") + "阅读侧栏";
   siteTitle.textContent = BOOK_TITLE;
   archiveNavSync();
   const storedFont = Number(bookStored(BOOK_FONT_KEY));
-  let fontSize = storedFont >= 16 && storedFont <= 24 ? storedFont : matchMedia("(max-width:700px)").matches ? 18 : 19;
+  let fontSize = storedFont >= 14 && storedFont <= 24 ? storedFont : 17;
+  let fitMode = bookStored(BOOK_FIT_KEY) === "page" ? "page" : "width";
   let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved;
   main.innerHTML = `<section class="reader" aria-label="${BOOK_TITLE}阅读器">
-    <nav class="reader-toolbar" aria-label="阅读工具"><button type="button" data-panel="contents">目录</button><span class="reader-chapter-label"></span><button type="button" data-panel="settings" aria-label="字号与阅读设置">字号</button><button type="button" data-panel="sources">来源与编校</button></nav>
-    <div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div>
+    <div class="reader-desk"><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div></div>
     <nav class="reader-controls" aria-label="翻页"><button type="button" data-turn="-1" aria-label="上一页">← <span>上一页</span></button><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" data-turn="1" aria-label="下一页"><span>下一页</span> →</button></nav>
     <dialog class="reader-dialog" aria-labelledby="reader-panel-title"><header><h2 id="reader-panel-title"></h2><button type="button" data-close aria-label="关闭面板">关闭 ×</button></header><div class="reader-panel-body"></div></dialog>
     <div class="reader-measure reader-prose" aria-hidden="true" inert></div>
   </section>`;
-  const root = main.querySelector(".reader"), stage = root.querySelector(".reader-stage"), leaves = root.querySelector(".reader-leaves");
+  const root = main.querySelector(".reader"), desk = root.querySelector(".reader-desk"), stage = root.querySelector(".reader-stage"), leaves = root.querySelector(".reader-leaves");
+  const sidebarTools = bookElement(`<section class="reader-tools" aria-label="阅读工具"><p class="reader-tools-title">${BOOK_TITLE}</p><p class="reader-chapter-label"></p><label>文字大小<select data-book-font data-book-focus aria-label="正文字号">${[14,15,16,17,18,19,20,21,22,23,24].map(n => `<option value="${n}"${n === fontSize ? " selected" : ""}>${n}</option>`).join("")}</select></label><label>纸页显示<select data-book-fit aria-label="纸页显示方式"><option value="width"${fitMode === "width" ? " selected" : ""}>适合宽度</option><option value="page"${fitMode === "page" ? " selected" : ""}>整页显示</option></select></label><button type="button" data-panel="sources">来源与编校</button><details open><summary>章节目录</summary><nav class="reader-chapter-nav" aria-label="本书目录"><a href="#/doc/${doc.id}?anchor=book-title">书名页</a>${chapters.map(c => `<a data-book-chapter="${esc(c.id.replace(/^section-/, ""))}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(c.id.replace(/^section-/, ""))}"><span>${esc(c.roman)}</span>${esc(c.name)}</a>`).join("")}<a href="#/doc/${doc.id}?anchor=book-end">终页</a></nav></details><a class="reader-library-link" href="#/home">← 返回档案馆</a></section>`);
+  document.querySelector(".sidebar-scroll").prepend(sidebarTools);
   const measure = root.querySelector(".reader-measure"), loading = root.querySelector(".reader-loading");
-  const progress = root.querySelector(".reader-progress"), chapterLabel = root.querySelector(".reader-chapter-label");
+  const progress = root.querySelector(".reader-progress"), chapterLabel = sidebarTools.querySelector(".reader-chapter-label");
   const dialog = root.querySelector("dialog"), panelBody = root.querySelector(".reader-panel-body");
   const chapterUrl = slug => `#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}`;
   const startOf = page => {
@@ -286,9 +299,16 @@ async function bookDetail(doc, params, serial) {
     root.querySelector('[data-turn="1"]').disabled = current + spreadSize >= pages.length;
     progress.textContent = `${current + 1}${spreadSize === 2 && current + 1 < pages.length ? "—" + (current + 2) : ""} / ${pages.length}`;
     chapterLabel.textContent = [...new Set(pages.slice(current, current + spreadSize).map(p => p.title))].join(" / ");
+    sidebarTools.querySelectorAll("[data-book-chapter]").forEach(a => {
+      if (pages.slice(current, current + spreadSize).some(p => p.section === a.dataset.bookChapter)) a.setAttribute("aria-current", "location");
+      else a.removeAttribute("aria-current");
+    });
     stage.setAttribute("aria-label", `第 ${current + 1}${spreadSize === 2 && current + 1 < pages.length ? " 至 " + (current + 2) : ""} 页`);
     cursor = exact || startOf(pages[current]);
-    if (remember && cursor) {
+    if (remember && cursor) rememberPosition();
+  }
+  function rememberPosition() {
+    if (cursor) {
       bookStore(BOOK_POSITION_KEY, JSON.stringify(cursor));
       if (chapters.some(c => c.id === "section-" + cursor.section)) bookStore(BOOK_RESUME_KEY, cursor.section);
       const query = new URLSearchParams({ anchor: cursor.section, block: cursor.block || "", offset: String(cursor.offset || 0) });
@@ -300,21 +320,28 @@ async function bookDetail(doc, params, serial) {
     const target = current + delta * spreadSize;
     if (target < 0 || target >= pages.length) return;
     show(target);
-    if (!matchMedia("(prefers-reduced-motion:reduce)").matches) leaves.animate([{ opacity: .4, transform: `translateX(${delta * 8}px)` }, { opacity: 1, transform: "none" }], { duration: 160, easing: "ease-out" });
+    restoreScroll(null);
+    if (!matchMedia("(prefers-reduced-motion:reduce)").matches) stage.animate([{ opacity: .4, transform: `translateX(${delta * 8}px)` }, { opacity: 1, transform: "none" }], { duration: 160, easing: "ease-out" });
   };
   let pending = positionFrom(params);
   async function paginate() {
     const ticket = ++generation, locationBefore = pending || cursor;
     stage.setAttribute("aria-busy", "true"); loading.hidden = false;
     root.style.setProperty("--reader-font", fontSize + "px");
-    const width = stage.clientWidth;
-    spreadSize = width >= 920 ? 2 : 1;
+    const paper = bookPaperLayout(Math.max(240, desk.clientWidth - 32), Math.max(240, desk.clientHeight - 32), fitMode);
+    spreadSize = paper.spread;
     root.dataset.spread = String(spreadSize);
-    const leafWidth = width / spreadSize, padding = leafWidth < 450 ? 22 : 44;
+    root.dataset.paper = paper.pageWidth === 380 ? "compact" : "standard";
+    stage.style.width = paper.width + "px";
+    stage.style.height = paper.height + "px";
+    leaves.style.width = (paper.pageWidth * spreadSize) + "px";
+    leaves.style.height = paper.pageHeight + "px";
+    leaves.style.transform = `scale(${paper.scale})`;
+    const padding = paper.pageWidth === 380 ? 28 : 54;
     root.style.setProperty("--reader-pad", padding + "px");
-    const height = stage.clientHeight - 100;
+    const height = paper.pageHeight - 105; // 38 padding + 42 running head + 25 folio
     root.style.setProperty("--reader-height", height + "px");
-    measure.style.width = (leafWidth - padding * 2) + "px";
+    measure.style.width = (paper.pageWidth - padding * 2) + "px";
     const next = await bookPaginate(sections, measure, height, () => signal.aborted || ticket !== generation);
     if (!next || signal.aborted || ticket !== generation) return;
     pages = next;
@@ -336,37 +363,36 @@ async function bookDetail(doc, params, serial) {
     show(locate(restored), { exact: restored });
     pending = null;
     loading.hidden = true; stage.setAttribute("aria-busy", "false");
+    restoreScroll(restored);
   }
   function navigate(query) {
     const position = positionFrom(query) || { section: "book-title" };
     if (dialog.open) dialog.close();
     if (!pages.length || stage.getAttribute("aria-busy") === "true") { pending = position; return; }
     show(locate(position), { exact: position });
+    restoreScroll(position);
+    if (matchMedia("(max-width:780px)").matches) {
+      document.querySelector("#sidebar").classList.remove("open");
+      menu.setAttribute("aria-expanded", "false");
+      archiveNavSync();
+    }
     stage.focus({ preventScroll: true });
   }
   let panelTrigger = null;
-  function openPanel(kind, trigger) {
+  function openPanel(trigger) {
     panelTrigger = trigger;
     const title = root.querySelector("#reader-panel-title");
-    if (kind === "contents") {
-      title.textContent = "目录";
-      panelBody.innerHTML = `<a class="reader-panel-link" href="${chapterUrl("book-title")}">书名页</a>${chapters.map(c => `<a class="reader-panel-link" href="${chapterUrl(c.id.replace(/^section-/, ""))}"><span>${esc(c.roman)}</span>${esc(c.name)}</a>`).join("")}<a class="reader-panel-link" href="${chapterUrl("book-end")}">终页</a>`;
-    } else if (kind === "settings") {
-      title.textContent = "阅读设置";
-      panelBody.innerHTML = `<label class="reader-font-setting">正文字号 <select aria-label="正文字号">${[16,17,18,19,20,21,22,23,24].map(n => `<option value="${n}"${n === fontSize ? " selected" : ""}>${n}</option>`).join("")}</select></label><p>字号与续读位置保存在此浏览器中。窗口或字号改变时，将回到原来的段落附近。</p><a href="#/doc/${doc.id}?view=record">查看完整正文与馆藏著录</a>`;
-    } else {
-      title.textContent = "来源与编校";
-      const visible = pages.slice(current, current + spreadSize);
-      const chapterIds = [...new Set(visible.map(p => p.section))];
-      const selected = chapters.filter(c => chapterIds.includes(c.id.replace(/^section-/, "")));
-      panelBody.innerHTML = `<p>本书是馆藏读物，所述制度以现行法典为准。以下是正文所据的来源与编校记录。</p>${selected.map(c => `<section class="reader-source"><h3>${esc(c.label)}</h3><p>${sources.get(c.label) || "请查阅完整编者材料。"}</p></section>`).join("")}<nav class="reader-source-links">${notesDoc ? linkDoc(notesDoc.id, "完整编者材料") : ""}<a href="#/doc/${doc.id}?view=record">馆藏著录与完整正文</a></nav>`;
-    }
+    title.textContent = "来源与编校";
+    const visible = pages.slice(current, current + spreadSize);
+    const chapterIds = [...new Set(visible.map(p => p.section))];
+    const selected = chapters.filter(c => chapterIds.includes(c.id.replace(/^section-/, "")));
+    panelBody.innerHTML = `<p>本书是馆藏读物，所述制度以现行法典为准。以下是正文所据的来源与编校记录。</p>${selected.map(c => `<section class="reader-source"><h3>${esc(c.label)}</h3><p>${sources.get(c.label) || "请查阅完整编者材料。"}</p></section>`).join("")}<nav class="reader-source-links">${notesDoc ? linkDoc(notesDoc.id, "完整编者材料") : ""}<a href="#/doc/${doc.id}?view=record">馆藏著录与完整正文</a></nav>`;
     dialog.showModal();
   }
-  root.addEventListener("click", event => {
+  function handleClick(event) {
     const button = event.target.closest("button");
     if (button?.hasAttribute("data-turn")) turn(Number(button.dataset.turn));
-    else if (button?.dataset.panel) openPanel(button.dataset.panel, button);
+    else if (button?.dataset.panel) openPanel(button);
     else if (button?.hasAttribute("data-close")) dialog.close();
     const link = event.target.closest("a[href]");
     if (link && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
@@ -376,13 +402,16 @@ async function bookDetail(doc, params, serial) {
         navigate(new URLSearchParams(hash.split("?")[1]));
       }
     }
-  }, { signal });
+  }
+  root.addEventListener("click", handleClick, { signal });
+  sidebarTools.addEventListener("click", handleClick, { signal });
   dialog.addEventListener("close", () => panelTrigger?.focus({ preventScroll: true }), { signal });
-  panelBody.addEventListener("change", event => {
-    if (event.target.matches("select")) { fontSize = Number(event.target.value); bookStore(BOOK_FONT_KEY, String(fontSize)); schedule(); }
+  sidebarTools.addEventListener("change", event => {
+    if (event.target.matches("[data-book-font]")) { fontSize = Number(event.target.value); bookStore(BOOK_FONT_KEY, String(fontSize)); schedule(); }
+    if (event.target.matches("[data-book-fit]")) { fitMode = event.target.value; bookStore(BOOK_FIT_KEY, fitMode); schedule(); }
   }, { signal });
   document.addEventListener("keydown", event => {
-    if (dialog.open || document.querySelector("#sidebar.open") || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
+    if (dialog.open || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
     if (["ArrowLeft", "ArrowRight", "PageUp", "PageDown"].includes(event.key)) {
       event.preventDefault(); turn(["ArrowLeft", "PageUp"].includes(event.key) ? -1 : 1);
     }
@@ -403,6 +432,29 @@ async function bookDetail(doc, params, serial) {
     const box = stage.getBoundingClientRect(), x = event.clientX - box.left;
     if (x < 22) turn(-1); else if (x > box.width - 22) turn(1);
   }, { signal });
+  let restoringScroll = false, scrollFrame = 0;
+  function restoreScroll(position) {
+    restoringScroll = true;
+    let top = 0;
+    if (position?.block) {
+      const first = pages[current]?.items[0];
+      const node = [...leaves.querySelectorAll(".reader-leaf:not([hidden]) [data-block]")].find(e => e.dataset.block === position.block && Number(e.dataset.start) <= position.offset && Number(e.dataset.end) > position.offset);
+      if (node && (first?.key !== position.block || first.start !== position.offset)) top = desk.scrollTop + node.getBoundingClientRect().top - desk.getBoundingClientRect().top - 16;
+    }
+    desk.scrollTop = Math.max(0, top);
+    requestAnimationFrame(() => { restoringScroll = false; });
+  }
+  desk.addEventListener("scroll", () => {
+    if (restoringScroll || stage.getAttribute("aria-busy") === "true" || scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      if (signal.aborted || restoringScroll) return;
+      const top = desk.getBoundingClientRect().top + 16;
+      const candidates = [...leaves.querySelectorAll(".reader-leaf:not([hidden]) [data-block]")];
+      const node = candidates.find(e => e.getBoundingClientRect().bottom > top);
+      if (node) { cursor = { section: node.dataset.block.split(":")[0], block: node.dataset.block, offset: Number(node.dataset.start) }; rememberPosition(); }
+    });
+  }, { passive: true, signal });
   function schedule() { clearTimeout(timer); timer = setTimeout(() => paginate().catch(failed), 120); }
   function failed(error) {
     if (signal.aborted) return;
@@ -412,14 +464,16 @@ async function bookDetail(doc, params, serial) {
   }
   let previousSize = "";
   const observer = new ResizeObserver(() => {
-    const size = `${stage.clientWidth}:${stage.clientHeight}`;
+    const size = `${desk.clientWidth}:${desk.clientHeight}`;
     if (size !== previousSize) { previousSize = size; schedule(); }
   });
   activeBookReader = {
     docId: doc.id, navigate,
     destroy() {
-      controller.abort(); observer.disconnect(); clearTimeout(timer); generation++;
+      controller.abort(); observer.disconnect(); clearTimeout(timer); cancelAnimationFrame(scrollFrame); generation++;
       if (dialog.open) dialog.close();
+      sidebarTools.remove();
+      delete document.body.dataset.bookNav;
       delete document.body.dataset.bookReader; siteTitle.textContent = previousTitle; menu.innerHTML = previousMenu;
       activeBookReader = null;
     }
@@ -429,6 +483,6 @@ async function bookDetail(doc, params, serial) {
     if (signal.aborted) return;
     await paginate();
     if (signal.aborted) return;
-    previousSize = `${stage.clientWidth}:${stage.clientHeight}`; observer.observe(stage);
+    previousSize = `${desk.clientWidth}:${desk.clientHeight}`; observer.observe(desk);
   } catch (error) { failed(error); }
 }

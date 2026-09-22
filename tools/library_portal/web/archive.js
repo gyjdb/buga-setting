@@ -57,6 +57,8 @@ function displayTitle(doc){
 function archiveEnter(page){activeBookReader?.destroy();archiveObserver?.abort();document.body.dataset.page=page;document.body.dataset.design='archive'}
 function archiveNavSync(){
   const sidebar=document.querySelector('#sidebar');
+  if(document.body.dataset.bookReader)document.body.dataset.bookNav=sidebar.classList.contains('open')?'open':'closed';
+  else delete document.body.dataset.bookNav;
   document.querySelector('#menu-toggle').setAttribute('aria-label',sidebar.classList.contains('open')?'收起导航':'展开导航');
   sidebar.inert=(!!document.body.dataset.bookReader||matchMedia('(max-width:780px)').matches)&&!sidebar.classList.contains('open');
 }

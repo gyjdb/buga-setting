@@ -450,18 +450,18 @@ async function start() {
       const open = $("#sidebar").classList.toggle("open");
       $("#menu-toggle").setAttribute("aria-expanded", String(open));
       archiveNavSync();
-      if (open) ($("#sidebar a.active") || $("#sidebar a")).focus();
+      if (open) ($("#sidebar [data-book-focus]") || $("#sidebar a.active") || $("#sidebar a")).focus();
     });
     document.addEventListener("click", event => {
-      if (!event.target.closest("#sidebar, #menu-toggle") && $("#sidebar").classList.contains("open")) {
+      if (!event.target.closest("#sidebar, #menu-toggle, .reader-dialog") && $("#sidebar").classList.contains("open") && (!document.body.dataset.bookReader || matchMedia("(max-width:780px)").matches)) {
         $("#sidebar").classList.remove("open");
         $("#menu-toggle").setAttribute("aria-expanded", "false");
   archiveNavSync();
       }
     });
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Tab" && $("#sidebar").classList.contains("open")) {
-        const targets = [$("#menu-toggle"), ...document.querySelectorAll("#sidebar a")];
+      if (event.key === "Tab" && $("#sidebar").classList.contains("open") && (!document.body.dataset.bookReader || matchMedia("(max-width:780px)").matches)) {
+        const targets = [$("#menu-toggle"), ...document.querySelectorAll("#sidebar a, #sidebar button, #sidebar select, #sidebar summary")].filter(e => e.getClientRects().length && !e.disabled);
         const first = targets[0], last = targets[targets.length - 1];
         if (event.shiftKey && document.activeElement === first) {event.preventDefault(); last.focus();}
         else if (!event.shiftKey && document.activeElement === last) {event.preventDefault(); first.focus();}
@@ -473,7 +473,7 @@ async function start() {
         event.preventDefault();
         $("#global-query").focus();
       }
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && !document.querySelector(".reader-dialog[open]")) {
         const wasOpen = $("#sidebar").classList.contains("open");
         $("#sidebar").classList.remove("open");
         $("#menu-toggle").setAttribute("aria-expanded", "false");
