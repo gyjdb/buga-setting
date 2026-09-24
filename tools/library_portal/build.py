@@ -39,9 +39,11 @@ def save_json(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
-def source_files(excludes):
+def source_files(excludes, exclude_paths=()):
+    """excludes: directory names skipped anywhere; exclude_paths: directories skipped by exact relative path."""
     for current, dirs, files in os.walk(SOURCE, followlinks=False):
-        dirs[:] = sorted(d for d in dirs if d not in excludes and not (Path(current) / d).is_symlink())
+        here = Path(current)
+        dirs[:] = sorted(d for d in dirs if d not in excludes and (here / d).relative_to(SOURCE).as_posix() not in exclude_paths and not (here / d).is_symlink())
         for name in sorted(files):
             path = Path(current) / name
             if not path.is_symlink():
@@ -111,7 +113,8 @@ def current_selection():
 def build():
     config = read_json(HERE / "portal_config.json")
     current_manifest, selected = current_selection()
-    files = list(source_files(set(config["exclude_dirs"])))
+    exclude_paths = set(config.get("exclude_paths", []))
+    files = list(source_files(set(config["exclude_dirs"]), exclude_paths))
     baseline = {p.relative_to(SOURCE).as_posix(): digest(p) for p in files}
     if SOURCE.resolve() == OUTPUT.resolve() or SOURCE.resolve() in OUTPUT.resolve().parents:
         raise RuntimeError("输出目录不得位于原始文档目录内")
@@ -337,14 +340,14 @@ def build():
         name = "data/search-" + str(len(shards)) + ".json"
         save_json(OUTPUT / name, batch)
         shards.append(name)
-    after = {p.relative_to(SOURCE).as_posix(): digest(p) for p in source_files(set(config["exclude_dirs"]))}
+    after = {p.relative_to(SOURCE).as_posix(): digest(p) for p in source_files(set(config["exclude_dirs"]), exclude_paths)}
     if baseline != after:
         raise RuntimeError("构建期间源目录发生变化，请确认后重新构建；未发布新索引")
     counts = Counter(d["status"] for d in documents)
     result = {"schemaVersion": 1, "builtAt": datetime.now(timezone.utc).isoformat(), "title": config["title"], "subtitle": config["subtitle"],
               "documents": documents, "counts": counts, "topics": list(config["topics"]), "institutions": list(config["institutions"]),
               "collections": config["collections"], "statuses": STATES, "searchShards": shards, "versionSets": version_sets, "audit": audit,
-              "textFiles": sum(d["searchable"] for d in documents), "warnings": warnings, "excludedDirectories": config["exclude_dirs"]}
+              "textFiles": sum(d["searchable"] for d in documents), "warnings": warnings, "excludedDirectories": config["exclude_dirs"], "excludedPaths": sorted(exclude_paths)}
     save_json(OUTPUT / "data/metadata.json", result)
     save_json(OUTPUT / "data/relationships.json", relations)
     save_json(OUTPUT / "data/source-manifest.json", baseline)

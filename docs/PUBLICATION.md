@@ -8,7 +8,7 @@
 - `01_CURRENT_CANON`、`02_PROPOSALS`、`03_UNRESOLVED`：保留实际状态与适用范围。
 - `04_REFERENCE`、`05_SUPERSEDED`、`10_WORKING_DRAFTS`：参考、旧版、候选与修订说明。
 - `07_WORLD_GUIDE`：馆藏读物《银色联盟风土志》的正文、序与编者材料（参考 `REFERENCE`）。插图不在这里，随前端发布于 `tools/library_portal/web/assets/plates/`。
-- `90_AUDIT`：编校报告、决定定位、基线文献、修订快照及结构化记录。
+- `90_AUDIT`：编校报告、决定定位、基线文献、修订快照及结构化记录。其中 `editorial_cleanup_2026-09-18` 与 `in_world_register_2026-09-18` 下的 `baseline/`、`prepared/` 是当时现行正文的整份副本，只随仓库保存，不进入站点索引与检索，以免同一段正文重复出现。
 - `99_SOURCE_ARCHIVE_INDEX/external/回答.txt`：作者提供的原始世界观回答。
 
 ## 本地保留，未公开打包

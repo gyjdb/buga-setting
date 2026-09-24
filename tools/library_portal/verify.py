@@ -43,7 +43,7 @@ def verify():
             raise AssertionError(name)
         checks.append(name)
 
-    actual = {p.relative_to(SOURCE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in source_files(set(config["exclude_dirs"]))}
+    actual = {p.relative_to(SOURCE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in source_files(set(config["exclude_dirs"]), set(config.get("exclude_paths", [])))}
     check("source bytes unchanged since build", manifest == actual)
     check("complete source inventory", set(by_path) == set(actual) and len(by_id) == len(docs))
     check("accurate status totals", dict(Counter(d["status"] for d in docs)) == data["counts"])

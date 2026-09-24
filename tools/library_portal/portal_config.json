@@ -11,6 +11,12 @@
     ".codex",
     ".impeccable"
   ],
+  "exclude_paths": [
+    "90_AUDIT/editorial_cleanup_2026-09-18/baseline",
+    "90_AUDIT/editorial_cleanup_2026-09-18/prepared",
+    "90_AUDIT/in_world_register_2026-09-18/baseline",
+    "90_AUDIT/in_world_register_2026-09-18/prepared"
+  ],
   "topics": {
     "宪政与治理": [
       "宪章",
