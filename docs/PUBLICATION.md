@@ -7,6 +7,7 @@
 - `00_PROJECT`：作者依据、现行清单、项目总卷与决定记录。
 - `01_CURRENT_CANON`、`02_PROPOSALS`、`03_UNRESOLVED`：保留实际状态与适用范围。
 - `04_REFERENCE`、`05_SUPERSEDED`、`10_WORKING_DRAFTS`：参考、旧版、候选与修订说明。
+- `07_WORLD_GUIDE`：馆藏读物《银色联盟风土志》的正文、序与编者材料（参考 `REFERENCE`）。插图不在这里，随前端发布于 `tools/library_portal/web/assets/plates/`。
 - `90_AUDIT`：编校报告、决定定位、基线文献、修订快照及结构化记录。
 - `99_SOURCE_ARCHIVE_INDEX/external/回答.txt`：作者提供的原始世界观回答。
 
@@ -16,6 +17,7 @@
 - 来源档案中的账户、项目容器、完整导出与原始 memory 元数据。
 - `.git`、`.agents`、`.codex`、`.impeccable`、缓存、技能与可执行文件。
 - 旧 ChatGPT 打包工作区、段落索引、门户前后代码快照及历史设计研究截图。
+- 风土志插图的提示词、备选图与逐张评审记录，以及作画法参照的扫描页。
 - macOS 附属元数据 `._*` / `.DS_Store`。
 
 原始报告中引用上述材料的路径、来源编号和适用限制不改写。公开版会将不能定位的正文引用标记为未定位；这不表示原材料不存在，也不表示已公开核验其内容。网站页脚提供本说明。
