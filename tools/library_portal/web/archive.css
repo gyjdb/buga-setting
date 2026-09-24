@@ -49,6 +49,8 @@
   --font-small: .875rem;
   --sidebar: 236px;
   --gutter: clamp(24px,3.4vw,64px);
+  /* Top bar height (flattened 2026-09-24); sticky offsets and the reader height follow it. */
+  --topbar-h: 48px;
   --s1: 4px;
   --s2: 8px;
   --s3: 12px;
@@ -385,12 +387,12 @@ section[id],h2[id],h3[id],h4[id] {
   position: sticky;
   top: 0;
   z-index: 30;
-  min-height: 64px;
+  min-height: var(--topbar-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 9px var(--gutter);
+  padding: 4px var(--gutter);
   background: #1c2c29f5;
   border-bottom: 1px solid #566c5e;
   box-shadow: none;
@@ -421,7 +423,8 @@ section[id],h2[id],h3[id],h4[id] {
 #global-search input {
   width: 100%;
   min-width: 0;
-  padding: 9px 0;
+  min-height: 34px;
+  padding: 5px 0;
   background: transparent;
   border: 0;
   outline: 0;
@@ -438,8 +441,8 @@ section[id],h2[id],h3[id],h4[id] {
 #global-search button {
   border: 0;
   border-left: 1px solid #a2b4a5;
-  min-height: 44px;
-  padding: 8px 16px;
+  min-height: 36px;
+  padding: 4px 16px;
   white-space: nowrap;
   border-radius: 0 1px 1px 0;
 }
@@ -2138,7 +2141,7 @@ main[data-view=home]::before {
 .source-transcript>.reader-contents {
   position: sticky;
   max-height: 60dvh;
-  top: 64px;
+  top: var(--topbar-h);
   border: 1px solid #53695f;
   border-bottom: 0;
 }
@@ -2247,7 +2250,7 @@ main[data-view=maintenance]>.document-header {
   }
   .reader-contents {
     position: sticky;
-    top: 64px;
+    top: var(--topbar-h);
     max-height: min(65dvh,560px);
     width: 100%;
     border-left: 0;
@@ -2381,7 +2384,7 @@ main[data-view=maintenance]>.document-header {
     transform: translateX(-102%);
     transition: transform .18s;
     box-shadow: 12px 0 30px #0009;
-    top: 64px;
+    top: var(--topbar-h);
   }
   .sidebar.open {
     transform: none;
@@ -2401,18 +2404,22 @@ main[data-view=maintenance]>.document-header {
   .sidebar-bottom {
     padding: 12px 24px;
   }
+  :root {
+    --topbar-h: 52px;
+  }
   .topbar {
-    padding: 9px 14px;
+    padding: 5px 12px;
     gap: 10px;
-    min-height: 64px;
+    min-height: var(--topbar-h);
     justify-content: space-between;
     z-index: 50;
   }
   .mobile-toggle {
     display: inline-flex;
     min-width: 64px;
+    min-height: 40px;
     flex-shrink: 0;
-    padding: 8px 12px;
+    padding: 4px 12px;
     font-size: 15px;
     gap: 6px;
   }
@@ -2439,6 +2446,7 @@ main[data-view=maintenance]>.document-header {
     display: none;
   }
   #global-search button {
+    min-height: 40px;
     padding-inline: 12px;
     font-size: 15px;
   }

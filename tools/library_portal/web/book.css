@@ -61,7 +61,7 @@ main[data-view=book] { padding-bottom: 96px; }
 
 /* 书眉：左中右拉 */
 .book-running-head {
-  position: sticky; top: 64px; z-index: 1; display: flex; justify-content: space-between; margin: -26px 0 34px; padding: 16px 0 12px;
+  position: sticky; top: var(--topbar-h); z-index: 1; display: flex; justify-content: space-between; margin: -26px 0 34px; padding: 16px 0 12px;
   border-bottom: 1px solid var(--hair); background: var(--book-grain), var(--paper);
   color: var(--book-ink-2); font: 500 11px/1 var(--book-cn-head); letter-spacing: .1em;
 }
@@ -344,7 +344,7 @@ main[data-view=book] { padding-bottom: 96px; }
   body[data-book-reader][data-book-nav=closed] .workspace { margin-left: 0; }
 }
 body[data-book-reader] .workspace > footer { display: none; }
-body[data-book-reader] .topbar { height: 64px; justify-content: flex-start; gap: 14px; padding: 0 20px 0 12px; }
+body[data-book-reader] .topbar { height: var(--topbar-h); justify-content: flex-start; gap: 14px; padding: 0 20px 0 12px; }
 body[data-book-reader] #menu-toggle { display: inline-flex; flex: none; width: 42px; min-width: 42px; height: 42px; min-height: 42px; padding: 0; border-color: transparent; background: transparent; color: var(--silver); }
 body[data-book-reader] #menu-toggle:hover { border-color: var(--line); background: #ffffff0a; }
 body[data-book-reader] #menu-toggle .icon { width: 20px; height: 20px; }
@@ -353,7 +353,7 @@ body[data-book-reader] #global-search { flex: 0 1 280px; min-width: 150px; }
 .reader-bar { display: flex; flex: 1 1 auto; align-items: center; gap: 14px; min-width: 0; }
 .reader-icon { flex: none; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .reader-toc { position: relative; min-width: 0; }
-.reader-toc-button { max-width: 100%; min-height: 38px; gap: 10px; padding: 5px 10px 5px 14px; border-color: #50635b; background: transparent; color: #dbe4e0; font: 400 14px/1.5 var(--ui); }
+.reader-toc-button { max-width: 100%; min-height: 34px; gap: 10px; padding: 5px 10px 5px 14px; border-color: #50635b; background: transparent; color: #dbe4e0; font: 400 14px/1.5 var(--ui); }
 .reader-toc-button[aria-expanded=true] { border-color: var(--silver-edge); background: #263735; }
 .reader-toc-current { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .reader-toc-menu { position: absolute; z-index: 60; top: calc(100% + 10px); left: 0; width: 300px; max-height: calc(100dvh - 90px); overflow-y: auto; overscroll-behavior: contain; padding: 12px 10px 10px; border: 1px solid #50635b; background: #15231f; box-shadow: 0 20px 46px #000b; }
@@ -369,7 +369,7 @@ body[data-book-reader] #global-search { flex: 0 1 280px; min-width: 150px; }
 .reader-toc-foot button { min-height: 34px; padding: 4px 12px; background: transparent; font-size: 13px; }
 .reader-toc-foot a { color: #a8bfb3; font-size: 13px; text-underline-offset: 4px; }
 .reader-progress { flex: none; color: var(--muted); font: 400 13px/1.5 "Book Label", var(--ui); font-variant-numeric: tabular-nums; letter-spacing: .08em; white-space: nowrap; }
-.reader-sources { flex: none; min-height: 38px; padding: 5px 14px; border-color: #50635b; background: transparent; color: #c4d7d0; font-size: 14px; }
+.reader-sources { flex: none; min-height: 34px; padding: 5px 14px; border-color: #50635b; background: transparent; color: #c4d7d0; font-size: 14px; }
 @media (max-width: 1180px) { .reader-sources { display: none; } }
 .reader-bar > .reader-progress { margin-right: auto; }
 /* 顶栏：书页版 / 文字版 */
@@ -387,9 +387,27 @@ body[data-book-reader] #global-search { flex: 0 1 280px; min-width: 150px; }
 .reader-zoom .reader-zoom-level { min-width: 58px; }
 .reader[data-zoom=in] .reader-stage { overflow: auto; overscroll-behavior: contain; cursor: grab; user-select: none; scrollbar-color: #7f918a transparent; }
 .reader[data-zoom=in] .reader-stage.is-dragging { cursor: grabbing; }
+/* 翻页（book.js 的 flipTo）：书页的副本绕书脊翻过去，背面是下一页；翻页时台面不裁边，翻起的纸角可以探出页面。 */
+.reader-flip { position: absolute; inset: 0; z-index: 3; pointer-events: none; perspective: 2600px; }
+.reader-flip .flip-under, .reader-flip .flip-leaf { position: absolute; top: 0; }
+.reader-flip .flip-leaf { transform-style: preserve-3d; will-change: transform; }
+.reader-flip .flip-face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; }
+.reader-flip .flip-back { transform: rotateY(180deg); }
+.reader-flip .flip-face > .reader-leaf, .reader-flip .flip-under > .reader-leaf { position: absolute; left: 0; top: 0; margin: 0; }
+.reader-flip .flip-shade, .reader-flip .flip-cast { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
+.reader-stage.is-flipping { overflow: visible; }
+/* 书页左下角、右下角的卷角：鼠标移到书页上时露出，移到卷角上掀得更高，点一下翻页。触屏、放大时不显示。 */
+.reader-curl { position: absolute; bottom: 0; z-index: 4; width: 26px; height: 26px; min-height: 0; padding: 0; border: 0; border-radius: 0; opacity: 0; cursor: pointer; transition: width .18s ease, height .18s ease, opacity .18s ease; }
+.reader-curl.next { right: 0; background: linear-gradient(to top left, #0f1815 0 49%, #7f7b70 49.6%, #d8d4c8 51%, #f2efe7 76%, #fbf9f4); }
+.reader-curl.prev { left: 0; background: linear-gradient(to top right, #0f1815 0 49%, #7f7b70 49.6%, #d8d4c8 51%, #f2efe7 76%, #fbf9f4); }
+.reader-curl:hover, .reader-curl:focus-visible { background-color: transparent; }
+.reader-stage:hover .reader-curl { opacity: 1; }
+.reader-stage .reader-curl:hover { width: 46px; height: 46px; }
+.reader-curl:disabled, .reader[data-zoom=in] .reader-curl, .reader-stage.is-flipping .reader-curl, .reader-stage[aria-busy=true] .reader-curl { display: none; }
+@media (hover: none) { .reader-curl { display: none; } }
 
 main[data-view=book] { padding: 0; max-width: none; }
-.reader { --reader-font: 15px; --reader-pad: 44px; --paper-k: 1; height: calc(100dvh - 64px); min-height: 260px; display: grid; grid-template-rows: minmax(0,1fr) auto; }
+.reader { --reader-font: 15px; --reader-pad: 44px; --paper-k: 1; height: calc(100dvh - var(--topbar-h)); min-height: 260px; display: grid; grid-template-rows: minmax(0,1fr) auto; }
 /* 纸页按可用高度定尺寸，正文固定 15px；两侧空位放翻页键，不需要上下滚动。 */
 .reader-desk { min-width: 0; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 16px; }
 .reader-stage { position: relative; flex: none; background: var(--paper); color: var(--book-ink); overflow: hidden; box-shadow: 0 2px 0 #d7d6ce,0 5px 0 -1px #e9e8e1,0 12px 32px #0005; }
@@ -501,7 +519,7 @@ main[data-view=book] { padding: 0; max-width: none; }
   body[data-book-reader] #global-search, .reader-bar .reader-progress { display: none; }
   .reader-toc { flex: 1; }
   .reader-toc-button { width: 100%; justify-content: space-between; }
-  .reader-toc-menu { position: fixed; top: 64px; left: 8px; right: 8px; width: auto; max-height: calc(100dvh - 76px); }
+  .reader-toc-menu { position: fixed; top: var(--topbar-h); left: 8px; right: 8px; width: auto; max-height: calc(100dvh - 76px); }
   .reader-desk { padding: 8px; }
   .reader-turn { display: none; }
   .reader-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 44px; padding: 0 8px; }

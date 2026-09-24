@@ -368,7 +368,7 @@ async function bookDetail(doc, params, serial) {
   let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved, layout = "", book = null;
   const icon = d => `<svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
   main.innerHTML = `<section class="reader" aria-label="${BOOK_TITLE}阅读器">
-    <div class="reader-desk"><button type="button" class="reader-turn" data-turn="-1" aria-label="上一页" title="上一页（←）">${icon("M15 4l-8 8 8 8")}</button><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div><button type="button" class="reader-turn" data-turn="1" aria-label="下一页" title="下一页（→）">${icon("M9 4l8 8-8 8")}</button></div>
+    <div class="reader-desk"><button type="button" class="reader-turn" data-turn="-1" aria-label="上一页" title="上一页（←）">${icon("M15 4l-8 8 8 8")}</button><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><button type="button" class="reader-curl prev" data-turn="-1" tabindex="-1" aria-hidden="true"></button><button type="button" class="reader-curl next" data-turn="1" tabindex="-1" aria-hidden="true"></button><p class="reader-loading" role="status">正在排版…</p></div><button type="button" class="reader-turn" data-turn="1" aria-label="下一页" title="下一页（→）">${icon("M9 4l8 8-8 8")}</button></div>
     <nav class="reader-controls" aria-label="翻页"><button type="button" data-turn="-1" aria-label="上一页">← <span>上一页</span></button><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" data-turn="1" aria-label="下一页"><span>下一页</span> →</button></nav>
     <dialog class="reader-dialog" aria-labelledby="reader-panel-title"><header><h2 id="reader-panel-title"></h2><button type="button" data-close aria-label="关闭面板">关闭 ×</button></header><div class="reader-panel-body"></div></dialog>
     <div class="reader-measure reader-prose" aria-hidden="true" inert></div>
@@ -442,13 +442,78 @@ async function bookDetail(doc, params, serial) {
   }
   const turn = delta => {
     if (stage.getAttribute("aria-busy") === "true" || dialog.open) return;
+    finishFlip();
     const target = current + delta * spreadSize;
     if (target < 0 || target >= pages.length) return;
     toc(false);
-    show(target);
-    if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
-    if (!matchMedia("(prefers-reduced-motion:reduce)").matches) stage.animate([{ opacity: .4, transform: `translateX(${delta * 8}px)` }, { opacity: 1, transform: "none" }], { duration: 160, easing: "ease-out" });
+    // 放大时书页比台面大，翻页直接换页；减少动态效果时也不播动画。
+    if (root.dataset.zoom === "in" || matchMedia("(prefers-reduced-motion:reduce)").matches || !flipTo(delta, target)) {
+      show(target);
+      if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
+    }
   };
+  // 翻页：当前一页绕书脊翻过去，正面是这一页、背面是下一页，底下露出下一对开的另一页；翻完才换成下一对开（show）。
+  // 用的是书页的副本，放在书页层里（与书页同一比例），翻完即拆。连按时先把正在翻的这一页翻完。
+  let flipping = null;
+  function finishFlip() { if (flipping) flipping.finish(); }
+  function flipTo(delta, target) {
+    const leaf = i => leaves.children[i], two = spreadSize === 2, forward = delta > 0;
+    const left = leaf(current);
+    if (!left || left.hidden) return false;
+    const W = left.offsetWidth, H = left.offsetHeight;
+    // turning：翻动的那一页；back：它的背面；under：翻开后露出的那一页；x：翻动页所在的位置；spine：书脊在翻动页的哪一边。
+    let turning, back = null, under = null, x = left.offsetLeft, spine = "left";
+    if (two && forward) { turning = leaf(current + 1); back = leaf(target); under = leaf(target + 1); x += W; }
+    else if (two) { turning = left; back = leaf(target + 1); under = leaf(target); spine = "right"; }
+    else if (forward) { turning = left; under = leaf(target); }
+    else turning = leaf(target);
+    if (!turning) return false;
+    const copy = source => {
+      const c = source.cloneNode(true), cs = getComputedStyle(source);
+      c.hidden = false; c.removeAttribute("aria-label");
+      c.querySelectorAll("[id]").forEach(n => n.removeAttribute("id"));
+      c.style.setProperty("width", W + "px"); c.style.setProperty("height", H + "px");
+      c.style.setProperty("background-color", cs.backgroundColor); c.style.setProperty("background-image", cs.backgroundImage);
+      return c;
+    };
+    const part = (tag, cls, background) => { const n = document.createElement(tag); n.className = cls; if (background) n.style.setProperty("background", background); return n; };
+    const place = n => { n.style.setProperty("left", x + "px"); n.style.setProperty("width", W + "px"); n.style.setProperty("height", H + "px"); return n; };
+    const shade = side => `linear-gradient(${side === "left" ? 90 : 270}deg, #0000004d, #00000012 38%, #ffffff14)`;
+    const overlay = part("div", "reader-flip"); overlay.setAttribute("aria-hidden", "true");
+    let cast = null;
+    if (under) {
+      const u = place(part("div", "flip-under")); u.append(copy(under));
+      cast = part("i", "flip-cast", `linear-gradient(${spine === "left" ? 90 : 270}deg, #00000066, #0000 58%)`); u.append(cast);
+      overlay.append(u);
+    }
+    const sheet = place(part("div", "flip-leaf")); sheet.style.setProperty("transform-origin", spine === "left" ? "0 50%" : "100% 50%");
+    const front = part("div", "flip-face"), frontShade = part("i", "flip-shade", shade(spine));
+    front.append(copy(turning), frontShade); sheet.append(front);
+    let backShade = null;
+    if (back) { const b = part("div", "flip-face flip-back"); backShade = part("i", "flip-shade", shade(spine === "left" ? "right" : "left")); b.append(copy(back), backShade); sheet.append(b); }
+    overlay.append(sheet); leaves.append(overlay);
+    stage.classList.add("is-flipping");
+    // 合上的封面：往回翻到封面时，台面先透明，免得左边露出纸色。
+    if (!forward && pages.slice(target, target + spreadSize).some(p => p.void)) stage.classList.add("is-closed");
+    const angle = two ? (spine === "left" ? -180 : 180) : -92;
+    const turnFrames = two || forward ? [{ transform: "rotateY(0deg)" }, { transform: `rotateY(${angle}deg)` }] : [{ transform: `rotateY(${angle}deg)` }, { transform: "rotateY(0deg)" }];
+    const timing = { duration: two ? 700 : 520, easing: "cubic-bezier(.42,.08,.3,1)", fill: "forwards" };
+    const motion = sheet.animate(turnFrames, timing);
+    frontShade.animate(two || forward ? [{ opacity: 0 }, { opacity: .7, offset: .5 }, { opacity: .7 }] : [{ opacity: .7 }, { opacity: 0 }], timing);
+    backShade?.animate([{ opacity: .7 }, { opacity: .7, offset: .5 }, { opacity: 0 }], timing);
+    cast?.animate([{ opacity: 0 }, { opacity: 1, offset: .45 }, { opacity: 0 }], timing);
+    let done = false;
+    const commit = () => {
+      if (done) return;
+      done = true; flipping = null;
+      motion.cancel(); overlay.remove(); stage.classList.remove("is-flipping");
+      show(target);
+      if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
+    };
+    motion.onfinish = commit;
+    flipping = { finish: commit };
+    return true;
+  }
   // 书页版只排一次（页面尺寸固定），之后只随窗口缩放。
   let building = null;
   function buildBook() {
@@ -502,6 +567,7 @@ async function bookDetail(doc, params, serial) {
   }
   let pending = positionFrom(params);
   async function paginate() {
+    finishFlip();
     const box = getComputedStyle(desk), gap = parseFloat(box.columnGap) || 0;
     const side = [...desk.querySelectorAll(".reader-turn")].reduce((w, b) => w + (b.offsetWidth ? b.offsetWidth + gap : 0), 0);
     const W = Math.max(240, desk.clientWidth - parseFloat(box.paddingLeft) - parseFloat(box.paddingRight) - side);
@@ -599,6 +665,7 @@ async function bookDetail(doc, params, serial) {
     loading.hidden = true; stage.setAttribute("aria-busy", "false");
   }
   function navigate(query) {
+    finishFlip();
     const position = positionFrom(query) || { section: "book-title" };
     if (dialog.open) dialog.close();
     toc(false);
