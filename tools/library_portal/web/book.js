@@ -368,7 +368,7 @@ async function bookDetail(doc, params, serial) {
   let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved, layout = "", book = null;
   const icon = d => `<svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
   main.innerHTML = `<section class="reader" aria-label="${BOOK_TITLE}阅读器">
-    <div class="reader-desk"><button type="button" class="reader-turn" data-turn="-1" aria-label="上一页" title="上一页（←）">${icon("M15 4l-8 8 8 8")}</button><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><button type="button" class="reader-curl prev" data-turn="-1" tabindex="-1" aria-hidden="true"></button><button type="button" class="reader-curl next" data-turn="1" tabindex="-1" aria-hidden="true"></button><p class="reader-loading" role="status">正在排版…</p></div><button type="button" class="reader-turn" data-turn="1" aria-label="下一页" title="下一页（→）">${icon("M9 4l8 8-8 8")}</button></div>
+    <div class="reader-desk"><button type="button" class="reader-turn" data-turn="-1" aria-label="上一页" title="上一页（←）">${icon("M15 4l-8 8 8 8")}</button><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div><button type="button" class="reader-turn" data-turn="1" aria-label="下一页" title="下一页（→）">${icon("M9 4l8 8-8 8")}</button></div>
     <nav class="reader-controls" aria-label="翻页"><button type="button" data-turn="-1" aria-label="上一页">← <span>上一页</span></button><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" data-turn="1" aria-label="下一页"><span>下一页</span> →</button></nav>
     <dialog class="reader-dialog" aria-labelledby="reader-panel-title"><header><h2 id="reader-panel-title"></h2><button type="button" data-close aria-label="关闭面板">关闭 ×</button></header><div class="reader-panel-body"></div></dialog>
     <div class="reader-measure reader-prose" aria-hidden="true" inert></div>
@@ -377,7 +377,7 @@ async function bookDetail(doc, params, serial) {
   // Book tools sit in the top bar; the sidebar stays the archive's own navigation.
   const entries = [["book-cover", "", "封面"], ["book-title", "", "书名页"], ...(preface ? [["book-preface", "", "序"]] : []), ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
   const sectionLabel = new Map([["book-contents", "目录"], ["book-sources", "本书所据"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
-  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><div class="reader-zoom" role="group" aria-label="书页缩放" hidden><button type="button" data-zoom="-1" aria-label="缩小" title="缩小（−）">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6")}</button><button type="button" class="reader-zoom-level" data-zoom="0" title="恢复为适合窗口（0）。100% 即纸本实际大小">适合</button><button type="button" data-zoom="1" aria-label="放大" title="放大（+）。也可以按住 Ctrl 滚动滚轮，或双击书页">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6M10.5 7.5v6")}</button></div><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
+  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><div class="reader-zoom" role="group" aria-label="书页缩放" hidden><button type="button" data-zoom="-1" aria-label="缩小" title="缩小（−）">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6")}</button><button type="button" class="reader-zoom-level" data-zoom="0" title="恢复为适合窗口（0）。100% 即纸本实际大小">适合</button><button type="button" data-zoom="1" aria-label="放大" title="放大（+）。也可以直接滚动滚轮，或双击书页">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6M10.5 7.5v6")}</button></div><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
   siteTitle.after(bar);
   const measure = root.querySelector(".reader-measure"), loading = root.querySelector(".reader-loading");
   const progress = [...root.querySelectorAll(".reader-progress"), bar.querySelector(".reader-progress")];
@@ -442,77 +442,163 @@ async function bookDetail(doc, params, serial) {
   }
   const turn = delta => {
     if (stage.getAttribute("aria-busy") === "true" || dialog.open) return;
+    toc(false);
+    // 鼠标停在书角、纸角已经掀起时，顺着这一角翻过去。
+    if (fold?.peek && fold.dir === delta) { fold.play(); return; }
     finishFlip();
     const target = current + delta * spreadSize;
     if (target < 0 || target >= pages.length) return;
-    toc(false);
     // 放大时书页比台面大，翻页直接换页；减少动态效果时也不播动画。
-    if (root.dataset.zoom === "in" || matchMedia("(prefers-reduced-motion:reduce)").matches || !flipTo(delta, target)) {
+    if (root.dataset.zoom === "in" || reduceMotion() || !makeFold(delta, "bottom")) {
       show(target);
       if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
+      return;
     }
+    fold.play();
   };
-  // 翻页：当前一页绕书脊翻过去，正面是这一页、背面是下一页，底下露出下一对开的另一页；翻完才换成下一对开（show）。
-  // 用的是书页的副本，放在书页层里（与书页同一比例），翻完即拆。连按时先把正在翻的这一页翻完。
-  let flipping = null;
-  function finishFlip() { if (flipping) flipping.finish(); }
-  function flipTo(delta, target) {
-    const leaf = i => leaves.children[i], two = spreadSize === 2, forward = delta > 0;
-    const left = leaf(current);
-    if (!left || left.hidden) return false;
-    const W = left.offsetWidth, H = left.offsetHeight;
-    // turning：翻动的那一页；back：它的背面；under：翻开后露出的那一页；x：翻动页所在的位置；spine：书脊在翻动页的哪一边。
-    let turning, back = null, under = null, x = left.offsetLeft, spine = "left";
-    if (two && forward) { turning = leaf(current + 1); back = leaf(target); under = leaf(target + 1); x += W; }
-    else if (two) { turning = left; back = leaf(target + 1); under = leaf(target); spine = "right"; }
-    else if (forward) { turning = left; under = leaf(target); }
-    else turning = leaf(target);
-    if (!turning) return false;
-    const copy = source => {
+  // 仿真翻页（2026-09-24）：纸页从一角掀起，沿折痕翻折，看得见翻过来的背面、落在下一页上的影子，像手机阅读器的“仿真翻页”。
+  // 按住书页外侧拖动时纸角跟着走，松手时过了一半或甩得够快就翻过去，否则落回；按键、按钮与点击让纸角沿一道弧线自己走完。
+  // 画法：纸角 C 被拉到 P，折痕是 C、P 连线的中垂线；折痕靠书脊一侧是还平着的正面，另一侧掀起、沿折痕翻折成背面，
+  // 底下露出下一页。三层都是书页的副本，放在书页层里（与书页同一比例、同一坐标），翻完即拆，再换成下一对开（show）。
+  let fold = null;
+  const reduceMotion = () => matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function finishFlip() { fold?.finish(); }
+  // 多边形沿直线裁成一半（keep 为 1 留纸角一侧），以及沿折痕的镜像。
+  const cut = (shape, m, n, keep) => {
+    const out = [], side = p => ((p[0] - m[0]) * n[0] + (p[1] - m[1]) * n[1]) * keep;
+    shape.forEach((a, i) => {
+      const c = shape[(i + 1) % shape.length], sa = side(a), sc = side(c);
+      if (sa >= 0) out.push(a);
+      if (sa * sc < 0) { const t = sa / (sa - sc); out.push([a[0] + (c[0] - a[0]) * t, a[1] + (c[1] - a[1]) * t]); }
+    });
+    return out;
+  };
+  const mirror = (p, m, n) => { const k = 2 * ((p[0] - m[0]) * n[0] + (p[1] - m[1]) * n[1]); return [p[0] - k * n[0], p[1] - k * n[1]]; };
+  const polygon = pts => pts.length > 2 ? `polygon(${pts.map(p => `${p[0].toFixed(1)}px ${p[1].toFixed(1)}px`).join(",")})` : "polygon(0 0,0 0,0 0)";
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
+  function makeFold(dir, edge) {
+    const target = current + dir * spreadSize;
+    if (target < 0 || target >= pages.length) return null;
+    const leaf = i => leaves.children[i], two = spreadSize === 2, forward = dir > 0;
+    const first = leaf(current);
+    if (!first || first.hidden) return null;
+    const W = first.offsetWidth, H = first.offsetHeight, x0 = first.offsetLeft;
+    // turning：翻动的纸的正面；back：背面；under：翻开后露出的一页；real：纸在书上的原位（翻动时藏起）；left：翻动的纸所在的位置；spine：书脊。
+    // 单页往回翻，是把上一页从左边翻回来：同一张纸从“翻过去”的位置落回原处（reverse）。单页的背面是这一页透过纸背的样子。
+    let turning, back, under, real, left, spine;
+    if (two) {
+      left = forward ? x0 + W : x0; spine = x0 + W;
+      turning = real = forward ? leaf(current + 1) : first;
+      back = forward ? leaf(target) : leaf(target + 1);
+      under = forward ? leaf(target + 1) : leaf(target);
+    } else {
+      left = spine = x0; real = first;
+      turning = back = forward ? first : leaf(target);
+      under = forward ? leaf(target) : first;
+    }
+    if (!turning || !back || !under) return null;
+    const reverse = !two && !forward, yC = edge === "top" ? 0 : H;
+    const edgeX = spine === left ? left + W : left, C = [edgeX, yC], E = [2 * spine - edgeX, yC];
+    const from = reverse ? E : C, to = reverse ? C : E, span = [E[0] - C[0], E[1] - C[1]], spanSq = span[0] ** 2 + span[1] ** 2;
+    const inward = [edgeX > spine ? -1 : 1, yC ? -1 : 1];
+    const diag = Math.hypot(W, H), S1 = [spine, yC], S2 = [spine, H - yC];
+    const rect = [[left, 0], [left + W, 0], [left + W, H], [left, H]];
+    const div = cls => { const n = document.createElement("div"); n.className = cls; return n; };
+    const copy = (source, x) => {
       const c = source.cloneNode(true), cs = getComputedStyle(source);
-      c.hidden = false; c.removeAttribute("aria-label");
+      c.hidden = false; c.inert = true; c.removeAttribute("aria-label"); c.classList.add("flip-copy");
       c.querySelectorAll("[id]").forEach(n => n.removeAttribute("id"));
-      c.style.setProperty("width", W + "px"); c.style.setProperty("height", H + "px");
-      c.style.setProperty("background-color", cs.backgroundColor); c.style.setProperty("background-image", cs.backgroundImage);
+      for (const [k, v] of [["left", x + "px"], ["width", W + "px"], ["height", H + "px"], ["background-color", cs.backgroundColor], ["background-image", cs.backgroundImage]]) c.style.setProperty(k, v);
       return c;
     };
-    const part = (tag, cls, background) => { const n = document.createElement(tag); n.className = cls; if (background) n.style.setProperty("background", background); return n; };
-    const place = n => { n.style.setProperty("left", x + "px"); n.style.setProperty("width", W + "px"); n.style.setProperty("height", H + "px"); return n; };
-    const shade = side => `linear-gradient(${side === "left" ? 90 : 270}deg, #0000004d, #00000012 38%, #ffffff14)`;
-    const overlay = part("div", "reader-flip"); overlay.setAttribute("aria-hidden", "true");
-    let cast = null;
-    if (under) {
-      const u = place(part("div", "flip-under")); u.append(copy(under));
-      cast = part("i", "flip-cast", `linear-gradient(${spine === "left" ? 90 : 270}deg, #00000066, #0000 58%)`); u.append(cast);
-      overlay.append(u);
-    }
-    const sheet = place(part("div", "flip-leaf")); sheet.style.setProperty("transform-origin", spine === "left" ? "0 50%" : "100% 50%");
-    const front = part("div", "flip-face"), frontShade = part("i", "flip-shade", shade(spine));
-    front.append(copy(turning), frontShade); sheet.append(front);
-    let backShade = null;
-    if (back) { const b = part("div", "flip-face flip-back"); backShade = part("i", "flip-shade", shade(spine === "left" ? "right" : "left")); b.append(copy(back), backShade); sheet.append(b); }
-    overlay.append(sheet); leaves.append(overlay);
+    const overlay = div("reader-flip"); overlay.setAttribute("aria-hidden", "true");
+    const underBox = div("flip-layer"), frontBox = div("flip-layer"), lift = div("flip-layer"), flapBox = div("flip-layer"), flapTurn = div("flip-turn");
+    const underShade = div("flip-strip"), flapShade = div("flip-strip");
+    underBox.append(copy(under, left), underShade);
+    frontBox.append(copy(turning, left));
+    const backLeft = 2 * spine - left - W;
+    flapTurn.append(copy(back, backLeft));
+    if (!two) { const see = div("flip-see"); for (const [k, v] of [["left", backLeft + "px"], ["width", W + "px"], ["height", H + "px"]]) see.style.setProperty(k, v); flapTurn.append(see); }
+    flapBox.append(flapTurn, flapShade); lift.append(flapBox);
+    overlay.append(underBox, frontBox, lift);
+    leaves.append(overlay);
+    real.style.setProperty("visibility", "hidden");
     stage.classList.add("is-flipping");
-    // 合上的封面：往回翻到封面时，台面先透明，免得左边露出纸色。
+    // 往回翻到合上的封面时，台面先透明，免得左边露出纸色。
     if (!forward && pages.slice(target, target + spreadSize).some(p => p.void)) stage.classList.add("is-closed");
-    const angle = two ? (spine === "left" ? -180 : 180) : -92;
-    const turnFrames = two || forward ? [{ transform: "rotateY(0deg)" }, { transform: `rotateY(${angle}deg)` }] : [{ transform: `rotateY(${angle}deg)` }, { transform: "rotateY(0deg)" }];
-    const timing = { duration: two ? 700 : 520, easing: "cubic-bezier(.42,.08,.3,1)", fill: "forwards" };
-    const motion = sheet.animate(turnFrames, timing);
-    frontShade.animate(two || forward ? [{ opacity: 0 }, { opacity: .7, offset: .5 }, { opacity: .7 }] : [{ opacity: .7 }, { opacity: 0 }], timing);
-    backShade?.animate([{ opacity: .7 }, { opacity: .7, offset: .5 }, { opacity: 0 }], timing);
-    cast?.animate([{ opacity: 0 }, { opacity: 1, offset: .45 }, { opacity: 0 }], timing);
-    let done = false;
-    const commit = () => {
-      if (done) return;
-      done = true; flipping = null;
-      motion.cancel(); overlay.remove(); stage.classList.remove("is-flipping");
-      show(target);
-      if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
+    let P = from.slice(), raf = 0, anim = null, done = false;
+    const turned = () => Math.max(0, Math.min(1, ((P[0] - C[0]) * span[0] + (P[1] - C[1]) * span[1]) / spanSq));
+    const strip = (el, m, dx, dy, width, background, opacity) => {
+      const h = diag * 2;
+      el.style.setProperty("width", Math.max(1, width) + "px"); el.style.setProperty("height", 2 * h + "px");
+      el.style.setProperty("transform", `translate(${m[0]}px,${m[1]}px) rotate(${Math.atan2(dy, dx)}rad) translateY(${-h}px)`);
+      el.style.setProperty("background", background); el.style.setProperty("opacity", String(opacity));
     };
-    motion.onfinish = commit;
-    flipping = { finish: commit };
-    return true;
+    function set(p) {
+      let [px, py] = p;
+      // 纸连着书脊：纸角离书脊下端不超过一个页宽，离书脊上端不超过对角线。
+      for (const [s, r] of [[S1, W], [S2, diag]]) { const dx = px - s[0], dy = py - s[1], d = Math.hypot(dx, dy); if (d > r) { px = s[0] + dx * r / d; py = s[1] + dy * r / d; } }
+      P = [px, py];
+      const dx = C[0] - px, dy = C[1] - py, len = Math.hypot(dx, dy), k = turned();
+      if (len < .5) {
+        frontBox.style.setProperty("clip-path", polygon(rect)); underBox.style.setProperty("clip-path", polygon([]));
+        lift.style.setProperty("opacity", "0"); return;
+      }
+      const n = [dx / len, dy / len], m = [(C[0] + px) / 2, (C[1] + py) / 2];
+      const flat = cut(rect, m, n, -1), raised = cut(rect, m, n, 1);
+      const depth = Math.max(1, ...raised.map(q => (q[0] - m[0]) * n[0] + (q[1] - m[1]) * n[1]));
+      frontBox.style.setProperty("clip-path", polygon(flat));
+      underBox.style.setProperty("clip-path", polygon(raised));
+      flapBox.style.setProperty("clip-path", polygon(raised.map(q => mirror(q, m, n))));
+      // 背面的位置：先沿书脊镜像到翻过去的位置，再沿折痕镜像回来（两次镜像合起来是一次旋转）。
+      const a11 = 1 - 2 * n[0] * n[0], a12 = -2 * n[0] * n[1], a22 = 1 - 2 * n[1] * n[1], md = 2 * (m[0] * n[0] + m[1] * n[1]);
+      flapTurn.style.setProperty("transform", `matrix(${-a11},${-a12},${a12},${a22},${a11 * 2 * spine + md * n[0]},${a12 * 2 * spine + md * n[1]})`);
+      // 背面靠折痕处暗一线、稍远处泛白，像纸弯过来的弧面；掀起的纸在正面投下影子；底下那页靠折痕处也有一道影子。
+      strip(flapShade, m, -n[0], -n[1], depth, `linear-gradient(90deg,#00000038,#0000000a ${depth * .1}px,#ffffff47 ${depth * .32}px,#fff0 ${depth * .66}px,#00000014 ${depth}px)`, 1);
+      strip(underShade, m, n[0], n[1], Math.min(depth * .9, W * .32), "linear-gradient(90deg,#00000066,#0000001f 40%,#0000)", Math.min(1, depth / (W * .06)) * (1 - k * .75));
+      lift.style.setProperty("filter", `drop-shadow(${(-n[0] * 5).toFixed(1)}px ${(-n[1] * 5).toFixed(1)}px 9px rgba(0,0,0,${(.32 * (1 - k * .6)).toFixed(3)}))`);
+      // 单页翻到尽头，纸已离开书页，渐渐淡出。
+      lift.style.setProperty("opacity", two ? "1" : String(Math.max(0, Math.min(1, (1 - k) / .3))));
+    }
+    function animate(dest, ms, arc, then) {
+      cancelAnimationFrame(raf);
+      const a = P.slice(), t0 = performance.now();
+      anim = { then };
+      const step = now => {
+        const t = Math.min(1, (now - t0) / Math.max(1, ms)), e = ease(t), up = arc * Math.sin(Math.PI * e);
+        set([a[0] + (dest[0] - a[0]) * e, a[1] + (dest[1] - a[1]) * e + (yC ? -up : up)]);
+        if (t < 1) raf = requestAnimationFrame(step);
+        else { anim = null; then(); }
+      };
+      raf = requestAnimationFrame(step);
+    }
+    function end(commit) {
+      if (done) return;
+      done = true; cancelAnimationFrame(raf); anim = null;
+      if (fold === self) fold = null;
+      overlay.remove(); real.style.removeProperty("visibility"); stage.classList.remove("is-flipping");
+      if (commit) { show(target); if (root.dataset.zoom === "in") stage.scrollTo(0, 0); }
+      else stage.classList.toggle("is-closed", pages.slice(current, current + spreadSize).some(p => p.void));
+    }
+    const rest = dest => Math.min(1, Math.hypot(dest[0] - P[0], dest[1] - P[1]) / Math.sqrt(spanSq));
+    const self = {
+      dir, edge, from, to, peek: false,
+      point: () => P.slice(),
+      progress: () => reverse ? 1 - turned() : turned(),
+      move(p) { cancelAnimationFrame(raf); anim = null; set(p); },
+      // 悬停：纸角朝书页里掀起，跟着鼠标，至少掀开一小角。
+      hover(q) {
+        const v = [q[0] - C[0], q[1] - C[1]], min = W * .07;
+        animate([C[0] + inward[0] * Math.max(Math.abs(v[0]), min), C[1] + inward[1] * Math.max(Math.abs(v[1]), min * .75)], 120, 0, () => {});
+      },
+      play() { self.peek = false; const r = rest(to); animate(to, (two ? 760 : 560) * Math.max(.4, r), H * .1 * r, () => end(true)); },
+      release(commit) { self.peek = false; const dest = commit ? to : from; animate(dest, 170 + 430 * rest(dest), 0, () => end(commit)); },
+      // 立刻结束：正在翻过去的翻完，其余（悬停、拖动中、落回中）都放回原处。
+      finish() { cancelAnimationFrame(raf); const then = anim?.then; anim = null; then?.(); if (!done) end(false); }
+    };
+    fold = self;
+    set(from);
+    return self;
   }
   // 书页版只排一次（页面尺寸固定），之后只随窗口缩放。
   let building = null;
@@ -723,39 +809,94 @@ async function bookDetail(doc, params, serial) {
       event.preventDefault(); turn(["ArrowLeft", "PageUp"].includes(event.key) ? -1 : 1);
     }
   }, { signal });
-  let touch = null;
   stage.tabIndex = -1;
-  stage.addEventListener("touchstart", event => {
-    touch = event.touches.length === 1 && root.dataset.zoom !== "in" && !event.target.closest("a,button,.reader-oversized") ? { x: event.touches[0].clientX, y: event.touches[0].clientY, time: Date.now() } : null;
-  }, { passive: true, signal });
-  stage.addEventListener("touchend", event => {
-    if (!touch || !event.changedTouches.length || !getSelection().isCollapsed) return;
-    const dx = event.changedTouches[0].clientX - touch.x, dy = event.changedTouches[0].clientY - touch.y;
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.8 && Date.now() - touch.time < 700) turn(dx < 0 ? 1 : -1);
-    touch = null;
-  }, { passive: true, signal });
-  // 放大后：鼠标拖动平移；Ctrl（⌘）加滚轮或触控板捏合缩放；双击书页放大或还原。
-  let drag = null, dragged = false;
+  // 书页层坐标（与书页同一单位，不随缩放变）。
+  const local = event => { const r = leaves.getBoundingClientRect(), k = r.width / (leaves.offsetWidth || 1); return [(event.clientX - r.left) / k, (event.clientY - r.top) / k]; };
+  const valid = dir => { const t = current + dir * spreadSize; return pages.length > 0 && t >= 0 && t < pages.length; };
+  const geometry = () => { const first = leaves.children[current]; return first && !first.hidden ? { W: first.offsetWidth, H: first.offsetHeight, x0: first.offsetLeft } : null; };
+  // 悬停：鼠标移到书页外侧的下角或上角，纸角跟着掀起一点；点一下翻过去，按住拖动也行。单页的左角是上一页，不掀。
+  function cornerAt(q) {
+    const g = geometry();
+    if (!g || root.dataset.zoom === "in" || stage.getAttribute("aria-busy") === "true") return null;
+    const r = g.W * .16, spots = [[1, g.x0 + g.W * spreadSize], ...(spreadSize === 2 ? [[-1, g.x0]] : [])];
+    for (const [dir, x] of spots) for (const [edge, y] of [["bottom", g.H], ["top", 0]]) if (valid(dir) && Math.hypot(q[0] - x, q[1] - y) < r) return { dir, edge };
+    return null;
+  }
+  // 拖动：鼠标从书页外侧（离书口三成以内）按下拖动，手指在书页任何地方横着拖；中间的正文照常可以选字。
+  function grabAt(q, finger) {
+    const g = geometry();
+    if (!g) return null;
+    const dir = q[0] > g.x0 + (spreadSize === 2 ? g.W : g.W / 2) ? 1 : -1;
+    if (!valid(dir)) return null;
+    if (!finger && Math.abs(q[0] - (dir > 0 ? g.x0 + g.W * spreadSize : g.x0)) > g.W * .3) return null;
+    return { dir, edge: q[1] > g.H / 2 ? "bottom" : "top" };
+  }
+  // 放大后：拖动平移（drag）。没放大时：拖动翻页（grab）。
+  let drag = null, dragged = false, grab = null;
   stage.addEventListener("pointerdown", event => {
     dragged = false;
-    if (root.dataset.zoom !== "in" || event.pointerType !== "mouse" || event.button !== 0 || event.target.closest("a,button")) return;
-    drag = { x: event.clientX, y: event.clientY, left: stage.scrollLeft, top: stage.scrollTop, id: event.pointerId };
+    if (event.button !== 0 || event.target.closest("a,button,.reader-oversized") || stage.getAttribute("aria-busy") === "true") return;
+    if (root.dataset.zoom === "in") {
+      if (event.pointerType === "mouse") drag = { x: event.clientX, y: event.clientY, left: stage.scrollLeft, top: stage.scrollTop, id: event.pointerId };
+      return;
+    }
+    const finger = event.pointerType !== "mouse", side = fold?.peek ? { dir: fold.dir, edge: fold.edge } : grabAt(local(event), finger);
+    if (side) grab = { id: event.pointerId, x: event.clientX, y: event.clientY, start: local(event), finger, ...side, trail: [[local(event)[0], event.timeStamp]], fold: null };
   }, { signal });
+  stage.addEventListener("selectstart", event => { if (grab || fold) event.preventDefault(); }, { signal });
   stage.addEventListener("pointermove", event => {
-    if (!drag || event.pointerId !== drag.id) return;
-    const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
-    if (!dragged && Math.hypot(dx, dy) < 4) return;
-    if (!dragged) { dragged = true; stage.setPointerCapture(drag.id); stage.classList.add("is-dragging"); }
-    stage.scrollLeft = drag.left - dx; stage.scrollTop = drag.top - dy;
+    if (drag && event.pointerId === drag.id) {
+      const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
+      if (!dragged && Math.hypot(dx, dy) < 4) return;
+      if (!dragged) { dragged = true; stage.setPointerCapture(drag.id); stage.classList.add("is-dragging"); }
+      stage.scrollLeft = drag.left - dx; stage.scrollTop = drag.top - dy;
+      return;
+    }
+    if (grab && event.pointerId === grab.id) {
+      if (!grab.fold) {
+        const dx = event.clientX - grab.x, dy = event.clientY - grab.y;
+        if (Math.hypot(dx, dy) < 6) return;
+        if (grab.finger && Math.abs(dy) > Math.abs(dx)) { grab = null; return; }
+        if (fold?.peek && fold.dir === grab.dir) fold.peek = false;
+        else { finishFlip(); makeFold(grab.dir, grab.edge); }
+        if (!fold) { grab = null; return; }
+        grab.fold = fold; grab.origin = fold.point(); dragged = true; toc(false);
+        try { stage.setPointerCapture(grab.id); } catch {}
+      }
+      if (grab.fold !== fold) { grab = null; return; }
+      const q = local(event);
+      fold.move([grab.origin[0] + q[0] - grab.start[0], grab.origin[1] + q[1] - grab.start[1]]);
+      grab.trail.push([q[0], event.timeStamp]);
+      if (grab.trail.length > 12) grab.trail.shift();
+      return;
+    }
+    if (event.pointerType !== "mouse" || event.buttons) return;
+    const c = cornerAt(local(event));
+    if (fold?.peek && (!c || c.dir !== fold.dir || c.edge !== fold.edge)) fold.release(false);
+    if (c && !fold && !reduceMotion()) { makeFold(c.dir, c.edge); if (fold) fold.peek = true; }
+    if (fold?.peek) fold.hover(local(event));
   }, { signal });
-  const endDrag = () => { drag = null; stage.classList.remove("is-dragging"); };
-  stage.addEventListener("pointerup", endDrag, { signal });
-  stage.addEventListener("pointercancel", endDrag, { signal });
-  stage.addEventListener("dragstart", event => { if (root.dataset.zoom === "in") event.preventDefault(); }, { signal });
+  const endGesture = event => {
+    if (drag && event.pointerId === drag.id) { drag = null; stage.classList.remove("is-dragging"); }
+    if (!grab || event.pointerId !== grab.id) return;
+    const g = grab; grab = null;
+    if (!g.fold || g.fold !== fold) return;
+    // 松手：翻过一半，或朝翻页方向甩得够快，就翻过去；否则落回原处。
+    const b = g.trail.at(-1), a = g.trail.find(t => t[1] >= b[1] - 120) || b, speed = (b[0] - a[0]) / Math.max(16, b[1] - a[1]), toward = Math.sign(fold.to[0] - fold.from[0]);
+    fold.release(event.type === "pointerup" && (fold.progress() > .5 || (speed * toward > .4 && fold.progress() > .02)));
+  };
+  stage.addEventListener("pointerup", endGesture, { signal });
+  stage.addEventListener("pointercancel", endGesture, { signal });
+  stage.addEventListener("pointerleave", event => { if (event.pointerType === "mouse" && fold?.peek && !grab) fold.release(false); }, { signal });
+  stage.addEventListener("dragstart", event => event.preventDefault(), { signal });
+  // 书页版：滚轮直接缩放书页（以指针处为中心）；放大后拖动平移，触控板横向滑动也平移。文字版不接管滚轮。
   desk.addEventListener("wheel", event => {
-    if (!fit || !(event.ctrlKey || event.metaKey)) return;
+    if (!fit || root.dataset.mode !== "book") return;
     event.preventDefault();
-    setZoom(zoomTarget() * Math.min(1.25, Math.max(0.8, Math.exp(-event.deltaY * 0.002))), { x: event.clientX, y: event.clientY });
+    if (fold) return;
+    const unit = event.deltaMode === 1 ? 33 : event.deltaMode === 2 ? 400 : 1, dy = event.deltaY * unit, dx = event.deltaX * unit;
+    if (root.dataset.zoom === "in" && Math.abs(dx) > Math.abs(dy)) { stage.scrollLeft += dx; return; }
+    if (dy) setZoom(zoomTarget() * Math.min(1.25, Math.max(.8, Math.exp(-dy * .0015))), { x: event.clientX, y: event.clientY });
   }, { passive: false, signal });
   stage.addEventListener("dblclick", event => {
     if (!fit || event.target.closest("a,button")) return;
@@ -766,6 +907,7 @@ async function bookDetail(doc, params, serial) {
   stage.addEventListener("click", event => {
     if (dragged) { dragged = false; return; }
     if (event.target.closest("a,button") || !getSelection().isCollapsed) return;
+    if (fold?.peek) { turn(fold.dir); return; }
     const box = stage.getBoundingClientRect(), x = event.clientX - box.left;
     if (x < 22) turn(-1); else if (x > box.width - 22) turn(1);
   }, { signal });

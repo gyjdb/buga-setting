@@ -387,24 +387,16 @@ body[data-book-reader] #global-search { flex: 0 1 280px; min-width: 150px; }
 .reader-zoom .reader-zoom-level { min-width: 58px; }
 .reader[data-zoom=in] .reader-stage { overflow: auto; overscroll-behavior: contain; cursor: grab; user-select: none; scrollbar-color: #7f918a transparent; }
 .reader[data-zoom=in] .reader-stage.is-dragging { cursor: grabbing; }
-/* 翻页（book.js 的 flipTo）：书页的副本绕书脊翻过去，背面是下一页；翻页时台面不裁边，翻起的纸角可以探出页面。 */
-.reader-flip { position: absolute; inset: 0; z-index: 3; pointer-events: none; perspective: 2600px; }
-.reader-flip .flip-under, .reader-flip .flip-leaf { position: absolute; top: 0; }
-.reader-flip .flip-leaf { transform-style: preserve-3d; will-change: transform; }
-.reader-flip .flip-face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; }
-.reader-flip .flip-back { transform: rotateY(180deg); }
-.reader-flip .flip-face > .reader-leaf, .reader-flip .flip-under > .reader-leaf { position: absolute; left: 0; top: 0; margin: 0; }
-.reader-flip .flip-shade, .reader-flip .flip-cast { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
+/* 仿真翻页（book.js 的 makeFold）：翻动的纸分三层——还平着的正面、沿折痕翻折过来的背面、底下露出的下一页，都是书页的副本，按折痕裁切（clip-path）。 */
+.reader-flip { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.reader-flip .flip-layer { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.reader-flip .flip-turn { position: absolute; left: 0; top: 0; width: 0; height: 0; transform-origin: 0 0; will-change: transform; }
+.reader-flip .flip-copy { position: absolute; top: 0; margin: 0; }
+.reader-flip .flip-see { position: absolute; top: 0; background: #f4f3eee0; }
+.reader-flip .flip-strip { position: absolute; left: 0; top: 0; transform-origin: 0 0; pointer-events: none; }
 .reader-stage.is-flipping { overflow: visible; }
-/* 书页左下角、右下角的卷角：鼠标移到书页上时露出，移到卷角上掀得更高，点一下翻页。触屏、放大时不显示。 */
-.reader-curl { position: absolute; bottom: 0; z-index: 4; width: 26px; height: 26px; min-height: 0; padding: 0; border: 0; border-radius: 0; opacity: 0; cursor: pointer; transition: width .18s ease, height .18s ease, opacity .18s ease; }
-.reader-curl.next { right: 0; background: linear-gradient(to top left, #0f1815 0 49%, #7f7b70 49.6%, #d8d4c8 51%, #f2efe7 76%, #fbf9f4); }
-.reader-curl.prev { left: 0; background: linear-gradient(to top right, #0f1815 0 49%, #7f7b70 49.6%, #d8d4c8 51%, #f2efe7 76%, #fbf9f4); }
-.reader-curl:hover, .reader-curl:focus-visible { background-color: transparent; }
-.reader-stage:hover .reader-curl { opacity: 1; }
-.reader-stage .reader-curl:hover { width: 46px; height: 46px; }
-.reader-curl:disabled, .reader[data-zoom=in] .reader-curl, .reader-stage.is-flipping .reader-curl, .reader-stage[aria-busy=true] .reader-curl { display: none; }
-@media (hover: none) { .reader-curl { display: none; } }
+.reader-stage { touch-action: pan-y pinch-zoom; }
+.reader[data-zoom=in] .reader-stage { touch-action: auto; }
 
 main[data-view=book] { padding: 0; max-width: none; }
 .reader { --reader-font: 15px; --reader-pad: 44px; --paper-k: 1; height: calc(100dvh - var(--topbar-h)); min-height: 260px; display: grid; grid-template-rows: minmax(0,1fr) auto; }
