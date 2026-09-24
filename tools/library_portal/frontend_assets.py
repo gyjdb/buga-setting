@@ -4,7 +4,7 @@ import shutil
 
 HERE = Path(__file__).resolve().parent
 ASSETS = ("index.html", "archive.css", "app.js", "archive.js", "prototype.js",
-          "baita-icons.js", "search-worker.js", "institutions.js", "institutions.css", "book.js", "book.css", "book-pages.js", "book-pages.css", "book-hand.css", "book-plan.json")
+          "baita-icons.js", "search-worker.js", "institutions.js", "institutions.css", "book.js", "book.css", "book-pages.js", "book-pages.css", "book-hand.css", "book-plan.json", "book-note.css")
 
 
 def sync_frontend():

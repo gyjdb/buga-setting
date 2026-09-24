@@ -26,6 +26,8 @@ const BookPages = (() => {
     ["深渊级", "Abyssāra", "须经馆长批准并另取专门许可，全程有高阶守护者陪同", '<circle cx="20" cy="20" r="14" fill="none" stroke="#17191c" stroke-width="1"/><circle cx="20" cy="20" r="10" fill="none" stroke="#17191c" stroke-width="1.4"/><circle cx="20" cy="20" r="6" fill="#17191c"/>'],
     ["虚无级", "Nihilāra", "没有可见标识；存放在虚无之匣，位置只由历任馆长口传", '<rect x="7" y="7" width="26" height="26" rx="2" fill="none" stroke="#b9bdc0" stroke-width=".8" stroke-dasharray="2 2"/>']
   ];
+  // 图示与补充框下的编者小注（旁白字体，noteText 也要读到）。
+  const FIGURE_NOTE = "据本章正文整理", SEALS_NOTE = "印记按正文描述绘制，仅为示意。";
   // 十五环：据第三章（学徒、准巫师、大巫师；登塔、执业、执照）与第四章（第十环、权限、弦魔法）整理。
   const RINGS = (() => {
     const cell = n => `<span class="r${n >= 10 ? " high" : ""}${n === 15 ? " gods" : ""}">${n}</span>`;
@@ -84,9 +86,9 @@ const BookPages = (() => {
       note: it => el(`<figure class="note" aria-label="图拉曼的批注">${img(it.id)}</figure>`),
       card: () => el(`<section class="card" aria-label="资料卡"><p class="kicker">Summarium</p><dl>${SUMMARY.map(([cn, la, v]) => `<dt>${cn}<i lang="la">${la}</i></dt><dd>${v}</dd>`).join("")}</dl></section>`),
       figure: it => el(it.what === "vault"
-        ? `<figure class="fig"><p class="kicker">Figura</p><h5>白塔的三级封存</h5><div class="vault"><div><b>银封</b>塔内的常规封存层</div><div><b>深封</b>以多重封印隔绝的深层封存库</div><div><b>终封</b>白塔最深处的位面折叠空间；守护法师以个人法则印记封缄，开启须经银色十二环许可</div></div><p class="note-s">据本章正文整理</p></figure>`
-        : `<figure class="fig"><p class="kicker">Figura</p><h5>白塔的四阶银袍</h5><ol class="ladder"><li><b>守护法师</b><em>大银杖 · 仅一人</em><span>从持杖巫师中选出；能施展十环法术；守护工作二百年以上</span></li><li><b>持杖巫师</b><em>银杖</em><span>服务满一百年；更高一级考核；白银学会高级学术资质</span></li><li><b>银袍法师</b><em>银色长袍</em><span>服务五十年；法则领悟与封印学考核</span></li><li><b>塔卫</b><em>素银短袍</em><span>文库整理、封存库外围安保、陪同初登塔者、塔体巡护</span></li></ol><p class="note-s">据本章正文整理</p></figure>`),
-      box: () => el(`<section class="supp"><span class="tag">Supplementaria</span><h4>大图书馆的五级馆藏</h4>${SEALS.map(([cn, la, rule, svg]) => `<div class="seal-row"><svg viewBox="0 0 40 40" aria-hidden="true">${svg}</svg><div><b>${cn}</b><i lang="la">${la}</i></div><span>${rule}</span></div>`).join("")}<div class="note-s">印记按正文描述绘制，仅为示意。</div></section>`),
+        ? `<figure class="fig"><p class="kicker">Figura</p><h5>白塔的三级封存</h5><div class="vault"><div><b>银封</b>塔内的常规封存层</div><div><b>深封</b>以多重封印隔绝的深层封存库</div><div><b>终封</b>白塔最深处的位面折叠空间；守护法师以个人法则印记封缄，开启须经银色十二环许可</div></div><p class="note-s">${FIGURE_NOTE}</p></figure>`
+        : `<figure class="fig"><p class="kicker">Figura</p><h5>白塔的四阶银袍</h5><ol class="ladder"><li><b>守护法师</b><em>大银杖 · 仅一人</em><span>从持杖巫师中选出；能施展十环法术；守护工作二百年以上</span></li><li><b>持杖巫师</b><em>银杖</em><span>服务满一百年；更高一级考核；白银学会高级学术资质</span></li><li><b>银袍法师</b><em>银色长袍</em><span>服务五十年；法则领悟与封印学考核</span></li><li><b>塔卫</b><em>素银短袍</em><span>文库整理、封存库外围安保、陪同初登塔者、塔体巡护</span></li></ol><p class="note-s">${FIGURE_NOTE}</p></figure>`),
+      box: () => el(`<section class="supp"><span class="tag">Supplementaria</span><h4>大图书馆的五级馆藏</h4>${SEALS.map(([cn, la, rule, svg]) => `<div class="seal-row"><svg viewBox="0 0 40 40" aria-hidden="true">${svg}</svg><div><b>${cn}</b><i lang="la">${la}</i></div><span>${rule}</span></div>`).join("")}<div class="note-s">${SEALS_NOTE}</div></section>`),
       inline: it => {
         if (!it.id) return el(RINGS);
         const node = el(`<figure class="inline${it.blend ? " blend" : ""}">${img(it.id)}<figcaption>${esc(it.caption)}</figcaption></figure>`);
@@ -98,9 +100,20 @@ const BookPages = (() => {
     };
   }
 
+  // ---------- 旁白字体 ----------
+  // 章首导语（第一个节标题之前的段落）、图注、资料卡说明、题记署名与编者小注用旁白字体（book-note.css 的 "Note"，按字切片）。
+  // 排版前先载入这些字，不然会按后备字体测量，字体到位后导语框、侧栏可能溢出。阅读器文字版也调用。
+  function noteText(bookChapters, plan) {
+    const leads = bookChapters.map(c => { const out = []; for (const n of c.nodes) { if (/^H[34]$/.test(n.tagName)) break; out.push(n.textContent); } return out.join(""); });
+    const figures = (plan?.chapters || []).flatMap(p => [...(p.items || []).map(it => it.caption || ""), p.epigraph ? p.epigraph[2] : ""]);
+    return [...leads, ...figures, ...SUMMARY.map(s => s[2]), FIGURE_NOTE, SEALS_NOTE, "—"].join("");
+  }
+  const loadNoteFont = (bookChapters, plan, size = "10pt") => document.fonts.load(`${size} "Note"`, noteText(bookChapters, plan));
+
   // ---------- 排整本书 ----------
   // host：已挂在文档里、带 .fzb 的容器（排版要实际测量）。返回页面元素与每页的位置信息。
   async function build({ bookChapters, plan, plates, sources, preface, host, cancelled = () => false }) {
+    await loadNoteFont(bookChapters, plan);
     const M = makers(plates), chapters = prepareChapters(bookChapters, plan);
     const pages = [], toc = [];
     let prefaceStart = null;
@@ -306,7 +319,7 @@ const BookPages = (() => {
         box.append(slip);
         if (!fits(box)) { slip.remove(); page = record(false); box = $(".slips", page); box.append(slip); }
       }
-      chromePage("colophon", "book-end", `<p class="finis" lang="la">Finis</p><p class="finis-cn">全书完</p><span class="c-rule"></span><dl class="colo"><dt>版式</dt><dd>页面 210 × 299.5 mm · 正文 ${PT} pt，行距 ${LEADING}</dd><dt>字体</dt><dd>正文思源宋体；标题与注释思源黑体；拉丁文 Cormorant Garamond、Jost；手写龙藏体（均为 SIL OFL）</dd><dt>插图</dt><dd>本书插图均为概念演绎，不构成已确认的建筑式样、徽记、器物或历史事件</dd></dl><div class="folio"><span></span></div>`);
+      chromePage("colophon", "book-end", `<p class="finis" lang="la">Finis</p><p class="finis-cn">全书完</p><span class="c-rule"></span><dl class="colo"><dt>版式</dt><dd>页面 210 × 299.5 mm · 正文 ${PT} pt，行距 ${LEADING}</dd><dt>字体</dt><dd>正文与题记思源宋体；标题与标签思源黑体；导语与注释霞鹜文楷；拉丁文 Cormorant Garamond、Jost；手写龙藏体（均为 SIL OFL）</dd><dt>插图</dt><dd>本书插图均为概念演绎，不构成已确认的建筑式样、徽记、器物或历史事件</dd></dl><div class="folio"><span></span></div>`);
     }
     function fillToc() {
       const lists = pages.filter(p => p.classList.contains("toc")).map(p => $(".toc-list", p));
@@ -379,5 +392,5 @@ const BookPages = (() => {
     return { plate: p.plate, after };
   }
 
-  return { build, flowFigures, parsePreface, parseSources, PAGE_W, PAGE_H, PT, LEADING };
+  return { build, flowFigures, loadNoteFont, parsePreface, parseSources, PAGE_W, PAGE_H, PT, LEADING };
 })();

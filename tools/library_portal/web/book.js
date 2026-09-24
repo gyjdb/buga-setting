@@ -321,7 +321,10 @@ function bookSections(chapters, doc, extra = {}) {
   for (const c of chapters) {
     const figures = plan && plates ? BookPages.flowFigures(c, plan, plates) : { plate: null, after: new Map() };
     const m = figures.plate && plates[figures.plate];
-    const header = bookElement(`<header class="reader-chapter" id="${esc(c.id)}">${m ? `<img class="reader-chapter-plate" src="assets/plates/${figures.plate}.webp" alt="" width="${m.w}" height="${m.h}">` : ""}<p class="book-kicker">Capitulum ${esc(c.roman)}</p><h2>${esc(c.name)}</h2><p lang="en">${esc(c.meta.en || "")}</p></header>`);
+    // 题记与书页版章首相同（第二、六章）；放在章首块里，不占正文段落的序号，阅读位置不变。
+    const ep = c.meta.epigraph;
+    const epigraph = ep ? `<blockquote class="reader-epigraph"><p>${esc(ep[0])}</p>${ep[1] ? `<p lang="la">${esc(ep[1])}</p>` : ""}<footer>—— ${esc(ep[2])}</footer></blockquote>` : "";
+    const header = bookElement(`<header class="reader-chapter" id="${esc(c.id)}">${m ? `<img class="reader-chapter-plate" src="assets/plates/${figures.plate}.webp" alt="" width="${m.w}" height="${m.h}">` : ""}<p class="book-kicker">Capitulum ${esc(c.roman)}</p><h2>${esc(c.name)}</h2><p lang="en">${esc(c.meta.en || "")}</p>${epigraph}</header>`);
     const nodes = [header];
     // Keep each member of the Twelve Rings together where space permits.
     c.nodes.forEach((source, si) => {
@@ -644,7 +647,7 @@ async function bookDetail(doc, params, serial) {
     }
   };
   try {
-    await Promise.all([document.fonts.load('16px "Archive Song"'), document.fonts.load('16px "Archive Sans"'), document.fonts.load('50px "Book Latin"'), document.fonts.load('14px "Book Label"'), document.fonts.load('20px "Hand"', (preface || []).join(""))]);
+    await Promise.all([document.fonts.load('16px "Archive Song"'), document.fonts.load('16px "Archive Sans"'), document.fonts.load('50px "Book Latin"'), document.fonts.load('14px "Book Label"'), document.fonts.load('20px "Hand"', (preface || []).join("")), BookPages.loadNoteFont(chapters, plan, "16px")]);
     if (signal.aborted) return;
     await paginate();
     if (signal.aborted) return;
