@@ -30,9 +30,9 @@ const BOOK_SUMMARY = [
 ];
 const BOOK_LEVELS = ["Aurēa", "Vesperā", "Stellāra", "Abyssāra", "Nihilāra"];
 
-// 洞察之眼：悬于碧蓝海洋之上的眼睛（布加徽记）。
+// 洞察之眼（光冠版，2026-09-22 定稿）：放射光刃之下的眼睛，悬于海浪之上。源文件在 plates-src/emblem/final。
 function bookEmblem(label = "洞察之眼") {
-  return `<svg class="book-emblem" viewBox="0 0 120 120" role="img" aria-label="${label}"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M60 13v-8M60 99v-5M31 21l-5-6M89 21l5-6M18 35l-7-3M102 35l7-3" stroke-width="1.6"/><path d="M12 56Q60 16 108 56Q60 96 12 56Z" stroke-width="2.4"/><path d="M22 56Q60 26 98 56" stroke-width="0.9" opacity=".55"/><circle cx="60" cy="56" r="17" stroke-width="1.8"/><circle cx="60" cy="56" r="11.5" stroke-width="0.8" opacity=".6"/><circle cx="60" cy="56" r="6" fill="currentColor" stroke="none"/><circle cx="56.5" cy="52.5" r="1.7" fill="var(--paper)" stroke="none"/></g><g class="book-emblem-sea" fill="none" stroke-linecap="round" stroke-width="2"><path d="M16 100q7-5.5 14 0t14 0t14 0t14 0t14 0t14 0"/><path d="M24 110q7-5.5 14 0t14 0t14 0t14 0t14 0" opacity=".6"/></g></svg>`;
+  return `<svg class="book-emblem" viewBox="-100 -104 200 192" role="img" aria-label="${label}"><path fill="currentColor" d="M-71.31 -32.48L-95.39 -39.08L-77.64 -21.52ZM-55.68 -41.65L-81.89 -57.6L-65.94 -31.4ZM-35.93 -47.92L-61.04 -75.08L-50.07 -39.75ZM-13.48 -50.78L-33.34 -89.8L-31.03 -46.08ZM10 -50L0 -100L-10 -50ZM31.03 -46.08L33.34 -89.8L13.48 -50.78ZM50.07 -39.75L61.04 -75.08L35.93 -47.92ZM65.94 -31.4L81.89 -57.6L55.68 -41.65ZM77.64 -21.52L95.39 -39.08L71.31 -32.48ZM-79 0Q0 -68 79 0Q0 -30 -79 0ZM-79 0Q0 56 79 0Q0 32 -79 0Z"/><path fill="currentColor" fill-rule="evenodd" d="M-18 0a18 18 0 1 0 36 0a18 18 0 1 0 -36 0ZM-11.16 -0.9A12.6 12.6 0 0 1 0.9 -11.88A17.1 17.1 0 0 0 -11.16 -0.9Z"/><path class="book-emblem-sea" d="M-66 56Q-52.14 56 -49.5 45Q-46.86 56 -33 56Q-19.14 56 -16.5 45Q-13.86 56 0 56Q13.86 56 16.5 45Q19.14 56 33 56Q46.86 56 49.5 45Q52.14 56 66 56L66 64Q52.14 64 49.5 57.95Q46.86 64 33 64Q19.14 64 16.5 57.95Q13.86 64 0 64Q-13.86 64 -16.5 57.95Q-19.14 64 -33 64Q-46.86 64 -49.5 57.95Q-52.14 64 -66 64ZM-42 77Q-30.24 77 -28 68Q-25.76 77 -14 77Q-2.24 77 0 68Q2.24 77 14 77Q25.76 77 28 68Q30.24 77 42 77L42 84Q30.24 84 28 79.05Q25.76 84 14 84Q2.24 84 0 79.05Q-2.24 84 -14 84Q-25.76 84 -28 79.05Q-30.24 84 -42 84Z"/></svg>`;
 }
 function bookSeal(text, label) {
   return `<svg class="book-seal" viewBox="0 0 100 100" role="img" aria-label="${label}"><defs><path id="book-seal-ring" d="M50 50m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="50" cy="50" r="44.5" fill="none" stroke="currentColor" stroke-width=".6"/><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width=".9"/><text class="book-seal-text"><textPath href="#book-seal-ring">${text}</textPath></text><path d="M31 50Q50 36 69 50Q50 64 31 50Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="5.5" fill="currentColor"/><path d="M36 61q3.5-3 7 0t7 0t7 0t7 0" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
@@ -112,13 +112,77 @@ function bookSummary() {
   return `<aside class="book-summary" aria-label="资料卡"><p class="book-kicker">Summarium</p><dl>${BOOK_SUMMARY.map(([cn, la, v]) => `<div><dt>${cn}<i lang="la">${la}</i></dt><dd>${v}</dd></div>`).join("")}</dl></aside>`;
 }
 
+// 封面与书名页（2026-09-24 作者选定封面 C：档案馆藏本）。按 210 × 299.5 的纸面设计，book.css 的 .fz-page
+// 以容器宽度为单位等比缩放，首页书架、阅读器与排版样张共用。只用已定的文字：书名、副题、竖排三词、
+// 作者（罗恩·萨米利安，外文拼法见编者材料第十节）、作序者 Turaman；拉丁标签只管结构（FA29–FA32）。
+const BOOK_AUTHOR = ["罗恩·萨米利安", "Ron Samilian"], BOOK_COLLEGE = ["克鲁兹帝国 · 圣埃博松学院", "St. Ebosson College · Empire of Kruz"];
+const BOOK_ROMANS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+let bookStampCount = 0;
+// 晨光级的日轮纹：第二章写晨光级馆藏“封面左上角镌着一枚暖白色的日轮纹”；本书是 Aurēa 公开读物。
+function bookSun(label = "日轮纹") {
+  const rays = Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6; return `<line x1="${(20 + 10.5 * Math.cos(a)).toFixed(1)}" y1="${(20 + 10.5 * Math.sin(a)).toFixed(1)}" x2="${(20 + 14.5 * Math.cos(a)).toFixed(1)}" y2="${(20 + 14.5 * Math.sin(a)).toFixed(1)}"/>`; }).join("");
+  return `<svg class="fz-sun" viewBox="0 0 40 40" role="img" aria-label="${label}"><circle cx="20" cy="20" r="7.5" fill="#f7efda" stroke="#c4a15f" stroke-width="1.2"/><g stroke="#c4a15f" stroke-width="1.2" stroke-linecap="round">${rays}</g></svg>`;
+}
+// 拉丁馆藏章（编者材料第十节）：环上 ARCHIVUM · TURRIS · ALBAE · AURĒA，中间是洞察之眼。
+function bookStamp() {
+  const id = "fz-stamp-" + (++bookStampCount);
+  const eye = bookEmblem("").replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
+  return `<svg class="fz-stamp" viewBox="0 0 100 100" role="img" aria-label="馆藏章：Archivum Turris Albae · Aurēa"><defs><path id="${id}" d="M50 50m-36.5 0a36.5 36.5 0 1 1 73 0a36.5 36.5 0 1 1 -73 0"/></defs><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="50" cy="50" r="44.4" fill="none" stroke="currentColor" stroke-width=".6"/><circle cx="50" cy="50" r="28.5" fill="none" stroke="currentColor" stroke-width=".9"/><text class="fz-stamp-text"><textPath href="#${id}" textLength="227" lengthAdjust="spacing">ARCHIVUM · TURRIS · ALBAE · AURĒA ·</textPath></text><g transform="translate(50 51.5) scale(.2)">${eye}</g></svg>`;
+}
+function bookCoverHTML() {
+  return `<div class="fz-page fz-cover" role="img" aria-label="${BOOK_TITLE}封面">
+    <div class="fz-spine" aria-hidden="true"></div>
+    <div class="fz-emboss" aria-hidden="true">${bookEmblem("")}</div>
+    ${bookSun("晨光级的日轮纹")}
+    <p class="fz-kicker">Archivum Turris Albae</p>
+    <p class="fz-latin" lang="la">De Foedere<br>Argenteo</p>
+    <p class="fz-cn">${BOOK_TITLE}</p>
+    <p class="fz-sub" lang="en">${BOOK_SUBTITLE}</p>
+    <span class="fz-rule"></span>
+    <p class="fz-author"><span lang="en">${BOOK_AUTHOR[1]}</span><small>${BOOK_AUTHOR[0]}</small></p>
+    <p class="fz-pref" lang="la">Praefatio · Turaman</p>
+    <p class="fz-vert" lang="la">Mores · Urbes · Leges</p>
+    <div class="fz-tabs" aria-hidden="true">${BOOK_ROMANS.map(r => `<span>${r}</span>`).join("")}</div>
+    <div class="fz-label"><p class="fz-label-t"><span>DFA</span><i lang="la">Archivum Turris Albae</i></p><p class="fz-label-m">${BOOK_TITLE}</p><p class="fz-label-n" lang="la"><span>Capitula I–IX</span><span>Gradus <b>Aurēa</b></span></p></div>
+    ${bookStamp()}
+  </div>`;
+}
+function bookTitleHTML() {
+  return `<div class="fz-page fz-title">
+    <p class="fz-kicker">Archivum Turris Albae</p>
+    <h1 class="fz-latin" lang="la">De<br>Foedere<br>Argenteo</h1>
+    <p class="fz-vert" lang="la">Mores · Urbes · Leges</p>
+    <p class="fz-cn">${BOOK_TITLE}</p>
+    <p class="fz-sub" lang="en">${BOOK_SUBTITLE}</p>
+    <span class="fz-rule"></span>
+    <dl class="fz-credits">
+      <div><dt lang="la">Auctor</dt><dd><span lang="en">${BOOK_AUTHOR[1]}</span><small lang="en">${BOOK_COLLEGE[1]}</small><small class="fz-cn-note">${BOOK_AUTHOR[0]} · ${BOOK_COLLEGE[0]}</small></dd></div>
+      <div><dt lang="la">Praefatio</dt><dd><span lang="en">Turaman</span><small class="fz-cn-note">图拉曼·秘银·奥瑟坦</small></dd></div>
+      <div><dt lang="la">Capitula</dt><dd><span>I – IX</span></dd></div>
+      <div><dt lang="la">Gradus</dt><dd><span class="fz-circled" lang="la">Aurēa</span></dd></div>
+    </dl>
+    <div class="fz-device">${bookEmblem("洞察之眼")}</div>
+    ${bookStamp()}
+  </div>`;
+}
+
+// 衬页：蓝色纸面上一排排小的洞察之眼，贴一张档案馆的藏书票（Ex libris；拉丁文只管结构）。
+function bookEndpaperHTML() {
+  const id = "fz-pat-" + (++bookStampCount);
+  const eye = bookEmblem("").replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
+  return `<div class="fz-page fz-endpaper" aria-hidden="true">
+    <svg class="fz-pattern" viewBox="0 0 210 299.5" preserveAspectRatio="none"><defs><pattern id="${id}" width="26" height="26" patternUnits="userSpaceOnUse"><g transform="translate(6.5 6.5) scale(.055)">${eye}</g><g transform="translate(19.5 19.5) scale(.055)">${eye}</g></pattern></defs><rect width="210" height="299.5" fill="url(#${id})"/></svg>
+    <div class="fz-plate"><p class="fz-plate-ex" lang="la">Ex libris</p><div class="fz-plate-emb">${bookEmblem("")}</div><p class="fz-plate-name" lang="la">Archivum Turris Albae</p><span class="fz-plate-rule"></span><p class="fz-plate-n" lang="la"><span>DFA</span><span>Gradus Aurēa</span></p></div>
+  </div>`;
+}
+
 // A reading location is a source block + UTF-16 offset, independent of page size.
 const BOOK_POSITION_KEY = "buga.fengtuzhi.position.v2";
 // Desktop reader keeps the archive sidebar docked; readers may collapse it (open/closed).
 const BOOK_NAV_KEY = "buga.fengtuzhi.nav";
 // Supplied Terra reference pages are approximately 1380 x 1968; no physical trim size is inferred.
 const BOOK_PAPER_RATIO = 1380 / 1968;
-// Body text is always 16 CSS px. The page is sized to the window instead of scaling the type:
+// Body text is always 15 CSS px. The page is sized to the window instead of scaling the type:
 // it fills the available height up to the standard 690 x 984 page, and only a very small
 // window scales a minimum-size page down.
 const BOOK_PAGE_MAX = 690, BOOK_PAGE_MIN = 340, BOOK_SPREAD_MIN = 420;
@@ -168,8 +232,11 @@ async function bookPaginate(sections, measure, height, cancelled = () => false) 
     let items = [];
     measure.replaceChildren();
     const flush = () => {
+      // A section heading never ends a page: carry it over with the paragraph it introduces.
+      const carry = items.length > 1 && /^H[34]$/.test(items.at(-1).node.tagName) ? items.pop() : null;
       if (items.length) pages.push({ section: section.id, title: section.title, items });
       items = []; measure.replaceChildren();
+      if (carry) { measure.append(carry.node); items.push(carry); }
     };
     for (const block of section.blocks) {
       let offset = 0;
@@ -232,7 +299,6 @@ async function bookPaginate(sections, measure, height, cancelled = () => false) 
 function bookSections(chapters, doc) {
   const sections = [];
   const add = (id, title, nodes) => sections.push({ id, title, blocks: nodes.map((node, i) => ({ node, key: `${id}:${i}` })) });
-  add("book-title", "书名页", [bookElement(`<div class="reader-title"><p class="book-kicker">白塔档案馆 · 馆藏读物</p><h1 class="book-title"><span class="book-title-latin" lang="la">De<br>Foedere<br>Argenteo</span><span class="book-title-cn">${BOOK_TITLE}</span></h1><p class="book-subtitle" lang="en">${BOOK_SUBTITLE}</p><span class="book-rule"></span><p class="book-byline">克鲁兹帝国 · 圣埃博松学院</p>${bookEmblem()}</div>`)]);
   add("book-contents", "目录", [bookElement('<h2 class="reader-contents-title">目录 <span lang="la">Index</span></h2>'), ...chapters.map(c => bookElement(`<a class="reader-toc-link" href="#/doc/${doc.id}?anchor=${encodeURIComponent(c.id.replace(/^section-/, ""))}"><span>${esc(c.roman)}</span><span>${esc(c.name)}<small lang="en">${esc(c.meta.en || "")}</small></span></a>`))]);
   for (const c of chapters) {
     const header = bookElement(`<header class="reader-chapter" id="${esc(c.id)}"><p class="book-kicker">Capitulum ${esc(c.roman)}</p><h2>${esc(c.name)}</h2><p lang="en">${esc(c.meta.en || "")}</p></header>`);
@@ -281,7 +347,7 @@ async function bookDetail(doc, params, serial) {
   </section>`;
   const root = main.querySelector(".reader"), desk = root.querySelector(".reader-desk"), stage = root.querySelector(".reader-stage"), leaves = root.querySelector(".reader-leaves");
   // Book tools sit in the top bar; the sidebar stays the archive's own navigation.
-  const entries = [["book-title", "", "书名页"], ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
+  const entries = [["book-cover", "", "封面"], ["book-title", "", "书名页"], ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
   const sectionLabel = new Map([["book-contents", "目录"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
   const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
   siteTitle.after(bar);
@@ -297,6 +363,8 @@ async function bookDetail(doc, params, serial) {
     if (!position) return 0;
     let n = pages.findIndex(p => p.items.some(i => i.key === position.block && i.start <= position.offset && (i.end > position.offset || i.start === i.end)));
     if (n < 0) n = pages.findIndex(p => p.section === position.section);
+    // Section headings inside a chapter keep their own anchors (section-<slug>).
+    if (n < 0) n = pages.findIndex(p => p.items.some(i => i.node.id === "section-" + position.section));
     return Math.max(0, n);
   };
   const positionFrom = query => {
@@ -323,7 +391,8 @@ async function bookDetail(doc, params, serial) {
     const range = `${current + 1}${visible.length > 1 ? "–" + (current + visible.length) : ""}`;
     progress.forEach(p => { p.textContent = `${range} / ${pages.length}`; });
     // Name the chapter the spread leads into; the title spread keeps the title page.
-    const lead = visible[0].section === "book-title" ? visible[0] : visible.at(-1);
+    const lead = visible.at(-1);
+    stage.classList.toggle("is-closed", visible.some(p => p.void));
     tocCurrent.textContent = sectionLabel.get(lead.section) || lead.title;
     tocMenu.querySelectorAll("[data-book-section]").forEach(a => {
       if (shown.has(a.dataset.bookSection)) a.setAttribute("aria-current", "location");
@@ -377,11 +446,18 @@ async function bookDetail(doc, params, serial) {
     measure.style.width = (paper.pageWidth - padding * 2) + "px";
     const next = await bookPaginate(sections, measure, height, () => signal.aborted || ticket !== generation);
     if (!next || signal.aborted || ticket !== generation) return;
-    pages = next; layout = key;
+    // Cover and title page are fixed full-page designs (bookCoverHTML/bookTitleHTML), not flowed text.
+    // Like a real book: in a spread the closed cover lies alone on the right; opened, the endpaper faces the title page.
+    const fixed = (section, title, special, extra = {}) => ({ section, title, items: [], fixed: true, special, ...extra });
+    pages = spreadSize === 2
+      ? [fixed("book-cover", "封面", "", { void: true }), fixed("book-cover", "封面", bookCoverHTML()), fixed("book-title", "衬页", bookEndpaperHTML()), fixed("book-title", "书名页", bookTitleHTML()), ...next]
+      : [fixed("book-cover", "封面", bookCoverHTML()), fixed("book-title", "书名页", bookTitleHTML()), ...next];
+    layout = key;
     const fragment = document.createDocumentFragment();
     pages.forEach((page, i) => {
       const leaf = document.createElement("article"); leaf.className = "reader-leaf"; leaf.hidden = true;
       leaf.setAttribute("aria-label", `${page.title} · 第 ${i + 1} 页`);
+      if (page.fixed) { leaf.classList.add(page.void ? "reader-void" : "reader-special"); leaf.innerHTML = page.special; fragment.append(leaf); return; }
       leaf.innerHTML = `<header class="reader-running"><span>${esc(page.title)}</span><span lang="la">De Foedere Argenteo</span></header><div class="reader-prose"></div><footer class="reader-folio">${i + 1}</footer>`;
       const prose = leaf.querySelector(".reader-prose");
       for (const item of page.items) {
