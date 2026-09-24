@@ -377,7 +377,7 @@ async function bookDetail(doc, params, serial) {
   // Book tools sit in the top bar; the sidebar stays the archive's own navigation.
   const entries = [["book-cover", "", "封面"], ["book-title", "", "书名页"], ...(preface ? [["book-preface", "", "序"]] : []), ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
   const sectionLabel = new Map([["book-contents", "目录"], ["book-sources", "本书所据"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
-  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><div class="reader-zoom" role="group" aria-label="书页缩放" hidden><button type="button" data-zoom="-1" aria-label="缩小" title="缩小（−）">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6")}</button><button type="button" class="reader-zoom-level" data-zoom="0" title="恢复为适合窗口（0）。100% 即纸本实际大小">适合</button><button type="button" data-zoom="1" aria-label="放大" title="放大（+）。也可以直接滚动滚轮，或双击书页">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6M10.5 7.5v6")}</button></div><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
+  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><div class="reader-zoom" role="group" aria-label="书页缩放" hidden><button type="button" data-zoom="-1" aria-label="缩小" title="缩小（−）">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6")}</button><button type="button" class="reader-zoom-level" data-zoom="0" title="恢复为适合窗口（0）。100% 即纸本实际大小">适合</button><button type="button" data-zoom="1" aria-label="放大" title="放大（+）。也可以直接滚动滚轮">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6M10.5 7.5v6")}</button></div><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
   siteTitle.after(bar);
   const measure = root.querySelector(".reader-measure"), loading = root.querySelector(".reader-loading");
   const progress = [...root.querySelectorAll(".reader-progress"), bar.querySelector(".reader-progress")];
@@ -440,7 +440,7 @@ async function bookDetail(doc, params, serial) {
       history.replaceState(history.state, "", `#/doc/${doc.id}?${query}`);
     }
   }
-  const turn = delta => {
+  const turn = (delta, at) => {
     if (stage.getAttribute("aria-busy") === "true" || dialog.open) return;
     toc(false);
     // 鼠标停在书角、纸角已经掀起时，顺着这一角翻过去。
@@ -449,7 +449,7 @@ async function bookDetail(doc, params, serial) {
     const target = current + delta * spreadSize;
     if (target < 0 || target >= pages.length) return;
     // 放大时书页比台面大，翻页直接换页；减少动态效果时也不播动画。
-    if (root.dataset.zoom === "in" || reduceMotion() || !makeFold(delta, "bottom")) {
+    if (root.dataset.zoom === "in" || reduceMotion() || !makeFold(delta, at ?? "bottom")) {
       show(target);
       if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
       return;
@@ -476,7 +476,7 @@ async function bookDetail(doc, params, serial) {
   const mirror = (p, m, n) => { const k = 2 * ((p[0] - m[0]) * n[0] + (p[1] - m[1]) * n[1]); return [p[0] - k * n[0], p[1] - k * n[1]]; };
   const polygon = pts => pts.length > 2 ? `polygon(${pts.map(p => `${p[0].toFixed(1)}px ${p[1].toFixed(1)}px`).join(",")})` : "polygon(0 0,0 0,0 0)";
   const ease = t => t < .5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
-  function makeFold(dir, edge) {
+  function makeFold(dir, at) {
     const target = current + dir * spreadSize;
     if (target < 0 || target >= pages.length) return null;
     const leaf = i => leaves.children[i], two = spreadSize === 2, forward = dir > 0;
@@ -497,11 +497,14 @@ async function bookDetail(doc, params, serial) {
       under = forward ? leaf(target) : first;
     }
     if (!turning || !back || !under) return null;
-    const reverse = !two && !forward, yC = edge === "top" ? 0 : H;
+    // 纸从哪里翻起：at 是 "top"、"bottom"（上角、下角），或书口上的一个高度（侧边翻页；离上下边一成多以内算作书角）。
+    let yC = at === "top" ? 0 : at === "bottom" ? H : Math.max(0, Math.min(H, at));
+    if (yC < H * .12) yC = 0; else if (yC > H * .88) yC = H;
+    const reverse = !two && !forward, corner = yC === 0 || yC === H;
     const edgeX = spine === left ? left + W : left, C = [edgeX, yC], E = [2 * spine - edgeX, yC];
     const from = reverse ? E : C, to = reverse ? C : E, span = [E[0] - C[0], E[1] - C[1]], spanSq = span[0] ** 2 + span[1] ** 2;
-    const inward = [edgeX > spine ? -1 : 1, yC ? -1 : 1];
-    const diag = Math.hypot(W, H), S1 = [spine, yC], S2 = [spine, H - yC];
+    const inward = [edgeX > spine ? -1 : 1, yC > H / 2 ? -1 : 1];
+    const diag = Math.hypot(W, H), limits = [[[spine, yC], W], [[spine, 0], Math.hypot(W, yC)], [[spine, H], Math.hypot(W, H - yC)]];
     const rect = [[left, 0], [left + W, 0], [left + W, H], [left, H]];
     const div = cls => { const n = document.createElement("div"); n.className = cls; return n; };
     const copy = (source, x) => {
@@ -536,8 +539,17 @@ async function bookDetail(doc, params, serial) {
     };
     function set(p) {
       let [px, py] = p;
-      // 纸连着书脊：纸角离书脊下端不超过一个页宽，离书脊上端不超过对角线。
-      for (const [s, r] of [[S1, W], [S2, diag]]) { const dx = px - s[0], dy = py - s[1], d = Math.hypot(dx, dy); if (d > r) { px = s[0] + dx * r / d; py = s[1] + dy * r / d; } }
+      // 纸只能往书页里拉，折痕也不能太平（不然会把半张纸折起来）。书角翻起：横向至少走竖向的六成。
+      // 侧边翻起：折痕贯穿整页，刚拉起时保持竖直、只折起一条窄边，纸往里走得越远才越能斜过去（最多约二十度）。
+      const vy = Math.abs(py - C[1]);
+      if (corner) { if ((px - C[0]) * inward[0] < vy * .6) px = C[0] + inward[0] * vy * .6; }
+      else {
+        const hx = Math.max(0, (px - C[0]) * inward[0]), room = hx * .35 * Math.min(1, hx / (W * .6));
+        px = C[0] + inward[0] * hx;
+        if (vy > room) py = C[1] + Math.sign(py - C[1]) * room;
+      }
+      // 纸连着书脊：纸上这一点离书脊同高处不超过一个页宽，离书脊上下两端不超过各自的斜距。
+      for (const [s, r] of limits) { const dx = px - s[0], dy = py - s[1], d = Math.hypot(dx, dy); if (d > r) { px = s[0] + dx * r / d; py = s[1] + dy * r / d; } }
       P = [px, py];
       const dx = C[0] - px, dy = C[1] - py, len = Math.hypot(dx, dy), k = turned();
       if (len < .5) {
@@ -566,7 +578,7 @@ async function bookDetail(doc, params, serial) {
       anim = { then };
       const step = now => {
         const t = Math.min(1, (now - t0) / Math.max(1, ms)), e = ease(t), up = arc * Math.sin(Math.PI * e);
-        set([a[0] + (dest[0] - a[0]) * e, a[1] + (dest[1] - a[1]) * e + (yC ? -up : up)]);
+        set([a[0] + (dest[0] - a[0]) * e, a[1] + (dest[1] - a[1]) * e + (yC > H / 2 ? -up : up)]);
         if (t < 1) raf = requestAnimationFrame(step);
         else { anim = null; then(); }
       };
@@ -582,7 +594,7 @@ async function bookDetail(doc, params, serial) {
     }
     const rest = dest => Math.min(1, Math.hypot(dest[0] - P[0], dest[1] - P[1]) / Math.sqrt(spanSq));
     const self = {
-      dir, edge, from, to, peek: false,
+      dir, edge: at, corner, from, to, peek: false,
       point: () => P.slice(),
       progress: () => reverse ? 1 - turned() : turned(),
       move(p) { cancelAnimationFrame(raf); anim = null; set(p); },
@@ -591,7 +603,8 @@ async function bookDetail(doc, params, serial) {
         const v = [q[0] - C[0], q[1] - C[1]], min = W * .07;
         animate([C[0] + inward[0] * Math.max(Math.abs(v[0]), min), C[1] + inward[1] * Math.max(Math.abs(v[1]), min * .75)], 120, 0, () => {});
       },
-      play() { self.peek = false; const r = rest(to); animate(to, (two ? 760 : 560) * Math.max(.4, r), H * .1 * r, () => end(true)); },
+      // 自己翻完：纸沿一道弧线走，书角翻起时弧度大，侧边翻起时弧度小。
+      play() { self.peek = false; const r = rest(to); animate(to, (two ? 760 : 560) * Math.max(.4, r), H * (.04 + .06 * Math.abs(yC - H / 2) / (H / 2)) * r, () => end(true)); },
       release(commit) { self.peek = false; const dest = commit ? to : from; animate(dest, 170 + 430 * rest(dest), 0, () => end(commit)); },
       // 立刻结束：正在翻过去的翻完，其余（悬停、拖动中、落回中）都放回原处。
       finish() { cancelAnimationFrame(raf); const then = anim?.then; anim = null; then?.(); if (!done) end(false); }
@@ -823,18 +836,19 @@ async function bookDetail(doc, params, serial) {
     return null;
   }
   // 拖动：鼠标从书页外侧（离书口三成以内）按下拖动，手指在书页任何地方横着拖；中间的正文照常可以选字。
+  // 纸从按下的那个高度翻起：靠近上下角是卷起书角，侧边中间是整条书口翻过来。
   function grabAt(q, finger) {
     const g = geometry();
     if (!g) return null;
     const dir = q[0] > g.x0 + (spreadSize === 2 ? g.W : g.W / 2) ? 1 : -1;
     if (!valid(dir)) return null;
     if (!finger && Math.abs(q[0] - (dir > 0 ? g.x0 + g.W * spreadSize : g.x0)) > g.W * .3) return null;
-    return { dir, edge: q[1] > g.H / 2 ? "bottom" : "top" };
+    return { dir, edge: q[1] };
   }
   // 放大后：拖动平移（drag）。没放大时：拖动翻页（grab）。
-  let drag = null, dragged = false, grab = null;
+  let drag = null, dragged = false, grab = null, downAt = null;
   stage.addEventListener("pointerdown", event => {
-    dragged = false;
+    dragged = false; downAt = [event.clientX, event.clientY];
     if (event.button !== 0 || event.target.closest("a,button,.reader-oversized") || stage.getAttribute("aria-busy") === "true") return;
     if (root.dataset.zoom === "in") {
       if (event.pointerType === "mouse") drag = { x: event.clientX, y: event.clientY, left: stage.scrollLeft, top: stage.scrollTop, id: event.pointerId };
@@ -856,8 +870,9 @@ async function bookDetail(doc, params, serial) {
       if (!grab.fold) {
         const dx = event.clientX - grab.x, dy = event.clientY - grab.y;
         if (Math.hypot(dx, dy) < 6) return;
-        if (grab.finger && Math.abs(dy) > Math.abs(dx)) { grab = null; return; }
-        if (fold?.peek && fold.dir === grab.dir) fold.peek = false;
+        const took = fold?.peek && fold.dir === grab.dir;
+        if (!took && Math.abs(dy) > Math.abs(dx)) { grab = null; return; }
+        if (took) fold.peek = false;
         else { finishFlip(); makeFold(grab.dir, grab.edge); }
         if (!fold) { grab = null; return; }
         grab.fold = fold; grab.origin = fold.point(); dragged = true; toc(false);
@@ -865,7 +880,8 @@ async function bookDetail(doc, params, serial) {
       }
       if (grab.fold !== fold) { grab = null; return; }
       const q = local(event);
-      fold.move([grab.origin[0] + q[0] - grab.start[0], grab.origin[1] + q[1] - grab.start[1]]);
+      // 侧边翻页时上下的移动打个折扣：捏着书口中间，纸不会整张往上掀。
+      fold.move([grab.origin[0] + q[0] - grab.start[0], grab.origin[1] + (q[1] - grab.start[1]) * (fold.corner ? 1 : .4)]);
       grab.trail.push([q[0], event.timeStamp]);
       if (grab.trail.length > 12) grab.trail.shift();
       return;
@@ -898,18 +914,24 @@ async function bookDetail(doc, params, serial) {
     if (root.dataset.zoom === "in" && Math.abs(dx) > Math.abs(dy)) { stage.scrollLeft += dx; return; }
     if (dy) setZoom(zoomTarget() * Math.min(1.25, Math.max(.8, Math.exp(-dy * .0015))), { x: event.clientX, y: event.clientY });
   }, { passive: false, signal });
+  // 放大后双击回到适合窗口。没放大时单击用来翻页，所以双击不再放大（放大用滚轮或按钮）。
   stage.addEventListener("dblclick", event => {
-    if (!fit || event.target.closest("a,button")) return;
+    if (!fit || root.dataset.zoom !== "in" || event.target.closest("a,button")) return;
     getSelection().removeAllRanges();
-    if (zoomTarget() > fit.scale) setZoom(0);
-    else setZoom(BOOK_ZOOM_STEPS.find(z => z >= Math.max(1, fit.scale * 1.3)) ?? zoomMax, { x: event.clientX, y: event.clientY });
+    setZoom(0);
   }, { signal });
+  // 像读小说一样点书页翻页：双页点右页往后、点左页往前；单页点左边三成往前，其余往后。纸从点下的那一侧、那个高度翻起。
+  // 点链接、按钮、可以滚动的大表格不翻页；选中了文字、刚拖动过、书页放大时也不翻。
   stage.addEventListener("click", event => {
     if (dragged) { dragged = false; return; }
-    if (event.target.closest("a,button") || !getSelection().isCollapsed) return;
+    if (event.target.closest("a,button,.reader-oversized") || !getSelection().isCollapsed || root.dataset.zoom === "in") return;
+    // 只认真正的点击：按下后挪动超过几像素（比如拖着选字没选中）就不翻。
+    if (downAt && Math.hypot(event.clientX - downAt[0], event.clientY - downAt[1]) > 8) return;
     if (fold?.peek) { turn(fold.dir); return; }
-    const box = stage.getBoundingClientRect(), x = event.clientX - box.left;
-    if (x < 22) turn(-1); else if (x > box.width - 22) turn(1);
+    const g = geometry();
+    if (!g) return;
+    const q = local(event), dir = q[0] > g.x0 + (spreadSize === 2 ? g.W : g.W * .35) ? 1 : -1;
+    turn(dir, q[1]);
   }, { signal });
   function schedule() { clearTimeout(timer); timer = setTimeout(() => paginate().catch(failed), 120); }
   function failed(error) {
