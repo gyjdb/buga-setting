@@ -378,6 +378,15 @@ body[data-book-reader] #global-search { flex: 0 1 280px; min-width: 150px; }
 .reader-mode button { min-height: 34px; padding: 4px 12px; border: 0; border-radius: 0; background: transparent; color: #c4d7d0; font-size: 13px; }
 .reader-mode button + button { border-left: 1px solid #50635b; }
 .reader-mode button[aria-pressed=true] { background: #c9d4ce; color: #14221d; font-weight: 600; }
+/* 书页版缩放：缩小、比例（点一下回到适合窗口）、放大。放大后书页在台面里滚动，鼠标可以拖动。 */
+.reader-zoom { flex: none; display: flex; border: 1px solid #50635b; border-radius: 2px; overflow: hidden; }
+.reader-zoom[hidden] { display: none; }
+.reader-zoom button { display: grid; place-items: center; min-width: 36px; min-height: 34px; padding: 4px 8px; border: 0; border-radius: 0; background: transparent; color: #c4d7d0; font: 500 13px/1 "Book Label", var(--ui); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.reader-zoom button + button { border-left: 1px solid #50635b; }
+.reader-zoom button:disabled { opacity: .38; cursor: default; }
+.reader-zoom .reader-zoom-level { min-width: 58px; }
+.reader[data-zoom=in] .reader-stage { overflow: auto; overscroll-behavior: contain; cursor: grab; user-select: none; scrollbar-color: #7f918a transparent; }
+.reader[data-zoom=in] .reader-stage.is-dragging { cursor: grabbing; }
 
 main[data-view=book] { padding: 0; max-width: none; }
 .reader { --reader-font: 15px; --reader-pad: 44px; --paper-k: 1; height: calc(100dvh - 64px); min-height: 260px; display: grid; grid-template-rows: minmax(0,1fr) auto; }

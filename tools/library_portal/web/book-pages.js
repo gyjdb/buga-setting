@@ -58,11 +58,12 @@ const BookPages = (() => {
     return paras.length ? paras : null;
   }
   // 由 bookChapters（book.js）的结果整理出每章的段落与标题；key 与 bookSections 的编号一致（章首是 0）。
-  function prepareChapters(bookChapters, plan) {
+  // drafts：排版计划里标了 draft 的项（作者还没认可的批注提案）只在本地整书样张里排出来，带“提案”标记；阅读器不排。
+  function prepareChapters(bookChapters, plan, drafts = false) {
     return bookChapters.map(c => {
       const p = plan.chapters.find(x => x.num === c.num);
       if (!p) throw new Error("排版计划里没有第" + c.num + "章");
-      const cs = slug(c.id), ch = { ...p, id: c.id, slug: cs, name: c.name, label: c.label, blocks: [], heads: [], warn: [] };
+      const cs = slug(c.id), ch = { ...p, items: (p.items || []).filter(it => drafts || !it.draft), id: c.id, slug: cs, name: c.name, label: c.label, blocks: [], heads: [], warn: [] };
       let ri = 1;
       for (const node of c.nodes) {
         if (/^H[34]$/.test(node.tagName)) ch.heads.push({ at: ch.blocks.length, title: node.textContent.trim(), level: node.tagName === "H3" ? 1 : 2, slug: slug(node.id), key: `${cs}:${ri++}` });
@@ -83,7 +84,15 @@ const BookPages = (() => {
     return {
       img,
       plate: it => el(`<figure class="plt${it.blend ? " blend" : ""}">${img(it.id)}<figcaption>${esc(it.caption)}</figcaption></figure>`),
-      note: it => el(`<figure class="note" aria-label="图拉曼的批注">${img(it.id)}</figure>`),
+      note: it => {
+        // 图拉曼的批注。大张的夹页、索引卡是导出的图；页边的短批注按 body 排成手写字（book-hand.css 的龙藏体），放大也清楚。
+        if (!it.body) return el(`<figure class="note" aria-label="图拉曼的批注">${img(it.id)}</figure>`);
+        const fig = el(`<figure class="hnote paper-${it.paper || "margin"} pen-${it.pen || "ink"}${it.draft ? " draft" : ""}" aria-label="图拉曼的批注"></figure>`);
+        if (it.tilt != null) fig.style.setProperty("--tilt", it.tilt + "deg");
+        if (it.title) fig.append(el(`<p class="hn-title">${esc(it.title)}</p>`));
+        for (const b of it.body) fig.append(noteBlock(b, img));
+        return fig;
+      },
       card: () => el(`<section class="card" aria-label="资料卡"><p class="kicker">Summarium</p><dl>${SUMMARY.map(([cn, la, v]) => `<dt>${cn}<i lang="la">${la}</i></dt><dd>${v}</dd>`).join("")}</dl></section>`),
       figure: it => el(it.what === "vault"
         ? `<figure class="fig"><p class="kicker">Figura</p><h5>白塔的三级封存</h5><div class="vault"><div><b>银封</b>塔内的常规封存层</div><div><b>深封</b>以多重封印隔绝的深层封存库</div><div><b>终封</b>白塔最深处的位面折叠空间；守护法师以个人法则印记封缄，开启须经银色十二环许可</div></div><p class="note-s">${FIGURE_NOTE}</p></figure>`
@@ -100,6 +109,17 @@ const BookPages = (() => {
     };
   }
 
+  // 批注的一块：字符串是一行手写（~~划掉的字~~）；img 是草图（float 时靠左，字排在右边）；rows 是两栏的条目（swatch 色块、line 年代线）；sig 是签名。
+  const SWATCH = { 青: "cyan", 黄: "yellow", 蓝: "blue", 赤: "red" };
+  function noteBlock(b, img) {
+    if (typeof b === "string") return el(`<p>${esc(b).replace(/~~(.+?)~~/g, "<del>$1</del>")}</p>`);
+    if (b.img) { const n = el(`<span class="hn-img${b.float ? " fl" : ""}">${img(b.img)}</span>`); if (b.w) n.style.setProperty("--iw", b.w + "%"); return n; }
+    if (b.rows) return el(`<ul class="hn-rows mark-${b.mark || "none"}">${b.rows.map(([k, v]) => `<li><b${SWATCH[k] ? ` data-sw="${SWATCH[k]}"` : ""}>${esc(k)}</b><span>${esc(v)}</span></li>`).join("")}</ul>`);
+    if (b.sig) return el(`<span class="hn-sig sig-${b.sig === "full" ? "full" : "t"}" aria-label="Turaman">${img("sign")}</span>`);
+    return el("<span></span>");
+  }
+  const handText = plan => (plan?.chapters || []).flatMap(p => (p.items || []).filter(it => it.body).flatMap(it => [it.title || "", ...it.body.flatMap(b => typeof b === "string" ? [b] : b.rows ? b.rows.flat() : [])])).join("");
+
   // ---------- 旁白字体 ----------
   // 章首导语（第一个节标题之前的段落）、图注、资料卡说明、题记署名与编者小注用旁白字体（book-note.css 的 "Note"，按字切片）。
   // 排版前先载入这些字，不然会按后备字体测量，字体到位后导语框、侧栏可能溢出。阅读器文字版也调用。
@@ -108,13 +128,14 @@ const BookPages = (() => {
     const figures = (plan?.chapters || []).flatMap(p => [...(p.items || []).map(it => it.caption || ""), p.epigraph ? p.epigraph[2] : ""]);
     return [...leads, ...figures, ...SUMMARY.map(s => s[2]), FIGURE_NOTE, SEALS_NOTE, "—"].join("");
   }
-  const loadNoteFont = (bookChapters, plan, size = "10pt") => document.fonts.load(`${size} "Note"`, noteText(bookChapters, plan));
+  // 批注的手写字也按字切片（book-hand.css），同样先载入。
+  const loadNoteFont = (bookChapters, plan, size = "10pt") => Promise.all([document.fonts.load(`${size} "Note"`, noteText(bookChapters, plan)), document.fonts.load(`${size} "Hand"`, handText(plan) || "T")]);
 
   // ---------- 排整本书 ----------
   // host：已挂在文档里、带 .fzb 的容器（排版要实际测量）。返回页面元素与每页的位置信息。
-  async function build({ bookChapters, plan, plates, sources, preface, host, cancelled = () => false }) {
+  async function build({ bookChapters, plan, plates, sources, preface, host, drafts = false, cancelled = () => false }) {
     await loadNoteFont(bookChapters, plan);
-    const M = makers(plates), chapters = prepareChapters(bookChapters, plan);
+    const M = makers(plates), chapters = prepareChapters(bookChapters, plan, drafts);
     const pages = [], toc = [];
     let prefaceStart = null;
     host.replaceChildren();
@@ -179,16 +200,16 @@ const BookPages = (() => {
       // 组图与补充材料框是浮动的：当前页放不下时，正文继续往下排，图挪到下一页顶部。
       const deferred = [];
       const placeFloat = (it, force) => {
-        if (it.kind === "strip") {
+        if (it.kind === "strip" || it.wide) {
           // 跨正文栏与边栏：正文里留出同样高的空位，图本身按页面定位，边栏同一段高度不再放东西。
-          const fig = M.strip(it); fig.classList.add("wide"); page.append(fig);
+          const fig = M[it.kind](it); fig.classList.add("wide"); if (it.width) fig.style.setProperty("--w", it.width + "mm"); page.append(fig);
           const space = el(`<div class="strip-space"></div>`); space.style.height = fig.offsetHeight + "px"; main.append(space);
           if (!force && !fits(main) && main.children.length > 1) { fig.remove(); space.remove(); return false; }
           fig.style.top = (main.offsetTop + space.offsetTop) + "px";
           page.occupied.push([space.offsetTop, space.offsetTop + space.offsetHeight]);
           return true;
         }
-        const node = M[it.kind](it); main.append(node);
+        const node = M[it.kind](it); if (it.width) node.style.setProperty("--w", it.width + "mm"); main.append(node);
         if (!force && !fits(main) && main.children.length > 1) { node.remove(); return false; }
         return true;
       };
@@ -242,11 +263,30 @@ const BookPages = (() => {
       for (const it of ch.items || []) {
         if (it.after || it.kind === "insert") continue;
         const key = it.anchor.startsWith("h:") ? it.anchor : "p" + ch.find(it.anchor);
-        const anchor = anchors[key];
+        let anchor = anchors[key];
         if (!anchor) { ch.warn.push("锚点 " + it.anchor); continue; }
+        if (it.at) anchor = sentence(ch, key, it.at, anchor) || anchor;
         if (placeSide(Math.max(anchor.page, bodyStart), anchor.page >= bodyStart ? anchor.top : 0, () => M[it.kind](it)) < 0) ch.warn.push("放不下 " + (it.id || it.what));
       }
       for (const it of ch.items || []) if (it.kind === "insert") insertPage(ch, it);
+    }
+    // 段落里某一句所在的页和高度：批注对着那一句，而不是段首。
+    function sentence(ch, key, at, anchor) {
+      const block = ch.blocks[Number(key.slice(1))], offset = block ? block.text.indexOf(at) : -1;
+      if (offset < 0) { ch.warn.push("句子 " + at); return null; }
+      for (let n = anchor.page; n < pages.length; n++) {
+        for (const frag of pages[n].querySelectorAll(`.main [data-block="${block.key}"]`)) {
+          const start = Number(frag.dataset.start), end = Number(frag.dataset.end);
+          if (offset < start || offset >= end) continue;
+          const walker = document.createTreeWalker(frag, NodeFilter.SHOW_TEXT);
+          let left = offset - start, node;
+          while ((node = walker.nextNode()) && left >= node.length) left -= node.length;
+          if (!node) return { page: n, top: frag.offsetTop };
+          const range = document.createRange(); range.setStart(node, left); range.setEnd(node, Math.min(node.length, left + 1));
+          return { page: n, top: range.getBoundingClientRect().top - $(".main", pages[n]).getBoundingClientRect().top };
+        }
+      }
+      return null;
     }
     function placeSide(start, anchorTop, make) {
       // 边栏按正文顺序往下排：尽量与所依段落对齐；下面放不下时，把本页已放的图往上挪；再不行顺延到下一页。
@@ -274,8 +314,15 @@ const BookPages = (() => {
     function insertPage(ch, it) {
       // 夹页先试着放进本章最后一页的空白里，放不下再单独占一页。
       const last = pages.at(-1), main = last.classList.contains("body") ? $(".main", last) : null;
-      if (main) {
-        const fig = M.insert(it); fig.classList.add("in"); main.append(fig);
+      if (main && it.width > 112) {
+        const fig = M.insert(it); fig.classList.add("in", "wide"); fig.style.setProperty("--w", it.width + "mm"); last.append(fig);
+        const used = main.lastElementChild ? main.lastElementChild.offsetTop + main.lastElementChild.offsetHeight : 0;
+        const top = used + 7 * MM, free = !(last.stack || []).some(x => x.top + x.h > top);
+        fig.style.top = (main.offsetTop + top) + "px";
+        if (free && top + fig.offsetHeight <= main.clientHeight) return;
+        fig.remove();
+      } else if (main) {
+        const fig = M.insert(it); fig.classList.add("in"); if (it.width) fig.style.setProperty("--w", it.width + "mm"); main.append(fig);
         if (fits(main)) return;
         fig.remove();
       }
@@ -380,7 +427,7 @@ const BookPages = (() => {
     const at = anchor => anchor.startsWith("h:")
       ? chapter.nodes.findIndex(n => /^H[34]$/.test(n.tagName) && n.textContent.trim() === anchor.slice(2))
       : texts.findIndex(t => t.startsWith(anchor));
-    for (const it of p.items || []) {
+    for (const it of (p.items || []).filter(it => !it.draft)) {
       const node = it.kind === "insert" ? M.insert(it) : it.kind === "strip" ? M.strip(it) : M[it.kind](it);
       // 文字版按宽高比定图宽（book.css 的 --ar），图还没加载时分页也能量准。
       node.querySelectorAll("img[width][height]").forEach(img => img.style.setProperty("--ar", (img.getAttribute("width") / img.getAttribute("height")).toFixed(4)));

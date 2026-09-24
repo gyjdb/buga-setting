@@ -103,6 +103,60 @@
 .fzb .todo{margin-left:1.6mm;padding:0 1mm;border:.2mm dashed #9bb3c7;font-size:.8em;color:#6f8aa0}
 .fzb .pid{display:block;margin-top:.6mm;font:500 5.2pt/1.2 var(--label);letter-spacing:.12em;color:#a3a8ad}
 .fzb .note figcaption{margin-top:.6mm;text-align:right}
+.fzb .main .note{width:var(--w,100%);margin:calc(var(--body)*1.2) auto calc(var(--body)*1.1)}
+/* 图拉曼的手写批注：龙藏体排的字（book-pages.js 的 note body），放大也清楚。页边直接写、贴上去的纸片、索引卡、方格纸四种；
+   蓝黑墨水或铅笔。字号约为正文的 1.25 倍（书页 12.5pt）：龙藏体字面小，再小在屏幕上就认不出了。 */
+.fzb .hnote{--ink-h:#26356f;--hs:calc(var(--body)*1.25);--lh:calc(var(--hs)*1.5);position:relative;margin:0;font:400 var(--hs)/var(--lh) var(--hand);color:var(--ink-h);transform:rotate(var(--tilt,-1.2deg));transform-origin:30% 0}
+.fzb .hnote.pen-pencil{--ink-h:#4f5159}
+.fzb .hnote p{margin:0;text-indent:0;text-align:left;font:inherit}
+.fzb .hnote del{text-decoration:none;background:linear-gradient(transparent 44%,var(--ink-h) 44% 56%,transparent 56%)}
+.fzb .hnote .hn-img{display:block;margin:2mm 0 1mm}
+.fzb .hnote .hn-img img{display:block;width:var(--iw,100%);max-width:100%;height:auto}
+/* 草图靠左、字排在右边：大张的卡片不加高也能把草图放大。 */
+.fzb .hnote{display:flow-root}
+.fzb .hnote .hn-img.fl{float:left;width:var(--iw,50%);margin:.5mm 4mm 1mm 0}
+.fzb .hnote .hn-img.fl img{width:100%}
+.fzb .hnote .hn-rows{margin:.5mm 0 1.5mm;padding:0;list-style:none}
+.fzb .hnote .hn-rows li{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 2.4mm;align-items:baseline;line-height:var(--lh)}
+.fzb .hnote .hn-rows b:empty{display:none}
+.fzb .hnote .mark-swatch li{align-items:center;margin:.6mm 0}
+.fzb .hnote .mark-swatch b{display:flex;align-items:center;gap:2.4mm;font-weight:400}
+.fzb .hnote .mark-swatch b::before{content:"";width:11mm;height:4.6mm;border:.25mm solid var(--ink-h);border-radius:1.2mm;background:repeating-linear-gradient(58deg,var(--sw) 0 .45mm,transparent .45mm 1mm);opacity:.9}
+.fzb .hnote [data-sw=cyan]{--sw:#3f9a90}
+.fzb .hnote [data-sw=yellow]{--sw:#d6a93a}
+.fzb .hnote [data-sw=blue]{--sw:#4b6fb6}
+.fzb .hnote [data-sw=red]{--sw:#c24a3f}
+.fzb .hnote .mark-line{margin-left:1.4mm;border-left:.3mm solid var(--ink-h)}
+.fzb .hnote .mark-line li{padding-left:3.6mm;grid-template-columns:1fr}
+.fzb .hnote .mark-line li::before{content:"";position:absolute;left:-1.2mm;top:calc(var(--lh)/2 - 1mm);width:2.1mm;height:2.1mm;border-radius:50%;background:var(--paper-h,var(--paper));border:.3mm solid var(--ink-h)}
+.fzb .hnote .mark-line b{font-weight:400;font-size:.82em;line-height:var(--lh);opacity:.8}
+/* list：名称一行，下面一行小字说明（机构、席位之类的清单） */
+.fzb .hnote .mark-list li{grid-template-columns:1fr;margin:0 0 1mm}
+.fzb .hnote .mark-list b{font-weight:400}
+.fzb .hnote .mark-list span{font-size:.8em;line-height:1.35;opacity:.85}
+.fzb .hnote .hn-rows:not([class*=mark-]) b,.fzb .hnote .mark-none b{font-weight:400}
+.fzb .hnote .hn-sig{display:block;margin:.5mm 0 0 auto;overflow:hidden}
+/* 签名取 sign.png 的一段（左边整个 Turaman，右边花体 T）；选择器写重一些，压过阅读器文字版给插图的宽度。 */
+.fzb .hnote .hn-sig img{display:block;max-width:none;height:auto}
+.fzb .hnote .sig-t{width:9mm}
+.fzb .hnote .hn-sig.sig-t img{width:30mm;max-width:none;margin:0 0 0 -20.2mm}
+.fzb .hnote .sig-full{width:23mm}
+.fzb .hnote .hn-sig.sig-full img{width:45mm;max-width:none;margin:0 0 0 -1.8mm}
+.fzb .hnote:is(.paper-slip,.paper-card,.paper-grid){padding:4.5mm 4.5mm 3.5mm;box-shadow:0 .3mm 0 #0000000f,0 1.2mm 2.6mm #00000026}
+.fzb .hnote.paper-slip{--paper-h:#f8f3e2;background:var(--paper-h)}
+/* 大张的方格纸与索引卡平贴在书页上，四角压着胶带（作者意见 2026-09-24：大的批注不歪斜，像贴上去的一页）。 */
+.fzb .hnote:is(.paper-grid,.paper-card)::before{content:"";position:absolute;top:-2.3mm;left:-3.5mm;right:-3.5mm;height:5.6mm;background:linear-gradient(#e2d7bbd9,#e2d7bbd9) 0 0/15mm 100% no-repeat,linear-gradient(#e2d7bbd9,#e2d7bbd9) 100% 0/15mm 100% no-repeat;pointer-events:none}
+.fzb .hnote.paper-slip::before{content:"";position:absolute;top:-2.2mm;left:calc(50% - 8mm);width:16mm;height:4.6mm;background:#e2d7bbd9;transform:rotate(-2.5deg)}
+/* 索引卡：标题占一行，下有红线；以下蓝色横线与手写行距对齐。 */
+.fzb .hnote.paper-card{--paper-h:#f5efe1;border-radius:1mm;background:linear-gradient(transparent calc(var(--lh) - .25mm),#8fa9cc70 calc(var(--lh) - .25mm) var(--lh)) 0 calc(4.5mm + var(--lh))/100% var(--lh) repeat-y,var(--paper-h)}
+.fzb .hnote .hn-title{height:var(--lh);margin:0;border-bottom:.3mm solid #c0504d99}
+.fzb .hnote.paper-grid{--paper-h:#f7f6f0;background:linear-gradient(#8fa9cc4d .2mm,transparent .2mm) 0 0/5mm 5mm,linear-gradient(90deg,#8fa9cc4d .2mm,transparent .2mm) 0 0/5mm 5mm,var(--paper-h)}
+.fzb .main .hnote{width:var(--w,82mm);margin:calc(var(--body)*1.3) auto calc(var(--body)*1.2)}
+/* 边栏里的批注和其他边栏项一样按 top 绝对定位（.hnote 自身的 relative 只给正文栏与文字版用）。 */
+.fzb .side>.hnote{position:absolute}
+/* 批注提案（book-plan.json 里 draft 的项）：只在本地整书样张出现，虚线框标出，作者认可后去掉 draft。 */
+.fzb .hnote.draft{outline:.3mm dashed #8fb0c9;outline-offset:-.3mm}
+.fzb .hnote.draft::after{content:"提案";position:absolute;right:0;bottom:calc(100% + .6mm);padding:0 1mm;background:var(--paper);font:500 5.6pt/1.3 var(--sans);letter-spacing:.14em;color:#6f8aa0}
 /* 正文栏里的大图与图表 */
 .fzb .inline{width:var(--w);margin:calc(var(--body)*1.2) auto calc(var(--body)*1.1)}
 .fzb .inline img{display:block;width:100%;height:auto}
@@ -121,10 +175,12 @@
 .fzb .rings .marks{position:relative;margin:2.5mm 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1mm 5mm}
 .fzb .rings .marks li{display:flex;gap:2mm;align-items:baseline;font:400 calc(var(--body)*.74)/1.5 var(--sans);color:var(--ink-2)}
 .fzb .rings .marks b{flex:none;min-width:4.2mm;padding:0 .8mm;background:var(--azure);color:#fff;text-align:center;font:600 calc(var(--body)*.74)/1.45 var(--latin)}
-/* 跨两栏的组图 */
-.fzb .strip.wide{position:absolute;width:171mm;margin:0}
-.fzb .verso .strip.wide{left:20mm}
-.fzb .recto .strip.wide{left:16mm}
+/* 跨两栏的图：组图，以及排版计划标了 wide 的插图、批注与夹页（宽 --w，在两栏之间居中） */
+.fzb .wide{position:absolute;width:var(--w,171mm);margin:0}
+.fzb .verso .wide{left:calc(20mm + (171mm - var(--w,171mm)) / 2)}
+.fzb .recto .wide{left:calc(16mm + (171mm - var(--w,171mm)) / 2)}
+.fzb .sheet.wide{transform:rotate(-1.2deg);filter:drop-shadow(0 1.2mm 2.5mm #0003)}
+.fzb .sheet.wide figcaption{margin-top:2.5mm;text-align:right}
 .fzb .strip .row{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;align-items:end}
 .fzb .strip .row span{display:block;margin-top:1.5mm;text-align:center;font:500 calc(var(--body)*.72)/1.4 var(--sans);color:var(--ink-2)}
 .fzb .strip-space{margin:calc(var(--body)*1.2) 0}
@@ -153,7 +209,7 @@
 /* 夹页 */
 .fzb .insert .sheet{position:absolute;left:24mm;right:24mm;top:30mm;margin:0;transform:rotate(-1.2deg);filter:drop-shadow(0 1.2mm 2.5mm #0003)}
 .fzb .insert .sheet figcaption{margin-top:3mm;text-align:right}
-.fzb .main .sheet.in{width:98mm;margin:9mm auto 0;transform:rotate(-1.2deg);filter:drop-shadow(0 1.2mm 2.5mm #0003)}
+.fzb .main .sheet.in{width:var(--w,98mm);margin:9mm auto 0;transform:rotate(-1.2deg);filter:drop-shadow(0 1.2mm 2.5mm #0003)}
 .fzb .main .sheet.in figcaption{margin-top:2.5mm;text-align:right}
 /* 序：手写 */
 .fzb .preface .ghost-p{position:absolute;right:-6mm;top:18mm;writing-mode:vertical-rl;font:500 64pt/1 var(--latin);text-transform:uppercase;color:#ecebe5}

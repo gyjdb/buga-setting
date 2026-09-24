@@ -300,6 +300,8 @@ async function bookPaginate(sections, measure, height, cancelled = () => false) 
 // 默认改用文字版。读者可以在顶栏手动选择；缩放比低于 0.5（手机）只有文字版。
 const BOOK_MODE_KEY = "buga.fengtuzhi.mode";
 const BOOK_FIXED_AUTO = 0.6, BOOK_FIXED_FLOOR = 0.5;
+// 书页版放大：0 为适合窗口，否则是相对纸本实际大小的比例（1 即 100%，10pt 正文约 13px）。
+const BOOK_ZOOM_KEY = "buga.fengtuzhi.zoom", BOOK_ZOOM_STEPS = [1, 1.25, 1.5, 2, 2.5];
 const BOOK_PREFACE_PATH = "07_WORLD_GUIDE/银色联盟风土志_序.md";
 
 // 文字版的分节：目录、序、九章（章首图、正文、插图与图示）、终页。编号 `${节}:${序号}` 与书页版的 data-block 一致；
@@ -375,12 +377,13 @@ async function bookDetail(doc, params, serial) {
   // Book tools sit in the top bar; the sidebar stays the archive's own navigation.
   const entries = [["book-cover", "", "封面"], ["book-title", "", "书名页"], ...(preface ? [["book-preface", "", "序"]] : []), ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
   const sectionLabel = new Map([["book-contents", "目录"], ["book-sources", "本书所据"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
-  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
+  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><div class="reader-zoom" role="group" aria-label="书页缩放" hidden><button type="button" data-zoom="-1" aria-label="缩小" title="缩小（−）">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6")}</button><button type="button" class="reader-zoom-level" data-zoom="0" title="恢复为适合窗口（0）。100% 即纸本实际大小">适合</button><button type="button" data-zoom="1" aria-label="放大" title="放大（+）。也可以按住 Ctrl 滚动滚轮，或双击书页">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6M10.5 7.5v6")}</button></div><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
   siteTitle.after(bar);
   const measure = root.querySelector(".reader-measure"), loading = root.querySelector(".reader-loading");
   const progress = [...root.querySelectorAll(".reader-progress"), bar.querySelector(".reader-progress")];
   const tocButton = bar.querySelector(".reader-toc-button"), tocMenu = bar.querySelector(".reader-toc-menu"), tocCurrent = bar.querySelector(".reader-toc-current");
   const modeGroup = bar.querySelector(".reader-mode");
+  const zoomGroup = bar.querySelector(".reader-zoom"), zoomLevel = bar.querySelector(".reader-zoom-level");
   const dialog = root.querySelector("dialog"), panelBody = root.querySelector(".reader-panel-body");
   const startOf = page => {
     const item = page?.items[0];
@@ -443,6 +446,7 @@ async function bookDetail(doc, params, serial) {
     if (target < 0 || target >= pages.length) return;
     toc(false);
     show(target);
+    if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
     if (!matchMedia("(prefers-reduced-motion:reduce)").matches) stage.animate([{ opacity: .4, transform: `translateX(${delta * 8}px)` }, { opacity: 1, transform: "none" }], { duration: 160, easing: "ease-out" });
   };
   // 书页版只排一次（页面尺寸固定），之后只随窗口缩放。
@@ -459,6 +463,43 @@ async function bookDetail(doc, params, serial) {
     })();
     return building;
   }
+  // 书页版放大：整页缩到窗口里字太小时用。放大后书页在台面里滚动或拖动；翻页回到左上角。
+  let fit = null, shownScale = 1, zoom = Number(bookStored(BOOK_ZOOM_KEY)) || 0;
+  const zoomMax = BOOK_ZOOM_STEPS.at(-1);
+  const zoomTarget = () => !fit ? 1 : zoom > fit.scale * 1.02 ? Math.min(zoom, zoomMax) : fit.scale;
+  function sizeBook(focus) {
+    if (!fit) return;
+    const s = zoomTarget(), zoomed = s > fit.scale, pw = BookPages.PAGE_W, ph = BookPages.PAGE_H;
+    // 放大前后，焦点（指针位置或视野中心）下的那一点保持不动。
+    const before = stage.getBoundingClientRect();
+    const fx = focus ? focus.x - before.left : stage.clientWidth / 2, fy = focus ? focus.y - before.top : stage.clientHeight / 2;
+    const px = (stage.scrollLeft + fx) / shownScale, py = (stage.scrollTop + fy) / shownScale;
+    root.dataset.zoom = zoomed ? "in" : "fit";
+    stage.style.width = Math.floor(zoomed ? Math.min(pw * fit.spread * s, fit.W) : pw * fit.spread * s) + "px";
+    stage.style.height = Math.floor(zoomed ? Math.min(ph * s, fit.H) : ph * s) + "px";
+    leaves.style.transform = `scale(${s})`;
+    shownScale = s;
+    if (zoomed) {
+      const after = stage.getBoundingClientRect();
+      stage.scrollLeft = px * s - (focus ? focus.x - after.left : stage.clientWidth / 2);
+      stage.scrollTop = py * s - (focus ? focus.y - after.top : stage.clientHeight / 2);
+    } else stage.scrollTo(0, 0);
+    zoomLevel.textContent = zoomed ? Math.round(s * 100) + "%" : "适合";
+    zoomGroup.querySelector('[data-zoom="-1"]').disabled = !zoomed;
+    zoomGroup.querySelector('[data-zoom="1"]').disabled = s >= zoomMax - 0.001;
+  }
+  function setZoom(value, focus) {
+    if (!fit) return;
+    zoom = value > fit.scale * 1.02 ? Math.min(value, zoomMax) : 0;
+    bookStore(BOOK_ZOOM_KEY, String(zoom));
+    sizeBook(focus);
+  }
+  function stepZoom(delta, focus) {
+    if (!fit) return;
+    const s = zoomTarget();
+    if (delta > 0) setZoom(BOOK_ZOOM_STEPS.find(z => z > s * 1.02) ?? zoomMax, focus);
+    else setZoom([...BOOK_ZOOM_STEPS].reverse().find(z => z < s * 0.98) ?? 0, focus);
+  }
   let pending = positionFrom(params);
   async function paginate() {
     const box = getComputedStyle(desk), gap = parseFloat(box.columnGap) || 0;
@@ -474,11 +515,12 @@ async function bookDetail(doc, params, serial) {
     modeGroup.hidden = !possible;
     modeGroup.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.mode === "book") === fixedMode)));
     root.dataset.mode = fixedMode ? "book" : "text";
+    zoomGroup.hidden = !fixedMode;
+    if (!fixedMode) { fit = null; shownScale = 1; delete root.dataset.zoom; stage.scrollTo(0, 0); }
     if (fixedMode) {
       const spread = s2 >= BOOK_FIXED_AUTO || s2 >= s1 * 0.9 ? 2 : 1, scale = spread === 2 ? s2 : s1;
-      stage.style.width = Math.floor(pw * spread * scale) + "px";
-      stage.style.height = Math.floor(ph * scale) + "px";
-      leaves.style.transform = `scale(${scale})`;
+      fit = { scale, spread, W, H };
+      sizeBook();
       const key = "book:" + spread;
       if (key === layout && pages.length) return;
       const ticket = ++generation, locationBefore = pending || cursor;
@@ -562,6 +604,7 @@ async function bookDetail(doc, params, serial) {
     toc(false);
     if (!pages.length || stage.getAttribute("aria-busy") === "true") { pending = position; return; }
     show(locate(position), { exact: position });
+    if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
     if (matchMedia("(max-width:780px)").matches) {
       document.querySelector("#sidebar").classList.remove("open");
       archiveNavSync();
@@ -586,6 +629,7 @@ async function bookDetail(doc, params, serial) {
     else if (button?.hasAttribute("data-turn")) turn(Number(button.dataset.turn));
     else if (button?.dataset.panel) openPanel(button);
     else if (button?.hasAttribute("data-close")) dialog.close();
+    else if (button?.dataset.zoom) { const d = Number(button.dataset.zoom); if (d) stepZoom(d); else setZoom(0); }
     else if (button?.dataset.mode) { bookStore(BOOK_MODE_KEY, button.dataset.mode); pending = cursor; paginate().catch(failed); }
     const link = event.target.closest("a[href]");
     if (link && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
@@ -602,6 +646,11 @@ async function bookDetail(doc, params, serial) {
   dialog.addEventListener("close", () => panelTrigger?.focus({ preventScroll: true }), { signal });
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && !tocMenu.hidden) { toc(false); tocButton.focus(); return; }
+    // 书页版里 + − 0（含 Ctrl/⌘ 组合）缩放书页：整页适合窗口时，浏览器自身的缩放放不大书页。
+    const zoomKey = { "+": 1, "=": 1, "-": -1, "_": -1, "0": 0 }[event.key];
+    if (fit && zoomKey !== undefined && !dialog.open && tocMenu.hidden && !event.altKey && !event.target.closest?.("input,textarea,select,[contenteditable]")) {
+      event.preventDefault(); if (zoomKey) stepZoom(zoomKey); else setZoom(0); return;
+    }
     if (dialog.open || !tocMenu.hidden || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
     if (["ArrowLeft", "ArrowRight", "PageUp", "PageDown"].includes(event.key)) {
       event.preventDefault(); turn(["ArrowLeft", "PageUp"].includes(event.key) ? -1 : 1);
@@ -610,7 +659,7 @@ async function bookDetail(doc, params, serial) {
   let touch = null;
   stage.tabIndex = -1;
   stage.addEventListener("touchstart", event => {
-    touch = event.touches.length === 1 && !event.target.closest("a,button,.reader-oversized") ? { x: event.touches[0].clientX, y: event.touches[0].clientY, time: Date.now() } : null;
+    touch = event.touches.length === 1 && root.dataset.zoom !== "in" && !event.target.closest("a,button,.reader-oversized") ? { x: event.touches[0].clientX, y: event.touches[0].clientY, time: Date.now() } : null;
   }, { passive: true, signal });
   stage.addEventListener("touchend", event => {
     if (!touch || !event.changedTouches.length || !getSelection().isCollapsed) return;
@@ -618,7 +667,37 @@ async function bookDetail(doc, params, serial) {
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.8 && Date.now() - touch.time < 700) turn(dx < 0 ? 1 : -1);
     touch = null;
   }, { passive: true, signal });
+  // 放大后：鼠标拖动平移；Ctrl（⌘）加滚轮或触控板捏合缩放；双击书页放大或还原。
+  let drag = null, dragged = false;
+  stage.addEventListener("pointerdown", event => {
+    dragged = false;
+    if (root.dataset.zoom !== "in" || event.pointerType !== "mouse" || event.button !== 0 || event.target.closest("a,button")) return;
+    drag = { x: event.clientX, y: event.clientY, left: stage.scrollLeft, top: stage.scrollTop, id: event.pointerId };
+  }, { signal });
+  stage.addEventListener("pointermove", event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
+    if (!dragged && Math.hypot(dx, dy) < 4) return;
+    if (!dragged) { dragged = true; stage.setPointerCapture(drag.id); stage.classList.add("is-dragging"); }
+    stage.scrollLeft = drag.left - dx; stage.scrollTop = drag.top - dy;
+  }, { signal });
+  const endDrag = () => { drag = null; stage.classList.remove("is-dragging"); };
+  stage.addEventListener("pointerup", endDrag, { signal });
+  stage.addEventListener("pointercancel", endDrag, { signal });
+  stage.addEventListener("dragstart", event => { if (root.dataset.zoom === "in") event.preventDefault(); }, { signal });
+  desk.addEventListener("wheel", event => {
+    if (!fit || !(event.ctrlKey || event.metaKey)) return;
+    event.preventDefault();
+    setZoom(zoomTarget() * Math.min(1.25, Math.max(0.8, Math.exp(-event.deltaY * 0.002))), { x: event.clientX, y: event.clientY });
+  }, { passive: false, signal });
+  stage.addEventListener("dblclick", event => {
+    if (!fit || event.target.closest("a,button")) return;
+    getSelection().removeAllRanges();
+    if (zoomTarget() > fit.scale) setZoom(0);
+    else setZoom(BOOK_ZOOM_STEPS.find(z => z >= Math.max(1, fit.scale * 1.3)) ?? zoomMax, { x: event.clientX, y: event.clientY });
+  }, { signal });
   stage.addEventListener("click", event => {
+    if (dragged) { dragged = false; return; }
     if (event.target.closest("a,button") || !getSelection().isCollapsed) return;
     const box = stage.getBoundingClientRect(), x = event.clientX - box.left;
     if (x < 22) turn(-1); else if (x > box.width - 22) turn(1);
