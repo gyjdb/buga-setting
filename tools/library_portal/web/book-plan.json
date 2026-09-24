@@ -1,0 +1,82 @@
+{
+ "about": "《银色联盟风土志》书页排版计划（book-pages.js 读取，阅读器与整书样张共用）。节标题读正文里的三级、四级标题（作者 2026-09-23 认可）；图注是占位，待按写作流程起草；插图用 web/assets/plates/ 的导出图（export_plates.mjs）。anchor 是段落开头的原文，或 h:节标题。",
+ "chapters": [
+  {
+   "num": "一", "roman": "I", "ghost": "Caelum", "en": "A Kingdom in the Sky", "plate": "A1",
+   "items": [
+    { "kind": "card", "what": "summary", "anchor": "h:一张天空的图" },
+    { "kind": "plate", "id": "D5a", "anchor": "h:一张天空的图", "caption": "阿根特铸币的两面。一阿根特合一百星；克鲁兹的金币再漂亮，到了储备院柜台前，也只是一种外国货币。" },
+    { "kind": "note", "id": "T1a", "anchor": "城与城之间又怎么往来呢" },
+    { "kind": "note", "id": "T1b", "anchor": "城与城之间又怎么往来呢" }
+   ]
+  },
+  {
+   "num": "二", "roman": "II", "ghost": "Bibliotheca", "en": "The White Tower and the Great Library", "plate": "A2",
+   "epigraph": ["知识改变命运。", "Scientia fatum mutat.", "白塔铭言"],
+   "items": [
+    { "kind": "figure", "what": "vault", "anchor": "文库之外，白塔还有一项职责" },
+    { "kind": "figure", "what": "robes", "anchor": "规矩要有人守" },
+    { "kind": "plate", "id": "B2a", "anchor": "初到恰恩", "caption": "恰恩的书车街。推车往来不停，赶车的馆员一路摇铃，提醒行人避让；顺着推车走，便到了万书塔脚下。", "blend": true },
+    { "kind": "plate", "id": "C2a", "anchor": "这些典藏并不是谁都能读", "caption": "一部晨光级馆藏。晨光级是公开典藏，封面左上角镌着一枚暖白色的日轮纹；我在恰恩能读的，就是这一级。" },
+    { "kind": "box", "what": "seals", "after": "最高的虚无级" },
+    { "kind": "inline", "id": "B2b", "after": "秘不示人的说完了", "width": 88, "caption": "大图书馆中枢大厅的白银之墙，按编年顺序铭刻着白银之民的历史。这面墙向全体公民开放，不收分文。", "blend": true }
+   ]
+  },
+  {
+   "num": "三", "roman": "III", "ghost": "Disciplina", "en": "The Making of a Wizard", "plate": "A3",
+   "items": [
+    { "kind": "note", "id": "T3a", "anchor": "不过广场上的考校" },
+    { "kind": "plate", "id": "E3a", "anchor": "学成之后，一个巫师往哪条路上走", "caption": "白袍是工匠巫师，灰袍是战斗巫师，银袍是白塔的人。袍色只表示职任，不代表环级。", "blend": true }
+   ]
+  },
+  {
+   "num": "四", "roman": "IV", "ghost": "Magia", "en": "Magic and Its Limits", "plate": "A4",
+   "items": [
+    { "kind": "plate", "id": "C4a", "anchor": "h:九大派别", "caption": "在卡奈奇，连寄出去的信都可以折成纸鸟，认得自己的收信人，扑着翅膀飞过半座城。" },
+    { "kind": "inline", "what": "rings", "after": "说完魔力从哪里来" },
+    { "kind": "plate", "id": "C4b", "anchor": "当然，能够施展某个法术", "caption": "施法场所界线附近的符文界标。青色是自由施法区，黄色是戒备区。" },
+    { "kind": "note", "id": "T4a", "anchor": "再严一层的是蓝色限阶区" },
+    { "kind": "note", "id": "T4b", "anchor": "普通牢狱自然也有自己的禁魔设施" }
+   ]
+  },
+  {
+   "num": "五", "roman": "V", "ghost": "Civitates", "en": "Among the Cities", "plate": "A5",
+   "items": [
+    { "kind": "plate", "id": "B5a", "anchor": "卡奈奇与白塔之外", "caption": "翼狮城的城门。墙面与路面布满符文，到夜里会泛出淡蓝色的光；有人坐在路边借着符文光读书，似乎也没人觉得奇怪。" },
+    { "kind": "plate", "id": "B5b", "anchor": "卡奈奇与白塔之外", "caption": "拉塔基的城顶大面积覆盖着观星穹顶。入夜以后全城压低灯火，许多酒馆索性开到了地下。", "blend": true },
+    { "kind": "plate", "id": "B5c", "anchor": "浮空城的主结界平日并不会", "caption": "风暴王座常年强风，建筑低矮厚重，窗户窄，屋檐深。一旦起风，整座城便都是细碎的铃声。" }
+   ]
+  },
+  {
+   "num": "六", "roman": "VI", "ghost": "Concilium", "en": "The Parliament and the Twelve Rings", "plate": "A6",
+   "epigraph": ["向知识致敬，向真理致敬。", "", "奈塔斯大殿的齐诵之辞"],
+   "items": [
+    { "kind": "plate", "id": "C6a", "anchor": "城邦院的议员坐在内圈", "caption": "表决水晶。议员向其中注入魔力，亮银代表赞成，转为暗铁则代表反对；不注入视为弃权。" },
+    { "kind": "insert", "id": "T6a" }
+   ]
+  },
+  {
+   "num": "七", "roman": "VII", "ghost": "Origo", "en": "Origins", "plate": "A7",
+   "items": [
+    { "kind": "plate", "id": "D7a", "anchor": "巴贝尔是那个年代最后一座圣贤避难所", "caption": "巴贝尔通天塔，旧版画。巴贝尔被攻破后，塔中的白银图书馆湮灭，无数典籍散失。" }
+   ]
+  },
+  {
+   "num": "八", "roman": "VIII", "ghost": "Fines", "en": "The Edges of the Sky", "plate": "A8",
+   "items": [
+    { "kind": "plate", "id": "B8c", "anchor": "h:守护者，不是征服者", "caption": "空港的入境登记。来往的外部商队、使节和凡世人员，要登记通行，规定停留的期限。", "blend": true },
+    { "kind": "plate", "id": "B8a", "anchor": "守卫天空的是联盟的常备军", "caption": "银色舰队的一艘护卫舰。舰队的船挂着银帆，帆上绘着洞察之眼。" },
+    { "kind": "plate", "id": "C8a", "anchor": "舰队的船挂着银帆", "caption": "玛娜圣像。整个沃恩德，只有布加使用这样的舰艏；在地上，看见船首那尊圣像，就不必再问那是谁的船了。" }
+   ]
+  },
+  {
+   "num": "九", "roman": "IX", "ghost": "Annus", "en": "The Turning Year", "plate": "A9",
+   "items": [
+    { "kind": "note", "id": "T9a", "anchor": "h:会期" },
+    { "kind": "strip", "ids": ["D9a", "D9b", "D9c", "D9d"], "labels": ["三月 · 春晓之月", "六月 · 夏胧之月", "八月 · 书卷之月", "十二月 · 沉眠之月"], "after": "十二月的沉眠之月象征天赋", "caption": "春晓会期从三月初一开始；六月魔力开始复苏；八月白塔的钟声宣告知识与智慧之月到来；十二月进入岁末休会。" },
+    { "kind": "plate", "id": "B9a", "anchor": "剧场里", "caption": "剧场里，舞台布景由幻术师在台侧现场维持，随剧情在观众眼前变换。" },
+    { "kind": "plate", "id": "C9a", "anchor": "书在这里是体面的东西", "caption": "书在这里是体面的东西。精美的装帧是常见而受重视的风尚，书也常被当作礼物。" }
+   ]
+  }
+ ]
+}

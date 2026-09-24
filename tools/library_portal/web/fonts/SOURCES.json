@@ -78,5 +78,741 @@
     "version": "Fontsource variable 5.3.0",
     "weight": "100–900",
     "license": "Jost-LICENSE.txt"
+  },
+  "LongCang-5.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-5-400-normal.woff2",
+    "sha256": "bf404aabed27baf2d874b51d820c9e43fa20edeb0f1d7756362d6c97f4591fda",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-6.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-6-400-normal.woff2",
+    "sha256": "e0bb7fab39df4518df941434ad84733ee7e230be1208d4b0bf47890d264fd75e",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-21.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-21-400-normal.woff2",
+    "sha256": "2e3a55995f3bdb3c2d5ee389dbda925c234e7bc53b500aa85098a5c2572d1931",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-22.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-22-400-normal.woff2",
+    "sha256": "148b6d9d5e106d8767a322d6c24db835d65ac2582c234ab0f0ba5a174ef07d3a",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-23.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-23-400-normal.woff2",
+    "sha256": "cb469315bd02bd956291e3fb3b02235c6f117fff9c27fd1499f3eed11896f5cb",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-24.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-24-400-normal.woff2",
+    "sha256": "0e7683461324fff9fed876e138fbf10c8252a35b02754536342ab8b861682ea4",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-25.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-25-400-normal.woff2",
+    "sha256": "a61406c7c392a4af71ca0a5bff77cdea072fbe785623bb676d2ab8609a97a520",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-26.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-26-400-normal.woff2",
+    "sha256": "58237c85e68a4401ad69c1e7edec685a63d2ff5b141ac5b7f02e0e7aa82570bf",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-27.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-27-400-normal.woff2",
+    "sha256": "69890feb0636a4e5b4a97f1fe178887c2626d39ce1c81772b5f89633931743fd",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-28.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-28-400-normal.woff2",
+    "sha256": "0512c5334f00a8e549d2bfd5d437107b29399e7726e7e96e32c7a797e6a0fdb1",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-29.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-29-400-normal.woff2",
+    "sha256": "1e7e4fd3e4a0a21bf146d5ef350a2a52678dee11e0f2cc1f2f1846158c977b45",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-30.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-30-400-normal.woff2",
+    "sha256": "79c1fa9afdae9f23051746a43e063da5b1dc1143bb8ea894a82e91161d3c7ffe",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-31.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-31-400-normal.woff2",
+    "sha256": "679f115d8ddfd6fd1ba7225e9451dee940abc985d86644501e41641880f698bf",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-32.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-32-400-normal.woff2",
+    "sha256": "cc7c2a0e19084b88b35871d5ea01d639ff2bfa690ddf4c9d3d7bec7f3268fcc4",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-33.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-33-400-normal.woff2",
+    "sha256": "38bbaf449c4c0d35c13dc21f9b634ade34ee97b8bd7cf2a88fdbd3df54a70b06",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-34.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-34-400-normal.woff2",
+    "sha256": "5bc57b44e6464c7723f0c324c5f5df07d6637a4ab47ede95407923ad86812b65",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-35.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-35-400-normal.woff2",
+    "sha256": "b093e69aa8b495e9a5ef5cfc008910aa28872c3628b7f230d79349365cbb1437",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-36.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-36-400-normal.woff2",
+    "sha256": "0a2f6ef1dbf0cba6e263dd5bb42825a0f044e98cf12b771268dc6c300d2666c0",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-37.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-37-400-normal.woff2",
+    "sha256": "5acd173f67d07d4560b7ebab719833151e758ac25d584571ebf3b9f7232334e8",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-38.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-38-400-normal.woff2",
+    "sha256": "03ebd21b15a90161687bb4a1063806cfe7e8c44f850d269370cd19cfa2b3db59",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-39.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-39-400-normal.woff2",
+    "sha256": "20e06aefbd356e6cd3a888432682eb96959adceb998bfe7914f233bb408ce8ee",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-40.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-40-400-normal.woff2",
+    "sha256": "3b462a8b34aae366e36c255feda1e8fc61e740d5f87a6b6b6f27133fdc21ff23",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-41.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-41-400-normal.woff2",
+    "sha256": "e9f9f90eec98e5edea5ca2d835ca2f18e75ebcbe6302c604f3cef24e627fef1f",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-42.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-42-400-normal.woff2",
+    "sha256": "387658c27ffcd46053b87364ef49111bdce544c868bcfde840652974b56f3766",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-43.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-43-400-normal.woff2",
+    "sha256": "4e3bf27dc850a514f194e1f0cf7048de7be06f7a029457d4fefdeb208ec560ad",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-44.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-44-400-normal.woff2",
+    "sha256": "3dfa6648ec44ee8203fd0e9e7ce98a11fae9f862a6bee29fd1711dccfaf9ceb5",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-45.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-45-400-normal.woff2",
+    "sha256": "64afda36babaf816e395f3353e8b0e85f1b65c2dfe0125d2e957d941fce09181",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-46.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-46-400-normal.woff2",
+    "sha256": "6f474dce71b6c95f4bd73ad1ac6cd1a8711f37f9d62b1af94be9d78cdc65b09a",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-47.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-47-400-normal.woff2",
+    "sha256": "af97045dab8954925fa6e620a4aa7f8b0d5f3126876a0510f31132b37d600249",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-48.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-48-400-normal.woff2",
+    "sha256": "57eddad184af742623cca5ca79a064ffb4e354ccce05ad2b24e934494e912bdc",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-49.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-49-400-normal.woff2",
+    "sha256": "94d5edf43ce87008da11db0c1952096c8f18ec5c960645c8c5ac5c817f1d10fe",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-50.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-50-400-normal.woff2",
+    "sha256": "5d3b60a30ca15bdf3b408b827fce7afa4f94c1052f51fce4167256d258e62fa9",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-51.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-51-400-normal.woff2",
+    "sha256": "f69affa957ca30fe28f5d0b9b4953b32aef3378ea21b726e6fcddb26ab761e22",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-52.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-52-400-normal.woff2",
+    "sha256": "9ad6fba4f670229cf288bed22d46d82ff8433140d85c5c2a7d892d78ed081fd0",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-53.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-53-400-normal.woff2",
+    "sha256": "30e284bd0e024afd4e14374af8de7137b193871069e2d09a99a72dea2d63f44a",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-54.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-54-400-normal.woff2",
+    "sha256": "ba0a0269fc013f2027e5470e67ff7a0107df6c57211f165de60660b66889422d",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-55.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-55-400-normal.woff2",
+    "sha256": "8531ee8640ed48660202022277d6ef45ecf12a823ea295bda8c3a35e03204f82",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-56.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-56-400-normal.woff2",
+    "sha256": "c25302be9a205eb47c4b99f556113c87dfee47ce960c3300919b10b0122401b6",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-57.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-57-400-normal.woff2",
+    "sha256": "7874ccca8d3f51eec736ef15428005d8aec43a0d0e71a91ceea6f2f8c7caaa39",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-58.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-58-400-normal.woff2",
+    "sha256": "f93bb7127e8191113ba92f690c88a71cb4adf03f691ae1b24a178b72a23f5f8c",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-59.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-59-400-normal.woff2",
+    "sha256": "5138a12f74ba3db16eabd1465cc245a6f788453c42b8284ee2bc1f15698e413b",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-60.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-60-400-normal.woff2",
+    "sha256": "9a6b6f97c9602cfff1f987bb7311b1d312c9f9d176ce5c648941ae9618200532",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-61.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-61-400-normal.woff2",
+    "sha256": "05cd84a2c7cf4bf47f44bd94a0b157efc9d4335870f20d159237b478f0ec249f",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-62.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-62-400-normal.woff2",
+    "sha256": "827d6b1501134cb851fb1a880bfa9651e3a381958f56eaf94cb4111ea0469d0f",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-63.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-63-400-normal.woff2",
+    "sha256": "63019672344a021f7ba447adc337dd8e3ce0bb823dc1cf0c0907fe2de385b7ca",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-64.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-64-400-normal.woff2",
+    "sha256": "f0b1550d397b5c2736543a6f999b37bff8eb9cb3eaae6d2712f80e9645403643",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-65.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-65-400-normal.woff2",
+    "sha256": "74feb53dd39d10cabb92c2895724184a220cac5d4c57ec51caf9b1ad2ccf38ff",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-66.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-66-400-normal.woff2",
+    "sha256": "00193e5b1089e84f0bc0fa088077bd208fe33f03daf98b5ff95f97cf08a5ded8",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-67.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-67-400-normal.woff2",
+    "sha256": "d57c21e12316904f33157229aaba85218ee4345a55c4e3236ba614c28e8df67c",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-68.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-68-400-normal.woff2",
+    "sha256": "4d8d07fa50e5bc6261a2c9f76554896a513c787feebf5c2bdce875e28c88877c",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-69.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-69-400-normal.woff2",
+    "sha256": "c29618696486799274788c4bb65b942f65f6bf7de92b3296b9525250a45eb69a",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-70.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-70-400-normal.woff2",
+    "sha256": "7fd819167acac84bf7564e034de8a233df5e26dfa18015f0c197bc076ee04575",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-71.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-71-400-normal.woff2",
+    "sha256": "1c5e116dec6538a6541ad73cf9412d9ae622b5388e80240d27b089e82430bea8",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-72.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-72-400-normal.woff2",
+    "sha256": "20c49fafcbfb9fba73e513e9e194edd7b2f94892cdb371b862af035c3295ead7",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-73.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-73-400-normal.woff2",
+    "sha256": "f0c22359d63eeb206159e81f004e5ef691928f5963bae9f1f2a5da4ca0770d6f",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-74.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-74-400-normal.woff2",
+    "sha256": "78a4c5252e238d9fe568e81727724593c3cefbaef7cde833deeb407ca3c8799b",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-75.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-75-400-normal.woff2",
+    "sha256": "fd33f47ca435bf1072924bde61995beb01c99575b08400f84ebe8284ad518549",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-76.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-76-400-normal.woff2",
+    "sha256": "69d97608be2ee952ed200456fa1826a8acb798d96b82955c12e1d37816cd5f29",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-77.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-77-400-normal.woff2",
+    "sha256": "e2e2924389e24f25acb07851edcb6d2125869f2b8e3027f5a184504795283489",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-78.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-78-400-normal.woff2",
+    "sha256": "75ca9b240d6247297a60a024e695e7f89022ea223cd17a148e8c646a371e5fda",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-79.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-79-400-normal.woff2",
+    "sha256": "49ff76c843dc84bf3ecf5c4a112b4f40a010332de5c21c4c69719a25f099a71e",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-80.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-80-400-normal.woff2",
+    "sha256": "0b587174d9780620aa5e9c5ef5c63d6b1abfb51502d4f4ea35de5a206b0003fd",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-81.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-81-400-normal.woff2",
+    "sha256": "fd89f86a769b54301a5c1618c8777264db1258d234314f59315e21fc150ad5fe",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-82.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-82-400-normal.woff2",
+    "sha256": "3f1ca13129f439047b62f1504094fa498e29cce8f0a55dd5588010dc86a5ad96",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-83.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-83-400-normal.woff2",
+    "sha256": "f8651bee4e104985411282820e80512305ad639ba65c5525044cc525a78e7f18",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-84.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-84-400-normal.woff2",
+    "sha256": "7e909f2d76e275c2955247e1d567df7ad361531a5e665834492ffe92d72c60d1",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-85.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-85-400-normal.woff2",
+    "sha256": "8c30d5d5ca2d7a6c46032d6fc9e310d5d9f4c212d059890303c36e3bdfa280b5",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-90.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-90-400-normal.woff2",
+    "sha256": "ff518e9ac52f0cabc695def2582bcac1d7885de07c1002a9aa85c4edcebf0ea4",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-91.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-91-400-normal.woff2",
+    "sha256": "c9c2b0a794edb86ba1c7265b92a4ec2d367f876989865d571a0307061c39f94f",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-97.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-97-400-normal.woff2",
+    "sha256": "2ec149e6954a135018ff1e3eb584c055e392a17d6f3c14348c16543bdcb92dff",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-99.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-99-400-normal.woff2",
+    "sha256": "e6ca7dd9c134f272395b1b581ab9cf072c1157411da5fc7966ca73e2c652eabc",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-100.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-100-400-normal.woff2",
+    "sha256": "148b1fa805c0d51f704386a2f6bbbf542a9337da0a2262f2a990d0d46f5ad921",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-101.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-101-400-normal.woff2",
+    "sha256": "c3dc41b513182ee6ab978264f2104c5b7331985378ced580edadc25162f4bd9f",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-102.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-102-400-normal.woff2",
+    "sha256": "cbab82df226cca7410b195a2b22d7e13470e9c0b4af03b21e5f1c5c55c26e386",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-103.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-103-400-normal.woff2",
+    "sha256": "d87e0364ae1d3e705d216071334eb56bc09c7f7d5e64ead190d2b247f10330d8",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-104.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-104-400-normal.woff2",
+    "sha256": "e018d96086f88d121479a849c9cde1a8898c6e5a699161a8e2a72d9f76c495c2",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-105.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-105-400-normal.woff2",
+    "sha256": "558be4300fecb20bc0e77fc52ba645dd219c821b5ffc08bbe8379cc2958c9bed",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-106.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-106-400-normal.woff2",
+    "sha256": "cd2940cddb291d9ae77fb71984856edee09f4d1f16742f2a4ef265c46da2d136",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-107.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-107-400-normal.woff2",
+    "sha256": "1c964618c3a2f7067c50cd1f166ce1b137e744358044246061acd88163431c54",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-108.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-108-400-normal.woff2",
+    "sha256": "cfae2b5c0b34c7bcd761cb3628a183b81aeeeaa2c4faa12a53f8af3d7f8c7071",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-109.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-109-400-normal.woff2",
+    "sha256": "ae9323e87cf08b67d07334011bbf90385b48b8b96af1c98368d6cf29d85d88b2",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-110.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-110-400-normal.woff2",
+    "sha256": "30cd2c153b28633e54ab452938eb32152aed88e6f1fafbc6da48b0dcef872eeb",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-111.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-111-400-normal.woff2",
+    "sha256": "62d61d4ae44eac656262c3b4c654e30a426e3404d3bb65ffa7f71b34ed39a4d0",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-112.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-112-400-normal.woff2",
+    "sha256": "3a4e97ae8f5bf5b0a8cc40679ac887699be7d8d1adb12e8d1da379ed95dcc5f9",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-113.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-113-400-normal.woff2",
+    "sha256": "45bb610265b2aa5f0c28190b80e940cb50a1e21c76a053835a4c483b3f47273b",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-114.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-114-400-normal.woff2",
+    "sha256": "71f262c2dc17c5b65240ed6cbf0de4888ef5cf43a17329940c66e0d538b9d473",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-115.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-115-400-normal.woff2",
+    "sha256": "f192982f2d2591a3d745403dca1ec543bec489671249689f9351bf32e42bbfad",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-116.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-116-400-normal.woff2",
+    "sha256": "cab128fc9a520025e2c3d46e7bf6b7da941182485fc218b2307ae1710034e92d",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-117.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-117-400-normal.woff2",
+    "sha256": "fb3969cf377a496dabee1309126cbd2a80de5e5dd1e1c302aab549b58deb9dc5",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-118.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-118-400-normal.woff2",
+    "sha256": "32f373528a4a8341b8f1598b212da39a182b544ae2c22d12ff96393b3b12ef75",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-119.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-119-400-normal.woff2",
+    "sha256": "d6f21abcad6f978454d30cf0b65c3c01564458b5c44d91de22b3fc5cd196b626",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
+  },
+  "LongCang-latin.woff2": {
+    "url": "https://cdn.jsdelivr.net/npm/@fontsource/long-cang@5.3.0/files/long-cang-latin-400-normal.woff2",
+    "sha256": "aa0b77b3c13446ff62afc170a1cebbeddece530569051dbeee6461755eed25dc",
+    "family": "Long Cang",
+    "version": "Fontsource 5.3.0",
+    "weight": "400",
+    "license": "LongCang-LICENSE.txt"
   }
 }

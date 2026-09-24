@@ -1,0 +1,237 @@
+/* 《银色联盟风土志》书页（book-pages.js）的样式：页面 210 × 299.5 mm，正文 10pt。全部限定在 .fzb 之内，
+   阅读器的书页版、文字版里的插图与整书样张共用。字体：思源宋体、思源黑体（archive.css），Cormorant Garamond、Jost（book.css），龙藏体（book-hand.css）。 */
+.fzb{
+  --paper:#f4f3ee;--ink:#1c1e21;--ink-2:#474c52;--ink-3:#80868c;--hair:#cfd2cf;
+  --azure:#1a5a8a;--azure-tint:#dfe9f1;--ghost:#e6e6e0;--pen:#2b3f95;--grid:#d6e0e7;--slip:#efe4ca;
+  --cn:"Archive Song",serif;--sans:"Archive Sans",sans-serif;--latin:"Book Latin","Archive Song",serif;--label:"Book Label","Archive Sans",sans-serif;--hand:"Hand","Archive Song",serif;
+  --body:10pt;--lead:1.95;
+}
+.fzb *{box-sizing:border-box}
+/* 复位：档案馆的全局样式（标题均衡换行、段间距、strong 字重）不进书页，书页在任何页面里排出来都一样。 */
+.fzb h1,.fzb h2,.fzb h3,.fzb h4,.fzb h5,.fzb p,.fzb figure,.fzb blockquote{margin:0}
+.fzb h1,.fzb h2,.fzb h3,.fzb h4,.fzb h5{text-wrap:wrap;overflow-wrap:normal}
+.fzb strong{font-weight:700}
+.fzb img{max-width:none}
+/* 纸页：210 × 299.5 mm，与阅读器书页同比例 */
+.fzb .page{position:relative;width:210mm;height:299.5mm;flex:none;overflow:hidden;background:var(--paper);color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fzb .page.verso{background:linear-gradient(270deg,#24313a12,transparent 4%),var(--paper)}
+.fzb .page.recto{background:linear-gradient(90deg,#24313a12,transparent 4%),var(--paper)}
+.fzb .page.void{background:none}
+.fzb .rh{position:absolute;top:11mm;left:0;right:0;height:4mm;font:500 7pt/1 var(--sans);color:var(--ink-2)}
+.fzb .rh span{position:absolute;top:0;white-space:nowrap}
+.fzb .rh span::before{content:"";display:inline-block;width:1.6mm;height:1.6mm;margin-right:2mm;background:var(--ink);vertical-align:.25mm}
+.fzb .rh .b{font:500 6.6pt/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.fzb .rh .b::before{background:var(--ink-3)}
+.fzb .verso .rh .a{left:20mm}
+.fzb .verso .rh .b{left:139mm}
+.fzb .recto .rh .a{left:16mm}
+.fzb .recto .rh .b{left:135mm}
+.fzb .main,.fzb .side{position:absolute;top:28mm;height:250mm;overflow:hidden}
+.fzb .main{width:112mm}
+.fzb .side{width:52mm}
+.fzb .verso .main{left:20mm}
+.fzb .verso .side{left:139mm}
+.fzb .recto .main{left:16mm}
+.fzb .recto .side{left:135mm}
+.fzb .folio{position:absolute;top:28mm;display:flex;flex-direction:column;align-items:center;gap:3mm;font:500 8pt/1 var(--label);letter-spacing:.14em;color:var(--ink-2)}
+.fzb .folio::before{content:"";width:1.8mm;height:1.8mm;background:var(--ink)}
+.fzb .folio span{writing-mode:vertical-rl}
+.fzb .verso .folio{left:8.4mm}
+.fzb .recto .folio{right:8.4mm}
+.fzb .path{position:absolute;bottom:21.5mm;writing-mode:vertical-rl;text-orientation:sideways;white-space:nowrap;font:600 6.4pt/1 var(--label);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.fzb .path i{font:400 6.6pt/1 var(--sans);font-style:normal;letter-spacing:.04em;color:var(--ink-3)}
+.fzb .verso .path{left:8.4mm}
+.fzb .recto .path{right:8.4mm}
+/* 书口索引：每章在书口占一段 */
+.fzb .thumb{position:absolute;top:calc(28mm + var(--k) * 27.5mm);height:25mm;width:2mm;background:var(--azure)}
+.fzb .verso .thumb{left:0}
+.fzb .recto .thumb{right:0}
+.fzb .thumb.full{top:0;bottom:0;height:auto;width:3.4mm;background:linear-gradient(var(--azure-tint) calc(28mm + var(--k) * 27.5mm),var(--azure) 0 calc(53mm + var(--k) * 27.5mm),var(--azure-tint) 0)}
+/* 正文 */
+.fzb .flow p{margin:0;text-indent:2em;text-align:justify;font:400 var(--body)/var(--lead) var(--cn);line-break:strict;hanging-punctuation:allow-end}
+.fzb .flow p.cont{text-indent:0}
+.fzb .flow p.item{position:relative;padding-left:1.4em;text-indent:0}
+.fzb .flow p.item:not(.cont)::before{content:"";position:absolute;left:.3em;top:.78em;width:.4em;height:.4em;background:var(--azure)}
+.fzb .lead p{font-family:var(--sans);font-weight:400}
+.fzb .sec{display:flex;align-items:center;gap:3mm;margin:calc(var(--body)*1.9) 0 calc(var(--body)*.95)}
+.fzb .main>.sec:first-child,.fzb .main>.sub:first-child{margin-top:0}
+.fzb .sec::before{content:"";flex:none;width:2.3mm;height:2.3mm;background:var(--azure)}
+.fzb .sec h3{margin:0;font:900 calc(var(--body)*2)/1.2 var(--sans);letter-spacing:.04em}
+.fzb .sub{display:flex;align-items:center;gap:2.5mm;margin:calc(var(--body)*1.3) 0 calc(var(--body)*.6);padding-left:calc(var(--body)*1.9)}
+.fzb .sub h4{margin:0;font:700 calc(var(--body)*1.4)/1.35 var(--cn)}
+/* 补充材料框 */
+.fzb .supp{position:relative;margin:calc(var(--body)*1.3) 0 calc(var(--body)*1.2);padding:5mm 5.5mm 4.5mm;background:var(--azure-tint);border-top:2.2mm solid var(--azure)}
+.fzb .supp .tag{position:absolute;top:2.6mm;right:4.5mm;font:600 5.8pt/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--azure)}
+.fzb .supp .tag::after{content:"";display:inline-block;width:1.6mm;height:1.6mm;margin-left:1.6mm;background:var(--azure);vertical-align:-.1mm}
+.fzb .supp h4{margin:0 0 2.5mm;font:900 calc(var(--body)*1.3)/1.3 var(--sans)}
+.fzb .seal-row{display:grid;grid-template-columns:10mm 23mm minmax(0,1fr);gap:0 3mm;align-items:center;padding:1.6mm 0;border-top:.2mm solid #c3d3de}
+.fzb .seal-row svg{width:9mm;height:9mm}
+.fzb .seal-row b{display:block;font:700 calc(var(--body)*.9)/1.3 var(--sans)}
+.fzb .seal-row i{display:block;font:italic 500 calc(var(--body)*.8)/1.2 var(--latin);color:var(--ink-3)}
+.fzb .seal-row span{font:400 calc(var(--body)*.78)/1.55 var(--sans);color:var(--ink-2)}
+.fzb .note-s{margin:2mm 0 0;font:400 calc(var(--body)*.68)/1.45 var(--sans);color:var(--ink-3)}
+/* 边栏 */
+.fzb .side>*{position:absolute;left:0;right:0;margin:0}
+.fzb .kicker{margin:0 0 3mm;font:600 6.2pt/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--azure)}
+.fzb .card dl{margin:0}
+.fzb .card dt{display:flex;align-items:center;gap:2mm;font:700 calc(var(--body)*.88)/1.35 var(--sans)}
+.fzb .card dt::before{content:"";flex:none;width:1.8mm;height:1.8mm;background:var(--azure)}
+.fzb .card dt i{margin-left:auto;font:500 5.8pt/1 var(--label);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.fzb .card dd{margin:.8mm 0 3mm 3.8mm;font:400 calc(var(--body)*.82)/1.6 var(--sans);color:var(--ink-2)}
+.fzb .fig h5{margin:0 0 3mm;font:700 calc(var(--body)*1)/1.45 var(--cn)}
+.fzb .vault{display:grid;gap:1.4mm}
+.fzb .vault div{padding:2.2mm 2.6mm;color:#fff;font:400 calc(var(--body)*.76)/1.5 var(--sans)}
+.fzb .vault b{display:block;font:700 calc(var(--body)*.9)/1.35 var(--sans)}
+.fzb .vault div:nth-child(1){background:#9aa6ae;margin-right:8mm}
+.fzb .vault div:nth-child(2){background:#55646f;margin-right:4mm}
+.fzb .vault div:nth-child(3){background:#1d2429}
+.fzb .ladder{position:relative;margin:0;padding:0 0 0 5mm;list-style:none}
+.fzb .ladder::before{content:"";position:absolute;left:1mm;top:1.5mm;bottom:1.5mm;width:.35mm;background:var(--azure)}
+.fzb .ladder li{position:relative;padding-bottom:3mm}
+.fzb .ladder li::before{content:"";position:absolute;left:-5mm;top:1.1mm;width:2.4mm;height:2.4mm;background:var(--paper);border:.4mm solid var(--azure)}
+.fzb .ladder li:first-child::before{background:var(--azure)}
+.fzb .ladder b{font:700 calc(var(--body)*.9)/1.35 var(--sans)}
+.fzb .ladder em{margin-left:1.5mm;font:400 calc(var(--body)*.7)/1 var(--sans);font-style:normal;color:var(--ink-3)}
+.fzb .ladder span{display:block;font:400 calc(var(--body)*.76)/1.55 var(--sans);color:var(--ink-2)}
+.fzb .plt img,.fzb .note img,.fzb .strip img,.fzb .sheet img{display:block;width:100%;height:auto}
+.fzb .plt.blend img,.fzb .strip img{mix-blend-mode:multiply}
+.fzb .plt figcaption,.fzb .strip figcaption{position:relative;margin-top:2.2mm;padding-left:3.4mm;font:400 calc(var(--body)*.74)/1.55 var(--sans);color:var(--ink-2)}
+.fzb .plt figcaption::before,.fzb .strip figcaption::before{content:"";position:absolute;left:0;top:.62em;width:1.5mm;height:1.5mm;background:var(--ink)}
+.fzb .todo{margin-left:1.6mm;padding:0 1mm;border:.2mm dashed #9bb3c7;font-size:.8em;color:#6f8aa0}
+.fzb .pid{display:block;margin-top:.6mm;font:500 5.2pt/1.2 var(--label);letter-spacing:.12em;color:#a3a8ad}
+.fzb .note figcaption{margin-top:.6mm;text-align:right}
+/* 正文栏里的大图与图表 */
+.fzb .inline{width:var(--w);margin:calc(var(--body)*1.2) auto calc(var(--body)*1.1)}
+.fzb .inline img{display:block;width:100%;height:auto}
+.fzb .inline.blend img{mix-blend-mode:multiply}
+.fzb .inline figcaption{position:relative;margin-top:2.2mm;padding-left:3.4mm;font:400 calc(var(--body)*.74)/1.55 var(--sans);color:var(--ink-2)}
+.fzb .inline figcaption::before{content:"";position:absolute;left:0;top:.62em;width:1.5mm;height:1.5mm;background:var(--ink)}
+.fzb .rings{margin:calc(var(--body)*1.3) 0 calc(var(--body)*1.2);padding:4mm 0 0;border-top:.8mm solid var(--ink)}
+.fzb .rings h5{margin:0 0 3mm;font:700 calc(var(--body)*1.05)/1.4 var(--cn)}
+.fzb .rings .bands,.fzb .rings .scale{display:grid;grid-template-columns:repeat(15,1fr);gap:.6mm}
+.fzb .rings .bands span{padding:.8mm 0;border-bottom:.35mm solid var(--azure);text-align:center;font:600 calc(var(--body)*.72)/1.3 var(--sans);color:var(--azure)}
+.fzb .rings .bands span+span{margin-left:.6mm}
+.fzb .rings .scale{margin-top:1.2mm}
+.fzb .rings .r{display:grid;place-items:center;height:7mm;background:#dfe6ea;font:600 calc(var(--body)*.8)/1 var(--latin);color:var(--ink-2)}
+.fzb .rings .r.high{background:#8fa6b8;color:#fff}
+.fzb .rings .r.gods{background:var(--ink);color:var(--paper)}
+.fzb .rings .marks{position:relative;margin:2.5mm 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1mm 5mm}
+.fzb .rings .marks li{display:flex;gap:2mm;align-items:baseline;font:400 calc(var(--body)*.74)/1.5 var(--sans);color:var(--ink-2)}
+.fzb .rings .marks b{flex:none;min-width:4.2mm;padding:0 .8mm;background:var(--azure);color:#fff;text-align:center;font:600 calc(var(--body)*.74)/1.45 var(--latin)}
+/* 跨两栏的组图 */
+.fzb .strip.wide{position:absolute;width:171mm;margin:0}
+.fzb .verso .strip.wide{left:20mm}
+.fzb .recto .strip.wide{left:16mm}
+.fzb .strip .row{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;align-items:end}
+.fzb .strip .row span{display:block;margin-top:1.5mm;text-align:center;font:500 calc(var(--body)*.72)/1.4 var(--sans);color:var(--ink-2)}
+.fzb .strip-space{margin:calc(var(--body)*1.2) 0}
+/* 章首 */
+.fzb .opener .plate{position:absolute;left:0;top:0;width:100%;height:112mm;object-fit:cover}
+.fzb .opener .ghost{position:absolute;left:14mm;top:112mm;font:500 33mm/1 var(--label);letter-spacing:.01em;text-transform:uppercase;white-space:nowrap;color:var(--ghost)}
+.fzb .opener .numeral{position:absolute;right:16mm;top:119mm;font:300 70pt/1 var(--latin);color:var(--azure);letter-spacing:.02em}
+.fzb .opener .cap{position:absolute;left:20mm;top:131mm;display:flex;margin:0;font:500 8.4pt/1 var(--label);letter-spacing:.2em;text-transform:uppercase}
+.fzb .opener .cap span{padding:1.3mm 2.2mm 1.1mm;background:var(--ink);color:var(--paper)}
+.fzb .opener .cap b{padding:1.1mm 2.2mm .9mm;border:.35mm solid var(--ink);font:600 9.5pt/1 var(--latin);letter-spacing:.08em}
+.fzb .opener h1{position:absolute;left:19mm;top:138mm;margin:0;font:900 44pt/1.15 var(--sans);letter-spacing:.02em}
+.fzb .opener .en{position:absolute;left:20.4mm;top:159.5mm;margin:0;font:600 10pt/1.2 var(--label);letter-spacing:.07em;text-transform:uppercase}
+.fzb .opener .epi-label{position:absolute;left:20mm;top:184mm;margin:0;font:600 7pt/1 var(--label);letter-spacing:.22em;text-transform:uppercase;color:var(--azure)}
+.fzb .opener .epi-label::after{content:"";display:block;width:1.8mm;height:1.8mm;margin-top:3.4mm;background:var(--azure)}
+.fzb .opener .epi{position:absolute;left:82mm;right:16mm;top:181mm;margin:0;padding:.5mm 0 .5mm 6mm;border-left:.7mm solid var(--azure)}
+.fzb .opener .epi p{margin:0;font:500 11pt/1.75 var(--cn);letter-spacing:.14em}
+.fzb .opener .epi .la{font:italic 400 10.5pt/1.5 var(--latin);letter-spacing:.02em;color:var(--ink-2)}
+.fzb .opener .epi footer{margin-top:1.5mm;text-align:right;font:400 7.5pt/1 var(--sans);color:var(--ink-3)}
+.fzb .opener .lead{position:absolute;left:82mm;right:16mm;top:209mm;height:67mm;overflow:hidden}
+.fzb .opener .lead.high{top:184mm;height:92mm}
+.fzb .opener .rule{position:absolute;left:23mm;right:19mm;bottom:17mm;height:.5mm;background:var(--azure)}
+.fzb .opener .rule::before,.fzb .opener .rule::after{content:"";position:absolute;top:-1.05mm;width:2.6mm;height:2.6mm;background:var(--azure)}
+.fzb .opener .rule::before{left:-4mm}
+.fzb .opener .rule::after{right:-4mm}
+.fzb .opener .path{bottom:24mm}
+/* 夹页 */
+.fzb .insert .sheet{position:absolute;left:24mm;right:24mm;top:30mm;margin:0;transform:rotate(-1.2deg);filter:drop-shadow(0 1.2mm 2.5mm #0003)}
+.fzb .insert .sheet figcaption{margin-top:3mm;text-align:right}
+.fzb .main .sheet.in{width:98mm;margin:9mm auto 0;transform:rotate(-1.2deg);filter:drop-shadow(0 1.2mm 2.5mm #0003)}
+.fzb .main .sheet.in figcaption{margin-top:2.5mm;text-align:right}
+/* 序：手写 */
+.fzb .preface .ghost-p{position:absolute;right:-6mm;top:18mm;writing-mode:vertical-rl;font:500 64pt/1 var(--latin);text-transform:uppercase;color:#ecebe5}
+.fzb .preface .letter{position:absolute;left:26mm;right:30mm;top:34mm;bottom:30mm;overflow:hidden;font:400 15pt/1.95 var(--hand);color:var(--pen);transform:rotate(-.5deg);transform-origin:0 0}
+.fzb .preface.recto .letter{left:24mm;right:32mm;transform:rotate(.35deg)}
+.fzb .preface .letter p{margin:0 0 2.2mm;text-indent:2em}
+.fzb .preface .letter p.salute,.fzb .preface .letter p.cont{text-indent:0}
+.fzb .preface .letter p.salute{margin-bottom:4mm}
+.fzb .preface .signoff{margin-top:9mm;text-align:right}
+.fzb .preface .signoff p{margin:0 0 1mm;text-indent:0;font-size:14pt}
+/* sign.png 左边是完整签名，右边是页边用的花体 T；序只露出完整签名。 */
+.fzb .preface .signoff .sig{display:inline-block;width:34.5mm;overflow:hidden}
+.fzb .preface .signoff .sig img{display:block;width:52mm}
+.fzb .preface .ph{position:absolute;left:26mm;bottom:20mm;margin:0;padding:.3mm 1.2mm;border:.2mm dashed #9bb3c7;font:500 6pt/1.2 var(--sans);color:#6f8aa0;letter-spacing:.1em}
+.fzb .preface.verso .folio{left:8.4mm}
+.fzb .preface.recto .folio{right:8.4mm}
+/* 目录：仿《大地巡旅》，标题在左，条目在右 */
+.fzb .toc .toc-h{position:absolute;left:18mm;top:28mm;margin:0;display:flex;flex-direction:column;font:900 26pt/1.1 var(--sans)}
+.fzb .toc .toc-h span{font:600 17pt/1.1 var(--label);letter-spacing:.02em;text-transform:uppercase}
+.fzb .toc .toc-list{position:absolute;left:78mm;right:16mm;top:28mm;bottom:22mm;overflow:hidden}
+.fzb .toc.verso .toc-list{left:30mm;right:64mm}
+.fzb .toc-c,.fzb .toc-s,.fzb .toc-x{display:grid;grid-template-columns:14mm minmax(0,1fr);gap:0 4mm;align-items:baseline}
+.fzb .toc-c{margin:5mm 0 1.5mm}
+.fzb .toc-c .n{font:800 13pt/1.2 var(--sans)}
+.fzb .toc-c b{display:block;font:900 11.5pt/1.3 var(--sans)}
+.fzb .toc-c em{display:block;font:600 8pt/1.4 var(--label);font-style:normal;letter-spacing:.06em;text-transform:uppercase}
+.fzb .toc-s{margin:0 0 .6mm}
+.fzb .toc-s .n{padding-left:2mm;font:400 8.5pt/1.7 var(--latin);color:var(--ink-2)}
+.fzb .toc-s span:last-child{font:400 9pt/1.7 var(--cn)}
+.fzb .toc-x{margin:3mm 0 2mm}
+.fzb .toc-x .n{font:400 9pt/1.7 var(--latin);color:var(--ink-2)}
+.fzb .toc-x span:last-child{font:400 9.5pt/1.7 var(--cn)}
+.fzb .toc-x i{margin-left:2mm;font:italic 400 9pt/1 var(--latin);color:var(--ink-3)}
+.fzb .toc-x small{margin-left:2mm;font:400 7pt/1 var(--sans);color:var(--ink-3)}
+.fzb .toc .folio{top:auto;bottom:14mm}
+/* 附录：档案归档页 */
+.fzb .record{background:#fafaf6}
+.fzb .record header{position:absolute;left:12mm;right:12mm;top:8mm;height:21mm;display:flex;justify-content:space-between;border-bottom:.6mm solid var(--ink-2)}
+.fzb .record .tag{display:inline-block;padding:1.1mm 2.4mm;background:#8d949a;color:#fff;font:600 6.2pt/1 var(--label);letter-spacing:.14em;text-transform:uppercase}
+.fzb .record header p{margin:2mm 0 0;font:400 7pt/1.4 var(--sans);color:var(--ink-3)}
+.fzb .record dl{margin:0;width:74mm;font:400 6.6pt/1 var(--sans);color:var(--ink-3)}
+.fzb .record dl div{display:flex;align-items:center;gap:2mm;height:6.4mm;border-bottom:.2mm dashed #b8bec3}
+.fzb .record dl div::before{content:"";width:1.2mm;height:1.2mm;background:var(--ink-3)}
+.fzb .record dt{width:24mm}
+.fzb .record dt i{font:500 5.4pt/1 var(--label);font-style:normal;letter-spacing:.12em;text-transform:uppercase}
+.fzb .record dd{margin:0;display:flex;font:600 7.6pt/1 var(--latin);color:var(--ink);letter-spacing:.06em}
+.fzb .record .levels span{position:relative;margin-left:-.2mm;padding:.6mm 1.2mm;border:.2mm solid #b8bec3;font:500 5.4pt/1 var(--label);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.fzb .record .levels span.on{color:var(--ink)}
+.fzb .record .levels span.on::after{content:"";position:absolute;inset:-1.1mm -.8mm;border:.35mm solid var(--pen);border-radius:50%;transform:rotate(-8deg)}
+.fzb .record .sign-h{font:400 12pt/1 var(--hand);color:var(--pen);transform:rotate(-4deg)}
+.fzb .record .grid{position:absolute;left:12mm;right:12mm;top:29mm;bottom:22mm;background-image:linear-gradient(var(--grid) .22mm,transparent .22mm),linear-gradient(90deg,var(--grid) .22mm,transparent .22mm);background-size:6mm 6mm;border:.22mm solid #c9d3da;border-top:0}
+.fzb .record .rec-h{position:absolute;left:24mm;top:37mm;margin:0;display:flex;align-items:baseline;gap:4mm;font:900 18pt/1.2 var(--sans)}
+.fzb .record .rec-h span{font:italic 500 13pt/1 var(--latin);color:var(--ink-3)}
+.fzb .record .slips{position:absolute;left:22mm;right:20mm;top:54mm;bottom:30mm;overflow:hidden}
+.fzb .record:not(:has(.rec-h)) .slips{top:40mm}
+.fzb .slip-s{margin:0 0 5mm;padding:4.5mm 6mm 4mm;background:linear-gradient(170deg,#f3e9d2,var(--slip) 60%,#e8dbbd);box-shadow:0 .5mm 0 #d9caa5,0 1.5mm 3.5mm #0002}
+.fzb .slip-s:nth-child(odd){transform:rotate(-.35deg)}
+.fzb .slip-s:nth-child(even){transform:rotate(.3deg)}
+.fzb .slip-s h3{margin:0 0 1.5mm;display:flex;align-items:baseline;gap:3mm;font:800 9.5pt/1.3 var(--sans)}
+.fzb .slip-s h3 b{font:600 10pt/1 var(--latin);color:#8a7a57}
+.fzb .slip-s ol{margin:0;padding:0 0 0 3mm;list-style:none}
+.fzb .slip-s li{position:relative;padding-left:3mm;font:400 7pt/1.65 var(--sans);color:#3d3a33}
+.fzb .slip-s li::before{content:"";position:absolute;left:0;top:.72em;width:1mm;height:1mm;background:#a8966d}
+.fzb .record .pagina{position:absolute;right:13mm;bottom:12mm;margin:0;font:500 6.6pt/1 var(--label);letter-spacing:.14em;color:var(--ink-3)}
+/* 终页 */
+.fzb .colophon .finis{position:absolute;left:0;right:0;top:92mm;margin:0;text-align:center;font:italic 400 44pt/1 var(--latin)}
+.fzb .colophon .finis-cn{position:absolute;left:0;right:0;top:112mm;margin:0;text-align:center;font:400 9pt/1 var(--sans);letter-spacing:.6em;color:var(--ink-3)}
+.fzb .colophon .c-rule{position:absolute;left:calc(50% - 10mm);width:20mm;top:124mm;height:.5mm;background:var(--azure)}
+.fzb .colophon .colo{position:absolute;left:44mm;right:44mm;bottom:40mm;margin:0;display:grid;grid-template-columns:12mm minmax(0,1fr);gap:1.6mm 4mm;padding-top:4mm;border-top:.3mm solid var(--ink);font:400 7pt/1.6 var(--sans);color:var(--ink-2)}
+.fzb .colophon .colo dt{font-weight:700;color:var(--ink)}
+.fzb .colophon .colo dd{margin:0}
+/* 书口索引与十五环色带的位置（标记里不写 style 属性，门户的内容安全策略不允许）。 */
+.fzb .thumb[data-k="0"]{--k:0}
+.fzb .thumb[data-k="1"]{--k:1}
+.fzb .thumb[data-k="2"]{--k:2}
+.fzb .thumb[data-k="3"]{--k:3}
+.fzb .thumb[data-k="4"]{--k:4}
+.fzb .thumb[data-k="5"]{--k:5}
+.fzb .thumb[data-k="6"]{--k:6}
+.fzb .thumb[data-k="7"]{--k:7}
+.fzb .thumb[data-k="8"]{--k:8}
+.fzb .rings .bands span:nth-child(1){grid-column:1/5}
+.fzb .rings .bands span:nth-child(2){grid-column:5/8}
+.fzb .rings .bands span:nth-child(3){grid-column:8/15}

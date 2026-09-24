@@ -296,19 +296,40 @@ async function bookPaginate(sections, measure, height, cancelled = () => false) 
   return pages;
 }
 
-function bookSections(chapters, doc) {
+// 书页版（book-pages.js，实体页面 210 × 299.5 mm、正文 10pt）整页缩放显示；缩放后正文小于 8px（缩放比 0.6）时
+// 默认改用文字版。读者可以在顶栏手动选择；缩放比低于 0.5（手机）只有文字版。
+const BOOK_MODE_KEY = "buga.fengtuzhi.mode";
+const BOOK_FIXED_AUTO = 0.6, BOOK_FIXED_FLOOR = 0.5;
+const BOOK_PREFACE_PATH = "07_WORLD_GUIDE/银色联盟风土志_序.md";
+
+// 文字版的分节：目录、序、九章（章首图、正文、插图与图示）、终页。编号 `${节}:${序号}` 与书页版的 data-block 一致；
+// 插图用 `${章}:fig-${编号}`，不占正文序号。
+function bookSections(chapters, doc, extra = {}) {
+  const { plan, plates, preface } = extra;
   const sections = [];
-  const add = (id, title, nodes) => sections.push({ id, title, blocks: nodes.map((node, i) => ({ node, key: `${id}:${i}` })) });
+  const add = (id, title, nodes) => {
+    let n = 0;
+    sections.push({ id, title, blocks: nodes.map(node => ({ node, key: node.dataset?.bookKey || `${id}:${n++}` })) });
+  };
   add("book-contents", "目录", [bookElement('<h2 class="reader-contents-title">目录 <span lang="la">Index</span></h2>'), ...chapters.map(c => bookElement(`<a class="reader-toc-link" href="#/doc/${doc.id}?anchor=${encodeURIComponent(c.id.replace(/^section-/, ""))}"><span>${esc(c.roman)}</span><span>${esc(c.name)}<small lang="en">${esc(c.meta.en || "")}</small></span></a>`))]);
+  if (preface?.length) {
+    const paras = [...preface], sign = paras.length > 1 && /^图拉曼/.test(paras.at(-1)) ? paras.pop() : "";
+    const nodes = [bookElement('<h2 class="reader-preface-title">序 <span lang="la">Praefatio</span></h2>'), ...paras.map((t, i) => { const p = document.createElement("p"); p.className = "reader-preface" + (i ? "" : " salute"); p.textContent = t; return p; })];
+    if (sign) nodes.push(bookElement(`<div class="reader-signoff"><p>${esc(sign)}</p><span class="sig"><img src="assets/plates/sign.webp" alt="Turaman" width="614" height="151"></span></div>`));
+    add("book-preface", "序", nodes);
+  }
   for (const c of chapters) {
-    const header = bookElement(`<header class="reader-chapter" id="${esc(c.id)}"><p class="book-kicker">Capitulum ${esc(c.roman)}</p><h2>${esc(c.name)}</h2><p lang="en">${esc(c.meta.en || "")}</p></header>`);
+    const figures = plan && plates ? BookPages.flowFigures(c, plan, plates) : { plate: null, after: new Map() };
+    const m = figures.plate && plates[figures.plate];
+    const header = bookElement(`<header class="reader-chapter" id="${esc(c.id)}">${m ? `<img class="reader-chapter-plate" src="assets/plates/${figures.plate}.webp" alt="" width="${m.w}" height="${m.h}">` : ""}<p class="book-kicker">Capitulum ${esc(c.roman)}</p><h2>${esc(c.name)}</h2><p lang="en">${esc(c.meta.en || "")}</p></header>`);
     const nodes = [header];
     // Keep each member of the Twelve Rings together where space permits.
-    for (const source of c.nodes) {
+    c.nodes.forEach((source, si) => {
       if (/^(UL|OL)$/.test(source.tagName)) {
         [...source.children].forEach((li, i) => { const list = source.cloneNode(false); if (list.tagName === "OL") list.start = i + 1; list.append(li.cloneNode(true)); nodes.push(list); });
       } else nodes.push(source.cloneNode(true));
-    }
+      nodes.push(...(figures.after.get(si) || []));
+    });
     nodes.find(n => n.tagName === "P")?.classList.add("reader-opening");
     add(c.id.replace(/^section-/, ""), c.name, nodes);
   }
@@ -317,13 +338,15 @@ function bookSections(chapters, doc) {
 }
 
 async function bookDetail(doc, params, serial) {
-  const notesDoc = docAt(BOOK_NOTES_PATH);
-  const [content, notes] = await Promise.all([bookFetch(doc), notesDoc ? bookFetch(notesDoc).catch(() => null) : null]);
+  const notesDoc = docAt(BOOK_NOTES_PATH), prefaceDoc = docAt(BOOK_PREFACE_PATH);
+  const optional = url => fetch(url).then(r => r.ok ? r.json() : null).catch(() => null);
+  const [content, notes, prefaceContent, plan, plates] = await Promise.all([bookFetch(doc), notesDoc ? bookFetch(notesDoc).catch(() => null) : null, prefaceDoc ? bookFetch(prefaceDoc).catch(() => null) : null, optional("book-plan.json"), optional("assets/plates/manifest.json")]);
   if (serial !== routeSerial) return;
   const chapters = bookChapters(content.html || "");
   if (!chapters.length) { await prototypeDetail(doc, params, serial); return; }
   const sources = notes ? bookSources(notes.html) : new Map();
-  const sections = bookSections(chapters, doc), saved = bookPosition();
+  const preface = BookPages.parsePreface(prefaceContent?.html);
+  const sections = bookSections(chapters, doc, { plan, plates, preface }), saved = bookPosition();
   const controller = new AbortController(), { signal } = controller;
   archiveObserver = controller;
   document.title = BOOK_TITLE + " / " + index.title;
@@ -337,7 +360,7 @@ async function bookDetail(doc, params, serial) {
   menu.title = "档案馆导航";
   siteTitle.textContent = BOOK_TITLE;
   archiveNavSync();
-  let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved, layout = "";
+  let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved, layout = "", book = null;
   const icon = d => `<svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
   main.innerHTML = `<section class="reader" aria-label="${BOOK_TITLE}阅读器">
     <div class="reader-desk"><button type="button" class="reader-turn" data-turn="-1" aria-label="上一页" title="上一页（←）">${icon("M15 4l-8 8 8 8")}</button><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div><button type="button" class="reader-turn" data-turn="1" aria-label="下一页" title="下一页（→）">${icon("M9 4l8 8-8 8")}</button></div>
@@ -347,24 +370,25 @@ async function bookDetail(doc, params, serial) {
   </section>`;
   const root = main.querySelector(".reader"), desk = root.querySelector(".reader-desk"), stage = root.querySelector(".reader-stage"), leaves = root.querySelector(".reader-leaves");
   // Book tools sit in the top bar; the sidebar stays the archive's own navigation.
-  const entries = [["book-cover", "", "封面"], ["book-title", "", "书名页"], ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
-  const sectionLabel = new Map([["book-contents", "目录"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
-  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
+  const entries = [["book-cover", "", "封面"], ["book-title", "", "书名页"], ...(preface ? [["book-preface", "", "序"]] : []), ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
+  const sectionLabel = new Map([["book-contents", "目录"], ["book-sources", "本书所据"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
+  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot"><button type="button" data-panel="sources">来源与编校</button><a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><button type="button" class="reader-sources" data-panel="sources">来源与编校</button></div>`);
   siteTitle.after(bar);
   const measure = root.querySelector(".reader-measure"), loading = root.querySelector(".reader-loading");
   const progress = [...root.querySelectorAll(".reader-progress"), bar.querySelector(".reader-progress")];
   const tocButton = bar.querySelector(".reader-toc-button"), tocMenu = bar.querySelector(".reader-toc-menu"), tocCurrent = bar.querySelector(".reader-toc-current");
+  const modeGroup = bar.querySelector(".reader-mode");
   const dialog = root.querySelector("dialog"), panelBody = root.querySelector(".reader-panel-body");
   const startOf = page => {
     const item = page?.items[0];
-    return item ? { section: page.section, block: item.key, offset: item.start } : null;
+    return item ? { section: page.section, block: item.key, offset: item.start } : page ? { section: page.section } : null;
   };
   const locate = position => {
     if (!position) return 0;
-    let n = pages.findIndex(p => p.items.some(i => i.key === position.block && i.start <= position.offset && (i.end > position.offset || i.start === i.end)));
-    if (n < 0) n = pages.findIndex(p => p.section === position.section);
+    let n = position.block ? pages.findIndex(p => p.items.some(i => i.key === position.block && i.start <= position.offset && (i.end > position.offset || i.start === i.end))) : -1;
+    if (n < 0) n = pages.findIndex(p => p.section === position.section && !p.void);
     // Section headings inside a chapter keep their own anchors (section-<slug>).
-    if (n < 0) n = pages.findIndex(p => p.items.some(i => i.node.id === "section-" + position.section));
+    if (n < 0) n = pages.findIndex(p => p.heads?.includes(position.section) || p.items.some(i => i.node?.id === "section-" + position.section));
     return Math.max(0, n);
   };
   const positionFrom = query => {
@@ -418,18 +442,74 @@ async function bookDetail(doc, params, serial) {
     show(target);
     if (!matchMedia("(prefers-reduced-motion:reduce)").matches) stage.animate([{ opacity: .4, transform: `translateX(${delta * 8}px)` }, { opacity: 1, transform: "none" }], { duration: 160, easing: "ease-out" });
   };
+  // 书页版只排一次（页面尺寸固定），之后只随窗口缩放。
+  let building = null;
+  function buildBook() {
+    building ||= (async () => {
+      const host = document.createElement("div");
+      host.className = "fzb reader-build"; host.setAttribute("aria-hidden", "true"); host.inert = true;
+      root.append(host);
+      await Promise.all([document.fonts.load('10pt "Archive Song"'), document.fonts.load('900 10pt "Archive Sans"'), document.fonts.load('10pt "Book Latin"'), document.fonts.load('italic 10pt "Book Latin"'), document.fonts.load('10pt "Book Label"'), document.fonts.load('15pt "Hand"', (preface || []).join("") + "白塔馆员")]);
+      const result = await BookPages.build({ bookChapters: chapters, plan, plates, sources: BookPages.parseSources(notes?.html), preface, host, cancelled: () => signal.aborted });
+      host.remove();
+      return result;
+    })();
+    return building;
+  }
   let pending = positionFrom(params);
   async function paginate() {
     const box = getComputedStyle(desk), gap = parseFloat(box.columnGap) || 0;
     const side = [...desk.querySelectorAll(".reader-turn")].reduce((w, b) => w + (b.offsetWidth ? b.offsetWidth + gap : 0), 0);
-    const paper = bookPaperLayout(
-      Math.max(240, desk.clientWidth - parseFloat(box.paddingLeft) - parseFloat(box.paddingRight) - side),
-      Math.max(240, desk.clientHeight - parseFloat(box.paddingTop) - parseFloat(box.paddingBottom)));
+    const W = Math.max(240, desk.clientWidth - parseFloat(box.paddingLeft) - parseFloat(box.paddingRight) - side);
+    const H = Math.max(240, desk.clientHeight - parseFloat(box.paddingTop) - parseFloat(box.paddingBottom));
+    // 书页版能不能用、默认用不用。
+    const pw = BookPages.PAGE_W, ph = BookPages.PAGE_H;
+    const s2 = Math.min(W / (2 * pw), H / ph), s1 = Math.min(W / pw, H / ph), pref = bookStored(BOOK_MODE_KEY);
+    const possible = !!(plan && plates) && s1 >= BOOK_FIXED_FLOOR;
+    const auto = possible && Math.max(s1, s2) >= BOOK_FIXED_AUTO;
+    const fixedMode = possible && (pref === "book" || (pref !== "text" && auto));
+    modeGroup.hidden = !possible;
+    modeGroup.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.mode === "book") === fixedMode)));
+    root.dataset.mode = fixedMode ? "book" : "text";
+    if (fixedMode) {
+      const spread = s2 >= BOOK_FIXED_AUTO || s2 >= s1 * 0.9 ? 2 : 1, scale = spread === 2 ? s2 : s1;
+      stage.style.width = Math.floor(pw * spread * scale) + "px";
+      stage.style.height = Math.floor(ph * scale) + "px";
+      leaves.style.transform = `scale(${scale})`;
+      const key = "book:" + spread;
+      if (key === layout && pages.length) return;
+      const ticket = ++generation, locationBefore = pending || cursor;
+      stage.setAttribute("aria-busy", "true"); loading.hidden = false;
+      book ||= await buildBook();
+      if (!book || signal.aborted || ticket !== generation) return;
+      spreadSize = spread; layout = key;
+      root.dataset.spread = String(spread);
+      leaves.classList.add("fzb");
+      leaves.style.width = (pw * spread) + "px"; leaves.style.height = ph + "px";
+      const fragment = document.createDocumentFragment();
+      pages = [];
+      book.meta.forEach((m, i) => {
+        if (m.void && spread === 1) return;
+        const leaf = document.createElement("article"); leaf.className = "reader-leaf reader-fixed" + (m.void ? " reader-void" : ""); leaf.hidden = true;
+        leaf.setAttribute("aria-label", `${m.title || ""}${m.folio ? " · " + m.folio : ""}`);
+        leaf.append(book.pages[i]);
+        fragment.append(leaf);
+        pages.push({ section: m.section, title: m.title, items: m.items, heads: m.heads, void: m.void });
+      });
+      leaves.replaceChildren(fragment);
+      const restored = pending || locationBefore;
+      show(locate(restored), { exact: restored?.block || restored?.section ? restored : null });
+      pending = null;
+      loading.hidden = true; stage.setAttribute("aria-busy", "false");
+      return;
+    }
+    const paper = bookPaperLayout(W, H);
+    leaves.classList.remove("fzb");
     stage.style.width = paper.width + "px";
     stage.style.height = paper.height + "px";
     leaves.style.transform = paper.scale < 1 ? `scale(${paper.scale})` : "";
     // Same page size: the text flow is unchanged, only the desk around it moved.
-    const key = `${paper.spread}:${paper.pageWidth}`;
+    const key = `text:${paper.spread}:${paper.pageWidth}`;
     if (key === layout && pages.length) return;
     const ticket = ++generation, locationBefore = pending || cursor;
     stage.setAttribute("aria-busy", "true"); loading.hidden = false;
@@ -503,6 +583,7 @@ async function bookDetail(doc, params, serial) {
     else if (button?.hasAttribute("data-turn")) turn(Number(button.dataset.turn));
     else if (button?.dataset.panel) openPanel(button);
     else if (button?.hasAttribute("data-close")) dialog.close();
+    else if (button?.dataset.mode) { bookStore(BOOK_MODE_KEY, button.dataset.mode); pending = cursor; paginate().catch(failed); }
     const link = event.target.closest("a[href]");
     if (link && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
       const hash = link.getAttribute("href");
@@ -563,7 +644,7 @@ async function bookDetail(doc, params, serial) {
     }
   };
   try {
-    await Promise.all([document.fonts.load('16px "Archive Song"'), document.fonts.load('16px "Archive Sans"'), document.fonts.load('50px "Book Latin"'), document.fonts.load('14px "Book Label"')]);
+    await Promise.all([document.fonts.load('16px "Archive Song"'), document.fonts.load('16px "Archive Sans"'), document.fonts.load('50px "Book Latin"'), document.fonts.load('14px "Book Label"'), document.fonts.load('20px "Hand"', (preface || []).join(""))]);
     if (signal.aborted) return;
     await paginate();
     if (signal.aborted) return;
