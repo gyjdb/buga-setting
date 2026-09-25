@@ -36,6 +36,7 @@ const linkDoc = (id, text) =>
 const docAt = (path) => docs.find((d) => d.path === path);
 const docLink = (path, label) => linkDoc(docAt(path)?.id, label);
 const GUIDE_PATH = "07_WORLD_GUIDE/银色联盟风土志.md";
+const ISSUES_PATH = "00_PROJECT/OPEN_ISSUES.md";
 const browseUrl = (params) => "#/browse?" + new URLSearchParams(params);
 const dateOnly = (value) => (value ? value.slice(0, 10) : "未标注");
 function heading(kicker, title, desc = "") {
@@ -363,6 +364,12 @@ async function route() {
     location.replace(guide ? "#/doc/" + guide.id : browseUrl({ collection: "07_WORLD_GUIDE" }));
     return;
   }
+  if (page === "issues") {
+    // The sidebar's "未决事项" opens the author's open-issues register; the UNRESOLVED filter is empty since 2026-09-25.
+    const issues = docAt(ISSUES_PATH);
+    location.replace(issues ? "#/doc/" + issues.id : browseUrl({ status: "UNRESOLVED" }));
+    return;
+  }
   if (archiveWithinReader(page, targetDoc, params)) return;
   archiveEnter(page);
   delete main.dataset.readerId;
@@ -372,7 +379,7 @@ async function route() {
   let activeNav = page;
   if (page === "provenance") activeNav = "archive";
   else if (page === "institution") activeNav = "institutions";
-  else if (page === "doc") activeNav = navByStatus[targetDoc?.status] || (targetDoc?.collection === "07_WORLD_GUIDE" ? "guide" : targetDoc?.collection === "90_AUDIT" ? "audit" : targetDoc?.collection === "00_PROJECT" ? "project" : "browse");
+  else if (page === "doc") activeNav = targetDoc?.path === ISSUES_PATH ? "unresolved" : navByStatus[targetDoc?.status] || (targetDoc?.collection === "07_WORLD_GUIDE" ? "guide" : targetDoc?.collection === "90_AUDIT" ? "audit" : targetDoc?.collection === "00_PROJECT" ? "project" : "browse");
   else if (page === "browse") activeNav = params.has("directory") || params.has("path") ? "directory" : params.get("topic") ? "topics" : params.get("institution") ? "institutions" : params.get("collection") === "07_WORLD_GUIDE" ? "guide" : params.get("collection") === "00_PROJECT" ? "project" : params.get("collection") === "90_AUDIT" ? "audit" : navByStatus[params.get("status")] || "browse";
   document.querySelectorAll("[data-nav]").forEach((a) => {
     const active = a.dataset.nav === activeNav;
