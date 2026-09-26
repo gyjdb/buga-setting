@@ -199,6 +199,10 @@
       "status": "DELEGATED_DESIGN",
       "authority": "作者 2026-09-21 确认采纳第三稿（FA06、FA18 转为 DELEGATED_DESIGN）；写入风土志的内容以正文与编者材料为准",
       "note": "已采纳的委托设计（第三稿）；“编者方向”只供编写把握，不进正文。"
+    },
+    "02_PROPOSALS/银色联盟风土志_第七至九章改写_提案.md": {
+      "status": "REFERENCE",
+      "note": "已采纳（2026-09-25 作者以“替换”认可）；正文第七至九章与第五章两句已替换，登记于编者材料第二、三、四、八节；第七章的作者扩写见 00_PROJECT/AUTHOR_ANSWERS_FENGTUZHI_2026-09-25.md。"
     }
   }
 }
