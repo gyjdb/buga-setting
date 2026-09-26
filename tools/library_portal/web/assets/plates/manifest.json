@@ -193,7 +193,7 @@
  },
  "S4b": {
   "w": 614,
-  "h": 417,
+  "h": 546,
   "kind": "side",
   "source": "round-03/T/S4b.png"
  },
@@ -214,6 +214,30 @@
   "h": 729,
   "kind": 80,
   "source": "round-03/T/S9a.png"
+ },
+ "S1b": {
+  "w": 614,
+  "h": 478,
+  "kind": "side",
+  "source": "round-03/T/S1b.png"
+ },
+ "S2a": {
+  "w": 614,
+  "h": 512,
+  "kind": "side",
+  "source": "round-03/T/S2a.png"
+ },
+ "S8b": {
+  "w": 614,
+  "h": 363,
+  "kind": "side",
+  "source": "round-03/T/S8b.png"
+ },
+ "S9b": {
+  "w": 827,
+  "h": 350,
+  "kind": 70,
+  "source": "round-03/T/S9b.png"
  },
  "sign": {
   "w": 614,
