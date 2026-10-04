@@ -7,7 +7,7 @@ from pathlib import Path
 import shutil
 
 HERE = Path(__file__).resolve().parent
-PRODUCTION = ("index.html", "archive.css", "app.js", "archive.js", "prototype.js", "baita-icons.js", "search-worker.js",
+PRODUCTION = ("index.html", "archive-fonts.css", "archive.css", "app.js", "archive.js", "prototype.js", "baita-icons.js", "search-worker.js",
               "institutions.js", "institutions.css", "book.js", "book.css", "book-pages.js", "book-pages.css",
               "book-hand.css", "book-note.css", "book-plan.json")
 STUDIES = ("styles.css", "favicon.svg", "design-system.css", "silver-weave.svg", "silver-weave-document.svg", "phase3-fonts.css",

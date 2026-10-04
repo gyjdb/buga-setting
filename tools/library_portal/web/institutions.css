@@ -53,3 +53,11 @@
   .org-search{flex-wrap:wrap}.org-search input,.org-search select{flex-basis:100%}
   .org-detail h1{overflow-wrap:anywhere}
 }
+
+/* Touch screens: taller tap areas for the link lists; mouse/trackpad layouts are unchanged.
+   .org-name stays inline: vertical padding enlarges its hit box without moving the line. */
+@media(pointer:coarse){
+  .org-jumps{row-gap:0}.org-jumps a{padding-block:7px}
+  .org-name{padding-block:9px}
+  .org-sublist a{display:block;padding-block:7px}
+}

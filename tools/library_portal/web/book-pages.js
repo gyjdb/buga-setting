@@ -120,21 +120,54 @@ const BookPages = (() => {
   }
   const handText = plan => (plan?.chapters || []).flatMap(p => (p.items || []).filter(it => it.body).flatMap(it => [it.title || "", ...it.body.flatMap(b => typeof b === "string" ? [b] : b.rows ? b.rows.flat() : [])])).join("");
 
-  // ---------- 旁白字体 ----------
-  // 章首导语（第一个节标题之前的段落）、图注、资料卡说明、题记署名与编者小注用旁白字体（book-note.css 的 "Note"，按字切片）。
-  // 排版前先载入这些字，不然会按后备字体测量，字体到位后导语框、侧栏可能溢出。阅读器文字版也调用。
+  // ---------- 字体 ----------
+  // 书里的中文字体都按字符范围切片，浏览器排到某个字才去取那一片：宋体、黑体（archive-fonts.css 的 "Archive Song"、"Archive Sans"）、
+  // 旁白字体（book-note.css 的 "Note"）、手写体（book-hand.css 的 "Hand"）；拉丁文（book.css 的 "Book Latin"、"Book Label"）分 latin、latin-ext 两片。
+  // 排版要实际测量，所以先按要排的字把切片载入，不然会按后备字体测量，字体到位后导语框、侧栏溢出，页末一行被裁掉。
+  // document.fonts.load 不给文字时只载入空格所在的那一片。书页版（build）、阅读器文字版都经 loadFonts。
+  // 章首导语（第一个节标题之前的段落）、图注、资料卡说明、题记署名与编者小注用旁白字体。
   function noteText(bookChapters, plan) {
     const leads = bookChapters.map(c => { const out = []; for (const n of c.nodes) { if (/^H[34]$/.test(n.tagName)) break; out.push(n.textContent); } return out.join(""); });
     const figures = (plan?.chapters || []).flatMap(p => [...(p.items || []).map(it => it.caption || ""), p.epigraph ? p.epigraph[2] : ""]);
     return [...leads, ...figures, ...SUMMARY.map(s => s[2]), FIGURE_NOTE, SEALS_NOTE, "—"].join("");
   }
-  // 批注的手写字也按字切片（book-hand.css），同样先载入。
-  const loadNoteFont = (bookChapters, plan, size = "10pt") => Promise.all([document.fonts.load(`${size} "Note"`, noteText(bookChapters, plan)), document.fonts.load(`${size} "Hand"`, handText(plan) || "T")]);
+  // 用黑体的字：章名、节标题、图示与补充框、资料卡、组图标签、本书所据，以及目录、序、书末与文字版终页的固定文字（含样张的“提案”）。
+  const SANS_FIXED = "银色联盟风土志目录序终页图拉曼·秘银·奥瑟坦附录本书所据（编者材料未列来源）全书完回到目录返回白塔档案馆提案";
+  function sansText(bookChapters, plan, sources) {
+    const M = makers({});
+    return [...bookChapters.flatMap(c => [c.name, ...c.nodes.filter(n => n.tagName === "H3").map(n => n.textContent)]),
+      ...(plan?.chapters || []).flatMap(p => (p.items || []).flatMap(it => it.labels || [])), ...[...(sources?.values() || [])].flat(),
+      ...[M.card(), M.box(), M.figure({ what: "vault" }), M.figure({}), el(RINGS)].map(n => n.textContent), SANS_FIXED].join("");
+  }
+  // 宋体给全书会排到的字：正文用宋体，标题、图注、批注里的字也几乎都在正文里，切片不会因此变多；宋体又是旁白、手写、拉丁文缺字时的后备。
+  const bookText = (bookChapters, plan, preface, sources) => [...bookChapters.map(c => c.label + c.nodes.map(n => n.textContent).join("")),
+    ...(plan?.chapters || []).flatMap(p => p.epigraph || []), noteText(bookChapters, plan), handText(plan), ...(preface || []), sansText(bookChapters, plan, sources)].join("");
+  // 某一片取不到时照常排版（按后备字体量），不让整本书失败。一片出错时 load 会先结束，同一家族的其他片可能还在下载，
+  // 所以最后等 document.fonts.ready：所有已请求的切片都到齐或出错后才开始测量。
+  function loadFonts(bookChapters, plan, { preface = null, sources = null, size = "10pt" } = {}) {
+    const all = bookText(bookChapters, plan, preface, sources), hand = handText(plan) + (preface || ["此页留给图拉曼的序。"]).join("") + "白塔馆员";
+    return Promise.all([["", "Archive Song", all], ["", "Archive Sans", sansText(bookChapters, plan, sources)], ["", "Note", noteText(bookChapters, plan)], ["", "Hand", hand],
+      ["", "Book Latin", all], ["italic ", "Book Latin", all], ["", "Book Label", all]].map(([style, family, text]) => document.fonts.load(`${style}${size} "${family}"`, text).catch(() => null)))
+      .then(() => document.fonts.ready);
+  }
+  // 已经开始载入或载入过的字体面数：排版途中这个数变大，说明有字是按后备字体量的。
+  const fontsRequested = () => [...document.fonts].filter(f => f.status !== "unloaded").length;
 
   // ---------- 排整本书 ----------
   // host：已挂在文档里、带 .fzb 的容器（排版要实际测量）。返回页面元素与每页的位置信息。
-  async function build({ bookChapters, plan, plates, sources, preface, host, drafts = false, cancelled = () => false }) {
-    await loadNoteFont(bookChapters, plan);
+  // 先按要排的字载入切片；排版途中若还有切片开始下载（loadFonts 给的字不全），等它们到齐后再排一遍，不留下按后备字体量出的版面。
+  async function build(options) {
+    await loadFonts(options.bookChapters, options.plan, { preface: options.preface, sources: options.sources });
+    let before = fontsRequested(), result = await layoutBook(options);
+    if (result && fontsRequested() > before) {
+      await document.fonts.ready;
+      if (options.cancelled?.()) return null;
+      before = fontsRequested(); result = await layoutBook(options);
+      if (result && fontsRequested() > before) result.warnings.push("排版时仍有字体切片在载入，版面可能按后备字体量过");
+    }
+    return result;
+  }
+  async function layoutBook({ bookChapters, plan, plates, sources, preface, host, drafts = false, cancelled = () => false }) {
     const M = makers(plates), chapters = prepareChapters(bookChapters, plan, drafts);
     const pages = [], toc = [];
     let prefaceStart = null;
@@ -444,5 +477,5 @@ const BookPages = (() => {
     return { plate: p.plate, after };
   }
 
-  return { build, flowFigures, loadNoteFont, parsePreface, parseSources, PAGE_W, PAGE_H, PT, LEADING };
+  return { build, flowFigures, loadFonts, parsePreface, parseSources, PAGE_W, PAGE_H, PT, LEADING };
 })();

@@ -136,8 +136,11 @@ function archiveRestoreBrowse() {
   // Font readiness matters on first offline load; otherwise rows move after restore.
   document.fonts.ready.then(()=>requestAnimationFrame(()=>requestAnimationFrame(apply)));
 }
-function archiveReturnToResults() {
-  return archiveLastBrowse.startsWith("#/browse") ? `<a class="return-results" href="${esc(archiveLastBrowse)}">← 返回检索结果</a><span class="breadcrumb-separator" aria-hidden="true">/</span>` : "";
+function archiveReturnToResults(doc) {
+  // Only when this document (or its provenance page) is the link last followed out of the remembered list:
+  // the click handler below stores that href, and sessionStorage keeps it across reloads.
+  const last = archiveLastBrowse, opened = /^#\/(?:doc|provenance)\/([^?]+)/.exec(archiveBrowseState(last).focusHref || "")?.[1] === doc.id;
+  return last.startsWith("#/browse") && opened ? `<a class="return-results" href="${esc(last)}">← 返回检索结果</a><span class="breadcrumb-separator" aria-hidden="true">/</span>` : "";
 }
 function archiveStartBrowseMemory() {
   history.scrollRestoration = "manual";
@@ -162,10 +165,28 @@ function archiveStartBrowseMemory() {
     main.querySelectorAll(".more-actions[open]").forEach(open=>{if(!open.contains(event.target))open.open=false;});
   });
 }
+// Phones with a keyword (main[data-search], set in route()): 文件状态 and 关联主题 wait inside 更多筛选 so the
+// first result reaches the first screen. The selects move in the DOM, not only on screen, so tab and
+// screen-reader order follow what is shown; the breakpoint is archive.css's phone width. When one of them
+// has focus, or gets it back after a filter change (control), the disclosure opens so focus is not lost.
+const archiveSearchPhone = matchMedia("(max-width:540px)");
+function archiveFitSearchFilters(control = "") {
+  const common = main.querySelector(".filter-common"), more = $("#catalogue-refinements");
+  if (!common || !more) return;
+  const tuck = archiveSearchPhone.matches && main.hasAttribute("data-search");
+  if (tuck === (common.parentElement === more)) return;
+  const focused = common.contains(document.activeElement) ? document.activeElement : null;
+  if (tuck) {
+    more.querySelector("summary").after(common);
+    if (focused || ["status", "topic"].includes(control)) more.open = true;
+  } else more.before(common);
+  focused?.focus({preventScroll:true});
+}
 function browse(params) {
   main.innerHTML = prototypeBrowseShell(params);
   const viewState = archiveBrowseState(location.hash);
   if (typeof viewState.expanded === "boolean") $("#catalogue-refinements").open = viewState.expanded;
+  archiveFitSearchFilters(viewState.control);
   const form = $("#filters");
   function submit(event) {
     event?.preventDefault();
@@ -199,6 +220,8 @@ function browse(params) {
   function renderResults(rows) {
     if (current !== requestId) return;
     const sort = params.get("sort") || (params.get("q") ? "relevance" : "current");
+    // Equal relevance: current canon first, superseded versions last, path order within each group.
+    const rank = (r) => ({ CURRENT_CANON: 0, SUPERSEDED: 2 })[byId.get(r.id).status] ?? 1;
     rows.sort((a, b) =>
       sort === "current"
         ? Number(byId.get(b.id).status === "CURRENT_CANON") - Number(byId.get(a.id).status === "CURRENT_CANON") || byId.get(a.id).path.localeCompare(byId.get(b.id).path, "zh-CN")
@@ -206,7 +229,7 @@ function browse(params) {
         ? byId.get(a.id).title.localeCompare(byId.get(b.id).title, "zh-CN")
         : sort === "modified"
           ? byId.get(b.id).modified.localeCompare(byId.get(a.id).modified)
-          : b.score - a.score ||
+          : b.score - a.score || rank(a) - rank(b) ||
             byId.get(a.id).path.localeCompare(byId.get(b.id).path, "zh-CN"),
     );
     const page = Math.min(
@@ -318,8 +341,9 @@ function audit() {
       ],
       [
         "作者未决 · 现行登记",
-        a.issuesUpdated,
-        "OPEN_ISSUES.md 最近更新，分段见下",
+        // Count the open rows of the register's 议题 tables; the date goes in the caption so phones do not split it.
+        a.issueRows ? a.issueRows.filter((r) => !/^已/.test(r[2] || "")).length : null,
+        `议题表开放条目；OPEN_ISSUES.md ${esc(a.issuesUpdated || "日期未标")} 更新，分段见下`,
         a.issuesSource,
       ],
       [
@@ -379,6 +403,7 @@ async function route() {
   delete main.dataset.readerId;
   main.classList.add("prototype");
   main.dataset.view = page;
+  main.toggleAttribute("data-search", page === "browse" && !!params.get("q")?.trim());
   const navByStatus = { CURRENT_CANON: "canon", SUPERSEDED: "archive", CANDIDATE: "candidate", AUTHOR_CANON: "author", PROPOSAL: "proposal", UNRESOLVED: "unresolved" };
   let activeNav = page;
   if (page === "provenance") activeNav = "archive";
@@ -391,6 +416,7 @@ async function route() {
     if (active) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
+  const maintenanceNav = $("#maintenance-nav"), maintenanceActive = maintenanceNav.querySelector("a.active")?.dataset.nav || ""; if (maintenanceActive && maintenanceActive !== maintenanceNav.dataset.entered) maintenanceNav.open = true; maintenanceNav.dataset.entered = maintenanceActive;
   const sidebarWasOpen = $("#sidebar").classList.contains("open");
   $("#sidebar").classList.remove("open");
   $("#menu-toggle").setAttribute("aria-expanded", "false");
@@ -451,6 +477,12 @@ async function start() {
     };
     $("#build-date").innerHTML =
       "<span>索引更新 " + esc(dateOnly(index.builtAt)) + "</span> · <span>" + docs.length + " 份文件</span>";
+    // The sidebar's 编校与维护 group starts folded; route() unfolds it on its own pages. The state lasts for the session.
+    const maintenanceNav = $("#maintenance-nav");
+    try { if (sessionStorage.getItem("baita-nav-maintenance") === "open") maintenanceNav.open = true; } catch (_) { /* Storage is optional. */ }
+    maintenanceNav.addEventListener("toggle", () => {
+      try { sessionStorage.setItem("baita-nav-maintenance", maintenanceNav.open ? "open" : "closed"); } catch (_) { /* Storage is optional. */ }
+    });
     window.addEventListener("hashchange", route);
     $("#global-search").addEventListener("submit", (e) => {
       e.preventDefault();
@@ -463,7 +495,9 @@ async function start() {
       const open = $("#sidebar").classList.toggle("open");
       $("#menu-toggle").setAttribute("aria-expanded", String(open));
       archiveNavSync();
-      if (open) ($("#sidebar a.active") || $("#sidebar a")).focus();
+      // A folded group hides its active link; focus that group's summary instead.
+      const active = $("#sidebar a.active");
+      if (open) (active?.closest("details:not([open])")?.querySelector("summary") || active || $("#sidebar a")).focus();
     });
     document.addEventListener("click", event => {
       if (!event.target.closest("#sidebar, #menu-toggle, .reader-dialog") && $("#sidebar").classList.contains("open") && (!document.body.dataset.bookReader || matchMedia("(max-width:780px)").matches)) {
@@ -474,17 +508,23 @@ async function start() {
     });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Tab" && $("#sidebar").classList.contains("open") && (!document.body.dataset.bookReader || matchMedia("(max-width:780px)").matches)) {
-        const targets = [$("#menu-toggle"), ...document.querySelectorAll("#sidebar a, #sidebar button, #sidebar select, #sidebar summary")].filter(e => e.getClientRects().length && !e.disabled);
-        const first = targets[0], last = targets[targets.length - 1];
-        if (event.shiftKey && document.activeElement === first) {event.preventDefault(); last.focus();}
-        else if (!event.shiftKey && document.activeElement === last) {event.preventDefault(); first.focus();}
+        const targets = [$("#menu-toggle"), ...document.querySelectorAll("#sidebar a, #sidebar button, #sidebar select, #sidebar summary")].filter(e => e.getClientRects().length && !e.disabled && !e.closest("details:not([open]) > :not(summary)"));
+        const at = targets.indexOf(document.activeElement);
+        if (at >= 0) {event.preventDefault(); targets[(at + (event.shiftKey ? targets.length - 1 : 1)) % targets.length].focus();}
       }
       if (
         event.key === "/" &&
         !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)
       ) {
         event.preventDefault();
-        $("#global-query").focus();
+        // Above phone width the home page shows only the hero search; "/" focuses whichever box is on screen.
+        const box = [$("#global-query"), $("#hero-query")].find((e) => e && e.getClientRects().length);
+        // The tablet drawer covers the hero search, so close it before focusing there.
+        if (box?.id === "hero-query" && $("#sidebar").classList.contains("open")) {
+          $("#sidebar").classList.remove("open");
+          archiveNavSync();
+        }
+        if (box) box.focus();
       }
       if (event.key === "Escape" && !document.querySelector(".reader-dialog[open]")) {
         const wasOpen = $("#sidebar").classList.contains("open");
@@ -496,6 +536,7 @@ async function start() {
     });
     archiveNavSync();
     matchMedia("(max-width:780px)").addEventListener("change",archiveNavSync);
+    archiveSearchPhone.addEventListener("change",()=>archiveFitSearchFilters());
     await route();
   } catch (error) {
     main.innerHTML = `<div class="empty"><h1>档案馆暂未就绪</h1><p>${esc(error.message)}</p><p>请运行 build.py 后，通过 serve.py 重新打开。</p></div>`;

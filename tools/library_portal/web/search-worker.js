@@ -1,6 +1,18 @@
 "use strict";
 let content = null;
 let pending = null;
+// Markdown 摘要只显示文字：去掉行首引用与标题记号、表格分隔行与竖线、粗体斜体星号；代码与数据文件照原样显示。
+function plainSnippet(text) {
+  return text
+    .replace(/\r/g, "")
+    .replace(/^[ \t]*(?:(?:>|#{1,6}(?=\s|$))[ \t]*)+/gm, "")
+    .replace(/^[ \t|:-]*-[ \t|:-]*$/gm, "")
+    .replace(/^[ \t]*\||\|[ \t]*$/gm, "")
+    .replace(/[ \t]*\|[ \t]*/g, " · ")
+    .replace(/\*+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 async function load(shards) {
   if (content) return content;
   if (!pending)
@@ -62,9 +74,10 @@ onmessage = async ({ data }) => {
           .filter((i) => i >= 0);
         if (hits.length) {
           const start = Math.max(0, Math.min(...hits) - 55);
+          const slice = original.slice(start, start + 230);
           snippet =
             (start ? "…" : "") +
-            original.slice(start, start + 230).replace(/\s+/g, " ") +
+            (/\.md$/i.test(doc.path) ? plainSnippet(slice) : slice.replace(/\s+/g, " ")) +
             (start + 230 < original.length ? "…" : "");
         }
       }

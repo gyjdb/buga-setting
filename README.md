@@ -128,9 +128,9 @@ site/library_portal/       # 本地生成结果，不提交到 Git
 
 | 角色 | 字体与真实字重 |
 | --- | --- |
-| 中文馆名、文献题名 | 思源宋体 SC，900 |
-| 中文长篇正文 | 思源宋体 SC，400 |
-| 导航、按钮、目录、资料字段 | 思源黑体 SC，400 / 500 |
+| 中文馆名、文献题名 | 思源宋体 SC（Noto Serif SC），900 |
+| 中文长篇正文 | 思源宋体 SC（Noto Serif SC），400 |
+| 导航、按钮、目录、资料字段 | 思源黑体 SC（Noto Sans SC），400 / 500 |
 | 英文展示 / 阅读 | Source Serif 4，600 / 400 |
 
 《银色联盟风土志》的正文与题记同样是思源宋体，章名、小标题与标签是思源黑体；另外四款字体只用在这本书里：
@@ -141,9 +141,9 @@ site/library_portal/       # 本地生成结果，不提交到 Git
 | 图拉曼的序与批注 | 龙藏体（Long Cang），400 |
 | 书页上的拉丁文与英文 | Cormorant Garamond，可变字重；标签用 Jost |
 
-字体来源、固定版本与哈希见 [SOURCES.json](tools/library_portal/web/fonts/SOURCES.json)。中文字体使用真实可变字重，禁用伪粗体。思源字体的完整文件较大，慢速网络首次加载可能需要片刻，之后可由浏览器缓存；龙藏体与霞鹜文楷按 Unicode 范围切片，只下载页面用到的部分。
+字体来源、固定版本与哈希见 [SOURCES.json](tools/library_portal/web/fonts/SOURCES.json)。中文字体使用真实可变字重，禁用伪粗体。思源宋体、思源黑体用的是 Google 版（Noto Serif SC / Noto Sans SC），与龙藏体、霞鹜文楷一样按 Unicode 范围切片，浏览器只下载页面用到的部分；两个家族另有一个从原字体文件切出的标点片（`tools/library_portal/web/assets/fonts/`），引号和句读在同一个文件里，相邻标点照常挤压。
 
-项目代码、原创界面与维护者有权授权的原创材料采用 **[MIT License](LICENSE)**。思源宋体、思源黑体、Source Serif 4，以及风土志用的 Cormorant Garamond、Jost、龙藏体与霞鹜文楷屏幕阅读版保留 **SIL Open Font License 1.1**，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+项目代码、原创界面与维护者有权授权的原创材料采用 **[MIT License](LICENSE)**。思源宋体（Noto Serif SC）、思源黑体（Noto Sans SC）、Source Serif 4，以及风土志用的 Cormorant Garamond、Jost、龙藏体与霞鹜文楷屏幕阅读版保留 **SIL Open Font License 1.1**，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 《琥珀之剑》及其原作名称、人物、组织、术语和世界观元素的权利仍归原作者或相应权利人；MIT 不将这些第三方内容重新授权。本项目供非官方整理、交流与创作讨论使用。
 

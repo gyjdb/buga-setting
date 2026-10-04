@@ -62,16 +62,16 @@ const ORG_KIND_LABEL={'组成部门':'组成部门（部委）','专项局':'部
 function orgByKind(rows){if(!rows.some(r=>r.kind==='组成部门'))return [['',rows]];const g=new Map();for(const r of rows){if(!g.has(r.kind))g.set(r.kind,[]);g.get(r.kind).push(r);}return [...g];}
 /* Sub-units shown under a root: its direct units plus the special bureaus its departments manage. */
 function orgUnits(r,kids){const list=kids.get(r.id)||[];return list.some(c=>c.kind==='组成部门')?[...list,...list.flatMap(c=>(kids.get(c.id)||[]).filter(g=>g.kind==='专项局'))]:list;}
-function orgRow(r,kids){
+function orgRow(r,kids,bare){
   const units=orgUnits(r,kids), groups=orgByKind(units);
   const sub=rows=>`<ul class="org-sublist">${rows.map(k=>`<li><a href="${esc(orgHref(k))}">${esc(k.name)}</a></li>`).join('')}</ul>`;
   const body=groups.length>1?`<div class="org-kinds">${groups.map(([kind,rows])=>`<details class="org-branch" data-branch="${r.id}:${esc(kind)}"><summary>${esc(ORG_KIND_LABEL[kind]||kind)} <span>${rows.length}</span></summary>${sub(rows)}</details>`).join('')}</div>`
     :units.length?`<details class="org-branch" data-branch="${r.id}"><summary>下设 ${units.length} 个单位</summary>${sub(units)}</details>`:'';
-  return `<li class="org-entry${groups.length>1?' org-entry-wide':''}"><a href="${esc(orgHref(r))}" class="org-name">${esc(r.name)}</a>${orgStatusBadge(r)}<p>${esc(r.summary)}</p>${body}</li>`;
+  return `<li class="org-entry${groups.length>1?' org-entry-wide':''}">${bare?'':`<a href="${esc(orgHref(r))}" class="org-name">${esc(r.name)}</a>${orgStatusBadge(r)}`}<p>${esc(r.summary)}</p>${body}</li>`;
 }
-function orgMatchRow(r){
+function orgMatchRow(r,bare){
   const context=orgContext(r);
-  return `<li class="org-entry"><a href="${esc(orgHref(r))}" class="org-name">${esc(r.name)}</a>${orgStatusBadge(r)}${context?`<small>${esc(context)}</small>`:''}<p>${esc(r.summary)}</p></li>`;
+  return `<li class="org-entry">${bare?'':`<a href="${esc(orgHref(r))}" class="org-name">${esc(r.name)}</a>${orgStatusBadge(r)}${context?`<small>${esc(context)}</small>`:''}`}<p>${esc(r.summary)}</p></li>`;
 }
 
 function institutionDirectory(params){
@@ -88,14 +88,16 @@ function institutionDirectory(params){
     main.querySelector('.org-jumps').innerHTML=groups.map(([c])=>`<a href="${esc(orgDirectoryUrl({...params_(),group:c.id}))}" data-org-group="${c.id}">${esc(c.name)}</a>`).join('');
     main.querySelector('#org-results').innerHTML=groups.length?groups.map(([c,cats])=>{
       const body=cats.map(([cat,members])=>{
-        let list;
-        if(state.q)list=members.map(orgMatchRow).join('');
-        else{
+        let rows=members, row=orgMatchRow;
+        if(!state.q){
           const ids=new Set(members.map(r=>r.id)), kids=new Map();
           for(const r of members){const p=orgParent(r);if(p&&ids.has(p.target)){if(!kids.has(p.target))kids.set(p.target,[]);kids.get(p.target).push(r);}}
-          list=members.filter(r=>{const p=orgParent(r);return !p||!ids.has(p.target);}).map(r=>orgRow(r,kids)).join('');
+          rows=members.filter(r=>{const p=orgParent(r);return !p||!ids.has(p.target);});row=(r,bare)=>orgRow(r,kids,bare);
         }
-        return `${cats.length>1?`<h3 class="org-subhead">${esc(cat.name)}</h3>`:''}<ul class="org-list">${list}</ul>`;
+        /* 小标题与首个机构同名（如“白银议会”）时，机构名直接作小标题，条目里不再重复。 */
+        const lead=cats.length>1&&rows[0]?.name===cat.name?rows[0]:null;
+        const head=lead?`<a href="${esc(orgHref(lead))}">${esc(lead.name)}</a>${orgStatusBadge(lead)}`:esc(cat.name);
+        return `${cats.length>1?`<h3 class="org-subhead">${head}</h3>`:''}<ul class="org-list">${rows.map(r=>row(r,r===lead)).join('')}</ul>`;
       }).join('');
       return `<section class="org-group" id="org-group-${c.id}" aria-labelledby="org-title-${c.id}"><h2 id="org-title-${c.id}" tabindex="-1">${esc(c.name)}</h2>${body}</section>`;
     }).join(''):`<div class="empty"><h2>没有找到匹配的机构</h2><p>可以换用正式名称、简称或别名，或者把显示范围切换为“全部条目”。</p></div>`;

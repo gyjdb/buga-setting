@@ -178,7 +178,8 @@ function bookEndpaperHTML() {
 
 // A reading location is a source block + UTF-16 offset, independent of page size.
 const BOOK_POSITION_KEY = "buga.fengtuzhi.position.v2";
-// Desktop reader keeps the archive sidebar docked; readers may collapse it (open/closed).
+// Desktop reader keeps the archive sidebar docked; readers may collapse it (open/closed). Until they
+// choose, book mode starts with it collapsed and text mode with it open (bookNavDefault).
 const BOOK_NAV_KEY = "buga.fengtuzhi.nav";
 // Supplied Terra reference pages are approximately 1380 x 1968; no physical trim size is inferred.
 const BOOK_PAPER_RATIO = 1380 / 1968;
@@ -186,24 +187,39 @@ const BOOK_PAPER_RATIO = 1380 / 1968;
 // it fills the available height up to the standard 690 x 984 page, and only a very small
 // window scales a minimum-size page down.
 const BOOK_PAGE_MAX = 690, BOOK_PAGE_MIN = 340, BOOK_SPREAD_MIN = 420;
-function bookPaperLayout(width, height) {
+function bookPaperLayout(width, height, narrow = false) {
   const tall = Math.min(BOOK_PAGE_MAX, height * BOOK_PAPER_RATIO);
   const spread = width >= 2 * Math.min(tall, BOOK_SPREAD_MIN) ? 2 : 1;
   const fits = Math.min(tall, width / spread);
   // Whole 4 px steps keep small window changes from re-paginating the book.
-  const pageWidth = Math.max(BOOK_PAGE_MIN, Math.floor(fits / 4) * 4);
-  const pageHeight = Math.floor(pageWidth / BOOK_PAPER_RATIO);
-  const scale = Math.min(1, fits / pageWidth);
+  const pageWidth = Math.max(BOOK_PAGE_MIN, Math.floor(fits / 4) * 4), scale = Math.min(1, fits / pageWidth);
+  // 窄屏版式（≤780px，手机竖屏）的单页被宽度卡住时，按 1380:1968 的纸页上下会空出两大块：页高改为拉满可用高度（最高 984，按 4px 取整），页宽、页边距与页眉页脚不变。对开、按高度定尺寸的单页，以及宽于 780px 的窗口（平板竖屏、桌面）仍保持比例。
+  const pageHeight = narrow && spread === 1 && fits < tall ? Math.max(Math.floor(pageWidth / BOOK_PAPER_RATIO), Math.floor(Math.min(BOOK_PAGE_MAX / BOOK_PAPER_RATIO, height / scale) / 4) * 4) : Math.floor(pageWidth / BOOK_PAPER_RATIO);
   return { spread, pageWidth, pageHeight, scale, width: Math.floor(pageWidth * spread * scale), height: Math.floor(pageHeight * scale) };
 }
 let activeBookReader = null;
 function bookStored(key) { try { return localStorage.getItem(key); } catch { return null; } }
 function bookStore(key, value) { try { localStorage.setItem(key, value); } catch {} }
 function bookNavDocked() { return !!document.body.dataset.bookReader && !matchMedia("(max-width:780px)").matches; }
+// 读者在这一页里按过的侧栏选择。本机存储不可用或写不进时也照它，默认值不会把读者刚展开的侧栏又收回去。
+let bookNavChoice = null;
 function bookToggleNav() {
   document.body.dataset.bookNav = document.body.dataset.bookNav === "closed" ? "open" : "closed";
-  bookStore(BOOK_NAV_KEY, document.body.dataset.bookNav);
+  bookNavChoice = document.body.dataset.bookNav;
+  bookStore(BOOK_NAV_KEY, bookNavChoice);
   archiveNavSync();
+}
+// 读者没有自己收起或展开过侧栏时，书页版默认收起（书页能放大一些），文字版默认展开。
+// 阅读器自己收展时不播过渡，台面马上是新的尺寸，可以接着量。返回侧栏是否因此变了。
+function bookNavDefault(fixed) {
+  const chosen = bookNavChoice || bookStored(BOOK_NAV_KEY), state = chosen === "open" || chosen === "closed" ? chosen : fixed ? "closed" : "open";
+  if (document.body.dataset.bookNav === state) return false;
+  const moving = [document.querySelector("#sidebar"), document.querySelector(".workspace")];
+  moving.forEach(e => e.style.setProperty("transition", "none"));
+  document.body.dataset.bookNav = state;
+  moving.forEach(e => { void e.offsetWidth; e.style.removeProperty("transition"); });
+  archiveNavSync();
+  return true;
 }
 function bookPosition() { try { return JSON.parse(bookStored(BOOK_POSITION_KEY)) || null; } catch { return null; } }
 function bookElement(html) { const t = document.createElement("template"); t.innerHTML = html.trim(); return t.content.firstElementChild; }
@@ -356,7 +372,8 @@ async function bookDetail(doc, params, serial) {
   archiveObserver = controller;
   document.title = BOOK_TITLE + " / " + index.title;
   document.body.dataset.bookReader = "true";
-  document.body.dataset.bookNav = bookStored(BOOK_NAV_KEY) === "closed" ? "closed" : "open";
+  // 用书页版还是文字版要等量过台面才知道；先照读者存下的，没有就展开，台面搭好后、字体载入前由 paginate("nav") 定下。
+  bookNavDefault(false);
   main.dataset.view = "book";
   main.dataset.readerId = doc.id; main.dataset.readerRoute = "doc";
   const siteTitle = document.querySelector(".topbar-title"), previousTitle = siteTitle.textContent;
@@ -620,7 +637,6 @@ async function bookDetail(doc, params, serial) {
       const host = document.createElement("div");
       host.className = "fzb reader-build"; host.setAttribute("aria-hidden", "true"); host.inert = true;
       root.append(host);
-      await Promise.all([document.fonts.load('10pt "Archive Song"'), document.fonts.load('900 10pt "Archive Sans"'), document.fonts.load('10pt "Book Latin"'), document.fonts.load('italic 10pt "Book Latin"'), document.fonts.load('10pt "Book Label"'), document.fonts.load('15pt "Hand"', (preface || []).join("") + "白塔馆员")]);
       const result = await BookPages.build({ bookChapters: chapters, plan, plates, sources: BookPages.parseSources(notes?.html), preface, host, cancelled: () => signal.aborted });
       host.remove();
       return result;
@@ -665,8 +681,10 @@ async function bookDetail(doc, params, serial) {
     else setZoom([...BOOK_ZOOM_STEPS].reverse().find(z => z < s * 0.98) ?? 0, focus);
   }
   let pending = positionFrom(params);
-  async function paginate() {
+  // pass："" 正常排版（先按默认侧栏量台面，显示方式不随之前的窗口状态变）；"again" 侧栏刚变过，直接重量；"nav" 只定侧栏、不排版（字体载入前调用）。
+  async function paginate(pass = "") {
     finishFlip();
+    if (!pass && bookNavDefault(false)) previousSize = `${desk.clientWidth}:${desk.clientHeight}`;
     const box = getComputedStyle(desk), gap = parseFloat(box.columnGap) || 0;
     const side = [...desk.querySelectorAll(".reader-turn")].reduce((w, b) => w + (b.offsetWidth ? b.offsetWidth + gap : 0), 0);
     const W = Math.max(240, desk.clientWidth - parseFloat(box.paddingLeft) - parseFloat(box.paddingRight) - side);
@@ -677,6 +695,9 @@ async function bookDetail(doc, params, serial) {
     const possible = !!(plan && plates) && s1 >= BOOK_FIXED_FLOOR;
     const auto = possible && Math.max(s1, s2) >= BOOK_FIXED_AUTO;
     const fixedMode = possible && (pref === "book" || (pref !== "text" && auto));
+    // 侧栏随显示方式收起或展开了：台面已是新尺寸，就地重新量，不必等 ResizeObserver 再排一遍（收起只会让书页更大，不会来回切换）。
+    if (pass === "nav") { bookNavDefault(fixedMode); return; }
+    if (bookNavDefault(fixedMode)) { previousSize = `${desk.clientWidth}:${desk.clientHeight}`; return paginate("again"); }
     modeGroup.hidden = !possible;
     modeGroup.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.mode === "book") === fixedMode)));
     root.dataset.mode = fixedMode ? "book" : "text";
@@ -713,13 +734,13 @@ async function bookDetail(doc, params, serial) {
       loading.hidden = true; stage.setAttribute("aria-busy", "false");
       return;
     }
-    const paper = bookPaperLayout(W, H);
+    const paper = bookPaperLayout(W, H, matchMedia("(max-width:780px)").matches);
     leaves.classList.remove("fzb");
     stage.style.width = paper.width + "px";
     stage.style.height = paper.height + "px";
     leaves.style.transform = paper.scale < 1 ? `scale(${paper.scale})` : "";
     // Same page size: the text flow is unchanged, only the desk around it moved.
-    const key = `text:${paper.spread}:${paper.pageWidth}`;
+    const key = `text:${paper.spread}:${paper.pageWidth}:${paper.pageHeight}`;
     if (key === layout && pages.length) return;
     const ticket = ++generation, locationBefore = pending || cursor;
     stage.setAttribute("aria-busy", "true"); loading.hidden = false;
@@ -810,6 +831,33 @@ async function bookDetail(doc, params, serial) {
   bar.addEventListener("click", handleClick, { signal });
   document.addEventListener("click", event => { if (!tocMenu.hidden && !event.target.closest(".reader-toc")) toc(false); }, { signal });
   dialog.addEventListener("close", () => panelTrigger?.focus({ preventScroll: true }), { signal });
+  // 顶栏的全局检索在阅读器里收成放大镜按钮，把位置让给章节名：点按钮或按 / 展开；输入框为空时按 Escape 或焦点移走就收起（有字时 Escape 先清空）。
+  const search = document.querySelector("#global-search"), searchInput = search.querySelector("#global-query");
+  const searchToggle = bookElement(`<button type="button" class="reader-search-toggle" aria-label="检索全部馆藏" aria-expanded="false" aria-controls="global-search" aria-keyshortcuts="/" title="检索全部馆藏（/）">${archiveIcon("search")}</button>`);
+  search.before(searchToggle);
+  const searchOpen = open => {
+    searchToggle.setAttribute("aria-expanded", String(open));
+    if (open) { toc(false); searchInput.focus(); }
+  };
+  searchToggle.addEventListener("click", () => searchOpen(true), { signal });
+  search.addEventListener("keydown", event => {
+    if (event.key !== "Escape" || event.isComposing) return;
+    event.preventDefault();
+    if (searchInput.value) searchInput.value = "";
+    else { searchOpen(false); searchToggle.focus(); }
+  }, { signal });
+  // 等焦点落定再看：切到别的窗口时焦点仍在输入框里，不收起。按着鼠标或手指时等松开再看：先让这一下点到原处的按钮（书页、缩放、来源与编校），再收起、挪动顶栏。
+  let pressing = false;
+  const settle = () => setTimeout(() => {
+    if (!signal.aborted && searchToggle.getAttribute("aria-expanded") === "true" && !searchInput.value && !search.contains(document.activeElement)) searchOpen(false);
+  });
+  search.addEventListener("focusout", () => { if (!pressing) settle(); }, { signal });
+  document.addEventListener("pointerdown", () => { pressing = true; }, { capture: true, signal });
+  for (const type of ["pointerup", "pointercancel"]) document.addEventListener(type, () => { if (pressing) { pressing = false; settle(); } }, { capture: true, signal });
+  document.addEventListener("keydown", event => {
+    if (event.key !== "/" || searchToggle.getAttribute("aria-expanded") === "true" || !searchToggle.getClientRects().length || dialog.open || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
+    event.preventDefault(); searchOpen(true);
+  }, { signal });
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && !tocMenu.hidden) { toc(false); tocButton.focus(); return; }
     // 书页版里 + − 0（含 Ctrl/⌘ 组合）缩放书页：整页适合窗口时，浏览器自身的缩放放不大书页。
@@ -849,7 +897,7 @@ async function bookDetail(doc, params, serial) {
   let drag = null, dragged = false, grab = null, downAt = null;
   stage.addEventListener("pointerdown", event => {
     dragged = false; downAt = [event.clientX, event.clientY];
-    if (event.button !== 0 || event.target.closest("a,button,.reader-oversized") || stage.getAttribute("aria-busy") === "true") return;
+    if (event.button !== 0 || event.target.closest("a,button,.reader-oversized") || stage.getAttribute("aria-busy") === "true" || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches)) return;
     if (root.dataset.zoom === "in") {
       if (event.pointerType === "mouse") drag = { x: event.clientX, y: event.clientY, left: stage.scrollLeft, top: stage.scrollTop, id: event.pointerId };
       return;
@@ -924,7 +972,7 @@ async function bookDetail(doc, params, serial) {
   // 点链接、按钮、可以滚动的大表格不翻页；选中了文字、刚拖动过、书页放大时也不翻。
   stage.addEventListener("click", event => {
     if (dragged) { dragged = false; return; }
-    if (event.target.closest("a,button,.reader-oversized") || !getSelection().isCollapsed || root.dataset.zoom === "in") return;
+    if (event.target.closest("a,button,.reader-oversized") || !getSelection().isCollapsed || root.dataset.zoom === "in" || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches)) return;
     // 只认真正的点击：按下后挪动超过几像素（比如拖着选字没选中）就不翻。
     if (downAt && Math.hypot(event.clientX - downAt[0], event.clientY - downAt[1]) > 8) return;
     if (fold?.peek) { turn(fold.dir); return; }
@@ -950,14 +998,15 @@ async function bookDetail(doc, params, serial) {
     destroy() {
       controller.abort(); observer.disconnect(); clearTimeout(timer); generation++;
       if (dialog.open) dialog.close();
-      bar.remove();
+      bar.remove(); searchToggle.remove();
       delete document.body.dataset.bookNav;
       delete document.body.dataset.bookReader; siteTitle.textContent = previousTitle; menu.innerHTML = previousMenu; menu.removeAttribute("title");
       activeBookReader = null;
     }
   };
   try {
-    await Promise.all([document.fonts.load('16px "Archive Song"'), document.fonts.load('16px "Archive Sans"'), document.fonts.load('50px "Book Latin"'), document.fonts.load('14px "Book Label"'), document.fonts.load('20px "Hand"', (preface || []).join("")), BookPages.loadNoteFont(chapters, plan, "16px")]);
+    await paginate("nav");
+    await BookPages.loadFonts(chapters, plan, { preface, size: "16px" });
     if (signal.aborted) return;
     await paginate();
     if (signal.aborted) return;

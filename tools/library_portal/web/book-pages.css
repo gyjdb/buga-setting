@@ -1,5 +1,5 @@
 /* 《银色联盟风土志》书页（book-pages.js）的样式：页面 210 × 299.5 mm，正文 10pt。全部限定在 .fzb 之内，
-   阅读器的书页版、文字版里的插图与整书样张共用。字体：思源宋体、思源黑体（archive.css），Cormorant Garamond、Jost（book.css），龙藏体（book-hand.css），霞鹜文楷屏幕阅读版（book-note.css）。
+   阅读器的书页版、文字版里的插图与整书样张共用。字体：宋体、黑体（archive-fonts.css 的 Noto Serif SC / Noto Sans SC 切片），Cormorant Garamond、Jost（book.css），龙藏体（book-hand.css），霞鹜文楷屏幕阅读版（book-note.css）。
    旁白字体霞鹜文楷（--note，作者 2026-09-24 选定，比较见 fengtuzhi-type.html）用于章首导语、图注、资料卡说明、题记署名与编者小注；楷体同字号下字面比黑体小，这几处字号约放大 5%。 */
 .fzb{
   --paper:#f4f3ee;--ink:#1c1e21;--ink-2:#474c52;--ink-3:#80868c;--hair:#cfd2cf;
@@ -84,7 +84,8 @@
 .fzb .vault{display:grid;gap:1.4mm}
 .fzb .vault div{padding:2.2mm 2.6mm;color:#fff;font:400 calc(var(--body)*.76)/1.5 var(--sans)}
 .fzb .vault b{display:block;font:700 calc(var(--body)*.9)/1.35 var(--sans)}
-.fzb .vault div:nth-child(1){background:#9aa6ae;margin-right:8mm}
+/* 三级封存：第一级底色浅，白字只有 2.5:1，改用墨色（6.7:1）；后两级白字 6.1:1、15.7:1。只改颜色，不动尺寸。 */
+.fzb .vault div:nth-child(1){background:#9aa6ae;color:var(--ink);margin-right:8mm}
 .fzb .vault div:nth-child(2){background:#55646f;margin-right:4mm}
 .fzb .vault div:nth-child(3){background:#1d2429}
 .fzb .ladder{position:relative;margin:0;padding:0 0 0 5mm;list-style:none}

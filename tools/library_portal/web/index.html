@@ -13,6 +13,7 @@
     />
     <title>白塔档案馆 · 银色联盟法典库</title>
     <link rel="icon" href="assets/favicon.svg?v=1" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="archive-fonts.css" />
     <link rel="stylesheet" href="archive.css" />
     <link rel="stylesheet" href="institutions.css" />
     <link rel="stylesheet" href="book-hand.css" />
@@ -58,7 +59,7 @@
         >
         <a href="#/browse?status=SUPERSEDED" data-nav="archive">旧版正文</a>
       </nav>
-      <div class="sidebar-label maintenance-label">编校与维护</div>
+      <details class="sidebar-group" id="maintenance-nav"><summary class="sidebar-label maintenance-label">编校与维护</summary>
       <nav aria-label="编校与维护" class="secondary-nav">
         <a href="#/browse?status=AUTHOR_CANON" data-nav="author">作者设定</a>
         <a href="#/browse?status=CANDIDATE" data-nav="candidate">整编底稿</a>
@@ -68,11 +69,7 @@
         <a href="#/browse?collection=00_PROJECT" data-nav="project">项目总卷</a>
         <a href="#/browse?directory=1" data-nav="directory">完整源文件目录</a>
       </nav>
-      </div>
-      <div class="sidebar-bottom">
-        <span class="archive-rule"></span><strong>布加设定 · 本地典藏</strong>
-        <p>保存依据，辨明版本。</p>
-        <small id="build-date">正在读取馆藏索引</small>
+      </details>
       </div>
     </aside>
     <div class="workspace">
@@ -102,7 +99,7 @@
         <div class="loading">正在读取馆藏索引…</div>
       </main>
       <footer>
-        <span class="footer-name">白塔档案馆</span><nav aria-label="页脚导航"><a href="#/browse">全部馆藏</a><a href="#/versions">版本与关系</a><a href="#/browse?collection=00_PROJECT">项目总卷</a><a href="#/browse?directory=1">完整源文件目录</a></nav><p>银色联盟法典库 · 本地阅读，来源可溯。环境与书籍插画为概念演绎，不代表已确认的建筑、徽章或历史事件。</p>
+        <span class="footer-name">白塔档案馆</span><nav aria-label="页脚导航"><a href="#/browse">全部馆藏</a><a href="#/versions">版本与关系</a><a href="#/browse?collection=00_PROJECT">项目总卷</a><a href="#/browse?directory=1">完整源文件目录</a></nav><small id="build-date">正在读取馆藏索引</small><p>银色联盟法典库 · 本地阅读，来源可溯。环境与书籍插画为概念演绎，不代表已确认的建筑、徽章或历史事件。</p>
       </footer>
     </div>
     <noscript>请启用 JavaScript，并按 README 使用本地 HTTP 服务访问。</noscript>
