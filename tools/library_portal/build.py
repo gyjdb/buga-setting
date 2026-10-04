@@ -306,23 +306,43 @@ def build():
     conflict_path = "00_PROJECT/CONFLICTS.md"
     audit_path = "90_AUDIT/CANON_CONSOLIDATION_AUDIT.md"
     scenario_path = "90_AUDIT/CANON_SCENARIO_TESTS.md"
+    issues_path = "00_PROJECT/OPEN_ISSUES.md"
     conflict_rows = table_rows(source_text(conflict_path), r"F\d+")
     conflict_counts = Counter(row[2] for row in conflict_rows if len(row) > 2)
     audit_text = source_text(audit_path)
-    author_rows = table_rows(audit_text, r"CC-A\d+")
     scenario_rows = table_rows(source_text(scenario_path), r"S\d+")
     scenarios = Counter(row[2] for row in scenario_rows if len(row) > 2)
+    # Current author questions come from the register, not the 2026-09-18 audit. The register keeps
+    # dated sections (newest first); later answers are written into the CC-A status column.
+    issues_text = source_text(issues_path)
+    author_rows = table_rows(issues_text, r"CC-A\d+")
+    issue_rows = []
+    for section in re.split(r"(?m)^# ", issues_text)[1:]:
+        updated = re.search(r"^updated:\s*(\S+)", section, re.M)
+        header = None
+        for line in section.splitlines():
+            if not line.startswith("|"):
+                header = None
+                continue
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if header is None:
+                header = cells
+            elif header[0] == "议题" and not set("".join(cells)) <= set("-: "):
+                issue_rows.append([updated.group(1) if updated else "", *cells])
     audit = {"conflictSource": by_path.get(conflict_path, {}).get("id"), "auditSource": by_path.get(audit_path, {}).get("id"),
-             "scenarioSource": by_path.get(scenario_path, {}).get("id"), "conflictCounts": conflict_counts,
+             "scenarioSource": by_path.get(scenario_path, {}).get("id"), "issuesSource": by_path.get(issues_path, {}).get("id"),
+             "issuesUpdated": max(re.findall(r"^updated:\s*(\S+)", issues_text, re.M), default=None),
+             "conflictCounts": conflict_counts,
              "openConflicts": conflict_counts.get("OPEN") if conflict_rows else None, "conflictRows": conflict_rows,
-             "authorUnresolved": len(author_rows) if author_rows else None, "authorRows": author_rows,
-             "futureInterfaces": len(table_rows(audit_text, r"IF\d+")), "candidateFindings": table_rows(audit_text, r"F\d+"),
+             "authorUnresolved": sum("AUTHOR_ONLY" in row[3] for row in author_rows) if author_rows else None,
+             "authorRows": author_rows, "issueRows": issue_rows,
+             "futureInterfaces": len(table_rows(issues_text, r"IF\d+")), "candidateFindings": table_rows(audit_text, r"F\d+"),
              "scenarios": scenarios, "scenarioRows": scenario_rows}
-    report_path = "00_PROJECT/IN_WORLD_REGISTER_REPORT.md" if "00_PROJECT/IN_WORLD_REGISTER_REPORT.md" in by_path else "00_PROJECT/CANON_CONSOLIDATION_REPORT.md"
-    report_text = source_text(report_path)
-    report_status = re.search(r"^status:\s*(.+)$", report_text, re.M)
-    report_intro = next((s.strip() for s in report_text.split("\n\n") if s.startswith("全部")), "暂无整编报告，请查看项目总卷。")
-    audit["latest"] = {"id": by_path.get(report_path, {}).get("id"), "status": report_status.group(1) if report_status else "未提供", "summary": report_intro}
+    # The current edition: the manifest's approval and its newest revision record (folders are dated).
+    latest_log = max(entry["changelog"] for entry in current_manifest["files"])
+    audit["latest"] = {"id": by_path.get(latest_log, {}).get("id"), "status": current_manifest.get("approval_decision", "未提供"),
+                       "date": current_manifest.get("approved_date"), "count": len(current_manifest["files"]),
+                       "manifest": by_path.get("00_PROJECT/CURRENT_CANON_MANIFEST.json", {}).get("id")}
     recent = sorted([d for d in documents if d["collection"] in {"00_PROJECT", "10_WORKING_DRAFTS"} and d["extension"] == ".md"], key=lambda d: (d["date"] or "", d["modified"]), reverse=True)[:12]
     audit["recent"] = [d["id"] for d in recent]
     shards, batch, size = [], [], 0

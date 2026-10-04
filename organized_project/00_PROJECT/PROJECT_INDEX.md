@@ -1,3 +1,7 @@
+# 最新阅读入口：第五版正文（D67）
+
+[现行正文索引](CANON_INDEX.md) · [D67 作者决定](AUTHOR_DECISIONS_2026-10-03.md) · [第五版修订记录](../90_AUDIT/revision_2026-10-03/V5_REVISION_CHANGELOG.md) · [2026-10-03 审核报告](../90_AUDIT/review_2026-10-03/REPORT.md) · [未决事项](OPEN_ISSUES.md)
+
 # 最新阅读入口：第四版正文（D66）
 
 [现行正文索引](CANON_INDEX.md) · [D66 作者决定](AUTHOR_DECISIONS_2026-09-25.md) · [第四版修订记录](../90_AUDIT/revision_2026-09-25/V4_REVISION_CHANGELOG.md) · [通读笔记](../90_AUDIT/readthrough_2026-09-25/READTHROUGH_NOTES.md) · [未决事项](OPEN_ISSUES.md)
