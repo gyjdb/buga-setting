@@ -259,14 +259,19 @@ const BookPages = (() => {
         }
       }
       if (deferred.length) turn();
-      // 边栏：与所依段落对齐；放不下就往下找空位，再顺延到下一页。
+      // 边栏：与所依段落对齐；放不下就往下找空位，再顺延到下一页；到章末还放不下，往前找本章最近的空位，不丢条目。
+      // 字宽随屏幕取整（Windows 版 Chrome：DPR 1 每行 32 字，DPR 2 每行 31 字），分页因此不同，章末边栏可能挤满。
       for (const it of ch.items || []) {
         if (it.after || it.kind === "insert") continue;
         const key = it.anchor.startsWith("h:") ? it.anchor : "p" + ch.find(it.anchor);
         let anchor = anchors[key];
         if (!anchor) { ch.warn.push("锚点 " + it.anchor); continue; }
         if (it.at) anchor = sentence(ch, key, it.at, anchor) || anchor;
-        if (placeSide(Math.max(anchor.page, bodyStart), anchor.page >= bodyStart ? anchor.top : 0, () => M[it.kind](it)) < 0) ch.warn.push("放不下 " + (it.id || it.what));
+        const start = Math.max(anchor.page, bodyStart), make = () => M[it.kind](it);
+        if (placeSide(start, anchor.page >= bodyStart ? anchor.top : 0, make) >= 0) continue;
+        let n = start - 1;
+        while (n >= bodyStart && placeSide(n, 0, make, n + 1) < 0) n--;
+        ch.warn.push(n < bodyStart ? "放不下 " + (it.id || it.what) : `${it.id || it.what} 前移 ${start - n} 页`);
       }
       for (const it of ch.items || []) if (it.kind === "insert") insertPage(ch, it);
     }
@@ -288,10 +293,10 @@ const BookPages = (() => {
       }
       return null;
     }
-    function placeSide(start, anchorTop, make) {
-      // 边栏按正文顺序往下排：尽量与所依段落对齐；下面放不下时，把本页已放的图往上挪；再不行顺延到下一页。
+    function placeSide(start, anchorTop, make, end = pages.length) {
+      // 边栏按正文顺序往下排：尽量与所依段落对齐；下面放不下时，把本页已放的图往上挪；再不行顺延到下一页（只试到 end 之前）。
       const gap = 5 * MM;
-      for (let n = start; n < pages.length; n++) {
+      for (let n = start; n < end; n++) {
         const page = pages[n], side = $(".side", page); if (!side) continue;
         const node = make(); side.append(node);
         const h = node.offsetHeight, H = side.clientHeight, stack = page.stack || (page.stack = []);
