@@ -229,7 +229,7 @@ const BookPages = (() => {
         queue.push({ block: ch.blocks[k], key: "p" + k });
         for (const it of after.get(k) || []) queue.push({ item: it });
       }
-      let page, main;
+      let page, main, heads = [];
       // 组图与补充材料框是浮动的：当前页放不下时，正文继续往下排，图挪到下一页顶部。
       const deferred = [];
       const placeFloat = (it, force) => {
@@ -258,12 +258,21 @@ const BookPages = (() => {
           const node = section(q.head); main.append(node);
           if ((!fits(main) || room() < lineHeight * 3) && main.children.length > 1) { node.remove(); turn(); main.append(node); }
           mark(q.key, node);
-          if (q.head.level === 1) toc.push({ kind: "section", title: q.head.title, page });
+          const entry = q.head.level === 1 ? { kind: "section", title: q.head.title, page } : null;
+          if (entry) toc.push(entry);
+          heads.push({ node, key: q.key, entry });
           continue;
         }
         if (q.item) { if (deferred.length || !placeFloat(q.item)) deferred.push(q.item); continue; }
         const block = q.block, text = block.text, length = text.length;
         let offset = 0, first = true;
+        // 标题不留在页末：这一段一行也没排上就要翻页时，把页末的标题一起带到下一页。
+        const next = () => {
+          const carry = first && heads.length && heads.every(h => h.node.parentNode === main) && main.children.length > heads.length ? heads : [];
+          carry.forEach(h => h.node.remove());
+          turn();
+          for (const h of carry) { main.append(h.node); mark(h.key, h.node); if (h.entry) h.entry.page = page; }
+        };
         while (offset < length) {
           const cont = offset > 0;
           const p = paragraph(block, offset, length, cont); main.append(p);
@@ -272,27 +281,28 @@ const BookPages = (() => {
           const probe = (from, to, c = cont) => { const x = paragraph(block, from, to, c); main.append(x); const r = { ok: fits(main), h: x.offsetHeight }; x.remove(); return r; };
           let lo = offset, hi = length;
           while (lo < hi) { const mid = Math.ceil((lo + hi) / 2); if (probe(offset, mid).ok) lo = mid; else hi = mid - 1; }
-          if (lo - offset < perLine * 2 && main.children.length) { turn(); continue; }
+          if (lo - offset < perLine * 2 && main.children.length) { next(); continue; }
           // 余下不足一行时，按实际行高退回一整行；本页放不下两行以上时整段移到下一页。
           if (probe(lo, length, true).h < lineHeight * 1.5) {
             const target = probe(offset, lo).h - lineHeight + 1;
             let a = offset, b = lo;
             while (a < b) { const m = Math.ceil((a + b) / 2); if (probe(offset, m).h <= target) a = m; else b = m - 1; }
             if (a - offset >= perLine * 2) lo = a;
-            else if (main.children.length) { turn(); continue; }
+            else if (main.children.length) { next(); continue; }
           }
           // 不让下一页以句读开头，也不把开引号留在本页末尾；不拆开代理对。
           while (lo > offset && /[，。！？；：、）》」』”’]/.test(text[lo])) lo--;
           while (lo > offset && /[（《「『“‘]/.test(text[lo - 1])) lo--;
           if (lo > offset && /[\uD800-\uDBFF]/.test(text[lo - 1])) lo--;
-          if (lo === offset) { turn(); continue; }
+          if (lo === offset) { next(); continue; }
           const part = paragraph(block, offset, lo, cont); main.append(part);
           if (first) mark(q.key, part);
           offset = lo; first = false; turn();
         }
+        heads = [];
       }
       if (deferred.length) turn();
-      // 边栏：与所依段落对齐；放不下就往下找空位，再顺延到下一页；到章末还放不下，往前找本章最近的空位，不丢条目。
+      // 边栏：与所依段落对齐；放不下就往下找空位，再顺延到下一页；到章末还放不下，先在锚点那一页往上找空位，再往前找本章最近的空位，不丢条目。
       // 字宽随屏幕取整（Windows 版 Chrome：DPR 1 每行 32 字，DPR 2 每行 31 字），分页因此不同，章末边栏可能挤满。
       for (const it of ch.items || []) {
         if (it.after || it.kind === "insert") continue;
@@ -302,6 +312,7 @@ const BookPages = (() => {
         if (it.at) anchor = sentence(ch, key, it.at, anchor) || anchor;
         const start = Math.max(anchor.page, bodyStart), make = () => M[it.kind](it);
         if (placeSide(start, anchor.page >= bodyStart ? anchor.top : 0, make) >= 0) continue;
+        if (anchor.page >= bodyStart && placeSide(start, 0, make, start + 1) >= 0) continue;
         let n = start - 1;
         while (n >= bodyStart && placeSide(n, 0, make, n + 1) < 0) n--;
         ch.warn.push(n < bodyStart ? "放不下 " + (it.id || it.what) : `${it.id || it.what} 前移 ${start - n} 页`);

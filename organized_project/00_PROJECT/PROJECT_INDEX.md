@@ -1,3 +1,15 @@
+# 最新阅读入口：第七版正文（D74）
+
+[现行正文索引](CANON_INDEX.md) · [D74 作者决定](AUTHOR_DECISIONS_2026-10-19_D74.md) · [第七版修订记录](../90_AUDIT/revision_2026-10-19/V7_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第六版正文（D70）
+
+[现行正文索引](CANON_INDEX.md) · [D70 作者决定](AUTHOR_DECISIONS_2026-10-12_D70.md) · [第六版修订记录](../90_AUDIT/revision_2026-10-12/V6_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第五版正文，防务基本法 2.6.5（D68）
+
+[现行正文索引](CANON_INDEX.md) · [D68 作者决定](AUTHOR_DECISIONS_2026-10-11.md) · [修订记录](../90_AUDIT/revision_2026-10-11/REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
 # 最新阅读入口：第五版正文（D67）
 
 [现行正文索引](CANON_INDEX.md) · [D67 作者决定](AUTHOR_DECISIONS_2026-10-03.md) · [第五版修订记录](../90_AUDIT/revision_2026-10-03/V5_REVISION_CHANGELOG.md) · [2026-10-03 审核报告](../90_AUDIT/review_2026-10-03/REPORT.md) · [未决事项](OPEN_ISSUES.md)

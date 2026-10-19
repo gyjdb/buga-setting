@@ -15,7 +15,7 @@ const BOOK_CHAPTERS = {
   三: { en: "The Making of a Wizard", ghost: "Disciplina" },
   四: { en: "Magic and Its Limits", ghost: "Magia" },
   五: { en: "Among the Cities", ghost: "Civitates" },
-  六: { en: "The Parliament and the Twelve Rings", ghost: "Concilium", epigraph: ["向知识致敬，向真理致敬。", "", "奈塔斯大殿的齐诵之辞"] },
+  六: { en: "The Parliament and the Twelve Rings", ghost: "Concilium", epigraph: ["向知识致敬，向真理致敬。", "", "联盟铭言"] },
   七: { en: "Origins", ghost: "Origo" },
   八: { en: "The Edges of the Sky", ghost: "Fines" },
   九: { en: "The Turning Year", ghost: "Annus" }
