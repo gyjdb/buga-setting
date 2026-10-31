@@ -1,19 +1,19 @@
 """Copy the frontend into site/library_portal. One allowlist serves the local archive and the public checkout.
 
-PRODUCTION is exactly what index.html, app.js and book.js load; the public build ships these plus assets/ and fonts/.
+PRODUCTION is exactly what index.html, portal.js and book.js load; the public build ships these plus assets/ and fonts/.
 STUDIES are local design specimens and comparison pages: copied when present, never synced to the public repository.
 """
 from pathlib import Path
 import shutil
 
 HERE = Path(__file__).resolve().parent
-PRODUCTION = ("index.html", "archive-fonts.css", "archive.css", "app.js", "archive.js", "prototype.js", "baita-icons.js", "search-worker.js",
-              "institutions.js", "institutions.css", "book.js", "book.css", "book-pages.js", "book-pages.css",
-              "book-hand.css", "book-note.css", "book-plan.json")
+PRODUCTION = ("index.html", "archive-fonts.css", "portal.css", "portal.js", "portal-pages.js", "search-worker.js",
+              "book.js", "book.css", "book-pages.js", "book-pages.css", "book-hand.css", "book-note.css", "book-plan.json")
 STUDIES = ("styles.css", "favicon.svg", "design-system.css", "silver-weave.svg", "silver-weave-document.svg", "phase3-fonts.css",
            "type-specimen.html", "type-specimen.css", "type-specimen.js", "phase3.css", "phase3.js", "silver-folio.svg",
            "book-specimen.html", "fengtuzhi-specimen.html", "fengtuzhi-layout.html", "fengtuzhi-layout.js",
-           "fengtuzhi-type.html", "fengtuzhi-type.js", "fengtuzhi-cover.html", "font-check.html", "font-check.js")
+           "fengtuzhi-type.html", "fengtuzhi-type.js", "fengtuzhi-cover.html", "font-check.html", "font-check.js",
+           "archive.css")  # archive.css: the pre-2026-10 shell's styles, still used by fengtuzhi-cover.html and font-check.html
 
 
 def sync_frontend():

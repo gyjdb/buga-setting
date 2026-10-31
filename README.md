@@ -14,11 +14,11 @@
 
 - **第一次来**：先读[《银色联盟风土志》](https://gyjdb.github.io/buga-setting/#/guide)对布加有个整体印象，再从首页的《银色联盟宪章》《白塔章程》或魔法体系进入。
 - **查一个概念**：使用全站搜索，或在主题、机构总目中缩小范围；结果支持状态筛选、排序和匹配片段。
-- **读一份文献**：目录定位章节，资料区查看版本、适用限制、来源和原件下载。
+- **读一份文献**：卷首的著录卡列出状态、版本、适用依据与原件下载，目录定位章节；条文旁标出逐版改动、相关主题与提及的机构，文中的《书名》和“第N条”悬停即看原文，文末著录列来源与 SHA-256。
 - **比较新旧**：通过“版本与关系”查看明确记录的现行正文、历史候选及修订记录。
 - **了解形成过程**：查看作者依据、提案、未决事项、审计与测试。未决内容不会被界面展示自动变成已确认设定；已被采纳或取代的提案与早期输入稿标为参考或旧版，并注明去向。
 
-![正文阅读与页内目录](docs/images/final-reader-1280.jpg)
+![《银色联盟宪章》文献页：目录与著录卡](docs/images/final-reader-1280.jpg)
 
 ## 馆藏读物：《银色联盟风土志》
 
@@ -30,7 +30,7 @@
   - **书页版**是插图本：按 210 × 299.5 mm 的实体书页和 10pt 正文排版，章首图、插图、批注、资料卡与图注都有固定位置，整页随窗口缩放。想看清细节可以放大：顶栏按钮、`+` `−` `0` 键、Ctrl + 滚轮或双击书页，放大后拖动书页平移。
   - **文字版**是手机和小窗口的默认：正文 15px，按窗口重新分页，插图和批注插在对应段落之后。
 - 宽屏对开、窄屏单页；用书页两侧的箭头、← →、PageUp / PageDown 或触屏横滑翻页。阅读位置按段落保存在本机浏览器，两种显示共用。
-- 顶栏“来源与编校”列出当前章节所据的来源；目录底部的“完整正文与著录”显示不分页的全文与文献资料。
+- 顶栏“来源与编校”列出当前章节所据的来源；目录底部的“完整正文与著录”显示不分页的全文与文献资料。阅读时站内导航收进顶栏左端的按钮。
 
 **事实边界。** 书中所述制度以现行法典为准：关于布加的事实逐条出自现行文献、作者依据与作者答复等已确认材料，逐章来源登记在[编者材料](organized_project/07_WORLD_GUIDE/银色联盟风土志_编者材料.md)第二节。叙述者的见闻与判断、图拉曼的评价与玩笑是书里的声音，不是新增设定，也不作为其他文献的依据。正文、序与编者材料在档案馆中均为参考 `REFERENCE`。
 
@@ -84,6 +84,7 @@ node tools/library_portal/test_search.cjs
 node tools/library_portal/test_frontend.cjs
 python -m unittest discover -s tools/library_portal -p test_institutions.py
 node tools/library_portal/test_institutions.cjs
+node tools/library_portal/test_institution_detail.cjs
 ```
 
 构建只写入 `site/library_portal/`，不编辑 `organized_project/`。检查覆盖原件哈希、现行清单、版本配对、索引完整性、内部链接、正文安全渲染和搜索行为；不代替世界观内容的人工审查。
@@ -107,6 +108,7 @@ organized_project/          # 公开的设定、作者依据、候选、旧版�
 archive/                    # 原根目录早期文件、历史 HTML 展示及迁移索引
 tools/library_portal/       # 只读构建器、校验与搜索测试
   web/                     # 正式前端、场景、定稿 SVG 图标与字体许可
+    index.html, portal*.*  # 档案馆外壳：首页、文献页、各总目与检索
     book*.js, book*.css    # 风土志阅读器：书页版与文字版的排版、手写与注释字体切片
     book-plan.json         # 风土志插图、批注与资料卡的版面位置
     assets/plates/         # 风土志插图（WebP）及 manifest.json
@@ -124,16 +126,17 @@ site/library_portal/       # 本地生成结果，不提交到 Git
 
 ## 视觉、字体与许可
 
-页面使用石构藏书空间、深色装帧与哑银的视觉方向。场景图与风土志插图是 AI 辅助创作的概念演绎，不证明世界内存在对应建筑、徽章或历史事件；没有搬用参考网站的角色、标志或场景。图标采用作者提供的定稿 B 组馆标和 v3 主题／导航 SVG。
+页面默认是“石室”暗色：石构藏书空间、深色装帧与哑银，烛光色只作焦点与改动的提示；顶栏“白昼”换成纸本阅读模式。场景图与风土志插图是 AI 辅助创作的概念演绎，不证明世界内存在对应建筑、徽章或历史事件；没有搬用参考网站的角色、标志或场景。馆标采用作者提供的定稿 B 组 SVG。
 
 | 角色 | 字体与真实字重 |
 | --- | --- |
-| 中文馆名、文献题名 | 思源宋体 SC（Noto Serif SC），900 |
+| 中文馆名、文献题名 | 思源宋体 SC（Noto Serif SC），700 |
 | 中文长篇正文 | 思源宋体 SC（Noto Serif SC），400 |
-| 导航、按钮、目录、资料字段 | 思源黑体 SC（Noto Sans SC），400 / 500 |
-| 英文展示 / 阅读 | Source Serif 4，600 / 400 |
+| 导航、按钮、目录、资料字段 | 思源黑体 SC（Noto Sans SC），400 / 500 / 600 |
+| 拉丁文副题与数字 | Cormorant Garamond，500 / 600，副题用斜体 |
+| 馆藏章上的字 | Jost，600 |
 
-《银色联盟风土志》的正文与题记同样是思源宋体，章名、小标题与标签是思源黑体；另外四款字体只用在这本书里：
+《银色联盟风土志》的正文与题记同样是思源宋体，章名、小标题与标签是思源黑体；书里还用到下面几款字体，其中 Cormorant Garamond 与 Jost 也用在档案馆的拉丁文副题、数字和馆藏章上：
 
 | 角色 | 字体 |
 | --- | --- |
@@ -143,7 +146,7 @@ site/library_portal/       # 本地生成结果，不提交到 Git
 
 字体来源、固定版本与哈希见 [SOURCES.json](tools/library_portal/web/fonts/SOURCES.json)。中文字体使用真实可变字重，禁用伪粗体。思源宋体、思源黑体用的是 Google 版（Noto Serif SC / Noto Sans SC），与龙藏体、霞鹜文楷一样按 Unicode 范围切片，浏览器只下载页面用到的部分；两个家族另有一个从原字体文件切出的标点片（`tools/library_portal/web/assets/fonts/`），引号和句读在同一个文件里，相邻标点照常挤压。
 
-项目代码、原创界面与维护者有权授权的原创材料采用 **[MIT License](LICENSE)**。思源宋体（Noto Serif SC）、思源黑体（Noto Sans SC）、Source Serif 4，以及风土志用的 Cormorant Garamond、Jost、龙藏体与霞鹜文楷屏幕阅读版保留 **SIL Open Font License 1.1**，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+项目代码、原创界面与维护者有权授权的原创材料采用 **[MIT License](LICENSE)**。思源宋体（Noto Serif SC）、思源黑体（Noto Sans SC），以及风土志与档案馆拉丁文用的 Cormorant Garamond、Jost、龙藏体与霞鹜文楷屏幕阅读版保留 **SIL Open Font License 1.1**，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 《琥珀之剑》及其原作名称、人物、组织、术语和世界观元素的权利仍归原作者或相应权利人；MIT 不将这些第三方内容重新授权。本项目供非官方整理、交流与创作讨论使用。
 

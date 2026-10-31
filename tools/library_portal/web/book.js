@@ -178,8 +178,8 @@ function bookEndpaperHTML() {
 
 // A reading location is a source block + UTF-16 offset, independent of page size.
 const BOOK_POSITION_KEY = "buga.fengtuzhi.position.v2";
-// Desktop reader keeps the archive sidebar docked; readers may collapse it (open/closed). Until they
-// choose, book mode starts with it collapsed and text mode with it open (bookNavDefault).
+// The pre-2026-10 shell docked the archive sidebar beside the reader (collapsed in book mode, open in
+// text mode, readers could toggle it). The current shell has no sidebar, so bookNavDefault does nothing there.
 const BOOK_NAV_KEY = "buga.fengtuzhi.nav";
 // Supplied Terra reference pages are approximately 1380 x 1968; no physical trim size is inferred.
 const BOOK_PAPER_RATIO = 1380 / 1968;
@@ -212,6 +212,7 @@ function bookToggleNav() {
 // 读者没有自己收起或展开过侧栏时，书页版默认收起（书页能放大一些），文字版默认展开。
 // 阅读器自己收展时不播过渡，台面马上是新的尺寸，可以接着量。返回侧栏是否因此变了。
 function bookNavDefault(fixed) {
+  if (!document.querySelector("#sidebar")) return false;
   const chosen = bookNavChoice || bookStored(BOOK_NAV_KEY), state = chosen === "open" || chosen === "closed" ? chosen : fixed ? "closed" : "open";
   if (document.body.dataset.bookNav === state) return false;
   const moving = [document.querySelector("#sidebar"), document.querySelector(".workspace")];
@@ -370,7 +371,7 @@ async function bookDetail(doc, params, serial) {
   const sections = bookSections(chapters, doc, { plan, plates, preface }), saved = bookPosition();
   const controller = new AbortController(), { signal } = controller;
   archiveObserver = controller;
-  document.title = BOOK_TITLE + " / " + index.title;
+  document.title = BOOK_TITLE + " · " + index.title;
   document.body.dataset.bookReader = "true";
   // 用书页版还是文字版要等量过台面才知道；先照读者存下的，没有就展开，台面搭好后、字体载入前由 paginate("nav") 定下。
   bookNavDefault(false);
@@ -793,7 +794,7 @@ async function bookDetail(doc, params, serial) {
     show(locate(position), { exact: position });
     if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
     if (matchMedia("(max-width:780px)").matches) {
-      document.querySelector("#sidebar").classList.remove("open");
+      document.querySelector("#sidebar")?.classList.remove("open");
       archiveNavSync();
     }
     stage.focus({ preventScroll: true });

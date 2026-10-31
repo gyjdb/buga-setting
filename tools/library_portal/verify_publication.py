@@ -15,13 +15,14 @@ def verify():
     actual = {p.relative_to(SOURCE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
               for p in SOURCE.rglob("*") if p.is_file()}
     assert actual == manifest, "Public source snapshot differs from registered hashes"
-    for name, spec in json.loads((SITE / "fonts/SOURCES.json").read_text(encoding="utf-8")).items():
+    fonts = json.loads((SITE / "fonts/SOURCES.json").read_text(encoding="utf-8"))
+    for name, spec in fonts.items():
         assert hashlib.sha256((SITE / "fonts" / name).read_bytes()).hexdigest() == spec["sha256"], name
         assert (SITE / "fonts" / spec["license"]).is_file(), name
     forbidden = {".git", ".agents", ".codex", ".impeccable", "node_modules", ".deps", "stone-study", "stone-edition"}
     for p in SITE.rglob("*"):
         assert not forbidden.intersection(p.relative_to(SITE).parts), p
-    for name in ("index.html", "archive.css"):
+    for name in ("index.html", "portal.css"):
         text = (SITE / name).read_text(encoding="utf-8")
         for match in re.finditer(r'''(?:src|href)=["']([^"']+)["']|url\(["']?([^)'" ]+)''', text):
             link = next(g for g in match.groups() if g is not None)
@@ -40,7 +41,7 @@ def verify():
     original = ET.parse(SITE / "assets/icons-v3/emblem-b-small.svg")
     favicon = ET.parse(SITE / "assets/favicon.svg")
     assert [p.attrib["d"] for p in original.findall(".//svg:path", svg_ns)] == [p.attrib["d"] for p in favicon.findall(".//svg:path", svg_ns)], "Approved emblem geometry changed"
-    print(f"PASS: {len(manifest)} public source hashes, 4 font hashes, licenses and project-path assets")
+    print(f"PASS: {len(manifest)} public source hashes, {len(fonts)} font hashes, licenses and project-path assets")
     print(f"PASS: {len(archive['files'])} archived/deduplicated originals and unchanged favicon emblem paths")
 
 

@@ -5,8 +5,7 @@
 - 思源宋体 SC 的 Google 版 Noto Serif SC 2.003（Fontsource variable 5.3.0，按 Unicode 范围切片）：SIL OFL 1.1，见 `tools/library_portal/web/fonts/NotoSerifSC-LICENSE.txt`。
 - 思源黑体 SC 的 Google 版 Noto Sans SC 2.004（Fontsource variable 5.3.0，按 Unicode 范围切片）：SIL OFL 1.1，见 `tools/library_portal/web/fonts/NotoSansSC-LICENSE.txt`。
   - `tools/library_portal/web/assets/fonts/NotoSerifSC-punct.woff2`、`NotoSansSC-punct.woff2`：从 google/fonts（提交 8b0a1d0）的 Noto Serif SC / Noto Sans SC 可变字体切出的标点子集，许可同上。
-- Adobe Source Serif 4 4.005：SIL OFL 1.1，见 `tools/library_portal/web/fonts/SourceSerif4-LICENSE.txt`。
-- 《银色联盟风土志》书页用字体，均为 SIL OFL 1.1，许可证在同一目录：
+- 《银色联盟风土志》书页用字体（Cormorant Garamond 与 Jost 也用于档案馆的拉丁文副题、数字与馆藏章），均为 SIL OFL 1.1，许可证在同一目录：
   - Cormorant Garamond（Fontsource variable 5.3.0）：`CormorantGaramond-LICENSE.txt`。
   - Jost（Fontsource variable 5.3.0）：`Jost-LICENSE.txt`。
   - 龙藏体 Long Cang（Fontsource 5.3.0，按 Unicode 范围切片）：`LongCang-LICENSE.txt`。

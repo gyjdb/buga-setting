@@ -6,8 +6,8 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '../..');
 const metadata = JSON.parse(fs.readFileSync(path.join(root, 'site/library_portal/data/metadata.json'), 'utf8'));
 const scope = vm.createContext({});
-vm.runInContext(fs.readFileSync(path.join(__dirname, 'web/prototype.js'), 'utf8'), scope);
-const summarize = rows => JSON.parse(JSON.stringify(scope.conflictStatusSummary(rows)));
+vm.runInContext(fs.readFileSync(path.join(__dirname, 'web/portal-pages.js'), 'utf8'), scope);
+const summarize = rows => JSON.parse(JSON.stringify(vm.runInContext('conflictStatusSummary', scope)(rows)));
 const original = JSON.stringify(metadata.audit);
 assert.deepEqual(summarize(metadata.audit.conflictRows), {
   RESOLVED_IN_CURRENT_CANON: 18,
