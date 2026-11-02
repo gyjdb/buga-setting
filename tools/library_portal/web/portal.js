@@ -20,8 +20,8 @@ const COMPOSITION = ["CURRENT_CANON", "AUTHOR_CANON", "DELEGATED_DESIGN", "PROPO
 // 现行法典依《银色联盟宪章》第二条的规范层级编排。
 const CANON_LEVELS = [
   ["宪章", [["宪章", ["K12"]]]],
-  ["法律", [["基本法", ["K20", "K18"]], ["组织法", ["K14", "K25", "K26"]], ["章程", ["K28", "K29", "K27", "K24"]]]],
-  ["实施规范", [["组织架构", ["K10", "K19", "K23", "K11"]], ["规程与标准", ["K15", "K21", "K13"]]]],
+  ["法律", [["基本法", ["K20", "K18"]], ["组织法", ["K14", "K25", "K26"]], ["专项法律", ["K34", "K39", "K35", "K48", "K38", "K40", "K41", "K45", "K52", "K42", "K44", "K47", "K33", "K31"]], ["章程", ["K28", "K29", "K27", "K43", "K24"]]]],
+  ["实施规范", [["组织架构", ["K10", "K49", "K50", "K51", "K19", "K23", "K11", "K32"]], ["规程与标准", ["K15", "K21", "K13", "K36", "K30", "K37", "K46"]], ["名录", ["K53"]]]],
 ];
 // 几部主要法典的一句导读。
 const GUIDES = {
@@ -43,7 +43,10 @@ const TOPIC_WORDS = {
 const GUIDE_PATH = "07_WORLD_GUIDE/银色联盟风土志.md";
 const CN_DIGITS = "一二三四五六七八九十百零〇两";
 const ARTICLE = new RegExp(`^第[${CN_DIGITS}]+条(?:之[一二三四五六七八九十]+)?`);
+const SERIES = /^(?:第(?:[0-9一二三四五六七八九十百]+|（[一二三四五六七八九十]+）)[款项目])*(?:、|和|与|及|以及|或者|至|到)$/;
 const XREF = new RegExp(`《([^《》\\n]{1,40})》(第[${CN_DIGITS}]+条(?:之[一二三四五六七八九十]+)?)?|第[${CN_DIGITS}]+条(?:之[一二三四五六七八九十]+)?`, "g");
+// 法规版式不设条标题：条号与第一款同段，后接全角空格。
+const ARTICLE_LEAD = new RegExp(`^(${ARTICLE.source.slice(1)})　`);
 
 let index, docs, byId, relationships, registry, plan;
 let serial = 0;
@@ -317,9 +320,10 @@ function rail() {
 /* ---------- 文献页 ---------- */
 
 // 把正文切成编、章、条和普通段落；条文按“第N条”识别，层级不固定。
+// 有条标题的，条号在标题里；法规版式的，条号在段首（lead），遇到下一个标题即止。
 function structure(html) {
   const body = new DOMParser().parseFromString(html, "text/html").body;
-  const blocks = [];
+  const blocks = [], ids = new Set([...body.querySelectorAll("[id]")].map((n) => n.id));
   let article = null, flow = null;
   for (const el of [...body.children]) {
     const tag = el.tagName;
@@ -342,6 +346,16 @@ function structure(html) {
       else { flow = { type: "flow", nodes: [el] }; blocks.push(flow); }
       continue;
     }
+    const lead = tag === "P" && el.textContent.match(ARTICLE_LEAD);
+    if (lead) {
+      let id = "section-" + lead[1];
+      for (let n = 1; ids.has(id); n++) id = `section-${lead[1]}-${n}`;
+      ids.add(id);
+      article = { type: "article", key: lead[1], title: "", id, level: 7, lead: true, nodes: [leadNumber(el, lead)] };
+      blocks.push(article);
+      flow = null;
+      continue;
+    }
     if (article) article.nodes.push(el);
     else {
       if (!flow) { flow = { type: "flow", nodes: [] }; blocks.push(flow); }
@@ -349,6 +363,17 @@ function structure(html) {
     }
   }
   return blocks;
+}
+// 段首条号包进 .rs-art-no；条号被其他标记拆开时原样保留。
+function leadNumber(p, m) {
+  const t = p.firstChild;
+  if (t?.nodeType !== 3 || !t.data.startsWith(m[0])) return p;
+  t.data = t.data.slice(m[0].length);
+  const no = p.ownerDocument.createElement("span");
+  no.className = "rs-art-no";
+  no.textContent = m[1];
+  p.prepend(no, "　");
+  return p;
 }
 function blockText(node) {
   if (node.tagName === "OL" || node.tagName === "UL")
@@ -358,7 +383,10 @@ function blockText(node) {
 }
 function articleMap(html) {
   const map = new Map();
-  for (const b of structure(html)) if (b.type === "article" && !map.has(b.key)) map.set(b.key, { key: b.key, title: b.title, text: b.nodes.map(blockText).filter(Boolean).join("\n") });
+  for (const b of structure(html)) if (b.type === "article" && !map.has(b.key)) {
+    const text = b.nodes.map(blockText).filter(Boolean).join("\n");
+    map.set(b.key, { key: b.key, title: b.title, text: b.lead ? text.slice(b.key.length).trim() : text });
+  }
   return map;
 }
 const signature = (a) => (a.title + a.text).replace(/\s+/g, "");
@@ -551,9 +579,11 @@ async function docPage(ref, params, my) {
     const gutter = `${states ? vlineHTML(b.key, states, versions, here) + `<p class="rs-vnote">${vnoteHTML(states, versions, here)}</p>` : ""}
       ${topics.length ? `<p class="rs-tags"><em>也涉及</em>${topics.map((t) => `<a href="${browseHref({ topic: t })}">${esc(t)}</a>`).join("")}</p>` : ""}
       ${orgs.length ? `<p class="rs-tags"><em>提及</em>${orgs.map(({ r, name, evidence }) => `<a class="${evidence ? "is-evidence" : ""}" href="${orgHref(r.id)}" title="${esc(r.name)}：${esc(r.summary || "")}${evidence ? (evidence === "establishes" ? "（本条设立）" : "（本条规范）") : ""}">${esc(name)}</a>`).join("")}</p>` : ""}`;
-    return `<section class="rs-art${isRevised ? " is-revised" : ""}" id="${esc(b.id)}" data-key="${esc(b.key)}">
+    const mark = isRevised ? `<span class="rs-stamp is-revision">${history.get(b.key)[here].state === "new" ? "本版新增" : "本版改动"}</span>` : "";
+    const head = b.lead ? (mark ? `<p class="rs-art-mark">${mark}</p>` : "") : `<h3><span class="rs-art-no">${esc(b.key)}</span>${esc(b.title)}${mark}</h3>`;
+    return `<section class="rs-art${b.lead ? " is-lead" : ""}${isRevised ? " is-revised" : ""}" id="${esc(b.id)}" data-key="${esc(b.key)}">
       <aside class="rs-art-gutter">${gutter}</aside>
-      <div class="rs-art-body"><h3><span class="rs-art-no">${esc(b.key)}</span>${esc(b.title)}${isRevised ? `<span class="rs-stamp is-revision">${history.get(b.key)[here].state === "new" ? "本版新增" : "本版改动"}</span>` : ""}</h3>${b.nodes.map((n) => n.outerHTML).join("")}</div>
+      <div class="rs-art-body">${head}${b.nodes.map((n) => n.outerHTML).join("")}</div>
     </section>`;
   }).join("");
 
@@ -602,7 +632,7 @@ function tocHTML(blocks, revised, doc) {
       open = true;
     } else if (b.type === "chapter" || b.type === "article") {
       if (!open) { html += `<li class="rs-toc-part"><ol>`; open = true; }
-      html += `<li class="${b.type === "chapter" ? "rs-toc-chapter" : ""}">${link(b, b.type === "article" ? `${b.key} ${b.title}` : b.text, revised.has(b.key) ? "is-revised" : "")}</li>`;
+      html += `<li class="${b.type === "chapter" ? "rs-toc-chapter" : ""}">${link(b, b.type === "article" ? [b.key, b.title].filter(Boolean).join(" ") : b.text, revised.has(b.key) ? "is-revised" : "")}</li>`;
     }
   }
   return open ? html + "</ol></li>" : html;
@@ -627,16 +657,18 @@ function colophon(doc) {
 function linkRefs(root, doc, ownArticles) {
   if (!root) return;
   const titles = new Map(docs.filter((d) => d.status === "CURRENT_CANON").map((d) => [plain(d.title), d]));
+  // 法律标题带国名（D93）；风土志与旧稿里的简称、“联盟××法”的旧写法照样链到现行正文。
+  for (const [t, d] of [...titles]) if (t.startsWith("银色联盟")) for (const alias of [t.slice(4), "联盟" + t.slice(4)]) if (!titles.has(alias)) titles.set(alias, d);
   const charter = canonByAlias().get("K12");
   if (charter) titles.set("宪章", charter); // 法律正文里《宪章》即联盟宪章
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode: (n) => (n.parentElement.closest("h1,h2,h3,h4,h5,h6,a,code,pre,.rs-art-gutter") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+    acceptNode: (n) => (n.parentElement.closest("h1,h2,h3,h4,h5,h6,a,code,pre,.rs-art-gutter,.rs-art-no") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
   });
   const nodes = [];
   while (walker.nextNode()) nodes.push(walker.currentNode);
   for (const node of nodes) {
     const text = node.nodeValue;
-    let match, last = 0, frag = null;
+    let match, last = 0, frag = null, prev = null;
     XREF.lastIndex = 0;
     while ((match = XREF.exec(text))) {
       let target = null, art = null;
@@ -645,10 +677,21 @@ function linkRefs(root, doc, ownArticles) {
         art = match[2] || null;
       } else {
         art = match[0];
-        target = text.slice(Math.max(0, match.index - 2), match.index) === "宪章" && doc.alias !== "K12" ? charter : doc;
-        if (target?.id === doc.id && !ownArticles.has(art)) target = null;
+        const gap = prev ? text.slice(prev.end, match.index) : null;
+        // “《某法》第二条、第四条”“宪章第八条第2款至第十条”：接在顿号、和、至之后的条号仍属前一部法。
+        if (prev?.art && SERIES.test(gap)) target = prev.target;
+        else if (text.slice(Math.max(0, match.index - 2), match.index) === "行政") {
+          // “《白银执政院组织架构》行政第二条”是该文行政编的条文，只链到该文。
+          target = prev && !prev.art && gap === "行政" ? prev.target : null;
+          art = null;
+        } else {
+          target = text.slice(Math.max(0, match.index - 2), match.index) === "宪章" && doc.alias !== "K12" ? charter : doc;
+          if (target?.id === doc.id && !ownArticles.has(art)) target = null;
+        }
       }
+      prev = null;
       if (!target || (target.id === doc.id && !art)) continue;
+      prev = { target, art, end: match.index + match[0].length };
       const a = document.createElement("a");
       a.className = "rs-xref" + (target.id === doc.id ? " is-local" : "");
       a.href = docHref(target.id, art ? { art } : null);

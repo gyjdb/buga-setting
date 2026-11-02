@@ -1,3 +1,203 @@
+# 项目状态：第二十九版正文
+
+updated: 2026-11-01
+status: CURRENT_CANON_V29
+
+依 D96，作者对发布前审读的十六个问题按建议定：13 份正文的有关规则修订 16 处，各升一个修订号，风土志改一字；现行正文仍为 41 份。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十八版正文
+
+updated: 2026-11-01
+status: CURRENT_CANON_V28
+
+依 D95，发布前用 API 审读全部现行正文与风土志：40 份正文的文字修正 256 处，各升一个修订号，条文实质不变；现行正文仍为 41 份。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十七版正文
+
+updated: 2026-11-01
+status: CURRENT_CANON_V27
+
+依 D94 作者决定，《银色联盟高等院校法》（K52）与首版《联盟高等院校名录》（K53）升为现行，连带修改教育法、教育典籍部组织架构与白银学会章程；现行正文增至 41 份。名录中三座城邦与十所私立文理学院的名字依作者意见改定，由编者拟定，作者已认可。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十六版正文
+
+updated: 2026-11-01
+status: CURRENT_CANON_V26
+
+依 D93 作者决定，十七部法律的标题加“银色联盟”，现行正文的引用改为全称；39 份正文各升一个修订号，现行正文仍为 39 份。下一步起草《银色联盟高等院校法》与首版《联盟高等院校名录》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十五版正文
+
+updated: 2026-11-01
+status: CURRENT_CANON_V25
+
+依 D92 作者决定，外务部、天空航务部、节点结界工程部、教育典籍部四部组织架构照三定条文体例重写，并照真实法规的版式定稿：K49、K50 为 3.0.0，K51、K32 为 2.0.0。现行正文仍为 39 份。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十四版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V24
+
+依 D91 作者决定，《天空航务部组织架构》照新体例重写为 2.0.0（K50），现行正文仍为 39 份。外务部、天空航务部、节点结界工程部三部组织架构至此都按 D88、D89 所定的新体例写成。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十三版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V23
+
+依 D90 作者决定，《外务部组织架构》照新体例重写为 2.0.0（K49），现行正文仍为 39 份。这是 D88、D89 所定新体例下重写的第一部旧稿；下一步照同一体例重写《天空航务部组织架构》（K50）。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十二版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V22
+
+依 D89 作者决定，《节点结界工程部组织架构》升为现行（K51，1.0.0），现行正文增至 39 份。这是 D75 以后 Claude 起草、作者认可的第十四部，也是第一部按新体例（照《内务治安部组织架构》）写成的组织架构；9 月 25 日清单上三个部的组织架构至此都已制定，K49、K50 随后照新体例重写。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十一版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V21
+
+依 D88 作者决定，《天空航务部组织架构》升为现行（K50，1.0.0），现行正文增至 38 份。这是 D75 以后 Claude 起草、作者认可的第十三部。作者同时要求三个部的组织架构参考国务院各部门重拟：节点结界工程部直接按《内务治安部组织架构》的体例起草，K49、K50 随后重写。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第二十版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V20
+
+依 D87 作者决定，《外务部组织架构》升为现行（K49，1.0.0），现行正文增至 37 份。这是 D75 以后 Claude 起草、作者认可的第十二部，也是 9 月 25 日清单上三个部的组织架构中的第一部；下一部是《天空航务部组织架构》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十九版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V19
+
+依 D86 作者决定，《债务执行与工坊清理法》升为现行（K48，1.0.0），现行正文增至 36 份。这是 D75 以后 Claude 起草、作者认可的第十一部；至此，现行正文点名而尚未制定的法律都已制定。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十八版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V18
+
+依 D85 作者决定，《非货币票据与互助金机构法》升为现行（K47，1.0.0），现行正文增至 35 份。这是 D75 以后 Claude 起草、作者认可的第十部；下一部是现行正文点名的最后一部《债务执行与工坊清理法》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十七版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V17
+
+依 D84 作者决定，《工坊雇佣与学徒契约规程》升为现行（K46，1.0.0），现行正文增至 34 份。这是 D75 以后 Claude 起草、作者认可的第九部；下一部是《非货币票据与互助金机构法》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十六版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V16
+
+依 D83 作者决定，《公共教育与典籍流通法》升为现行（K45，1.0.0），现行正文增至 33 份。这是 D75 以后 Claude 起草、作者认可的第八部；下一部是《工坊雇佣与学徒契约规程》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十五版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V15
+
+依 D82 作者决定，《职业执业资格法》升为现行（K44，1.0.0），现行正文增至 32 份。这是 D75 以后 Claude 起草、作者认可的第七部；下一部是《公共教育与典籍流通法》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十四版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V14
+
+依 D81 作者决定，《彩虹之焦术士联合会章程》升为现行（K43，1.0.0），现行正文增至 31 份。这是 D75 以后 Claude 起草、作者认可的第六部；下一部是《职业执业资格法》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十三版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V13
+
+依 D80 作者决定，《联盟财政与三本账法》升为现行（K42，1.0.0），现行正文增至 30 份；K14《白银议会组织法》出 3.6.7 版，第二十五条第2项补跨账门槛。这是 D75 以后 Claude 起草、作者认可的第五部法律，也是第八版以来第一次修订原有正文。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十二版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V12
+
+依 D79 作者决定，《学术研究与特许知识保管法》升为现行（K41，1.0.0），现行正文增至 29 份。这是 D75 以后 Claude 起草、作者认可的第四部法律；下一部是《联盟财政与三本账法》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十一版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V11
+
+依 D78 作者决定，《联盟遗产法》升为现行（K40，1.0.0），现行正文增至 28 份。这是 D75 以后 Claude 起草、作者认可的第三部法律；下一部是《学术研究与特许知识保管法》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第十版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V10
+
+依 D77 作者决定，《联盟成员城邦通例》升为现行（K39，1.0.0），现行正文增至 27 份。这是 D75 以后 Claude 起草、作者认可的第二部法律；下一部是《联盟遗产法》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第九版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V9
+
+依 D76 作者决定，《联盟罪名与刑罚法》升为现行（K38，1.0.0），现行正文增至 26 份。这是 D75 以后 Claude 起草、作者认可的第一部法律；下一部是《联盟成员城邦通例》。现行路径见 [CANON_INDEX](CANON_INDEX.md)，仍待办的事见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
+# 项目状态：第八版正文
+
+updated: 2026-10-31
+status: CURRENT_CANON_V8
+
+依 D75 作者决定，八份主题设定稿的法规升为现行（K30–K37，各 1.0.0）：《天空航道与空港规程》《供能网络接入与服务法》《教育典籍部组织架构》《联盟税赋与共同义务份额法》《民籍与誓籍登记法》《契约与赔补法》《出入境与接触等级规程》《浮空战舰建造、验收与入列规程》。现行正文增至 25 份，原有 17 份未改动。现行路径见 [CANON_INDEX](CANON_INDEX.md)。
+
+八份设定稿改列参考，生活材料与编者说明保留。第 7 份（下）的生活材料交 Gemini 重写；现行正文已点名、尚未制定的法律与第三批命名小项由 Claude 起草，见 [OPEN_ISSUES](OPEN_ISSUES.md) 顶部。
+
+以下为此前各阶段的状态记录。
+
 # 项目状态：第七版正文
 
 updated: 2026-10-19

@@ -1,3 +1,91 @@
+# 最新阅读入口：第二十九版正文（D96）
+
+[现行正文索引](CANON_INDEX.md) · [D96 作者决定](AUTHOR_DECISIONS_2026-11-01_D96.md) · [第二十九版修订记录](../90_AUDIT/revision_2026-10-31/V29_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十八版正文（D95）
+
+[现行正文索引](CANON_INDEX.md) · [D95 作者决定](AUTHOR_DECISIONS_2026-11-01_D95.md) · [第二十八版修订记录](../90_AUDIT/revision_2026-10-31/V28_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十七版正文（D94）
+
+[现行正文索引](CANON_INDEX.md) · [D94 作者决定](AUTHOR_DECISIONS_2026-11-01_D94.md) · [第二十七版修订记录](../90_AUDIT/revision_2026-10-31/V27_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十六版正文（D93）
+
+[现行正文索引](CANON_INDEX.md) · [D93 作者决定](AUTHOR_DECISIONS_2026-11-01_D93.md) · [第二十六版修订记录](../90_AUDIT/revision_2026-10-31/V26_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十五版正文（D92）
+
+[现行正文索引](CANON_INDEX.md) · [D92 作者决定](AUTHOR_DECISIONS_2026-11-01_D92.md) · [第二十五版修订记录](../90_AUDIT/revision_2026-10-31/V25_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十四版正文（D91）
+
+[现行正文索引](CANON_INDEX.md) · [D91 作者决定](AUTHOR_DECISIONS_2026-10-31_D91.md) · [第二十四版修订记录](../90_AUDIT/revision_2026-10-31/V24_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十三版正文（D90）
+
+[现行正文索引](CANON_INDEX.md) · [D90 作者决定](AUTHOR_DECISIONS_2026-10-31_D90.md) · [第二十三版修订记录](../90_AUDIT/revision_2026-10-31/V23_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十二版正文（D89）
+
+[现行正文索引](CANON_INDEX.md) · [D89 作者决定](AUTHOR_DECISIONS_2026-10-31_D89.md) · [第二十二版修订记录](../90_AUDIT/revision_2026-10-31/V22_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十一版正文（D88）
+
+[现行正文索引](CANON_INDEX.md) · [D88 作者决定](AUTHOR_DECISIONS_2026-10-31_D88.md) · [第二十一版修订记录](../90_AUDIT/revision_2026-10-31/V21_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第二十版正文（D87）
+
+[现行正文索引](CANON_INDEX.md) · [D87 作者决定](AUTHOR_DECISIONS_2026-10-31_D87.md) · [第二十版修订记录](../90_AUDIT/revision_2026-10-31/V20_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十九版正文（D86）
+
+[现行正文索引](CANON_INDEX.md) · [D86 作者决定](AUTHOR_DECISIONS_2026-10-31_D86.md) · [第十九版修订记录](../90_AUDIT/revision_2026-10-31/V19_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十八版正文（D85）
+
+[现行正文索引](CANON_INDEX.md) · [D85 作者决定](AUTHOR_DECISIONS_2026-10-31_D85.md) · [第十八版修订记录](../90_AUDIT/revision_2026-10-31/V18_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十七版正文（D84）
+
+[现行正文索引](CANON_INDEX.md) · [D84 作者决定](AUTHOR_DECISIONS_2026-10-31_D84.md) · [第十七版修订记录](../90_AUDIT/revision_2026-10-31/V17_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十六版正文（D83）
+
+[现行正文索引](CANON_INDEX.md) · [D83 作者决定](AUTHOR_DECISIONS_2026-10-31_D83.md) · [第十六版修订记录](../90_AUDIT/revision_2026-10-31/V16_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十五版正文（D82）
+
+[现行正文索引](CANON_INDEX.md) · [D82 作者决定](AUTHOR_DECISIONS_2026-10-31_D82.md) · [第十五版修订记录](../90_AUDIT/revision_2026-10-31/V15_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十四版正文（D81）
+
+[现行正文索引](CANON_INDEX.md) · [D81 作者决定](AUTHOR_DECISIONS_2026-10-31_D81.md) · [第十四版修订记录](../90_AUDIT/revision_2026-10-31/V14_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十三版正文（D80）
+
+[现行正文索引](CANON_INDEX.md) · [D80 作者决定](AUTHOR_DECISIONS_2026-10-31_D80.md) · [第十三版修订记录](../90_AUDIT/revision_2026-10-31/V13_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十二版正文（D79）
+
+[现行正文索引](CANON_INDEX.md) · [D79 作者决定](AUTHOR_DECISIONS_2026-10-31_D79.md) · [第十二版修订记录](../90_AUDIT/revision_2026-10-31/V12_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十一版正文（D78）
+
+[现行正文索引](CANON_INDEX.md) · [D78 作者决定](AUTHOR_DECISIONS_2026-10-31_D78.md) · [第十一版修订记录](../90_AUDIT/revision_2026-10-31/V11_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第十版正文（D77）
+
+[现行正文索引](CANON_INDEX.md) · [D77 作者决定](AUTHOR_DECISIONS_2026-10-31_D77.md) · [第十版修订记录](../90_AUDIT/revision_2026-10-31/V10_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第九版正文（D76）
+
+[现行正文索引](CANON_INDEX.md) · [D76 作者决定](AUTHOR_DECISIONS_2026-10-31_D76.md) · [第九版修订记录](../90_AUDIT/revision_2026-10-31/V9_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第八版正文（D75）
+
+[现行正文索引](CANON_INDEX.md) · [D75 作者决定](AUTHOR_DECISIONS_2026-10-31_D75.md) · [第八版修订记录](../90_AUDIT/revision_2026-10-31/V8_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
 # 最新阅读入口：第七版正文（D74）
 
 [现行正文索引](CANON_INDEX.md) · [D74 作者决定](AUTHOR_DECISIONS_2026-10-19_D74.md) · [第七版修订记录](../90_AUDIT/revision_2026-10-19/V7_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)

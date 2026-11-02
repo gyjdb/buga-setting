@@ -310,6 +310,12 @@ main:focus { outline: none; }
 .rs-art-body h3 .rs-art-no { margin-right: .55em; color: var(--accent); }
 .rs-art-body h3 .rs-stamp { margin-left: 10px; font-size: 11px; height: 18px; }
 .rs-art:target .rs-art-body h3, .rs-art.is-flash .rs-art-body h3 { background: linear-gradient(transparent 60%, var(--candle-tint) 60%); }
+/* 法规版式：条号在段首，条与条之间只比段距稍宽 */
+.rs-art.is-lead { margin-top: 10px; }
+.rs-art.is-lead .rs-art-no { color: var(--accent); font-weight: 700; }
+.rs-art.is-lead .rs-art-mark { float: right; margin: 5px 0 0 12px; }
+.rs-art.is-lead .rs-art-mark .rs-stamp { font-size: 11px; height: 18px; }
+.rs-art.is-lead:target .rs-art-no, .rs-art.is-lead.is-flash .rs-art-no { background: linear-gradient(transparent 60%, var(--candle-tint) 60%); }
 .rs-vline { display: flex; align-items: center; gap: 0; }
 .rs-vline button, .rs-vline span { flex: none; width: 10px; height: 10px; padding: 0; }
 .rs-vline button { position: relative; border: 1px solid var(--hair-2); border-radius: 1px; background: var(--paper); cursor: pointer; }
@@ -335,6 +341,7 @@ main:focus { outline: none; }
 .rs-xref.is-local { text-decoration-style: dotted; }
 .rs-xref:hover { text-decoration-color: var(--accent); }
 .rs-doc.is-only-revised .rs-art:not(.is-revised) .rs-art-body > :not(h3) { display: none; }
+.rs-doc.is-only-revised .rs-art.is-lead:not(.is-revised) .rs-art-body > :first-child { display: block; }
 .rs-doc.is-only-revised .rs-art:not(.is-revised) { margin-top: 10px; opacity: .55; }
 .rs-doc.is-only-revised .rs-art:not(.is-revised) .rs-art-gutter > :not(.rs-vline) { display: none; }
 .rs-doc.is-only-revised .rs-flow { display: none; }

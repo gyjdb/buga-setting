@@ -55,9 +55,9 @@ def verify():
     for doc in docs:
         check("raw copy " + doc["id"], hashlib.sha256((OUTPUT / doc["rawUrl"]).read_bytes()).hexdigest() == doc["sha256"] == actual[doc["path"]])
     candidates = {d["id"] for d in docs if d["kind"] == "candidate"}
-    check("all candidate triplets covered", {v["candidate"] for v in data["versionSets"]} == candidates)
+    check("all candidate triplets covered", {v["candidate"] for v in data["versionSets"] if v["candidate"]} == candidates)
     for group in data["versionSets"]:
-        check("version triplet " + group["current"], by_id[group["current"]]["status"] == "CURRENT_CANON" and by_id[group["candidate"]]["status"] == "CANDIDATE" and by_id[group["changelog"]]["kind"] == "changelog")
+        check("version triplet " + group["current"], by_id[group["current"]]["status"] == "CURRENT_CANON" and (group["candidate"] is None or by_id[group["candidate"]]["status"] == "CANDIDATE") and by_id[group["changelog"]]["kind"] == "changelog")
     search = {}
     for shard in data["searchShards"]:
         for row in read_json(OUTPUT / shard):

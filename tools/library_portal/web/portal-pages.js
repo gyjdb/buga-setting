@@ -440,9 +440,9 @@ async function versionsPage(my) {
       <td class="rs-num rs-delta"><span class="rs-vnote">对照中…</span></td></tr>`;
   };
   main.innerHTML = `<div class="rs-page rs-versions">
-    ${pageHead("Editiones", [], "版本与关系", "列出 17 份现行正文的同文系版本、整编底稿和修订记录。版本按版本号排列，便于逐条对照；版本号本身不证明先后，内容不同的同号分支并列显示。")}
+    ${pageHead("Editiones", [], "版本与关系", `列出 ${canon.length} 份现行正文的同文系版本、整编底稿和修订记录。版本按版本号排列，便于逐条对照；版本号本身不证明先后，内容不同的同号分支并列显示。`)}
     <p class="rs-record-line rs-version-links"><span class="rs-k">登记依据　</span>${[["00_PROJECT/VERSION_LEDGER.md", "版本沿革登记"], ["00_PROJECT/CANDIDATE_CANON_INDEX.md", "原候选 Canon 索引"]].map(([path, label]) => { const d = docs.find((x) => x.path === path); return d ? `<a class="rs-link" href="${docHref(d.id)}">${label}</a>` : ""; }).join("")}<a class="rs-link" href="${browseHref({ status: "SUPERSEDED" })}">已替代正文 ${index.counts.SUPERSEDED || 0} 份</a></p>
-    <p class="rs-intro">整编底稿保留供追查来源，不是较新的待定版本。最右一栏把每份现行正文与前一个版本号逐条对照，数出改动、新增与删去的条文；点进正文可以看每一条的版本线。</p>
+    <p class="rs-intro">整编底稿保留供追查来源，不是较新的待定版本；第八版起新增的正文来自主题设定稿，没有整编底稿。最右一栏把每份现行正文与前一个版本号逐条对照，数出改动、新增与删去的条文；点进正文可以看每一条的版本线。</p>
     <table class="rs-register rs-version-table">
       <thead><tr><th>编号</th><th>名称</th><th>版本（按版本号）</th><th class="rs-opt">整编底稿</th><th class="rs-opt">末次修订</th><th>与前一版号对照</th></tr></thead>
       <tbody>${levels.map(([level, groups]) => groups.map(([group, list]) => `<tr class="rs-group"><td colspan="6">${esc(level)}${level === group ? "" : `<span>${esc(group)}</span>`}<small>${list.length}</small></td></tr>${list.map(row).join("")}`).join("")).join("")}</tbody>

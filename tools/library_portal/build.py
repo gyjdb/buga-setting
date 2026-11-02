@@ -190,7 +190,7 @@ def build():
             doc.update(status="CURRENT_CANON", statusBasis="CURRENT_CANON_MANIFEST.json（路径与SHA256核验）",
                        alias=entry["alias"], version="v" + entry["version"],
                        authority=current_manifest["approval_decision"],
-                       source=entry["previous_baseline"], date=current_manifest["approved_date"])
+                       source=entry.get("previous_baseline") or entry.get("source_draft"), date=current_manifest["approved_date"])
         elif collection == "01_CURRENT_CANON":
             doc.update(status="SUPERSEDED", statusBasis="不在当前清单中；保留的历史正文",
                        authority="历史正文；现行效力以CURRENT_CANON_MANIFEST为准")
@@ -288,15 +288,17 @@ def build():
             relations[member]["family"] = [v for v in members if v != member]
     # Keep the existing triplet shape, with the actual current body and latest log.
     version_sets = []
+    # Texts added from the eighth edition on have neither a D53 candidate nor a previous edition.
     for entry in current_manifest["files"]:
-        found = [by_path[entry[k]] for k in ("path", "approved_candidate", "changelog")]
-        group = {"current": found[0]["id"], "candidate": found[1]["id"], "changelog": found[2]["id"],
+        found = [by_path[entry[k]] if entry.get(k) else None for k in ("path", "approved_candidate", "changelog")]
+        group = {"current": found[0]["id"], "candidate": found[1] and found[1]["id"], "changelog": found[2]["id"],
                  "evidence": by_path["00_PROJECT/CURRENT_CANON_MANIFEST.json"]["id"]}
         version_sets.append(group)
+        found = [doc for doc in found if doc]
         for doc in found:
             relations[doc["id"]]["versionSet"] = group
         # Include the immediately previous edition in the same navigation family.
-        related = found + [by_path[entry["previous_baseline"]]]
+        related = found + ([by_path[entry["previous_baseline"]]] if entry.get("previous_baseline") else [])
         for doc in related:
             relations[doc["id"]]["family"] = sorted(set(relations[doc["id"]]["family"]) | {d["id"] for d in related if d["id"] != doc["id"]})
 
@@ -339,7 +341,11 @@ def build():
              "futureInterfaces": len(table_rows(issues_text, r"IF\d+")), "candidateFindings": table_rows(audit_text, r"F\d+"),
              "scenarios": scenarios, "scenarioRows": scenario_rows}
     # The current edition: the manifest's approval and its newest revision record (folders are dated).
-    latest_log = max(entry["changelog"] for entry in current_manifest["files"])
+    # Changelogs live in 90_AUDIT/revision_<date>/V<n>_REVISION_CHANGELOG.md; compare <n> as a number (V10 after V9).
+    def log_order(path):
+        m = re.search(r"revision_([0-9-]+)/V(\d+)_", path)
+        return (m.group(1), int(m.group(2))) if m else (path, 0)
+    latest_log = max((entry["changelog"] for entry in current_manifest["files"]), key=log_order)
     audit["latest"] = {"id": by_path.get(latest_log, {}).get("id"), "status": current_manifest.get("approval_decision", "未提供"),
                        "date": current_manifest.get("approved_date"), "count": len(current_manifest["files"]),
                        "manifest": by_path.get("00_PROJECT/CURRENT_CANON_MANIFEST.json", {}).get("id")}

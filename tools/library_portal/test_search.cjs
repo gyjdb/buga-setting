@@ -74,7 +74,7 @@ async function search(query, scope = "", documents = index.documents) {
   const regexp = await search("[.*+?");
   assert.ok(Array.isArray(regexp), "literal punctuation is safe");
   const current = index.documents.filter((d) => d.status === "CURRENT_CANON");
-  assert.equal(current.length, 17);
+  assert.equal(current.length, canonManifest.count);
   const cases = [
     ["K20", "当前大陆明确使用弦魔法的种族为巨龙", "凡人术式以十四环为极限"],
     ["K15", "自然能力与行政认定分别成立", "器物辅助条件依"],
