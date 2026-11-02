@@ -20,8 +20,8 @@ const COMPOSITION = ["CURRENT_CANON", "AUTHOR_CANON", "DELEGATED_DESIGN", "PROPO
 // 现行法典依《银色联盟宪章》第二条的规范层级编排。
 const CANON_LEVELS = [
   ["宪章", [["宪章", ["K12"]]]],
-  ["法律", [["基本法", ["K20", "K18"]], ["组织法", ["K14", "K25", "K26"]], ["专项法律", ["K34", "K39", "K35", "K48", "K38", "K40", "K41", "K45", "K52", "K42", "K44", "K47", "K33", "K31"]], ["章程", ["K28", "K29", "K27", "K43", "K24"]]]],
-  ["实施规范", [["组织架构", ["K10", "K49", "K50", "K51", "K19", "K23", "K11", "K32"]], ["规程与标准", ["K15", "K21", "K13", "K36", "K30", "K37", "K46"]], ["名录", ["K53"]]]],
+  ["法律", [["基本法", ["K20", "K18"]], ["组织法", ["K14", "K25", "K26"]], ["专项法律", ["K34", "K39", "K61", "K35", "K48", "K38", "K40", "K41", "K45", "K52", "K42", "K44", "K47", "K33", "K60", "K31", "K59"]], ["章程", ["K28", "K29", "K27", "K43", "K24"]]]],
+  ["实施规范", [["组织架构", ["K10", "K49", "K50", "K51", "K19", "K23", "K11", "K55", "K56", "K57", "K58", "K32"]], ["规程与标准", ["K15", "K21", "K13", "K36", "K30", "K37", "K46"]], ["名录与清单", ["K53", "K54"]]]],
 ];
 // 几部主要法典的一句导读。
 const GUIDES = {
@@ -364,6 +364,8 @@ function structure(html) {
   }
   return blocks;
 }
+// 五列以上的表格（名录之类）包一层，跨出正文栏，占满主栏。
+const flowHTML = (n) => n.tagName === "TABLE" && n.rows[0]?.cells.length >= 5 ? `<div class="rs-wide-table">${n.outerHTML}</div>` : n.outerHTML;
 // 段首条号包进 .rs-art-no；条号被其他标记拆开时原样保留。
 function leadNumber(p, m) {
   const t = p.firstChild;
@@ -570,7 +572,7 @@ async function docPage(ref, params, my) {
       return `<h2 class="rs-part" id="${esc(b.id)}">${m ? `<small lang="la">Pars ${roman(cnNumber(m[1]))}</small>` : ""}${esc(b.text)}</h2>`;
     }
     if (b.type === "chapter") return `<h3 class="rs-chapter" id="${esc(b.id)}">${esc(b.text)}</h3>`;
-    if (b.type === "flow") return `<div class="rs-flow">${b.nodes.map((n) => n.outerHTML).join("")}</div>`;
+    if (b.type === "flow") return `<div class="rs-flow">${b.nodes.map(flowHTML).join("")}</div>`;
     const states = history.get(b.key);
     const text = b.title + "\n" + b.nodes.map(blockText).join("\n");
     const topics = topicTags(text, doc.topics);

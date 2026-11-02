@@ -285,7 +285,8 @@ main:focus { outline: none; }
 
 /* 正文 */
 .rs-text { margin-top: 26px; }
-.rs-flow, .rs-art-body { max-width: 680px; color: var(--ink-body); font: 400 17px/1.95 var(--cn-serif); }
+.rs-flow, .rs-art-body { color: var(--ink-body); font: 400 17px/1.95 var(--cn-serif); }
+.rs-flow > *, .rs-art-body { max-width: 680px; }
 .rs-flow { margin-left: calc(var(--gutter) + 28px); }
 .rs-flow p, .rs-art-body p { margin: 0 0 .85em; text-align: justify; }
 .rs-flow ol, .rs-flow ul, .rs-art-body ol, .rs-art-body ul { margin: 0 0 .85em; padding-left: 1.7em; }
@@ -293,6 +294,9 @@ main:focus { outline: none; }
 .rs-art-body li::marker, .rs-flow li::marker { color: var(--ink-3); font: 600 15px var(--num); font-variant-numeric: lining-nums tabular-nums; }
 .rs-flow table, .rs-art-body table { width: 100%; margin: 0 0 1em; border-collapse: collapse; font: 14px/1.6 var(--cn-sans); }
 .rs-flow th, .rs-flow td, .rs-art-body th, .rs-art-body td { padding: 6px 8px; border-bottom: 1px solid var(--hair); text-align: left; vertical-align: top; }
+/* 宽表（五列以上，如院校名录）向左占用旁注列的位置，占满主栏；窄屏横向滚动。 */
+.rs-flow > .rs-wide-table { max-width: none; margin-left: calc(-1 * (var(--gutter) + 28px)); overflow-x: auto; scrollbar-width: thin; }
+.rs-wide-table th { white-space: nowrap; }
 .rs-flow blockquote, .rs-art-body blockquote { margin: 0 0 1em; padding-left: 14px; border-left: 2px solid var(--hair-2); color: var(--ink-2); }
 .rs-flow pre { overflow: auto; padding: 14px; background: var(--paper-2); font: 13px/1.6 var(--code); white-space: pre-wrap; overflow-wrap: anywhere; }
 .rs-more { margin: 10px 0 0; padding: 7px 14px; border: 1px solid var(--hair-2); border-radius: 3px; background: transparent; color: var(--ink-2); font: 13px var(--cn-sans); cursor: pointer; }
@@ -390,6 +394,8 @@ main:focus { outline: none; }
 @media (max-width: 900px) {
   :root { --gutter: 0px; }
   .rs-doc-head, .rs-flow, .rs-part, .rs-chapter, .rs-colophon { margin-left: 0; padding-left: 0; }
+  .rs-flow > .rs-wide-table { margin-left: 0; }
+  .rs-wide-table table { min-width: 720px; }
   .rs-revbar { margin-left: 0; }
   .rs-art { grid-template-columns: minmax(0, 1fr); column-gap: 0; }
   .rs-art-gutter { order: 2; grid-auto-flow: column; justify-content: start; gap: 6px 14px; padding: 0 0 4px; border-right: 0; }
