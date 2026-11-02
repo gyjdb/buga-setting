@@ -1,3 +1,7 @@
+# 最新阅读入口：第三十五版正文（D102）
+
+[现行正文索引](CANON_INDEX.md) · [D102 作者决定](AUTHOR_DECISIONS_2026-11-02_D102.md) · [第三十五版修订记录](../90_AUDIT/revision_2026-10-31/V35_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
 # 最新阅读入口：第三十四版正文（D101）
 
 [现行正文索引](CANON_INDEX.md) · [D101 作者决定](AUTHOR_DECISIONS_2026-11-02_D101.md) · [第三十四版修订记录](../90_AUDIT/revision_2026-10-31/V34_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
