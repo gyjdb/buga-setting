@@ -195,6 +195,7 @@ async function home(my) {
       <nav class="rs-counters" aria-label="馆藏计数">${counters.map(([n, label, href, key]) => `<a class="rs-counter${key ? " is-key" : ""}" href="${href}"><b>${n.toLocaleString("en-US")}</b><span>${label}</span></a>`).join("")}</nav>
       ${canonSection(canon)}
       ${guide ? bookSection(guide, guideText) : ""}
+      ${papersSection()}
       ${compositionSection(institutions)}
     </div>
     ${rail()}
@@ -258,6 +259,21 @@ function bookSection(guide, text) {
     </div>
     ${chapters.some((c) => c.plate) ? `<div class="rs-plates" aria-label="章首插图">${chapters.filter((c) => c.plate).map((c) => `<figure class="rs-plate"><a href="${chapterHref(c)}"><img src="assets/plates/${esc(c.plate)}.webp" width="1536" height="819" loading="lazy" alt="第${esc(c.num)}章章首插图：${esc(c.name)}（概念演绎）"></a><figcaption><span>${esc(BOOK_ROMAN[c.num] || c.num)}</span>${esc(c.name)}<i lang="en">${esc(c.info.en || "")}</i></figcaption></figure>`).join("")}</div>
     <p class="rs-plates-note">九章的章首插图，点开进入对应章节。插画为概念演绎。</p>` : ""}
+  </section>`;
+}
+
+// 馆藏读物《联盟学术名篇》：二十篇照书的次序（英文原刊的文件名序号），点篇名翻到中译合订本里的那一篇（portal_config 的 volumePage）。
+const PAPERS_DIR = "08_CLASSIC_PAPERS/";
+function papersSection() {
+  const volume = docs.find((d) => d.path === PAPERS_DIR + "联盟学术名篇.pdf");
+  const list = docs.find((d) => d.path === PAPERS_DIR + "联盟学术名篇_篇目.md");
+  const papers = docs.filter((d) => d.path.startsWith(PAPERS_DIR + "原刊/") && d.volumePage).sort((a, b) => a.path.localeCompare(b.path));
+  if (!volume || !papers.length) return "";
+  const entry = (d, i) => `<li><a href="${docHref(volume.id, { page: d.volumePage })}"><span>${i + 1}</span><b>${esc(d.title.replace(/（英文原刊）$/, ""))}</b><small>${esc(d.name.split("_")[1] || "")}</small></a></li>`;
+  return `<section class="rs-section" aria-labelledby="rs-papers-title">
+    ${sectionHead("rs-papers-title", "学术名篇", "Scripta classica", "馆藏读物：恰恩大学出版部编的选本，收联盟学问史上改变了一门学问问法的二十篇论文，以发表先后为序。", `<a class="rs-link" href="${docHref(volume.id)}">开卷阅读</a>`)}
+    <ol class="rs-chapters rs-papers">${papers.map(entry).join("")}</ol>
+    <p class="rs-plates-note">点篇名翻到中译本里的那一篇。各篇的英文原刊、出处与定稿记录见${list ? `<a class="rs-link" href="${docHref(list.id)}">篇目</a>` : "篇目"}。</p>
   </section>`;
 }
 
@@ -591,12 +607,19 @@ async function docPage(ref, params, my) {
 
   const rest = (shown) => `继续显示（还剩 ${(content.text.length - shown).toLocaleString("en-US")} 字符）`;
   const fallback = !content ? `<p class="rs-error">正文读取失败。</p>` : content.text !== undefined ? `<div class="rs-flow"><pre class="rs-plain">${esc(content.text.slice(0, TEXT_BATCH))}</pre>${content.text.length > TEXT_BATCH ? `<button class="rs-more" type="button">${rest(TEXT_BATCH)}</button>` : ""}</div>` : "";
+  // PDF（《联盟学术名篇》的合订本与英文原刊）用浏览器自带的阅读器在页内显示；手机与触屏的浏览器多半不能在页内显示 PDF，只给链接（portal.css）。
+  // ?page=N 翻到 PDF 的第 N 张（首页“学术名篇”各篇的入口）。
+  const pdfAt = doc.rawUrl + (Number(params.get("page")) > 0 ? "#page=" + Number(params.get("page")) : "");
+  const pdf = doc.extension === ".pdf" ? `<div class="rs-pdf">
+      <iframe class="rs-pdf-frame" src="${esc(pdfAt)}" title="${esc(titleOf(doc))}"></iframe>
+      <p class="rs-pdf-links"><a class="rs-link" href="${esc(pdfAt)}" target="_blank" rel="noopener">在新窗口打开 PDF</a><a class="rs-link" href="${esc(doc.rawUrl)}" download>下载原件</a></p>
+    </div>` : "";
   const parts = blocks.filter((b) => b.type !== "flow");
   const toc = parts.length ? tocHTML(blocks, revised, doc) : (content?.toc || []).filter((h) => h.level >= 2 && h.level <= 3).map((h) => `<li><a href="${docHref(doc.id, { anchor: h.slug })}" data-target="section-${esc(h.slug)}">${esc(h.label)}</a></li>`).join("");
 
   main.dataset.doc = doc.id;
   main.innerHTML = `<div class="rs-doc">
-    <nav class="rs-toc" aria-label="本页目录"><p class="rs-toc-title">目录${rubric("Index")}</p>${toc ? `<ol>${toc}</ol>` : `<p class="rs-vnote">此文件没有章节标题。</p>`}</nav>
+    <nav class="rs-toc" aria-label="本页目录"><p class="rs-toc-title">目录${rubric("Index")}</p>${toc ? `<ol>${toc}</ol>` : `<p class="rs-vnote">${pdf ? "PDF 的目录在阅读器的书签里。" : "此文件没有章节标题。"}</p>`}</nav>
     <article class="rs-doc-main">
       <button class="rs-toc-toggle" type="button" aria-expanded="false">目录</button>
       <p class="rs-crumbs"><a href="#/home">档案馆</a> / <a href="${browseHref({ collection: doc.collection })}">${esc(index.collections[doc.collection] || doc.collection)}</a>${doc.category && doc.category !== doc.collection ? ` / ${esc(doc.category)}` : ""}</p>
@@ -607,7 +630,7 @@ async function docPage(ref, params, my) {
         ${record}
       </header>
       ${revbar}
-      <div class="rs-text">${body || fallback}</div>
+      <div class="rs-text">${body || pdf || fallback}</div>
       ${colophon(doc)}
     </article>
   </div>`;

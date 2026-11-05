@@ -1,3 +1,15 @@
+# 最新阅读入口：第三十八版正文（D108）
+
+[现行正文索引](CANON_INDEX.md) · [D108 作者决定](AUTHOR_DECISIONS_2026-11-02_D108.md) · [第三十八版修订记录](../90_AUDIT/revision_2026-10-31/V38_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第三十七版正文（D104）
+
+[现行正文索引](CANON_INDEX.md) · [D104 作者决定](AUTHOR_DECISIONS_2026-11-02_D104.md) · [第三十七版修订记录](../90_AUDIT/revision_2026-10-31/V37_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
+# 最新阅读入口：第三十六版正文（D103）
+
+[现行正文索引](CANON_INDEX.md) · [D103 作者决定](AUTHOR_DECISIONS_2026-11-02_D103.md) · [第三十六版修订记录](../90_AUDIT/revision_2026-10-31/V36_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)
+
 # 最新阅读入口：第三十五版正文（D102）
 
 [现行正文索引](CANON_INDEX.md) · [D102 作者决定](AUTHOR_DECISIONS_2026-11-02_D102.md) · [第三十五版修订记录](../90_AUDIT/revision_2026-10-31/V35_REVISION_CHANGELOG.md) · [未决事项](OPEN_ISSUES.md)

@@ -144,6 +144,8 @@ def build():
             except UnicodeDecodeError as exc:
                 read_error = "无法严格解码；可下载原件，正文未进入全文索引"
                 warnings.append({"path": relative, "kind": "decode", "detail": str(exc)})
+        elif path.suffix.lower() == ".pdf":
+            read_error = "PDF 在文献页内显示，可下载原件；正文不进入全文索引"
         else:
             read_error = "此格式仅提供元数据与原件下载"
         texts[key] = text
@@ -170,7 +172,7 @@ def build():
         date = re.search(r"(?m)^>?\s*date:\s*(\d{4}-\d{2}-\d{2})", text[:1500])
         doc = {"id": key, "path": relative, "name": path.name, "title": plain_title(text, path.stem) if path.suffix.lower() == ".md" else path.name,
                "collection": collection, "category": next((t for t in config["topics"] if t in relative), topics[0] if topics else config["collections"].get(collection, collection)),
-               "status": status, "statusBasis": basis, "kind": "data" if apple_metadata else "candidate" if candidate else "changelog" if changelog else "document" if path.suffix.lower() in {".md", ".txt", ".html", ".rtf"} else "data",
+               "status": status, "statusBasis": basis, "kind": "data" if apple_metadata else "candidate" if candidate else "changelog" if changelog else "document" if path.suffix.lower() in {".md", ".txt", ".html", ".rtf", ".pdf"} else "data",
                "version": fm.get("version") or ("v" + version.group(1).replace("_", ".") if version else "未标注"),
                "source": row.get("source_path") or fm.get("source") or (own_source.group(1) if own_source else "organized_project/" + relative),
                "sourceId": row.get("source_id", ""), "alias": row.get("alias") or (own_source.group(1) if own_source else ""),

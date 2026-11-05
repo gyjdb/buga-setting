@@ -11,6 +11,9 @@
   - 龙藏体 Long Cang（Fontsource 5.3.0，按 Unicode 范围切片）：`LongCang-LICENSE.txt`。
   - 霞鹜文楷屏幕阅读版 LXGW WenKai Screen v1.250.2（lxgw-wenkai-screen-webfont 1.7.0，按 Unicode 范围切片）：`LXGWWenKai-LICENSE.txt`，取自上游 LxgwWenKai v1.250。
 - 字体按固定 URL 获取，SHA256 位于同目录 `SOURCES.json`；许可证随生成网站提供。
+- `organized_project/08_CLASSIC_PAPERS/` 的 PDF（《联盟学术名篇》中译合订本与二十份英文原刊）由维护者用 Typst 排印；文字、刊徽与图是本项目的原创材料（文字为 AI 辅助起草，经作者逐批认可）。PDF 只嵌入所用字形的子集，字体本身不单独分发：
+  - Libertinus Serif：SIL OFL 1.1；New Computer Modern 与 New Computer Modern Math（Typst 自带）：GUST Font License。
+  - Windows 自带字体：宋体（SimSun）、黑体（SimHei）、楷体（KaiTi）、仿宋（FangSong）、Times New Roman、Georgia、Cambria、Constantia、Palatino Linotype、Sitka Text、Consolas、Courier New。这些字体的嵌入许可都是可编辑嵌入（OpenType fsType 8），权利归各字体的权利人。
 - `markdown-it-py` 和 `mdurl`：MIT；构建时由 pip 安装，不提交安装缓存。
 - `web/assets/charter-hall.webp` 与 `archive-depth.webp`：本项目 AI 辅助创作的概念场景，不是原作插图或世界内事实证明。来源与边界见 `tools/library_portal/web/assets/SOURCES.md`。
 - `web/assets/plates/`：《银色联盟风土志》插图。AI 辅助生成的概念演绎，以及维护者绘制的四季水彩和批注草图；不是原作插图或世界内事实证明。制作方式与逐类说明见 `tools/library_portal/web/assets/SOURCES.md`。
