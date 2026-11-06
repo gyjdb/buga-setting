@@ -14,6 +14,7 @@
 - `organized_project/08_CLASSIC_PAPERS/` 的 PDF（《联盟学术名篇》中译合订本与二十份英文原刊）由维护者用 Typst 排印；文字、刊徽与图是本项目的原创材料（文字为 AI 辅助起草，经作者逐批认可）。PDF 只嵌入所用字形的子集，字体本身不单独分发：
   - Libertinus Serif：SIL OFL 1.1；New Computer Modern 与 New Computer Modern Math（Typst 自带）：GUST Font License。
   - Windows 自带字体：宋体（SimSun）、黑体（SimHei）、楷体（KaiTi）、仿宋（FangSong）、Times New Roman、Georgia、Cambria、Constantia、Palatino Linotype、Sitka Text、Consolas、Courier New。这些字体的嵌入许可都是可编辑嵌入（OpenType fsType 8），权利归各字体的权利人。
+- `tools/library_portal/web/assets/papers/`：《元素亲和表》《论质数的疏密》《复工、收贴与银券通论》三篇网页全文的公式与图版，由维护者用 Typst 0.15.1 导出为 SVG，公式与图是本项目的原创材料。SVG 只含字形轮廓与矢量图形，不含字体文件，也不增加网页字体下载；所用字体仍适用各自的许可：New Computer Modern（GUST Font License），以及 Windows 自带的 Palatino Linotype、Times New Roman 与宋体（SimSun）。绘图包 CeTZ 0.3.4 与 cetz-plot 0.1.1 只用于导出，不随站点发布。来源与维护见同目录 `SOURCES.md`。
 - `markdown-it-py` 和 `mdurl`：MIT；构建时由 pip 安装，不提交安装缓存。
 - `web/assets/charter-hall.webp` 与 `archive-depth.webp`：本项目 AI 辅助创作的概念场景，不是原作插图或世界内事实证明。来源与边界见 `tools/library_portal/web/assets/SOURCES.md`。
 - `web/assets/plates/`：《银色联盟风土志》插图。AI 辅助生成的概念演绎，以及维护者绘制的四季水彩和批注草图；不是原作插图或世界内事实证明。制作方式与逐类说明见 `tools/library_portal/web/assets/SOURCES.md`。

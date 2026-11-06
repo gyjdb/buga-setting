@@ -276,6 +276,9 @@ def build():
         else:
             save_json(OUTPUT / "docs" / (doc["id"] + ".json"), {"text": text, "toc": []})
 
+    from papers import compile_papers
+    compile_papers(SOURCE, OUTPUT, by_path)
+
     from institutions import compile_registry
     institution_registry = compile_registry(read_json(HERE / 'data/institutions.json'), by_path, texts, md, heading_slug, current_manifest)
     save_json(OUTPUT / 'data/institutions.json', institution_registry)

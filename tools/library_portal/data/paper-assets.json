@@ -1,0 +1,3183 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "name": "export_paper_assets.py",
+    "version": 2,
+    "typstVersion": "typst 0.15.1 (9dfd3a08)"
+  },
+  "template": {
+    "path": "tools/paper_pdf/template.typ",
+    "sha256": "2daf5d767955830bdbe74792a50a7b97e06fb1b4611d293ea7bc0bd9c41d90cb"
+  },
+  "papers": {
+    "alding": {
+      "languages": {
+        "zh": {
+          "source": {
+            "path": "02_PROPOSALS/学术名篇_第三批_提案.md",
+            "heading": "论质数的疏密",
+            "sha256": "d418c9bef84e811aac7f8ba731cc87b29f836a66b551533da21207fedb10c0f1"
+          },
+          "math": {
+            "0a713b70a62a6943fe5f25dfc2022a9c18d66be74c36b22bd10e5886691ea38d": {
+              "expression": "xi(t)",
+              "display": false,
+              "url": "assets/papers/math/0a713b70a62a6943fe5f25dfc2022a9c18d66be74c36b22bd10e5886691ea38d.svg",
+              "widthPt": 21.356,
+              "heightPt": 13.952,
+              "sha256": "b2116ac0474d19900717bccf3bf1a1e5ddca5d5d9613f09ac86c5e535f8d04af",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "0de3be0cc583565ded08a9279a6ad0d26c34c3079757402cfadb610a9fa5b5ed": {
+              "expression": "x (log x T)^2 / T",
+              "display": false,
+              "url": "assets/papers/math/0de3be0cc583565ded08a9279a6ad0d26c34c3079757402cfadb610a9fa5b5ed.svg",
+              "widthPt": 46.8052,
+              "heightPt": 19.1324,
+              "sha256": "f71b24eb93f222c4713686f3da260c2d1dfe15bcf40426c019c9d28ea59c921d",
+              "fontSizePt": 12,
+              "baselinePt": 13.9924
+            },
+            "14a411a2324579cc77ef3a18d437e95c08a51d65d33e1b1748307c12f26fd2e2": {
+              "expression": "A(x) = 1 + sum_(k=1)^oo (log x)^k / (k dot k! dot zeta(k + 1))",
+              "display": true,
+              "url": "assets/papers/math/14a411a2324579cc77ef3a18d437e95c08a51d65d33e1b1748307c12f26fd2e2.svg",
+              "widthPt": 165.584,
+              "heightPt": 33.6272,
+              "sha256": "11ba3bb4a611ec249f05cd37a12963774005029d63eca9ccb96ce8f40ac12933",
+              "fontSizePt": 12,
+              "baselinePt": 19.3096
+            },
+            "164e748c97cc6c86e25b6889fe6758422376043ed671ce578ed9864e7808f42b": {
+              "expression": "sqrt(x) (log T)^2",
+              "display": false,
+              "url": "assets/papers/math/164e748c97cc6c86e25b6889fe6758422376043ed671ce578ed9864e7808f42b.svg",
+              "widthPt": 59.7676,
+              "heightPt": 14.9096,
+              "sha256": "6207f5caa132a4d5d4d030636998972603b2e54522728c70b893e6417f761187",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "186fafe1034f657ee40494a294839cf15edd4f42d7bd59a7865d46546ef2ff67": {
+              "expression": "integral_0^oo e^(-n^2 pi x) x^(s/2 - 1) d x = pi^(-s/2) n^(-s) Gamma(s/2)",
+              "display": false,
+              "url": "assets/papers/math/186fafe1034f657ee40494a294839cf15edd4f42d7bd59a7865d46546ef2ff67.svg",
+              "widthPt": 174.460666667,
+              "heightPt": 19.6352,
+              "sha256": "e28cf281e0751908069c2070dded976996812f5c15e81f6312af8bd960b0071b",
+              "fontSizePt": 12,
+              "baselinePt": 12.4012
+            },
+            "1f49e7240bd2ea8bee1f797a3a173cd484dd83d7e6d9b07b95441ca6e7de0687": {
+              "expression": "sigma = a",
+              "display": false,
+              "url": "assets/papers/math/1f49e7240bd2ea8bee1f797a3a173cd484dd83d7e6d9b07b95441ca6e7de0687.svg",
+              "widthPt": 31.490666667,
+              "heightPt": 7.436,
+              "sha256": "50cc22aa9f7e8f8c8e8362c8316fbebc383463f215a50bf212712d34bd4806ac",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "20647feec4aff564f0f88f99e9b5a28bb7230beb796e845ce4736485b9884884": {
+              "expression": "pi^(-s/2) Gamma(s/2)",
+              "display": false,
+              "url": "assets/papers/math/20647feec4aff564f0f88f99e9b5a28bb7230beb796e845ce4736485b9884884.svg",
+              "widthPt": 46.9208,
+              "heightPt": 16.4576,
+              "sha256": "566549a50c9dad969b93c5b482d651015efa68f7b61ca2324dd15da52cad5572",
+              "fontSizePt": 12,
+              "baselinePt": 11.3176
+            },
+            "2b6ddc4f5b4f640202035bf2da0c74d8f0ec22a5e38275db64e866fe135d01a1": {
+              "expression": "1/2 L(sqrt(x))",
+              "display": false,
+              "url": "assets/papers/math/2b6ddc4f5b4f640202035bf2da0c74d8f0ec22a5e38275db64e866fe135d01a1.svg",
+              "widthPt": 44.3396,
+              "heightPt": 16.4456,
+              "sha256": "d5e6016c7cb72cb3f3c4b2385aeae1d2cb9d48d6acfd0f907b998d2194dae1e5",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "3493154a41ddf0f8a42fe88078260ddb14f705b907881876b56c857f27e5c08c": {
+              "expression": "L(x^rho)",
+              "display": false,
+              "url": "assets/papers/math/3493154a41ddf0f8a42fe88078260ddb14f705b907881876b56c857f27e5c08c.svg",
+              "widthPt": 32.0252,
+              "heightPt": 13.952,
+              "sha256": "293db2cc5588ba35f02218253cc1cd3b411677b7218f98c7e55d054caee63189",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "3596e90094ea4d19563651e511c401c5052abb9f22c335b1b76041a717bb6710": {
+              "expression": "Gamma(s) zeta(s) = integral_0^oo x^(s-1) / (e^x - 1) d x",
+              "display": true,
+              "url": "assets/papers/math/3596e90094ea4d19563651e511c401c5052abb9f22c335b1b76041a717bb6710.svg",
+              "widthPt": 137.8348,
+              "heightPt": 32.9576,
+              "sha256": "a671e8cdadfc3ae2485c31da6d24af8b45ad7aaf5ee3a9eb5e7d05256a4ac6f4",
+              "fontSizePt": 12,
+              "baselinePt": 19.0576
+            },
+            "3be56c967a047f0d10b06aea4aa9341510b05b35c1d5c6b98ed772a66909c59c": {
+              "expression": "t = 1",
+              "display": false,
+              "url": "assets/papers/math/3be56c967a047f0d10b06aea4aa9341510b05b35c1d5c6b98ed772a66909c59c.svg",
+              "widthPt": 28.334666667,
+              "heightPt": 10.124,
+              "sha256": "9d4f18e90b5fb71df11582432ead4a362ca536adeecdd80b1d1a48b3da3cf104",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "3f1dc55387f46b0d3f5c1bb9a6d4c82f8baf5a2756bf15a392db15cd6f1e5ca6": {
+              "expression": "T/(2 pi) log(T/(2 pi)) - T/(2 pi)",
+              "display": true,
+              "url": "assets/papers/math/3f1dc55387f46b0d3f5c1bb9a6d4c82f8baf5a2756bf15a392db15cd6f1e5ca6.svg",
+              "widthPt": 102.273333333,
+              "heightPt": 30.704,
+              "sha256": "c4ef4fb39b6f895e13e87631e2cbd5900ba34b2060f3b290b5a85f39f7bb0c4c",
+              "fontSizePt": 12,
+              "baselinePt": 18.352
+            },
+            "447963f167cde047cd197f6e773005dd3b53ab0e12439583007342e3290c7c5e": {
+              "expression": "log(-x)",
+              "display": false,
+              "url": "assets/papers/math/447963f167cde047cd197f6e773005dd3b53ab0e12439583007342e3290c7c5e.svg",
+              "widthPt": 42.872,
+              "heightPt": 13.952,
+              "sha256": "007ece92f7cca48334a0c8b3c063400e026c94bd9273749eca39b03afbfa46b0",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "45b7522ae339ebde386615d9ecfe786c10ee3a7445f5aca346856d4480a29406": {
+              "expression": "x = 1",
+              "display": false,
+              "url": "assets/papers/math/45b7522ae339ebde386615d9ecfe786c10ee3a7445f5aca346856d4480a29406.svg",
+              "widthPt": 30.866666667,
+              "heightPt": 10.124,
+              "sha256": "6066aed0784e49ba286e0dcf68e11c0606df5ebdfab5592cc8e401452959a155",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "4a184e2d5bf48fac96eff19fcf9d62e263c1a99a519b987f95fd53e727f75b2e": {
+              "expression": "mu(1)",
+              "display": false,
+              "url": "assets/papers/math/4a184e2d5bf48fac96eff19fcf9d62e263c1a99a519b987f95fd53e727f75b2e.svg",
+              "widthPt": 24.572,
+              "heightPt": 13.952,
+              "sha256": "ee3704d1c37c6ec481521860cc63e355a83679145671177314167f7066540d21",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "4c54acd74516993b01fac92a638e0ee14dcc64bdbfbafcb13a242bbff597ba18": {
+              "expression": "1 / (log t)",
+              "display": false,
+              "url": "assets/papers/math/4c54acd74516993b01fac92a638e0ee14dcc64bdbfbafcb13a242bbff597ba18.svg",
+              "widthPt": 20.164,
+              "heightPt": 18.176,
+              "sha256": "a5493621e5bdc8f4d249193d48ef1142f1a66c43c974ff8b9e4008122d6880ac",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "4c97c2042449bb6f50fa1dc36465bce3b609aa6b830f02cbf99a4e038773150d": {
+              "expression": "p^k",
+              "display": false,
+              "url": "assets/papers/math/4c97c2042449bb6f50fa1dc36465bce3b609aa6b830f02cbf99a4e038773150d.svg",
+              "widthPt": 13.9868,
+              "heightPt": 14.5136,
+              "sha256": "1a56d81154dd1cd5509b52ed6427bd6d62185eb0e1bb1c8982ad349f5fd28ef4",
+              "fontSizePt": 12,
+              "baselinePt": 11.1856
+            },
+            "4c9f1fb508b3b6b0705c405e85bc5429a90f25c54d38030023d12476a2488a2e": {
+              "expression": "pi^(-s/2) Gamma(s/2) zeta(s) = pi^(-(1-s)/2) Gamma((1-s)/2) zeta(1-s)",
+              "display": true,
+              "url": "assets/papers/math/4c9f1fb508b3b6b0705c405e85bc5429a90f25c54d38030023d12476a2488a2e.svg",
+              "widthPt": 215.883733333,
+              "heightPt": 27.668,
+              "sha256": "5346f934bf81f7387ac3468dde6fed458e1f024447186d08e9af417b1f758e9b",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "4cb5bb321158dc166af0a292f1e710fe44370ccc1bd653e82174df0e88e3e9da": {
+              "expression": "1/2 + |beta - 1/2|",
+              "display": false,
+              "url": "assets/papers/math/4cb5bb321158dc166af0a292f1e710fe44370ccc1bd653e82174df0e88e3e9da.svg",
+              "widthPt": 59.593866667,
+              "heightPt": 16.4456,
+              "sha256": "f431542504af7873cfa7d5547edd4afaa2b2f3ea34873af80cb37497387e4db0",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "4d20e50e3526c96d2538f2bc6fa77b011f5bd857bbf2707998823a816a1470a5": {
+              "expression": "Gamma(1 - s)",
+              "display": false,
+              "url": "assets/papers/math/4d20e50e3526c96d2538f2bc6fa77b011f5bd857bbf2707998823a816a1470a5.svg",
+              "widthPt": 45.133333333,
+              "heightPt": 13.952,
+              "sha256": "d1d182cb45647aaa9aa4b6cb3f3c54398c0373da0d5dda271d5a41b118867ce7",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "4f1a7b95cb8cb77fe17520f534653a89a15ae956e2ef1ad71c706726a19e908c": {
+              "expression": "product_p 1/(1 - p^(-s)) = sum_(n=1)^oo 1/n^s",
+              "display": true,
+              "url": "assets/papers/math/4f1a7b95cb8cb77fe17520f534653a89a15ae956e2ef1ad71c706726a19e908c.svg",
+              "widthPt": 114.4704,
+              "heightPt": 33.818,
+              "sha256": "99b970c836258e610c20e9d3d53f086c7455ecd7cc585d88033afca5b221ccaa",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "4f8b86a897d05fcf08ce704f0a78dbfd365575dc1dd45a1eee8f7bae861f2d0b": {
+              "expression": "f(x) = F(x) + 1/2 F(x^(1/2)) + 1/3 F(x^(1/3)) + dots",
+              "display": true,
+              "url": "assets/papers/math/4f8b86a897d05fcf08ce704f0a78dbfd365575dc1dd45a1eee8f7bae861f2d0b.svg",
+              "widthPt": 211.878666667,
+              "heightPt": 26.612,
+              "sha256": "44c9c9445717a82653bac9b36f5306882fa5534d1275657df67c9e5030115471",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "52eb9c621ee4a16bee95cf69a902cd4cddbe4b8fc2d9c1757ca1c5ebdfa874a3": {
+              "expression": "sqrt(x)",
+              "display": false,
+              "url": "assets/papers/math/52eb9c621ee4a16bee95cf69a902cd4cddbe4b8fc2d9c1757ca1c5ebdfa874a3.svg",
+              "widthPt": 18.86,
+              "heightPt": 14.576,
+              "sha256": "a7cb7471d613acf9cc6963bd728ebc38ceacc5518db44510fb93851a9d536acf",
+              "fontSizePt": 12,
+              "baselinePt": 10.75
+            },
+            "52fe41a75b273440a16d371aae46f41abeb6efb2329f2cd672c3dd8ff420130e": {
+              "expression": "L(x)",
+              "display": false,
+              "url": "assets/papers/math/52fe41a75b273440a16d371aae46f41abeb6efb2329f2cd672c3dd8ff420130e.svg",
+              "widthPt": 26.372,
+              "heightPt": 13.952,
+              "sha256": "2dd233d70e586733c66b8a5f0d924524c8af9d27bc548763937eb5ffd673bf0c",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "545b8c3e97bf59014fb0139da976d6d5e287a6fa3c078adc56e699c6f0a5a482": {
+              "expression": "2 sin(pi s) Gamma(s) zeta(s) = i integral_oo^oo (-x)^(s-1) / (e^x - 1) d x",
+              "display": true,
+              "url": "assets/papers/math/545b8c3e97bf59014fb0139da976d6d5e287a6fa3c078adc56e699c6f0a5a482.svg",
+              "widthPt": 198.488666667,
+              "heightPt": 32.8736,
+              "sha256": "5d5feace4040064e71f0ffe4a99feac7bdf252a86986094a8f3199588ff425e4",
+              "fontSizePt": 12,
+              "baselinePt": 19.0576
+            },
+            "5729863d04bf8b5fa73a9b5ac7610dd88f2ebfa982218b72727adcf4b2144fd9": {
+              "expression": "rho = beta + gamma i",
+              "display": false,
+              "url": "assets/papers/math/5729863d04bf8b5fa73a9b5ac7610dd88f2ebfa982218b72727adcf4b2144fd9.svg",
+              "widthPt": 57.248,
+              "heightPt": 13.064,
+              "sha256": "5e99496f6ed0e39e3806749832942a2c8ebcb010870e95dcd6102aea08358e31",
+              "fontSizePt": 12,
+              "baselinePt": 9.472
+            },
+            "5aabf6d9e30889f511bf2185fbfac6aac1952f3e9f28aaea6601a29ffec6b1e9": {
+              "expression": "H(x)",
+              "display": false,
+              "url": "assets/papers/math/5aabf6d9e30889f511bf2185fbfac6aac1952f3e9f28aaea6601a29ffec6b1e9.svg",
+              "widthPt": 29.108,
+              "heightPt": 13.952,
+              "sha256": "23282952f1bcb0163247dca7de20ff1819f6192cbf7ffae3fa894c344d681ab0",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "5e0dfa2bf429f31e89e9a8179405db789bababf206cfc37904c35d2b79dc8ff5": {
+              "expression": "-2, -4, -6, dots",
+              "display": false,
+              "url": "assets/papers/math/5e0dfa2bf429f31e89e9a8179405db789bababf206cfc37904c35d2b79dc8ff5.svg",
+              "widthPt": 74.06,
+              "heightPt": 12.44,
+              "sha256": "ce007b05782f27df1e20dc66002c5884b9a73300bbdc912f14d57d94582cdd91",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "5f61c55b9badf2a2d7389f8d50888927928e58e649ee63b1ff41a98c01b36311": {
+              "expression": "log x",
+              "display": false,
+              "url": "assets/papers/math/5f61c55b9badf2a2d7389f8d50888927928e58e649ee63b1ff41a98c01b36311.svg",
+              "widthPt": 26.2,
+              "heightPt": 12.8,
+              "sha256": "39d013473bac73970658bfc08ee7e255e5f4fdc605c3647b2837d9be672b2588",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "6002f122dd4eebfb9b1fd48c5e145f2e37cfdd4e2b02728f6c3c481f4d2bc423": {
+              "expression": "plus.minus 2 pi i, plus.minus 4 pi i, dots",
+              "display": false,
+              "url": "assets/papers/math/6002f122dd4eebfb9b1fd48c5e145f2e37cfdd4e2b02728f6c3c481f4d2bc423.svg",
+              "widthPt": 75.948,
+              "heightPt": 12.44,
+              "sha256": "35d9993ef465e26112bebf07ca99571257ec2d83ea627e776f9ea7d9e1e14ea8",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "610314779f8a2b70200a93f4b534cd725e3ccd19c9e6e6079cf7c2d38b7664c6": {
+              "expression": "1 - s",
+              "display": false,
+              "url": "assets/papers/math/610314779f8a2b70200a93f4b534cd725e3ccd19c9e6e6079cf7c2d38b7664c6.svg",
+              "widthPt": 28.297333333,
+              "heightPt": 10.124,
+              "sha256": "0e8f0ffbee8943caaad08c4ec160a0e4aa641fdd5f3f72839758aece54163918",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "619fc0d64484f86967f8e40b61101eb481af7b06b5b2014b4c42534a0300d44f": {
+              "expression": "-(zeta'(s)) / zeta(s) - s / (s - 1) = s integral_1^oo (H(x) - x) x^(-s-1) d x",
+              "display": false,
+              "url": "assets/papers/math/619fc0d64484f86967f8e40b61101eb481af7b06b5b2014b4c42534a0300d44f.svg",
+              "widthPt": 208.901733333,
+              "heightPt": 21.0308,
+              "sha256": "1001f04aefd6d9c24f03d8b31a3d0ae13a00b03982423fb71fd6bba44c654961",
+              "fontSizePt": 12,
+              "baselinePt": 13.8004
+            },
+            "641b330b70de6adfbf4f1c1bbebc1a266a15104981cddffbc2650d829b00d689": {
+              "expression": "H(x) - x",
+              "display": false,
+              "url": "assets/papers/math/641b330b70de6adfbf4f1c1bbebc1a266a15104981cddffbc2650d829b00d689.svg",
+              "widthPt": 50.641333333,
+              "heightPt": 13.952,
+              "sha256": "7aa0a82e45bd55b31e7b963a304a57c1fad115c87cb17a45557261bdd476fd3d",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "646f67b7e4589f07a0b605f0994b2d92beb24e389a9c51aee32843db247bee88": {
+              "expression": "pi^(-s/2) Gamma(s/2) zeta(s) = 1/(s (s - 1)) + integral_1^oo psi(x) (x^(s/2 - 1) + x^((1 - s)/2 - 1)) d x",
+              "display": true,
+              "url": "assets/papers/math/646f67b7e4589f07a0b605f0994b2d92beb24e389a9c51aee32843db247bee88.svg",
+              "widthPt": 298.565066667,
+              "heightPt": 31.7684,
+              "sha256": "b653c7a493312d16578e03ec351176166388215f0c63205b2961cb55d64a3879",
+              "fontSizePt": 12,
+              "baselinePt": 18.0364
+            },
+            "6b8b3d9d6419f73917ba361a8cbd84f283dcb4b2d654881a08b20db0d3357e30": {
+              "expression": "e^(|t| log |t|)",
+              "display": false,
+              "url": "assets/papers/math/6b8b3d9d6419f73917ba361a8cbd84f283dcb4b2d654881a08b20db0d3357e30.svg",
+              "widthPt": 36.9976,
+              "heightPt": 12.788,
+              "sha256": "4336e67d0bd07294d5e1068ba80d5ad356c0ff207afc2d3ac5d4860f52ff4bbe",
+              "fontSizePt": 12,
+              "baselinePt": 11.656
+            },
+            "6c13db437ae62ac7d54af8a90c225d4d4e70dbf1593a86e666a351295cdd70b6": {
+              "expression": "1 - overline(rho)",
+              "display": false,
+              "url": "assets/papers/math/6c13db437ae62ac7d54af8a90c225d4d4e70dbf1593a86e666a351295cdd70b6.svg",
+              "widthPt": 29.029333333,
+              "heightPt": 12.584,
+              "sha256": "31bc64ec7e9a39e2751845f51ff65f2799afa067b0f744c6e4c91ec2e441e855",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "6fcc798290f85dee32d1d1e7c90369e40ede42d781c46586a54edaa1af37b53e": {
+              "expression": "Gamma(s/2)",
+              "display": false,
+              "url": "assets/papers/math/6fcc798290f85dee32d1d1e7c90369e40ede42d781c46586a54edaa1af37b53e.svg",
+              "widthPt": 26.8076,
+              "heightPt": 15.704,
+              "sha256": "c60f714cfa7c35a60df536a84a5c18248cf29c80cee7fc50b30f5afea71040bf",
+              "fontSizePt": 12,
+              "baselinePt": 10.564
+            },
+            "7074d75e2a6e7a99e8dc01623be0c759a1c0d751d986bcef5a1bb5b78213c322": {
+              "expression": "s = 2, 3, dots",
+              "display": false,
+              "url": "assets/papers/math/7074d75e2a6e7a99e8dc01623be0c759a1c0d751d986bcef5a1bb5b78213c322.svg",
+              "widthPt": 56.346666667,
+              "heightPt": 12.308,
+              "sha256": "0ac6c8b9db19fd4c75ed73bcb51ec3da196a050b8444eee86ec5e23481ab9bb6",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "70f9eb76c4cec177b2db2284207f00f9e94ddb47299ae3fada1576bf5e62ef93": {
+              "expression": "(log x) / (log 2)",
+              "display": false,
+              "url": "assets/papers/math/70f9eb76c4cec177b2db2284207f00f9e94ddb47299ae3fada1576bf5e62ef93.svg",
+              "widthPt": 21.9784,
+              "heightPt": 19.2944,
+              "sha256": "9acccf82bbe610eabecb854d545e6bb0f7681b13c8e8ddf501138fa8afa4a6d4",
+              "fontSizePt": 12,
+              "baselinePt": 12.424
+            },
+            "7360b7ff9708d6268ab48c2f323217a5f851d20ee810d3487787f4926fd68958": {
+              "expression": "F(x) = sum_(m=1)^oo mu(m)/m f(x^(1/m))",
+              "display": true,
+              "url": "assets/papers/math/7360b7ff9708d6268ab48c2f323217a5f851d20ee810d3487787f4926fd68958.svg",
+              "widthPt": 134.947066667,
+              "heightPt": 32.654,
+              "sha256": "d2777510327674eddce107a171fb11eb7a5022e51c4b8b5534fc5893ff00e4fb",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "799d6fa3851be4716570a8cedc2262e82cb3931402084f3608a62f08ef603e69": {
+              "expression": "x^beta / (|rho| log x)",
+              "display": false,
+              "url": "assets/papers/math/799d6fa3851be4716570a8cedc2262e82cb3931402084f3608a62f08ef603e69.svg",
+              "widthPt": 33.03,
+              "heightPt": 20.2772,
+              "sha256": "e8f85b982bf194160fe5f734039c7f950b77d110f91927491c4df421d9ea08b8",
+              "fontSizePt": 12,
+              "baselinePt": 13.0132
+            },
+            "7b06ab30ccb098f6e3bec68d91fe82413029b361dadcf4ed7b1521bd5e68ded4": {
+              "expression": "s = sigma + t i",
+              "display": false,
+              "url": "assets/papers/math/7b06ab30ccb098f6e3bec68d91fe82413029b361dadcf4ed7b1521bd5e68ded4.svg",
+              "widthPt": 53.912,
+              "heightPt": 10.928,
+              "sha256": "410e3c394714b7176974e52b53dbd3c1064b979de406ccae32eb4430140469b4",
+              "fontSizePt": 12,
+              "baselinePt": 8.932
+            },
+            "7e21758d26bac392357562a07900b7960f25285d923fe407546e6494ddfb5520": {
+              "expression": "mu(m)",
+              "display": false,
+              "url": "assets/papers/math/7e21758d26bac392357562a07900b7960f25285d923fe407546e6494ddfb5520.svg",
+              "widthPt": 29.108,
+              "heightPt": 13.952,
+              "sha256": "9e1f9ad19a33b178d094bd4f93189ede19a71ff9d87a39e795e56ee7a976b706",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "826c404d003bfd8d42354efc14ab828ab84ee71bc06074a6ecf045da5fce8e42": {
+              "expression": "s = 1, 2, 3, dots",
+              "display": false,
+              "url": "assets/papers/math/826c404d003bfd8d42354efc14ab828ab84ee71bc06074a6ecf045da5fce8e42.svg",
+              "widthPt": 67.682666667,
+              "heightPt": 12.308,
+              "sha256": "809f034e3adf56b380e0c68ad8886f3d76c36179875b04e92cbc8f7cd9e18e69",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "842465a43166dc64355ee45bd314c61c081b172cae62c55b6f2c28ac41a0d252": {
+              "expression": "log zeta",
+              "display": false,
+              "url": "assets/papers/math/842465a43166dc64355ee45bd314c61c081b172cae62c55b6f2c28ac41a0d252.svg",
+              "widthPt": 25.36,
+              "heightPt": 12.836,
+              "sha256": "813bcde7119c8027a23847be7a0f14f1ed6c8aae51e800e75af2d1b9814b7f8a",
+              "fontSizePt": 12,
+              "baselinePt": 9.364
+            },
+            "8775df7fa66b20a015565f961f96fcfa963ef02f760ba51e1a8bd2cdd742a482": {
+              "expression": "-log 2",
+              "display": false,
+              "url": "assets/papers/math/8775df7fa66b20a015565f961f96fcfa963ef02f760ba51e1a8bd2cdd742a482.svg",
+              "widthPt": 36.672,
+              "heightPt": 12.8,
+              "sha256": "b1ec6a2d1a537ee714acad7387a5385a5f5125e6abd4d649eef5cf163aa4347b",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "88022fb76107a076bad1a50385dd3d947a933ceac92240dbf05dd7cd69c86f04": {
+              "expression": "n^2 pi x",
+              "display": false,
+              "url": "assets/papers/math/88022fb76107a076bad1a50385dd3d947a933ceac92240dbf05dd7cd69c86f04.svg",
+              "widthPt": 28.6556,
+              "heightPt": 12.0656,
+              "sha256": "6afc8ebbe1d874c08a74ea62987916efb01c4302b6d9179091a1b875a4729fc4",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "8959cd91ff3faee0a46df7348206b13597a573d179e495d2328b9ac605747d84": {
+              "expression": "-1/2",
+              "display": false,
+              "url": "assets/papers/math/8959cd91ff3faee0a46df7348206b13597a573d179e495d2328b9ac605747d84.svg",
+              "widthPt": 18.5156,
+              "heightPt": 16.4456,
+              "sha256": "c3d58d64c405a62832f46aa121509281f70806e1bbd8055fca900afdbf660f26",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "8b230495176e283eda22d0049814a4f7d6b1473927672892e2bffd5c57e75dac": {
+              "expression": "A(x) = sum_(m=1)^oo mu(m)/m L(x^(1/m))",
+              "display": true,
+              "url": "assets/papers/math/8b230495176e283eda22d0049814a4f7d6b1473927672892e2bffd5c57e75dac.svg",
+              "widthPt": 135.835066667,
+              "heightPt": 32.654,
+              "sha256": "c64eb935d6e4b0023d803d7ba48386d92b6b7b722deac7afea418d857db9f5b6",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "8cd2df338fd060bf4ff59d5276f6fcc76d4b1f5e04f1cd4d766444c0c09640f9": {
+              "expression": "e^((s - 1) log(-x))",
+              "display": false,
+              "url": "assets/papers/math/8cd2df338fd060bf4ff59d5276f6fcc76d4b1f5e04f1cd4d766444c0c09640f9.svg",
+              "widthPt": 61.2904,
+              "heightPt": 12.7712,
+              "sha256": "ae63abfd84b6486536e2c772337752af54b921c9782276f6ed7f1443bbc31fb4",
+              "fontSizePt": 12,
+              "baselinePt": 11.6392
+            },
+            "90b85c7b4eba2999df547a98ec95a7005bdb090040fc069c5bc5b6a3a99e878d": {
+              "expression": "-2 i sin(pi s)",
+              "display": false,
+              "url": "assets/papers/math/90b85c7b4eba2999df547a98ec95a7005bdb090040fc069c5bc5b6a3a99e878d.svg",
+              "widthPt": 60.316,
+              "heightPt": 13.952,
+              "sha256": "79879bc80fee78f0aa7b044b615e75bc4f21cc40d4c370676072e1878fa2e903",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "9189f790eaa6e2f237f21208608b8089f5a6df6d85de2a063cf79aa00232da12": {
+              "expression": "pi^(-s/2) Gamma(s/2) zeta(s) = integral_0^oo psi(x) x^(s/2 - 1) d x",
+              "display": false,
+              "url": "assets/papers/math/9189f790eaa6e2f237f21208608b8089f5a6df6d85de2a063cf79aa00232da12.svg",
+              "widthPt": 166.295866667,
+              "heightPt": 18.6044,
+              "sha256": "b52f8e0533945fe1d20643fe3e79f320ef3ee127deadd165e2ed8b20fe0d5273",
+              "fontSizePt": 12,
+              "baselinePt": 11.3704
+            },
+            "9575a070ea0b27679a94fde752027ba64dd5f6b373505046908147fc5311be02": {
+              "expression": "zeta(s)",
+              "display": false,
+              "url": "assets/papers/math/9575a070ea0b27679a94fde752027ba64dd5f6b373505046908147fc5311be02.svg",
+              "widthPt": 22.988,
+              "heightPt": 13.952,
+              "sha256": "103c880c9aeb7959cae3cf9a5cd9acf046e798b470b6d4730965b951d6257fd6",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "9bad7aad57c35e13faa49d572ae89c43d458c4a34ba99c1f0c0e1bfb1fad88b3": {
+              "expression": "a plus.minus i T",
+              "display": false,
+              "url": "assets/papers/math/9bad7aad57c35e13faa49d572ae89c43d458c4a34ba99c1f0c0e1bfb1fad88b3.svg",
+              "widthPt": 35.941333333,
+              "heightPt": 11.132,
+              "sha256": "0e6c6849a02b19faaacb91fcb40fd6e05c0a2b491d2e21da47575f3da33ae72d",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "9f080ee09a224e6a8419d5df199f681c10879a3fdde2da91497149d61a3be862": {
+              "expression": "L(x) = integral_0^x (d t)/(log t)",
+              "display": true,
+              "url": "assets/papers/math/9f080ee09a224e6a8419d5df199f681c10879a3fdde2da91497149d61a3be862.svg",
+              "widthPt": 90.529866667,
+              "heightPt": 31.9364,
+              "sha256": "a3c67ee54153e5ffd754d4fc5603333cc291daf991470f810609bff440068c53",
+              "fontSizePt": 12,
+              "baselinePt": 18.0364
+            },
+            "9f15899704a631958730b5013918f859e479f31b4aee21d294b8df6837f94f38": {
+              "expression": "2 psi(x) + 1 = x^(-1/2) (2 psi(1/x) + 1)",
+              "display": true,
+              "url": "assets/papers/math/9f15899704a631958730b5013918f859e479f31b4aee21d294b8df6837f94f38.svg",
+              "widthPt": 168.362533333,
+              "heightPt": 27.668,
+              "sha256": "c5ca9fab96f302408030547f1ccbd8bbe31a4b070d2035ec30a7787a9fe1b8f0",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "9f380432e205af2ca0f65960e6e8897e3da908f2bee20b525c01d96bbc60e3f6": {
+              "expression": "H(x) = x - sum_rho x^rho / rho - log 2 pi - 1/2 log(1 - x^(-2))",
+              "display": false,
+              "url": "assets/papers/math/9f380432e205af2ca0f65960e6e8897e3da908f2bee20b525c01d96bbc60e3f6.svg",
+              "widthPt": 233.6172,
+              "heightPt": 19.6268,
+              "sha256": "ce56391ec372a215f0a7ec0aea91a6c2f8ecd94b432536de258010c766096afc",
+              "fontSizePt": 12,
+              "baselinePt": 11.4292
+            },
+            "a066a264bb118830fcbb9530ebbede2ecf8c2e6838aa1a29efed4b7f0c2df4cd": {
+              "expression": "(-x)^(s-1)",
+              "display": false,
+              "url": "assets/papers/math/a066a264bb118830fcbb9530ebbede2ecf8c2e6838aa1a29efed4b7f0c2df4cd.svg",
+              "widthPt": 44.0504,
+              "heightPt": 14.9096,
+              "sha256": "547bbcda9a4576d7609f1de86af3a8a67d97fe7e7fb4d0f5d75fed48660c93ff",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "a06cda4a65f802846e43eed84fdef36b6edd1a1af9260e1555cae6929709a3bc": {
+              "expression": "xi",
+              "display": false,
+              "url": "assets/papers/math/a06cda4a65f802846e43eed84fdef36b6edd1a1af9260e1555cae6929709a3bc.svg",
+              "widthPt": 7.688,
+              "heightPt": 12.824,
+              "sha256": "941660c192f04e705100e1289355c83f80ce378fea327088860b8d06eee60ec4",
+              "fontSizePt": 12,
+              "baselinePt": 9.364
+            },
+            "a0e8794d2e4da113d7f81cbe31009de3a646c8e3b979b3537266299a7055dd22": {
+              "expression": "integral_oo^oo (-x)^(s-1) / (e^x - 1) d x",
+              "display": false,
+              "url": "assets/papers/math/a0e8794d2e4da113d7f81cbe31009de3a646c8e3b979b3537266299a7055dd22.svg",
+              "widthPt": 69.7696,
+              "heightPt": 21.1424,
+              "sha256": "f14240559e1d8e56ce957c8bfbff98df197a9f38a8881f8f002239a5dd0ae10b",
+              "fontSizePt": 12,
+              "baselinePt": 13.9924
+            },
+            "a12e09377a2bddcbd2c1608ab6f7f585940b7df0dc62d123871435988165735d": {
+              "expression": "sigma = 1",
+              "display": false,
+              "url": "assets/papers/math/a12e09377a2bddcbd2c1608ab6f7f585940b7df0dc62d123871435988165735d.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.124,
+              "sha256": "9476b28c07992ae48b932ea452857d14c6f86fb1c5b3edd73d6c51da6c6e160b",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "a417f000a8283502d7707b76b739f1ab88bc8bb9594de9ac924e7ee97da7bb0b": {
+              "expression": "1 / (s - 1)",
+              "display": false,
+              "url": "assets/papers/math/a417f000a8283502d7707b76b739f1ab88bc8bb9594de9ac924e7ee97da7bb0b.svg",
+              "widthPt": 20.2424,
+              "heightPt": 16.5296,
+              "sha256": "9623357a4e0486e4302d4dc709d7536ac2f683e99aee37fadf20f6fc245d7f89",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "a41d141ab64be1f01fe731b5692fdc8c2c69d7c77f0f6d246e2f8890b8aa907e": {
+              "expression": "psi(x) = sum_(n=1)^oo e^(-n^2 pi x)",
+              "display": true,
+              "url": "assets/papers/math/a41d141ab64be1f01fe731b5692fdc8c2c69d7c77f0f6d246e2f8890b8aa907e.svg",
+              "widthPt": 99.844666667,
+              "heightPt": 32.654,
+              "sha256": "02e4448e06dbc7116b0f2edfeeab484e33231f8eacb49ad37fc5bdfb39511f34",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "a48863f494403ad96568b7a1d39206060a73e81605a8ee96a907bb6d4f2c983a": {
+              "expression": "log p",
+              "display": false,
+              "url": "assets/papers/math/a48863f494403ad96568b7a1d39206060a73e81605a8ee96a907bb6d4f2c983a.svg",
+              "widthPt": 25.552,
+              "heightPt": 12.8,
+              "sha256": "0ae79238c3835885bf6344a3c48f769e7914819591dd2d493f333019c66deccc",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "a6b1d20d9eb5d6d8c310c2daeb1fbc6a7bd3564a04d3d8583427d950a047a78f": {
+              "expression": "f(x) = 1/(2 pi i) integral_(a - i oo)^(a + i oo) log zeta(s) x^s (d s)/s",
+              "display": true,
+              "url": "assets/papers/math/a6b1d20d9eb5d6d8c310c2daeb1fbc6a7bd3564a04d3d8583427d950a047a78f.svg",
+              "widthPt": 171.134666667,
+              "heightPt": 33.7172,
+              "sha256": "180a05d3ef425d60b5e5f6eb3a7d8017237fcb3d4a5041a8cdda67922e460c6e",
+              "fontSizePt": 12,
+              "baselinePt": 19.9012
+            },
+            "a9bb8ff7b79a9f09d08621d9f91c955c9ef8784c8825d94c1d8bf9dbc78d221c": {
+              "expression": "sqrt(x) (log x)^2",
+              "display": false,
+              "url": "assets/papers/math/a9bb8ff7b79a9f09d08621d9f91c955c9ef8784c8825d94c1d8bf9dbc78d221c.svg",
+              "widthPt": 57.8476,
+              "heightPt": 14.9096,
+              "sha256": "00b570e7eb34e534a82191dce6e1def17a6bd857ecfd1e63ec57791f9e4430f3",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "af7cc26fe46e801d9308565d293ef64993131fc3afc302d49297028c4cf50b03": {
+              "expression": "sqrt(x) / (log x)",
+              "display": false,
+              "url": "assets/papers/math/af7cc26fe46e801d9308565d293ef64993131fc3afc302d49297028c4cf50b03.svg",
+              "widthPt": 21.9784,
+              "heightPt": 20.5376,
+              "sha256": "a04f1ad8ff89b740704c8e03db61f71c38edb537251a18f7664a5e578255e61e",
+              "fontSizePt": 12,
+              "baselinePt": 13.6672
+            },
+            "b21983c67b670f14245aa324eb37eda58c547895caad88691b8ffb363dff7135": {
+              "expression": "sigma < 0",
+              "display": false,
+              "url": "assets/papers/math/b21983c67b670f14245aa324eb37eda58c547895caad88691b8ffb363dff7135.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.616,
+              "sha256": "b5638bb823b27be1234154197e3b8d36442ffc34ccc8cfaf80268a3c4c16d4eb",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "b81531c5dd1dbb09350c04514e5bf1e963f52aee174909f756544def1ad24e88": {
+              "expression": "sin(pi s) Gamma(s)",
+              "display": false,
+              "url": "assets/papers/math/b81531c5dd1dbb09350c04514e5bf1e963f52aee174909f756544def1ad24e88.svg",
+              "widthPt": 61.304,
+              "heightPt": 13.952,
+              "sha256": "c1b9a5c88c85460d883724155212a55ff36138bc6152d4ff86e6c1059fcfee73",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "baa484ecc8aef5dd96d5741d280498eacc0759fd771e1b14f5db87d0451def26": {
+              "expression": "2 pi",
+              "display": false,
+              "url": "assets/papers/math/baa484ecc8aef5dd96d5741d280498eacc0759fd771e1b14f5db87d0451def26.svg",
+              "widthPt": 15.14,
+              "heightPt": 10.124,
+              "sha256": "f967d1e1bb9810c627805d4705329ae6c6bb0b84f059b647b944ae4400f61c70",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "bbce9f6eda2c58c291646ace2182d2c64d5970a88047e6235517d2bc279f4cf5": {
+              "expression": "s = 1/2 + t i",
+              "display": false,
+              "url": "assets/papers/math/bbce9f6eda2c58c291646ace2182d2c64d5970a88047e6235517d2bc279f4cf5.svg",
+              "widthPt": 53.9516,
+              "heightPt": 16.4456,
+              "sha256": "83415baf74d2b5e9a93684f9e5d40ae9db713191f8af44461b36d002b25da355",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "be6bcbf03a7f9b0abf2b76bb5667f6e457ee7b2ff6c387fa796c953673d06426": {
+              "expression": "f(x) = L(x) - sum_rho L(x^rho) - log 2 + integral_x^oo (d t)/(t (t^2 - 1) log t)",
+              "display": true,
+              "url": "assets/papers/math/be6bcbf03a7f9b0abf2b76bb5667f6e457ee7b2ff6c387fa796c953673d06426.svg",
+              "widthPt": 280.6324,
+              "heightPt": 33.434,
+              "sha256": "057075d98910b964885d4a6a5e4568f5f28b7b330d54a3009ee1e9426158d4e8",
+              "fontSizePt": 12,
+              "baselinePt": 18.0364
+            },
+            "c14d05c71038b80d92e4605b7397175667f89b9acdd6cf64b7a973206bbc8d33": {
+              "expression": "Gamma(s) Gamma(1 - s) = pi / sin(pi s)",
+              "display": false,
+              "url": "assets/papers/math/c14d05c71038b80d92e4605b7397175667f89b9acdd6cf64b7a973206bbc8d33.svg",
+              "widthPt": 113.0228,
+              "heightPt": 17.2064,
+              "sha256": "f247fb14ffc8ed2a4bb778b24330b5d8f0ebb7bff47e91598531602c0cde38a4",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "c278774817459f288e2f2655ac37fe3223993ef7bd395878942dcb28910386d6": {
+              "expression": "2 pi / gamma",
+              "display": false,
+              "url": "assets/papers/math/c278774817459f288e2f2655ac37fe3223993ef7bd395878942dcb28910386d6.svg",
+              "widthPt": 16.0448,
+              "heightPt": 16.286,
+              "sha256": "2f4f85f86cbe15bec3853443e0873cf229ce5ed133a663dccabe0c4540c1158e",
+              "fontSizePt": 12,
+              "baselinePt": 9.3484
+            },
+            "c46262de2a26d3e74b1c7de6c395729fc10085f79260da01b122a54450680891": {
+              "expression": "t^2",
+              "display": false,
+              "url": "assets/papers/math/c46262de2a26d3e74b1c7de6c395729fc10085f79260da01b122a54450680891.svg",
+              "widthPt": 11.7836,
+              "heightPt": 12.0656,
+              "sha256": "8347afdca467b743ddbabc777cd25a526bb40b202e038e15908d26e2b2d0d71f",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "c7914b81671502dc15b8436d25077e57d4e4eecdd1391713f009c18fed6dbe21": {
+              "expression": "s/2",
+              "display": false,
+              "url": "assets/papers/math/c7914b81671502dc15b8436d25077e57d4e4eecdd1391713f009c18fed6dbe21.svg",
+              "widthPt": 9.1796,
+              "heightPt": 14.5724,
+              "sha256": "fd2a721ea86e72ee591e4fa7a028502ac10b6159084db1938577e17687e1ccea",
+              "fontSizePt": 12,
+              "baselinePt": 9.4324
+            },
+            "cae953f93325be530265c5cfe1eaec6c8d863a3cd568ad8810d5f2761d08db6f": {
+              "expression": "x^rho",
+              "display": false,
+              "url": "assets/papers/math/cae953f93325be530265c5cfe1eaec6c8d863a3cd568ad8810d5f2761d08db6f.svg",
+              "widthPt": 14.5172,
+              "heightPt": 10.1924,
+              "sha256": "a9a3723a027fb416cc3f52f75709c27497529a01dbc9c096d4d0c766affa87c2",
+              "fontSizePt": 12,
+              "baselinePt": 9.0604
+            },
+            "cb3dfc3759208f01ae47dd216d3ef92430cd2ef1eb3686e08c86e89976196d13": {
+              "expression": "1/2",
+              "display": false,
+              "url": "assets/papers/math/cb3dfc3759208f01ae47dd216d3ef92430cd2ef1eb3686e08c86e89976196d13.svg",
+              "widthPt": 9.1796,
+              "heightPt": 16.4456,
+              "sha256": "5f8f1c95b0d9523353077559ba35b9bbb7196ddf28a3c27ea7731b296c9ac4f2",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "cf669ee474e35c2daecfa17865f59fa2d48ad5d0ce300bd53ee5399d00cf6496": {
+              "expression": "log zeta(s)",
+              "display": false,
+              "url": "assets/papers/math/cf669ee474e35c2daecfa17865f59fa2d48ad5d0ce300bd53ee5399d00cf6496.svg",
+              "widthPt": 40.324,
+              "heightPt": 13.952,
+              "sha256": "5147d6f44cd0828692d90b85431ee820390ca8b4f96c95474b350c7490cdbd0a",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "cffec06705c64a7d805b00a128c36a3ad240353bba6a6da8157fa8c94a3377ef": {
+              "expression": "Gamma(n) = (n - 1)!",
+              "display": false,
+              "url": "assets/papers/math/cffec06705c64a7d805b00a128c36a3ad240353bba6a6da8157fa8c94a3377ef.svg",
+              "widthPt": 82.58,
+              "heightPt": 13.952,
+              "sha256": "69220d375393d9098fcf26a8f6ab01796934d9e3eca4e29cd76bdfeaefd6bb69",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "d0033498ead259924bfef3426b122514253a329e9aacda732454ace46d31c2f9": {
+              "expression": "integral_(-oo)^(rho log x) e^u / u d u",
+              "display": false,
+              "url": "assets/papers/math/d0033498ead259924bfef3426b122514253a329e9aacda732454ace46d31c2f9.svg",
+              "widthPt": 62.5028,
+              "heightPt": 20.6456,
+              "sha256": "c394c0d62b6b3928777a5b6f6dbc3745645167d3f37511cf373ccaa68454b6aa",
+              "fontSizePt": 12,
+              "baselinePt": 13.4956
+            },
+            "d051615c511caa84f17d6c69d9eb38b859c4cbe825d1443caaaaf1295d1879b2": {
+              "expression": "zeta(s) = (i Gamma(1 - s)) / (2 pi) integral_oo^oo (-x)^(s-1) / (e^x - 1) d x",
+              "display": false,
+              "url": "assets/papers/math/d051615c511caa84f17d6c69d9eb38b859c4cbe825d1443caaaaf1295d1879b2.svg",
+              "widthPt": 142.861866667,
+              "heightPt": 21.1424,
+              "sha256": "5af5d34319e6fc1eafe1de9d5187c99a4e38094f650f073a1de6bae562e69fb3",
+              "fontSizePt": 12,
+              "baselinePt": 13.9924
+            },
+            "d41988e429377dc3c78b83ef136148d1464691db57b6ecd053e8ea8985bc2c82": {
+              "expression": "= L(x) - 1/2 L(x^(1/2)) - 1/3 L(x^(1/3)) - 1/5 L(x^(1/5)) + 1/6 L(x^(1/6)) - dots",
+              "display": true,
+              "url": "assets/papers/math/d41988e429377dc3c78b83ef136148d1464691db57b6ecd053e8ea8985bc2c82.svg",
+              "widthPt": 296.12,
+              "heightPt": 26.612,
+              "sha256": "bf05527de615c3c74bb76fed554d13a4a9b631fc4b2a40f750725a3c90da738a",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "d4a60c9d587ddac42ae3b4995806c06a3facef01c35385ba9c88072fc619987d": {
+              "expression": "xi(0)",
+              "display": false,
+              "url": "assets/papers/math/d4a60c9d587ddac42ae3b4995806c06a3facef01c35385ba9c88072fc619987d.svg",
+              "widthPt": 23.024,
+              "heightPt": 13.952,
+              "sha256": "76e3e9d109cd0aaf295a1f1da4148d2ed333f1a4ca4217a4a4460383ff1018bd",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "d531d9bcc7c74a0c4b9239151cc4280fe0bc092daca9626bd144a45b3e6b39b5": {
+              "expression": "-t",
+              "display": false,
+              "url": "assets/papers/math/d531d9bcc7c74a0c4b9239151cc4280fe0bc092daca9626bd144a45b3e6b39b5.svg",
+              "widthPt": 15.668,
+              "heightPt": 9.644,
+              "sha256": "591c8488053802958a8b66c7f888e972ffcfa1e312abc06d2f786bacb4094845",
+              "fontSizePt": 12,
+              "baselinePt": 8.512
+            },
+            "d66ac4d89b33bd87c11251805e6eb16797c954cd46bc8283450ce56a1a2df2bd": {
+              "expression": "(1 - t^2 / alpha^2)",
+              "display": false,
+              "url": "assets/papers/math/d66ac4d89b33bd87c11251805e6eb16797c954cd46bc8283450ce56a1a2df2bd.svg",
+              "widthPt": 48.418933333,
+              "heightPt": 19.4372,
+              "sha256": "90b349e788818515181540fcbb3470d1dbff9d4ad0dc011b7a03e511dc8a8b8f",
+              "fontSizePt": 12,
+              "baselinePt": 12.7732
+            },
+            "d833de0ca02aa1eb74a26f5c276c0c7b699c7e1fbd9aa1aea64ea4130e993c26": {
+              "expression": "sigma = 0",
+              "display": false,
+              "url": "assets/papers/math/d833de0ca02aa1eb74a26f5c276c0c7b699c7e1fbd9aa1aea64ea4130e993c26.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.256,
+              "sha256": "10235e6b964b94ca3d12ec00b28364b005f14f413b6abc41af3b96b7288c192f",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "dc206ca32e6887d13d6328282a3e2284ce16b12ac4e50fff59f6ed2b840a455e": {
+              "expression": "sqrt(x) log x",
+              "display": false,
+              "url": "assets/papers/math/dc206ca32e6887d13d6328282a3e2284ce16b12ac4e50fff59f6ed2b840a455e.svg",
+              "widthPt": 45.06,
+              "heightPt": 14.576,
+              "sha256": "14902c9bff641fa67c26f5eea9e587b49e54b969684b87c4769e5426de7cfe99",
+              "fontSizePt": 12,
+              "baselinePt": 10.75
+            },
+            "e6ac546a9b1c9151f5db8373e112c2bd1048efd4e6651fb93c09a1d5e436ddd9": {
+              "expression": "sigma > 1",
+              "display": false,
+              "url": "assets/papers/math/e6ac546a9b1c9151f5db8373e112c2bd1048efd4e6651fb93c09a1d5e436ddd9.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.556,
+              "sha256": "ba9bf294372a4d104b375d897470dddeae8bde7302305e8a55d8d1e02ede4195",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "e6f435d178173c8ec141fa53844c3ef6145bc22bd12a7abc393ccc307fb546be": {
+              "expression": "sigma > 0",
+              "display": false,
+              "url": "assets/papers/math/e6f435d178173c8ec141fa53844c3ef6145bc22bd12a7abc393ccc307fb546be.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.556,
+              "sha256": "bfe7cf21d4e4350f12e46864638b5b3924eb0adbcf44b42f93245b7bdf40c725",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "e7ed118e57d1cf5718c488f2f687f01c9327b930b6614cccf7a3c68325a4d421": {
+              "expression": "F(x)",
+              "display": false,
+              "url": "assets/papers/math/e7ed118e57d1cf5718c488f2f687f01c9327b930b6614cccf7a3c68325a4d421.svg",
+              "widthPt": 27.524,
+              "heightPt": 13.952,
+              "sha256": "cbc660717507435557d1b6191fc69aa359d5f31881ee59d15e498c4ff24ba5e3",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "ebfe8046b645ceff5b1331c6ca16877b947ef1fc1890e77e130182872acc15af": {
+              "expression": "T = 30",
+              "display": false,
+              "url": "assets/papers/math/ebfe8046b645ceff5b1331c6ca16877b947ef1fc1890e77e130182872acc15af.svg",
+              "widthPt": 38.786666667,
+              "heightPt": 10.388,
+              "sha256": "25f6e0c30f2eade71ef64eb67de9de68a0f2828b1a0dbda01b6fe660e9039b30",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "ef4421149263279b6b9516479ea13be7b7be61ad7ef3a7a7feef71ef25cc75d0": {
+              "expression": "s = 1",
+              "display": false,
+              "url": "assets/papers/math/ef4421149263279b6b9516479ea13be7b7be61ad7ef3a7a7feef71ef25cc75d0.svg",
+              "widthPt": 29.630666667,
+              "heightPt": 10.124,
+              "sha256": "e0b0c9f37ebaa3a099ffb3c7ab92bd91a5417f12cc6265564f85a7a79b444cad",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "f00c3cd7bbb059fe89720045bd62f0a882cf69b5bd4ccae4c83789fdfed7c7b6": {
+              "expression": "rho log x",
+              "display": false,
+              "url": "assets/papers/math/f00c3cd7bbb059fe89720045bd62f0a882cf69b5bd4ccae4c83789fdfed7c7b6.svg",
+              "widthPt": 34.56,
+              "heightPt": 12.92,
+              "sha256": "aaf64e38ea83d3cb1404e33afd5792d51a2165e4d378b75d7ff76eb7d4d2eff4",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "f036ece3191989ff49b970b9773a3cd5f8aa2188e0b3c72cb3d7ad00abed0b9c": {
+              "expression": "sqrt(x) / (|rho| log x)",
+              "display": false,
+              "url": "assets/papers/math/f036ece3191989ff49b970b9773a3cd5f8aa2188e0b3c72cb3d7ad00abed0b9c.svg",
+              "widthPt": 33.03,
+              "heightPt": 20.9312,
+              "sha256": "00eae5a728fea1a37c4f945517acccec1c0a53a27b8cbe6275a822e8e6c4a6cc",
+              "fontSizePt": 12,
+              "baselinePt": 13.6672
+            },
+            "f3c8b71669670112340566e67fa2a321da7da75a663a885e5b79f3b3d20facbb": {
+              "expression": "e^x - 1",
+              "display": false,
+              "url": "assets/papers/math/f3c8b71669670112340566e67fa2a321da7da75a663a885e5b79f3b3d20facbb.svg",
+              "widthPt": 34.376533333,
+              "heightPt": 10.1924,
+              "sha256": "e4cff19bf8815656f66d23fa53fa55ccde65a3572348e040cb03986a275eb262",
+              "fontSizePt": 12,
+              "baselinePt": 9.0604
+            },
+            "f7976af39ce8eb2c11dcd46983dc61be830402a4f8eca5fd0302b65f3010ac3d": {
+              "expression": "sigma > 1/2",
+              "display": false,
+              "url": "assets/papers/math/f7976af39ce8eb2c11dcd46983dc61be830402a4f8eca5fd0302b65f3010ac3d.svg",
+              "widthPt": 32.322266667,
+              "heightPt": 16.4456,
+              "sha256": "ba93bd61863a521c0e073913460206d08f646c0c9934923ad928a93f5ea912c0",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "f81acee5db8c8e3c9158948c4027318ff08e6a4e303ce925e457d4ff1f9f8d5d": {
+              "expression": "integral_0^oo e^(-n x) x^(s-1) d x = Gamma(s) / n^s",
+              "display": true,
+              "url": "assets/papers/math/f81acee5db8c8e3c9158948c4027318ff08e6a4e303ce925e457d4ff1f9f8d5d.svg",
+              "widthPt": 132.021466667,
+              "heightPt": 32.0,
+              "sha256": "809fe1379bc01b6642f1a5f4909b2db0eb3d3825676077edbf41c64525ae1fde",
+              "fontSizePt": 12,
+              "baselinePt": 18.1
+            },
+            "f9ad3931d3a84b4525a13071be1928f479da315159244c9d396236fbd4085cd8": {
+              "expression": "xi(t) = 1/2 s (s - 1) pi^(-s/2) Gamma(s/2) zeta(s)",
+              "display": true,
+              "url": "assets/papers/math/f9ad3931d3a84b4525a13071be1928f479da315159244c9d396236fbd4085cd8.svg",
+              "widthPt": 162.3332,
+              "heightPt": 26.348,
+              "sha256": "597f9c2ce01eca77040832590083abf2a3f61ad9336597b0a42f6d72daeb07b3",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "fa3899b88ef488aebd0297373711cfc2b0526b6222bf2518f86fa7af77173d8d": {
+              "expression": "sigma = 1/2",
+              "display": false,
+              "url": "assets/papers/math/fa3899b88ef488aebd0297373711cfc2b0526b6222bf2518f86fa7af77173d8d.svg",
+              "widthPt": 32.322266667,
+              "heightPt": 16.4456,
+              "sha256": "7b2092225748e3e3f6bc8897b6204a36080d0d81aceda66776d049cc8834ed9e",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "fd15cbcc52dfb60835c3b55ba293714d8cb6c5c9dc1787969e7104a817ffde40": {
+              "expression": "log zeta(s) = sum_p sum_(n=1)^oo 1/n p^(-n s) = s integral_1^oo f(x) x^(-s-1) d x",
+              "display": true,
+              "url": "assets/papers/math/fd15cbcc52dfb60835c3b55ba293714d8cb6c5c9dc1787969e7104a817ffde40.svg",
+              "widthPt": 246.771733333,
+              "heightPt": 33.818,
+              "sha256": "2fabb30c1dcadf27786d86872cda8bdea6cc2765dff9cdb39a46790f39e2224c",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            }
+          },
+          "figures": {
+            "1": {
+              "number": 1,
+              "function": "fig-old-1",
+              "caption": "图一　五十以内的质数个数（阶梯）、疏密算式的估值（虚线）与加上前三个根以后（实线）",
+              "url": "assets/papers/alding/zh-figure-1.svg",
+              "font": [
+                "Times New Roman",
+                "SimSun"
+              ],
+              "fontSizePt": 10,
+              "leadingEm": 0.85,
+              "widthPt": 271.883058563,
+              "heightPt": 158.160669291,
+              "sha256": "a4067372a13f7eb83d3d6f00c9a5efecf3ac82b1147cf4a0df2205b5a191e758"
+            }
+          }
+        },
+        "en": {
+          "source": {
+            "path": "02_PROPOSALS/学术名篇_第三批_英文原刊.md",
+            "heading": "On the Density of the Primes",
+            "sha256": "23ea2e17345b76251e1b12ec5a880ef2329311c7c77240cc21c27b62de11867d"
+          },
+          "math": {
+            "0a713b70a62a6943fe5f25dfc2022a9c18d66be74c36b22bd10e5886691ea38d": {
+              "expression": "xi(t)",
+              "display": false,
+              "url": "assets/papers/math/0a713b70a62a6943fe5f25dfc2022a9c18d66be74c36b22bd10e5886691ea38d.svg",
+              "widthPt": 21.356,
+              "heightPt": 13.952,
+              "sha256": "b2116ac0474d19900717bccf3bf1a1e5ddca5d5d9613f09ac86c5e535f8d04af",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "0de3be0cc583565ded08a9279a6ad0d26c34c3079757402cfadb610a9fa5b5ed": {
+              "expression": "x (log x T)^2 / T",
+              "display": false,
+              "url": "assets/papers/math/0de3be0cc583565ded08a9279a6ad0d26c34c3079757402cfadb610a9fa5b5ed.svg",
+              "widthPt": 46.8052,
+              "heightPt": 19.1324,
+              "sha256": "f71b24eb93f222c4713686f3da260c2d1dfe15bcf40426c019c9d28ea59c921d",
+              "fontSizePt": 12,
+              "baselinePt": 13.9924
+            },
+            "0ecd48765e47be1129108d985b656d08e9759ea813a7cb516ea60d43ecbb00f1": {
+              "expression": "f",
+              "display": false,
+              "url": "assets/papers/math/0ecd48765e47be1129108d985b656d08e9759ea813a7cb516ea60d43ecbb00f1.svg",
+              "widthPt": 8.96,
+              "heightPt": 12.92,
+              "sha256": "36dbfbf390569ffdeb88e9819390d5086dd899ca2fd7c3f5a5837f4c1b3ed02e",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "14a411a2324579cc77ef3a18d437e95c08a51d65d33e1b1748307c12f26fd2e2": {
+              "expression": "A(x) = 1 + sum_(k=1)^oo (log x)^k / (k dot k! dot zeta(k + 1))",
+              "display": true,
+              "url": "assets/papers/math/14a411a2324579cc77ef3a18d437e95c08a51d65d33e1b1748307c12f26fd2e2.svg",
+              "widthPt": 165.584,
+              "heightPt": 33.6272,
+              "sha256": "11ba3bb4a611ec249f05cd37a12963774005029d63eca9ccb96ce8f40ac12933",
+              "fontSizePt": 12,
+              "baselinePt": 19.3096
+            },
+            "164e748c97cc6c86e25b6889fe6758422376043ed671ce578ed9864e7808f42b": {
+              "expression": "sqrt(x) (log T)^2",
+              "display": false,
+              "url": "assets/papers/math/164e748c97cc6c86e25b6889fe6758422376043ed671ce578ed9864e7808f42b.svg",
+              "widthPt": 59.7676,
+              "heightPt": 14.9096,
+              "sha256": "6207f5caa132a4d5d4d030636998972603b2e54522728c70b893e6417f761187",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "186fafe1034f657ee40494a294839cf15edd4f42d7bd59a7865d46546ef2ff67": {
+              "expression": "integral_0^oo e^(-n^2 pi x) x^(s/2 - 1) d x = pi^(-s/2) n^(-s) Gamma(s/2)",
+              "display": false,
+              "url": "assets/papers/math/186fafe1034f657ee40494a294839cf15edd4f42d7bd59a7865d46546ef2ff67.svg",
+              "widthPt": 174.460666667,
+              "heightPt": 19.6352,
+              "sha256": "e28cf281e0751908069c2070dded976996812f5c15e81f6312af8bd960b0071b",
+              "fontSizePt": 12,
+              "baselinePt": 12.4012
+            },
+            "1f49e7240bd2ea8bee1f797a3a173cd484dd83d7e6d9b07b95441ca6e7de0687": {
+              "expression": "sigma = a",
+              "display": false,
+              "url": "assets/papers/math/1f49e7240bd2ea8bee1f797a3a173cd484dd83d7e6d9b07b95441ca6e7de0687.svg",
+              "widthPt": 31.490666667,
+              "heightPt": 7.436,
+              "sha256": "50cc22aa9f7e8f8c8e8362c8316fbebc383463f215a50bf212712d34bd4806ac",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "20647feec4aff564f0f88f99e9b5a28bb7230beb796e845ce4736485b9884884": {
+              "expression": "pi^(-s/2) Gamma(s/2)",
+              "display": false,
+              "url": "assets/papers/math/20647feec4aff564f0f88f99e9b5a28bb7230beb796e845ce4736485b9884884.svg",
+              "widthPt": 46.9208,
+              "heightPt": 16.4576,
+              "sha256": "566549a50c9dad969b93c5b482d651015efa68f7b61ca2324dd15da52cad5572",
+              "fontSizePt": 12,
+              "baselinePt": 11.3176
+            },
+            "2b6ddc4f5b4f640202035bf2da0c74d8f0ec22a5e38275db64e866fe135d01a1": {
+              "expression": "1/2 L(sqrt(x))",
+              "display": false,
+              "url": "assets/papers/math/2b6ddc4f5b4f640202035bf2da0c74d8f0ec22a5e38275db64e866fe135d01a1.svg",
+              "widthPt": 44.3396,
+              "heightPt": 16.4456,
+              "sha256": "d5e6016c7cb72cb3f3c4b2385aeae1d2cb9d48d6acfd0f907b998d2194dae1e5",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "2f74d0b82f4d5507a11463bb4280346d198475c3c7b7b83ccf8d8832d6a0af49": {
+              "expression": "s",
+              "display": false,
+              "url": "assets/papers/math/2f74d0b82f4d5507a11463bb4280346d198475c3c7b7b83ccf8d8832d6a0af49.svg",
+              "widthPt": 7.628,
+              "heightPt": 7.436,
+              "sha256": "1bc2befcb1042df85941407881eb3accff41885ffdc4daf6c8fd77d65a3c9f0a",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "3493154a41ddf0f8a42fe88078260ddb14f705b907881876b56c857f27e5c08c": {
+              "expression": "L(x^rho)",
+              "display": false,
+              "url": "assets/papers/math/3493154a41ddf0f8a42fe88078260ddb14f705b907881876b56c857f27e5c08c.svg",
+              "widthPt": 32.0252,
+              "heightPt": 13.952,
+              "sha256": "293db2cc5588ba35f02218253cc1cd3b411677b7218f98c7e55d054caee63189",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "3596e90094ea4d19563651e511c401c5052abb9f22c335b1b76041a717bb6710": {
+              "expression": "Gamma(s) zeta(s) = integral_0^oo x^(s-1) / (e^x - 1) d x",
+              "display": true,
+              "url": "assets/papers/math/3596e90094ea4d19563651e511c401c5052abb9f22c335b1b76041a717bb6710.svg",
+              "widthPt": 137.8348,
+              "heightPt": 32.9576,
+              "sha256": "a671e8cdadfc3ae2485c31da6d24af8b45ad7aaf5ee3a9eb5e7d05256a4ac6f4",
+              "fontSizePt": 12,
+              "baselinePt": 19.0576
+            },
+            "384d423459e6aeea4e8a24f662b253c5bf2e7881c980550ad8e0bed110a0d6ef": {
+              "expression": "zeta",
+              "display": false,
+              "url": "assets/papers/math/384d423459e6aeea4e8a24f662b253c5bf2e7881c980550ad8e0bed110a0d6ef.svg",
+              "widthPt": 8.024,
+              "heightPt": 12.824,
+              "sha256": "e40f93aafa5bbdd9a6caae07be5d8dea228bb468450edbacad5ce665c06cde12",
+              "fontSizePt": 12,
+              "baselinePt": 9.364
+            },
+            "3be56c967a047f0d10b06aea4aa9341510b05b35c1d5c6b98ed772a66909c59c": {
+              "expression": "t = 1",
+              "display": false,
+              "url": "assets/papers/math/3be56c967a047f0d10b06aea4aa9341510b05b35c1d5c6b98ed772a66909c59c.svg",
+              "widthPt": 28.334666667,
+              "heightPt": 10.124,
+              "sha256": "9d4f18e90b5fb71df11582432ead4a362ca536adeecdd80b1d1a48b3da3cf104",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "3f1dc55387f46b0d3f5c1bb9a6d4c82f8baf5a2756bf15a392db15cd6f1e5ca6": {
+              "expression": "T/(2 pi) log(T/(2 pi)) - T/(2 pi)",
+              "display": true,
+              "url": "assets/papers/math/3f1dc55387f46b0d3f5c1bb9a6d4c82f8baf5a2756bf15a392db15cd6f1e5ca6.svg",
+              "widthPt": 102.273333333,
+              "heightPt": 30.704,
+              "sha256": "c4ef4fb39b6f895e13e87631e2cbd5900ba34b2060f3b290b5a85f39f7bb0c4c",
+              "fontSizePt": 12,
+              "baselinePt": 18.352
+            },
+            "45b7522ae339ebde386615d9ecfe786c10ee3a7445f5aca346856d4480a29406": {
+              "expression": "x = 1",
+              "display": false,
+              "url": "assets/papers/math/45b7522ae339ebde386615d9ecfe786c10ee3a7445f5aca346856d4480a29406.svg",
+              "widthPt": 30.866666667,
+              "heightPt": 10.124,
+              "sha256": "6066aed0784e49ba286e0dcf68e11c0606df5ebdfab5592cc8e401452959a155",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "48e7f3e69124bba48b9db087891bf6626e6e93c02b5544e6a4f3654910d52ba8": {
+              "expression": "t = 30",
+              "display": false,
+              "url": "assets/papers/math/48e7f3e69124bba48b9db087891bf6626e6e93c02b5544e6a4f3654910d52ba8.svg",
+              "widthPt": 34.334666667,
+              "heightPt": 10.256,
+              "sha256": "8a51b491296b01b2eb6ff73cd76de6757e19622181a377a574655f052ef01dc7",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "4a184e2d5bf48fac96eff19fcf9d62e263c1a99a519b987f95fd53e727f75b2e": {
+              "expression": "mu(1)",
+              "display": false,
+              "url": "assets/papers/math/4a184e2d5bf48fac96eff19fcf9d62e263c1a99a519b987f95fd53e727f75b2e.svg",
+              "widthPt": 24.572,
+              "heightPt": 13.952,
+              "sha256": "ee3704d1c37c6ec481521860cc63e355a83679145671177314167f7066540d21",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "4c54acd74516993b01fac92a638e0ee14dcc64bdbfbafcb13a242bbff597ba18": {
+              "expression": "1 / (log t)",
+              "display": false,
+              "url": "assets/papers/math/4c54acd74516993b01fac92a638e0ee14dcc64bdbfbafcb13a242bbff597ba18.svg",
+              "widthPt": 20.164,
+              "heightPt": 18.176,
+              "sha256": "a5493621e5bdc8f4d249193d48ef1142f1a66c43c974ff8b9e4008122d6880ac",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "4c97c2042449bb6f50fa1dc36465bce3b609aa6b830f02cbf99a4e038773150d": {
+              "expression": "p^k",
+              "display": false,
+              "url": "assets/papers/math/4c97c2042449bb6f50fa1dc36465bce3b609aa6b830f02cbf99a4e038773150d.svg",
+              "widthPt": 13.9868,
+              "heightPt": 14.5136,
+              "sha256": "1a56d81154dd1cd5509b52ed6427bd6d62185eb0e1bb1c8982ad349f5fd28ef4",
+              "fontSizePt": 12,
+              "baselinePt": 11.1856
+            },
+            "4c9f1fb508b3b6b0705c405e85bc5429a90f25c54d38030023d12476a2488a2e": {
+              "expression": "pi^(-s/2) Gamma(s/2) zeta(s) = pi^(-(1-s)/2) Gamma((1-s)/2) zeta(1-s)",
+              "display": true,
+              "url": "assets/papers/math/4c9f1fb508b3b6b0705c405e85bc5429a90f25c54d38030023d12476a2488a2e.svg",
+              "widthPt": 215.883733333,
+              "heightPt": 27.668,
+              "sha256": "5346f934bf81f7387ac3468dde6fed458e1f024447186d08e9af417b1f758e9b",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "4cb5bb321158dc166af0a292f1e710fe44370ccc1bd653e82174df0e88e3e9da": {
+              "expression": "1/2 + |beta - 1/2|",
+              "display": false,
+              "url": "assets/papers/math/4cb5bb321158dc166af0a292f1e710fe44370ccc1bd653e82174df0e88e3e9da.svg",
+              "widthPt": 59.593866667,
+              "heightPt": 16.4456,
+              "sha256": "f431542504af7873cfa7d5547edd4afaa2b2f3ea34873af80cb37497387e4db0",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "4d20e50e3526c96d2538f2bc6fa77b011f5bd857bbf2707998823a816a1470a5": {
+              "expression": "Gamma(1 - s)",
+              "display": false,
+              "url": "assets/papers/math/4d20e50e3526c96d2538f2bc6fa77b011f5bd857bbf2707998823a816a1470a5.svg",
+              "widthPt": 45.133333333,
+              "heightPt": 13.952,
+              "sha256": "d1d182cb45647aaa9aa4b6cb3f3c54398c0373da0d5dda271d5a41b118867ce7",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "4e27567a38cb22f98948d2a9aa6bb3d87ed130633f55c3ce44fb8c8d80032ff0": {
+              "expression": "n",
+              "display": false,
+              "url": "assets/papers/math/4e27567a38cb22f98948d2a9aa6bb3d87ed130633f55c3ce44fb8c8d80032ff0.svg",
+              "widthPt": 9.2,
+              "heightPt": 7.436,
+              "sha256": "e19a61e03858cd50c8101899119cabfc96be3eaba4ed5d924e0273a9d2587d84",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "4f1a7b95cb8cb77fe17520f534653a89a15ae956e2ef1ad71c706726a19e908c": {
+              "expression": "product_p 1/(1 - p^(-s)) = sum_(n=1)^oo 1/n^s",
+              "display": true,
+              "url": "assets/papers/math/4f1a7b95cb8cb77fe17520f534653a89a15ae956e2ef1ad71c706726a19e908c.svg",
+              "widthPt": 114.4704,
+              "heightPt": 33.818,
+              "sha256": "99b970c836258e610c20e9d3d53f086c7455ecd7cc585d88033afca5b221ccaa",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "4f8b86a897d05fcf08ce704f0a78dbfd365575dc1dd45a1eee8f7bae861f2d0b": {
+              "expression": "f(x) = F(x) + 1/2 F(x^(1/2)) + 1/3 F(x^(1/3)) + dots",
+              "display": true,
+              "url": "assets/papers/math/4f8b86a897d05fcf08ce704f0a78dbfd365575dc1dd45a1eee8f7bae861f2d0b.svg",
+              "widthPt": 211.878666667,
+              "heightPt": 26.612,
+              "sha256": "44c9c9445717a82653bac9b36f5306882fa5534d1275657df67c9e5030115471",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "52eb9c621ee4a16bee95cf69a902cd4cddbe4b8fc2d9c1757ca1c5ebdfa874a3": {
+              "expression": "sqrt(x)",
+              "display": false,
+              "url": "assets/papers/math/52eb9c621ee4a16bee95cf69a902cd4cddbe4b8fc2d9c1757ca1c5ebdfa874a3.svg",
+              "widthPt": 18.86,
+              "heightPt": 14.576,
+              "sha256": "a7cb7471d613acf9cc6963bd728ebc38ceacc5518db44510fb93851a9d536acf",
+              "fontSizePt": 12,
+              "baselinePt": 10.75
+            },
+            "52fe41a75b273440a16d371aae46f41abeb6efb2329f2cd672c3dd8ff420130e": {
+              "expression": "L(x)",
+              "display": false,
+              "url": "assets/papers/math/52fe41a75b273440a16d371aae46f41abeb6efb2329f2cd672c3dd8ff420130e.svg",
+              "widthPt": 26.372,
+              "heightPt": 13.952,
+              "sha256": "2dd233d70e586733c66b8a5f0d924524c8af9d27bc548763937eb5ffd673bf0c",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "545b8c3e97bf59014fb0139da976d6d5e287a6fa3c078adc56e699c6f0a5a482": {
+              "expression": "2 sin(pi s) Gamma(s) zeta(s) = i integral_oo^oo (-x)^(s-1) / (e^x - 1) d x",
+              "display": true,
+              "url": "assets/papers/math/545b8c3e97bf59014fb0139da976d6d5e287a6fa3c078adc56e699c6f0a5a482.svg",
+              "widthPt": 198.488666667,
+              "heightPt": 32.8736,
+              "sha256": "5d5feace4040064e71f0ffe4a99feac7bdf252a86986094a8f3199588ff425e4",
+              "fontSizePt": 12,
+              "baselinePt": 19.0576
+            },
+            "55ea81dcb0605677c47c5c49ae8c2f5b0528e1d93f119b32c1b97268a7b84b04": {
+              "expression": "1",
+              "display": false,
+              "url": "assets/papers/math/55ea81dcb0605677c47c5c49ae8c2f5b0528e1d93f119b32c1b97268a7b84b04.svg",
+              "widthPt": 8.0,
+              "heightPt": 9.992,
+              "sha256": "234ec3d3fd41726fc1d6897038eab3909a667dc83ff2bdcc4e053ee782e6e2a9",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "5729863d04bf8b5fa73a9b5ac7610dd88f2ebfa982218b72727adcf4b2144fd9": {
+              "expression": "rho = beta + gamma i",
+              "display": false,
+              "url": "assets/papers/math/5729863d04bf8b5fa73a9b5ac7610dd88f2ebfa982218b72727adcf4b2144fd9.svg",
+              "widthPt": 57.248,
+              "heightPt": 13.064,
+              "sha256": "5e99496f6ed0e39e3806749832942a2c8ebcb010870e95dcd6102aea08358e31",
+              "fontSizePt": 12,
+              "baselinePt": 9.472
+            },
+            "596a938169557684c8aa7e5cfd6ebf43dbb50c24f4db19882a663fb73d3f00b7": {
+              "expression": "x",
+              "display": false,
+              "url": "assets/papers/math/596a938169557684c8aa7e5cfd6ebf43dbb50c24f4db19882a663fb73d3f00b7.svg",
+              "widthPt": 8.864,
+              "heightPt": 7.436,
+              "sha256": "9a382745e57ef3a2c8fb46a3bb48db553b1373aaf1fe40593396f2f4e9e9ea68",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "598ed1db88453779b871aab216eadcc5d92bb960a4021a636618f8e813028132": {
+              "expression": "alpha",
+              "display": false,
+              "url": "assets/papers/math/598ed1db88453779b871aab216eadcc5d92bb960a4021a636618f8e813028132.svg",
+              "widthPt": 9.68,
+              "heightPt": 7.436,
+              "sha256": "3737d630160b82ff590ffadc41bc3d74f0ab8b825216c2e3d25dffcae9c58b9d",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "5aabf6d9e30889f511bf2185fbfac6aac1952f3e9f28aaea6601a29ffec6b1e9": {
+              "expression": "H(x)",
+              "display": false,
+              "url": "assets/papers/math/5aabf6d9e30889f511bf2185fbfac6aac1952f3e9f28aaea6601a29ffec6b1e9.svg",
+              "widthPt": 29.108,
+              "heightPt": 13.952,
+              "sha256": "23282952f1bcb0163247dca7de20ff1819f6192cbf7ffae3fa894c344d681ab0",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "5db5238d4ff870966a4ee2840a70dd801cad8af21edb8d2317fd5786c5954999": {
+              "expression": "t",
+              "display": false,
+              "url": "assets/papers/math/5db5238d4ff870966a4ee2840a70dd801cad8af21edb8d2317fd5786c5954999.svg",
+              "widthPt": 6.332,
+              "heightPt": 9.644,
+              "sha256": "c09fce3dfcbfaf8217c122e037e2f7982f17993963a3f04b1c94645d5529f095",
+              "fontSizePt": 12,
+              "baselinePt": 8.512
+            },
+            "5e0dfa2bf429f31e89e9a8179405db789bababf206cfc37904c35d2b79dc8ff5": {
+              "expression": "-2, -4, -6, dots",
+              "display": false,
+              "url": "assets/papers/math/5e0dfa2bf429f31e89e9a8179405db789bababf206cfc37904c35d2b79dc8ff5.svg",
+              "widthPt": 74.06,
+              "heightPt": 12.44,
+              "sha256": "ce007b05782f27df1e20dc66002c5884b9a73300bbdc912f14d57d94582cdd91",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "5f61c55b9badf2a2d7389f8d50888927928e58e649ee63b1ff41a98c01b36311": {
+              "expression": "log x",
+              "display": false,
+              "url": "assets/papers/math/5f61c55b9badf2a2d7389f8d50888927928e58e649ee63b1ff41a98c01b36311.svg",
+              "widthPt": 26.2,
+              "heightPt": 12.8,
+              "sha256": "39d013473bac73970658bfc08ee7e255e5f4fdc605c3647b2837d9be672b2588",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "6002f122dd4eebfb9b1fd48c5e145f2e37cfdd4e2b02728f6c3c481f4d2bc423": {
+              "expression": "plus.minus 2 pi i, plus.minus 4 pi i, dots",
+              "display": false,
+              "url": "assets/papers/math/6002f122dd4eebfb9b1fd48c5e145f2e37cfdd4e2b02728f6c3c481f4d2bc423.svg",
+              "widthPt": 75.948,
+              "heightPt": 12.44,
+              "sha256": "35d9993ef465e26112bebf07ca99571257ec2d83ea627e776f9ea7d9e1e14ea8",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "610314779f8a2b70200a93f4b534cd725e3ccd19c9e6e6079cf7c2d38b7664c6": {
+              "expression": "1 - s",
+              "display": false,
+              "url": "assets/papers/math/610314779f8a2b70200a93f4b534cd725e3ccd19c9e6e6079cf7c2d38b7664c6.svg",
+              "widthPt": 28.297333333,
+              "heightPt": 10.124,
+              "sha256": "0e8f0ffbee8943caaad08c4ec160a0e4aa641fdd5f3f72839758aece54163918",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "619fc0d64484f86967f8e40b61101eb481af7b06b5b2014b4c42534a0300d44f": {
+              "expression": "-(zeta'(s)) / zeta(s) - s / (s - 1) = s integral_1^oo (H(x) - x) x^(-s-1) d x",
+              "display": false,
+              "url": "assets/papers/math/619fc0d64484f86967f8e40b61101eb481af7b06b5b2014b4c42534a0300d44f.svg",
+              "widthPt": 208.901733333,
+              "heightPt": 21.0308,
+              "sha256": "1001f04aefd6d9c24f03d8b31a3d0ae13a00b03982423fb71fd6bba44c654961",
+              "fontSizePt": 12,
+              "baselinePt": 13.8004
+            },
+            "641b330b70de6adfbf4f1c1bbebc1a266a15104981cddffbc2650d829b00d689": {
+              "expression": "H(x) - x",
+              "display": false,
+              "url": "assets/papers/math/641b330b70de6adfbf4f1c1bbebc1a266a15104981cddffbc2650d829b00d689.svg",
+              "widthPt": 50.641333333,
+              "heightPt": 13.952,
+              "sha256": "7aa0a82e45bd55b31e7b963a304a57c1fad115c87cb17a45557261bdd476fd3d",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "646f67b7e4589f07a0b605f0994b2d92beb24e389a9c51aee32843db247bee88": {
+              "expression": "pi^(-s/2) Gamma(s/2) zeta(s) = 1/(s (s - 1)) + integral_1^oo psi(x) (x^(s/2 - 1) + x^((1 - s)/2 - 1)) d x",
+              "display": true,
+              "url": "assets/papers/math/646f67b7e4589f07a0b605f0994b2d92beb24e389a9c51aee32843db247bee88.svg",
+              "widthPt": 298.565066667,
+              "heightPt": 31.7684,
+              "sha256": "b653c7a493312d16578e03ec351176166388215f0c63205b2961cb55d64a3879",
+              "fontSizePt": 12,
+              "baselinePt": 18.0364
+            },
+            "6b8b3d9d6419f73917ba361a8cbd84f283dcb4b2d654881a08b20db0d3357e30": {
+              "expression": "e^(|t| log |t|)",
+              "display": false,
+              "url": "assets/papers/math/6b8b3d9d6419f73917ba361a8cbd84f283dcb4b2d654881a08b20db0d3357e30.svg",
+              "widthPt": 36.9976,
+              "heightPt": 12.788,
+              "sha256": "4336e67d0bd07294d5e1068ba80d5ad356c0ff207afc2d3ac5d4860f52ff4bbe",
+              "fontSizePt": 12,
+              "baselinePt": 11.656
+            },
+            "6c13db437ae62ac7d54af8a90c225d4d4e70dbf1593a86e666a351295cdd70b6": {
+              "expression": "1 - overline(rho)",
+              "display": false,
+              "url": "assets/papers/math/6c13db437ae62ac7d54af8a90c225d4d4e70dbf1593a86e666a351295cdd70b6.svg",
+              "widthPt": 29.029333333,
+              "heightPt": 12.584,
+              "sha256": "31bc64ec7e9a39e2751845f51ff65f2799afa067b0f744c6e4c91ec2e441e855",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "6fcc798290f85dee32d1d1e7c90369e40ede42d781c46586a54edaa1af37b53e": {
+              "expression": "Gamma(s/2)",
+              "display": false,
+              "url": "assets/papers/math/6fcc798290f85dee32d1d1e7c90369e40ede42d781c46586a54edaa1af37b53e.svg",
+              "widthPt": 26.8076,
+              "heightPt": 15.704,
+              "sha256": "c60f714cfa7c35a60df536a84a5c18248cf29c80cee7fc50b30f5afea71040bf",
+              "fontSizePt": 12,
+              "baselinePt": 10.564
+            },
+            "701358d402aabe1f83a37c0ec9fc246e020f79707527b5d10fa9d4da68c21aa0": {
+              "expression": "0",
+              "display": false,
+              "url": "assets/papers/math/701358d402aabe1f83a37c0ec9fc246e020f79707527b5d10fa9d4da68c21aa0.svg",
+              "widthPt": 8.0,
+              "heightPt": 10.256,
+              "sha256": "d4a54ae4d7df1674c27a09685b330a7782fe66df0dd3c174afb69b26126e960f",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "7074d75e2a6e7a99e8dc01623be0c759a1c0d751d986bcef5a1bb5b78213c322": {
+              "expression": "s = 2, 3, dots",
+              "display": false,
+              "url": "assets/papers/math/7074d75e2a6e7a99e8dc01623be0c759a1c0d751d986bcef5a1bb5b78213c322.svg",
+              "widthPt": 56.346666667,
+              "heightPt": 12.308,
+              "sha256": "0ac6c8b9db19fd4c75ed73bcb51ec3da196a050b8444eee86ec5e23481ab9bb6",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "70f9eb76c4cec177b2db2284207f00f9e94ddb47299ae3fada1576bf5e62ef93": {
+              "expression": "(log x) / (log 2)",
+              "display": false,
+              "url": "assets/papers/math/70f9eb76c4cec177b2db2284207f00f9e94ddb47299ae3fada1576bf5e62ef93.svg",
+              "widthPt": 21.9784,
+              "heightPt": 19.2944,
+              "sha256": "9acccf82bbe610eabecb854d545e6bb0f7681b13c8e8ddf501138fa8afa4a6d4",
+              "fontSizePt": 12,
+              "baselinePt": 12.424
+            },
+            "7360b7ff9708d6268ab48c2f323217a5f851d20ee810d3487787f4926fd68958": {
+              "expression": "F(x) = sum_(m=1)^oo mu(m)/m f(x^(1/m))",
+              "display": true,
+              "url": "assets/papers/math/7360b7ff9708d6268ab48c2f323217a5f851d20ee810d3487787f4926fd68958.svg",
+              "widthPt": 134.947066667,
+              "heightPt": 32.654,
+              "sha256": "d2777510327674eddce107a171fb11eb7a5022e51c4b8b5534fc5893ff00e4fb",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "73c7b44578fc8c30dc7acf6d5c4227ce0a6623583beb29f539f0bb3369aae1a8": {
+              "expression": "t = 0",
+              "display": false,
+              "url": "assets/papers/math/73c7b44578fc8c30dc7acf6d5c4227ce0a6623583beb29f539f0bb3369aae1a8.svg",
+              "widthPt": 28.334666667,
+              "heightPt": 10.256,
+              "sha256": "96deb296cf5543c8715acc0106fe3ce807eee5d188fad9dc7a1d492fb3ba5a24",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "799d6fa3851be4716570a8cedc2262e82cb3931402084f3608a62f08ef603e69": {
+              "expression": "x^beta / (|rho| log x)",
+              "display": false,
+              "url": "assets/papers/math/799d6fa3851be4716570a8cedc2262e82cb3931402084f3608a62f08ef603e69.svg",
+              "widthPt": 33.03,
+              "heightPt": 20.2772,
+              "sha256": "e8f85b982bf194160fe5f734039c7f950b77d110f91927491c4df421d9ea08b8",
+              "fontSizePt": 12,
+              "baselinePt": 13.0132
+            },
+            "7b06ab30ccb098f6e3bec68d91fe82413029b361dadcf4ed7b1521bd5e68ded4": {
+              "expression": "s = sigma + t i",
+              "display": false,
+              "url": "assets/papers/math/7b06ab30ccb098f6e3bec68d91fe82413029b361dadcf4ed7b1521bd5e68ded4.svg",
+              "widthPt": 53.912,
+              "heightPt": 10.928,
+              "sha256": "410e3c394714b7176974e52b53dbd3c1064b979de406ccae32eb4430140469b4",
+              "fontSizePt": 12,
+              "baselinePt": 8.932
+            },
+            "7e21758d26bac392357562a07900b7960f25285d923fe407546e6494ddfb5520": {
+              "expression": "mu(m)",
+              "display": false,
+              "url": "assets/papers/math/7e21758d26bac392357562a07900b7960f25285d923fe407546e6494ddfb5520.svg",
+              "widthPt": 29.108,
+              "heightPt": 13.952,
+              "sha256": "9e1f9ad19a33b178d094bd4f93189ede19a71ff9d87a39e795e56ee7a976b706",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "7ecab6cc4e150020f5346c435ede70fd3cdd88e41219bf38e8313d1c5c6e3f09": {
+              "expression": "-1",
+              "display": false,
+              "url": "assets/papers/math/7ecab6cc4e150020f5346c435ede70fd3cdd88e41219bf38e8313d1c5c6e3f09.svg",
+              "widthPt": 17.336,
+              "heightPt": 9.992,
+              "sha256": "e50aa860228ba30aa0a09c05a5f4ae22924080e4cdf545d71e25f539a375170c",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "826c404d003bfd8d42354efc14ab828ab84ee71bc06074a6ecf045da5fce8e42": {
+              "expression": "s = 1, 2, 3, dots",
+              "display": false,
+              "url": "assets/papers/math/826c404d003bfd8d42354efc14ab828ab84ee71bc06074a6ecf045da5fce8e42.svg",
+              "widthPt": 67.682666667,
+              "heightPt": 12.308,
+              "sha256": "809f034e3adf56b380e0c68ad8886f3d76c36179875b04e92cbc8f7cd9e18e69",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "842465a43166dc64355ee45bd314c61c081b172cae62c55b6f2c28ac41a0d252": {
+              "expression": "log zeta",
+              "display": false,
+              "url": "assets/papers/math/842465a43166dc64355ee45bd314c61c081b172cae62c55b6f2c28ac41a0d252.svg",
+              "widthPt": 25.36,
+              "heightPt": 12.836,
+              "sha256": "813bcde7119c8027a23847be7a0f14f1ed6c8aae51e800e75af2d1b9814b7f8a",
+              "fontSizePt": 12,
+              "baselinePt": 9.364
+            },
+            "8775df7fa66b20a015565f961f96fcfa963ef02f760ba51e1a8bd2cdd742a482": {
+              "expression": "-log 2",
+              "display": false,
+              "url": "assets/papers/math/8775df7fa66b20a015565f961f96fcfa963ef02f760ba51e1a8bd2cdd742a482.svg",
+              "widthPt": 36.672,
+              "heightPt": 12.8,
+              "sha256": "b1ec6a2d1a537ee714acad7387a5385a5f5125e6abd4d649eef5cf163aa4347b",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "88022fb76107a076bad1a50385dd3d947a933ceac92240dbf05dd7cd69c86f04": {
+              "expression": "n^2 pi x",
+              "display": false,
+              "url": "assets/papers/math/88022fb76107a076bad1a50385dd3d947a933ceac92240dbf05dd7cd69c86f04.svg",
+              "widthPt": 28.6556,
+              "heightPt": 12.0656,
+              "sha256": "6afc8ebbe1d874c08a74ea62987916efb01c4302b6d9179091a1b875a4729fc4",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "8959cd91ff3faee0a46df7348206b13597a573d179e495d2328b9ac605747d84": {
+              "expression": "-1/2",
+              "display": false,
+              "url": "assets/papers/math/8959cd91ff3faee0a46df7348206b13597a573d179e495d2328b9ac605747d84.svg",
+              "widthPt": 18.5156,
+              "heightPt": 16.4456,
+              "sha256": "c3d58d64c405a62832f46aa121509281f70806e1bbd8055fca900afdbf660f26",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "8b230495176e283eda22d0049814a4f7d6b1473927672892e2bffd5c57e75dac": {
+              "expression": "A(x) = sum_(m=1)^oo mu(m)/m L(x^(1/m))",
+              "display": true,
+              "url": "assets/papers/math/8b230495176e283eda22d0049814a4f7d6b1473927672892e2bffd5c57e75dac.svg",
+              "widthPt": 135.835066667,
+              "heightPt": 32.654,
+              "sha256": "c64eb935d6e4b0023d803d7ba48386d92b6b7b722deac7afea418d857db9f5b6",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "8cd2df338fd060bf4ff59d5276f6fcc76d4b1f5e04f1cd4d766444c0c09640f9": {
+              "expression": "e^((s - 1) log(-x))",
+              "display": false,
+              "url": "assets/papers/math/8cd2df338fd060bf4ff59d5276f6fcc76d4b1f5e04f1cd4d766444c0c09640f9.svg",
+              "widthPt": 61.2904,
+              "heightPt": 12.7712,
+              "sha256": "ae63abfd84b6486536e2c772337752af54b921c9782276f6ed7f1443bbc31fb4",
+              "fontSizePt": 12,
+              "baselinePt": 11.6392
+            },
+            "90b85c7b4eba2999df547a98ec95a7005bdb090040fc069c5bc5b6a3a99e878d": {
+              "expression": "-2 i sin(pi s)",
+              "display": false,
+              "url": "assets/papers/math/90b85c7b4eba2999df547a98ec95a7005bdb090040fc069c5bc5b6a3a99e878d.svg",
+              "widthPt": 60.316,
+              "heightPt": 13.952,
+              "sha256": "79879bc80fee78f0aa7b044b615e75bc4f21cc40d4c370676072e1878fa2e903",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "9189f790eaa6e2f237f21208608b8089f5a6df6d85de2a063cf79aa00232da12": {
+              "expression": "pi^(-s/2) Gamma(s/2) zeta(s) = integral_0^oo psi(x) x^(s/2 - 1) d x",
+              "display": false,
+              "url": "assets/papers/math/9189f790eaa6e2f237f21208608b8089f5a6df6d85de2a063cf79aa00232da12.svg",
+              "widthPt": 166.295866667,
+              "heightPt": 18.6044,
+              "sha256": "b52f8e0533945fe1d20643fe3e79f320ef3ee127deadd165e2ed8b20fe0d5273",
+              "fontSizePt": 12,
+              "baselinePt": 11.3704
+            },
+            "92cc7ae4a438b8d165e77290a6e6e9fa553f1735c36f32937940038cdf7daf03": {
+              "expression": "H",
+              "display": false,
+              "url": "assets/papers/math/92cc7ae4a438b8d165e77290a6e6e9fa553f1735c36f32937940038cdf7daf03.svg",
+              "widthPt": 12.908,
+              "heightPt": 10.196,
+              "sha256": "8e078c794e8af0d332cac9b0bb383b062c981e6e1dc6c6f0f28ebc09b66e92f7",
+              "fontSizePt": 12,
+              "baselinePt": 9.196
+            },
+            "9575a070ea0b27679a94fde752027ba64dd5f6b373505046908147fc5311be02": {
+              "expression": "zeta(s)",
+              "display": false,
+              "url": "assets/papers/math/9575a070ea0b27679a94fde752027ba64dd5f6b373505046908147fc5311be02.svg",
+              "widthPt": 22.988,
+              "heightPt": 13.952,
+              "sha256": "103c880c9aeb7959cae3cf9a5cd9acf046e798b470b6d4730965b951d6257fd6",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "9763a800e1cc9463195017d7a09fa98d114931cd3795bc69ca8c071c170ced27": {
+              "expression": "m",
+              "display": false,
+              "url": "assets/papers/math/9763a800e1cc9463195017d7a09fa98d114931cd3795bc69ca8c071c170ced27.svg",
+              "widthPt": 12.536,
+              "heightPt": 7.436,
+              "sha256": "23d07a3e6a4f00135aeab3d2754334db5af749b66a2c799707260cb0fc0c3f5c",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "977902ca6638e999c10c2f33228bd6bea126b79549bfcae364b6ec71724e0aeb": {
+              "expression": "log T",
+              "display": false,
+              "url": "assets/papers/math/977902ca6638e999c10c2f33228bd6bea126b79549bfcae364b6ec71724e0aeb.svg",
+              "widthPt": 28.12,
+              "heightPt": 12.8,
+              "sha256": "2f2908e3ba053446435fb2963290756c8d28c2d64d54ba3fd01d9564bcabbe91",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "9bad7aad57c35e13faa49d572ae89c43d458c4a34ba99c1f0c0e1bfb1fad88b3": {
+              "expression": "a plus.minus i T",
+              "display": false,
+              "url": "assets/papers/math/9bad7aad57c35e13faa49d572ae89c43d458c4a34ba99c1f0c0e1bfb1fad88b3.svg",
+              "widthPt": 35.941333333,
+              "heightPt": 11.132,
+              "sha256": "0e6c6849a02b19faaacb91fcb40fd6e05c0a2b491d2e21da47575f3da33ae72d",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "9f080ee09a224e6a8419d5df199f681c10879a3fdde2da91497149d61a3be862": {
+              "expression": "L(x) = integral_0^x (d t)/(log t)",
+              "display": true,
+              "url": "assets/papers/math/9f080ee09a224e6a8419d5df199f681c10879a3fdde2da91497149d61a3be862.svg",
+              "widthPt": 90.529866667,
+              "heightPt": 31.9364,
+              "sha256": "a3c67ee54153e5ffd754d4fc5603333cc291daf991470f810609bff440068c53",
+              "fontSizePt": 12,
+              "baselinePt": 18.0364
+            },
+            "9f15899704a631958730b5013918f859e479f31b4aee21d294b8df6837f94f38": {
+              "expression": "2 psi(x) + 1 = x^(-1/2) (2 psi(1/x) + 1)",
+              "display": true,
+              "url": "assets/papers/math/9f15899704a631958730b5013918f859e479f31b4aee21d294b8df6837f94f38.svg",
+              "widthPt": 168.362533333,
+              "heightPt": 27.668,
+              "sha256": "c5ca9fab96f302408030547f1ccbd8bbe31a4b070d2035ec30a7787a9fe1b8f0",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "9f380432e205af2ca0f65960e6e8897e3da908f2bee20b525c01d96bbc60e3f6": {
+              "expression": "H(x) = x - sum_rho x^rho / rho - log 2 pi - 1/2 log(1 - x^(-2))",
+              "display": false,
+              "url": "assets/papers/math/9f380432e205af2ca0f65960e6e8897e3da908f2bee20b525c01d96bbc60e3f6.svg",
+              "widthPt": 233.6172,
+              "heightPt": 19.6268,
+              "sha256": "ce56391ec372a215f0a7ec0aea91a6c2f8ecd94b432536de258010c766096afc",
+              "fontSizePt": 12,
+              "baselinePt": 11.4292
+            },
+            "a066a264bb118830fcbb9530ebbede2ecf8c2e6838aa1a29efed4b7f0c2df4cd": {
+              "expression": "(-x)^(s-1)",
+              "display": false,
+              "url": "assets/papers/math/a066a264bb118830fcbb9530ebbede2ecf8c2e6838aa1a29efed4b7f0c2df4cd.svg",
+              "widthPt": 44.0504,
+              "heightPt": 14.9096,
+              "sha256": "547bbcda9a4576d7609f1de86af3a8a67d97fe7e7fb4d0f5d75fed48660c93ff",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "a06cda4a65f802846e43eed84fdef36b6edd1a1af9260e1555cae6929709a3bc": {
+              "expression": "xi",
+              "display": false,
+              "url": "assets/papers/math/a06cda4a65f802846e43eed84fdef36b6edd1a1af9260e1555cae6929709a3bc.svg",
+              "widthPt": 7.688,
+              "heightPt": 12.824,
+              "sha256": "941660c192f04e705100e1289355c83f80ce378fea327088860b8d06eee60ec4",
+              "fontSizePt": 12,
+              "baselinePt": 9.364
+            },
+            "a0e8794d2e4da113d7f81cbe31009de3a646c8e3b979b3537266299a7055dd22": {
+              "expression": "integral_oo^oo (-x)^(s-1) / (e^x - 1) d x",
+              "display": false,
+              "url": "assets/papers/math/a0e8794d2e4da113d7f81cbe31009de3a646c8e3b979b3537266299a7055dd22.svg",
+              "widthPt": 69.7696,
+              "heightPt": 21.1424,
+              "sha256": "f14240559e1d8e56ce957c8bfbff98df197a9f38a8881f8f002239a5dd0ae10b",
+              "fontSizePt": 12,
+              "baselinePt": 13.9924
+            },
+            "a12e09377a2bddcbd2c1608ab6f7f585940b7df0dc62d123871435988165735d": {
+              "expression": "sigma = 1",
+              "display": false,
+              "url": "assets/papers/math/a12e09377a2bddcbd2c1608ab6f7f585940b7df0dc62d123871435988165735d.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.124,
+              "sha256": "9476b28c07992ae48b932ea452857d14c6f86fb1c5b3edd73d6c51da6c6e160b",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "a417f000a8283502d7707b76b739f1ab88bc8bb9594de9ac924e7ee97da7bb0b": {
+              "expression": "1 / (s - 1)",
+              "display": false,
+              "url": "assets/papers/math/a417f000a8283502d7707b76b739f1ab88bc8bb9594de9ac924e7ee97da7bb0b.svg",
+              "widthPt": 20.2424,
+              "heightPt": 16.5296,
+              "sha256": "9623357a4e0486e4302d4dc709d7536ac2f683e99aee37fadf20f6fc245d7f89",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "a41d141ab64be1f01fe731b5692fdc8c2c69d7c77f0f6d246e2f8890b8aa907e": {
+              "expression": "psi(x) = sum_(n=1)^oo e^(-n^2 pi x)",
+              "display": true,
+              "url": "assets/papers/math/a41d141ab64be1f01fe731b5692fdc8c2c69d7c77f0f6d246e2f8890b8aa907e.svg",
+              "widthPt": 99.844666667,
+              "heightPt": 32.654,
+              "sha256": "02e4448e06dbc7116b0f2edfeeab484e33231f8eacb49ad37fc5bdfb39511f34",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            },
+            "a43cb36f9fac2fbcd9f951c6b0f6f99f64f41ec6a386c5663afa6bc261c5a4bd": {
+              "expression": "L",
+              "display": false,
+              "url": "assets/papers/math/a43cb36f9fac2fbcd9f951c6b0f6f99f64f41ec6a386c5663afa6bc261c5a4bd.svg",
+              "widthPt": 10.172,
+              "heightPt": 10.208,
+              "sha256": "20c524986abffd059327625efb20461e927314bbfc3dae60f20eba5f78d79d25",
+              "fontSizePt": 12,
+              "baselinePt": 9.208
+            },
+            "a48863f494403ad96568b7a1d39206060a73e81605a8ee96a907bb6d4f2c983a": {
+              "expression": "log p",
+              "display": false,
+              "url": "assets/papers/math/a48863f494403ad96568b7a1d39206060a73e81605a8ee96a907bb6d4f2c983a.svg",
+              "widthPt": 25.552,
+              "heightPt": 12.8,
+              "sha256": "0ae79238c3835885bf6344a3c48f769e7914819591dd2d493f333019c66deccc",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "a6b1d20d9eb5d6d8c310c2daeb1fbc6a7bd3564a04d3d8583427d950a047a78f": {
+              "expression": "f(x) = 1/(2 pi i) integral_(a - i oo)^(a + i oo) log zeta(s) x^s (d s)/s",
+              "display": true,
+              "url": "assets/papers/math/a6b1d20d9eb5d6d8c310c2daeb1fbc6a7bd3564a04d3d8583427d950a047a78f.svg",
+              "widthPt": 171.134666667,
+              "heightPt": 33.7172,
+              "sha256": "180a05d3ef425d60b5e5f6eb3a7d8017237fcb3d4a5041a8cdda67922e460c6e",
+              "fontSizePt": 12,
+              "baselinePt": 19.9012
+            },
+            "a9bb8ff7b79a9f09d08621d9f91c955c9ef8784c8825d94c1d8bf9dbc78d221c": {
+              "expression": "sqrt(x) (log x)^2",
+              "display": false,
+              "url": "assets/papers/math/a9bb8ff7b79a9f09d08621d9f91c955c9ef8784c8825d94c1d8bf9dbc78d221c.svg",
+              "widthPt": 57.8476,
+              "heightPt": 14.9096,
+              "sha256": "00b570e7eb34e534a82191dce6e1def17a6bd857ecfd1e63ec57791f9e4430f3",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "ab756fb72040c269d3d459bf68c8325dedfd59357d636802060689971186c5d8": {
+              "expression": "T",
+              "display": false,
+              "url": "assets/papers/math/ab756fb72040c269d3d459bf68c8325dedfd59357d636802060689971186c5d8.svg",
+              "widthPt": 10.784,
+              "heightPt": 10.124,
+              "sha256": "68271bdee3b965a13f458a75bd0fd22fce2a090007560daccf5cc839dbaab593",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "af7cc26fe46e801d9308565d293ef64993131fc3afc302d49297028c4cf50b03": {
+              "expression": "sqrt(x) / (log x)",
+              "display": false,
+              "url": "assets/papers/math/af7cc26fe46e801d9308565d293ef64993131fc3afc302d49297028c4cf50b03.svg",
+              "widthPt": 21.9784,
+              "heightPt": 20.5376,
+              "sha256": "a04f1ad8ff89b740704c8e03db61f71c38edb537251a18f7664a5e578255e61e",
+              "fontSizePt": 12,
+              "baselinePt": 13.6672
+            },
+            "b21983c67b670f14245aa324eb37eda58c547895caad88691b8ffb363dff7135": {
+              "expression": "sigma < 0",
+              "display": false,
+              "url": "assets/papers/math/b21983c67b670f14245aa324eb37eda58c547895caad88691b8ffb363dff7135.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.616,
+              "sha256": "b5638bb823b27be1234154197e3b8d36442ffc34ccc8cfaf80268a3c4c16d4eb",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "b81531c5dd1dbb09350c04514e5bf1e963f52aee174909f756544def1ad24e88": {
+              "expression": "sin(pi s) Gamma(s)",
+              "display": false,
+              "url": "assets/papers/math/b81531c5dd1dbb09350c04514e5bf1e963f52aee174909f756544def1ad24e88.svg",
+              "widthPt": 61.304,
+              "heightPt": 13.952,
+              "sha256": "c1b9a5c88c85460d883724155212a55ff36138bc6152d4ff86e6c1059fcfee73",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "baa484ecc8aef5dd96d5741d280498eacc0759fd771e1b14f5db87d0451def26": {
+              "expression": "2 pi",
+              "display": false,
+              "url": "assets/papers/math/baa484ecc8aef5dd96d5741d280498eacc0759fd771e1b14f5db87d0451def26.svg",
+              "widthPt": 15.14,
+              "heightPt": 10.124,
+              "sha256": "f967d1e1bb9810c627805d4705329ae6c6bb0b84f059b647b944ae4400f61c70",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "bbce9f6eda2c58c291646ace2182d2c64d5970a88047e6235517d2bc279f4cf5": {
+              "expression": "s = 1/2 + t i",
+              "display": false,
+              "url": "assets/papers/math/bbce9f6eda2c58c291646ace2182d2c64d5970a88047e6235517d2bc279f4cf5.svg",
+              "widthPt": 53.9516,
+              "heightPt": 16.4456,
+              "sha256": "83415baf74d2b5e9a93684f9e5d40ae9db713191f8af44461b36d002b25da355",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "bdcc7b33f6ff053854725a91a2520d6476690f1f02869814086c5424a1b05c0d": {
+              "expression": "rho",
+              "display": false,
+              "url": "assets/papers/math/bdcc7b33f6ff053854725a91a2520d6476690f1f02869814086c5424a1b05c0d.svg",
+              "widthPt": 8.36,
+              "heightPt": 9.896,
+              "sha256": "adfe0c2b6c675c1b0433bcc87d41a018e23b351baad4294f01e3da42949957d3",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "be6bcbf03a7f9b0abf2b76bb5667f6e457ee7b2ff6c387fa796c953673d06426": {
+              "expression": "f(x) = L(x) - sum_rho L(x^rho) - log 2 + integral_x^oo (d t)/(t (t^2 - 1) log t)",
+              "display": true,
+              "url": "assets/papers/math/be6bcbf03a7f9b0abf2b76bb5667f6e457ee7b2ff6c387fa796c953673d06426.svg",
+              "widthPt": 280.6324,
+              "heightPt": 33.434,
+              "sha256": "057075d98910b964885d4a6a5e4568f5f28b7b330d54a3009ee1e9426158d4e8",
+              "fontSizePt": 12,
+              "baselinePt": 18.0364
+            },
+            "c14d05c71038b80d92e4605b7397175667f89b9acdd6cf64b7a973206bbc8d33": {
+              "expression": "Gamma(s) Gamma(1 - s) = pi / sin(pi s)",
+              "display": false,
+              "url": "assets/papers/math/c14d05c71038b80d92e4605b7397175667f89b9acdd6cf64b7a973206bbc8d33.svg",
+              "widthPt": 113.0228,
+              "heightPt": 17.2064,
+              "sha256": "f247fb14ffc8ed2a4bb778b24330b5d8f0ebb7bff47e91598531602c0cde38a4",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "c278774817459f288e2f2655ac37fe3223993ef7bd395878942dcb28910386d6": {
+              "expression": "2 pi / gamma",
+              "display": false,
+              "url": "assets/papers/math/c278774817459f288e2f2655ac37fe3223993ef7bd395878942dcb28910386d6.svg",
+              "widthPt": 16.0448,
+              "heightPt": 16.286,
+              "sha256": "2f4f85f86cbe15bec3853443e0873cf229ce5ed133a663dccabe0c4540c1158e",
+              "fontSizePt": 12,
+              "baselinePt": 9.3484
+            },
+            "c46262de2a26d3e74b1c7de6c395729fc10085f79260da01b122a54450680891": {
+              "expression": "t^2",
+              "display": false,
+              "url": "assets/papers/math/c46262de2a26d3e74b1c7de6c395729fc10085f79260da01b122a54450680891.svg",
+              "widthPt": 11.7836,
+              "heightPt": 12.0656,
+              "sha256": "8347afdca467b743ddbabc777cd25a526bb40b202e038e15908d26e2b2d0d71f",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "c63adce2ca8e8a962aca44f2a9eb66d04c6bd23865bd05a2494964b9efc59c4b": {
+              "expression": "-alpha",
+              "display": false,
+              "url": "assets/papers/math/c63adce2ca8e8a962aca44f2a9eb66d04c6bd23865bd05a2494964b9efc59c4b.svg",
+              "widthPt": 19.016,
+              "heightPt": 7.436,
+              "sha256": "1e5d91ae8ceaa8170701cb8719eedd1aeec5024053cdfcc316a4356182e112f8",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "c7914b81671502dc15b8436d25077e57d4e4eecdd1391713f009c18fed6dbe21": {
+              "expression": "s/2",
+              "display": false,
+              "url": "assets/papers/math/c7914b81671502dc15b8436d25077e57d4e4eecdd1391713f009c18fed6dbe21.svg",
+              "widthPt": 9.1796,
+              "heightPt": 14.5724,
+              "sha256": "fd2a721ea86e72ee591e4fa7a028502ac10b6159084db1938577e17687e1ccea",
+              "fontSizePt": 12,
+              "baselinePt": 9.4324
+            },
+            "c7c88812e3b8f808d749d6463c3d8534247b46578ce5cb00b24df3773da301c3": {
+              "expression": "sigma",
+              "display": false,
+              "url": "assets/papers/math/c7c88812e3b8f808d749d6463c3d8534247b46578ce5cb00b24df3773da301c3.svg",
+              "widthPt": 9.14,
+              "heightPt": 7.304,
+              "sha256": "22cb16a68b0643510ceaddd8f212f8c04ebd2699ffe50330ca991b269c69184b",
+              "fontSizePt": 12,
+              "baselinePt": 6.172
+            },
+            "c9071f9648e30a7f39c7dcef379b3a58e5f424136f8476627c0e9f0eedab27a1": {
+              "expression": "p",
+              "display": false,
+              "url": "assets/papers/math/c9071f9648e30a7f39c7dcef379b3a58e5f424136f8476627c0e9f0eedab27a1.svg",
+              "widthPt": 8.216,
+              "heightPt": 9.632,
+              "sha256": "fbd4467bdea5b75281c09508cc24d280e911b2a624ece962586dd7184ffedc69",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "cae953f93325be530265c5cfe1eaec6c8d863a3cd568ad8810d5f2761d08db6f": {
+              "expression": "x^rho",
+              "display": false,
+              "url": "assets/papers/math/cae953f93325be530265c5cfe1eaec6c8d863a3cd568ad8810d5f2761d08db6f.svg",
+              "widthPt": 14.5172,
+              "heightPt": 10.1924,
+              "sha256": "a9a3723a027fb416cc3f52f75709c27497529a01dbc9c096d4d0c766affa87c2",
+              "fontSizePt": 12,
+              "baselinePt": 9.0604
+            },
+            "cb3dfc3759208f01ae47dd216d3ef92430cd2ef1eb3686e08c86e89976196d13": {
+              "expression": "1/2",
+              "display": false,
+              "url": "assets/papers/math/cb3dfc3759208f01ae47dd216d3ef92430cd2ef1eb3686e08c86e89976196d13.svg",
+              "widthPt": 9.1796,
+              "heightPt": 16.4456,
+              "sha256": "5f8f1c95b0d9523353077559ba35b9bbb7196ddf28a3c27ea7731b296c9ac4f2",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "cbc3b2be640a2dc1ce747a382756eb6517ec4652d1d95fc1b1b7d07227364c28": {
+              "expression": "-x",
+              "display": false,
+              "url": "assets/papers/math/cbc3b2be640a2dc1ce747a382756eb6517ec4652d1d95fc1b1b7d07227364c28.svg",
+              "widthPt": 18.2,
+              "heightPt": 7.436,
+              "sha256": "9c3bca578f34d2629599c6868612d0d5e537887179f4d0724509503796e0984e",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "cf669ee474e35c2daecfa17865f59fa2d48ad5d0ce300bd53ee5399d00cf6496": {
+              "expression": "log zeta(s)",
+              "display": false,
+              "url": "assets/papers/math/cf669ee474e35c2daecfa17865f59fa2d48ad5d0ce300bd53ee5399d00cf6496.svg",
+              "widthPt": 40.324,
+              "heightPt": 13.952,
+              "sha256": "5147d6f44cd0828692d90b85431ee820390ca8b4f96c95474b350c7490cdbd0a",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "cfa3a73c99207ba8eb81554eedfafec8b4da93c3f2d4d306e223b5be61091e65": {
+              "expression": "a",
+              "display": false,
+              "url": "assets/papers/math/cfa3a73c99207ba8eb81554eedfafec8b4da93c3f2d4d306e223b5be61091e65.svg",
+              "widthPt": 8.348,
+              "heightPt": 7.436,
+              "sha256": "0ea0ca842cc8456e9a474e81c2889971f32196aa8b8a8ad003270aa40a8fcb44",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "cffec06705c64a7d805b00a128c36a3ad240353bba6a6da8157fa8c94a3377ef": {
+              "expression": "Gamma(n) = (n - 1)!",
+              "display": false,
+              "url": "assets/papers/math/cffec06705c64a7d805b00a128c36a3ad240353bba6a6da8157fa8c94a3377ef.svg",
+              "widthPt": 82.58,
+              "heightPt": 13.952,
+              "sha256": "69220d375393d9098fcf26a8f6ab01796934d9e3eca4e29cd76bdfeaefd6bb69",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "d0033498ead259924bfef3426b122514253a329e9aacda732454ace46d31c2f9": {
+              "expression": "integral_(-oo)^(rho log x) e^u / u d u",
+              "display": false,
+              "url": "assets/papers/math/d0033498ead259924bfef3426b122514253a329e9aacda732454ace46d31c2f9.svg",
+              "widthPt": 62.5028,
+              "heightPt": 20.6456,
+              "sha256": "c394c0d62b6b3928777a5b6f6dbc3745645167d3f37511cf373ccaa68454b6aa",
+              "fontSizePt": 12,
+              "baselinePt": 13.4956
+            },
+            "d051615c511caa84f17d6c69d9eb38b859c4cbe825d1443caaaaf1295d1879b2": {
+              "expression": "zeta(s) = (i Gamma(1 - s)) / (2 pi) integral_oo^oo (-x)^(s-1) / (e^x - 1) d x",
+              "display": false,
+              "url": "assets/papers/math/d051615c511caa84f17d6c69d9eb38b859c4cbe825d1443caaaaf1295d1879b2.svg",
+              "widthPt": 142.861866667,
+              "heightPt": 21.1424,
+              "sha256": "5af5d34319e6fc1eafe1de9d5187c99a4e38094f650f073a1de6bae562e69fb3",
+              "fontSizePt": 12,
+              "baselinePt": 13.9924
+            },
+            "d41988e429377dc3c78b83ef136148d1464691db57b6ecd053e8ea8985bc2c82": {
+              "expression": "= L(x) - 1/2 L(x^(1/2)) - 1/3 L(x^(1/3)) - 1/5 L(x^(1/5)) + 1/6 L(x^(1/6)) - dots",
+              "display": true,
+              "url": "assets/papers/math/d41988e429377dc3c78b83ef136148d1464691db57b6ecd053e8ea8985bc2c82.svg",
+              "widthPt": 296.12,
+              "heightPt": 26.612,
+              "sha256": "bf05527de615c3c74bb76fed554d13a4a9b631fc4b2a40f750725a3c90da738a",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "d4a60c9d587ddac42ae3b4995806c06a3facef01c35385ba9c88072fc619987d": {
+              "expression": "xi(0)",
+              "display": false,
+              "url": "assets/papers/math/d4a60c9d587ddac42ae3b4995806c06a3facef01c35385ba9c88072fc619987d.svg",
+              "widthPt": 23.024,
+              "heightPt": 13.952,
+              "sha256": "76e3e9d109cd0aaf295a1f1da4148d2ed333f1a4ca4217a4a4460383ff1018bd",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "d531d9bcc7c74a0c4b9239151cc4280fe0bc092daca9626bd144a45b3e6b39b5": {
+              "expression": "-t",
+              "display": false,
+              "url": "assets/papers/math/d531d9bcc7c74a0c4b9239151cc4280fe0bc092daca9626bd144a45b3e6b39b5.svg",
+              "widthPt": 15.668,
+              "heightPt": 9.644,
+              "sha256": "591c8488053802958a8b66c7f888e972ffcfa1e312abc06d2f786bacb4094845",
+              "fontSizePt": 12,
+              "baselinePt": 8.512
+            },
+            "d66ac4d89b33bd87c11251805e6eb16797c954cd46bc8283450ce56a1a2df2bd": {
+              "expression": "(1 - t^2 / alpha^2)",
+              "display": false,
+              "url": "assets/papers/math/d66ac4d89b33bd87c11251805e6eb16797c954cd46bc8283450ce56a1a2df2bd.svg",
+              "widthPt": 48.418933333,
+              "heightPt": 19.4372,
+              "sha256": "90b349e788818515181540fcbb3470d1dbff9d4ad0dc011b7a03e511dc8a8b8f",
+              "fontSizePt": 12,
+              "baselinePt": 12.7732
+            },
+            "d833de0ca02aa1eb74a26f5c276c0c7b699c7e1fbd9aa1aea64ea4130e993c26": {
+              "expression": "sigma = 0",
+              "display": false,
+              "url": "assets/papers/math/d833de0ca02aa1eb74a26f5c276c0c7b699c7e1fbd9aa1aea64ea4130e993c26.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.256,
+              "sha256": "10235e6b964b94ca3d12ec00b28364b005f14f413b6abc41af3b96b7288c192f",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "dc206ca32e6887d13d6328282a3e2284ce16b12ac4e50fff59f6ed2b840a455e": {
+              "expression": "sqrt(x) log x",
+              "display": false,
+              "url": "assets/papers/math/dc206ca32e6887d13d6328282a3e2284ce16b12ac4e50fff59f6ed2b840a455e.svg",
+              "widthPt": 45.06,
+              "heightPt": 14.576,
+              "sha256": "14902c9bff641fa67c26f5eea9e587b49e54b969684b87c4769e5426de7cfe99",
+              "fontSizePt": 12,
+              "baselinePt": 10.75
+            },
+            "e6ac546a9b1c9151f5db8373e112c2bd1048efd4e6651fb93c09a1d5e436ddd9": {
+              "expression": "sigma > 1",
+              "display": false,
+              "url": "assets/papers/math/e6ac546a9b1c9151f5db8373e112c2bd1048efd4e6651fb93c09a1d5e436ddd9.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.556,
+              "sha256": "ba9bf294372a4d104b375d897470dddeae8bde7302305e8a55d8d1e02ede4195",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "e6f435d178173c8ec141fa53844c3ef6145bc22bd12a7abc393ccc307fb546be": {
+              "expression": "sigma > 0",
+              "display": false,
+              "url": "assets/papers/math/e6f435d178173c8ec141fa53844c3ef6145bc22bd12a7abc393ccc307fb546be.svg",
+              "widthPt": 31.142666667,
+              "heightPt": 10.556,
+              "sha256": "bfe7cf21d4e4350f12e46864638b5b3924eb0adbcf44b42f93245b7bdf40c725",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "e7711b277be0083b32c2fe02264d2a955d0a765f2e9d92152d3500d78e2cd822": {
+              "expression": "Gamma",
+              "display": false,
+              "url": "assets/papers/math/e7711b277be0083b32c2fe02264d2a955d0a765f2e9d92152d3500d78e2cd822.svg",
+              "widthPt": 9.5,
+              "heightPt": 10.16,
+              "sha256": "b7ff304ad68e126fa73595a361063883c50352a83dea5f5249fb23ad127fbca4",
+              "fontSizePt": 12,
+              "baselinePt": 9.16
+            },
+            "e7ed118e57d1cf5718c488f2f687f01c9327b930b6614cccf7a3c68325a4d421": {
+              "expression": "F(x)",
+              "display": false,
+              "url": "assets/papers/math/e7ed118e57d1cf5718c488f2f687f01c9327b930b6614cccf7a3c68325a4d421.svg",
+              "widthPt": 27.524,
+              "heightPt": 13.952,
+              "sha256": "cbc660717507435557d1b6191fc69aa359d5f31881ee59d15e498c4ff24ba5e3",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "ebfe8046b645ceff5b1331c6ca16877b947ef1fc1890e77e130182872acc15af": {
+              "expression": "T = 30",
+              "display": false,
+              "url": "assets/papers/math/ebfe8046b645ceff5b1331c6ca16877b947ef1fc1890e77e130182872acc15af.svg",
+              "widthPt": 38.786666667,
+              "heightPt": 10.388,
+              "sha256": "25f6e0c30f2eade71ef64eb67de9de68a0f2828b1a0dbda01b6fe660e9039b30",
+              "fontSizePt": 12,
+              "baselinePt": 9.124
+            },
+            "ef4421149263279b6b9516479ea13be7b7be61ad7ef3a7a7feef71ef25cc75d0": {
+              "expression": "s = 1",
+              "display": false,
+              "url": "assets/papers/math/ef4421149263279b6b9516479ea13be7b7be61ad7ef3a7a7feef71ef25cc75d0.svg",
+              "widthPt": 29.630666667,
+              "heightPt": 10.124,
+              "sha256": "e0b0c9f37ebaa3a099ffb3c7ab92bd91a5417f12cc6265564f85a7a79b444cad",
+              "fontSizePt": 12,
+              "baselinePt": 8.992
+            },
+            "f00c3cd7bbb059fe89720045bd62f0a882cf69b5bd4ccae4c83789fdfed7c7b6": {
+              "expression": "rho log x",
+              "display": false,
+              "url": "assets/papers/math/f00c3cd7bbb059fe89720045bd62f0a882cf69b5bd4ccae4c83789fdfed7c7b6.svg",
+              "widthPt": 34.56,
+              "heightPt": 12.92,
+              "sha256": "aaf64e38ea83d3cb1404e33afd5792d51a2165e4d378b75d7ff76eb7d4d2eff4",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "f036ece3191989ff49b970b9773a3cd5f8aa2188e0b3c72cb3d7ad00abed0b9c": {
+              "expression": "sqrt(x) / (|rho| log x)",
+              "display": false,
+              "url": "assets/papers/math/f036ece3191989ff49b970b9773a3cd5f8aa2188e0b3c72cb3d7ad00abed0b9c.svg",
+              "widthPt": 33.03,
+              "heightPt": 20.9312,
+              "sha256": "00eae5a728fea1a37c4f945517acccec1c0a53a27b8cbe6275a822e8e6c4a6cc",
+              "fontSizePt": 12,
+              "baselinePt": 13.6672
+            },
+            "f3c8b71669670112340566e67fa2a321da7da75a663a885e5b79f3b3d20facbb": {
+              "expression": "e^x - 1",
+              "display": false,
+              "url": "assets/papers/math/f3c8b71669670112340566e67fa2a321da7da75a663a885e5b79f3b3d20facbb.svg",
+              "widthPt": 34.376533333,
+              "heightPt": 10.1924,
+              "sha256": "e4cff19bf8815656f66d23fa53fa55ccde65a3572348e040cb03986a275eb262",
+              "fontSizePt": 12,
+              "baselinePt": 9.0604
+            },
+            "f7976af39ce8eb2c11dcd46983dc61be830402a4f8eca5fd0302b65f3010ac3d": {
+              "expression": "sigma > 1/2",
+              "display": false,
+              "url": "assets/papers/math/f7976af39ce8eb2c11dcd46983dc61be830402a4f8eca5fd0302b65f3010ac3d.svg",
+              "widthPt": 32.322266667,
+              "heightPt": 16.4456,
+              "sha256": "ba93bd61863a521c0e073913460206d08f646c0c9934923ad928a93f5ea912c0",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "f81acee5db8c8e3c9158948c4027318ff08e6a4e303ce925e457d4ff1f9f8d5d": {
+              "expression": "integral_0^oo e^(-n x) x^(s-1) d x = Gamma(s) / n^s",
+              "display": true,
+              "url": "assets/papers/math/f81acee5db8c8e3c9158948c4027318ff08e6a4e303ce925e457d4ff1f9f8d5d.svg",
+              "widthPt": 132.021466667,
+              "heightPt": 32.0,
+              "sha256": "809fe1379bc01b6642f1a5f4909b2db0eb3d3825676077edbf41c64525ae1fde",
+              "fontSizePt": 12,
+              "baselinePt": 18.1
+            },
+            "f9ad3931d3a84b4525a13071be1928f479da315159244c9d396236fbd4085cd8": {
+              "expression": "xi(t) = 1/2 s (s - 1) pi^(-s/2) Gamma(s/2) zeta(s)",
+              "display": true,
+              "url": "assets/papers/math/f9ad3931d3a84b4525a13071be1928f479da315159244c9d396236fbd4085cd8.svg",
+              "widthPt": 162.3332,
+              "heightPt": 26.348,
+              "sha256": "597f9c2ce01eca77040832590083abf2a3f61ad9336597b0a42f6d72daeb07b3",
+              "fontSizePt": 12,
+              "baselinePt": 17.116
+            },
+            "fa3899b88ef488aebd0297373711cfc2b0526b6222bf2518f86fa7af77173d8d": {
+              "expression": "sigma = 1/2",
+              "display": false,
+              "url": "assets/papers/math/fa3899b88ef488aebd0297373711cfc2b0526b6222bf2518f86fa7af77173d8d.svg",
+              "widthPt": 32.322266667,
+              "heightPt": 16.4456,
+              "sha256": "7b2092225748e3e3f6bc8897b6204a36080d0d81aceda66776d049cc8834ed9e",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "fb8a95ba0d153ba54c7301dce0e40e03b80cbb848752108fbe8709d2525fa411": {
+              "expression": "A",
+              "display": false,
+              "url": "assets/papers/math/fb8a95ba0d153ba54c7301dce0e40e03b80cbb848752108fbe8709d2525fa411.svg",
+              "widthPt": 11.0,
+              "heightPt": 10.592,
+              "sha256": "f5ed9fac006a6ea6da987e7740e6e39cde4404d070206ee2c2d455e813f240ce",
+              "fontSizePt": 12,
+              "baselinePt": 9.592
+            },
+            "fd15cbcc52dfb60835c3b55ba293714d8cb6c5c9dc1787969e7104a817ffde40": {
+              "expression": "log zeta(s) = sum_p sum_(n=1)^oo 1/n p^(-n s) = s integral_1^oo f(x) x^(-s-1) d x",
+              "display": true,
+              "url": "assets/papers/math/fd15cbcc52dfb60835c3b55ba293714d8cb6c5c9dc1787969e7104a817ffde40.svg",
+              "widthPt": 246.771733333,
+              "heightPt": 33.818,
+              "sha256": "2fabb30c1dcadf27786d86872cda8bdea6cc2765dff9cdb39a46790f39e2224c",
+              "fontSizePt": 12,
+              "baselinePt": 18.5884
+            }
+          },
+          "figures": {
+            "1": {
+              "number": 1,
+              "function": "fig-old-1",
+              "caption": "Fig. 1. The number of primes below fifty (steps), the estimate of the density formula (broken line), and the same with the first three roots (solid line)",
+              "url": "assets/papers/alding/en-figure-1.svg",
+              "font": "New Computer Modern",
+              "fontSizePt": 10.2,
+              "leadingEm": 0.6,
+              "widthPt": 273.176896063,
+              "heightPt": 158.510969291,
+              "sha256": "9c4b2f80c3f447c4e73d4483365e17bbb493c74939b24890a98821ede2608eeb"
+            }
+          }
+        }
+      }
+    },
+    "metcalfe": {
+      "languages": {
+        "zh": {
+          "source": {
+            "path": "02_PROPOSALS/学术名篇_第七批_提案.md",
+            "heading": "元素亲和表",
+            "sha256": "af479d39604f4fa2ad6a6572c533ac4b7c5c7600b59479667ffed61278d4f198"
+          },
+          "math": {
+            "03a446c4bafb4b2ac339067435f3d357b601e86a1a6519b3eb299f2b2ac89520": {
+              "expression": "3 F - 3 G",
+              "display": false,
+              "url": "assets/papers/math/03a446c4bafb4b2ac339067435f3d357b601e86a1a6519b3eb299f2b2ac89520.svg",
+              "widthPt": 47.425333333,
+              "heightPt": 10.724,
+              "sha256": "1a5fca0a2afe609a0a82bc0d89c2a166964cb9ee3868bbf4a0d529848fdfb563",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "1c51de51bf3b5c3718f5425934a39e65af600f9d7f0cc6a790cd2647d5db1422": {
+              "expression": "L = f F + w (-F) + a G + e (-G) = x F + y G, quad x = f - w, quad y = a - e",
+              "display": true,
+              "url": "assets/papers/math/1c51de51bf3b5c3718f5425934a39e65af600f9d7f0cc6a790cd2647d5db1422.svg",
+              "widthPt": 371.682666667,
+              "heightPt": 13.952,
+              "sha256": "37367309b73c65253cd588e7ec53322ea643ac2be96b444aad8fe8695d52728d",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "1ede608fbb638d13cacaf217dc81022bc0849fdd1d826ad82d0ef2871ffaede7": {
+              "expression": "-F",
+              "display": false,
+              "url": "assets/papers/math/1ede608fbb638d13cacaf217dc81022bc0849fdd1d826ad82d0ef2871ffaede7.svg",
+              "widthPt": 20.66,
+              "heightPt": 10.16,
+              "sha256": "f77b6aa57caa0f959bc7f3f71a44303caa38b7f8494c337eaa90e0f6b8a1148b",
+              "fontSizePt": 12,
+              "baselinePt": 9.16
+            },
+            "403c4a35ff151a74148ed025ba75d0c0dbff479aec404c86bfc933b4a3f52f7a": {
+              "expression": "3 F + 3 G",
+              "display": false,
+              "url": "assets/papers/math/403c4a35ff151a74148ed025ba75d0c0dbff479aec404c86bfc933b4a3f52f7a.svg",
+              "widthPt": 47.425333333,
+              "heightPt": 11.456,
+              "sha256": "f052b0b5ae2ed9153fcfc14bedf9fb1648015ee74195b9c33144ecbdd54bbdd6",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "43ec7034358cdad26f27f4b7433b5008a357aaf95ab7a5cfe94e353d89a9ad40": {
+              "expression": "min(f, w)",
+              "display": false,
+              "url": "assets/papers/math/43ec7034358cdad26f27f4b7433b5008a357aaf95ab7a5cfe94e353d89a9ad40.svg",
+              "widthPt": 52.264,
+              "heightPt": 13.952,
+              "sha256": "2b051c7416bb543bc4dbf26b863f9418f626420effe232509f37a1966181d7cb",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "4805e51cf4306a6e9135d0c53d47cad4aa7ee1bf27c486edf4a4a00326d57836": {
+              "expression": "G F = S, quad F G = -S, quad F F = G G = -1",
+              "display": true,
+              "url": "assets/papers/math/4805e51cf4306a6e9135d0c53d47cad4aa7ee1bf27c486edf4a4a00326d57836.svg",
+              "widthPt": 216.514666667,
+              "heightPt": 12.776,
+              "sha256": "5b25d6f9dda38a25834f9d37a5f32767781a5021655cecea19e14341a9e149fb",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "78b15e5d107c1d55292e29d989201dde3211d5a3fb910fb4189202702c18dfd2": {
+              "expression": "-G",
+              "display": false,
+              "url": "assets/papers/math/78b15e5d107c1d55292e29d989201dde3211d5a3fb910fb4189202702c18dfd2.svg",
+              "widthPt": 20.768,
+              "heightPt": 10.724,
+              "sha256": "ef2280c2579c0513b534345650989693e34ba42d6f9ed0b4f49ec2e94d5a4291",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "8c2432f9e98030426a8efd64add5d96c1c351d851ed08f0889fb5d19d2db8144": {
+              "expression": "x F + y G",
+              "display": false,
+              "url": "assets/papers/math/8c2432f9e98030426a8efd64add5d96c1c351d851ed08f0889fb5d19d2db8144.svg",
+              "widthPt": 48.505333333,
+              "heightPt": 12.92,
+              "sha256": "4385b0d9c5d8de516c834811c1c48d430b3127b9d1461e1eb84312855d238910",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "9d3932d30b349176e05608733788ce36f7b154aeab0ffcb179fab27b0a3696ef": {
+              "expression": "-3 F + 3 G",
+              "display": false,
+              "url": "assets/papers/math/9d3932d30b349176e05608733788ce36f7b154aeab0ffcb179fab27b0a3696ef.svg",
+              "widthPt": 56.761333333,
+              "heightPt": 11.456,
+              "sha256": "e0d5bae099e73dc6423ba72a2e33c8860092c6fd1ce6808f67533c7f2b750dc6",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "c7f0e71d8a326a7f48ce069d66eb95a6e9eea1da8e2a2c35615a576ed037ed6f": {
+              "expression": "min(a, e)",
+              "display": false,
+              "url": "assets/papers/math/c7f0e71d8a326a7f48ce069d66eb95a6e9eea1da8e2a2c35615a576ed037ed6f.svg",
+              "widthPt": 48.616,
+              "heightPt": 13.952,
+              "sha256": "9a2e42c3999a2cbd75b01e4b52baced1d200622246587bc469f01425dd05bffc",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "d319f284bc12d356608f4376d2c8996914ca9f791e9f4863cdfec9ffa00b06a1": {
+              "expression": "(f - w)(a - e) S = x y S",
+              "display": true,
+              "url": "assets/papers/math/d319f284bc12d356608f4376d2c8996914ca9f791e9f4863cdfec9ffa00b06a1.svg",
+              "widthPt": 126.757333333,
+              "heightPt": 13.952,
+              "sha256": "67bd0c50eadf55460b1ba1c92fa03e7a6f35a771e665cbd3acd3a7f6bc415ab7",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "ed5e05927a0ee9469d54afdd06fea3aeb8071b81fdac7da922bbf18af805ee99": {
+              "expression": "|L|^2 = x^2 + y^2",
+              "display": true,
+              "url": "assets/papers/math/ed5e05927a0ee9469d54afdd06fea3aeb8071b81fdac7da922bbf18af805ee99.svg",
+              "widthPt": 80.9348,
+              "heightPt": 14.9336,
+              "sha256": "c9df3b3f87ebbd224aabef7bd74fed1e85c8d776b67cff12fcd7903c687c08a3",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "edd08a644b5b8c2318d5bced1685058843783ae0ae3616d80caa8acf0d6f4b79": {
+              "expression": "x y",
+              "display": false,
+              "url": "assets/papers/math/edd08a644b5b8c2318d5bced1685058843783ae0ae3616d80caa8acf0d6f4b79.svg",
+              "widthPt": 15.08,
+              "heightPt": 9.764,
+              "sha256": "b75b6a35ff05e32523510111a817f23b8618ec08e8a489737c910a4af3fcf243",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "f38c5c623c0299127aea5a88391fd230a492888b8b2260e8a4aae8c58554c3d9": {
+              "expression": "b = x y",
+              "display": false,
+              "url": "assets/papers/math/f38c5c623c0299127aea5a88391fd230a492888b8b2260e8a4aae8c58554c3d9.svg",
+              "widthPt": 36.398666667,
+              "heightPt": 12.788,
+              "sha256": "6ef12ce902f6bbfa8051f1424f57ba91d648fb392176e1c65b7af6a9b2f320a2",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "f8e2acc0a05bcee88aa50f56e088c13300811ac7ca75ad98c6f32fe848bb3248": {
+              "expression": "-3 F - 3 G",
+              "display": false,
+              "url": "assets/papers/math/f8e2acc0a05bcee88aa50f56e088c13300811ac7ca75ad98c6f32fe848bb3248.svg",
+              "widthPt": 56.761333333,
+              "heightPt": 10.724,
+              "sha256": "fe0fb005180afa1c68960e1d2d65f75d47968568182004f21716a59587eb68c3",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            }
+          },
+          "figures": {
+            "1": {
+              "number": 1,
+              "function": "fig-met-1",
+              "caption": "图一　亲和的四面体：四个顶点是四种纯粹的元素，格点以六分之一为距（图中只画出四面体的棱与表面上的格点；打叉的是骨架为空的格点，空心圆是四处空格）；横轴取火减水，纵轴取风减土，把四面体投到一个平面上，便得到图二的表",
+              "url": "assets/papers/metcalfe/zh-figure-1.svg",
+              "font": [
+                "Times New Roman",
+                "SimSun"
+              ],
+              "fontSizePt": 10,
+              "leadingEm": 0.85,
+              "widthPt": 294.058267717,
+              "heightPt": 130.872450172,
+              "sha256": "7f259804c87ced9184557db87b0105144fa41884e1ce4d6cfb4f412ba4e20c1a"
+            },
+            "2": {
+              "number": 2,
+              "function": "fig-met-2",
+              "caption": "图二　元素亲和表。横为火减水，纵为风减土；每格写出格里各个格点的亲和（火，水，风，土，以六分之一计）。实心的格都已找到天然的晶体；正中打叉的一格骨架为空，成不了晶；四边正中空心的四格是空格，斜过了寻常的地方所能承住的限",
+              "url": "assets/papers/metcalfe/zh-figure-2.svg",
+              "font": [
+                "Times New Roman",
+                "SimSun"
+              ],
+              "fontSizePt": 10,
+              "leadingEm": 0.85,
+              "widthPt": 317.008270866,
+              "heightPt": 290.697172367,
+              "sha256": "e805058858a7b1d728ccd9e5c96dbf020582d7065645da05e926a8a19f9ff6bd"
+            },
+            "3": {
+              "number": 3,
+              "function": "fig-met-3",
+              "caption": "图三　所见最大的晶体（寸）随斜之数而减（实心点），照这六点引的直线在八份半上下归于零；竖的点线是表三加斜试验所得之限，两旁的细线是二十一件里最小与最大的合计；最右边的空心点是空格的斜之数九",
+              "url": "assets/papers/metcalfe/zh-figure-3.svg",
+              "font": [
+                "Times New Roman",
+                "SimSun"
+              ],
+              "fontSizePt": 10,
+              "leadingEm": 0.85,
+              "widthPt": 260.544475886,
+              "heightPt": 151.362315453,
+              "sha256": "005d1b824116962e18f6695f0e0982d606b8ff001b8d5b9b2cde3612ae4f7539"
+            }
+          }
+        },
+        "en": {
+          "source": {
+            "path": "02_PROPOSALS/学术名篇_第七批_英文原刊.md",
+            "heading": "The Table of Elemental Affinities",
+            "sha256": "bdba390b7dd7b91f256330a4c2b742287feb7793886c820d9068b180166da7b4"
+          },
+          "math": {
+            "03a446c4bafb4b2ac339067435f3d357b601e86a1a6519b3eb299f2b2ac89520": {
+              "expression": "3 F - 3 G",
+              "display": false,
+              "url": "assets/papers/math/03a446c4bafb4b2ac339067435f3d357b601e86a1a6519b3eb299f2b2ac89520.svg",
+              "widthPt": 47.425333333,
+              "heightPt": 10.724,
+              "sha256": "1a5fca0a2afe609a0a82bc0d89c2a166964cb9ee3868bbf4a0d529848fdfb563",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "0e6c77da2979314f7f38a04f16cf67e360e300954299d6281c1d2bce66ac6bce": {
+              "expression": "(3, 0, 3, 0)",
+              "display": false,
+              "url": "assets/papers/math/0e6c77da2979314f7f38a04f16cf67e360e300954299d6281c1d2bce66ac6bce.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "b365cb95b26a1f0d5aaa78a7e9f651b119dff493eace4a0e361701217a43be72",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "0ecd48765e47be1129108d985b656d08e9759ea813a7cb516ea60d43ecbb00f1": {
+              "expression": "f",
+              "display": false,
+              "url": "assets/papers/math/0ecd48765e47be1129108d985b656d08e9759ea813a7cb516ea60d43ecbb00f1.svg",
+              "widthPt": 8.96,
+              "heightPt": 12.92,
+              "sha256": "36dbfbf390569ffdeb88e9819390d5086dd899ca2fd7c3f5a5837f4c1b3ed02e",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "1c51de51bf3b5c3718f5425934a39e65af600f9d7f0cc6a790cd2647d5db1422": {
+              "expression": "L = f F + w (-F) + a G + e (-G) = x F + y G, quad x = f - w, quad y = a - e",
+              "display": true,
+              "url": "assets/papers/math/1c51de51bf3b5c3718f5425934a39e65af600f9d7f0cc6a790cd2647d5db1422.svg",
+              "widthPt": 371.682666667,
+              "heightPt": 13.952,
+              "sha256": "37367309b73c65253cd588e7ec53322ea643ac2be96b444aad8fe8695d52728d",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "1ede608fbb638d13cacaf217dc81022bc0849fdd1d826ad82d0ef2871ffaede7": {
+              "expression": "-F",
+              "display": false,
+              "url": "assets/papers/math/1ede608fbb638d13cacaf217dc81022bc0849fdd1d826ad82d0ef2871ffaede7.svg",
+              "widthPt": 20.66,
+              "heightPt": 10.16,
+              "sha256": "f77b6aa57caa0f959bc7f3f71a44303caa38b7f8494c337eaa90e0f6b8a1148b",
+              "fontSizePt": 12,
+              "baselinePt": 9.16
+            },
+            "403c4a35ff151a74148ed025ba75d0c0dbff479aec404c86bfc933b4a3f52f7a": {
+              "expression": "3 F + 3 G",
+              "display": false,
+              "url": "assets/papers/math/403c4a35ff151a74148ed025ba75d0c0dbff479aec404c86bfc933b4a3f52f7a.svg",
+              "widthPt": 47.425333333,
+              "heightPt": 11.456,
+              "sha256": "f052b0b5ae2ed9153fcfc14bedf9fb1648015ee74195b9c33144ecbdd54bbdd6",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "408072bc0c76ce14aa25fe2b0378cdeacd395cb2ac7e5c935aedd6c001e1799e": {
+              "expression": "(0, 3, 0, 3)",
+              "display": false,
+              "url": "assets/papers/math/408072bc0c76ce14aa25fe2b0378cdeacd395cb2ac7e5c935aedd6c001e1799e.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "9049e7ea3f9ca8823ed6e4b27c7e463d3d3c1b6827918fa642a606da344f7c4a",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "43ec7034358cdad26f27f4b7433b5008a357aaf95ab7a5cfe94e353d89a9ad40": {
+              "expression": "min(f, w)",
+              "display": false,
+              "url": "assets/papers/math/43ec7034358cdad26f27f4b7433b5008a357aaf95ab7a5cfe94e353d89a9ad40.svg",
+              "widthPt": 52.264,
+              "heightPt": 13.952,
+              "sha256": "2b051c7416bb543bc4dbf26b863f9418f626420effe232509f37a1966181d7cb",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "44efcf145cd47625d87d8ec54ffd737a60f8ee08e2c2b9c28214dfd0470191b3": {
+              "expression": "(1, 0, 1, 4)",
+              "display": false,
+              "url": "assets/papers/math/44efcf145cd47625d87d8ec54ffd737a60f8ee08e2c2b9c28214dfd0470191b3.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "99de565b97e340381c17240379efeaefaf52aea5c18919a0705936a73f3bf149",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "4805e51cf4306a6e9135d0c53d47cad4aa7ee1bf27c486edf4a4a00326d57836": {
+              "expression": "G F = S, quad F G = -S, quad F F = G G = -1",
+              "display": true,
+              "url": "assets/papers/math/4805e51cf4306a6e9135d0c53d47cad4aa7ee1bf27c486edf4a4a00326d57836.svg",
+              "widthPt": 216.514666667,
+              "heightPt": 12.776,
+              "sha256": "5b25d6f9dda38a25834f9d37a5f32767781a5021655cecea19e14341a9e149fb",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "50df43957ace924cc56b34d031a6bdd440e453fca12aefd78886edd1ab80105d": {
+              "expression": "(0, 0, 3, 3)",
+              "display": false,
+              "url": "assets/papers/math/50df43957ace924cc56b34d031a6bdd440e453fca12aefd78886edd1ab80105d.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "1657b31117fc51dbb0265679cbfcd6c0722c84be50f140fca149b78429c25e3d",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "51f0bdb7b03b8bc427e0e667ae8b3dcfdc51e8513545b9c9c8fe21cbcfd9620e": {
+              "expression": "(2, 2, 1, 1)",
+              "display": false,
+              "url": "assets/papers/math/51f0bdb7b03b8bc427e0e667ae8b3dcfdc51e8513545b9c9c8fe21cbcfd9620e.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "b236df2d01366d3349449f9288c34f0728f70f3355dec29af9185857cb59a645",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "5903e8c7b3a1ea7a0dd1fa33c172b20c9fbf625dccfb20159350663cf34a37f0": {
+              "expression": "(3, 1, 2, 0)",
+              "display": false,
+              "url": "assets/papers/math/5903e8c7b3a1ea7a0dd1fa33c172b20c9fbf625dccfb20159350663cf34a37f0.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "a624472b2589ac46adaf6ea8b88c7ed0938f3dfe7f9afd6c17ee6b72b82657ec",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "596a938169557684c8aa7e5cfd6ebf43dbb50c24f4db19882a663fb73d3f00b7": {
+              "expression": "x",
+              "display": false,
+              "url": "assets/papers/math/596a938169557684c8aa7e5cfd6ebf43dbb50c24f4db19882a663fb73d3f00b7.svg",
+              "widthPt": 8.864,
+              "heightPt": 7.436,
+              "sha256": "9a382745e57ef3a2c8fb46a3bb48db553b1373aaf1fe40593396f2f4e9e9ea68",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "6201dc41a853d6ce0fbd8601f1a168ea2fd54420e370518d8245c2d425b46194": {
+              "expression": "(4, 0, 2, 0)",
+              "display": false,
+              "url": "assets/papers/math/6201dc41a853d6ce0fbd8601f1a168ea2fd54420e370518d8245c2d425b46194.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "93f6e8b6cb6edcf07387bd81c376e6a93c2b4105abb401147aa81ae5b92d9f3c",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "665a5080471cff2d43ffbebf47593f9232d22282d2823772e51bfb30f675f238": {
+              "expression": "(0, 1, 1, 4)",
+              "display": false,
+              "url": "assets/papers/math/665a5080471cff2d43ffbebf47593f9232d22282d2823772e51bfb30f675f238.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "f7728c6e05e3b5c9dc96194692809c7a3c94714201b65ee733a9199fe7b41684",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "684b942378754df4ae890ff14984ce8c0570bbeab2ce74582da17e6dbebc837a": {
+              "expression": "G",
+              "display": false,
+              "url": "assets/papers/math/684b942378754df4ae890ff14984ce8c0570bbeab2ce74582da17e6dbebc837a.svg",
+              "widthPt": 11.432,
+              "heightPt": 10.724,
+              "sha256": "2d31ed8d1f7e651a7cddeb725e99046b4c017e1b48b3406e2e580bf6cd4a2fd9",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "6fb753f72ba88e308a1afd7ed719e0bf79db18242a02fd80aa5c30a1f139ffb2": {
+              "expression": "(1, 1, 2, 2)",
+              "display": false,
+              "url": "assets/papers/math/6fb753f72ba88e308a1afd7ed719e0bf79db18242a02fd80aa5c30a1f139ffb2.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "688803904a52fd4d8dded01549f233486e7762fc193d4e302ae96a524c20569f",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "78b15e5d107c1d55292e29d989201dde3211d5a3fb910fb4189202702c18dfd2": {
+              "expression": "-G",
+              "display": false,
+              "url": "assets/papers/math/78b15e5d107c1d55292e29d989201dde3211d5a3fb910fb4189202702c18dfd2.svg",
+              "widthPt": 20.768,
+              "heightPt": 10.724,
+              "sha256": "ef2280c2579c0513b534345650989693e34ba42d6f9ed0b4f49ec2e94d5a4291",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "7bbb8aef8a72763f19ec76f6868916aef35e08efcec9984186690156f3de62b8": {
+              "expression": "y",
+              "display": false,
+              "url": "assets/papers/math/7bbb8aef8a72763f19ec76f6868916aef35e08efcec9984186690156f3de62b8.svg",
+              "widthPt": 8.216,
+              "heightPt": 9.764,
+              "sha256": "360744ec5baa2c63234343b1a04db289c5ab2be895d5d7fe6e65c9ec72ab5f87",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "8058e511c2ed17a5e7263c66b05a7639cf192be432e37ae2e3643762ca09f3e1": {
+              "expression": "(3, 0, 0, 3)",
+              "display": false,
+              "url": "assets/papers/math/8058e511c2ed17a5e7263c66b05a7639cf192be432e37ae2e3643762ca09f3e1.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "c5e262c0f07dd6e0e45641b2fcb3e56119187033dd03e8112afb1a91b05cd20e",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "8627c8e94b73e70660bafaf4c78b6232c7b3c81fd7a5199860a194b3ccded938": {
+              "expression": "w",
+              "display": false,
+              "url": "assets/papers/math/8627c8e94b73e70660bafaf4c78b6232c7b3c81fd7a5199860a194b3ccded938.svg",
+              "widthPt": 10.628,
+              "heightPt": 7.436,
+              "sha256": "a2147dba1f4070f167cfc0c077d988fe20c4a352feb96a788b630e286b0dd3ab",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "8c2432f9e98030426a8efd64add5d96c1c351d851ed08f0889fb5d19d2db8144": {
+              "expression": "x F + y G",
+              "display": false,
+              "url": "assets/papers/math/8c2432f9e98030426a8efd64add5d96c1c351d851ed08f0889fb5d19d2db8144.svg",
+              "widthPt": 48.505333333,
+              "heightPt": 12.92,
+              "sha256": "4385b0d9c5d8de516c834811c1c48d430b3127b9d1461e1eb84312855d238910",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "8f59f7823558735651119e62bad90f5ff0fc40cbf839fbc25b5ae5e014d4de5e": {
+              "expression": "(2, 0, 2, 2)",
+              "display": false,
+              "url": "assets/papers/math/8f59f7823558735651119e62bad90f5ff0fc40cbf839fbc25b5ae5e014d4de5e.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "e1f950fc97816c2b4311888223653058c263ede83005f660aac293dae71bb63c",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "9acf3e4d6112f564eafa0bc4ad0f99076d1cc5ca43dcb57dc04064aea080666b": {
+              "expression": "(4, 1, 1, 0)",
+              "display": false,
+              "url": "assets/papers/math/9acf3e4d6112f564eafa0bc4ad0f99076d1cc5ca43dcb57dc04064aea080666b.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "1129ee2511e2cbc14a8a668fbb7a23d8484101e86f291cdf6522246795a239d3",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "9d3932d30b349176e05608733788ce36f7b154aeab0ffcb179fab27b0a3696ef": {
+              "expression": "-3 F + 3 G",
+              "display": false,
+              "url": "assets/papers/math/9d3932d30b349176e05608733788ce36f7b154aeab0ffcb179fab27b0a3696ef.svg",
+              "widthPt": 56.761333333,
+              "heightPt": 11.456,
+              "sha256": "e0d5bae099e73dc6423ba72a2e33c8860092c6fd1ce6808f67533c7f2b750dc6",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "ba65844523a1b5d58a3d011853263f2b017601ad520b825e2bc81dee97312600": {
+              "expression": "(f, w, a, e)",
+              "display": false,
+              "url": "assets/papers/math/ba65844523a1b5d58a3d011853263f2b017601ad520b825e2bc81dee97312600.svg",
+              "widthPt": 54.872,
+              "heightPt": 13.952,
+              "sha256": "eb2aee1e825248f1bdab612d6c4623a8480c3233338e5aef5862db4de7469b28",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "c3afc2dea66ccc19a47aca2dcbe9cfc2e88043618f758890aba56c8202d9ac41": {
+              "expression": "F",
+              "display": false,
+              "url": "assets/papers/math/c3afc2dea66ccc19a47aca2dcbe9cfc2e88043618f758890aba56c8202d9ac41.svg",
+              "widthPt": 11.324,
+              "heightPt": 10.16,
+              "sha256": "d551398fe586faf3cedac7629cad338ebbca2d0153b4a1b9f4dd3f9c624306d6",
+              "fontSizePt": 12,
+              "baselinePt": 9.16
+            },
+            "c437a377985e3575715c0a6e311eca2ec2c7829c6ce26256e007e3c1f4d8acae": {
+              "expression": "(6, 0, 0, 0)",
+              "display": false,
+              "url": "assets/papers/math/c437a377985e3575715c0a6e311eca2ec2c7829c6ce26256e007e3c1f4d8acae.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "39f62f800ed5cc4737d898bafa791674edfeac7bd1bae736c5d39b189e27f880",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "c7f0e71d8a326a7f48ce069d66eb95a6e9eea1da8e2a2c35615a576ed037ed6f": {
+              "expression": "min(a, e)",
+              "display": false,
+              "url": "assets/papers/math/c7f0e71d8a326a7f48ce069d66eb95a6e9eea1da8e2a2c35615a576ed037ed6f.svg",
+              "widthPt": 48.616,
+              "heightPt": 13.952,
+              "sha256": "9a2e42c3999a2cbd75b01e4b52baced1d200622246587bc469f01425dd05bffc",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "cf31e5103bd5f590ae0ee73f2eece8ee44146040727b460f2799aef518f4ed00": {
+              "expression": "(5, 0, 1, 0)",
+              "display": false,
+              "url": "assets/papers/math/cf31e5103bd5f590ae0ee73f2eece8ee44146040727b460f2799aef518f4ed00.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "45b9c44e118e1ecb49c8983221d4c0fa81b03b0e2a72d7def3dd9f9f3b86cf5d",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "cfa3a73c99207ba8eb81554eedfafec8b4da93c3f2d4d306e223b5be61091e65": {
+              "expression": "a",
+              "display": false,
+              "url": "assets/papers/math/cfa3a73c99207ba8eb81554eedfafec8b4da93c3f2d4d306e223b5be61091e65.svg",
+              "widthPt": 8.348,
+              "heightPt": 7.436,
+              "sha256": "0ea0ca842cc8456e9a474e81c2889971f32196aa8b8a8ad003270aa40a8fcb44",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "d319f284bc12d356608f4376d2c8996914ca9f791e9f4863cdfec9ffa00b06a1": {
+              "expression": "(f - w)(a - e) S = x y S",
+              "display": true,
+              "url": "assets/papers/math/d319f284bc12d356608f4376d2c8996914ca9f791e9f4863cdfec9ffa00b06a1.svg",
+              "widthPt": 126.757333333,
+              "heightPt": 13.952,
+              "sha256": "67bd0c50eadf55460b1ba1c92fa03e7a6f35a771e665cbd3acd3a7f6bc415ab7",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "d4c02722e87974f39444d4061572b5c6c8cda52ca46da5f909e103f5b3fd25ad": {
+              "expression": "e",
+              "display": false,
+              "url": "assets/papers/math/d4c02722e87974f39444d4061572b5c6c8cda52ca46da5f909e103f5b3fd25ad.svg",
+              "widthPt": 7.592,
+              "heightPt": 7.436,
+              "sha256": "79c385fd910921b127027f121523d4f70fefed901f7b2b2e4986af2a53de0fdb",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "eb3d7c154803fee3e9a5c366f58cd0126c1f171b866175c4cf73e4fa64deaf74": {
+              "expression": "(3, 3, 0, 0)",
+              "display": false,
+              "url": "assets/papers/math/eb3d7c154803fee3e9a5c366f58cd0126c1f171b866175c4cf73e4fa64deaf74.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "f570443622fb57b8833f1202fddce3d81f49855b7162b3ba17a63b3ef806e446",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "ed5e05927a0ee9469d54afdd06fea3aeb8071b81fdac7da922bbf18af805ee99": {
+              "expression": "|L|^2 = x^2 + y^2",
+              "display": true,
+              "url": "assets/papers/math/ed5e05927a0ee9469d54afdd06fea3aeb8071b81fdac7da922bbf18af805ee99.svg",
+              "widthPt": 80.9348,
+              "heightPt": 14.9336,
+              "sha256": "c9df3b3f87ebbd224aabef7bd74fed1e85c8d776b67cff12fcd7903c687c08a3",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "edd08a644b5b8c2318d5bced1685058843783ae0ae3616d80caa8acf0d6f4b79": {
+              "expression": "x y",
+              "display": false,
+              "url": "assets/papers/math/edd08a644b5b8c2318d5bced1685058843783ae0ae3616d80caa8acf0d6f4b79.svg",
+              "widthPt": 15.08,
+              "heightPt": 9.764,
+              "sha256": "b75b6a35ff05e32523510111a817f23b8618ec08e8a489737c910a4af3fcf243",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "efb153ca39fd9ad7113db7d39ddf5aa0c4480d986bd6847656b711bbb70bca39": {
+              "expression": "(0, 3, 3, 0)",
+              "display": false,
+              "url": "assets/papers/math/efb153ca39fd9ad7113db7d39ddf5aa0c4480d986bd6847656b711bbb70bca39.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "35e98df8cf0db9646316c5df4df2046e66cf73211565100e555b78aaf90487e3",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            },
+            "f38c5c623c0299127aea5a88391fd230a492888b8b2260e8a4aae8c58554c3d9": {
+              "expression": "b = x y",
+              "display": false,
+              "url": "assets/papers/math/f38c5c623c0299127aea5a88391fd230a492888b8b2260e8a4aae8c58554c3d9.svg",
+              "widthPt": 36.398666667,
+              "heightPt": 12.788,
+              "sha256": "6ef12ce902f6bbfa8051f1424f57ba91d648fb392176e1c65b7af6a9b2f320a2",
+              "fontSizePt": 12,
+              "baselinePt": 9.328
+            },
+            "f812dbfe9febc449902b281c264bf409d8fee42db9c6eb6c1c35fabd1cd30109": {
+              "expression": "S",
+              "display": false,
+              "url": "assets/papers/math/f812dbfe9febc449902b281c264bf409d8fee42db9c6eb6c1c35fabd1cd30109.svg",
+              "widthPt": 10.076,
+              "heightPt": 10.724,
+              "sha256": "399b03df4b3c5ed60ce688b4d899b9724612c385789cf4df5c6e3b967ed24540",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "f8e2acc0a05bcee88aa50f56e088c13300811ac7ca75ad98c6f32fe848bb3248": {
+              "expression": "-3 F - 3 G",
+              "display": false,
+              "url": "assets/papers/math/f8e2acc0a05bcee88aa50f56e088c13300811ac7ca75ad98c6f32fe848bb3248.svg",
+              "widthPt": 56.761333333,
+              "heightPt": 10.724,
+              "sha256": "fe0fb005180afa1c68960e1d2d65f75d47968568182004f21716a59587eb68c3",
+              "fontSizePt": 12,
+              "baselinePt": 9.46
+            },
+            "fe5a2b7dd6fe12efd3642f20f6855a377e81d72c0768d07013f8402619dedd9b": {
+              "expression": "(2, 1, 2, 1)",
+              "display": false,
+              "url": "assets/papers/math/fe5a2b7dd6fe12efd3642f20f6855a377e81d72c0768d07013f8402619dedd9b.svg",
+              "widthPt": 51.344,
+              "heightPt": 13.952,
+              "sha256": "c3a16998252df327c2b7e9854f9428040c5ad0ff2fa00eb8d261f73b1341c61a",
+              "fontSizePt": 12,
+              "baselinePt": 9.976
+            }
+          },
+          "figures": {
+            "1": {
+              "number": 1,
+              "function": "fig-met-1",
+              "caption": "Fig. 1. The tetrahedron of affinities: the four corners are the four pure elements, and the points lie a sixth apart (only the edges, and the points upon the faces, are drawn; a cross marks a point whose frame is null, an open circle an empty cell). Taking fire less water across and air less earth upward, and so casting the tetrahedron upon a plane, gives the table of Fig. 2",
+              "url": "assets/papers/metcalfe/en-figure-1.svg",
+              "font": "Palatino Linotype",
+              "fontSizePt": 10.2,
+              "leadingEm": 0.6,
+              "widthPt": 310.86426449,
+              "heightPt": 130.937489235,
+              "sha256": "b818105b771a69d10c06f5788b992e0413620a619d5684c50bbb1b31cb93688f"
+            },
+            "2": {
+              "number": 2,
+              "function": "fig-met-2",
+              "caption": "Fig. 2. The table of elemental affinities. Across, fire less water; upward, air less earth; in each cell the affinities of the points it holds (fire, water, air, earth, in sixths). The filled cells have all been found as natural crystals; the crossed cell in the middle has a null frame and can form no crystal; the four open cells at the middles of the sides are the empty cells, whose bias passes the bound an ordinary place can bear",
+              "url": "assets/papers/metcalfe/en-figure-2.svg",
+              "font": "Palatino Linotype",
+              "fontSizePt": 10.2,
+              "leadingEm": 0.6,
+              "widthPt": 329.222138054,
+              "heightPt": 290.993656742,
+              "sha256": "cdeafe23d732d2b6d81719d381265c96a2f5a9d80611ceb1757e31e66163b24f"
+            },
+            "3": {
+              "number": 3,
+              "function": "fig-met-3",
+              "caption": "Fig. 3. The greatest crystal seen (inches) falls as the number of bias grows (filled points); the straight line drawn through the six comes to nothing at some eight and a half. The upright dotted line is the bound found by the trials of added bias in Table III, the thin lines beside it the least and greatest totals of the twenty-one pieces; the open point at the far right is the number of bias of the empty cells, nine",
+              "url": "assets/papers/metcalfe/en-figure-3.svg",
+              "font": "Palatino Linotype",
+              "fontSizePt": 10.2,
+              "leadingEm": 0.6,
+              "widthPt": 263.063030573,
+              "heightPt": 156.766625538,
+              "sha256": "63ec9498460340532046285df834d3c657f8c58c889cc29fe236a6baf51b1d87"
+            }
+          }
+        }
+      }
+    },
+    "stanhope": {
+      "languages": {
+        "zh": {
+          "source": {
+            "path": "02_PROPOSALS/学术名篇_第二批_提案.md",
+            "heading": "复工、收贴与银券通论",
+            "sha256": "46e26e7144f2a64ea4413f6d1e4ccef5be20416ec32386999911c1130dfbf7cb"
+          },
+          "math": {},
+          "figures": {
+            "1": {
+              "number": 1,
+              "function": "fig-stn-1",
+              "caption": "图一　第一纪二百三十四年塔林停供前后逐日停工的工坊数。实线为甲（缺力缺料），虚线为乙（有力而缺钱）；竖线为节点修好之日。",
+              "url": "assets/papers/stanhope/zh-figure-1.svg",
+              "font": [
+                "Times New Roman",
+                "SimSun"
+              ],
+              "fontSizePt": 10,
+              "leadingEm": 0.85,
+              "widthPt": 281.883058563,
+              "heightPt": 149.917002953,
+              "sha256": "22786ec2c85c6f001967697679496108cffe198e67048aa0a2aecd461ba43664"
+            },
+            "2": {
+              "number": 2,
+              "function": "fig-stn-2",
+              "caption": "图二　五次停供以后一个月内拿来兑付的银券占发行总额的成数。虚线为本书提议的白银下限，三成。",
+              "url": "assets/papers/stanhope/zh-figure-2.svg",
+              "font": [
+                "Times New Roman",
+                "SimSun"
+              ],
+              "fontSizePt": 10,
+              "leadingEm": 0.85,
+              "widthPt": 232.563338152,
+              "heightPt": 127.468485482,
+              "sha256": "966e0c913677eb433e385f6de2218bf3a58ed7361bf09ec1593f8ef56b6b2b11"
+            }
+          }
+        },
+        "en": {
+          "source": {
+            "path": "02_PROPOSALS/学术名篇_第二批_英文原刊.md",
+            "heading": "The General Theory of Resumption, Discount and Silver Notes",
+            "sha256": "5a8cae1c78ecd4b17b21c49f99ed65c244930f4633a0270e3306d2792376d7de"
+          },
+          "math": {
+            "0c3c46741b6c483555c825f9758dd6d42fe96392698e66a75bff86f6189ea556": {
+              "expression": "0.3 N",
+              "display": false,
+              "url": "assets/papers/math/0c3c46741b6c483555c825f9758dd6d42fe96392698e66a75bff86f6189ea556.svg",
+              "widthPt": 28.244,
+              "heightPt": 10.46,
+              "sha256": "98fac2b9dcd3b0e581bd8bcfa1cbf689d778a01916c6d3306a21bdaf4cfd8900",
+              "fontSizePt": 12,
+              "baselinePt": 9.196
+            },
+            "1dd8a04171cf7d2c786fc81341dbd3bad15a5c9559057fc25fb11b0a2df8eba7": {
+              "expression": "0.77 N",
+              "display": false,
+              "url": "assets/papers/math/1dd8a04171cf7d2c786fc81341dbd3bad15a5c9559057fc25fb11b0a2df8eba7.svg",
+              "widthPt": 34.556,
+              "heightPt": 10.46,
+              "sha256": "7e381ac576941e18b41f03c84ecd0aafda74d50dc359af97defb454e9f03d45b",
+              "fontSizePt": 12,
+              "baselinePt": 9.196
+            },
+            "2b08ffd953f7c889de46351294f432b5416abb838fa15cb4481bcefe46658a53": {
+              "expression": "D",
+              "display": false,
+              "url": "assets/papers/math/2b08ffd953f7c889de46351294f432b5416abb838fa15cb4481bcefe46658a53.svg",
+              "widthPt": 11.984,
+              "heightPt": 10.196,
+              "sha256": "05289b858d1b0433e3333250ad9f6aef3df591cb927b3192bd29d3cebc4031ed",
+              "fontSizePt": 12,
+              "baselinePt": 9.196
+            },
+            "34e89570090564c241411b23499c8d50aae6d39da4b3f8269a5e8b41ae04dc08": {
+              "expression": "r D",
+              "display": false,
+              "url": "assets/papers/math/34e89570090564c241411b23499c8d50aae6d39da4b3f8269a5e8b41ae04dc08.svg",
+              "widthPt": 17.552,
+              "heightPt": 10.328,
+              "sha256": "b623c772cbcf26762bbdb378421a9f850a07f241bd5e309f040ba1cd428afd2f",
+              "fontSizePt": 12,
+              "baselinePt": 9.196
+            },
+            "3ef3762ab6656ce00ce8090ffa2a01a9c784401bf87bd724fa9768a52b990803": {
+              "expression": "1 / (1 - r)",
+              "display": false,
+              "url": "assets/papers/math/3ef3762ab6656ce00ce8090ffa2a01a9c784401bf87bd724fa9768a52b990803.svg",
+              "widthPt": 20.2508,
+              "heightPt": 16.5296,
+              "sha256": "aac34b13c7e94a2ba7d5d3d609d56afaae2b9e0ad7c899a9ad85ec17fe7d7dd5",
+              "fontSizePt": 12,
+              "baselinePt": 11.3056
+            },
+            "7c04cefb052bca018406805c060296ca93261b87a864074579d0505773c726ba": {
+              "expression": "0.07 N",
+              "display": false,
+              "url": "assets/papers/math/7c04cefb052bca018406805c060296ca93261b87a864074579d0505773c726ba.svg",
+              "widthPt": 34.4,
+              "heightPt": 10.46,
+              "sha256": "bfd472989ec52beca2994aa74657d3245ddc0944beb59dab8d2bd9b970618a1f",
+              "fontSizePt": 12,
+              "baselinePt": 9.196
+            },
+            "8acd1d0a4d3239eacfce89bf3277ad93f3155c82c378b57000f26de46eb23afd": {
+              "expression": "r",
+              "display": false,
+              "url": "assets/papers/math/8acd1d0a4d3239eacfce89bf3277ad93f3155c82c378b57000f26de46eb23afd.svg",
+              "widthPt": 7.568,
+              "heightPt": 7.436,
+              "sha256": "191532ac103aced315cbeb870b82ea00f1efc61f5ba926bd38a9a2e15446a31b",
+              "fontSizePt": 12,
+              "baselinePt": 6.304
+            },
+            "ca891b420d44d77bcb034657f93a67efbf5eb82a09d2051fd1793155ae45708f": {
+              "expression": "N",
+              "display": false,
+              "url": "assets/papers/math/ca891b420d44d77bcb034657f93a67efbf5eb82a09d2051fd1793155ae45708f.svg",
+              "widthPt": 12.908,
+              "heightPt": 10.196,
+              "sha256": "0f96e2a496f20d9503a37ef9527eff0a06aa78d8b6dfb439bcc428cc3de5b19b",
+              "fontSizePt": 12,
+              "baselinePt": 9.196
+            },
+            "e497d9e84a9ac2e9c6799aac17c9c548198f86925e946882a0f1a3f3fefe8855": {
+              "expression": "r^2 D",
+              "display": false,
+              "url": "assets/papers/math/e497d9e84a9ac2e9c6799aac17c9c548198f86925e946882a0f1a3f3fefe8855.svg",
+              "widthPt": 23.0036,
+              "heightPt": 12.0656,
+              "sha256": "fa4f15cf0fd544fb009bd42453c31365f2199ae6e3b0cf4894b7b2d638782ba8",
+              "fontSizePt": 12,
+              "baselinePt": 10.9336
+            },
+            "ff45a3fd980ecb0ffd3baeb8b35d353db3765b845ef7a0adb4ef67e91c1816b7": {
+              "expression": "D + r D + r^2 D + dots = D / (1 - r)",
+              "display": true,
+              "url": "assets/papers/math/ff45a3fd980ecb0ffd3baeb8b35d353db3765b845ef7a0adb4ef67e91c1816b7.svg",
+              "widthPt": 151.2156,
+              "heightPt": 26.684,
+              "sha256": "f4ef44a5ffafaa10a9625f3b2cae812b1eb15ae677e053581ec8ff2218031d65",
+              "fontSizePt": 12,
+              "baselinePt": 17.32
+            }
+          },
+          "figures": {
+            "1": {
+              "number": 1,
+              "function": "fig-stn-1",
+              "caption": "Fig. 1. Workshops stopped, day by day, before and after the stoppage at Tallin in F.E. 234. The full line is A (want of power or materials), the broken line B (power but no money); the upright line marks the day the node was repaired.",
+              "url": "assets/papers/stanhope/en-figure-1.svg",
+              "font": "Palatino Linotype",
+              "fontSizePt": 10.2,
+              "leadingEm": 0.6,
+              "widthPt": 284.688766172,
+              "heightPt": 152.33749514,
+              "sha256": "c744c9edadf0bc48d15582b01e4601a00fa1ee32bc2b20d1a914374f27600000"
+            },
+            "2": {
+              "number": 2,
+              "function": "fig-stn-2",
+              "caption": "Fig. 2. Notes brought for redemption in the month after each of five stoppages, as a part of all notes issued. The broken line is the least share of silver proposed in this book, three-tenths.",
+              "url": "assets/papers/stanhope/en-figure-2.svg",
+              "font": "Palatino Linotype",
+              "fontSizePt": 10.2,
+              "leadingEm": 0.6,
+              "widthPt": 232.611189715,
+              "heightPt": 128.945340951,
+              "sha256": "5fe4714d12766bf934c0226dcae350edac4b0a8c8b731dc5c66b45ef43c00d0a"
+            }
+          }
+        }
+      }
+    }
+  }
+}

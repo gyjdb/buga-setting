@@ -48,7 +48,7 @@ const XREF = new RegExp(`《([^《》\\n]{1,40})》(第[${CN_DIGITS}]+条(?:之[
 // 法规版式不设条标题：条号与第一款同段，后接全角空格。
 const ARTICLE_LEAD = new RegExp(`^(${ARTICLE.source.slice(1)})　`);
 
-let index, docs, byId, relationships, registry, plan;
+let index, docs, byId, relationships, registry, plan, paperCatalog;
 let serial = 0;
 let page = null; // 当前文献页的版本与条文状态，悬停预览读它
 const docCache = new Map();
@@ -262,18 +262,18 @@ function bookSection(guide, text) {
   </section>`;
 }
 
-// 馆藏读物《联盟学术名篇》：二十篇照书的次序（英文原刊的文件名序号），点篇名翻到中译合订本里的那一篇（portal_config 的 volumePage）。
+// 馆藏读物《联盟学术名篇》：保持书中篇次，入口按作品关联中译、英文原刊与编校来源。
 const PAPERS_DIR = "08_CLASSIC_PAPERS/";
 function papersSection() {
   const volume = docs.find((d) => d.path === PAPERS_DIR + "联盟学术名篇.pdf");
   const list = docs.find((d) => d.path === PAPERS_DIR + "联盟学术名篇_篇目.md");
-  const papers = docs.filter((d) => d.path.startsWith(PAPERS_DIR + "原刊/") && d.volumePage).sort((a, b) => a.path.localeCompare(b.path));
+  const papers = paperCatalog.papers;
   if (!volume || !papers.length) return "";
-  const entry = (d, i) => `<li><a href="${docHref(volume.id, { page: d.volumePage })}"><span>${i + 1}</span><b>${esc(d.title.replace(/（英文原刊）$/, ""))}</b><small>${esc(d.name.split("_")[1] || "")}</small></a></li>`;
+  const entry = (d) => `<li><a href="#/paper/${encodeURIComponent(d.id)}"><span>${d.order}</span><b>${esc(d.title)}</b><small>${esc(d.authors)}</small></a></li>`;
   return `<section class="rs-section" aria-labelledby="rs-papers-title">
-    ${sectionHead("rs-papers-title", "学术名篇", "Scripta classica", "馆藏读物：恰恩大学出版部编的选本，收联盟学问史上改变了一门学问问法的二十篇论文，以发表先后为序。", `<a class="rs-link" href="${docHref(volume.id)}">开卷阅读</a>`)}
+    ${sectionHead("rs-papers-title", "学术名篇", "Scripta classica", "馆藏读物：恰恩大学出版部编的选本，收联盟学问史上改变了一门学问问法的二十篇论文，以发表先后为序。", `<a class="rs-link" href="#/papers">检索学术文献</a>`)}
     <ol class="rs-chapters rs-papers">${papers.map(entry).join("")}</ol>
-    <p class="rs-plates-note">点篇名翻到中译本里的那一篇。各篇的英文原刊、出处与定稿记录见${list ? `<a class="rs-link" href="${docHref(list.id)}">篇目</a>` : "篇目"}。</p>
+    <p class="rs-plates-note">点篇名查看题解、出处与阅读版本。亦可<a class="rs-link" href="${docHref(volume.id)}">通读中译合订本</a>，或查阅${list ? `<a class="rs-link" href="${docHref(list.id)}">篇目与定稿记录</a>` : "篇目与定稿记录"}。</p>
   </section>`;
 }
 
@@ -526,7 +526,16 @@ async function docPage(ref, params, my) {
     main.innerHTML = `<p class="rs-error">没有这份文件。<a class="rs-link" href="#/home">回首页</a></p>`;
     return;
   }
-  if (main.dataset.doc === doc.id) { reveal(params); return; }
+  if (main.dataset.doc === doc.id) {
+    if (doc.extension === ".pdf") {
+      const at = doc.rawUrl + (Number(params.get("page")) > 0 ? "#page=" + Number(params.get("page")) : "");
+      const frame = main.querySelector(".rs-pdf-frame");
+      if (frame && frame.getAttribute("src") !== at) frame.setAttribute("src", at);
+      const open = main.querySelector(".rs-pdf-links a[target]");
+      if (open) open.setAttribute("href", at);
+    }
+    reveal(params); return;
+  }
   let versions = familyVersions(doc);
   if (!versions.some((v) => v.doc.id === doc.id)) versions = []; // 本文件没有版本号：不排版本线
   const texts = await Promise.all(versions.map((v) => loadDoc(v.doc.id).catch(() => null)));
@@ -921,6 +930,7 @@ async function route() {
   const my = ++serial;
   routeSerial = my;
   hidePeek();
+  window.Papers?.destroy?.();
   delete document.body.dataset.navOpen;
   const [path, query = ""] = location.hash.replace(/^#/, "").split("?");
   const params = new URLSearchParams(query);
@@ -948,10 +958,10 @@ async function route() {
   delete main.dataset.readerId;
   delete main.dataset.readerRoute;
   // 首页以外各页顶上透出书廊纵深图（见 CSS 的 main::before）；风土志由 book.js 改成 book。
-  main.dataset.view = name === "doc" ? "doc" : ["browse", "topics", "institutions", "institution", "versions", "audit"].includes(name) ? name : "home";
+  main.dataset.view = name === "doc" ? "doc" : ["browse", "topics", "institutions", "institution", "versions", "audit", "papers", "paper", "paper-read"].includes(name) ? name : "home";
   // 编校与维护的材料（作者设定、底稿、提案、项目总卷、审计、源文件目录）归到“编校”。
   const upkeep = (d) => ["AUTHOR_CANON", "CANDIDATE", "PROPOSAL", "UNRESOLVED", "DELEGATED_DESIGN"].includes(d?.status) || ["00_PROJECT", "90_AUDIT"].includes(d?.collection);
-  let nav = { home: "home", canon: "canon", browse: "browse", topics: "topics", institutions: "institutions", institution: "institutions", versions: "versions", audit: "audit" }[name] || "";
+  let nav = { home: "home", canon: "canon", papers: "papers", paper: "papers", "paper-read": "papers", browse: "browse", topics: "topics", institutions: "institutions", institution: "institutions", versions: "versions", audit: "audit" }[name] || "";
   if (name === "doc") nav = doc?.path === GUIDE_PATH ? "guide" : doc?.status === "CURRENT_CANON" ? "canon" : upkeep(doc) ? "audit" : "browse";
   if (name === "browse") nav = params.get("topic") ? "topics" : params.get("status") === "CURRENT_CANON" ? "canon" : params.has("directory") || upkeep({ status: params.get("status"), collection: params.get("collection") }) ? "audit" : "browse";
   document.querySelectorAll(".rs-nav [data-nav]").forEach((a) => (a.dataset.nav === nav ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current")));
@@ -963,6 +973,9 @@ async function route() {
   try {
     if (reading) { window.scrollTo(0, 0); await bookDetail(doc, params, my); }
     else if (name === "doc") await docPage(ref, params, my);
+    else if (name === "papers" || name === "paper" || name === "paper-read") {
+      await window.Papers.render(main, name, ref, params, () => my === serial);
+    }
     else if (["browse", "topics", "institutions", "institution", "versions", "audit"].includes(name)) {
       window.scrollTo(0, 0);
       if (name === "browse") await browsePage(params, my);
@@ -1029,7 +1042,7 @@ function setupChrome() {
 
 async function start() {
   try {
-    [index, relationships, registry, plan] = await Promise.all(["data/metadata.json", "data/relationships.json", "data/institutions.json", "book-plan.json"].map(fetchJSON));
+    [index, relationships, registry, plan, paperCatalog] = await Promise.all(["data/metadata.json", "data/relationships.json", "data/institutions.json", "book-plan.json", "data/papers.json"].map(fetchJSON));
   } catch (error) {
     main.innerHTML = `<p class="rs-error">馆藏索引读取失败：${esc(error.message)}。请先运行 build.py，并用本地 HTTP 服务打开。</p>`;
     return;

@@ -110,7 +110,10 @@ def verify():
     for source in org_sources:
         check('institution source reader target', source['docId'] in by_id)
         check('institution source reader anchor', not source['anchor'] or 'section-' + source['anchor'] in anchors[source['docId']])
-    result = {"status": "PASS", "checks": len(checks), "sourceFiles": len(docs), "sourceUnchanged": True,
+    from papers import verify_papers
+    paper_report = verify_papers(SOURCE, OUTPUT, by_path)
+    check("academic catalogue and reading pages match sources", paper_report["count"] == len(read_json(HERE / "data/papers.json")["papers"]))
+    result = {"status": "PASS", "checks": len(checks), "sourceFiles": len(docs), "sourceUnchanged": True, "papers": paper_report,
               "rawCopiesVerified": len(docs), "resolvedLinks": link_count, "versionTriplets": len(data["versionSets"]),
               "fullTextEntries": len(search), "unresolvedOriginalAnchors": missing_anchors,
               "limits": "结构、字节、索引与链接检查；不判断 Canon 内容正确性。未定位原文引用保留在详情页。"}

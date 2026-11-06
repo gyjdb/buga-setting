@@ -15,7 +15,7 @@
 - **第一次来**：先读[《银色联盟风土志》](https://gyjdb.github.io/buga-setting/#/guide)对布加有个整体印象，再从首页的《银色联盟宪章》《白塔章程》或魔法体系进入。
 - **查一个概念**：使用全站搜索，或在主题、机构总目中缩小范围；结果支持状态筛选、排序和匹配片段。
 - **读一份文献**：卷首的著录卡列出状态、版本、适用依据与原件下载，目录定位章节；条文旁标出逐版改动、相关主题与提及的机构，文中的《书名》和“第N条”悬停即看原文，文末著录列来源与 SHA-256。
-- **看学问**：[《联盟学术名篇》](https://gyjdb.github.io/buga-setting/#/doc/5d32e64132b3cb692ad4)收二十篇论文的中译本与英文原刊，首页“学术名篇”点篇名即可翻到。
+- **看学问**：[学术文献](https://gyjdb.github.io/buga-setting/#/papers)收《联盟学术名篇》的二十篇论文，可以检索篇名、作者与刊物，按学科筛选；每篇有题解、著录与中英文版本。
 - **比较新旧**：通过“版本与关系”查看明确记录的现行正文、历史候选及修订记录。
 - **了解形成过程**：查看作者依据、提案、未决事项、审计与测试。未决内容不会被界面展示自动变成已确认设定；已被采纳或取代的提案与早期输入稿标为参考或旧版，并注明去向。
 
@@ -43,7 +43,7 @@
 
 - **中译本合订一册**（[联盟学术名篇.pdf](organized_project/08_CLASSIC_PAPERS/联盟学术名篇.pdf)）：书名页、编选说明、目录与二十篇，页码连续，PDF 书签按混沌纪年、第一纪分组。
 - **英文原刊二十份**（[原刊](organized_project/08_CLASSIC_PAPERS/原刊/)）：各照原作当年所在的刊物排印，前附单行本封面与刊徽，页码照原刊；文件名前的序号即篇次。
-- **在线阅读**：首页“学术名篇”点篇名，就翻到[合订本](https://gyjdb.github.io/buga-setting/#/doc/5d32e64132b3cb692ad4)里的那一篇；宽屏的文献页内嵌浏览器自带的 PDF 阅读器，手机与触屏给打开与下载的链接。篇次、出处、合订本页码与定稿记录见[篇目](https://gyjdb.github.io/buga-setting/#/doc/a30a4d0ae80a78bf2b25)。
+- **在线阅读**：顶栏“学术文献”进入[目录](https://gyjdb.github.io/buga-setting/#/papers)，首页“学术名篇”点篇名进入该篇的详情页，列题解、著录与阅读版本。[《元素亲和表》](https://gyjdb.github.io/buga-setting/#/paper-read/metcalfe)、[《论质数的疏密》](https://gyjdb.github.io/buga-setting/#/paper-read/alding)、[《复工、收贴与银券通论》](https://gyjdb.github.io/buga-setting/#/paper-read/stanhope)三篇另有中英文网页全文，带章节目录、公式与图版，手机上也能读；其余十七篇读 PDF。[合订本](https://gyjdb.github.io/buga-setting/#/doc/5d32e64132b3cb692ad4)在宽屏的文献页内嵌浏览器自带的 PDF 阅读器，手机与触屏给打开与下载的链接。篇次、出处、合订本页码与定稿记录见[篇目](https://gyjdb.github.io/buga-setting/#/doc/a30a4d0ae80a78bf2b25)。
 
 **事实边界。** 论文只借现实名篇的论证骨架与写法，对照写在各批提案的编者说明里；内容、概念与文字都是这个世界的。题解与附文里新定的设定经作者逐批认可（D116、D118、D121–D126），正文、编者说明与审稿的取舍见 `organized_project/02_PROPOSALS` 的学术名篇各批提案与英文原刊。排印本与提案的文字相同，在档案馆中均为参考 `REFERENCE`；PDF 不进全文检索，检索提案即可找到对应的文字。
 
@@ -96,6 +96,8 @@ node tools/library_portal/test_frontend.cjs
 python -m unittest discover -s tools/library_portal -p test_institutions.py
 node tools/library_portal/test_institutions.cjs
 node tools/library_portal/test_institution_detail.cjs
+python -m unittest discover -s tools/library_portal -p test_papers.py
+node tools/library_portal/test_papers.cjs
 ```
 
 构建只写入 `site/library_portal/`，不编辑 `organized_project/`。检查覆盖原件哈希、现行清单、版本配对、索引完整性、内部链接、正文安全渲染和搜索行为；不代替世界观内容的人工审查。
@@ -123,7 +125,11 @@ tools/library_portal/       # 只读构建器、校验与搜索测试
     index.html, portal*.*  # 档案馆外壳：首页、文献页、各总目与检索
     book*.js, book*.css    # 风土志阅读器：书页版与文字版的排版、手写与注释字体切片
     book-plan.json         # 风土志插图、批注与资料卡的版面位置
+    papers.js, papers.css  # 学术文献：目录、详情页与网页全文
     assets/plates/         # 风土志插图（WebP）及 manifest.json
+    assets/papers/         # 三篇网页全文的公式与图版（预生成的 SVG）及来源说明
+  papers.py                # 构建时从源稿截取论文正文，生成目录与双语正文
+  data/papers.json         # 学术文献的篇目登记表
   fetch_fonts.py           # 固定来源、SHA256 校验的字体准备
 docs/                      # 公开范围、来源清单、项目截图
 .github/workflows/pages.yml # 构建、检查与 Pages 发布
