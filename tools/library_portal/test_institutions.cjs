@@ -1,0 +1,20 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const ctx=vm.createContext({URLSearchParams});
+vm.runInContext(fs.readFileSync(path.join(__dirname,'web/portal-pages.js'),'utf8'),ctx);
+const data=JSON.parse(fs.readFileSync(path.join(__dirname,'data/institutions.json'),'utf8'));
+ctx.input=data;vm.runInContext('registry=input',ctx);
+let checks=0;
+function check(expr){assert.ok(vm.runInContext(expr,ctx),expr);checks++;}
+check("orgMatches(registry.institutions.find(r=>r.name==='白塔奥维利亚'),'白塔')");
+check("orgMatches(registry.institutions.find(r=>r.name==='市场监督总局'),'反垄断局')");
+check("orgMatches(registry.institutions.find(r=>r.name==='白银学会'),'ACADEMIA ARGENTEA')");
+check("registry.institutions.filter(r=>orgMatches(r,'许可证务科')).length===1");
+check("registry.institutions.filter(r=>orgMatches(r,'不存在的测试机构')).length===0");
+check("orgInScope(registry.institutions.find(r=>r.name==='巴贝尔白银图书馆'),'other')");
+check("!orgInScope(registry.institutions.find(r=>r.name==='巴贝尔白银图书馆'),'current')");
+check("!orgInScope(registry.institutions.find(r=>r.name==='潮汐观测塔'),'current')");
+check("orgInScope(registry.institutions.find(r=>r.name==='潮汐观测塔'),'facilities')");
+check("orgSection('police')===orgSection('executive')&&orgSection('prohibition')===orgSection('executive')");
+check("Object.values(registry.legacy).every(v=>v.startsWith('category:')||orgMap().has(v))");
+check("Object.keys(registry.legacy).length===8");
+console.log(JSON.stringify({passed:checks,failed:0,scope:'name/alias lookup, scope boundaries, merged groups and legacy names'}));

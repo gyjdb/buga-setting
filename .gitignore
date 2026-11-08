@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+._*
+.venv/
+tools/library_portal/.deps/
+tools/library_portal/web/fonts/*.woff2
+site/
+.env
+.env.*
+!.env.example
+

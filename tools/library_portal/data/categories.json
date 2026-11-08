@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "note": "白塔档案馆的馆藏门类。09_HOLDINGS 与 08_CLASSIC_PAPERS/各批 的文件在文件头写 category 与 group；其余公开文件按 rules 归类；现行法典归“法典与规章”，页内分组照宪章第二条的规范层级。新添门类或分组只改这里。",
+  "categories": [
+    {
+      "id": "leges",
+      "name": "法典与规章",
+      "latin": "Leges et Statuta",
+      "nav": "法典",
+      "route": "canon",
+      "intro": "联盟宪章与现行法律、组织与规程，以及执政院各部的办法与学界共同订立的通则。法律按宪章第二条的规范层级排列。",
+      "groups": [
+        { "name": "宪章与法律", "intro": "宪章、基本法、组织法、专项法律与章程。" },
+        { "name": "组织与规程", "intro": "各机关的组织架构、实施规程、技术标准与名录。" },
+        { "name": "部院办法与学界通则", "intro": "执政院各部发布的办法与公告，以及学会、院校与期刊共同订立的规则。" }
+      ]
+    },
+    {
+      "id": "acta",
+      "name": "学术文献",
+      "latin": "Acta et Periodica",
+      "nav": "学术文献",
+      "route": "scholarship",
+      "intro": "联盟学界的论文、评定结果与期刊。《联盟学术名篇》收录改变了一门学问问法的二十篇论文；其余为学科评定与排行的公告，以及期刊、年报与专号的选篇。",
+      "groups": [
+        { "name": "学术名篇", "intro": "恰恩大学出版部编，第一纪三百七十五年修订本。" },
+        { "name": "评定与荣誉", "intro": "白银学会的学科评定结果、院校排行与千年七题。" },
+        { "name": "期刊与年报", "intro": "《期刊引证年报》、《恰恩评论》的专号与按语、《奥术》的选篇与学界宣言。" }
+      ]
+    },
+    {
+      "id": "encyclopaedia",
+      "name": "百科与年表",
+      "latin": "Encyclopaedia et Annales",
+      "nav": "百科与年表",
+      "route": "encyclopaedia",
+      "intro": "介绍联盟的读物、《联盟百科全书》的词条与按年记事的年表。",
+      "groups": [
+        { "name": "风土志", "intro": "地上学者所著的联盟风土与制度概览，图拉曼作序。" },
+        { "name": "联盟百科全书", "intro": "大图书馆编，第六版。", "series": ["学科史", "院校"] },
+        { "name": "年表与年名", "intro": "各门学问的大事年表，以及有记载的历年年名。" }
+      ]
+    },
+    {
+      "id": "records",
+      "name": "公文与手稿",
+      "latin": "Acta et Manuscripta",
+      "nav": "公文与手稿",
+      "route": "records",
+      "intro": "机关与院校的聘书、呈文、报告、决定与声明，以及讲演、审稿意见等个人手稿。",
+      "groups": [
+        { "name": "公文与决定", "intro": "聘书、呈文、调查报告、决定书、撤稿声明、年报与会议程序。" },
+        { "name": "讲演与手稿", "intro": "讲演的记录与学者的手稿。" }
+      ]
+    }
+  ],
+  "rules": [
+    { "path": "07_WORLD_GUIDE/银色联盟风土志.md", "category": "百科与年表", "group": "风土志", "sort": "1" },
+    { "path": "07_WORLD_GUIDE/银色联盟风土志_序.md", "category": "百科与年表", "group": "风土志", "sort": "2" },
+    { "prefix": "08_CLASSIC_PAPERS/", "category": "学术文献", "group": "学术名篇" }
+  ],
+  "canonGroups": { "宪章": "宪章与法律", "法律": "宪章与法律", "实施规范": "组织与规程" }
+}

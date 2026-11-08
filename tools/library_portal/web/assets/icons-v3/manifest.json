@@ -1,0 +1,25 @@
+{
+  "source": "baita-icons-v3.zip",
+  "sourceSha256": "587efcfa2b44400bfe21081266f8244eae24c2612167a9e37faa76d086e573d2",
+  "files": {
+    "topic-academy.svg": "9205ef5ba618cee43218e2564ec0db420f9e83416e7a06c3a1c660764ccf2704",
+    "topic-constitution.svg": "0dc09132361e52e00e59acc59f96cad0170823c9e4a65007255e6c691b23e0be",
+    "topic-defense.svg": "da02b133c08846c6c20692e3f185b86bb57929ffc8283e94156ba94fb313e2a7",
+    "topic-justice.svg": "1835fc8e425f0a5a192784effa9aad31e3a54236330b8c60b0099831605dd5de",
+    "topic-magic.svg": "92374cef26c1f37fc79494e4ab5f583aad338d60dd6e1d22a93c9bd452a0eb61",
+    "topic-treasury.svg": "44cfa770e71ed16d6b20d05efd0d4db655be0d4b3775b804186f35ff071f7def",
+    "nav-author.svg": "025665906b1f78adbd56c0fb55f7babe8d6035ba8356ee7af28b6f35588bdba9",
+    "nav-codex.svg": "994594b1831aa8174cf31f9c108ca434ab69eec701b53f6f5b65e39884bb0e4f",
+    "nav-drafts.svg": "5eb3c87484c027be05d8d24dd9b76c5a5fe8e0888e287a526c5c2987dd8566b9",
+    "nav-history.svg": "a976dfb45487dfc153333c9b932d0719f22ca59d34cba59e15fd2c3f85b0956d",
+    "nav-holdings.svg": "3a9bf8e9612128a8f665ab6b26718c28481dec955b414ea0c2fc122f204f923d",
+    "nav-home.svg": "f11f38ab302490cb79cbb8cde5930cea67c383d547869b47722693a44fc30873",
+    "nav-institutions.svg": "759c8f3c198669f1e59607ff1fbacddd102005332c63160d711ff4f8adc474b6",
+    "nav-proposal.svg": "40746b3af312d9657eb0fa9c15bd9bb90d3123a9ed26ef4accb2b2faee8f4209",
+    "nav-topics.svg": "94422f1daf2787b057728462324ba67e0bd644b24b25fad14e54dee422156f66",
+    "nav-versions.svg": "69ef70718e3a37c9480c4c8adebdd739d9f50093175b7d9e6034748ba8380b0e",
+    "emblem-b-mid.svg": "f3dafebb3fc1530ed6cd1af1414b3df9c11fa34b07dd18c8aeaefb3cdcd85ad4",
+    "emblem-b-small.svg": "0bc1b652ad7bd58b31c183876c71ac0c554423e5e4f78b100d73692346263181",
+    "emblem-b.svg": "bf5f0d8f04853854291f596d8f86920477e805687772d6c1bce1abf1f2fcd6bd"
+  }
+}

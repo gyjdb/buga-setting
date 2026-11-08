@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="白塔档案馆：银色联盟的法典与规章、学术文献、百科与年表、公文与手稿。"
+    />
+    <meta name="theme-color" content="#151816" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'"
+    />
+    <title>白塔档案馆</title>
+    <link rel="icon" href="assets/favicon.svg?v=1" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="archive-fonts.css" />
+    <link rel="stylesheet" href="book-hand.css" />
+    <link rel="stylesheet" href="book-note.css" />
+    <link rel="stylesheet" href="book-pages.css" />
+    <link rel="stylesheet" href="book.css" />
+    <link rel="stylesheet" href="portal.css" />
+    <link rel="stylesheet" href="papers.css" />
+    <script src="book.js" defer></script>
+    <script src="book-pages.js" defer></script>
+    <script src="papers.js" defer></script>
+    <script src="portal.js" defer></script>
+    <script src="portal-pages.js" defer></script>
+  </head>
+  <body>
+    <a class="rs-skip" href="#main">跳至正文</a>
+    <header class="rs-bar">
+      <button class="rs-menu" id="menu-toggle" type="button" aria-label="档案馆导航" aria-expanded="false" aria-controls="site-nav"
+        ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" /></svg
+      ></button>
+      <a class="rs-brand" href="#/home"
+        ><span class="rs-brand-mark" aria-hidden="true"></span
+        ><span class="rs-brand-name">白塔档案馆<small lang="la">Archivum Turris Albae</small></span></a
+      >
+      <nav class="rs-nav" id="site-nav" aria-label="主导航">
+        <a href="#/home" data-nav="home">首页</a>
+        <a href="#/guide" data-nav="guide">风土志</a>
+        <a href="#/canon" data-nav="canon">法典</a>
+        <a href="#/scholarship" data-nav="scholarship">学术文献</a>
+        <a href="#/encyclopaedia" data-nav="encyclopaedia">百科与年表</a>
+        <a href="#/records" data-nav="records">公文与手稿</a>
+        <a href="#/institutions" data-nav="institutions">机构</a>
+        <a href="#/browse" data-nav="browse">检索</a>
+        <a href="#/audit" data-nav="audit" data-local>编校</a>
+      </nav>
+      <span class="topbar-title"></span>
+      <div class="rs-tools">
+        <span class="rs-index" title="索引生成时间">索引 <time id="rs-built">—</time></span>
+        <form class="rs-search" id="global-search" role="search">
+          <label class="rs-sr" for="global-query">检索全部馆藏</label>
+          <input id="global-query" type="search" autocomplete="off" placeholder="检索馆藏…" /><kbd>/</kbd>
+        </form>
+        <button class="rs-theme" type="button" aria-pressed="false" title="白昼：纸本阅读模式">白昼</button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"><p class="rs-loading">正在读取馆藏索引…</p></main>
+    <footer class="rs-foot">
+      <p><span class="rs-foot-name">白塔档案馆</span>银色联盟的法典、文献与档案。</p>
+      <nav class="rs-foot-nav" aria-label="页脚导航"><a href="#/browse">全部馆藏</a><a href="#/institutions">机构总目</a><a href="#/versions" data-local>版本与关系</a><a href="#/browse?collection=00_PROJECT" data-local>项目总卷</a><a href="#/browse?directory=1" data-local>完整源文件目录</a></nav>
+      <p>环境与书籍插画为概念演绎，不代表已确认的建筑、徽章或历史事件。</p>
+    </footer>
+    <noscript>请启用 JavaScript，并按 README 使用本地 HTTP 服务访问。</noscript>
+  </body>
+</html>

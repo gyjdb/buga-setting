@@ -1,0 +1,27 @@
+/* 白塔图标 v3：主题图标与馆徽的配色映射（可选）。
+   未引入本文件时，SVG 使用文件内的默认色（适合深色背景）。
+   引入后，内联 SVG 的颜色由下列变量控制；用 <img> 引用的 SVG 不受影响。 */
+:root {
+  --baita-ink: #e2e6e0;
+  --baita-silver: #a9bbbb;
+  --baita-field: #2f474c;
+  --baita-warm: #d8b878;
+  --baita-niche: #0d171a;
+}
+
+/* 浅色背景：给外层容器加 class="theme-light"（或改成站点自己的浅色主题选择器） */
+.theme-light {
+  --baita-ink: #26363a;
+  --baita-silver: #6f8487;
+  --baita-field: #dfe5e2;
+  --baita-warm: #c08f45;
+  --baita-niche: #e4e9e6;
+}
+
+.bt-fill-ink { fill: var(--baita-ink, #e2e6e0); }
+.bt-fill-silver { fill: var(--baita-silver, #a9bbbb); }
+.bt-fill-field { fill: var(--baita-field, #2f474c); }
+.bt-fill-warm { fill: var(--baita-warm, #d8b878); }
+.bt-fill-niche { fill: var(--baita-niche, #0d171a); }
+.bt-stroke-ink { stroke: var(--baita-ink, #e2e6e0); }
+.bt-stroke-silver { stroke: var(--baita-silver, #a9bbbb); }

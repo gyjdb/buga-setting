@@ -1,0 +1,299 @@
+{
+  "count": 49,
+  "files": [
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/魔法基本法_v1_3_8.md",
+      "alias": "K20",
+      "sha256": "a591936d28c80ba678fbe8cba7465dd507fcd4610958553b1c28f561472aa33a",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/法术环级标准_v1_3_5.md",
+      "alias": "K15",
+      "sha256": "58ec12d207f0266cbbbc9e0fae3572fa788351a5b3df15dc8e5a6af0005f7209",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/环级认定规程_v1_3_7.md",
+      "alias": "K21",
+      "sha256": "37d14468217eec99a45478074a6695c7494d59aabbe36e12e5141c3395e0ff0e",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/禁魔分区规程_v1_3_7.md",
+      "alias": "K13",
+      "sha256": "0d133fe52c28e112ef145013e3bc0e18205c4888ad00a2a0639ea4f84856ff97",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/禁术管制委员会组织架构_v1_3_7.md",
+      "alias": "K23",
+      "sha256": "fb0e1f770e002543d9eb415d333954d07c3ba9aec26d80295697a38a10b5e64b",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/供能网络接入与服务法_v1_0_2.md",
+      "alias": "K31",
+      "sha256": "b236b8503ba6f5edb8693711bb021f70e04447f3c90f8595c292ca90d303d6cd",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/彩虹之焦术士联合会章程_v1_0_1.md",
+      "alias": "K43",
+      "sha256": "3d63131e3679db4930322e3db066a15eff9def04359197bf9206a68053a2a205",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/节点结界工程部组织架构_v2_1_0.md",
+      "alias": "K51",
+      "sha256": "1451a485bbdd3d4ca77d9df36a5777cc2d9bad9a025d7be173f7eaedd0d8463a",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/魔法体系与魔法法/特殊用途与高危活动类别清单_v1_0_0.md",
+      "alias": "K54",
+      "sha256": "d3574f7a357758fd7a741a6c0437010bfd3463ce2c4557de8aa18b6fff672734",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/银色联盟宪章_v0_5_8.md",
+      "alias": "K12",
+      "sha256": "2c778523c6bbc9354782c468c08c07db7afda3172a8c7d1c2fdf348bcf5ebdae",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/白银议会组织法_v3_6_11.md",
+      "alias": "K14",
+      "sha256": "a6061851ec3447cf7254b8efbdce2c5fa417835d4dabaa8d7421398a7a9502da",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/白银执政院_v2_8_9.md",
+      "alias": "K10",
+      "sha256": "31f206a41175b4582bd0c809b93c34a150101daacb6b79c5aa40d5f2d7381ba1",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/天空航道与空港规程_v1_0_3.md",
+      "alias": "K30",
+      "sha256": "131e4d03c6728b8499d398d756f706159861eff1b264090e3d16184db05377b8",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/民籍与誓籍登记法_v1_0_2.md",
+      "alias": "K34",
+      "sha256": "445916e6acbd8acefce402d5a2fbe22c7f9d9e47ee49114e459208e7815e16ac",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/联盟成员城邦通例_v1_0_3.md",
+      "alias": "K39",
+      "sha256": "4be71529f4dc17e310e12b917fe3cf78ddadae8ba0d8867ffa4b51c8ff3c4e95",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/外务部组织架构_v3_1_0.md",
+      "alias": "K49",
+      "sha256": "1108bd52cda82452e26949feb10da018ea9467fc652f74ce11b1e7105c8535d1",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/天空航务部组织架构_v3_1_0.md",
+      "alias": "K50",
+      "sha256": "0d92664d79298e93bc90526622dee9fb21322f6805ca5e63f373f7448c2f7c5e",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/宪政与治理/学派与行会法_v1_0_0.md",
+      "alias": "K61",
+      "sha256": "d0e7e6edceb532fa062028707ccdb8aec40c19ff30324c50ae1ec451e2b25484",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/司法监察与治安/裁断体系组织法_v1_5_9.md",
+      "alias": "K26",
+      "sha256": "2d3f216d7ba8d48d5e3a9f2e47dcac1846a01b711a14e51616211c1d770979f3",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/司法监察与治安/盟约监察院组织法_v1_4_7.md",
+      "alias": "K25",
+      "sha256": "434b6e95e0127f92b70d306e09968554fdf19ac5151ac2977412ee3dd5d50079",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/司法监察与治安/内务治安部组织架构_v3_0_0.md",
+      "alias": "K19",
+      "sha256": "3e5152fc81de0e34f37bb1a9b150af8acc216cff7112f69faac15e038a6b2e87",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/司法监察与治安/契约与赔补法_v1_0_3.md",
+      "alias": "K35",
+      "sha256": "d67e55435e683250a7b192aff3bc3e8e8cb62bc0b568bf85de19dfc83dae8ccc",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/司法监察与治安/出入境与接触等级规程_v1_0_3.md",
+      "alias": "K36",
+      "sha256": "934a5e63ccac6adf513121383310ea7ae8bfd583fd46c11c649e85a16c93b920",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/司法监察与治安/联盟罪名与刑罚法_v1_0_4.md",
+      "alias": "K38",
+      "sha256": "0e67e86447398555dea87937e959e614f87f844533322981a220185e2964dfcc",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/司法监察与治安/债务执行与工坊清理法_v1_0_2.md",
+      "alias": "K48",
+      "sha256": "b97c021bb7cb8638f9ec8cb6ecc8917dd03e90738e5eb9880b421230a0319f35",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/银色联盟防务基本法_v2_6_10.md",
+      "alias": "K18",
+      "sha256": "507f6d0655a36161bdde42f6fea24a77aceb93d50749ec8800d3ea5bbc00440f",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/银烛会_v2_5_7.md",
+      "alias": "K11",
+      "sha256": "e449c8339c01c8470965e167f9b3425eccfa7601467057cab2eeb8bfd38f114a",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/浮空战舰建造、验收与入列规程_v1_0_2.md",
+      "alias": "K37",
+      "sha256": "43055077ae666939414b54af0455a6cb127f89a502114095104f96e26e91ba36",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/联盟军事委员会组织架构_v1_1_0.md",
+      "alias": "K55",
+      "sha256": "f6e813b8081a2f7dbf15ed22bef860fc5646433b335232ef9ae8a006ff488e50",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/银色舰队组织架构_v1_1_0.md",
+      "alias": "K56",
+      "sha256": "1043d0c3af241ca434dfbece7ba8d3b01679e3f86b044ee839f09a467f47c8f3",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/银色战团组织架构_v1_1_0.md",
+      "alias": "K57",
+      "sha256": "a7724f58dca16cd78f7af8ecd09a347c148b8f6451753f2acdc42884183359e8",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/要塞军团组织架构_v1_1_0.md",
+      "alias": "K58",
+      "sha256": "f48c35038fa2ba7085d97aaf02b6357f9e0ab3d809f1b906fce4cf0db9cb6d1b",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/军事与防务/联盟军事荣誉条例_v1_0_0.md",
+      "alias": "K59",
+      "sha256": "1d3ed0a0bf1540792ac6701dc91fa89296f3019075a4208c609b65000dd61e06",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/白塔章程_v2_2_8.md",
+      "alias": "K28",
+      "sha256": "a4b247f4bc136a6f552a222df6a043a6c51d36a9374ec283272633b078e82a60",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/白银学会章程_v1_2_9.md",
+      "alias": "K27",
+      "sha256": "128b856c1085840ce9b0ff5ff0ff60a99eb2b4dd7a7a2cc8e3245655b6c001ba",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/大图书馆章程_v1_9_6.md",
+      "alias": "K29",
+      "sha256": "cddc5bc0c91ef3581c743d8a27db20844514242d5519cd21cd16df3147bff289",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/教育典籍部组织架构_v2_2_0.md",
+      "alias": "K32",
+      "sha256": "0b1d706db83914964967fcdb0f37a0ee0da3f13f50a9bba837f0aaf162e34c45",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/联盟遗产法_v1_0_3.md",
+      "alias": "K40",
+      "sha256": "65e0f4e8fea53db71954adb5b992da97d809429e359a3f48c8bc08afe55e4f7f",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/学术研究与特许知识保管法_v1_1_0.md",
+      "alias": "K41",
+      "sha256": "5ae9ec147d029c7ef589eb40284fef87510ccb2c6632895022b9a73e2e3f8354",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/公共教育与典籍流通法_v1_0_3.md",
+      "alias": "K45",
+      "sha256": "6f974094023df134af1b710b1f66c02eaf0cb5f50654f6183e25772d82095ff5",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/高等院校法_v1_2_0.md",
+      "alias": "K52",
+      "sha256": "6107400548f1be4313e55e517fb305d768456d0bb47e605c4ffb69244d6c7f1e",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/学术与研究机构/联盟高等院校名录_v1_0_2.md",
+      "alias": "K53",
+      "sha256": "29b53d9edb877f5f64f9b0511de40857c6e3c7f4b9dcf1278eea7a3e4117b289",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/财政货币与经济/布加联盟储备系统章程_v1_2_7.md",
+      "alias": "K24",
+      "sha256": "de0072fd673611d9e8c7ef906f0cce42760c7288f44610d93404f2c63187ee45",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/财政货币与经济/联盟税赋与共同义务份额法_v1_0_2.md",
+      "alias": "K33",
+      "sha256": "a5f718e6b9b32b62e0c1bfa42c663d8ad38eefb94e31cc83aea927dac4de74d9",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/财政货币与经济/联盟财政与三本账法_v1_0_2.md",
+      "alias": "K42",
+      "sha256": "8ae53f11a56076181feb37ce327caaf6d31b03bcc2f5d4fd995f7057b5f18fb8",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/财政货币与经济/职业执业资格法_v1_0_2.md",
+      "alias": "K44",
+      "sha256": "253ce9e9802929de2c4ea51abbbe9f9004eb72cf6b58b999f55065316b12e72b",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/财政货币与经济/工坊雇佣与学徒契约规程_v1_0_3.md",
+      "alias": "K46",
+      "sha256": "280c4a7eaf47a1f86334daef76467780c3159f91d562a9b7098512d41b83997c",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/财政货币与经济/非货币票据与互助金机构法_v1_0_3.md",
+      "alias": "K47",
+      "sha256": "01f2f4fb8a524a683128b476f14aed5fdbc8b12b29b9b2c9438bcaca9f6c06bc",
+      "status": "CURRENT_CANON"
+    },
+    {
+      "path": "01_CURRENT_CANON/财政货币与经济/工艺产权法_v1_0_0.md",
+      "alias": "K60",
+      "sha256": "7107c0295757d13dd572b3c55e2a4fa6cc6d33ed52bc297b0275f4c0aaf83593",
+      "status": "CURRENT_CANON"
+    }
+  ]
+}

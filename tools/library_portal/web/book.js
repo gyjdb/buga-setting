@@ -1,0 +1,1016 @@
+"use strict";
+
+// 《银色联盟风土志》：馆藏读物的对开阅读视图。只改变呈现，正文与编者材料仍来自原文件。
+// 装帧参照《大地巡旅》：中文管内容，拉丁文、英文与罗马数字管结构（作者决定 FA29–FA32）。
+const BOOK_TITLE = "银色联盟风土志";
+const BOOK_LATIN = "De Foedere Argenteo";
+const BOOK_SUBTITLE = "A Survey of the Silver Alliance";
+const BOOK_NOTES_PATH = "07_WORLD_GUIDE/银色联盟风土志_编者材料.md";
+const BOOK_RESUME_KEY = "buga.fengtuzhi.lastChapter";
+const BOOK_ROMAN = { 一: "I", 二: "II", 三: "III", 四: "IV", 五: "V", 六: "VI", 七: "VII", 八: "VIII", 九: "IX", 十: "X" };
+// 英文章名与拉丁底纹词；题记只用法典现成的话。
+const BOOK_CHAPTERS = {
+  一: { en: "A Kingdom in the Sky", ghost: "Caelum" },
+  二: { en: "The White Tower and the Great Library", ghost: "Bibliotheca", epigraph: ["知识改变命运。", "Scientia fatum mutat.", "白塔铭言"] },
+  三: { en: "The Making of a Wizard", ghost: "Disciplina" },
+  四: { en: "Magic and Its Limits", ghost: "Magia" },
+  五: { en: "Among the Cities", ghost: "Civitates" },
+  六: { en: "The Parliament and the Twelve Rings", ghost: "Concilium", epigraph: ["向知识致敬，向真理致敬。", "", "联盟铭言"] },
+  七: { en: "Origins", ghost: "Origo" },
+  八: { en: "The Edges of the Sky", ghost: "Fines" },
+  九: { en: "The Turning Year", ghost: "Annus" }
+};
+// 第一章资料卡：均为现行事实。
+const BOOK_SUMMARY = [
+  ["主体民族", "Gens", "布加人（白银之民）"],
+  ["首府", "Caput", "卡奈奇"],
+  ["城邦", "Civitates", "约三十座浮空城"],
+  ["法定货币", "Moneta", "阿根特，一阿根特合一百星"],
+  ["象征", "Signum", "洞察之眼"]
+];
+const BOOK_LEVELS = ["Aurēa", "Vesperā", "Stellāra", "Abyssāra", "Nihilāra"];
+
+// 洞察之眼（光冠版，2026-09-22 定稿）：放射光刃之下的眼睛，悬于海浪之上。源文件在 plates-src/emblem/final。
+function bookEmblem(label = "洞察之眼") {
+  return `<svg class="book-emblem" viewBox="-100 -104 200 192" role="img" aria-label="${label}"><path fill="currentColor" d="M-71.31 -32.48L-95.39 -39.08L-77.64 -21.52ZM-55.68 -41.65L-81.89 -57.6L-65.94 -31.4ZM-35.93 -47.92L-61.04 -75.08L-50.07 -39.75ZM-13.48 -50.78L-33.34 -89.8L-31.03 -46.08ZM10 -50L0 -100L-10 -50ZM31.03 -46.08L33.34 -89.8L13.48 -50.78ZM50.07 -39.75L61.04 -75.08L35.93 -47.92ZM65.94 -31.4L81.89 -57.6L55.68 -41.65ZM77.64 -21.52L95.39 -39.08L71.31 -32.48ZM-79 0Q0 -68 79 0Q0 -30 -79 0ZM-79 0Q0 56 79 0Q0 32 -79 0Z"/><path fill="currentColor" fill-rule="evenodd" d="M-18 0a18 18 0 1 0 36 0a18 18 0 1 0 -36 0ZM-11.16 -0.9A12.6 12.6 0 0 1 0.9 -11.88A17.1 17.1 0 0 0 -11.16 -0.9Z"/><path class="book-emblem-sea" d="M-66 56Q-52.14 56 -49.5 45Q-46.86 56 -33 56Q-19.14 56 -16.5 45Q-13.86 56 0 56Q13.86 56 16.5 45Q19.14 56 33 56Q46.86 56 49.5 45Q52.14 56 66 56L66 64Q52.14 64 49.5 57.95Q46.86 64 33 64Q19.14 64 16.5 57.95Q13.86 64 0 64Q-13.86 64 -16.5 57.95Q-19.14 64 -33 64Q-46.86 64 -49.5 57.95Q-52.14 64 -66 64ZM-42 77Q-30.24 77 -28 68Q-25.76 77 -14 77Q-2.24 77 0 68Q2.24 77 14 77Q25.76 77 28 68Q30.24 77 42 77L42 84Q30.24 84 28 79.05Q25.76 84 14 84Q2.24 84 0 79.05Q-2.24 84 -14 84Q-25.76 84 -28 79.05Q-30.24 84 -42 84Z"/></svg>`;
+}
+function bookSeal(text, label) {
+  return `<svg class="book-seal" viewBox="0 0 100 100" role="img" aria-label="${label}"><defs><path id="book-seal-ring" d="M50 50m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="50" cy="50" r="44.5" fill="none" stroke="currentColor" stroke-width=".6"/><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width=".9"/><text class="book-seal-text"><textPath href="#book-seal-ring">${text}</textPath></text><path d="M31 50Q50 36 69 50Q50 64 31 50Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="5.5" fill="currentColor"/><path d="M36 61q3.5-3 7 0t7 0t7 0t7 0" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
+}
+
+// 续读位置只存在本机浏览器；读不到时页面照常显示。
+function bookResume(list) {
+  let slug;
+  try { slug = localStorage.getItem(BOOK_RESUME_KEY); } catch { return null; }
+  const item = slug && list.find(h => (h.slug || h.id.replace(/^section-/, "")) === slug);
+  if (!item) return null;
+  const [, num, name] = item.label.match(/^([一二三四五六七八九十]+)、(.+)$/) || [];
+  return { slug, label: num ? `Capitulum ${BOOK_ROMAN[num] || num} · ${name}` : item.label };
+}
+function bookRemember(chapter) {
+  try { localStorage.setItem(BOOK_RESUME_KEY, chapter.id.replace(/^section-/, "")); } catch {}
+}
+
+function bookFetch(doc) {
+  return fetch("docs/" + doc.id + ".json").then(r => { if (!r.ok) throw new Error("正文读取失败（" + r.status + "）"); return r.json(); });
+}
+function bookChapters(html) {
+  const parsed = new DOMParser().parseFromString(html, "text/html").body;
+  const chapters = [];
+  for (const node of [...parsed.children]) {
+    if (node.tagName === "H1") continue;
+    if (node.tagName === "H2") {
+      const [, num = "", name = node.textContent] = node.textContent.match(/^([一二三四五六七八九十]+)、(.+)$/) || [];
+      chapters.push({ id: node.id, label: node.textContent, num, name, roman: BOOK_ROMAN[num] || num, meta: BOOK_CHAPTERS[num] || {}, nodes: [] });
+    } else if (chapters.length) chapters.at(-1).nodes.push(node);
+  }
+  return chapters;
+}
+// 编者材料“各章来源”一节：<li><strong>一、天上的国度</strong>：链接……</li>
+function bookSources(html) {
+  const parsed = new DOMParser().parseFromString(html, "text/html").body, map = new Map();
+  for (const li of parsed.querySelectorAll("li")) {
+    const label = li.querySelector("strong")?.textContent.trim();
+    if (!label || !/^[一二三四五六七八九十]+、/.test(label) || map.has(label)) continue;
+    const clone = li.cloneNode(true);
+    clone.querySelector("strong").remove();
+    map.set(label, clone.innerHTML.replace(/^\s*[：:]\s*/, ""));
+  }
+  return map;
+}
+function bookBody(chapter) {
+  const nodes = chapter.nodes.map(n => n.cloneNode(true));
+  nodes.find(n => n.tagName === "P")?.classList.add("book-opening");
+  return nodes.map(n => n.outerHTML).join("");
+}
+function bookRecord(chapter, sources) {
+  if (!sources.has(chapter.label)) return "";
+  return `<aside class="book-record" aria-label="馆员批注：${esc(chapter.name)}所据文献">
+    <header class="book-record-head">
+      <div><span class="book-record-title">Archivum Turris Albae · Acta</span><p>档案归档 / 馆员批注 · 本章所据</p></div>
+      <dl>
+        <div><dt>归档号 <i>Numerus</i></dt><dd>DFA · ${esc(chapter.roman)}</dd></div>
+        <div><dt>权限等级 <i>Gradus</i></dt><dd class="book-levels">${BOOK_LEVELS.map((l, i) => `<span${i ? "" : ' class="on"'}>${l}</span>`).join("")}</dd></div>
+      </dl>
+    </header>
+    <div class="book-record-body"><p class="book-record-label">Fontes · Capitulum ${esc(chapter.roman)}</p><p>${sources.get(chapter.label)}</p></div>
+    <span class="book-visum" aria-label="审阅章：VISUM">Visum</span>
+  </aside>`;
+}
+function bookOpener(c) {
+  const m = c.meta, ep = m.epigraph;
+  return `<div class="book-opener">
+      <span class="book-ghost" aria-hidden="true">${esc(m.ghost || "")}</span>
+      ${bookEmblem()}
+      <p class="book-cap"><span>Capitulum</span><b>${esc(c.roman)}</b></p>
+      <h2 id="${esc(c.id)}" class="book-chapter-title">${esc(c.name)}</h2>
+      ${m.en ? `<p class="book-chapter-en" lang="en">${esc(m.en)}</p>` : ""}
+      ${ep ? `<div class="book-epigraph"><span class="book-kicker">Epigraphe</span><blockquote><p>${esc(ep[0])}</p>${ep[1] ? `<p class="book-epigraph-latin" lang="la">${esc(ep[1])}</p>` : ""}<footer>—— ${esc(ep[2])}</footer></blockquote></div>` : ""}
+    </div>`;
+}
+function bookSummary() {
+  return `<aside class="book-summary" aria-label="资料卡"><p class="book-kicker">Summarium</p><dl>${BOOK_SUMMARY.map(([cn, la, v]) => `<div><dt>${cn}<i lang="la">${la}</i></dt><dd>${v}</dd></div>`).join("")}</dl></aside>`;
+}
+
+// 封面与书名页（2026-09-24 作者选定封面 C：档案馆藏本）。按 210 × 299.5 的纸面设计，book.css 的 .fz-page
+// 以容器宽度为单位等比缩放，首页书架、阅读器与排版样张共用。只用已定的文字：书名、副题、竖排三词、
+// 作者（罗恩·萨米利安，外文拼法见编者材料第十节）、作序者 Turaman；拉丁标签只管结构（FA29–FA32）。
+const BOOK_AUTHOR = ["罗恩·萨米利安", "Ron Samilian"], BOOK_COLLEGE = ["克鲁兹帝国 · 圣埃博松学院", "St. Ebosson College · Empire of Kruz"];
+const BOOK_ROMANS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+let bookStampCount = 0;
+// 晨光级的日轮纹：第二章写晨光级馆藏“封面左上角镌着一枚暖白色的日轮纹”；本书是 Aurēa 公开读物。
+function bookSun(label = "日轮纹") {
+  const rays = Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6; return `<line x1="${(20 + 10.5 * Math.cos(a)).toFixed(1)}" y1="${(20 + 10.5 * Math.sin(a)).toFixed(1)}" x2="${(20 + 14.5 * Math.cos(a)).toFixed(1)}" y2="${(20 + 14.5 * Math.sin(a)).toFixed(1)}"/>`; }).join("");
+  return `<svg class="fz-sun" viewBox="0 0 40 40" role="img" aria-label="${label}"><circle cx="20" cy="20" r="7.5" fill="#f7efda" stroke="#c4a15f" stroke-width="1.2"/><g stroke="#c4a15f" stroke-width="1.2" stroke-linecap="round">${rays}</g></svg>`;
+}
+// 拉丁馆藏章（编者材料第十节）：环上 ARCHIVUM · TURRIS · ALBAE · AURĒA，中间是洞察之眼。
+function bookStamp() {
+  const id = "fz-stamp-" + (++bookStampCount);
+  const eye = bookEmblem("").replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
+  return `<svg class="fz-stamp" viewBox="0 0 100 100" role="img" aria-label="馆藏章：Archivum Turris Albae · Aurēa"><defs><path id="${id}" d="M50 50m-36.5 0a36.5 36.5 0 1 1 73 0a36.5 36.5 0 1 1 -73 0"/></defs><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="50" cy="50" r="44.4" fill="none" stroke="currentColor" stroke-width=".6"/><circle cx="50" cy="50" r="28.5" fill="none" stroke="currentColor" stroke-width=".9"/><text class="fz-stamp-text"><textPath href="#${id}" textLength="227" lengthAdjust="spacing">ARCHIVUM · TURRIS · ALBAE · AURĒA ·</textPath></text><g transform="translate(50 51.5) scale(.2)">${eye}</g></svg>`;
+}
+function bookCoverHTML() {
+  return `<div class="fz-page fz-cover" role="img" aria-label="${BOOK_TITLE}封面">
+    <div class="fz-spine" aria-hidden="true"></div>
+    <div class="fz-emboss" aria-hidden="true">${bookEmblem("")}</div>
+    ${bookSun("晨光级的日轮纹")}
+    <p class="fz-kicker">Archivum Turris Albae</p>
+    <p class="fz-latin" lang="la">De Foedere<br>Argenteo</p>
+    <p class="fz-cn">${BOOK_TITLE}</p>
+    <p class="fz-sub" lang="en">${BOOK_SUBTITLE}</p>
+    <span class="fz-rule"></span>
+    <p class="fz-author"><span lang="en">${BOOK_AUTHOR[1]}</span><small>${BOOK_AUTHOR[0]}</small></p>
+    <p class="fz-pref" lang="la">Praefatio · Turaman</p>
+    <p class="fz-vert" lang="la">Mores · Urbes · Leges</p>
+    <div class="fz-tabs" aria-hidden="true">${BOOK_ROMANS.map(r => `<span>${r}</span>`).join("")}</div>
+    <div class="fz-label"><p class="fz-label-t"><span>DFA</span><i lang="la">Archivum Turris Albae</i></p><p class="fz-label-m">${BOOK_TITLE}</p><p class="fz-label-n" lang="la"><span>Capitula I–IX</span><span>Gradus <b>Aurēa</b></span></p></div>
+    ${bookStamp()}
+  </div>`;
+}
+function bookTitleHTML() {
+  return `<div class="fz-page fz-title">
+    <p class="fz-kicker">Archivum Turris Albae</p>
+    <h1 class="fz-latin" lang="la">De<br>Foedere<br>Argenteo</h1>
+    <p class="fz-vert" lang="la">Mores · Urbes · Leges</p>
+    <p class="fz-cn">${BOOK_TITLE}</p>
+    <p class="fz-sub" lang="en">${BOOK_SUBTITLE}</p>
+    <span class="fz-rule"></span>
+    <dl class="fz-credits">
+      <div><dt lang="la">Auctor</dt><dd><span lang="en">${BOOK_AUTHOR[1]}</span><small lang="en">${BOOK_COLLEGE[1]}</small><small class="fz-cn-note">${BOOK_AUTHOR[0]} · ${BOOK_COLLEGE[0]}</small></dd></div>
+      <div><dt lang="la">Praefatio</dt><dd><span lang="en">Turaman</span><small class="fz-cn-note">图拉曼·秘银·奥瑟坦</small></dd></div>
+      <div><dt lang="la">Capitula</dt><dd><span>I – IX</span></dd></div>
+      <div><dt lang="la">Gradus</dt><dd><span class="fz-circled" lang="la">Aurēa</span></dd></div>
+    </dl>
+    <div class="fz-device">${bookEmblem("洞察之眼")}</div>
+    ${bookStamp()}
+  </div>`;
+}
+
+// 衬页：蓝色纸面上一排排小的洞察之眼，贴一张档案馆的藏书票（Ex libris；拉丁文只管结构）。
+function bookEndpaperHTML() {
+  const id = "fz-pat-" + (++bookStampCount);
+  const eye = bookEmblem("").replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
+  return `<div class="fz-page fz-endpaper" aria-hidden="true">
+    <svg class="fz-pattern" viewBox="0 0 210 299.5" preserveAspectRatio="none"><defs><pattern id="${id}" width="26" height="26" patternUnits="userSpaceOnUse"><g transform="translate(6.5 6.5) scale(.055)">${eye}</g><g transform="translate(19.5 19.5) scale(.055)">${eye}</g></pattern></defs><rect width="210" height="299.5" fill="url(#${id})"/></svg>
+    <div class="fz-plate"><p class="fz-plate-ex" lang="la">Ex libris</p><div class="fz-plate-emb">${bookEmblem("")}</div><p class="fz-plate-name" lang="la">Archivum Turris Albae</p><span class="fz-plate-rule"></span><p class="fz-plate-n" lang="la"><span>DFA</span><span>Gradus Aurēa</span></p></div>
+  </div>`;
+}
+
+// A reading location is a source block + UTF-16 offset, independent of page size.
+const BOOK_POSITION_KEY = "buga.fengtuzhi.position.v2";
+// The pre-2026-10 shell docked the archive sidebar beside the reader (collapsed in book mode, open in
+// text mode, readers could toggle it). The current shell has no sidebar, so bookNavDefault does nothing there.
+const BOOK_NAV_KEY = "buga.fengtuzhi.nav";
+// Supplied Terra reference pages are approximately 1380 x 1968; no physical trim size is inferred.
+const BOOK_PAPER_RATIO = 1380 / 1968;
+// Body text is always 15 CSS px. The page is sized to the window instead of scaling the type:
+// it fills the available height up to the standard 690 x 984 page, and only a very small
+// window scales a minimum-size page down.
+const BOOK_PAGE_MAX = 690, BOOK_PAGE_MIN = 340, BOOK_SPREAD_MIN = 420;
+function bookPaperLayout(width, height, narrow = false) {
+  const tall = Math.min(BOOK_PAGE_MAX, height * BOOK_PAPER_RATIO);
+  const spread = width >= 2 * Math.min(tall, BOOK_SPREAD_MIN) ? 2 : 1;
+  const fits = Math.min(tall, width / spread);
+  // Whole 4 px steps keep small window changes from re-paginating the book.
+  const pageWidth = Math.max(BOOK_PAGE_MIN, Math.floor(fits / 4) * 4), scale = Math.min(1, fits / pageWidth);
+  // 窄屏版式（≤780px，手机竖屏）的单页被宽度卡住时，按 1380:1968 的纸页上下会空出两大块：页高改为拉满可用高度（最高 984，按 4px 取整），页宽、页边距与页眉页脚不变。对开、按高度定尺寸的单页，以及宽于 780px 的窗口（平板竖屏、桌面）仍保持比例。
+  const pageHeight = narrow && spread === 1 && fits < tall ? Math.max(Math.floor(pageWidth / BOOK_PAPER_RATIO), Math.floor(Math.min(BOOK_PAGE_MAX / BOOK_PAPER_RATIO, height / scale) / 4) * 4) : Math.floor(pageWidth / BOOK_PAPER_RATIO);
+  return { spread, pageWidth, pageHeight, scale, width: Math.floor(pageWidth * spread * scale), height: Math.floor(pageHeight * scale) };
+}
+let activeBookReader = null;
+function bookStored(key) { try { return localStorage.getItem(key); } catch { return null; } }
+function bookStore(key, value) { try { localStorage.setItem(key, value); } catch {} }
+function bookNavDocked() { return !!document.body.dataset.bookReader && !matchMedia("(max-width:780px)").matches; }
+// 读者在这一页里按过的侧栏选择。本机存储不可用或写不进时也照它，默认值不会把读者刚展开的侧栏又收回去。
+let bookNavChoice = null;
+function bookToggleNav() {
+  document.body.dataset.bookNav = document.body.dataset.bookNav === "closed" ? "open" : "closed";
+  bookNavChoice = document.body.dataset.bookNav;
+  bookStore(BOOK_NAV_KEY, bookNavChoice);
+  archiveNavSync();
+}
+// 读者没有自己收起或展开过侧栏时，书页版默认收起（书页能放大一些），文字版默认展开。
+// 阅读器自己收展时不播过渡，台面马上是新的尺寸，可以接着量。返回侧栏是否因此变了。
+function bookNavDefault(fixed) {
+  if (!document.querySelector("#sidebar")) return false;
+  const chosen = bookNavChoice || bookStored(BOOK_NAV_KEY), state = chosen === "open" || chosen === "closed" ? chosen : fixed ? "closed" : "open";
+  if (document.body.dataset.bookNav === state) return false;
+  const moving = [document.querySelector("#sidebar"), document.querySelector(".workspace")];
+  moving.forEach(e => e.style.setProperty("transition", "none"));
+  document.body.dataset.bookNav = state;
+  moving.forEach(e => { void e.offsetWidth; e.style.removeProperty("transition"); });
+  archiveNavSync();
+  return true;
+}
+function bookPosition() { try { return JSON.parse(bookStored(BOOK_POSITION_KEY)) || null; } catch { return null; } }
+function bookElement(html) { const t = document.createElement("template"); t.innerHTML = html.trim(); return t.content.firstElementChild; }
+
+// Slice DOM text without flattening emphasis/links or modifying the source manuscript.
+function bookSlice(node, start, end) {
+  const copy = node.cloneNode(false), walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+  const texts = []; let text, length = 0;
+  while ((text = walker.nextNode())) { texts.push({ node: text, start: length }); length += text.length; }
+  if (!texts.length || (start === 0 && end === length)) return node.cloneNode(true);
+  const point = offset => {
+    const item = texts.find(t => offset <= t.start + t.node.length) || texts.at(-1);
+    return [item.node, Math.max(0, Math.min(item.node.length, offset - item.start))];
+  };
+  const range = document.createRange();
+  if (start === 0) range.setStart(node, 0); else range.setStart(...point(start));
+  if (end === length) range.setEnd(node, node.childNodes.length); else range.setEnd(...point(end));
+  copy.append(range.cloneContents());
+  if (start) { copy.removeAttribute("id"); copy.classList.add("reader-continuation"); }
+  return copy;
+}
+
+async function bookPaginate(sections, measure, height, cancelled = () => false) {
+  const pages = [];
+  for (const section of sections) {
+    let items = [];
+    measure.replaceChildren();
+    const flush = () => {
+      // A section heading never ends a page: carry it over with the paragraph it introduces.
+      const carry = items.length > 1 && /^H[34]$/.test(items.at(-1).node.tagName) ? items.pop() : null;
+      if (items.length) pages.push({ section: section.id, title: section.title, items });
+      items = []; measure.replaceChildren();
+      if (carry) { measure.append(carry.node); items.push(carry); }
+    };
+    for (const block of section.blocks) {
+      let offset = 0;
+      const length = block.node.textContent.length;
+      do {
+        if (cancelled()) return null;
+        const part = bookSlice(block.node, offset, length);
+        measure.append(part);
+        const fits = () => measure.scrollHeight <= height + 0.5;
+        if (fits()) {
+          items.push({ node: part, key: block.key, start: offset, end: length });
+          break;
+        }
+        part.remove();
+        const splittable = /^(P|UL|OL|BLOCKQUOTE)$/.test(block.node.tagName) && length > offset;
+        const available = height - measure.getBoundingClientRect().height;
+        if (!splittable || (items.length && available < 80)) {
+          if (items.length) { flush(); continue; }
+          // Oversize figures/tables remain accessible in very short viewports.
+          part.classList.add("reader-oversized");
+          measure.append(part); items.push({ node: part, key: block.key, start: offset, end: length });
+          break;
+        }
+        let lo = offset, hi = length;
+        while (lo < hi) {
+          const mid = Math.ceil((lo + hi) / 2), candidate = bookSlice(block.node, offset, mid);
+          measure.append(candidate);
+          const ok = fits(); candidate.remove();
+          if (ok) lo = mid; else hi = mid - 1;
+        }
+        if (lo === offset) {
+          if (items.length) { flush(); continue; }
+          part.classList.add("reader-oversized");
+          items.push({ node: part, key: block.key, start: offset, end: length }); break;
+        }
+        // Avoid cutting surrogate pairs, opening punctuation, and Latin words.
+        const plain = block.node.textContent;
+        if (/[\uD800-\uDBFF]/.test(plain[lo - 1])) lo--;
+        while (lo > offset + 1 && /[（《「『“‘〈【]/.test(plain[lo - 1])) lo--;
+        if (/[A-Za-z]/.test(plain[lo - 1]) && /[A-Za-z]/.test(plain[lo])) {
+          const word = plain.slice(offset, lo).match(/[A-Za-z]+$/)?.[0];
+          if (word && word.length < 24 && lo - word.length > offset) lo -= word.length;
+        }
+        // Move a little text to the following page to avoid a one-line tail.
+        const charsPerLine = Math.floor(measure.clientWidth / parseFloat(getComputedStyle(measure).fontSize));
+        if (length - lo < charsPerLine && lo - offset > charsPerLine * 3) lo -= charsPerLine;
+        if (/[\uD800-\uDBFF]/.test(plain[lo - 1])) lo--;
+        while (lo > offset + 1 && /[，。！？；：、）》」』”’〉】]/.test(plain[lo])) lo--;
+        const fragment = bookSlice(block.node, offset, lo);
+        items.push({ node: fragment, key: block.key, start: offset, end: lo });
+        offset = lo; flush();
+        if (pages.length % 6 === 0) await new Promise(requestAnimationFrame);
+      } while (offset < length);
+    }
+    flush();
+  }
+  return pages;
+}
+
+// 书页版（book-pages.js，实体页面 210 × 299.5 mm、正文 10pt）整页缩放显示；缩放后正文小于 8px（缩放比 0.6）时
+// 默认改用文字版。读者可以在顶栏手动选择；缩放比低于 0.5（手机）只有文字版。
+const BOOK_MODE_KEY = "buga.fengtuzhi.mode";
+const BOOK_FIXED_AUTO = 0.6, BOOK_FIXED_FLOOR = 0.5;
+// 书页版放大：0 为适合窗口，否则是相对纸本实际大小的比例（1 即 100%，10pt 正文约 13px）。
+const BOOK_ZOOM_KEY = "buga.fengtuzhi.zoom", BOOK_ZOOM_STEPS = [1, 1.25, 1.5, 2, 2.5];
+const BOOK_PREFACE_PATH = "07_WORLD_GUIDE/银色联盟风土志_序.md";
+
+// 文字版的分节：目录、序、九章（章首图、正文、插图与图示）、终页。编号 `${节}:${序号}` 与书页版的 data-block 一致；
+// 插图用 `${章}:fig-${编号}`，不占正文序号。
+function bookSections(chapters, doc, extra = {}) {
+  const { plan, plates, preface } = extra;
+  const sections = [];
+  const add = (id, title, nodes) => {
+    let n = 0;
+    sections.push({ id, title, blocks: nodes.map(node => ({ node, key: node.dataset?.bookKey || `${id}:${n++}` })) });
+  };
+  add("book-contents", "目录", [bookElement('<h2 class="reader-contents-title">目录 <span lang="la">Index</span></h2>'), ...chapters.map(c => bookElement(`<a class="reader-toc-link" href="#/doc/${doc.id}?anchor=${encodeURIComponent(c.id.replace(/^section-/, ""))}"><span>${esc(c.roman)}</span><span>${esc(c.name)}<small lang="en">${esc(c.meta.en || "")}</small></span></a>`))]);
+  if (preface?.length) {
+    const paras = [...preface], sign = paras.length > 1 && /^图拉曼/.test(paras.at(-1)) ? paras.pop() : "";
+    const nodes = [bookElement('<h2 class="reader-preface-title">序 <span lang="la">Praefatio</span></h2>'), ...paras.map((t, i) => { const p = document.createElement("p"); p.className = "reader-preface" + (i ? "" : " salute"); p.textContent = t; return p; })];
+    if (sign) nodes.push(bookElement(`<div class="reader-signoff"><p>${esc(sign)}</p><span class="sig"><img src="assets/plates/sign.webp" alt="Turaman" width="614" height="151"></span></div>`));
+    add("book-preface", "序", nodes);
+  }
+  for (const c of chapters) {
+    const figures = plan && plates ? BookPages.flowFigures(c, plan, plates) : { plate: null, after: new Map() };
+    const m = figures.plate && plates[figures.plate];
+    // 题记与书页版章首相同（第二、六章）；放在章首块里，不占正文段落的序号，阅读位置不变。
+    const ep = c.meta.epigraph;
+    const epigraph = ep ? `<blockquote class="reader-epigraph"><p>${esc(ep[0])}</p>${ep[1] ? `<p lang="la">${esc(ep[1])}</p>` : ""}<footer>—— ${esc(ep[2])}</footer></blockquote>` : "";
+    const header = bookElement(`<header class="reader-chapter" id="${esc(c.id)}">${m ? `<img class="reader-chapter-plate" src="assets/plates/${figures.plate}.webp" alt="" width="${m.w}" height="${m.h}">` : ""}<p class="book-kicker">Capitulum ${esc(c.roman)}</p><h2>${esc(c.name)}</h2><p lang="en">${esc(c.meta.en || "")}</p>${epigraph}</header>`);
+    const nodes = [header];
+    // Keep each member of the Twelve Rings together where space permits.
+    c.nodes.forEach((source, si) => {
+      if (/^(UL|OL)$/.test(source.tagName)) {
+        [...source.children].forEach((li, i) => { const list = source.cloneNode(false); if (list.tagName === "OL") list.start = i + 1; list.append(li.cloneNode(true)); nodes.push(list); });
+      } else nodes.push(source.cloneNode(true));
+      nodes.push(...(figures.after.get(si) || []));
+    });
+    nodes.find(n => n.tagName === "P")?.classList.add("reader-opening");
+    add(c.id.replace(/^section-/, ""), c.name, nodes);
+  }
+  add("book-end", "终页", [bookElement(`<div class="reader-ending"><p class="book-end" lang="la">Finis</p><p class="book-end-cn">全书完</p><span class="book-rule"></span><p>${BOOK_TITLE}</p><a href="#/doc/${doc.id}?anchor=book-contents">回到目录</a><a href="#/home">返回白塔档案馆</a></div>`)]);
+  return sections;
+}
+
+async function bookDetail(doc, params, serial) {
+  const notesDoc = docAt(BOOK_NOTES_PATH), prefaceDoc = docAt(BOOK_PREFACE_PATH);
+  const optional = url => fetch(url).then(r => r.ok ? r.json() : null).catch(() => null);
+  const [content, notes, prefaceContent, plan, plates] = await Promise.all([bookFetch(doc), notesDoc ? bookFetch(notesDoc).catch(() => null) : null, prefaceDoc ? bookFetch(prefaceDoc).catch(() => null) : null, optional("book-plan.json"), optional("assets/plates/manifest.json")]);
+  if (serial !== routeSerial) return;
+  const chapters = bookChapters(content.html || "");
+  if (!chapters.length) { await prototypeDetail(doc, params, serial); return; }
+  const sources = notes ? bookSources(notes.html) : new Map();
+  const preface = BookPages.parsePreface(prefaceContent?.html);
+  const sections = bookSections(chapters, doc, { plan, plates, preface }), saved = bookPosition();
+  const controller = new AbortController(), { signal } = controller;
+  archiveObserver = controller;
+  document.title = BOOK_TITLE + " · " + index.title;
+  document.body.dataset.bookReader = "true";
+  // 用书页版还是文字版要等量过台面才知道；先照读者存下的，没有就展开，台面搭好后、字体载入前由 paginate("nav") 定下。
+  bookNavDefault(false);
+  main.dataset.view = "book";
+  main.dataset.readerId = doc.id; main.dataset.readerRoute = "doc";
+  const siteTitle = document.querySelector(".topbar-title"), previousTitle = siteTitle.textContent;
+  const menu = document.querySelector("#menu-toggle"), previousMenu = menu.innerHTML;
+  menu.innerHTML = archiveIcon("menu");
+  menu.title = "档案馆导航";
+  siteTitle.textContent = BOOK_TITLE;
+  archiveNavSync();
+  let pages = [], current = 0, spreadSize = 2, generation = 0, timer, cursor = saved, layout = "", book = null;
+  const icon = d => `<svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
+  main.innerHTML = `<section class="reader" aria-label="${BOOK_TITLE}阅读器">
+    <div class="reader-desk"><button type="button" class="reader-turn" data-turn="-1" aria-label="上一页" title="上一页（←）">${icon("M15 4l-8 8 8 8")}</button><div class="reader-stage" aria-busy="true"><div class="reader-leaves"></div><p class="reader-loading" role="status">正在排版…</p></div><button type="button" class="reader-turn" data-turn="1" aria-label="下一页" title="下一页（→）">${icon("M9 4l8 8-8 8")}</button></div>
+    <nav class="reader-controls" aria-label="翻页"><button type="button" data-turn="-1" aria-label="上一页">← <span>上一页</span></button><span class="reader-progress" role="status" aria-live="polite"></span><button type="button" data-turn="1" aria-label="下一页"><span>下一页</span> →</button></nav>
+    <dialog class="reader-dialog" aria-labelledby="reader-panel-title"><header><h2 id="reader-panel-title"></h2><button type="button" data-close aria-label="关闭面板">关闭 ×</button></header><div class="reader-panel-body"></div></dialog>
+    <div class="reader-measure reader-prose" aria-hidden="true" inert></div>
+  </section>`;
+  const root = main.querySelector(".reader"), desk = root.querySelector(".reader-desk"), stage = root.querySelector(".reader-stage"), leaves = root.querySelector(".reader-leaves");
+  // Book tools sit in the top bar; the sidebar stays the archive's own navigation.
+  const entries = [["book-cover", "", "封面"], ["book-title", "", "书名页"], ...(preface ? [["book-preface", "", "序"]] : []), ...chapters.map(c => [c.id.replace(/^section-/, ""), c.roman, c.name]), ["book-end", "", "终页"]];
+  const sectionLabel = new Map([["book-contents", "目录"], ["book-sources", "本书所据"], ...entries.map(([slug, roman, name]) => [slug, roman ? `${roman} · ${name}` : name])]);
+  const bar = bookElement(`<div class="reader-bar"><div class="reader-toc"><button type="button" class="reader-toc-button" aria-expanded="false" aria-controls="reader-toc-menu"><span class="reader-toc-current">目录</span>${icon("M6 9l6 6 6-6")}</button><div class="reader-toc-menu" id="reader-toc-menu" hidden><p class="reader-toc-heading">本书目录 <span lang="la">Index</span></p><nav aria-label="本书目录">${entries.map(([slug, roman, name]) => `<a data-book-section="${esc(slug)}" href="#/doc/${doc.id}?anchor=${encodeURIComponent(slug)}"><span>${esc(roman)}</span>${esc(name)}</a>`).join("")}</nav><div class="reader-toc-foot">${sources.size ? '<button type="button" data-panel="sources">来源与编校</button>' : ""}<a href="#/doc/${doc.id}?view=record">完整正文与著录</a></div></div></div><span class="reader-progress" role="status" aria-live="polite"></span><div class="reader-mode" role="group" aria-label="版式" hidden><button type="button" data-mode="book" aria-pressed="false" title="按实体书页排版，带插图与边栏">书页</button><button type="button" data-mode="text" aria-pressed="false" title="按窗口重新排版，字更大">文字</button></div><div class="reader-zoom" role="group" aria-label="书页缩放" hidden><button type="button" data-zoom="-1" aria-label="缩小" title="缩小（−）">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6")}</button><button type="button" class="reader-zoom-level" data-zoom="0" title="恢复为适合窗口（0）。100% 即纸本实际大小">适合</button><button type="button" data-zoom="1" aria-label="放大" title="放大（+）。也可以直接滚动滚轮">${icon("M10.5 17.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM15.5 15.5L21 21M7.5 10.5h6M10.5 7.5v6")}</button></div>${sources.size ? '<button type="button" class="reader-sources" data-panel="sources">来源与编校</button>' : ""}</div>`);
+  siteTitle.after(bar);
+  const measure = root.querySelector(".reader-measure"), loading = root.querySelector(".reader-loading");
+  const progress = [...root.querySelectorAll(".reader-progress"), bar.querySelector(".reader-progress")];
+  const tocButton = bar.querySelector(".reader-toc-button"), tocMenu = bar.querySelector(".reader-toc-menu"), tocCurrent = bar.querySelector(".reader-toc-current");
+  const modeGroup = bar.querySelector(".reader-mode");
+  const zoomGroup = bar.querySelector(".reader-zoom"), zoomLevel = bar.querySelector(".reader-zoom-level");
+  const dialog = root.querySelector("dialog"), panelBody = root.querySelector(".reader-panel-body");
+  const startOf = page => {
+    const item = page?.items[0];
+    return item ? { section: page.section, block: item.key, offset: item.start } : page ? { section: page.section } : null;
+  };
+  const locate = position => {
+    if (!position) return 0;
+    let n = position.block ? pages.findIndex(p => p.items.some(i => i.key === position.block && i.start <= position.offset && (i.end > position.offset || i.start === i.end))) : -1;
+    if (n < 0) n = pages.findIndex(p => p.section === position.section && !p.void);
+    // Section headings inside a chapter keep their own anchors (section-<slug>).
+    if (n < 0) n = pages.findIndex(p => p.heads?.includes(position.section) || p.items.some(i => i.node?.id === "section-" + position.section));
+    return Math.max(0, n);
+  };
+  const positionFrom = query => {
+    if (query.get("resume") === "1") return bookPosition() || { section: bookStored(BOOK_RESUME_KEY) };
+    if (!query.has("anchor")) return bookPosition();
+    return { section: query.get("anchor"), block: query.get("block"), offset: Number(query.get("offset")) || 0 };
+  };
+  function toc(open) {
+    tocMenu.hidden = !open;
+    tocButton.setAttribute("aria-expanded", String(open));
+    if (!open) return;
+    const target = tocMenu.querySelector("[aria-current]") || tocMenu.querySelector("a");
+    target.scrollIntoView({ block: "nearest" }); target.focus({ preventScroll: true });
+  }
+  function show(n, { remember = true, exact = null } = {}) {
+    if (!pages.length) return;
+    current = Math.floor(Math.max(0, Math.min(pages.length - 1, n)) / spreadSize) * spreadSize;
+    const focusedLeaf = document.activeElement.closest?.(".reader-leaf");
+    [...leaves.children].forEach((leaf, i) => { leaf.hidden = i < current || i >= current + spreadSize; });
+    if (focusedLeaf?.hidden) stage.focus({ preventScroll: true });
+    root.querySelectorAll('[data-turn="-1"]').forEach(b => { b.disabled = current === 0; });
+    root.querySelectorAll('[data-turn="1"]').forEach(b => { b.disabled = current + spreadSize >= pages.length; });
+    const visible = pages.slice(current, current + spreadSize), shown = new Set(visible.map(p => p.section));
+    const range = `${current + 1}${visible.length > 1 ? "–" + (current + visible.length) : ""}`;
+    progress.forEach(p => { p.textContent = `${range} / ${pages.length}`; });
+    // Name the chapter the spread leads into; the title spread keeps the title page.
+    const lead = visible.at(-1);
+    stage.classList.toggle("is-closed", visible.some(p => p.void));
+    tocCurrent.textContent = sectionLabel.get(lead.section) || lead.title;
+    tocMenu.querySelectorAll("[data-book-section]").forEach(a => {
+      if (shown.has(a.dataset.bookSection)) a.setAttribute("aria-current", "location");
+      else a.removeAttribute("aria-current");
+    });
+    stage.setAttribute("aria-label", `第 ${range.replace("–", " 至 ")} 页`);
+    cursor = exact || startOf(pages[current]);
+    if (remember && cursor) rememberPosition();
+  }
+  function rememberPosition() {
+    if (cursor) {
+      bookStore(BOOK_POSITION_KEY, JSON.stringify(cursor));
+      if (chapters.some(c => c.id === "section-" + cursor.section)) bookStore(BOOK_RESUME_KEY, cursor.section);
+      const query = new URLSearchParams({ anchor: cursor.section, block: cursor.block || "", offset: String(cursor.offset || 0) });
+      history.replaceState(history.state, "", `#/doc/${doc.id}?${query}`);
+    }
+  }
+  const turn = (delta, at) => {
+    if (stage.getAttribute("aria-busy") === "true" || dialog.open) return;
+    toc(false);
+    // 鼠标停在书角、纸角已经掀起时，顺着这一角翻过去。
+    if (fold?.peek && fold.dir === delta) { fold.play(); return; }
+    finishFlip();
+    const target = current + delta * spreadSize;
+    if (target < 0 || target >= pages.length) return;
+    // 放大时书页比台面大，翻页直接换页；减少动态效果时也不播动画。
+    if (root.dataset.zoom === "in" || reduceMotion() || !makeFold(delta, at ?? "bottom")) {
+      show(target);
+      if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
+      return;
+    }
+    fold.play();
+  };
+  // 仿真翻页（2026-09-24）：纸页从一角掀起，沿折痕翻折，看得见翻过来的背面、落在下一页上的影子，像手机阅读器的“仿真翻页”。
+  // 按住书页外侧拖动时纸角跟着走，松手时过了一半或甩得够快就翻过去，否则落回；按键、按钮与点击让纸角沿一道弧线自己走完。
+  // 画法：纸角 C 被拉到 P，折痕是 C、P 连线的中垂线；折痕靠书脊一侧是还平着的正面，另一侧掀起、沿折痕翻折成背面，
+  // 底下露出下一页。三层都是书页的副本，放在书页层里（与书页同一比例、同一坐标），翻完即拆，再换成下一对开（show）。
+  let fold = null;
+  const reduceMotion = () => matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function finishFlip() { fold?.finish(); }
+  // 多边形沿直线裁成一半（keep 为 1 留纸角一侧），以及沿折痕的镜像。
+  const cut = (shape, m, n, keep) => {
+    const out = [], side = p => ((p[0] - m[0]) * n[0] + (p[1] - m[1]) * n[1]) * keep;
+    shape.forEach((a, i) => {
+      const c = shape[(i + 1) % shape.length], sa = side(a), sc = side(c);
+      if (sa >= 0) out.push(a);
+      if (sa * sc < 0) { const t = sa / (sa - sc); out.push([a[0] + (c[0] - a[0]) * t, a[1] + (c[1] - a[1]) * t]); }
+    });
+    return out;
+  };
+  const mirror = (p, m, n) => { const k = 2 * ((p[0] - m[0]) * n[0] + (p[1] - m[1]) * n[1]); return [p[0] - k * n[0], p[1] - k * n[1]]; };
+  const polygon = pts => pts.length > 2 ? `polygon(${pts.map(p => `${p[0].toFixed(1)}px ${p[1].toFixed(1)}px`).join(",")})` : "polygon(0 0,0 0,0 0)";
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
+  function makeFold(dir, at) {
+    const target = current + dir * spreadSize;
+    if (target < 0 || target >= pages.length) return null;
+    const leaf = i => leaves.children[i], two = spreadSize === 2, forward = dir > 0;
+    const first = leaf(current);
+    if (!first || first.hidden) return null;
+    const W = first.offsetWidth, H = first.offsetHeight, x0 = first.offsetLeft;
+    // turning：翻动的纸的正面；back：背面；under：翻开后露出的一页；real：纸在书上的原位（翻动时藏起）；left：翻动的纸所在的位置；spine：书脊。
+    // 单页往回翻，是把上一页从左边翻回来：同一张纸从“翻过去”的位置落回原处（reverse）。单页的背面是这一页透过纸背的样子。
+    let turning, back, under, real, left, spine;
+    if (two) {
+      left = forward ? x0 + W : x0; spine = x0 + W;
+      turning = real = forward ? leaf(current + 1) : first;
+      back = forward ? leaf(target) : leaf(target + 1);
+      under = forward ? leaf(target + 1) : leaf(target);
+    } else {
+      left = spine = x0; real = first;
+      turning = back = forward ? first : leaf(target);
+      under = forward ? leaf(target) : first;
+    }
+    if (!turning || !back || !under) return null;
+    // 纸从哪里翻起：at 是 "top"、"bottom"（上角、下角），或书口上的一个高度（侧边翻页；离上下边一成多以内算作书角）。
+    let yC = at === "top" ? 0 : at === "bottom" ? H : Math.max(0, Math.min(H, at));
+    if (yC < H * .12) yC = 0; else if (yC > H * .88) yC = H;
+    const reverse = !two && !forward, corner = yC === 0 || yC === H;
+    const edgeX = spine === left ? left + W : left, C = [edgeX, yC], E = [2 * spine - edgeX, yC];
+    const from = reverse ? E : C, to = reverse ? C : E, span = [E[0] - C[0], E[1] - C[1]], spanSq = span[0] ** 2 + span[1] ** 2;
+    const inward = [edgeX > spine ? -1 : 1, yC > H / 2 ? -1 : 1];
+    const diag = Math.hypot(W, H), limits = [[[spine, yC], W], [[spine, 0], Math.hypot(W, yC)], [[spine, H], Math.hypot(W, H - yC)]];
+    const rect = [[left, 0], [left + W, 0], [left + W, H], [left, H]];
+    const div = cls => { const n = document.createElement("div"); n.className = cls; return n; };
+    const copy = (source, x) => {
+      const c = source.cloneNode(true), cs = getComputedStyle(source);
+      c.hidden = false; c.inert = true; c.removeAttribute("aria-label"); c.classList.add("flip-copy");
+      c.querySelectorAll("[id]").forEach(n => n.removeAttribute("id"));
+      for (const [k, v] of [["left", x + "px"], ["width", W + "px"], ["height", H + "px"], ["background-color", cs.backgroundColor], ["background-image", cs.backgroundImage]]) c.style.setProperty(k, v);
+      return c;
+    };
+    const overlay = div("reader-flip"); overlay.setAttribute("aria-hidden", "true");
+    const underBox = div("flip-layer"), frontBox = div("flip-layer"), lift = div("flip-layer"), flapBox = div("flip-layer"), flapTurn = div("flip-turn");
+    const underShade = div("flip-strip"), flapShade = div("flip-strip");
+    underBox.append(copy(under, left), underShade);
+    frontBox.append(copy(turning, left));
+    const backLeft = 2 * spine - left - W;
+    flapTurn.append(copy(back, backLeft));
+    if (!two) { const see = div("flip-see"); for (const [k, v] of [["left", backLeft + "px"], ["width", W + "px"], ["height", H + "px"]]) see.style.setProperty(k, v); flapTurn.append(see); }
+    flapBox.append(flapTurn, flapShade); lift.append(flapBox);
+    overlay.append(underBox, frontBox, lift);
+    leaves.append(overlay);
+    real.style.setProperty("visibility", "hidden");
+    stage.classList.add("is-flipping");
+    // 往回翻到合上的封面时，台面先透明，免得左边露出纸色。
+    if (!forward && pages.slice(target, target + spreadSize).some(p => p.void)) stage.classList.add("is-closed");
+    let P = from.slice(), raf = 0, anim = null, done = false;
+    const turned = () => Math.max(0, Math.min(1, ((P[0] - C[0]) * span[0] + (P[1] - C[1]) * span[1]) / spanSq));
+    const strip = (el, m, dx, dy, width, background, opacity) => {
+      const h = diag * 2;
+      el.style.setProperty("width", Math.max(1, width) + "px"); el.style.setProperty("height", 2 * h + "px");
+      el.style.setProperty("transform", `translate(${m[0]}px,${m[1]}px) rotate(${Math.atan2(dy, dx)}rad) translateY(${-h}px)`);
+      el.style.setProperty("background", background); el.style.setProperty("opacity", String(opacity));
+    };
+    function set(p) {
+      let [px, py] = p;
+      // 纸只能往书页里拉，折痕也不能太平（不然会把半张纸折起来）。书角翻起：横向至少走竖向的六成。
+      // 侧边翻起：折痕贯穿整页，刚拉起时保持竖直、只折起一条窄边，纸往里走得越远才越能斜过去（最多约二十度）。
+      const vy = Math.abs(py - C[1]);
+      if (corner) { if ((px - C[0]) * inward[0] < vy * .6) px = C[0] + inward[0] * vy * .6; }
+      else {
+        const hx = Math.max(0, (px - C[0]) * inward[0]), room = hx * .35 * Math.min(1, hx / (W * .6));
+        px = C[0] + inward[0] * hx;
+        if (vy > room) py = C[1] + Math.sign(py - C[1]) * room;
+      }
+      // 纸连着书脊：纸上这一点离书脊同高处不超过一个页宽，离书脊上下两端不超过各自的斜距。
+      for (const [s, r] of limits) { const dx = px - s[0], dy = py - s[1], d = Math.hypot(dx, dy); if (d > r) { px = s[0] + dx * r / d; py = s[1] + dy * r / d; } }
+      P = [px, py];
+      const dx = C[0] - px, dy = C[1] - py, len = Math.hypot(dx, dy), k = turned();
+      if (len < .5) {
+        frontBox.style.setProperty("clip-path", polygon(rect)); underBox.style.setProperty("clip-path", polygon([]));
+        lift.style.setProperty("opacity", "0"); return;
+      }
+      const n = [dx / len, dy / len], m = [(C[0] + px) / 2, (C[1] + py) / 2];
+      const flat = cut(rect, m, n, -1), raised = cut(rect, m, n, 1);
+      const depth = Math.max(1, ...raised.map(q => (q[0] - m[0]) * n[0] + (q[1] - m[1]) * n[1]));
+      frontBox.style.setProperty("clip-path", polygon(flat));
+      underBox.style.setProperty("clip-path", polygon(raised));
+      flapBox.style.setProperty("clip-path", polygon(raised.map(q => mirror(q, m, n))));
+      // 背面的位置：先沿书脊镜像到翻过去的位置，再沿折痕镜像回来（两次镜像合起来是一次旋转）。
+      const a11 = 1 - 2 * n[0] * n[0], a12 = -2 * n[0] * n[1], a22 = 1 - 2 * n[1] * n[1], md = 2 * (m[0] * n[0] + m[1] * n[1]);
+      flapTurn.style.setProperty("transform", `matrix(${-a11},${-a12},${a12},${a22},${a11 * 2 * spine + md * n[0]},${a12 * 2 * spine + md * n[1]})`);
+      // 背面靠折痕处暗一线、稍远处泛白，像纸弯过来的弧面；掀起的纸在正面投下影子；底下那页靠折痕处也有一道影子。
+      strip(flapShade, m, -n[0], -n[1], depth, `linear-gradient(90deg,#00000038,#0000000a ${depth * .1}px,#ffffff47 ${depth * .32}px,#fff0 ${depth * .66}px,#00000014 ${depth}px)`, 1);
+      strip(underShade, m, n[0], n[1], Math.min(depth * .9, W * .32), "linear-gradient(90deg,#00000066,#0000001f 40%,#0000)", Math.min(1, depth / (W * .06)) * (1 - k * .75));
+      lift.style.setProperty("filter", `drop-shadow(${(-n[0] * 5).toFixed(1)}px ${(-n[1] * 5).toFixed(1)}px 9px rgba(0,0,0,${(.32 * (1 - k * .6)).toFixed(3)}))`);
+      // 单页翻到尽头，纸已离开书页，渐渐淡出。
+      lift.style.setProperty("opacity", two ? "1" : String(Math.max(0, Math.min(1, (1 - k) / .3))));
+    }
+    function animate(dest, ms, arc, then) {
+      cancelAnimationFrame(raf);
+      const a = P.slice(), t0 = performance.now();
+      anim = { then };
+      const step = now => {
+        const t = Math.min(1, (now - t0) / Math.max(1, ms)), e = ease(t), up = arc * Math.sin(Math.PI * e);
+        set([a[0] + (dest[0] - a[0]) * e, a[1] + (dest[1] - a[1]) * e + (yC > H / 2 ? -up : up)]);
+        if (t < 1) raf = requestAnimationFrame(step);
+        else { anim = null; then(); }
+      };
+      raf = requestAnimationFrame(step);
+    }
+    function end(commit) {
+      if (done) return;
+      done = true; cancelAnimationFrame(raf); anim = null;
+      if (fold === self) fold = null;
+      overlay.remove(); real.style.removeProperty("visibility"); stage.classList.remove("is-flipping");
+      if (commit) { show(target); if (root.dataset.zoom === "in") stage.scrollTo(0, 0); }
+      else stage.classList.toggle("is-closed", pages.slice(current, current + spreadSize).some(p => p.void));
+    }
+    const rest = dest => Math.min(1, Math.hypot(dest[0] - P[0], dest[1] - P[1]) / Math.sqrt(spanSq));
+    const self = {
+      dir, edge: at, corner, from, to, peek: false,
+      point: () => P.slice(),
+      progress: () => reverse ? 1 - turned() : turned(),
+      move(p) { cancelAnimationFrame(raf); anim = null; set(p); },
+      // 悬停：纸角朝书页里掀起，跟着鼠标，至少掀开一小角。
+      hover(q) {
+        const v = [q[0] - C[0], q[1] - C[1]], min = W * .07;
+        animate([C[0] + inward[0] * Math.max(Math.abs(v[0]), min), C[1] + inward[1] * Math.max(Math.abs(v[1]), min * .75)], 120, 0, () => {});
+      },
+      // 自己翻完：纸沿一道弧线走，书角翻起时弧度大，侧边翻起时弧度小。
+      play() { self.peek = false; const r = rest(to); animate(to, (two ? 760 : 560) * Math.max(.4, r), H * (.04 + .06 * Math.abs(yC - H / 2) / (H / 2)) * r, () => end(true)); },
+      release(commit) { self.peek = false; const dest = commit ? to : from; animate(dest, 170 + 430 * rest(dest), 0, () => end(commit)); },
+      // 立刻结束：正在翻过去的翻完，其余（悬停、拖动中、落回中）都放回原处。
+      finish() { cancelAnimationFrame(raf); const then = anim?.then; anim = null; then?.(); if (!done) end(false); }
+    };
+    fold = self;
+    set(from);
+    return self;
+  }
+  // 书页版只排一次（页面尺寸固定），之后只随窗口缩放。
+  let building = null;
+  function buildBook() {
+    building ||= (async () => {
+      const host = document.createElement("div");
+      host.className = "fzb reader-build"; host.setAttribute("aria-hidden", "true"); host.inert = true;
+      root.append(host);
+      const result = await BookPages.build({ bookChapters: chapters, plan, plates, sources: BookPages.parseSources(notes?.html), preface, host, cancelled: () => signal.aborted });
+      host.remove();
+      return result;
+    })();
+    return building;
+  }
+  // 书页版放大：整页缩到窗口里字太小时用。放大后书页在台面里滚动或拖动；翻页回到左上角。
+  let fit = null, shownScale = 1, zoom = Number(bookStored(BOOK_ZOOM_KEY)) || 0;
+  const zoomMax = BOOK_ZOOM_STEPS.at(-1);
+  const zoomTarget = () => !fit ? 1 : zoom > fit.scale * 1.02 ? Math.min(zoom, zoomMax) : fit.scale;
+  function sizeBook(focus) {
+    if (!fit) return;
+    const s = zoomTarget(), zoomed = s > fit.scale, pw = BookPages.PAGE_W, ph = BookPages.PAGE_H;
+    // 放大前后，焦点（指针位置或视野中心）下的那一点保持不动。
+    const before = stage.getBoundingClientRect();
+    const fx = focus ? focus.x - before.left : stage.clientWidth / 2, fy = focus ? focus.y - before.top : stage.clientHeight / 2;
+    const px = (stage.scrollLeft + fx) / shownScale, py = (stage.scrollTop + fy) / shownScale;
+    root.dataset.zoom = zoomed ? "in" : "fit";
+    stage.style.width = Math.floor(zoomed ? Math.min(pw * fit.spread * s, fit.W) : pw * fit.spread * s) + "px";
+    stage.style.height = Math.floor(zoomed ? Math.min(ph * s, fit.H) : ph * s) + "px";
+    leaves.style.transform = `scale(${s})`;
+    shownScale = s;
+    if (zoomed) {
+      const after = stage.getBoundingClientRect();
+      stage.scrollLeft = px * s - (focus ? focus.x - after.left : stage.clientWidth / 2);
+      stage.scrollTop = py * s - (focus ? focus.y - after.top : stage.clientHeight / 2);
+    } else stage.scrollTo(0, 0);
+    zoomLevel.textContent = zoomed ? Math.round(s * 100) + "%" : "适合";
+    zoomGroup.querySelector('[data-zoom="-1"]').disabled = !zoomed;
+    zoomGroup.querySelector('[data-zoom="1"]').disabled = s >= zoomMax - 0.001;
+  }
+  function setZoom(value, focus) {
+    if (!fit) return;
+    zoom = value > fit.scale * 1.02 ? Math.min(value, zoomMax) : 0;
+    bookStore(BOOK_ZOOM_KEY, String(zoom));
+    sizeBook(focus);
+  }
+  function stepZoom(delta, focus) {
+    if (!fit) return;
+    const s = zoomTarget();
+    if (delta > 0) setZoom(BOOK_ZOOM_STEPS.find(z => z > s * 1.02) ?? zoomMax, focus);
+    else setZoom([...BOOK_ZOOM_STEPS].reverse().find(z => z < s * 0.98) ?? 0, focus);
+  }
+  let pending = positionFrom(params);
+  // pass："" 正常排版（先按默认侧栏量台面，显示方式不随之前的窗口状态变）；"again" 侧栏刚变过，直接重量；"nav" 只定侧栏、不排版（字体载入前调用）。
+  async function paginate(pass = "") {
+    finishFlip();
+    if (!pass && bookNavDefault(false)) previousSize = `${desk.clientWidth}:${desk.clientHeight}`;
+    const box = getComputedStyle(desk), gap = parseFloat(box.columnGap) || 0;
+    const side = [...desk.querySelectorAll(".reader-turn")].reduce((w, b) => w + (b.offsetWidth ? b.offsetWidth + gap : 0), 0);
+    const W = Math.max(240, desk.clientWidth - parseFloat(box.paddingLeft) - parseFloat(box.paddingRight) - side);
+    const H = Math.max(240, desk.clientHeight - parseFloat(box.paddingTop) - parseFloat(box.paddingBottom));
+    // 书页版能不能用、默认用不用。
+    const pw = BookPages.PAGE_W, ph = BookPages.PAGE_H;
+    const s2 = Math.min(W / (2 * pw), H / ph), s1 = Math.min(W / pw, H / ph), pref = bookStored(BOOK_MODE_KEY);
+    const possible = !!(plan && plates) && s1 >= BOOK_FIXED_FLOOR;
+    const auto = possible && Math.max(s1, s2) >= BOOK_FIXED_AUTO;
+    const fixedMode = possible && (pref === "book" || (pref !== "text" && auto));
+    // 侧栏随显示方式收起或展开了：台面已是新尺寸，就地重新量，不必等 ResizeObserver 再排一遍（收起只会让书页更大，不会来回切换）。
+    if (pass === "nav") { bookNavDefault(fixedMode); return; }
+    if (bookNavDefault(fixedMode)) { previousSize = `${desk.clientWidth}:${desk.clientHeight}`; return paginate("again"); }
+    modeGroup.hidden = !possible;
+    modeGroup.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.mode === "book") === fixedMode)));
+    root.dataset.mode = fixedMode ? "book" : "text";
+    zoomGroup.hidden = !fixedMode;
+    if (!fixedMode) { fit = null; shownScale = 1; delete root.dataset.zoom; stage.scrollTo(0, 0); }
+    if (fixedMode) {
+      const spread = s2 >= BOOK_FIXED_AUTO || s2 >= s1 * 0.9 ? 2 : 1, scale = spread === 2 ? s2 : s1;
+      fit = { scale, spread, W, H };
+      sizeBook();
+      const key = "book:" + spread;
+      if (key === layout && pages.length) return;
+      const ticket = ++generation, locationBefore = pending || cursor;
+      stage.setAttribute("aria-busy", "true"); loading.hidden = false;
+      book ||= await buildBook();
+      if (!book || signal.aborted || ticket !== generation) return;
+      spreadSize = spread; layout = key;
+      root.dataset.spread = String(spread);
+      leaves.classList.add("fzb");
+      leaves.style.width = (pw * spread) + "px"; leaves.style.height = ph + "px";
+      const fragment = document.createDocumentFragment();
+      pages = [];
+      book.meta.forEach((m, i) => {
+        if (m.void && spread === 1) return;
+        const leaf = document.createElement("article"); leaf.className = "reader-leaf reader-fixed" + (m.void ? " reader-void" : ""); leaf.hidden = true;
+        leaf.setAttribute("aria-label", `${m.title || ""}${m.folio ? " · " + m.folio : ""}`);
+        leaf.append(book.pages[i]);
+        fragment.append(leaf);
+        pages.push({ section: m.section, title: m.title, items: m.items, heads: m.heads, void: m.void });
+      });
+      leaves.replaceChildren(fragment);
+      const restored = pending || locationBefore;
+      show(locate(restored), { exact: restored?.block || restored?.section ? restored : null });
+      pending = null;
+      loading.hidden = true; stage.setAttribute("aria-busy", "false");
+      return;
+    }
+    const paper = bookPaperLayout(W, H, matchMedia("(max-width:780px)").matches);
+    leaves.classList.remove("fzb");
+    stage.style.width = paper.width + "px";
+    stage.style.height = paper.height + "px";
+    leaves.style.transform = paper.scale < 1 ? `scale(${paper.scale})` : "";
+    // Same page size: the text flow is unchanged, only the desk around it moved.
+    const key = `text:${paper.spread}:${paper.pageWidth}:${paper.pageHeight}`;
+    if (key === layout && pages.length) return;
+    const ticket = ++generation, locationBefore = pending || cursor;
+    stage.setAttribute("aria-busy", "true"); loading.hidden = false;
+    spreadSize = paper.spread;
+    root.dataset.spread = String(spreadSize);
+    root.dataset.paper = paper.pageWidth < 440 ? "compact" : "standard";
+    leaves.style.width = (paper.pageWidth * spreadSize) + "px";
+    leaves.style.height = paper.pageHeight + "px";
+    const padding = Math.round(Math.min(54, Math.max(24, paper.pageWidth * 0.078)));
+    root.style.setProperty("--reader-pad", padding + "px");
+    root.style.setProperty("--paper-k", (paper.pageHeight / 984).toFixed(3));
+    const height = paper.pageHeight - 105; // 38 padding + 42 running head + 25 folio
+    root.style.setProperty("--reader-height", height + "px");
+    measure.style.width = (paper.pageWidth - padding * 2) + "px";
+    const next = await bookPaginate(sections, measure, height, () => signal.aborted || ticket !== generation);
+    if (!next || signal.aborted || ticket !== generation) return;
+    // Cover and title page are fixed full-page designs (bookCoverHTML/bookTitleHTML), not flowed text.
+    // Like a real book: in a spread the closed cover lies alone on the right; opened, the endpaper faces the title page.
+    const fixed = (section, title, special, extra = {}) => ({ section, title, items: [], fixed: true, special, ...extra });
+    pages = spreadSize === 2
+      ? [fixed("book-cover", "封面", "", { void: true }), fixed("book-cover", "封面", bookCoverHTML()), fixed("book-title", "衬页", bookEndpaperHTML()), fixed("book-title", "书名页", bookTitleHTML()), ...next]
+      : [fixed("book-cover", "封面", bookCoverHTML()), fixed("book-title", "书名页", bookTitleHTML()), ...next];
+    layout = key;
+    const fragment = document.createDocumentFragment();
+    pages.forEach((page, i) => {
+      const leaf = document.createElement("article"); leaf.className = "reader-leaf"; leaf.hidden = true;
+      leaf.setAttribute("aria-label", `${page.title} · 第 ${i + 1} 页`);
+      if (page.fixed) { leaf.classList.add(page.void ? "reader-void" : "reader-special"); leaf.innerHTML = page.special; fragment.append(leaf); return; }
+      leaf.innerHTML = `<header class="reader-running"><span>${esc(page.title)}</span><span lang="la">De Foedere Argenteo</span></header><div class="reader-prose"></div><footer class="reader-folio">${i + 1}</footer>`;
+      const prose = leaf.querySelector(".reader-prose");
+      for (const item of page.items) {
+        const node = item.node.cloneNode(true);
+        node.dataset.block = item.key; node.dataset.start = item.start; node.dataset.end = item.end;
+        prose.append(node);
+      }
+      fragment.append(leaf);
+    });
+    leaves.replaceChildren(fragment);
+    const restored = pending || locationBefore;
+    show(locate(restored), { exact: restored });
+    pending = null;
+    loading.hidden = true; stage.setAttribute("aria-busy", "false");
+  }
+  function navigate(query) {
+    finishFlip();
+    const position = positionFrom(query) || { section: "book-title" };
+    if (dialog.open) dialog.close();
+    toc(false);
+    if (!pages.length || stage.getAttribute("aria-busy") === "true") { pending = position; return; }
+    show(locate(position), { exact: position });
+    if (root.dataset.zoom === "in") stage.scrollTo(0, 0);
+    if (matchMedia("(max-width:780px)").matches) {
+      document.querySelector("#sidebar")?.classList.remove("open");
+      archiveNavSync();
+    }
+    stage.focus({ preventScroll: true });
+  }
+  let panelTrigger = null;
+  function openPanel(trigger) {
+    panelTrigger = trigger.closest(".reader-toc-menu") ? tocButton : trigger;
+    toc(false);
+    const title = root.querySelector("#reader-panel-title");
+    title.textContent = "来源与编校";
+    const visible = pages.slice(current, current + spreadSize);
+    const chapterIds = [...new Set(visible.map(p => p.section))];
+    const selected = chapters.filter(c => chapterIds.includes(c.id.replace(/^section-/, "")));
+    panelBody.innerHTML = `<p>本书是馆藏读物，所述制度以现行法典为准。以下是正文所据的来源与编校记录。</p>${selected.map(c => `<section class="reader-source"><h3>${esc(c.label)}</h3><p>${sources.get(c.label) || "请查阅完整编者材料。"}</p></section>`).join("")}<nav class="reader-source-links">${notesDoc ? linkDoc(notesDoc.id, "完整编者材料") : ""}<a href="#/doc/${doc.id}?view=record">馆藏著录与完整正文</a></nav>`;
+    dialog.showModal();
+  }
+  function handleClick(event) {
+    const button = event.target.closest("button");
+    if (button === tocButton) toc(tocMenu.hidden);
+    else if (button?.hasAttribute("data-turn")) turn(Number(button.dataset.turn));
+    else if (button?.dataset.panel) openPanel(button);
+    else if (button?.hasAttribute("data-close")) dialog.close();
+    else if (button?.dataset.zoom) { const d = Number(button.dataset.zoom); if (d) stepZoom(d); else setZoom(0); }
+    else if (button?.dataset.mode) { bookStore(BOOK_MODE_KEY, button.dataset.mode); pending = cursor; paginate().catch(failed); }
+    const link = event.target.closest("a[href]");
+    if (link && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+      const hash = link.getAttribute("href");
+      if (hash.startsWith(`#/doc/${doc.id}?anchor=`)) {
+        event.preventDefault();
+        navigate(new URLSearchParams(hash.split("?")[1]));
+      }
+    }
+  }
+  root.addEventListener("click", handleClick, { signal });
+  bar.addEventListener("click", handleClick, { signal });
+  document.addEventListener("click", event => { if (!tocMenu.hidden && !event.target.closest(".reader-toc")) toc(false); }, { signal });
+  dialog.addEventListener("close", () => panelTrigger?.focus({ preventScroll: true }), { signal });
+  // 顶栏的全局检索在阅读器里收成放大镜按钮，把位置让给章节名：点按钮或按 / 展开；输入框为空时按 Escape 或焦点移走就收起（有字时 Escape 先清空）。
+  const search = document.querySelector("#global-search"), searchInput = search.querySelector("#global-query");
+  const searchToggle = bookElement(`<button type="button" class="reader-search-toggle" aria-label="检索全部馆藏" aria-expanded="false" aria-controls="global-search" aria-keyshortcuts="/" title="检索全部馆藏（/）">${archiveIcon("search")}</button>`);
+  search.before(searchToggle);
+  const searchOpen = open => {
+    searchToggle.setAttribute("aria-expanded", String(open));
+    if (open) { toc(false); searchInput.focus(); }
+  };
+  searchToggle.addEventListener("click", () => searchOpen(true), { signal });
+  search.addEventListener("keydown", event => {
+    if (event.key !== "Escape" || event.isComposing) return;
+    event.preventDefault();
+    if (searchInput.value) searchInput.value = "";
+    else { searchOpen(false); searchToggle.focus(); }
+  }, { signal });
+  // 等焦点落定再看：切到别的窗口时焦点仍在输入框里，不收起。按着鼠标或手指时等松开再看：先让这一下点到原处的按钮（书页、缩放、来源与编校），再收起、挪动顶栏。
+  let pressing = false;
+  const settle = () => setTimeout(() => {
+    if (!signal.aborted && searchToggle.getAttribute("aria-expanded") === "true" && !searchInput.value && !search.contains(document.activeElement)) searchOpen(false);
+  });
+  search.addEventListener("focusout", () => { if (!pressing) settle(); }, { signal });
+  document.addEventListener("pointerdown", () => { pressing = true; }, { capture: true, signal });
+  for (const type of ["pointerup", "pointercancel"]) document.addEventListener(type, () => { if (pressing) { pressing = false; settle(); } }, { capture: true, signal });
+  document.addEventListener("keydown", event => {
+    if (event.key !== "/" || searchToggle.getAttribute("aria-expanded") === "true" || !searchToggle.getClientRects().length || dialog.open || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
+    event.preventDefault(); searchOpen(true);
+  }, { signal });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !tocMenu.hidden) { toc(false); tocButton.focus(); return; }
+    // 书页版里 + − 0（含 Ctrl/⌘ 组合）缩放书页：整页适合窗口时，浏览器自身的缩放放不大书页。
+    const zoomKey = { "+": 1, "=": 1, "-": -1, "_": -1, "0": 0 }[event.key];
+    if (fit && zoomKey !== undefined && !dialog.open && tocMenu.hidden && !event.altKey && !event.target.closest?.("input,textarea,select,[contenteditable]")) {
+      event.preventDefault(); if (zoomKey) stepZoom(zoomKey); else setZoom(0); return;
+    }
+    if (dialog.open || !tocMenu.hidden || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest?.("input,textarea,select,[contenteditable]")) return;
+    if (["ArrowLeft", "ArrowRight", "PageUp", "PageDown"].includes(event.key)) {
+      event.preventDefault(); turn(["ArrowLeft", "PageUp"].includes(event.key) ? -1 : 1);
+    }
+  }, { signal });
+  stage.tabIndex = -1;
+  // 书页层坐标（与书页同一单位，不随缩放变）。
+  const local = event => { const r = leaves.getBoundingClientRect(), k = r.width / (leaves.offsetWidth || 1); return [(event.clientX - r.left) / k, (event.clientY - r.top) / k]; };
+  const valid = dir => { const t = current + dir * spreadSize; return pages.length > 0 && t >= 0 && t < pages.length; };
+  const geometry = () => { const first = leaves.children[current]; return first && !first.hidden ? { W: first.offsetWidth, H: first.offsetHeight, x0: first.offsetLeft } : null; };
+  // 悬停：鼠标移到书页外侧的下角或上角，纸角跟着掀起一点；点一下翻过去，按住拖动也行。单页的左角是上一页，不掀。
+  function cornerAt(q) {
+    const g = geometry();
+    if (!g || root.dataset.zoom === "in" || stage.getAttribute("aria-busy") === "true") return null;
+    const r = g.W * .16, spots = [[1, g.x0 + g.W * spreadSize], ...(spreadSize === 2 ? [[-1, g.x0]] : [])];
+    for (const [dir, x] of spots) for (const [edge, y] of [["bottom", g.H], ["top", 0]]) if (valid(dir) && Math.hypot(q[0] - x, q[1] - y) < r) return { dir, edge };
+    return null;
+  }
+  // 拖动：鼠标从书页外侧（离书口三成以内）按下拖动，手指在书页任何地方横着拖；中间的正文照常可以选字。
+  // 纸从按下的那个高度翻起：靠近上下角是卷起书角，侧边中间是整条书口翻过来。
+  function grabAt(q, finger) {
+    const g = geometry();
+    if (!g) return null;
+    const dir = q[0] > g.x0 + (spreadSize === 2 ? g.W : g.W / 2) ? 1 : -1;
+    if (!valid(dir)) return null;
+    if (!finger && Math.abs(q[0] - (dir > 0 ? g.x0 + g.W * spreadSize : g.x0)) > g.W * .3) return null;
+    return { dir, edge: q[1] };
+  }
+  // 放大后：拖动平移（drag）。没放大时：拖动翻页（grab）。
+  let drag = null, dragged = false, grab = null, downAt = null;
+  stage.addEventListener("pointerdown", event => {
+    dragged = false; downAt = [event.clientX, event.clientY];
+    if (event.button !== 0 || event.target.closest("a,button,.reader-oversized") || stage.getAttribute("aria-busy") === "true" || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches)) return;
+    if (root.dataset.zoom === "in") {
+      if (event.pointerType === "mouse") drag = { x: event.clientX, y: event.clientY, left: stage.scrollLeft, top: stage.scrollTop, id: event.pointerId };
+      return;
+    }
+    const finger = event.pointerType !== "mouse", side = fold?.peek ? { dir: fold.dir, edge: fold.edge } : grabAt(local(event), finger);
+    if (side) grab = { id: event.pointerId, x: event.clientX, y: event.clientY, start: local(event), finger, ...side, trail: [[local(event)[0], event.timeStamp]], fold: null };
+  }, { signal });
+  stage.addEventListener("selectstart", event => { if (grab || fold) event.preventDefault(); }, { signal });
+  stage.addEventListener("pointermove", event => {
+    if (drag && event.pointerId === drag.id) {
+      const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
+      if (!dragged && Math.hypot(dx, dy) < 4) return;
+      if (!dragged) { dragged = true; stage.setPointerCapture(drag.id); stage.classList.add("is-dragging"); }
+      stage.scrollLeft = drag.left - dx; stage.scrollTop = drag.top - dy;
+      return;
+    }
+    if (grab && event.pointerId === grab.id) {
+      if (!grab.fold) {
+        const dx = event.clientX - grab.x, dy = event.clientY - grab.y;
+        if (Math.hypot(dx, dy) < 6) return;
+        const took = fold?.peek && fold.dir === grab.dir;
+        if (!took && Math.abs(dy) > Math.abs(dx)) { grab = null; return; }
+        if (took) fold.peek = false;
+        else { finishFlip(); makeFold(grab.dir, grab.edge); }
+        if (!fold) { grab = null; return; }
+        grab.fold = fold; grab.origin = fold.point(); dragged = true; toc(false);
+        try { stage.setPointerCapture(grab.id); } catch {}
+      }
+      if (grab.fold !== fold) { grab = null; return; }
+      const q = local(event);
+      // 侧边翻页时上下的移动打个折扣：捏着书口中间，纸不会整张往上掀。
+      fold.move([grab.origin[0] + q[0] - grab.start[0], grab.origin[1] + (q[1] - grab.start[1]) * (fold.corner ? 1 : .4)]);
+      grab.trail.push([q[0], event.timeStamp]);
+      if (grab.trail.length > 12) grab.trail.shift();
+      return;
+    }
+    if (event.pointerType !== "mouse" || event.buttons) return;
+    const c = cornerAt(local(event));
+    if (fold?.peek && (!c || c.dir !== fold.dir || c.edge !== fold.edge)) fold.release(false);
+    if (c && !fold && !reduceMotion()) { makeFold(c.dir, c.edge); if (fold) fold.peek = true; }
+    if (fold?.peek) fold.hover(local(event));
+  }, { signal });
+  const endGesture = event => {
+    if (drag && event.pointerId === drag.id) { drag = null; stage.classList.remove("is-dragging"); }
+    if (!grab || event.pointerId !== grab.id) return;
+    const g = grab; grab = null;
+    if (!g.fold || g.fold !== fold) return;
+    // 松手：翻过一半，或朝翻页方向甩得够快，就翻过去；否则落回原处。
+    const b = g.trail.at(-1), a = g.trail.find(t => t[1] >= b[1] - 120) || b, speed = (b[0] - a[0]) / Math.max(16, b[1] - a[1]), toward = Math.sign(fold.to[0] - fold.from[0]);
+    fold.release(event.type === "pointerup" && (fold.progress() > .5 || (speed * toward > .4 && fold.progress() > .02)));
+  };
+  stage.addEventListener("pointerup", endGesture, { signal });
+  stage.addEventListener("pointercancel", endGesture, { signal });
+  stage.addEventListener("pointerleave", event => { if (event.pointerType === "mouse" && fold?.peek && !grab) fold.release(false); }, { signal });
+  stage.addEventListener("dragstart", event => event.preventDefault(), { signal });
+  // 书页版：滚轮直接缩放书页（以指针处为中心）；放大后拖动平移，触控板横向滑动也平移。文字版不接管滚轮。
+  desk.addEventListener("wheel", event => {
+    if (!fit || root.dataset.mode !== "book") return;
+    event.preventDefault();
+    if (fold) return;
+    const unit = event.deltaMode === 1 ? 33 : event.deltaMode === 2 ? 400 : 1, dy = event.deltaY * unit, dx = event.deltaX * unit;
+    if (root.dataset.zoom === "in" && Math.abs(dx) > Math.abs(dy)) { stage.scrollLeft += dx; return; }
+    if (dy) setZoom(zoomTarget() * Math.min(1.25, Math.max(.8, Math.exp(-dy * .0015))), { x: event.clientX, y: event.clientY });
+  }, { passive: false, signal });
+  // 放大后双击回到适合窗口。没放大时单击用来翻页，所以双击不再放大（放大用滚轮或按钮）。
+  stage.addEventListener("dblclick", event => {
+    if (!fit || root.dataset.zoom !== "in" || event.target.closest("a,button")) return;
+    getSelection().removeAllRanges();
+    setZoom(0);
+  }, { signal });
+  // 像读小说一样点书页翻页：双页点右页往后、点左页往前；单页点左边三成往前，其余往后。纸从点下的那一侧、那个高度翻起。
+  // 点链接、按钮、可以滚动的大表格不翻页；选中了文字、刚拖动过、书页放大时也不翻。
+  stage.addEventListener("click", event => {
+    if (dragged) { dragged = false; return; }
+    if (event.target.closest("a,button,.reader-oversized") || !getSelection().isCollapsed || root.dataset.zoom === "in" || (document.querySelector("#sidebar.open") && matchMedia("(max-width:780px)").matches)) return;
+    // 只认真正的点击：按下后挪动超过几像素（比如拖着选字没选中）就不翻。
+    if (downAt && Math.hypot(event.clientX - downAt[0], event.clientY - downAt[1]) > 8) return;
+    if (fold?.peek) { turn(fold.dir); return; }
+    const g = geometry();
+    if (!g) return;
+    const q = local(event), dir = q[0] > g.x0 + (spreadSize === 2 ? g.W : g.W * .35) ? 1 : -1;
+    turn(dir, q[1]);
+  }, { signal });
+  function schedule() { clearTimeout(timer); timer = setTimeout(() => paginate().catch(failed), 120); }
+  function failed(error) {
+    if (signal.aborted) return;
+    loading.hidden = false;
+    loading.innerHTML = `分页暂未完成。<a href="#/doc/${doc.id}?view=record">打开完整正文</a>`;
+    stage.setAttribute("aria-busy", "false"); console.error(error);
+  }
+  let previousSize = "";
+  const observer = new ResizeObserver(() => {
+    const size = `${desk.clientWidth}:${desk.clientHeight}`;
+    if (size !== previousSize) { previousSize = size; schedule(); }
+  });
+  activeBookReader = {
+    docId: doc.id, navigate,
+    destroy() {
+      controller.abort(); observer.disconnect(); clearTimeout(timer); generation++;
+      if (dialog.open) dialog.close();
+      bar.remove(); searchToggle.remove();
+      delete document.body.dataset.bookNav;
+      delete document.body.dataset.bookReader; siteTitle.textContent = previousTitle; menu.innerHTML = previousMenu; menu.removeAttribute("title");
+      activeBookReader = null;
+    }
+  };
+  try {
+    await paginate("nav");
+    await BookPages.loadFonts(chapters, plan, { preface, size: "16px" });
+    if (signal.aborted) return;
+    await paginate();
+    if (signal.aborted) return;
+    previousSize = `${desk.clientWidth}:${desk.clientHeight}`; observer.observe(desk);
+  } catch (error) { failed(error); }
+}
