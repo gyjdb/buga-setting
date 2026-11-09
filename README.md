@@ -53,7 +53,7 @@
 | 法典与规章 *Leges et Statuta* | 宪章与法律 · 组织与规程 · 部院办法与学界通则 |
 | 学术文献 *Acta et Periodica* | 学术名篇 · 评定与荣誉 · 期刊与年报 |
 | 百科与年表 *Encyclopaedia et Annales* | 风土志 · 《联盟百科全书》 · 年表与年名 |
-| 公文与手稿 *Acta et Manuscripta* | 公文与决定 · 讲演与手稿 |
+| 公文与手稿 *Acta et Manuscripta* | 公文与决定 · 告示与须知 · 讲演与手稿 |
 
 法典按宪章第二条的规范层级排列，其余门类按文献的性质分组。现行法典沿用法典编号（如宪章 `K12`）；其余馆藏文书按门类编号（法典与规章 `LS`、学术文献 `AP`、百科与年表 `EA`、公文与手稿 `AM`），著录发布者与世界内的年代。年代用世界内的纪年；项目日期与文件修改时间不是世界内的颁布日期。门类与分组定在 `tools/library_portal/data/categories.json`。
 
